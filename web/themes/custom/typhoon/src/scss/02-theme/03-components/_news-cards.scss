@@ -1,0 +1,177 @@
+$news-card-wrap--grid-min: rem(320px);
+
+$news-card-lead-height: rem(300);
+
+
+.news-card--wrap {
+  display: grid;
+  gap: $space-lg;
+  grid-template-columns: repeat(auto-fit, minmax(356px, 1fr));
+}
+
+.news-card-basic--wrap {
+  grid-template-columns: repeat(auto-fit, minmax($news-card-wrap--grid-min, 1fr));
+}
+
+
+// both lead and basic classes
+.news-card--title {
+  font-weight: 600;
+  width: 100%;
+  line-height: 1.3;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+// news-card--lead specific
+.news-card--lead {
+  display: grid;
+  min-height: $news-card-lead-height;
+  position: relative;
+  box-shadow: $vert-dark-2;
+  transition: transform 0.5s ease;
+
+  &:hover,
+  &:focus {
+    transform: translateY(-$space-2xs);
+  }
+
+  .news-card--link {
+    position: relative;
+    text-decoration: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    box-shadow: $vert-dark-2;
+    transition: box-shadow 0.5s ease;
+
+    &::after {
+      height: 0;
+    }
+
+    &:hover,
+    &:focus {
+      box-shadow: $vert-dark-4;
+
+      .image-overlay {
+        background-position: 0 100%;
+      }
+
+      .news-card--headline {
+        bottom: 100%;
+      }
+
+      .news-card--text {
+        flex: 1 0 auto;
+      }
+    }
+
+    .cta {
+      color: $white;
+    }
+  }
+
+  .news-card--text-wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    transition: justify-content 0.5s ease;
+    z-index: 2;
+  }
+
+  .news-card--text {
+    flex: 0 0 0;
+    height: 0;
+    font-weight: 400;
+    overflow: hidden;
+    transition: all 0.5s ease;
+
+    @include bp(sm) {
+      flex: 1 0 auto;
+    }
+
+    p {
+      @include line-clamp(5);
+    }
+  }
+
+  .image-overlay {
+    background: linear-gradient(180deg,
+        rgba(0, 0, 0, 0.1) 0%,
+        rgba(0, 0, 0, 0.75) 100%,
+        rgba(0, 0, 0, 0.75) 150%);
+    background-size: auto 150%;
+    background-position: 0 50%;
+    transition: background-position 0.5s ease;
+  }
+}
+
+// Basic news card
+.news-card--basic {
+  position: relative;
+
+  .news-card--content {
+    display: grid;
+    gap: $space-sm;
+    grid-template-columns: repeat(auto-fit, minmax(rem(198px), 1fr));
+    color: $text-color;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+
+    &::after {
+      height: 0;
+    }
+  }
+
+  .news-card--image-wrap {
+    position: relative;
+    width: 100%;
+    z-index: 2;
+
+    figure {
+      box-shadow: $vert-dark-2;
+      position: relative;
+      overflow: hidden;
+      padding-top: percentage(104/152);
+      margin: 0;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+      &:hover,
+      &:focus {
+        box-shadow: $vert-dark-3;
+        transform: translateY(-$space-2xs)
+      }
+    }
+
+    img {
+      @include absolute-center;
+      width: 100%;
+    }
+  }
+
+  .aria-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .news-card--category {
+    color: inherit;
+  }
+
+  .news-card--text {
+    position: relative;
+    width: 100%;
+  }
+
+  .news-card--info {
+    @include line-clamp(5);
+    font-weight: 400;
+    color: inherit;
+  }
+}

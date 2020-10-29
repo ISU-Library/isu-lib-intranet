@@ -1,0 +1,117 @@
+$side-nav-main-height: $space-3xl; // nav-height in pixels
+$side-nav-links: $red-500;
+
+
+// * top level <ul> in side-nav
+.side-nav {
+  padding: 0;
+}
+
+// * styles for all <a> in side-nav
+.side-nav--link {
+  display: block;
+  height: $side-nav-main-height;
+  padding: 0 $space-2xl;
+  line-height: $side-nav-main-height;
+  position: relative;
+}
+
+// * top level <li> in side nav structure
+.side-nav--item {
+  .side-nav--link {
+
+    &::before,
+    &::after {
+      display: none;
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: $space-2xs;
+      background-color: $yellow-500;
+      top: 0;
+    }
+
+    &::before {
+      right: 0;
+    }
+
+    &::after {
+      left: 0;
+    }
+
+    &:hover,
+    &:focus,
+    &.is-active {
+      color: $white;
+      background-color: $red-500;
+      box-shadow: $vert-light-1;
+
+      &::before,
+      &::after {
+        display: block
+      }
+    }
+  }
+}
+
+// .side-nav--item_active-trail {
+//   transition: box-shadow 0.3s ease;
+
+//   &:hover {
+//     box-shadow: $vert-light-2;
+//   }
+// }
+
+// * nested <li> in side-nav structure
+.sub-list--item {
+  .side-nav--link {
+    overflow: hidden;
+    padding: 0 $space-xl;
+    color: $text-color;
+    font-size: $fs-md;
+    font-weight: 400;
+    transition: left ease 0.3s;
+
+    &::after {
+      @include vert_center;
+      content: "\f054";
+      font-family: "Fontawesome";
+      display: block;
+      background-color: transparent;
+      left: -1rem;
+      height: auto;
+      bottom: unset;
+      transition: left ease 0.3s;
+    }
+
+    &:hover,
+    &:focus,
+    &.is-active {
+      color: $red-500;
+      background-color: $white;
+      transition: left ease 0.3s;
+      box-shadow: none;
+
+      &::before {
+        display: none;
+      }
+
+      &::after {
+        left: $space-sm;
+      }
+    }
+  }
+
+  .is-active {
+    color: $red-500;
+
+    &::after {
+      left: 0;
+    }
+  }
+}
+
+// * nested <ul> in side-nav
+.side-nav--sub-list {
+  list-style-type: none;
+}

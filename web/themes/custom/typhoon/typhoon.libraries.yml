@@ -1,0 +1,7 @@
+global:
+  version: 0.1
+  css:
+    theme:
+      css/global.css: {}
+  js:
+    js/global.js: {}

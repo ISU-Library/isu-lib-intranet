@@ -1,0 +1,50 @@
+<?php
+
+/*
+ * Implements theme_form_alter().
+ *
+ * Add ISU Theme class to Site Navbar search form
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+function typhoon_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
+  if( $form_id == 'search_block_form') {
+    $form['#attributes']['class'][] = 'search__search-form';
+    $form['keys']['#attributes']['class'][] = 'search__search-input';
+    $form['keys']['#attributes']['placeholder'][] = 'Search Terms';
+    $form['actions']['submit']['#attributes']['class'][] = 'search__search-button';
+  }
+
+  if( $form_id == 'views-exposed-form-staff-directory-page-1') {
+    $form['#attributes']['class'][] = 'search__staff-form';
+    // $form['keys']['#attributes']['class'][] = 'staff__staff-input';
+    // $form['keys']['#attributes']['placeholder'][] = 'staff Terms';
+    // $form['actions']['submit']['#attributes']['class'][] = 'staff__staff-button';
+  }
+}
+
+/*
+ * Implements theme_preprocess_page().
+ *
+ * Make theme settings available in templates
+ */
+
+function typhoon_preprocess_page(&$variables) {
+  $variables['relative_logo_url'] = file_url_transform_relative(file_create_url(theme_get_setting('logo.url')));
+    
+    $variables['lib_util_nav1_text'] = theme_get_setting('lib_util_nav1_text');
+    $variables['lib_util_nav1_url'] = theme_get_setting('lib_util_nav1_url');
+    
+    $variables['lib_util_nav2_text'] = theme_get_setting('lib_util_nav2_text');
+    $variables['lib_util_nav2_url'] = theme_get_setting('lib_util_nav2_url');
+
+    $variables['lib_util_nav3_text'] = theme_get_setting('lib_util_nav3_text');
+    $variables['lib_util_nav3_url'] = theme_get_setting('lib_util_nav3_url');
+
+    $variables['lib_util_nav4_text'] = theme_get_setting('lib_util_nav4_text');
+    $variables['lib_util_nav4_url'] = theme_get_setting('lib_util_nav4_url');
+
+    $variables['lib_util_nav5_text'] = theme_get_setting('lib_util_nav5_text');
+    $variables['lib_util_nav5_url'] = theme_get_setting('lib_util_nav5_url');
+}
