@@ -1752,8 +1752,8 @@ var navHighlight = navList.forEach(function (navCol) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/html/devintra/web/themes/custom/typhoon/src/js/global.js */"./themes/custom/typhoon/src/js/global.js");
-module.exports = __webpack_require__(/*! /var/www/html/devintra/web/themes/custom/typhoon/src/scss/global.scss */"./themes/custom/typhoon/src/scss/global.scss");
+__webpack_require__(/*! /Users/steimel/drupal/-isu-lib-intranet/web/themes/custom/typhoon/src/js/global.js */"./themes/custom/typhoon/src/js/global.js");
+module.exports = __webpack_require__(/*! /Users/steimel/drupal/-isu-lib-intranet/web/themes/custom/typhoon/src/scss/global.scss */"./themes/custom/typhoon/src/scss/global.scss");
 
 
 /***/ })
