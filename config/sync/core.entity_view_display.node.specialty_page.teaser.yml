@@ -1,16 +1,16 @@
-uuid: 28c0ef79-7b84-48bf-895c-97dc2755e948
+uuid: 51c06e8b-a940-4507-8582-94a777f2720a
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.department_page.field_department_page_content
-    - node.type.department_page
+    - field.field.node.specialty_page.field_spec_page_content_block
+    - node.type.specialty_page
   module:
     - user
-id: node.department_page.teaser
+id: node.specialty_page.teaser
 targetEntityType: node
-bundle: department_page
+bundle: specialty_page
 mode: teaser
 content:
   links:
@@ -19,4 +19,4 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
-  field_department_page_content: true
+  field_spec_page_content_block: true

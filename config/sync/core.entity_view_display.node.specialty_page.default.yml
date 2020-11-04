@@ -1,22 +1,22 @@
-uuid: e58672f3-5c3c-44fe-9d2e-0c9d3e4a23a4
+uuid: 3d4f1ac1-a3a7-4444-8c2a-789df8b8e0d5
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.department_page.field_department_page_content
-    - node.type.department_page
+    - field.field.node.specialty_page.field_spec_page_content_block
+    - node.type.specialty_page
   module:
     - entity_reference_revisions
     - user
-id: node.department_page.default
+id: node.specialty_page.default
 targetEntityType: node
-bundle: department_page
+bundle: specialty_page
 mode: default
 content:
-  field_department_page_content:
+  field_spec_page_content_block:
     type: entity_reference_revisions_entity_view
-    weight: 105
-    label: hidden
+    weight: 101
+    label: above
     settings:
       view_mode: default
       link: ''
@@ -24,7 +24,7 @@ content:
     region: content
   links:
     weight: 100
-    region: content
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden: {  }

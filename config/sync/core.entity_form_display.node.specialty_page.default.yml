@@ -1,16 +1,16 @@
-uuid: 50fb61dc-609d-4d82-a907-9fc08868d6f5
+uuid: 891038f9-3a8d-4318-a5f2-978ec5c4813a
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.department_page.field_department_page_content
-    - node.type.department_page
+    - field.field.node.specialty_page.field_spec_page_content_block
+    - node.type.specialty_page
   module:
     - paragraphs
     - path
-id: node.department_page.default
+id: node.specialty_page.default
 targetEntityType: node
-bundle: department_page
+bundle: specialty_page
 mode: default
 content:
   created:
@@ -19,9 +19,9 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_department_page_content:
+  field_spec_page_content_block:
     type: entity_reference_paragraphs
-    weight: 125
+    weight: 121
     settings:
       title: Paragraph
       title_plural: Paragraphs
