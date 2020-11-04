@@ -1,4 +1,4 @@
-uuid: 94aec47f-66b4-4cff-8f3f-11acb3a70d2b
+uuid: 39ae03aa-c8b7-4ae9-a3ac-e72de55c8022
 langcode: en
 status: true
 dependencies:
@@ -10,7 +10,16 @@ field_name: field_basic_card_color
 entity_type: paragraph
 type: list_string
 settings:
-  allowed_values: {  }
+  allowed_values:
+    -
+      value: basic-card
+      label: Red
+    -
+      value: 'basic-card basic-card--yellow'
+      label: Yellow
+    -
+      value: 'basic-card basic-card--blue'
+      label: Blue
   allowed_values_function: ''
 module: options
 locked: false

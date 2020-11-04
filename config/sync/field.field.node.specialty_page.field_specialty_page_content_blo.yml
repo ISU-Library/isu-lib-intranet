@@ -1,10 +1,10 @@
-uuid: cf6acc1a-3a30-4d4c-a188-82c6fc80cd5e
+uuid: 87dc42f9-6ffa-4fa2-97c0-72466dbc7202
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_general_content_blocks
-    - node.type.department_page
+    - field.storage.node.field_specialty_page_content_blo
+    - node.type.specialty_page
     - paragraphs.paragraphs_type.gc_accordion_block
     - paragraphs.paragraphs_type.gc_large_img_block
     - paragraphs.paragraphs_type.gc_link_abstract_list_block
@@ -14,13 +14,17 @@ dependencies:
     - paragraphs.paragraphs_type.gc_text_img_block
     - paragraphs.paragraphs_type.gc_three_image_block
     - paragraphs.paragraphs_type.gc_two_image_block
+    - paragraphs.paragraphs_type.sc_basic_cards_block
+    - paragraphs.paragraphs_type.sc_basic_cards_image_block
+    - paragraphs.paragraphs_type.sc_news_basic_card_block
+    - paragraphs.paragraphs_type.sc_news_lead_card_block
   module:
     - entity_reference_revisions
-id: node.department_page.field_general_content_blocks
-field_name: field_general_content_blocks
+id: node.specialty_page.field_specialty_page_content_blo
+field_name: field_specialty_page_content_blo
 entity_type: node
-bundle: department_page
-label: 'General Content Blocks'
+bundle: specialty_page
+label: 'Content Block'
 description: ''
 required: false
 translatable: false
@@ -40,50 +44,72 @@ settings:
       gc_text_img_block: gc_text_img_block
       gc_three_image_block: gc_three_image_block
       gc_two_image_block: gc_two_image_block
+      sc_basic_cards_block: sc_basic_cards_block
+      sc_basic_cards_image_block: sc_basic_cards_image_block
+      sc_news_basic_card_block: sc_news_basic_card_block
+      sc_news_lead_card_block: sc_news_lead_card_block
     target_bundles_drag_drop:
       accordion_group:
-        weight: 16
+        weight: 22
+        enabled: false
+      basic_card_w_image:
+        weight: 23
         enabled: false
       from_library:
-        weight: 17
+        weight: 24
         enabled: false
       gc_accordion_block:
         enabled: true
-        weight: 18
+        weight: 25
       gc_large_img_block:
         enabled: true
-        weight: 19
+        weight: 26
       gc_link_abstract_list_block:
         enabled: true
-        weight: 20
+        weight: 27
       gc_link_list_block:
         enabled: true
-        weight: 21
+        weight: 28
       gc_quote_block:
         enabled: true
-        weight: 22
+        weight: 29
       gc_text_block:
         enabled: true
-        weight: 23
+        weight: 30
       gc_text_img_block:
         enabled: true
-        weight: 24
+        weight: 31
       gc_three_image_block:
         enabled: true
-        weight: 25
+        weight: 32
       gc_two_image_block:
         enabled: true
-        weight: 26
+        weight: 33
       link_abstract_link_list:
-        weight: 27
+        weight: 34
         enabled: false
       link_list_link:
-        weight: 28
+        weight: 35
+        enabled: false
+      news_card_basic:
+        weight: 36
+        enabled: false
+      news_card_lead:
+        weight: 37
         enabled: false
       sc_basic_card:
-        weight: 29
+        weight: 38
         enabled: false
       sc_basic_cards_block:
-        weight: 30
-        enabled: false
+        enabled: true
+        weight: 39
+      sc_basic_cards_image_block:
+        enabled: true
+        weight: 40
+      sc_news_basic_card_block:
+        enabled: true
+        weight: 41
+      sc_news_lead_card_block:
+        enabled: true
+        weight: 42
 field_type: entity_reference_revisions

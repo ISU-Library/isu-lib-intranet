@@ -1,21 +1,21 @@
-uuid: e58672f3-5c3c-44fe-9d2e-0c9d3e4a23a4
+uuid: 264ecb74-2fec-4161-80bd-b61b8db1a976
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.department_page.field_specialty_content
-    - node.type.department_page
+    - field.field.node.specialty_page.field_specialty_page_content_blo
+    - node.type.specialty_page
   module:
     - entity_reference_revisions
     - user
-id: node.department_page.default
+id: node.specialty_page.default
 targetEntityType: node
-bundle: department_page
+bundle: specialty_page
 mode: default
 content:
-  field_specialty_content:
+  field_specialty_page_content_blo:
     type: entity_reference_revisions_entity_view
-    weight: 103
+    weight: 101
     label: hidden
     settings:
       view_mode: default

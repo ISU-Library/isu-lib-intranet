@@ -1,0 +1,18 @@
+uuid: 87278ee3-394a-4600-8b0e-7e26666242c2
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Specialty page'
+type: specialty_page
+description: 'Ideal for section landing pages.  More advanced than Basic page and has block for displaying sub pages. '
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

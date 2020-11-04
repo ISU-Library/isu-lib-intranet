@@ -8,10 +8,10 @@ third_party_settings:
   menu_ui:
     available_menus:
       - main
-    parent: 'main:menu_link_content:8bdab750-9671-4802-a952-6b36a55065be'
+    parent: 'main:'
 name: 'Staff Updates'
 type: staff_updates
-description: ''
+description: 'A staff blog for individual staff updates and news!'
 help: ''
 new_revision: true
 preview_mode: 1

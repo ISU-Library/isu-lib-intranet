@@ -1,4 +1,4 @@
-uuid: 9c76336a-08a2-4d9e-82b9-d301c0e1c0d4
+uuid: bc729dcc-e9e6-42e0-b6b7-21a7dc47b512
 langcode: en
 status: true
 dependencies:
@@ -13,9 +13,11 @@ entity_type: paragraph
 bundle: sc_basic_card
 label: 'Card Color'
 description: ''
-required: false
+required: true
 translatable: false
-default_value: {  }
+default_value:
+  -
+    value: basic-card
 default_value_callback: ''
 settings: {  }
 field_type: list_string
