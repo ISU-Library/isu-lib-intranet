@@ -9,7 +9,6 @@ $form-spacing: $space-2xl;
 $fieldset-spacing: $space-lg;
 $radio-button-checked: $green-600;
 
-
 .form {
   margin-top: $form-spacing;
 }
@@ -30,14 +29,14 @@ table {
 .input {
   position: relative;
 
-  textarea+.input--label {
+  textarea + .input--label {
     top: $space-md;
     transform: translateY(0);
   }
 }
 
 .input--label {
-  @include vert_center;
+  // @include vert_center;
   display: block;
   // padding-left: $space-lg;
   font-size: $fs-md;
@@ -90,10 +89,9 @@ select {
     @if $input-box-shadow {
       box-shadow: $input-box-shadow-value;
     }
-
   }
 
-  +label {
+  + label {
     top: -$space-md;
     font-size: $fs-md;
     color: $black;
@@ -161,10 +159,9 @@ select {
     position: relative;
 
     &:not(:placeholder-shown) {
-
       &:valid,
       &:invalid {
-        +label {
+        + label {
           position: absolute;
           top: -$space-md;
           left: 0;

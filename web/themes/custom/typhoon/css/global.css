@@ -1820,10 +1820,6 @@ table {
 }
 
 .input--label {
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
   display: block;
   font-size: 1rem;
   color: #4f4c40;
@@ -2823,7 +2819,6 @@ select:invalid {
 }
 
 .search__search-form .input--search {
-  width: 0;
   overflow: hidden;
   -webkit-transition: width ease .3s;
   transition: width ease .3s;
