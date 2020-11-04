@@ -2996,9 +2996,7 @@ select:invalid {
 
 .side-nav--link {
   display: block;
-  height: 3rem;
-  padding: 0 2.5rem;
-  line-height: 3rem;
+  padding: .75rem 2.5rem;
   position: relative;
 }
 

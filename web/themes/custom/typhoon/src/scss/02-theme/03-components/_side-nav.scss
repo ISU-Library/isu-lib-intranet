@@ -10,9 +10,9 @@ $side-nav-links: $red-500;
 // * styles for all <a> in side-nav
 .side-nav--link {
   display: block;
-  height: $side-nav-main-height;
-  padding: 0 $space-2xl;
-  line-height: $side-nav-main-height;
+  // height: $side-nav-main-height;
+  padding: $space-sm $space-2xl;
+  // line-height: $side-nav-main-height;
   position: relative;
 }
 
