@@ -5,15 +5,6 @@ dependencies:
   config:
     - field.storage.node.field_specialty_content
     - node.type.department_page
-    - paragraphs.paragraphs_type.gc_accordion_block
-    - paragraphs.paragraphs_type.gc_large_img_block
-    - paragraphs.paragraphs_type.gc_link_abstract_list_block
-    - paragraphs.paragraphs_type.gc_link_list_block
-    - paragraphs.paragraphs_type.gc_quote_block
-    - paragraphs.paragraphs_type.gc_text_block
-    - paragraphs.paragraphs_type.gc_text_img_block
-    - paragraphs.paragraphs_type.gc_three_image_block
-    - paragraphs.paragraphs_type.gc_two_image_block
     - paragraphs.paragraphs_type.sc_basic_cards_block
     - paragraphs.paragraphs_type.sc_basic_cards_image_block
     - paragraphs.paragraphs_type.sc_news_basic_card_block
@@ -35,15 +26,6 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      gc_accordion_block: gc_accordion_block
-      gc_large_img_block: gc_large_img_block
-      gc_link_abstract_list_block: gc_link_abstract_list_block
-      gc_link_list_block: gc_link_list_block
-      gc_quote_block: gc_quote_block
-      gc_text_block: gc_text_block
-      gc_text_img_block: gc_text_img_block
-      gc_three_image_block: gc_three_image_block
-      gc_two_image_block: gc_two_image_block
       sc_basic_cards_image_block: sc_basic_cards_image_block
       sc_basic_cards_block: sc_basic_cards_block
       sc_news_lead_card_block: sc_news_lead_card_block
@@ -59,32 +41,32 @@ settings:
         weight: -41
         enabled: false
       gc_accordion_block:
-        enabled: true
         weight: -36
+        enabled: false
       gc_large_img_block:
-        enabled: true
         weight: -35
+        enabled: false
       gc_link_abstract_list_block:
-        enabled: true
         weight: -34
+        enabled: false
       gc_link_list_block:
-        enabled: true
         weight: -33
+        enabled: false
       gc_quote_block:
-        enabled: true
         weight: -32
+        enabled: false
       gc_text_block:
-        enabled: true
         weight: -31
+        enabled: false
       gc_text_img_block:
-        enabled: true
         weight: -30
+        enabled: false
       gc_three_image_block:
-        enabled: true
         weight: -29
+        enabled: false
       gc_two_image_block:
-        enabled: true
         weight: -28
+        enabled: false
       link_abstract_link_list:
         weight: -27
         enabled: false

@@ -3,22 +3,47 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.department_page.body
+    - field.field.node.department_page.field_general_content_blocks
     - field.field.node.department_page.field_specialty_content
     - node.type.department_page
   module:
     - paragraphs
     - path
+    - text
 id: node.department_page.default
 targetEntityType: node
 bundle: department_page
 mode: default
 content:
+  body:
+    type: text_textarea_with_summary
+    weight: 121
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    region: content
   created:
     type: datetime_timestamp
     weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_general_content_blocks:
+    type: entity_reference_paragraphs
+    weight: 124
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
   field_specialty_content:
     type: entity_reference_paragraphs
     weight: 123
