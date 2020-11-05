@@ -3004,6 +3004,7 @@ select:invalid {
 .side-nav--item .side-nav--link::after {
   display: none;
   content: "";
+  position: absolute;
   height: 100%;
   width: .25rem;
   background-color: #f1be46;

@@ -22,7 +22,7 @@ $side-nav-links: $red-500;
     &::after {
       display: none;
       content: "";
-      // position: absolute;
+      position: absolute;
       height: 100%;
       width: $space-2xs;
       background-color: $yellow-500;
