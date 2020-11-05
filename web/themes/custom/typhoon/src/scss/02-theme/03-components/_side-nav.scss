@@ -1,7 +1,6 @@
 $side-nav-main-height: $space-3xl; // nav-height in pixels
 $side-nav-links: $red-500;
 
-
 // * top level <ul> in side-nav
 .side-nav {
   padding: 0;
@@ -19,12 +18,11 @@ $side-nav-links: $red-500;
 // * top level <li> in side nav structure
 .side-nav--item {
   .side-nav--link {
-
     &::before,
     &::after {
       display: none;
-      content: '';
-      position: absolute;
+      content: "";
+      // position: absolute;
       height: 100%;
       width: $space-2xs;
       background-color: $yellow-500;
@@ -48,7 +46,7 @@ $side-nav-links: $red-500;
 
       &::before,
       &::after {
-        display: block
+        display: block;
       }
     }
   }
