@@ -17,6 +17,7 @@ permissions:
   - 'search content'
   - 'skip comment approval'
   - 'use text format basic_html'
+  - 'view media'
   - 'view paragraph content accordion_group'
   - 'view paragraph content basic_card_w_image'
   - 'view paragraph content from_library'

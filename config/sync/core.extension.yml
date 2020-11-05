@@ -8,6 +8,8 @@ module:
   color: 0
   comment: 0
   config: 0
+  config_filter: 0
+  config_split: 0
   contact: 0
   contextual: 0
   ctools: 0
@@ -29,6 +31,7 @@ module:
   image: 0
   jsonapi: 0
   link: 0
+  media: 0
   menu_block: 0
   menu_link_content: 0
   menu_ui: 0
@@ -41,6 +44,7 @@ module:
   path_alias: 0
   quickedit: 0
   rdf: 0
+  responsive_image: 0
   search: 0
   security_review: 0
   serialization: 0
