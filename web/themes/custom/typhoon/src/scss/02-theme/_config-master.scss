@@ -64,13 +64,13 @@ body {
   font-size: $font-size-base;
 }
 
-$shorcut-colors: ('primary': $primary-color,
+$shortcut-colors: ('primary': $primary-color,
   'secondary': $secondary-color,
   'accent': $accent-color,
 );
 
 @each $color,
-$colors in $shorcut-colors {
+$colors in $shortcut-colors {
   .#{$color} {
     color: $colors;
   }
