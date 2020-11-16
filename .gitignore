@@ -77,3 +77,5 @@
 
 /node_modules
 node
+
+web/themes/custom/typhoon/src/scss/_todo.scss
