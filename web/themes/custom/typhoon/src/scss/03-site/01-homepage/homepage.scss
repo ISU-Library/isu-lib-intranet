@@ -1,0 +1,49 @@
+.front-page {
+  .content-wrap {
+    margin: 0 6vw;
+
+    ul {
+      padding-left: 0;
+    }
+  }
+
+  .staff-news-feed {
+    // todo: fill out or delete!
+  }
+
+  .cta-section {
+    background-color: $red-500;
+  }
+
+  .cta-content {
+    max-width: 520px;
+  }
+
+  .cta-action-cards--image {
+    position: relative;
+    height: rem(202);
+    width: rem(280);
+    overflow: hidden;
+
+    img {
+      @include absolute-center;
+      max-width: 100%;
+      z-index: 1;
+    }
+
+    figcaption {
+      position: absolute;
+      left: 0;
+      bottom: $space-lg;
+      background: linear-gradient(135deg, $accent-color 86%, transparent 0) 100%;
+      font-family: $merriweather_stack;
+      width: 80%;
+      line-height: 1.3;
+      z-index: 2;
+    }
+  }
+
+  .basic-card--wrap.basic-card-image--wrap {
+    grid-template-columns: repeat(auto-fit, minmax(rem(300), 1fr));
+  }
+}
