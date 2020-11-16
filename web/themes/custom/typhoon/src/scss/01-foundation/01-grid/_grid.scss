@@ -49,6 +49,17 @@
       grid-column: 10 / 13
     }
   }
+
+  // * grid is full width of browser. AKA FULL BLEED! So that's cool
+  &.grid-full {
+    .body {
+      max-width: 100%;
+    }
+
+    main {
+      grid-column: 1 / -1;
+    }
+  }
 }
 
 .full {

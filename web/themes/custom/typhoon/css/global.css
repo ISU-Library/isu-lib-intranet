@@ -57,6 +57,14 @@
   grid-column: 10/13;
 }
 
+.grid.grid-full .body {
+  max-width: 100%;
+}
+
+.grid.grid-full main {
+  grid-column: 1/-1;
+}
+
 .full {
   grid-column: 1/-1;
 }
@@ -638,13 +646,13 @@ sub {
   display: inline-block;
   position: relative;
   margin: 0 auto;
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 .header-special--text::before,
 .header-special--text::after {
-  width: .5rem;
-  height: 2.5rem;
+  width: .375rem;
+  height: 1.875rem;
 }
 
 .header-special--text::before,
