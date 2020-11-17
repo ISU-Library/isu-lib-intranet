@@ -61,30 +61,30 @@
 
     <main role="main">
       <a id="main-content" tabindex="-1"></a>
-      <section class="hero--wrap">
-        <div class="hero">
-          <div class="hero--text">
-            <h1 class="header-special--text text-white">
+      <article class="hero--wrap">
+        <div class="hero flex flex-column justify-content-end">
+          <div class="hero--text headline-special content-wrap mb-2xl mr-auto">
+            <h1 class="headline-special--text text-white">
               Tagline about the Intranet
             </h1>
-            <span class="header-special--sub text-white">
+            <span class="headline-special--sub text-white">
               Look at this sweet new website! Neat!
             </span>
           </div>
         </div>
-      </section>
-      <article class="staff-news-feed">
-        <div class="image">
-          <img src="" alt="">
+      </article>
+      <article class="staff-news-feed pt-6xl pb-7xl">
+        <div aria-hidden="true" class="flair-img dots-red-bars">
+          <img src="/themes/custom/typhoon/images/dot-pattern-red-bars.png" alt="">
         </div>
-        <div class="image">
-          <img src="" alt="">
+        <div aria-hidden="true" class="flair-img dots-yellow-triangles">
+          <img src="/themes/custom/typhoon/images/dot-pattern-yellow-triangles.png" alt="">
         </div>
         <div class="content-wrap">
           <h2 class="heading-underline">
             Staff Updates
           </h2>
-          <ul class="news-card--wrap mb-3xl ">
+          <ul class="news-card--wrap ">
             <li {#title="{{cardTitle}}" #} class="news-card--lead">
               <span class="aria-text">
                 Link to
@@ -126,7 +126,7 @@
                 Link to
                 {# {{ cardTitle }} #}
               </span>
-              <a href="/ {# {{cardLink}} #}" class="news-card--link br4" style="background-image: url('{{test_image}}');">
+              <a href="/{# {{cardLink}} #}" class="news-card--link br4" style="background-image: url('{{test_image}}');">
                 <div
                   class="news-card--text-wrap pr-xl pl-lg pt-2xl pb-lg text-white">
                   {# {% if cardCatergory %} #}
@@ -351,14 +351,12 @@
         </div>
       </article>
       <article class="cta-section">
-        <div class="image">
-          <img src="" alt="">
-        </div>
-        <div class="image">
-          <img src="" alt="">
-        </div>
-        <div class="content-wrap">
-          <div class="flex align-items-center justify-content-around">
+        {# <div aria-hidden="true" class="flair-img cta-image-overlay"> #}
+        {# <img src="/themes/custom/typhoon/images/cta-image-overlay.png" alt=""> #}
+        {# <div aria-hidden="true" class="flair-img">
+                                                                                                                                                                                                                      <img src="" alt="">
+                                                                                                                                                                                                                    </div> #}
+          <div class="content-wrap"> <div class="flex align-items-center justify-content-around">
             <div class="cta-content">
               <h2 class="heading-underline text-white">
                 Explore
@@ -370,10 +368,10 @@
                 Not sure where this should go!
               </a>
             </div>
-            <div class="flex flex-column ">
-              <div class="cta-action-cards">
-                <a href="" class="cta-action-cards--link">
-                  <figure class="cta-action-cards--image">
+            <div class="flex flex-column cta-card--stack">
+              <div class="cta-card">
+                <a href="" class="cta-card--link">
+                  <figure class="cta-card--image">
                     <img src="{{test_image}}" alt="">
                     <figcaption class="pl-lg py-xs pr-2xl text-lg text-white">
                       Forms
@@ -381,9 +379,9 @@
                   </figure>
                 </a>
               </div>
-              <div class="cta-action-cards">
-                <a href="" class="cta-action-cards--link">
-                  <figure class="cta-action-cards--image">
+              <div class="cta-card">
+                <a href="" class="cta-card--link">
+                  <figure class="cta-card--image">
                     <img src="{{test_image}}" alt="">
                     <figcaption class="pl-lg py-xs pr-2xl text-lg text-white">
                       Resources
@@ -391,9 +389,9 @@
                   </figure>
                 </a>
               </div>
-              <div class="cta-action-cards">
-                <a href="" class="cta-action-cards--link">
-                  <figure class="cta-action-cards--image">
+              <div class="cta-card">
+                <a href="" class="cta-card--link">
+                  <figure class="cta-card--image">
                     <img src="{{test_image}}" alt="">
                     <figcaption class="pl-lg py-xs pr-2xl text-lg text-white">
                       Staff
@@ -404,11 +402,9 @@
             </div>
           </div>
         </div>
+        {# </div> #}
       </article>
-      <article class="quick-links-section">
-        <div class="image">
-          <img src="" alt="">
-        </div>
+      <article class="quick-links-section pt-7xl pb-5xl">
         <div class="content-wrap">
           <h2 class="heading-underline">
             Quick Links
@@ -644,10 +640,19 @@
             </li>
           </ul>
         </div>
+        <div aria-hidden="true" class="flair-img large-yellow-triangles">
+          <img src="/themes/custom/typhoon/images/large-yellow-triangles.png" alt="">
+        </div>
+        <div aria-hidden="true" class="flair-img large-red-bars">
+          <img src="/themes/custom/typhoon/images/large-red-bars.png" alt="">
+        </div>
+        <div aria-hidden="true" class="flair-img large-dots">
+          <img src="/themes/custom/typhoon/images/large-dots.png" alt="">
+        </div>
       </article>
-      <article class="staff-update-feed">
-        <div class="image">
-          <img src="" alt="">
+      <article class="staff-update-feed pb-5xl ">
+        <div aria-hidden="true" class="flair-img small-dots">
+          <img src="/themes/custom/typhoon/images/small-dots.png" alt="">
         </div>
         <div class="content-wrap">
           <h2 class="heading-underline">

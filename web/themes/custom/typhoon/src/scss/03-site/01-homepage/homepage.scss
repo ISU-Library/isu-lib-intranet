@@ -1,6 +1,31 @@
 .front-page {
+
+  article {
+    position: relative;
+  }
+
+  .flair-img {
+    position: absolute;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .dots-red-bars {
+    top: 0;
+    right: 0;
+  }
+
+  .dots-yellow-triangles {
+    left: 0;
+    bottom: 0;
+  }
+
   .content-wrap {
-    margin: 0 6vw;
+    margin-right: 6vw;
+    margin-left: 6vw;
 
     ul {
       padding-left: 0;
@@ -12,17 +37,51 @@
   }
 
   .cta-section {
-    background-color: $red-500;
+    position: relative;
+    background-image: url('/themes/custom/typhoon/images/parks-library-staircase.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    // background-color: $red-600;
+    // background-blend-mode: multiply;
+  }
+
+  .cta-image-overlay {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-image: url('/themes/custom/typhoon/images/cta-image-overlay.png');
+    left: 0;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
   }
 
   .cta-content {
     max-width: 520px;
   }
 
-  .cta-action-cards--image {
+  .cta-card--stack {
+    margin-top: -$space-4xl;
+    margin-bottom: -$space-4xl;
+  }
+
+  .cta-card {
+    box-shadow: $vert-dark-2;
+
+    &:not(:last-child) {
+      margin-bottom: $space-md;
+    }
+  }
+
+  .cta-card--image {
     position: relative;
     height: rem(202);
     width: rem(280);
+    margin: 0;
     overflow: hidden;
 
     img {
@@ -43,8 +102,33 @@
     }
   }
 
+  .quick-links-section {
+    overflow: hidden;
+  }
+
   .basic-card--wrap.basic-card-image--wrap {
     grid-template-columns: repeat(auto-fit, minmax(rem(300), 1fr));
+  }
+
+  .large-dots {
+    top: 30%;
+    left: 0;
+    width: 100%;
+  }
+
+  .large-yellow-triangles {
+    top: 30%;
+    left: 0;
+  }
+
+  .large-red-bars {
+    top: 30%;
+    right: 0;
+  }
+
+  .small-dots {
+    bottom: 0;
+    left: 0;
   }
 
   footer {

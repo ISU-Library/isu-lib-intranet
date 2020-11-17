@@ -1,4 +1,4 @@
-$header-special-fs: $space-3xl;
+$headline-special-fs: $space-3xl;
 
 @mixin angledSlashes($font-size) {
   font-size: $font-size;
@@ -10,18 +10,18 @@ $header-special-fs: $space-3xl;
   }
 }
 
-.header-special {
+.headline-special {
   position: relative;
-  display: inline-block;
   margin: 0 auto;
   z-index: 1;
 }
 
-.header-special--text {
+.headline-special--text {
+  @include angledSlashes($headline-special-fs);
   display: inline-block;
   position: relative;
   margin: 0 auto;
-  @include angledSlashes($header-special-fs);
+  text-shadow: $vert-dark-1;
 
   &::before,
   &::after {
@@ -53,12 +53,13 @@ $header-special-fs: $space-3xl;
   }
 }
 
-.header-special--sub {
+.headline-special--sub {
   display: block;
   max-width: 100%;
   padding-left: $space-xs;
   font-size: $fs-xl;
   text-align: left;
+  text-shadow: $vert-dark-1;
 
   @include bp(md) {
     font-size: $fs-lg;
