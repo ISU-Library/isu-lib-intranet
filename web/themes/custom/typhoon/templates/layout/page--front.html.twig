@@ -798,11 +798,6 @@
           </a>
         </div>
       </article>
-      <footer class="bg-red-500">
-        <h2 class="text-white">
-          Here's a footer
-        </h2>
-      </footer>
 
       {# * hiding content for now #}
     {# {{ page.content }} #}
@@ -810,10 +805,10 @@
     </main>
     {# {% if page.sidebar_first %} <aside class="layout-sidebar-first" role="complementary"> {% include "@typhoon/navigation/side-nav.html.twig" %} </aside>{% endif %} #}
   </div>
-  {% if page.footer %}
-    <footer role="contentinfo">
-      {{ page.footer }}
-    </footer>
-  {% endif %}
+  {# {% if page.footer %} #}
+  <footer role="contentinfo" class="bg-red-500">
+    {{ page.footer }}
+  </footer>
+  {# {% endif %} #}
 </div>
 {# /.layout-container #}

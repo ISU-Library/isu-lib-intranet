@@ -9547,5 +9547,9 @@ select:invalid {
   grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
 }
 
+.front-page footer {
+  height: 500px;
+}
+
 
 /*# sourceMappingURL=global.css.map*/

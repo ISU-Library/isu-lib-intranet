@@ -46,4 +46,8 @@
   .basic-card--wrap.basic-card-image--wrap {
     grid-template-columns: repeat(auto-fit, minmax(rem(300), 1fr));
   }
+
+  footer {
+    height: 500px;
+  }
 }

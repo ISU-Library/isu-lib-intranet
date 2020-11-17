@@ -1,0 +1,29 @@
+uuid: 2ede4e2a-1d8c-4208-a64b-281e5267d8d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - menu_block
+  theme:
+    - typhoon
+id: footer
+theme: typhoon
+region: footer
+weight: 0
+provider: null
+plugin: 'menu_block:footer'
+settings:
+  id: 'menu_block:footer'
+  label: Footer
+  provider: menu_block
+  label_display: visible
+  follow: false
+  follow_parent: child
+  level: 1
+  depth: 1
+  expand: false
+  parent: 'footer:'
+  suggestion: footer
+visibility: {  }
