@@ -8,7 +8,7 @@
   <li>run `$ composer install` - this uses composer file to generate files not included in Repo
     <ol><li>- might have to install composer if not on computer</li></ol>
   </li>
-  <li>cd into the `web` folder and run `$ npm install` to install node modoles for front-end build tools.</li>0
+  <li>cd into the `web` folder and run `$ npm install` to install node modoles for front-end build tools.</li>
   <ol>
     <li>might have to install node</li>
     <li>probably can skip if not working with CSS/SCSS or JS files</li>
