@@ -2,6 +2,10 @@
   position: relative;
   height: rem(425);
 
+  @include bp(xl) {
+    height: rem(530);
+  }
+
   @include bp(md) {
     height: rem(375);
   }
@@ -20,6 +24,9 @@
 }
 
 .hero--text {
-  margin-left: 6vw;
-  width: 700px;
+  margin-left: 0;
+
+  @include bp(xl) {
+    width: 1110px;
+  }
 }
