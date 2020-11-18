@@ -1,0 +1,48 @@
+// * general settings
+.flair-img {
+  position: absolute;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+  }
+}
+
+// *staff news flair images
+.staff-news--dots-red-bars {
+  top: 0;
+  right: 0;
+}
+
+.staff-news--dots-yellow-triangles {
+  left: 0;
+  bottom: 0;
+}
+
+// * quick links flair section
+.quick-links--dots {
+  top: 25%;
+  left: 0;
+  width: 100%;
+}
+
+.quick-links--yellow-triangles {
+  top: 25%;
+  left: 0;
+}
+
+.quick-links--red-bars {
+  top: 30%;
+  right: 0;
+
+  @include bp(xl) {
+    top: 25%;
+  }
+}
+
+
+// * staff updates flair section
+.staff-updates--dots {
+  bottom: 0;
+  left: 0;
+}

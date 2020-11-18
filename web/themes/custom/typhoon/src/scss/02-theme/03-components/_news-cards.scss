@@ -133,6 +133,10 @@ $news-card-lead-height: rem(300);
     width: 100%;
     z-index: 2;
 
+    @include bp(md) {
+      grid-column: 1 / 2;
+    }
+
     figure {
       box-shadow: $vert-dark-2;
       position: relative;
@@ -160,13 +164,18 @@ $news-card-lead-height: rem(300);
     left: 0;
   }
 
-  .news-card--category {
-    color: inherit;
-  }
 
   .news-card--text {
     position: relative;
     width: 100%;
+
+    @include bp(md) {
+      grid-column: 2 / 4;
+    }
+  }
+
+  .news-card--category {
+    color: inherit;
   }
 
   .news-card--info {

@@ -22,3 +22,168 @@ $value in $fs-list {
     font-size: $value;
   }
 }
+
+@each $fs,
+$value in $fs-list {
+  @include bp(xl) {
+    .xl\:text-#{$fs} {
+      font-size: $value;
+    }
+
+    .xl\:text-#{$fs} {
+      font-size: $value;
+    }
+
+    .xl\:text-#{$fs} {
+      font-size: $value;
+    }
+
+    .xl\:text-#{$fs} {
+      font-size: $value;
+    }
+
+    .xl\:text-#{$fs} {
+      font-size: $value;
+    }
+
+    .xl\:text-#{$fs} {
+      font-size: $value;
+    }
+
+    .xl\:text-#{$fs} {
+      font-size: $value;
+    }
+  }
+}
+
+@each $fs,
+$value in $fs-list {
+  @include bp(lg) {
+    .lg\:text-#{$fs} {
+      font-size: $value;
+    }
+
+    .lg\:text-#{$fs} {
+      font-size: $value;
+    }
+
+    .lg\:text-#{$fs} {
+      font-size: $value;
+    }
+
+    .lg\:text-#{$fs} {
+      font-size: $value;
+    }
+
+    .lg\:text-#{$fs} {
+      font-size: $value;
+    }
+
+    .lg\:text-#{$fs} {
+      font-size: $value;
+    }
+
+    .lg\:text-#{$fs} {
+      font-size: $value;
+    }
+  }
+}
+
+@each $fs,
+$value in $fs-list {
+  @include bp(md) {
+    .md\:text-#{$fs} {
+      font-size: $value;
+    }
+
+    .md\:text-#{$fs} {
+      font-size: $value;
+    }
+
+    .md\:text-#{$fs} {
+      font-size: $value;
+    }
+
+    .md\:text-#{$fs} {
+      font-size: $value;
+    }
+
+    .md\:text-#{$fs} {
+      font-size: $value;
+    }
+
+    .md\:text-#{$fs} {
+      font-size: $value;
+    }
+
+    .md\:text-#{$fs} {
+      font-size: $value;
+    }
+  }
+}
+
+@each $fs,
+$value in $fs-list {
+  @include bp(sm) {
+    .sm\:text-#{$fs} {
+      font-size: $value;
+    }
+
+    .sm\:text-#{$fs} {
+      font-size: $value;
+    }
+
+    .sm\:text-#{$fs} {
+      font-size: $value;
+    }
+
+    .sm\:text-#{$fs} {
+      font-size: $value;
+    }
+
+    .sm\:text-#{$fs} {
+      font-size: $value;
+    }
+
+    .sm\:text-#{$fs} {
+      font-size: $value;
+    }
+
+    .sm\:text-#{$fs} {
+      font-size: $value;
+    }
+  }
+}
+
+@each $fs,
+$value in $fs-list {
+  @include bp(xs) {
+    .xs\:text-#{$fs} {
+      font-size: $value;
+    }
+
+    .xs\:text-#{$fs} {
+      font-size: $value;
+    }
+
+    .xs\:text-#{$fs} {
+      font-size: $value;
+    }
+
+    .xs\:text-#{$fs} {
+      font-size: $value;
+    }
+
+    .xs\:text-#{$fs} {
+      font-size: $value;
+    }
+
+    .xs\:text-#{$fs} {
+      font-size: $value;
+    }
+
+    .xs\:text-#{$fs} {
+      font-size: $value;
+    }
+  }
+}
