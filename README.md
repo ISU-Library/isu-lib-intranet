@@ -2,18 +2,18 @@
 * you will need some sort of vm locally and mysql db.
 
 <ol>
-  <li>1. cd to desired site location</li>
-  <li>2. run the following command `$ git clone git@github.com:Msteimel/-isu-lib-intranet.git`</li>
-  <li>3. answer any needed questions.</li>
-  <li>4. run `$ composer install` - this uses composer file to generate files not included in Repo
+  <li>cd to desired site location</li>
+  <li>run the following command `$ git clone git@github.com:Msteimel/-isu-lib-intranet.git`</li>
+  <li>answer any needed questions.</li>
+  <li>run `$ composer install` - this uses composer file to generate files not included in Repo
     <ol><li>- might have to install composer if not on computer</li></ol>
   </li>
-  <li>5. cd into the `web` folder and run `$ npm install` to install node modoles for front-end build tools.
+  <li>cd into the `web` folder and run `$ npm install` to install node modoles for front-end build tools.</li>0
   <ol>
     <li>might have to install node</li>
     <li>probably can skip if not working with CSS/SCSS or JS files</li>
   </ol>
-  <li>6. To share Drupal config, you need to set the UUID of the site as the same you're sharing with.
+  <li>To share Drupal config, you need to set the UUID of the site as the same you're sharing with.
     <ol>
       <li>`$drush config-get "system.site" uuid` to print site's UUID.</li>
       <li> `$drush config-set "system.site" <NEW UUID>` - This shoold be set as the UUID for the site from the web server.</li>
