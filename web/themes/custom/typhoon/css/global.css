@@ -9528,6 +9528,10 @@ select:invalid {
   bottom: 0;
 }
 
+.front-page .news-card--link {
+  z-index: 2;
+}
+
 .front-page .content-wrap {
   margin-right: 6vw;
   margin-left: 6vw;
