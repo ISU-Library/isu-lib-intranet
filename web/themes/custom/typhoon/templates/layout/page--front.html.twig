@@ -47,13 +47,13 @@
 
 {% set test_image = 'themes/custom/typhoon/images/Above as Below_1.jpg' %}
 
-<div class="layout-container grid grid-full front-page">
+<div class="layout-container front-page">
   <header role="banner" class="header">
     {{ page.header }}
     {% include "@typhoon/navigation/nav.html.twig" %}
   </header>
   <div
-    class="body mx-auto">
+    class="typhoon-grid grid-full mx-auto">
 
     {# {{ page.breadcrumb }} #}
     {{ page.highlighted }}
@@ -63,26 +63,28 @@
       <a id="main-content" tabindex="-1"></a>
       <article class="hero--wrap">
         <div class="hero flex flex-column justify-content-end">
-          <div class="hero--text headline-special content-wrap mb-2xl mr-auto">
-            <h1 class="headline-special--text text-white">
-              Tagline about the Intranet
-            </h1>
-            <span class="headline-special--sub text-white">
-              Look at this sweet new website! Neat!
-            </span>
+          <div class="content-wrap">
+            <div class="hero--text headline-special mb-3xl xl:mb-5xl mr-auto xl:ml-0">
+              <h1 class="headline-special--text text-white">
+                Tagline about the Intranet
+              </h1>
+              <span class="headline-special--sub text-white">
+                Look at this sweet new website! Neat!
+              </span>
+            </div>
           </div>
         </div>
       </article>
-      <article class="staff-news-feed pt-6xl pb-7xl">
-        <div aria-hidden="true" class="flair-img dots-red-bars">
+      <article class="staff-news-feed pt-6xl pb-7xl xl:px-xl">
+        <div aria-hidden="true" class="flair-img staff-news--dots-red-bars">
           <img src="/themes/custom/typhoon/images/dot-pattern-red-bars.png" alt="">
         </div>
-        <div aria-hidden="true" class="flair-img dots-yellow-triangles">
+        <div aria-hidden="true" class="flair-img staff-news--dots-yellow-triangles">
           <img src="/themes/custom/typhoon/images/dot-pattern-yellow-triangles.png" alt="">
         </div>
         <div class="content-wrap">
           <h2 class="heading-underline">
-            Staff Updates
+            Staff News
           </h2>
           <ul class="news-card--wrap ">
             <li {#title="{{cardTitle}}" #} class="news-card--lead">
@@ -105,7 +107,7 @@
                   </h3>
                   <div class="news-card--text">
                     <p
-                      class="text-white">
+                      class="text-white xl:text-lg">
                       {# {{ cardText }} #}
                       Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint.
                     </p>
@@ -143,7 +145,7 @@
                   </h3>
                   <div class="news-card--text">
                     <p
-                      class="text-white">
+                      class="text-white xl:text-lg">
                       {# {{ cardText }} #}
                       Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint.
                     </p>
@@ -188,7 +190,7 @@
                   </h3>
                   <div class="news-card--desc">
                     <p
-                      class="news-card--info text-sm">
+                      class="news-card--info text-sm xl:text-md">
                       {# {{ cardText}} #}
                       Dolore qui excepteur consectetur labore nisi dolor consectetur fugiat tempor. Magna tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam.Dolore qui excepteur consectetur labore nisi dolor consectetur fugiat tempor. Magna tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam.
                     </p>
@@ -235,7 +237,7 @@
                   </h3>
                   <div class="news-card--desc">
                     <p
-                      class="news-card--info text-sm">
+                      class="news-card--info text-sm xl:text-md">
                       {# {{ cardText}} #}
                       Dolore qui excepteur consectetur labore nisi dolor consectetur fugiat tempor. Magna tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam.Dolore qui excepteur consectetur labore nisi dolor consectetur fugiat tempor. Magna tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam.
                     </p>
@@ -282,7 +284,7 @@
                   </h3>
                   <div class="news-card--desc">
                     <p
-                      class="news-card--info text-sm">
+                      class="news-card--info text-sm xl:text-md">
                       {# {{ cardText}} #}
                       Dolore qui excepteur consectetur labore nisi dolor consectetur fugiat tempor. Magna tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam.Dolore qui excepteur consectetur labore nisi dolor consectetur fugiat tempor. Magna tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam.
                     </p>
@@ -329,7 +331,7 @@
                   </h3>
                   <div class="news-card--desc">
                     <p
-                      class="news-card--info text-sm">
+                      class="news-card--info text-sm xl:text-md">
                       {# {{ cardText}} #}
                       Dolore qui excepteur consectetur labore nisi dolor consectetur fugiat tempor. Magna tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam.Dolore qui excepteur consectetur labore nisi dolor consectetur fugiat tempor. Magna tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam.
                     </p>
@@ -348,23 +350,22 @@
               </div>
             </li>
           </ul>
+          <a class="cta" href="/">
+            More news stories
+          </a>
         </div>
       </article>
       <article class="cta-section">
-        {# <div aria-hidden="true" class="flair-img cta-image-overlay"> #}
-        {# <img src="/themes/custom/typhoon/images/cta-image-overlay.png" alt=""> #}
-        {# <div aria-hidden="true" class="flair-img">
-                                                                                                                                                                                                                                      <img src="" alt="">
-                                                                                                                                                                                                                                    </div> #}
-          <div class="content-wrap"> <div class="flex align-items-center justify-content-around">
+        <div class="content-wrap">
+          <div class="flex align-items-center justify-content-around">
             <div class="cta-content">
               <h2 class="heading-underline text-white">
                 Explore
               </h2>
-              <p class="text-white">
+              <p class="text-white xl:text-lg">
                 Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint. Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi
               </p>
-              <a href="/" class="button">
+              <a href="/" class="button button-secondary">
                 Not sure where this should go!
               </a>
             </div>
@@ -404,7 +405,16 @@
         </div>
         {# </div> #}
       </article>
-      <article class="quick-links-section pt-7xl pb-5xl">
+      <article class="quick-links-section pt-6xl">
+        <div aria-hidden="true" class="flair-img quick-links--yellow-triangles">
+          <img src="/themes/custom/typhoon/images/large-yellow-triangles.png" alt="">
+        </div>
+        <div aria-hidden="true" class="flair-img quick-links--red-bars">
+          <img src="/themes/custom/typhoon/images/large-red-bars.png" alt="">
+        </div>
+        <div aria-hidden="true" class="flair-img quick-links--dots">
+          <img src="/themes/custom/typhoon/images/large-dots.png" alt="">
+        </div>
         <div class="content-wrap">
           <h2 class="heading-underline">
             Quick Links
@@ -640,18 +650,9 @@
             </li>
           </ul>
         </div>
-        <div aria-hidden="true" class="flair-img large-yellow-triangles">
-          <img src="/themes/custom/typhoon/images/large-yellow-triangles.png" alt="">
-        </div>
-        <div aria-hidden="true" class="flair-img large-red-bars">
-          <img src="/themes/custom/typhoon/images/large-red-bars.png" alt="">
-        </div>
-        <div aria-hidden="true" class="flair-img large-dots">
-          <img src="/themes/custom/typhoon/images/large-dots.png" alt="">
-        </div>
       </article>
-      <article class="staff-update-feed pb-5xl ">
-        <div aria-hidden="true" class="flair-img small-dots">
+      <article class="staff-update-feed py-5xl ">
+        <div aria-hidden="true" class="flair-img staff-updates--dots">
           <img src="/themes/custom/typhoon/images/small-dots.png" alt="">
         </div>
         <div class="content-wrap">
