@@ -63,12 +63,12 @@
       <a id="main-content" tabindex="-1"></a>
       <article class="hero--wrap">
         <div class="hero flex flex-column justify-content-end">
-          <div class="content-wrap">
+          <div class="content-wrap xl:px-xl">
             <div class="hero--text headline-special mb-3xl xl:mb-5xl mr-auto xl:ml-0">
-              <h1 class="headline-special--text text-white">
+              <h1 class="headline-special--text xl:text-5xl text-white">
                 Tagline about the Intranet
               </h1>
-              <span class="headline-special--sub text-white">
+              <span class="headline-special--sub xl:pt-xs xl:text-2xl text-white">
                 Look at this sweet new website! Neat!
               </span>
             </div>
@@ -109,7 +109,7 @@
                     <p
                       class="text-white xl:text-lg">
                       {# {{ cardText }} #}
-                      Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint.
+                      Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint.Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint.Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint.Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint.Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint.
                     </p>
                     <div class="cta--wrap">
                       <span
@@ -405,7 +405,7 @@
         </div>
         {# </div> #}
       </article>
-      <article class="quick-links-section pt-6xl">
+      <article class="quick-links-section pt-6xl xl:px-xl">
         <div aria-hidden="true" class="flair-img quick-links--yellow-triangles">
           <img src="/themes/custom/typhoon/images/large-yellow-triangles.png" alt="">
         </div>
@@ -419,7 +419,7 @@
           <h2 class="heading-underline">
             Quick Links
           </h2>
-          <ul class="basic-card--wrap mt-2xl mr-2xl mb-2xl sm:mr-0 xs:mr-0">
+          <ul class="basic-card--wrap mt-2xl mb-2xl sm:mr-0 xs:mr-0">
             <li>
               <a role="Link" href="/ {# {{ cardLink }} #}" class="basic-card--link">
                 <div class="basic-card" {# {{attributes.addClass(classes)}} #}>
@@ -432,9 +432,7 @@
                     class="basic-card--text-wrap">
                     {# {% if cardCategory %} #}
                     <span
-                      class="basic-card--category mb-xs">
-                      {# {{ cardCategory }} #}
-                      Should be an icon
+                      class="basic-card--category icon-calendar mb-xs">{# {{ cardCategory }} #}
                     </span>
                     {# {% endif %} #}
                     <h3
