@@ -18,8 +18,10 @@
   background-repeat: no-repeat;
   height: 100%;
 
-  @include bp(xs) {
-    // text-align: center;
+  .content-wrap {
+    .front-page & {
+      width: var(--content-width);
+    }
   }
 }
 
