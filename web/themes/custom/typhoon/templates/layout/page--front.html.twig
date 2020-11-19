@@ -92,43 +92,42 @@
                 Link to
                 {# {{ cardTitle }} #}
               </span>
-{% if custom_test_link_1 %}
-              <a href="/{{custom_test_link_1}}" class="news-card--link br4" style="background-image: url('{{test_image}}'); z -index: 2; ">
-{% else %}
-              <a href="/ {# {{cardLink}} #}" class="news-card--link br4" style="background-image: url('{{test_image}}'); z -index: 2;  ">
-{% endif %}
-                <div
-                  class="news-card--text-wrap pr-xl pl-lg pt-2xl pb-lg text-white">
-                  {# {% if cardCatergory %} #}
-                  <span class="news-card--category text-white">{# {{ cardCatergory }} #}
-                    {# Library ITS #}
-                  </span>
-                  {# {% endif %} #}
-                  <h3
-                    class="news-card--title mb-0 fs-lg text-white">
-                    {# {{ cardTitle }} #}
-                    <!-- Some sweet News story! -->
-{% if custom_test_variable_2 %}
-{{ custom_test_variable_2 }}
-{% endif %}
-                  </h3>
-                  <div class="news-card--text">
-                    <p
-                      class="text-white xl:text-lg">
-                      {# {{ cardText }} #}
-                      Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint.Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint.Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint.Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint.Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint.
-                    </p>
-                    <div class="cta--wrap">
-                      <span
-                        class="cta text-white">
-                        {# {{ cardLinkText }} #}
-                        A link!
-                      </span>
+              {% if custom_test_link_1 %}
+                <a href="/{{custom_test_link_1}}" class="news-card--link br4" style="background-image: url('{{test_image}}'); z -index: 2; ">
+                {% else %}
+                  <a href="/ {# {{cardLink}} #}" class="news-card--link br4" style="background-image: url('{{test_image}}'); z -index: 2;  ">
+                  {% endif %}
+                  <div
+                    class="news-card--text-wrap pr-xl pl-lg pt-2xl pb-lg text-white">
+                    {# {% if cardCatergory %} #}
+                    <span class="news-card--category text-white">{# {{ cardCatergory }} #}
+                      {# Library ITS #}
+                    </span>
+                    {# {% endif %} #}
+                    <h3 class="news-card--title mb-0 fs-lg text-white">
+                      {# {{ cardTitle }} #}
+                      <!-- Some sweet News story! -->
+                        {% if custom_test_variable_2 %}
+                      {{ custom_test_variable_2 }}
+                    {% endif %}
+                    </h3>
+                      <div class="news-card--text"> <p
+                        class="text-white xl:text-lg">
+                        {# {{ cardText }} #}
+                        Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint.Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint.Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint.Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint.Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint.
+                      </p>
+                      <div class="cta--wrap">
+                        <span
+                          class="cta text-white">
+                          {# {{ cardLinkText }} #}
+                          A link!
+                        </span>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="image-overlay"></div>
-              </a>
+                  <div class="image-overlay"></div>
+                </a>
+              </li>
             </li>
             <li {#title="{{cardTitle}}" #} class="news-card--lead">
               <span class="aria-text">
