@@ -47,9 +47,17 @@ $blue-basic-card-text-blue: $blue-700;
     gap: $space-lg;
     grid-template-columns: repeat(auto-fill, minmax(rem(320), 1fr));
 
+    @include bp(sm) {
+      grid-template-columns: repeat(auto-fill, minmax(rem(200), 1fr));
+    }
+
     // makes basic-card-image wider
     &.basic-card-image--wrap {
-      grid-template-columns: repeat(auto-fit, minmax(rem(350), 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(rem(300), 1fr));
+
+      @include bp(sm) {
+        grid-template-columns: repeat(auto-fit, minmax(rem(250), 1fr));
+      }
     }
   }
 
@@ -152,6 +160,10 @@ $blue-basic-card-text-blue: $blue-700;
   height: 100%;
   padding: $space-xl $space-lg $space-2xl $space-xl;
   transition: border-color 0.3s ease-in;
+
+  @include bp(xs) {
+    padding: $space-md $space-sm $space-lg $space-md;
+  }
 }
 
 .basic-card--category {
@@ -164,6 +176,7 @@ $blue-basic-card-text-blue: $blue-700;
 }
 
 .basic-card--title {
+  @include line-clamp(3);
   transition: color 0.3s ease-in;
 }
 
