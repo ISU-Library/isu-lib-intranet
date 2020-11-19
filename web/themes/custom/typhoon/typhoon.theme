@@ -48,32 +48,39 @@ function typhoon_preprocess_page(&$variables) {
 
     $variables['lib_util_nav5_text'] = theme_get_setting('lib_util_nav5_text');
     $variables['lib_util_nav5_url'] = theme_get_setting('lib_util_nav5_url');
+}
 
-    $test_variable = 'zzzz TEST VARIABLE zzzz';
-    $variables['custom_test_variable'] = $test_variable;
+/*
+ * Implements theme_preprocess_page().
+ *
+ * Make theme settings available in templates
+ */
 
-    // Create an object of type Select.
-    //$database = \Drupal::database();
-    //$query = $database->select('users', 'u');
-    // (user)name, (e)mail
-    //$query->join('users_field_data', 'usfd', 'usfd.uid = u.uid');
-    // field_staff_member_name
-    //$query->fields('usfd', ['uid','name']);
-    //$user_id = 1; // intradevadmin
-    //$query->condition('u.uid', $user_id, '=');
-    //$result = $query->execute();
+function typhoon_preprocess_page__front(&$variables) {
+  $test_variable = 'zzzz TEST VARIABLE zzzz';
+  $variables['custom_test_variable'] = $test_variable;
 
-    /* Used by User::load below  */
-    //use Drupal\user\Entity\User;
-    //use Drupal\Core\Url;
-    //use Drupal\Core\Link;
-    $user = User::load(1);
-    $email = $user->get('mail')->value;
-    $name = $user->get('name')->value;
-    $uid= $user->get('uid')->value;
-    $variables['custom_test_variable_2'] = "$uid $name $email"; 
+  // Create an object of type Select.
+  //$database = \Drupal::database();
+  //$query = $database->select('users', 'u');
+  // (user)name, (e)mail
+  //$query->join('users_field_data', 'usfd', 'usfd.uid = u.uid');
+  // field_staff_member_name
+  //$query->fields('usfd', ['uid','name']);
+  //$user_id = 1; // intradevadmin
+  //$query->condition('u.uid', $user_id, '=');
+  //$result = $query->execute();
+
+  /* Used by User::load below  */
+  //use Drupal\user\Entity\User;
+  //use Drupal\Core\Url;
+  //use Drupal\Core\Link;
+  $user = User::load(1);
+  $email = $user->get('mail')->value;
+  $name = $user->get('name')->value;
+  $uid= $user->get('uid')->value;
+  $variables['custom_test_variable_2'] = "$uid $name $email"; 
 
 
-    $variables['custom_test_link_1'] = "about-library"; 
-    
+  $variables['custom_test_link_1'] = "about-library"; 
 }
