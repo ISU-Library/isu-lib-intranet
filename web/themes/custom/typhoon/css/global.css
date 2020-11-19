@@ -471,6 +471,13 @@ h2,
   margin-bottom: 1rem;
 }
 
+@media (min-width: 1200px) {
+  h2,
+  .h2 {
+    font-size: 3rem;
+  }
+}
+
 h3,
 .h3 {
   font-family: "Merriweather",Georgia,serif;
@@ -2020,6 +2027,10 @@ select:invalid {
   height: 100%;
 }
 
+.front-page .hero .content-wrap {
+  width: var(--content-width);
+}
+
 .hero--text {
   margin-left: 0;
 }
@@ -2548,6 +2559,15 @@ select:invalid {
   -webkit-box-orient: vertical;
 }
 
+@media (min-width: 1200px) {
+  .news-card--lead .news-card--text p {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+  }
+}
+
 .news-card--lead .image-overlay {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), color-stop(100%, rgba(0, 0, 0, 0.75)), color-stop(150%, rgba(0, 0, 0, 0.75)));
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.75) 100%, rgba(0, 0, 0, 0.75) 150%);
@@ -2563,7 +2583,7 @@ select:invalid {
 
 .news-card--basic .news-card--content {
   display: grid;
-  gap: .75rem;
+  gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(12.375rem, 1fr));
   color: #212121;
   text-decoration: none;
@@ -3271,8 +3291,8 @@ select:invalid {
 
 @font-face {
   font-family: "library-icons";
-  src: url("/src/fonts/library-icons/library-icons.eot");
-  src: url("/src/fonts/library-icons#iefix") format("embedded-opentype"),url("/src/fonts/library-icons/library-icons.ttf?5458qa") format("truetype"),url("/src/fonts/library-icons/library-icons.woff?5458qa") format("woff"),url("/src/fonts/library-icons/library-icons.svg?5458qa#library-icons") format("svg");
+  src: url("/themes/custom/typhoon/fonts/library-icons/library-icons.eot");
+  src: url("/themes/custom/typhoon/fonts/library-icons#iefix") format("embedded-opentype"),url("/themes/custom/typhoon/fonts/library-icons/library-icons.ttf?5458qa") format("truetype"),url("/themes/custom/typhoon/fonts/library-icons/library-icons.woff?5458qa") format("woff"),url("/themes/custom/typhoon/fonts/library-icons/library-icons.svg?5458qa#library-icons") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -8723,57 +8743,9 @@ select:invalid {
   .xl\:text-2xs {
     font-size: .5rem;
   }
-
-  .xl\:text-2xs {
-    font-size: .5rem;
-  }
-
-  .xl\:text-2xs {
-    font-size: .5rem;
-  }
-
-  .xl\:text-2xs {
-    font-size: .5rem;
-  }
-
-  .xl\:text-2xs {
-    font-size: .5rem;
-  }
-
-  .xl\:text-2xs {
-    font-size: .5rem;
-  }
-
-  .xl\:text-2xs {
-    font-size: .5rem;
-  }
 }
 
 @media (min-width: 1200px) {
-  .xl\:text-xs {
-    font-size: .75rem;
-  }
-
-  .xl\:text-xs {
-    font-size: .75rem;
-  }
-
-  .xl\:text-xs {
-    font-size: .75rem;
-  }
-
-  .xl\:text-xs {
-    font-size: .75rem;
-  }
-
-  .xl\:text-xs {
-    font-size: .75rem;
-  }
-
-  .xl\:text-xs {
-    font-size: .75rem;
-  }
-
   .xl\:text-xs {
     font-size: .75rem;
   }
@@ -8783,57 +8755,9 @@ select:invalid {
   .xl\:text-sm {
     font-size: .875rem;
   }
-
-  .xl\:text-sm {
-    font-size: .875rem;
-  }
-
-  .xl\:text-sm {
-    font-size: .875rem;
-  }
-
-  .xl\:text-sm {
-    font-size: .875rem;
-  }
-
-  .xl\:text-sm {
-    font-size: .875rem;
-  }
-
-  .xl\:text-sm {
-    font-size: .875rem;
-  }
-
-  .xl\:text-sm {
-    font-size: .875rem;
-  }
 }
 
 @media (min-width: 1200px) {
-  .xl\:text-md {
-    font-size: 1rem;
-  }
-
-  .xl\:text-md {
-    font-size: 1rem;
-  }
-
-  .xl\:text-md {
-    font-size: 1rem;
-  }
-
-  .xl\:text-md {
-    font-size: 1rem;
-  }
-
-  .xl\:text-md {
-    font-size: 1rem;
-  }
-
-  .xl\:text-md {
-    font-size: 1rem;
-  }
-
   .xl\:text-md {
     font-size: 1rem;
   }
@@ -8843,57 +8767,9 @@ select:invalid {
   .xl\:text-lg {
     font-size: 1.125rem;
   }
-
-  .xl\:text-lg {
-    font-size: 1.125rem;
-  }
-
-  .xl\:text-lg {
-    font-size: 1.125rem;
-  }
-
-  .xl\:text-lg {
-    font-size: 1.125rem;
-  }
-
-  .xl\:text-lg {
-    font-size: 1.125rem;
-  }
-
-  .xl\:text-lg {
-    font-size: 1.125rem;
-  }
-
-  .xl\:text-lg {
-    font-size: 1.125rem;
-  }
 }
 
 @media (min-width: 1200px) {
-  .xl\:text-xl {
-    font-size: 1.5rem;
-  }
-
-  .xl\:text-xl {
-    font-size: 1.5rem;
-  }
-
-  .xl\:text-xl {
-    font-size: 1.5rem;
-  }
-
-  .xl\:text-xl {
-    font-size: 1.5rem;
-  }
-
-  .xl\:text-xl {
-    font-size: 1.5rem;
-  }
-
-  .xl\:text-xl {
-    font-size: 1.5rem;
-  }
-
   .xl\:text-xl {
     font-size: 1.5rem;
   }
@@ -8903,57 +8779,9 @@ select:invalid {
   .xl\:text-2xl {
     font-size: 2rem;
   }
-
-  .xl\:text-2xl {
-    font-size: 2rem;
-  }
-
-  .xl\:text-2xl {
-    font-size: 2rem;
-  }
-
-  .xl\:text-2xl {
-    font-size: 2rem;
-  }
-
-  .xl\:text-2xl {
-    font-size: 2rem;
-  }
-
-  .xl\:text-2xl {
-    font-size: 2rem;
-  }
-
-  .xl\:text-2xl {
-    font-size: 2rem;
-  }
 }
 
 @media (min-width: 1200px) {
-  .xl\:text-3xl {
-    font-size: 2.5rem;
-  }
-
-  .xl\:text-3xl {
-    font-size: 2.5rem;
-  }
-
-  .xl\:text-3xl {
-    font-size: 2.5rem;
-  }
-
-  .xl\:text-3xl {
-    font-size: 2.5rem;
-  }
-
-  .xl\:text-3xl {
-    font-size: 2.5rem;
-  }
-
-  .xl\:text-3xl {
-    font-size: 2.5rem;
-  }
-
   .xl\:text-3xl {
     font-size: 2.5rem;
   }
@@ -8963,57 +8791,9 @@ select:invalid {
   .xl\:text-4xl {
     font-size: 3rem;
   }
-
-  .xl\:text-4xl {
-    font-size: 3rem;
-  }
-
-  .xl\:text-4xl {
-    font-size: 3rem;
-  }
-
-  .xl\:text-4xl {
-    font-size: 3rem;
-  }
-
-  .xl\:text-4xl {
-    font-size: 3rem;
-  }
-
-  .xl\:text-4xl {
-    font-size: 3rem;
-  }
-
-  .xl\:text-4xl {
-    font-size: 3rem;
-  }
 }
 
 @media (min-width: 1200px) {
-  .xl\:text-5xl {
-    font-size: 3.75rem;
-  }
-
-  .xl\:text-5xl {
-    font-size: 3.75rem;
-  }
-
-  .xl\:text-5xl {
-    font-size: 3.75rem;
-  }
-
-  .xl\:text-5xl {
-    font-size: 3.75rem;
-  }
-
-  .xl\:text-5xl {
-    font-size: 3.75rem;
-  }
-
-  .xl\:text-5xl {
-    font-size: 3.75rem;
-  }
-
   .xl\:text-5xl {
     font-size: 3.75rem;
   }
@@ -9023,57 +8803,9 @@ select:invalid {
   .xl\:text-6xl {
     font-size: 4.5rem;
   }
-
-  .xl\:text-6xl {
-    font-size: 4.5rem;
-  }
-
-  .xl\:text-6xl {
-    font-size: 4.5rem;
-  }
-
-  .xl\:text-6xl {
-    font-size: 4.5rem;
-  }
-
-  .xl\:text-6xl {
-    font-size: 4.5rem;
-  }
-
-  .xl\:text-6xl {
-    font-size: 4.5rem;
-  }
-
-  .xl\:text-6xl {
-    font-size: 4.5rem;
-  }
 }
 
 @media (max-width: 1200px) {
-  .lg\:text-2xs {
-    font-size: .5rem;
-  }
-
-  .lg\:text-2xs {
-    font-size: .5rem;
-  }
-
-  .lg\:text-2xs {
-    font-size: .5rem;
-  }
-
-  .lg\:text-2xs {
-    font-size: .5rem;
-  }
-
-  .lg\:text-2xs {
-    font-size: .5rem;
-  }
-
-  .lg\:text-2xs {
-    font-size: .5rem;
-  }
-
   .lg\:text-2xs {
     font-size: .5rem;
   }
@@ -9083,57 +8815,9 @@ select:invalid {
   .lg\:text-xs {
     font-size: .75rem;
   }
-
-  .lg\:text-xs {
-    font-size: .75rem;
-  }
-
-  .lg\:text-xs {
-    font-size: .75rem;
-  }
-
-  .lg\:text-xs {
-    font-size: .75rem;
-  }
-
-  .lg\:text-xs {
-    font-size: .75rem;
-  }
-
-  .lg\:text-xs {
-    font-size: .75rem;
-  }
-
-  .lg\:text-xs {
-    font-size: .75rem;
-  }
 }
 
 @media (max-width: 1200px) {
-  .lg\:text-sm {
-    font-size: .875rem;
-  }
-
-  .lg\:text-sm {
-    font-size: .875rem;
-  }
-
-  .lg\:text-sm {
-    font-size: .875rem;
-  }
-
-  .lg\:text-sm {
-    font-size: .875rem;
-  }
-
-  .lg\:text-sm {
-    font-size: .875rem;
-  }
-
-  .lg\:text-sm {
-    font-size: .875rem;
-  }
-
   .lg\:text-sm {
     font-size: .875rem;
   }
@@ -9143,57 +8827,9 @@ select:invalid {
   .lg\:text-md {
     font-size: 1rem;
   }
-
-  .lg\:text-md {
-    font-size: 1rem;
-  }
-
-  .lg\:text-md {
-    font-size: 1rem;
-  }
-
-  .lg\:text-md {
-    font-size: 1rem;
-  }
-
-  .lg\:text-md {
-    font-size: 1rem;
-  }
-
-  .lg\:text-md {
-    font-size: 1rem;
-  }
-
-  .lg\:text-md {
-    font-size: 1rem;
-  }
 }
 
 @media (max-width: 1200px) {
-  .lg\:text-lg {
-    font-size: 1.125rem;
-  }
-
-  .lg\:text-lg {
-    font-size: 1.125rem;
-  }
-
-  .lg\:text-lg {
-    font-size: 1.125rem;
-  }
-
-  .lg\:text-lg {
-    font-size: 1.125rem;
-  }
-
-  .lg\:text-lg {
-    font-size: 1.125rem;
-  }
-
-  .lg\:text-lg {
-    font-size: 1.125rem;
-  }
-
   .lg\:text-lg {
     font-size: 1.125rem;
   }
@@ -9203,57 +8839,9 @@ select:invalid {
   .lg\:text-xl {
     font-size: 1.5rem;
   }
-
-  .lg\:text-xl {
-    font-size: 1.5rem;
-  }
-
-  .lg\:text-xl {
-    font-size: 1.5rem;
-  }
-
-  .lg\:text-xl {
-    font-size: 1.5rem;
-  }
-
-  .lg\:text-xl {
-    font-size: 1.5rem;
-  }
-
-  .lg\:text-xl {
-    font-size: 1.5rem;
-  }
-
-  .lg\:text-xl {
-    font-size: 1.5rem;
-  }
 }
 
 @media (max-width: 1200px) {
-  .lg\:text-2xl {
-    font-size: 2rem;
-  }
-
-  .lg\:text-2xl {
-    font-size: 2rem;
-  }
-
-  .lg\:text-2xl {
-    font-size: 2rem;
-  }
-
-  .lg\:text-2xl {
-    font-size: 2rem;
-  }
-
-  .lg\:text-2xl {
-    font-size: 2rem;
-  }
-
-  .lg\:text-2xl {
-    font-size: 2rem;
-  }
-
   .lg\:text-2xl {
     font-size: 2rem;
   }
@@ -9263,57 +8851,9 @@ select:invalid {
   .lg\:text-3xl {
     font-size: 2.5rem;
   }
-
-  .lg\:text-3xl {
-    font-size: 2.5rem;
-  }
-
-  .lg\:text-3xl {
-    font-size: 2.5rem;
-  }
-
-  .lg\:text-3xl {
-    font-size: 2.5rem;
-  }
-
-  .lg\:text-3xl {
-    font-size: 2.5rem;
-  }
-
-  .lg\:text-3xl {
-    font-size: 2.5rem;
-  }
-
-  .lg\:text-3xl {
-    font-size: 2.5rem;
-  }
 }
 
 @media (max-width: 1200px) {
-  .lg\:text-4xl {
-    font-size: 3rem;
-  }
-
-  .lg\:text-4xl {
-    font-size: 3rem;
-  }
-
-  .lg\:text-4xl {
-    font-size: 3rem;
-  }
-
-  .lg\:text-4xl {
-    font-size: 3rem;
-  }
-
-  .lg\:text-4xl {
-    font-size: 3rem;
-  }
-
-  .lg\:text-4xl {
-    font-size: 3rem;
-  }
-
   .lg\:text-4xl {
     font-size: 3rem;
   }
@@ -9323,87 +8863,15 @@ select:invalid {
   .lg\:text-5xl {
     font-size: 3.75rem;
   }
-
-  .lg\:text-5xl {
-    font-size: 3.75rem;
-  }
-
-  .lg\:text-5xl {
-    font-size: 3.75rem;
-  }
-
-  .lg\:text-5xl {
-    font-size: 3.75rem;
-  }
-
-  .lg\:text-5xl {
-    font-size: 3.75rem;
-  }
-
-  .lg\:text-5xl {
-    font-size: 3.75rem;
-  }
-
-  .lg\:text-5xl {
-    font-size: 3.75rem;
-  }
 }
 
 @media (max-width: 1200px) {
   .lg\:text-6xl {
     font-size: 4.5rem;
   }
-
-  .lg\:text-6xl {
-    font-size: 4.5rem;
-  }
-
-  .lg\:text-6xl {
-    font-size: 4.5rem;
-  }
-
-  .lg\:text-6xl {
-    font-size: 4.5rem;
-  }
-
-  .lg\:text-6xl {
-    font-size: 4.5rem;
-  }
-
-  .lg\:text-6xl {
-    font-size: 4.5rem;
-  }
-
-  .lg\:text-6xl {
-    font-size: 4.5rem;
-  }
 }
 
 @media (max-width: 992px) {
-  .md\:text-2xs {
-    font-size: .5rem;
-  }
-
-  .md\:text-2xs {
-    font-size: .5rem;
-  }
-
-  .md\:text-2xs {
-    font-size: .5rem;
-  }
-
-  .md\:text-2xs {
-    font-size: .5rem;
-  }
-
-  .md\:text-2xs {
-    font-size: .5rem;
-  }
-
-  .md\:text-2xs {
-    font-size: .5rem;
-  }
-
   .md\:text-2xs {
     font-size: .5rem;
   }
@@ -9413,57 +8881,9 @@ select:invalid {
   .md\:text-xs {
     font-size: .75rem;
   }
-
-  .md\:text-xs {
-    font-size: .75rem;
-  }
-
-  .md\:text-xs {
-    font-size: .75rem;
-  }
-
-  .md\:text-xs {
-    font-size: .75rem;
-  }
-
-  .md\:text-xs {
-    font-size: .75rem;
-  }
-
-  .md\:text-xs {
-    font-size: .75rem;
-  }
-
-  .md\:text-xs {
-    font-size: .75rem;
-  }
 }
 
 @media (max-width: 992px) {
-  .md\:text-sm {
-    font-size: .875rem;
-  }
-
-  .md\:text-sm {
-    font-size: .875rem;
-  }
-
-  .md\:text-sm {
-    font-size: .875rem;
-  }
-
-  .md\:text-sm {
-    font-size: .875rem;
-  }
-
-  .md\:text-sm {
-    font-size: .875rem;
-  }
-
-  .md\:text-sm {
-    font-size: .875rem;
-  }
-
   .md\:text-sm {
     font-size: .875rem;
   }
@@ -9473,57 +8893,9 @@ select:invalid {
   .md\:text-md {
     font-size: 1rem;
   }
-
-  .md\:text-md {
-    font-size: 1rem;
-  }
-
-  .md\:text-md {
-    font-size: 1rem;
-  }
-
-  .md\:text-md {
-    font-size: 1rem;
-  }
-
-  .md\:text-md {
-    font-size: 1rem;
-  }
-
-  .md\:text-md {
-    font-size: 1rem;
-  }
-
-  .md\:text-md {
-    font-size: 1rem;
-  }
 }
 
 @media (max-width: 992px) {
-  .md\:text-lg {
-    font-size: 1.125rem;
-  }
-
-  .md\:text-lg {
-    font-size: 1.125rem;
-  }
-
-  .md\:text-lg {
-    font-size: 1.125rem;
-  }
-
-  .md\:text-lg {
-    font-size: 1.125rem;
-  }
-
-  .md\:text-lg {
-    font-size: 1.125rem;
-  }
-
-  .md\:text-lg {
-    font-size: 1.125rem;
-  }
-
   .md\:text-lg {
     font-size: 1.125rem;
   }
@@ -9533,57 +8905,9 @@ select:invalid {
   .md\:text-xl {
     font-size: 1.5rem;
   }
-
-  .md\:text-xl {
-    font-size: 1.5rem;
-  }
-
-  .md\:text-xl {
-    font-size: 1.5rem;
-  }
-
-  .md\:text-xl {
-    font-size: 1.5rem;
-  }
-
-  .md\:text-xl {
-    font-size: 1.5rem;
-  }
-
-  .md\:text-xl {
-    font-size: 1.5rem;
-  }
-
-  .md\:text-xl {
-    font-size: 1.5rem;
-  }
 }
 
 @media (max-width: 992px) {
-  .md\:text-2xl {
-    font-size: 2rem;
-  }
-
-  .md\:text-2xl {
-    font-size: 2rem;
-  }
-
-  .md\:text-2xl {
-    font-size: 2rem;
-  }
-
-  .md\:text-2xl {
-    font-size: 2rem;
-  }
-
-  .md\:text-2xl {
-    font-size: 2rem;
-  }
-
-  .md\:text-2xl {
-    font-size: 2rem;
-  }
-
   .md\:text-2xl {
     font-size: 2rem;
   }
@@ -9593,57 +8917,9 @@ select:invalid {
   .md\:text-3xl {
     font-size: 2.5rem;
   }
-
-  .md\:text-3xl {
-    font-size: 2.5rem;
-  }
-
-  .md\:text-3xl {
-    font-size: 2.5rem;
-  }
-
-  .md\:text-3xl {
-    font-size: 2.5rem;
-  }
-
-  .md\:text-3xl {
-    font-size: 2.5rem;
-  }
-
-  .md\:text-3xl {
-    font-size: 2.5rem;
-  }
-
-  .md\:text-3xl {
-    font-size: 2.5rem;
-  }
 }
 
 @media (max-width: 992px) {
-  .md\:text-4xl {
-    font-size: 3rem;
-  }
-
-  .md\:text-4xl {
-    font-size: 3rem;
-  }
-
-  .md\:text-4xl {
-    font-size: 3rem;
-  }
-
-  .md\:text-4xl {
-    font-size: 3rem;
-  }
-
-  .md\:text-4xl {
-    font-size: 3rem;
-  }
-
-  .md\:text-4xl {
-    font-size: 3rem;
-  }
-
   .md\:text-4xl {
     font-size: 3rem;
   }
@@ -9653,87 +8929,15 @@ select:invalid {
   .md\:text-5xl {
     font-size: 3.75rem;
   }
-
-  .md\:text-5xl {
-    font-size: 3.75rem;
-  }
-
-  .md\:text-5xl {
-    font-size: 3.75rem;
-  }
-
-  .md\:text-5xl {
-    font-size: 3.75rem;
-  }
-
-  .md\:text-5xl {
-    font-size: 3.75rem;
-  }
-
-  .md\:text-5xl {
-    font-size: 3.75rem;
-  }
-
-  .md\:text-5xl {
-    font-size: 3.75rem;
-  }
 }
 
 @media (max-width: 992px) {
   .md\:text-6xl {
     font-size: 4.5rem;
   }
-
-  .md\:text-6xl {
-    font-size: 4.5rem;
-  }
-
-  .md\:text-6xl {
-    font-size: 4.5rem;
-  }
-
-  .md\:text-6xl {
-    font-size: 4.5rem;
-  }
-
-  .md\:text-6xl {
-    font-size: 4.5rem;
-  }
-
-  .md\:text-6xl {
-    font-size: 4.5rem;
-  }
-
-  .md\:text-6xl {
-    font-size: 4.5rem;
-  }
 }
 
 @media (max-width: 768px) {
-  .sm\:text-2xs {
-    font-size: .5rem;
-  }
-
-  .sm\:text-2xs {
-    font-size: .5rem;
-  }
-
-  .sm\:text-2xs {
-    font-size: .5rem;
-  }
-
-  .sm\:text-2xs {
-    font-size: .5rem;
-  }
-
-  .sm\:text-2xs {
-    font-size: .5rem;
-  }
-
-  .sm\:text-2xs {
-    font-size: .5rem;
-  }
-
   .sm\:text-2xs {
     font-size: .5rem;
   }
@@ -9743,57 +8947,9 @@ select:invalid {
   .sm\:text-xs {
     font-size: .75rem;
   }
-
-  .sm\:text-xs {
-    font-size: .75rem;
-  }
-
-  .sm\:text-xs {
-    font-size: .75rem;
-  }
-
-  .sm\:text-xs {
-    font-size: .75rem;
-  }
-
-  .sm\:text-xs {
-    font-size: .75rem;
-  }
-
-  .sm\:text-xs {
-    font-size: .75rem;
-  }
-
-  .sm\:text-xs {
-    font-size: .75rem;
-  }
 }
 
 @media (max-width: 768px) {
-  .sm\:text-sm {
-    font-size: .875rem;
-  }
-
-  .sm\:text-sm {
-    font-size: .875rem;
-  }
-
-  .sm\:text-sm {
-    font-size: .875rem;
-  }
-
-  .sm\:text-sm {
-    font-size: .875rem;
-  }
-
-  .sm\:text-sm {
-    font-size: .875rem;
-  }
-
-  .sm\:text-sm {
-    font-size: .875rem;
-  }
-
   .sm\:text-sm {
     font-size: .875rem;
   }
@@ -9803,57 +8959,9 @@ select:invalid {
   .sm\:text-md {
     font-size: 1rem;
   }
-
-  .sm\:text-md {
-    font-size: 1rem;
-  }
-
-  .sm\:text-md {
-    font-size: 1rem;
-  }
-
-  .sm\:text-md {
-    font-size: 1rem;
-  }
-
-  .sm\:text-md {
-    font-size: 1rem;
-  }
-
-  .sm\:text-md {
-    font-size: 1rem;
-  }
-
-  .sm\:text-md {
-    font-size: 1rem;
-  }
 }
 
 @media (max-width: 768px) {
-  .sm\:text-lg {
-    font-size: 1.125rem;
-  }
-
-  .sm\:text-lg {
-    font-size: 1.125rem;
-  }
-
-  .sm\:text-lg {
-    font-size: 1.125rem;
-  }
-
-  .sm\:text-lg {
-    font-size: 1.125rem;
-  }
-
-  .sm\:text-lg {
-    font-size: 1.125rem;
-  }
-
-  .sm\:text-lg {
-    font-size: 1.125rem;
-  }
-
   .sm\:text-lg {
     font-size: 1.125rem;
   }
@@ -9863,57 +8971,9 @@ select:invalid {
   .sm\:text-xl {
     font-size: 1.5rem;
   }
-
-  .sm\:text-xl {
-    font-size: 1.5rem;
-  }
-
-  .sm\:text-xl {
-    font-size: 1.5rem;
-  }
-
-  .sm\:text-xl {
-    font-size: 1.5rem;
-  }
-
-  .sm\:text-xl {
-    font-size: 1.5rem;
-  }
-
-  .sm\:text-xl {
-    font-size: 1.5rem;
-  }
-
-  .sm\:text-xl {
-    font-size: 1.5rem;
-  }
 }
 
 @media (max-width: 768px) {
-  .sm\:text-2xl {
-    font-size: 2rem;
-  }
-
-  .sm\:text-2xl {
-    font-size: 2rem;
-  }
-
-  .sm\:text-2xl {
-    font-size: 2rem;
-  }
-
-  .sm\:text-2xl {
-    font-size: 2rem;
-  }
-
-  .sm\:text-2xl {
-    font-size: 2rem;
-  }
-
-  .sm\:text-2xl {
-    font-size: 2rem;
-  }
-
   .sm\:text-2xl {
     font-size: 2rem;
   }
@@ -9923,57 +8983,9 @@ select:invalid {
   .sm\:text-3xl {
     font-size: 2.5rem;
   }
-
-  .sm\:text-3xl {
-    font-size: 2.5rem;
-  }
-
-  .sm\:text-3xl {
-    font-size: 2.5rem;
-  }
-
-  .sm\:text-3xl {
-    font-size: 2.5rem;
-  }
-
-  .sm\:text-3xl {
-    font-size: 2.5rem;
-  }
-
-  .sm\:text-3xl {
-    font-size: 2.5rem;
-  }
-
-  .sm\:text-3xl {
-    font-size: 2.5rem;
-  }
 }
 
 @media (max-width: 768px) {
-  .sm\:text-4xl {
-    font-size: 3rem;
-  }
-
-  .sm\:text-4xl {
-    font-size: 3rem;
-  }
-
-  .sm\:text-4xl {
-    font-size: 3rem;
-  }
-
-  .sm\:text-4xl {
-    font-size: 3rem;
-  }
-
-  .sm\:text-4xl {
-    font-size: 3rem;
-  }
-
-  .sm\:text-4xl {
-    font-size: 3rem;
-  }
-
   .sm\:text-4xl {
     font-size: 3rem;
   }
@@ -9983,87 +8995,15 @@ select:invalid {
   .sm\:text-5xl {
     font-size: 3.75rem;
   }
-
-  .sm\:text-5xl {
-    font-size: 3.75rem;
-  }
-
-  .sm\:text-5xl {
-    font-size: 3.75rem;
-  }
-
-  .sm\:text-5xl {
-    font-size: 3.75rem;
-  }
-
-  .sm\:text-5xl {
-    font-size: 3.75rem;
-  }
-
-  .sm\:text-5xl {
-    font-size: 3.75rem;
-  }
-
-  .sm\:text-5xl {
-    font-size: 3.75rem;
-  }
 }
 
 @media (max-width: 768px) {
   .sm\:text-6xl {
     font-size: 4.5rem;
   }
-
-  .sm\:text-6xl {
-    font-size: 4.5rem;
-  }
-
-  .sm\:text-6xl {
-    font-size: 4.5rem;
-  }
-
-  .sm\:text-6xl {
-    font-size: 4.5rem;
-  }
-
-  .sm\:text-6xl {
-    font-size: 4.5rem;
-  }
-
-  .sm\:text-6xl {
-    font-size: 4.5rem;
-  }
-
-  .sm\:text-6xl {
-    font-size: 4.5rem;
-  }
 }
 
 @media (max-width: 576px) {
-  .xs\:text-2xs {
-    font-size: .5rem;
-  }
-
-  .xs\:text-2xs {
-    font-size: .5rem;
-  }
-
-  .xs\:text-2xs {
-    font-size: .5rem;
-  }
-
-  .xs\:text-2xs {
-    font-size: .5rem;
-  }
-
-  .xs\:text-2xs {
-    font-size: .5rem;
-  }
-
-  .xs\:text-2xs {
-    font-size: .5rem;
-  }
-
   .xs\:text-2xs {
     font-size: .5rem;
   }
@@ -10073,57 +9013,9 @@ select:invalid {
   .xs\:text-xs {
     font-size: .75rem;
   }
-
-  .xs\:text-xs {
-    font-size: .75rem;
-  }
-
-  .xs\:text-xs {
-    font-size: .75rem;
-  }
-
-  .xs\:text-xs {
-    font-size: .75rem;
-  }
-
-  .xs\:text-xs {
-    font-size: .75rem;
-  }
-
-  .xs\:text-xs {
-    font-size: .75rem;
-  }
-
-  .xs\:text-xs {
-    font-size: .75rem;
-  }
 }
 
 @media (max-width: 576px) {
-  .xs\:text-sm {
-    font-size: .875rem;
-  }
-
-  .xs\:text-sm {
-    font-size: .875rem;
-  }
-
-  .xs\:text-sm {
-    font-size: .875rem;
-  }
-
-  .xs\:text-sm {
-    font-size: .875rem;
-  }
-
-  .xs\:text-sm {
-    font-size: .875rem;
-  }
-
-  .xs\:text-sm {
-    font-size: .875rem;
-  }
-
   .xs\:text-sm {
     font-size: .875rem;
   }
@@ -10133,57 +9025,9 @@ select:invalid {
   .xs\:text-md {
     font-size: 1rem;
   }
-
-  .xs\:text-md {
-    font-size: 1rem;
-  }
-
-  .xs\:text-md {
-    font-size: 1rem;
-  }
-
-  .xs\:text-md {
-    font-size: 1rem;
-  }
-
-  .xs\:text-md {
-    font-size: 1rem;
-  }
-
-  .xs\:text-md {
-    font-size: 1rem;
-  }
-
-  .xs\:text-md {
-    font-size: 1rem;
-  }
 }
 
 @media (max-width: 576px) {
-  .xs\:text-lg {
-    font-size: 1.125rem;
-  }
-
-  .xs\:text-lg {
-    font-size: 1.125rem;
-  }
-
-  .xs\:text-lg {
-    font-size: 1.125rem;
-  }
-
-  .xs\:text-lg {
-    font-size: 1.125rem;
-  }
-
-  .xs\:text-lg {
-    font-size: 1.125rem;
-  }
-
-  .xs\:text-lg {
-    font-size: 1.125rem;
-  }
-
   .xs\:text-lg {
     font-size: 1.125rem;
   }
@@ -10193,57 +9037,9 @@ select:invalid {
   .xs\:text-xl {
     font-size: 1.5rem;
   }
-
-  .xs\:text-xl {
-    font-size: 1.5rem;
-  }
-
-  .xs\:text-xl {
-    font-size: 1.5rem;
-  }
-
-  .xs\:text-xl {
-    font-size: 1.5rem;
-  }
-
-  .xs\:text-xl {
-    font-size: 1.5rem;
-  }
-
-  .xs\:text-xl {
-    font-size: 1.5rem;
-  }
-
-  .xs\:text-xl {
-    font-size: 1.5rem;
-  }
 }
 
 @media (max-width: 576px) {
-  .xs\:text-2xl {
-    font-size: 2rem;
-  }
-
-  .xs\:text-2xl {
-    font-size: 2rem;
-  }
-
-  .xs\:text-2xl {
-    font-size: 2rem;
-  }
-
-  .xs\:text-2xl {
-    font-size: 2rem;
-  }
-
-  .xs\:text-2xl {
-    font-size: 2rem;
-  }
-
-  .xs\:text-2xl {
-    font-size: 2rem;
-  }
-
   .xs\:text-2xl {
     font-size: 2rem;
   }
@@ -10253,57 +9049,9 @@ select:invalid {
   .xs\:text-3xl {
     font-size: 2.5rem;
   }
-
-  .xs\:text-3xl {
-    font-size: 2.5rem;
-  }
-
-  .xs\:text-3xl {
-    font-size: 2.5rem;
-  }
-
-  .xs\:text-3xl {
-    font-size: 2.5rem;
-  }
-
-  .xs\:text-3xl {
-    font-size: 2.5rem;
-  }
-
-  .xs\:text-3xl {
-    font-size: 2.5rem;
-  }
-
-  .xs\:text-3xl {
-    font-size: 2.5rem;
-  }
 }
 
 @media (max-width: 576px) {
-  .xs\:text-4xl {
-    font-size: 3rem;
-  }
-
-  .xs\:text-4xl {
-    font-size: 3rem;
-  }
-
-  .xs\:text-4xl {
-    font-size: 3rem;
-  }
-
-  .xs\:text-4xl {
-    font-size: 3rem;
-  }
-
-  .xs\:text-4xl {
-    font-size: 3rem;
-  }
-
-  .xs\:text-4xl {
-    font-size: 3rem;
-  }
-
   .xs\:text-4xl {
     font-size: 3rem;
   }
@@ -10313,57 +9061,9 @@ select:invalid {
   .xs\:text-5xl {
     font-size: 3.75rem;
   }
-
-  .xs\:text-5xl {
-    font-size: 3.75rem;
-  }
-
-  .xs\:text-5xl {
-    font-size: 3.75rem;
-  }
-
-  .xs\:text-5xl {
-    font-size: 3.75rem;
-  }
-
-  .xs\:text-5xl {
-    font-size: 3.75rem;
-  }
-
-  .xs\:text-5xl {
-    font-size: 3.75rem;
-  }
-
-  .xs\:text-5xl {
-    font-size: 3.75rem;
-  }
 }
 
 @media (max-width: 576px) {
-  .xs\:text-6xl {
-    font-size: 4.5rem;
-  }
-
-  .xs\:text-6xl {
-    font-size: 4.5rem;
-  }
-
-  .xs\:text-6xl {
-    font-size: 4.5rem;
-  }
-
-  .xs\:text-6xl {
-    font-size: 4.5rem;
-  }
-
-  .xs\:text-6xl {
-    font-size: 4.5rem;
-  }
-
-  .xs\:text-6xl {
-    font-size: 4.5rem;
-  }
-
   .xs\:text-6xl {
     font-size: 4.5rem;
   }

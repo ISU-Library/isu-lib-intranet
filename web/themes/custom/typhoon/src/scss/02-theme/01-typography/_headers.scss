@@ -42,7 +42,7 @@ h1,
   }
 }
 
-h1 + h2 {
+h1+h2 {
   margin-bottom: $space-3xl;
 }
 
@@ -54,7 +54,12 @@ h2,
   line-height: $h2-lh;
   margin: 0;
   margin-bottom: $space-md;
+
+  @include bp(xl) {
+    font-size: $fs-4xl;
+  }
 }
+
 h3,
 .h3 {
   font-family: $heading-font;
@@ -64,6 +69,7 @@ h3,
   margin: 0;
   margin-bottom: $space-md;
 }
+
 h4,
 .h4 {
   font-family: $heading-font;
@@ -73,6 +79,7 @@ h4,
   margin: 0em;
   margin-bottom: $space-xs;
 }
+
 h5,
 .h5 {
   font-family: $heading-font;
@@ -82,6 +89,7 @@ h5,
   margin: 0em;
   margin-bottom: $space-xs;
 }
+
 h6,
 .h6 {
   font-family: $heading-font;

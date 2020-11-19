@@ -96,6 +96,10 @@ $news-card-lead-height: rem(300);
 
     p {
       @include line-clamp(5);
+
+      @include bp(xl) {
+        @include line-clamp(7);
+      }
     }
   }
 
@@ -116,7 +120,7 @@ $news-card-lead-height: rem(300);
 
   .news-card--content {
     display: grid;
-    gap: $space-sm;
+    gap: $space-lg;
     grid-template-columns: repeat(auto-fit, minmax(rem(198px), 1fr));
     color: $text-color;
     text-decoration: none;

@@ -22,7 +22,7 @@ settings:
   follow: false
   follow_parent: child
   level: 1
-  depth: 1
+  depth: 2
   expand: false
   parent: 'footer:'
   suggestion: footer
