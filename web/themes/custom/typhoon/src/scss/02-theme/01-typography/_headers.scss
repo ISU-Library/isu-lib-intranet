@@ -68,6 +68,10 @@ h3,
   line-height: $h3-lh;
   margin: 0;
   margin-bottom: $space-md;
+
+  @include bp(sm) {
+    font-size: $fs-lg;
+  }
 }
 
 h4,

@@ -20,7 +20,7 @@ $headline-special-fs: $space-3xl;
   @include angledSlashes($headline-special-fs);
   display: inline-block;
   position: relative;
-  margin: 0 auto;
+  margin: 0 auto $space-xs;
   text-shadow: $vert-dark-1;
 
   &::before,
@@ -67,6 +67,6 @@ $headline-special-fs: $space-3xl;
   }
 
   @include bp(sm) {
-    font-size: $fs-md;
+    // font-size: $fs-md;
   }
 }
