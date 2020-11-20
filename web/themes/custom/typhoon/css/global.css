@@ -2518,6 +2518,7 @@ select:invalid {
   transition: -webkit-box-shadow .5s ease;
   transition: box-shadow .5s ease;
   transition: box-shadow .5s ease, -webkit-box-shadow .5s ease;
+  z-index: 2;
 }
 
 .news-card--lead .news-card--link::after {

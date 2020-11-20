@@ -48,6 +48,7 @@ $news-card-lead-height: rem(300);
     overflow: hidden;
     box-shadow: $vert-dark-2;
     transition: box-shadow 0.5s ease;
+    z-index: 2;
 
     &::after {
       height: 0;

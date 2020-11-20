@@ -45,7 +45,7 @@
 #}
 
 
-{% set test_image = 'themes/custom/typhoon/images/Above as Below_1.jpg' %}
+{% set test_image = '/themes/custom/typhoon/images/Above as Below_1.jpg' %}
 
 <div class="layout-container front-page">
   <header role="banner" class="header">
@@ -93,9 +93,9 @@
                 {# {{ cardTitle }} #}
               </span>
               {% if custom_test_link_1 %}
-                <a href="/{{custom_test_link_1}}" class="news-card--link br4" style="background-image: url('{{test_image}}'); z -index: 2; ">
+                <a href="/{{custom_test_link_1}}" class="news-card--link br4" style="background-image: url('{{test_image}}');">
                 {% else %}
-                  <a href="/ {# {{cardLink}} #}" class="news-card--link br4" style="background-image: url('{{test_image}}'); z -index: 2;  ">
+                  <a href="/ {# {{cardLink}} #}" class="news-card--link br4" style="background-image: url('{{test_image}}'); ">
                   {% endif %}
                   <div
                     class="news-card--text-wrap pr-xl xs:pr-md pl-lg xs:pl-md pt-2xl xs:pt-lg pb-lg xs:pb-sm text-white">
