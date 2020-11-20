@@ -2970,6 +2970,10 @@ select:invalid {
   margin: auto;
 }
 
+.main-nav--wrap .main-nav nav {
+  z-index: 10;
+}
+
 .main-nav--wrap .main-nav .logo-wrap {
   grid-column: 1/-1;
   margin-top: 1.5rem;

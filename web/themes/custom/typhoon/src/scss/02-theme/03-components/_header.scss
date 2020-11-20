@@ -147,6 +147,10 @@ $header-content-max-width: 1400px;
     max-width: $header-content-max-width;
     margin: auto;
 
+    nav {
+      z-index: 10;
+    }
+
     .logo-wrap {
       grid-column: 1 / -1;
       margin-top: $space-lg;
