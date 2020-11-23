@@ -43,6 +43,7 @@
   set classes = [
   'basic-card', 
   'basic-card--image',
+  'bg-white',
   paragraph.field_basic_card_image_color.value,
   'paragraph',
   'paragraph--type--' ~ paragraph.bundle|clean_class,
@@ -68,7 +69,7 @@
             <img src="{{ cardImgSrc }}" alt="alt"/>
             <div class="image-overlay"></div>
           </figure>
-          <div class="basic-card--text-wrap">
+          <div class="basic-card--text-wrap pb-xs">
             {% if cardCategory %}
               <span class="basic-card--category mb-xs">
                 {{ cardCategory }}
@@ -82,7 +83,7 @@
         <span class="aria-text">
           {{ cardTitle }}
         </span>
-        <div class="basic-card--text-wrap">
+        <div class="basic-card--text-wrap pt-md pr-lg pb-2xl pl-xl xs:pt-md xs:pr-sm xs:pb-lg xs:pl-md">
           <p class="basic-card--desc">
             {{ cardText}}
           </p>

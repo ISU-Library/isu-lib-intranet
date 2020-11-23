@@ -26,7 +26,7 @@ $header-content-max-width: 1400px;
     z-index: 1;
 
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       top: 0.7rem;
       left: 0.8rem;
@@ -37,7 +37,7 @@ $header-content-max-width: 1400px;
     }
 
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       top: 1.2rem;
       left: 1.4rem;
@@ -68,7 +68,7 @@ $header-content-max-width: 1400px;
     &:not(:last-of-type) {
       a::after {
         @include vert_center;
-        content: "";
+        content: '';
         left: unset;
         right: 0;
         width: 1px;
@@ -236,7 +236,7 @@ $header-content-max-width: 1400px;
     }
 
     &:hover {
-      +.main-nav--item {
+      + .main-nav--item {
         background-color: $red-500;
         color: $white;
       }
@@ -253,8 +253,8 @@ $header-content-max-width: 1400px;
 
         &::after {
           @include vert_center;
-          content: "\f054";
-          font-family: "Fontawesome";
+          content: '\f054';
+          font-family: 'Fontawesome';
           background-color: transparent;
           // top: $space-2xs;
           left: -1rem;
