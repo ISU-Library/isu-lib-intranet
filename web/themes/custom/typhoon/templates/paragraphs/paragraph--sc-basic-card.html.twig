@@ -38,12 +38,13 @@
  * @ingroup themeable
  */
 #}
+
+{# ! imports the basic card partial #}
+
+{% import "@typhoon/components/_basic-card.html.twig" as card %}
+
 {%
   set classes = [
-    paragraph.field_basic_card_color.value,
-    'bg-white',
-    'flex',
-    'flex-column',
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
@@ -51,6 +52,7 @@
   ]
 %}
 
+{% set cardColor =   paragraph.field_basic_card_color.value %}
 {% set cardTitle = content.field_basic_card_title|field_value %}
 {% set cardCategory = content.field_basic_card_category.0['#title'] %}
 {% set cardIcon = content.field_basic_card_icon|field_value %}
@@ -60,34 +62,18 @@
 
 {% block paragraph %}
   {% block content %}
-    <a role="Link" href="{{ cardLink }}" class="basic-card--link">
-      <div {{attributes.addClass(classes)}}>
-        <span class="aria-text border">
-          {{ cardTitle }}
-        </span>
-        <div class="basic-card--text-wrap pt-xl pr-lg pb-2xl pl-xl xs:pt-md xs:pr-sm xs:pb-lg xs:pl-md">
-          {% if cardCategory %}
-            <span class="basic-card--category text-sm mb-xs">
-              {{ cardCategory }}
-            </span>
-          {% endif %}
-          {% if cardIcon %}
-            <span class="basic-card--category icon-{{ cardIcon }} mb-xs text-2xl"></span>
-          {% endif %}
-          <h3 class="basic-card--title">
-            {{ cardTitle }}
-          </h3>
-          <p class="basic-card--desc">
-            {{ cardText}}
-          </p>
-          <div class="cta--wrap">
-            <div class="cta">
-              {{ cardLinkText }}
-            </div>
-          </div>
-        </div>
-      </div>
-    </a>
+
+    <div {{attributes.addClass(classes)}}>
+      {{ card.basic({
+        color: cardColor,
+        link: cardLink,
+        title: cardTitle,
+        category: cardCategory,
+        icon: cardIcon,
+        text: cardText,
+        linkText: cardLinkText,
+    }) }}
+    </div>
 
   {% endblock %}
 {% endblock paragraph %}
