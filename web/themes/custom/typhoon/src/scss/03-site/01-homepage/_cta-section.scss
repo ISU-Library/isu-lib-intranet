@@ -7,18 +7,17 @@
   background-attachment: fixed;
 }
 
-.cta-image-overlay {
-  width: 100%;
-  height: 100%;
-  top: 0;
-  background-image: url('/themes/custom/typhoon/images/cta-image-overlay.png');
-  left: 0;
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-}
+// .cta-image-overlay {
+//   width: 100%;
+//   height: 100%;
+//   top: 0;
+//   background-image: url('/themes/custom/typhoon/images/cta-image-overlay.png');
+//   left: 0;
+//   position: relative;
+//   background-size: cover;
+//   background-position: center;
+//   background-repeat: no-repeat;
+// }
 
 .cta-content {
   display: flex;
@@ -36,7 +35,7 @@
   max-width: rem(520px);
 
   @include bp(xl) {
-    max-width: rem(650px)
+    max-width: rem(650px);
   }
 
   @include bp(md) {
@@ -49,8 +48,8 @@
   margin-bottom: -$space-4xl;
 
   @include bp(md) {
-    // display: grid; 
-    // grid-template-columns: repeat(auto-fill, minmax(rem(500), 1fr)); 
+    // display: grid;
+    // grid-template-columns: repeat(auto-fill, minmax(rem(500), 1fr));
     // gap: $space-4xl;
     justify-content: space-around;
     flex-wrap: wrap;
