@@ -2,6 +2,7 @@ global:
   version: 0.1
   css:
     theme:
+      css/tailwind.css: {}
       css/global.css: {}
   js:
     js/global.js: {}
