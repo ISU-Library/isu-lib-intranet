@@ -49,15 +49,6 @@
 
 {% import "@typhoon/components" as newsCard %}
 
-{# {% set cardCatergory = content.field_news_card_basic_category.0['#title'] %}
-{% set cardTitle = content.field_news_card_basic_title|field_value %}
-{% set cardText = content.field_news_card_basic_text|field_value %}
-{% set cardLinkText = content.field_news_card_basic_link.0['#title'] %}
-{% set cardLink = content.field_news_card_basic_link.0['#url'] %}
-{% set cardImgSrc = file_url(paragraph.field_news_card_basic_image.entity.uri.value) %}
-{% set cardImgAlt = content.field_news_card_basic_image.alt %} #}
-
-
 {% block paragraph %}
   {% block content %}
     <div {{attributes.addClass(classes)}}>
@@ -72,44 +63,5 @@
       }) }}
     </div>
 
-    {# <span class="aria-text">
-                              Link to
-                              {{ cardTitle }}
-                            </span> #}
-    {# <div class="news-card--content">
-            <div class="news-card--image-wrap mr-sm xs:mb-md">
-              <a href="{{cardLink}}">
-                <figure class="br4">
-                  <img src="{{ cardImgSrc }}" alt="{{cardImgAlt}}"/>
-                </figure>
-              </a>
-            </div>
-            <div class="news-card--text">
-              {% if cardCategory %}
-                <span class="news-card--category">
-                  {{ cardCatergory }}
-                </span>
-              {% endif %}
-              <h3 title="{{cardTitle}}" class="news-card--title mt-2xs mb-md text-lg">
-                <a href="{{cardLink}}">
-                  {{ cardTitle }}
-                </a>
-              </h3>
-              <div class="news-card--desc">
-                <p class="news-card--info text-sm">
-                  {{ cardText}}
-                </p>
-                <div class="cta--wrap">
-                  <a href="{{cardLink}}" class="cta">
-                    Read More
-                    <span class="aria-text">
-                      About
-                      {{cardTitle}}
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div> #}
   {% endblock %}
 {% endblock paragraph %}
