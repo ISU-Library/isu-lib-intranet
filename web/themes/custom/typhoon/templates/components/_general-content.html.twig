@@ -1,0 +1,58 @@
+{% macro text(data) %}
+  {# * When importanted, setting template to false wraps content with a <p>  #}
+  {#* <p> plus drupal data is provided with {{ content }}. #}
+
+  {% set defaultData = {
+    lead: '',
+    text: '',
+    template: TRUE,
+  } %}
+
+  {% set data = data ? defaultData|merge(data) : defaultData %}
+
+    {% if data.lead %}
+      <div class="gen-con--block text-block {{data.lead}}">
+    {% else %}
+      <div class="gen-con--block text-block">
+      {% endif %}
+      {% if data.template %}
+        {{ data.text }}
+      {% else %}
+        <p>
+          {{ data.text }}
+        </p>
+      {% endif %}
+    </div>
+  {% endmacro %}
+
+  {% macro textImg(data) %}
+
+  {% endmacro %}
+
+  {% macro accordian(data) %}
+
+  {% endmacro %}
+
+  {% macro linkAbstract(data) %}
+
+  {% endmacro %}
+
+  {% macro linkList(data) %}
+
+  {% endmacro %}
+
+  {% macro largeImg(data) %}
+
+  {% endmacro %}
+
+  {% macro twoImg(data) %}
+
+  {% endmacro %}
+
+  {% macro threeImg(data) %}
+
+  {% endmacro %}
+
+  {% macro quote(data) %}
+
+  {% endmacro %}

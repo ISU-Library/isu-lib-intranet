@@ -38,22 +38,24 @@
  * @ingroup themeable
  */
 #}
+{% import "@typhoon/components/_general-content.html.twig" as gcBlock %}
 {%
   set classes = [
-    'gen-con--block',
-    'text-block',
-    paragraph.field_gc_text_lead.value ? 'lead-block' : '',
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     not paragraph.isPublished() ? 'paragraph--unpublished',
   ]
 %}
+
 {% block paragraph %}
 
   <div{{attributes.addClass(classes)}}>
-    {% block content %}
-      {{ content|without('field_gc_text_lead') }}
-    {% endblock %}
+
+    {{ gcBlock.text({
+      lead: paragraph.field_gc_text_lead.value ? 'lead-block' : '',
+      text: content|without('field_gc_text_lead'),
+    })}}
+
   </div>
 {% endblock paragraph %}
