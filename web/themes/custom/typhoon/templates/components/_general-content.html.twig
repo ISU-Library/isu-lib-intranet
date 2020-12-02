@@ -1,19 +1,19 @@
 {% macro text(data) %}
-  {# * When importanted, setting template to false wraps content with a <p>  #}
-  {#* <p> plus drupal data is provided with {{ content }}. #}
+  {# * When importanted, setting template to false wraps content with a <d>  #}
+  {#* <d> plus drupal data is provided with {{ content }}. #}
 
   {% set defaultData = {
+    template: TRUE,
     lead: '',
     text: '',
-    template: TRUE,
   } %}
 
   {% set data = data ? defaultData|merge(data) : defaultData %}
 
     {% if data.lead %}
-      <div class="gen-con--block text-block {{data.lead}}">
+      <div class="gen-con--block text-block {{data.lead}} mb-lg">
     {% else %}
-      <div class="gen-con--block text-block">
+      <div class="gen-con--block text-block mb-lg">
       {% endif %}
       {% if data.template %}
         {{ data.text }}
@@ -27,32 +27,89 @@
 
   {% macro textImg(data) %}
 
+    {% set defaultData = {
+    template: TRUE,
+    imgSide: '',
+    imgSize: '',
+    imgSrc: '',
+    imgAlt: '',
+    text: '',
+  } %}
+
+    {% set data = data ? defaultData|merge(data) : defaultData %}
+
+    <div class="gen-con--block img-block {{data.imgSide}} mb-lg">
+      <div class="gen-con--img-wrap {{data.imgSize}}">
+        <figure>
+          <img src="{{ data.imgSrc }}" alt="{{ data.imgAlt }}"/>
+          <figcaption>
+            {{ data.imgAlt }}
+          </figcaption>
+        </figure>
+      </div>
+      {% if data.template %}
+        {{ data.text }}
+      {% else %}
+        <p>
+          {{ data.text }}
+        </p>
+      {% endif %}
+    </div>
+
   {% endmacro %}
 
   {% macro accordian(data) %}
+    {% set defaultData = {
+      template: TRUE,
+      id:'',
+      title:'',
+      text:'',
+
+    } %}
+
+    {% set data = data ? defaultData|merge(data) : defaultData %}
+
+    <div class="show--item js-open">
+      <button class="show--title" data-box-toggle="{{data.id}}" role="tab" aria-selected="false">
+        <h4>
+          {{data.title}}
+        </h4>
+        <span class="icon"></span>
+      </button>
+
+      <div class="show--content" role="tabpanel" aria-expanded="false" data-box="{{data.id}}">
+        {% if data.template %}
+          {{data.text}}
+        {% else %}
+          <p>
+            {{data.text}}
+          </p>
+        {% endif %}
+      </div>
+    </div>
 
   {% endmacro %}
 
   {% macro linkAbstract(data) %}
-
+    {% set data = data ? defaultData|merge(data) : defaultData %}
   {% endmacro %}
 
   {% macro linkList(data) %}
-
+    {% set data = data ? defaultData|merge(data) : defaultData %}
   {% endmacro %}
 
   {% macro largeImg(data) %}
-
+    {% set data = data ? defaultData|merge(data) : defaultData %}
   {% endmacro %}
 
   {% macro twoImg(data) %}
-
+    {% set data = data ? defaultData|merge(data) : defaultData %}
   {% endmacro %}
 
   {% macro threeImg(data) %}
-
+    {% set data = data ? defaultData|merge(data) : defaultData %}
   {% endmacro %}
 
   {% macro quote(data) %}
-
+    {% set data = data ? defaultData|merge(data) : defaultData %}
   {% endmacro %}

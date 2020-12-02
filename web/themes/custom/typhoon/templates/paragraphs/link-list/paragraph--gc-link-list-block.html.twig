@@ -38,37 +38,23 @@
  * @ingroup themeable
  */
 #}
-
-{# * imports the basic card partial macro #}
-{% import "@typhoon/components/_basic-cards.html.twig" as card %}
-
-
-{# * Classes set by drupal #}
 {%
   set classes = [
+    'gen-con--block',
+    'text-block',
+    'block--link-list',
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-    not paragraph.isPublished() ? 'paragraph--unpublished'
+    not paragraph.isPublished() ? 'paragraph--unpublished',
   ]
 %}
-
-{# * Setting all values for the Card macro #}
-
 {% block paragraph %}
-  {% block content %}
 
-    <div {{attributes.addClass(classes)}}>
-      {{ card.basic({
-        color: paragraph.field_basic_card_color.value,
-        link: cardLink,
-        title: content.field_basic_card_title|field_value,
-        category: content.field_basic_card_category.0['#title'],
-        icon: content.field_basic_card_icon|field_value,
-        text: content.field_basic_card_text|field_value,
-        linkText: content.field_basic_card_link.0['#title'],
-     }) }}
-    </div>
-
-  {% endblock %}
+  <div{{attributes.addClass(classes)}}>
+    {% block content %}
+      {{ content.field_link_list_text }}
+      {{ content.field_link_list_links }}
+    {% endblock %}
+  </div>
 {% endblock paragraph %}

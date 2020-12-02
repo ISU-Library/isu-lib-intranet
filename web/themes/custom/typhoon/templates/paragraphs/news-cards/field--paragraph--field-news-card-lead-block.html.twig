@@ -38,22 +38,18 @@
  * @ingroup themeable
  */
 #}
+
 {%
   set classes = [
-    'gen-con--block',
-    'text-block',
-    'block--link-list',
-    'paragraph',
-    'paragraph--type--' ~ paragraph.bundle|clean_class,
-    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-    not paragraph.isPublished() ? 'paragraph--unpublished',
+    'news-card--wrap',
+    'mb-3xl',
   ]
 %}
-{% block paragraph %}
 
-  <div{{attributes.addClass(classes)}}>
-    {% block content %}
-      {{ content }}
-    {% endblock %}
-  </div>
-{% endblock paragraph %}
+<div {{attributes.addclass(classes) }}>
+  {% block paragraph %}
+    {% for item in items %}
+      {{item.content}}
+    {% endfor %}
+  {% endblock paragraph %}
+</div>

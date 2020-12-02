@@ -39,6 +39,7 @@
  */
 #}
 {% import "@typhoon/components/_general-content.html.twig" as gcBlock %}
+
 {%
   set classes = [
     'paragraph',
@@ -49,13 +50,12 @@
 %}
 
 {% block paragraph %}
-
-  <div{{attributes.addClass(classes)}}>
-
-    {{ gcBlock.text({
-      lead: paragraph.field_gc_text_lead.value ? 'lead-block' : '',
-      text: content|without('field_gc_text_lead'),
-    })}}
-
-  </div>
+  {% block content %}
+    <div{{attributes.addClass(classes)}}>
+      {{ gcBlock.text({
+        lead: paragraph.field_gc_text_lead.value ? 'lead-block' : '',
+        text: content|without('field_gc_text_lead'),
+       })}}
+    </div>
+  {% endblock %}
 {% endblock paragraph %}

@@ -38,11 +38,11 @@
  * @ingroup themeable
  */
 #}
+
+{% import "@typhoon/components/_general-content.html.twig" as gcBlock %}
+
 {%
   set classes = [
-    'gen-con--block',
-    'img-block',
-    paragraph.field_gc_text_img_side.value,
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
@@ -50,24 +50,16 @@
   ]
 %}
 
-{% set imgSize = paragraph.field_gc_text_img_size.value %}
-
-{% set imgSrc = file_url(paragraph.field_gc_text_img_img.entity.uri.value) %}
-{% set imgAlt = paragraph.field_gc_text_img_img.alt %}
-
-{% block paragraph %}
-
-  <div{{attributes.addClass(classes)}}>
+<div{{attributes.addClass(classes)}}>
+  {% block paragraph %}
     {% block content %}
-      <div class="gen-con--img-wrap {{imgSize}}">
-        <figure>
-          <img src="{{ imgSrc }}" alt="{{ imgAlt }}"/>
-          <figcaption>
-            {{ imgAlt }}
-          </figcaption>
-        </figure>
-      </div>
-      {{ content.field_gc_text_img_text }}
+      {{ gcBlock.textImg({
+        imgSide: paragraph.field_gc_text_img_side.value,
+        imgSize: paragraph.field_gc_text_img_size.value,
+        imgSrc: file_url(paragraph.field_gc_text_img_img.entity.uri.value),
+        imgAlt: paragraph.field_gc_text_img_img.alt,
+        text: content.field_gc_text_img_text,
+      }) }}
     {% endblock %}
-  </div>
-{% endblock paragraph %}
+  {% endblock paragraph %}
+</div>

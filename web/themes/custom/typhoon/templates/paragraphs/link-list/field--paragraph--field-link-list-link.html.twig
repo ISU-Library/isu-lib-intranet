@@ -36,30 +36,9 @@
  * @see template_preprocess_field()
  */
 #}
-{%
-  set title_classes = [
-    label_display == 'visually_hidden' ? 'visually-hidden',
-  ]
-%}
 
-{% set list_class = 'link-list' %}
-{% set link_class = 'link-list--item' %}
-
-
-{% if multiple %}
-  <ul{{attributes.addClass(list_class)}}>
-    {% for item in items %}
-      <li {{item.attributes.addClass(link_class) }}>
-        {{ item.content }}
-      </li>
-    {% endfor %}
-  </ul>
-{% else %}
-  <ul{{attributes.addClass(list_class)}}>
-    {% for item in items %}
-      <li class="{{link_class}}">
-        {{ item.content }}
-      </li>
-    {% endfor %}
-  </ul>
-{% endif %}
+{% for item in items %}
+  <li {{item.attributes.addClass('link-list--item') }}>
+    {{ item.content }}
+  </li>
+{% endfor %}
