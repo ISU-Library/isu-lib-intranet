@@ -23783,6 +23783,11 @@ video {
   margin-bottom: 1rem
 }
 
+/* 
+.lead-block p:first-of-type {
+  @apply text-lg
+} */
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

@@ -5,3 +5,8 @@
 .paragraph p {
   @apply my-md
 }
+
+/* 
+.lead-block p:first-of-type {
+  @apply text-lg
+} */
