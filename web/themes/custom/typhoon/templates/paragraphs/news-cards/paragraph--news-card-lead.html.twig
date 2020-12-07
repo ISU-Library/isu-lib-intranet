@@ -52,7 +52,6 @@
 
 {% block paragraph %}
   {% block content %}
-
     <div {{attributes.addClass(classes)}}>
       {{newsCard.lead({
             imgSrc: file_url(paragraph.field_news_card_lead_image.entity.uri.value),

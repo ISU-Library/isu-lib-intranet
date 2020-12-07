@@ -1,3 +1,5 @@
+{# !! Template default is true. This is for drupal templating Set to false if outside paragraph template #}
+
 {% macro text(data) %}
   {# * When importanted, setting template to false wraps content with a <d>  #}
   {#* <d> plus drupal data is provided with {{ content }}. #}
@@ -11,16 +13,22 @@
   {% set data = data ? defaultData|merge(data) : defaultData %}
 
     {% if data.lead %}
-      <div class="gen-con--block text-block {{data.lead}} mb-lg">
-    {% else %}
-      <div class="gen-con--block text-block mb-lg">
-      {% endif %}
-      {% if data.template %}
+      <div class="gen-con--block text-block {{data.lead}} mb-lg"> {% if data.template %}
         {{ data.text }}
       {% else %}
         <p>
           {{ data.text }}
         </p>
+      {% endif %}
+    {% else %}
+      <div class="gen-con--block text-block mb-lg">
+        {% if data.template %}
+          {{ data.text }}
+        {% else %}
+          <p>
+            {{ data.text }}
+          </p>
+        {% endif %}
       {% endif %}
     </div>
   {% endmacro %}
@@ -90,26 +98,215 @@
 
   {% endmacro %}
 
-  {% macro linkAbstract(data) %}
+  {% macro linkListAbstract(data) %}
+    {% set defaultData = {
+      template: TRUE,
+      text:'',
+      links: '',
+    } %}
     {% set data = data ? defaultData|merge(data) : defaultData %}
+
+    <div class="gen-con--block text-block block--link-abstract">
+      {% if data.template %}
+        {{data.text}}
+      {% else %}
+        <p>
+          {{data.text}}
+        </p>
+      {% endif %}
+      <ul class="link-list--abstract">
+        {% if data.template %}
+          {# * the code below reaches down into the paragraph link_abstract_list, set by data.links #}
+          {# * then it loops through all fields in the paragraph, yes there are a lot of arrays #}
+          {# * and only redners an element if it has a url and title #}
+            {% for linkAbstractPara in data.links %}
+              {% for paragraph_field in linkAbstractPara %}
+                {% for abstract_link_value in paragraph_field %}
+                  {% if abstract_link_value.title and abstract_link_value.0.url %}
+                    <li class="abstract-item"> <a href="{{abstract_link_value.0.url}}">
+                      {{abstract_link_value.title}}
+                    </a>
+                    {{ paragraph_field.field_link_abstract_text.value|raw }}
+                  </li>
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+          {% endfor %}
+        {% else %}
+          {% for linkList in data.links %}
+            <li class="abstract-item">
+              <a href="{{ linkList.url }}">
+                {{ linkList.text }}
+              </a>
+              <p>
+                {{ linkList.abstract }}
+              </p>
+            </li>
+          {% endfor %}
+        {% endif %}
+      </ul>
+    </div>
+
   {% endmacro %}
 
   {% macro linkList(data) %}
+    {% set defaultData = {
+      template: TRUE,
+      text:'',
+      links: '',
+    } %}
+
     {% set data = data ? defaultData|merge(data) : defaultData %}
+
+    <div class="gen-con--block text-block block--link-list">
+      {% if data.template %}
+        {{data.text}}
+      {% else %}
+        <p>
+          {{data.text}}
+        </p>
+      {% endif %}
+      <ul class="link-list">
+        {% if data.template %}
+          {# * the code below reaches down into the paragraph link_list_link, set by data,links #}
+          {# * then it loops through all fields in the paragraph #}
+          {# * and only redners an element if it has a url and title #}
+            {% for linkListPara in data.links %}
+              {% for paragraph_field in linkListPara %}
+                {% if paragraph_field.url and paragraph_field.title %}
+                  <li class="link-list--item"> <a href="{{ paragraph_field.url }}">
+                    {{ paragraph_field.title }}
+                  </a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
+        {% else %}
+          {% for linkList in data.links %}
+            <li class="link-list--item">
+              {{ linkList }}
+            </li>
+          {% endfor %}
+        {% endif %}
+      </ul>
+    </div>
   {% endmacro %}
 
   {% macro largeImg(data) %}
+
+    {% set defaultData = {
+      template: TRUE,
+      imgSrc: '',
+      imgAlt: ''
+      } %}
     {% set data = data ? defaultData|merge(data) : defaultData %}
+
+    <div class="gen-con--block img-block block--lg-img">
+      <div class="gen-con--img-wrap">
+        <figure class="overflow-hidden">
+          <img src="{{ data.imgSrc }}" alt="{{ data.imgAlt }}"/>
+          <figcaption>
+            {{ data.imgAlt }}
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+
   {% endmacro %}
 
   {% macro twoImg(data) %}
+
+    {% set defaultData = {
+      template: TRUE,
+      leftImgSrc: '',
+      leftImgAlt: '',
+      rightImgSrc: '',
+      rightImgAlt: '',
+      } %}
+
     {% set data = data ? defaultData|merge(data) : defaultData %}
+
+    <div class="gen-con--block img-block block--two-img">
+      <div class="gen-con--img-wrap">
+        <figure>
+          <img src="{{ data.leftImgSrc }}" alt="{{ data.leftImgAlt }}"/>
+          <figcaption>
+            {{ data.leftImgAlt }}
+          </figcaption>
+        </figure>
+      </div>
+      <div class="gen-con--img-wrap">
+        <figure>
+          <img src="{{ data.rightImgSrc }}" alt="{{ data.rightImgAlt }}"/>
+          <figcaption>
+            {{ data.rightImgAlt }}
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+
   {% endmacro %}
 
   {% macro threeImg(data) %}
+
+    {% set defaultData = {
+      template: TRUE,
+      leftImgSrc: '',
+      leftImgAlt: '',
+      centerImgSrc: '',
+      centerImgAlt: '',
+      rightImgSrc: '',
+      rightImgAlt: '',
+      } %}
     {% set data = data ? defaultData|merge(data) : defaultData %}
+
+    <div class="gen-con--block img-block block--three-img">
+      <div class="gen-con--img-wrap">
+        <figure>
+          <img src="{{ data.leftImgSrc }}" alt="{{ data.leftImgAlt }}"/>
+          <figcaption>
+            {{ data.leftImgAlt }}
+          </figcaption>
+        </figure>
+      </div>
+      <div class="gen-con--img-wrap">
+        <figure>
+          <img src="{{ data.centerImgSrc }}" alt="{{ data.centerImgAlt }}"/>
+          <figcaption>
+            {{ data.centerImgAlt }}
+          </figcaption>
+        </figure>
+      </div>
+      <div class="gen-con--img-wrap">
+        <figure>
+          <img src="{{ data.rightImgSrc }}" alt="{{ data.rightImgAlt }}"/>
+          <figcaption>
+            {{ data.rightImgAlt }}
+          </figcaption>
+        </figure>
+      </div>
+    </div>
   {% endmacro %}
 
   {% macro quote(data) %}
+
+    {% set defaultData = {
+    quoteType: '',
+    quoteText:'',
+    quoteCite:'',
+  } %}
+
     {% set data = data ? defaultData|merge(data) : defaultData %}
+
+    <div class="gen-con--block quote-block {{data.quoteType}}">
+      <div class="quote--marks">
+        <i class="fas fa-quote-left" aria-hidden="true"></i>
+      </div>
+      <blockquote class="quote">
+        {{ data.quoteText }}
+        <cite>
+          {{ data.quoteCite }}
+        </cite>
+      </blockquote>
+    </div>
   {% endmacro %}
