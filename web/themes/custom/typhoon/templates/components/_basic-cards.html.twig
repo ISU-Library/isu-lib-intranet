@@ -13,11 +13,11 @@
   {% set data = data ? defaultData|merge(data) : defaultData %}
 
   <a role="Link" href="{{ data.link }}" class="basic-card--link">
-    <div class="bg-white flex flex-column basic-card {{data.color}}">
+    <div class="bg-white flex flex-col basic-card {{data.color}}">
       <span class="aria-text border">
         {{ data.title }}
       </span>
-      <div class="basic-card--text-wrap h-full flex flex-column pt-xl pr-lg pb-2xl pl-xl xs:pt-md xs:pr-sm xs:pb-lg xs:pl-md">
+      <div class="basic-card--text-wrap h-full flex flex-col pt-xl pr-lg pb-2xl pl-xl xs:pt-md xs:pr-sm xs:pb-lg xs:pl-md">
         {% if data.category %}
           <span class="basic-card--category text-sm mb-xs">
             {{ data.category }}
@@ -58,7 +58,7 @@
   {% set data = data ? defaultData|merge(data) : defaultData %}
 
   <a role="Link" href="{{data.link}}" class="basic-card--link">
-    <div class="flex flex-column basic-card {{data.color}} basic-card--image bg-white">
+    <div class="flex flex-col basic-card {{data.color}} basic-card--image bg-white">
       <div class="basic-card--image-wrap">
         <figure>
           <img src="{{ data.imgSrc }}" alt="{{data.imgAlt}}"/>

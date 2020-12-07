@@ -31,14 +31,14 @@ h1,
 .h1 {
   font-family: $heading-font;
   color: $h1-color;
-  font-size: $h1-fs;
   line-height: $h1-lh;
   letter-spacing: $h1-ls;
   margin: 0;
   margin-bottom: $space-2xl;
+  font-size: $fs-3xl;
 
-  @include bp(sm) {
-    font-size: $fs-3xl;
+  @include bp(md) {
+    font-size: $h1-fs;
   }
 }
 
@@ -64,13 +64,13 @@ h3,
 .h3 {
   font-family: $heading-font;
   color: $h3-color;
-  font-size: $h3-fs;
   line-height: $h3-lh;
   margin: 0;
   margin-bottom: $space-md;
+  font-size: $fs-lg;
 
-  @include bp(sm) {
-    font-size: $fs-lg;
+  @include bp(md) {
+    font-size: $h3-fs;
   }
 }
 

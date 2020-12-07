@@ -25,13 +25,14 @@ $news-card-lead-height: rem(300);
 // news-card--lead specific
 .news-card--lead {
   display: grid;
-  min-height: $news-card-lead-height;
   position: relative;
   box-shadow: $vert-dark-2;
   transition: transform 0.5s ease;
+  min-height: rem(250);
 
-  @include bp(xs) {
-    min-height: rem(250);
+
+  @include bp (md) {
+    min-height: $news-card-lead-height;
   }
 
   &:hover,
@@ -78,25 +79,27 @@ $news-card-lead-height: rem(300);
   }
 
   .news-card--text-wrap {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    height: 100%;
+    // position: relative;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: flex-end;
+    // height: 100%;
     transition: justify-content 0.5s ease;
     z-index: 2;
   }
 
   .news-card--text {
-    flex: 0 0 0;
-    height: 0;
     font-weight: 400;
     overflow: hidden;
     transition: all 0.5s ease;
+    text-shadow: $vert-dark-1;
+    flex: 1 0 auto;
 
-    @include bp(sm) {
-      flex: 1 0 auto;
+    @include bp(md) {
+      height: 0;
+      flex: 0 0 0;
     }
+
 
     p {
       @include line-clamp(5);
@@ -124,15 +127,21 @@ $news-card-lead-height: rem(300);
 
   .news-card--content {
     display: grid;
-    gap: $space-lg;
-    grid-template-columns: repeat(auto-fit, minmax(rem(198px), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(rem(150px), 1fr));
+    gap: $space-sm;
     color: $text-color;
     text-decoration: none;
     transition: color 0.3s ease;
 
-    @include bp(xs) {
-      gap: $space-sm;
+
+    @include bp(md) {
+      gap: $space-md;
     }
+
+    @include bp(lg) {
+      gap: $space-lg;
+    }
+
 
     &::after {
       height: 0;
@@ -143,13 +152,10 @@ $news-card-lead-height: rem(300);
     position: relative;
     width: 100%;
     z-index: 2;
+    grid-column: 1 / -1;
 
-    @include bp(md) {
+    @include bp(sm) {
       grid-column: 1 / 2;
-    }
-
-    @include bp(xs) {
-      grid-column: 1 / -1;
     }
 
     figure {
@@ -183,14 +189,13 @@ $news-card-lead-height: rem(300);
   .news-card--text {
     position: relative;
     width: 100%;
+    grid-column: 1 / -1;
 
-    @include bp(md) {
+
+    @include bp(sm) {
       grid-column: 2 / 4;
     }
 
-    @include bp(xs) {
-      grid-column: 1 / -1;
-    }
   }
 
   .news-card--category {

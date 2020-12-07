@@ -41,23 +41,22 @@ $blue-basic-card-text-blue: $blue-700;
 .basic-card--wrap {
   display: grid;
   gap: $space-lg;
-  grid-template-columns: repeat(auto-fill, minmax(rem(320), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(rem(200), 1fr));
+  width: $card-width-mobile;
 
-  @include bp(sm) {
-    grid-template-columns: repeat(auto-fill, minmax(rem(200), 1fr));
-  }
 
-  @include bp(sm) {
-    width: $card-width-mobile;
+  @include bp(md) {
+    grid-template-columns: repeat(auto-fill, minmax(rem(320), 1fr));
   }
 
   // makes basic-card-image wider
   &.basic-card-image--wrap {
-    grid-template-columns: repeat(auto-fit, minmax(rem(300), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(rem(250), 1fr));
 
-    @include bp(sm) {
-      grid-template-columns: repeat(auto-fit, minmax(rem(250), 1fr));
+    @include bp (md) {
+      grid-template-columns: repeat(auto-fit, minmax(rem(300), 1fr));
     }
+
   }
 
   [class*='icon-'] {

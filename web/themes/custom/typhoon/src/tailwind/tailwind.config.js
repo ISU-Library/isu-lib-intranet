@@ -76,7 +76,13 @@ module.exports = {
         200: '#92e698',
         100: '#bff1c5',
         50: '#e1f8e3',
-      }
+      },
+      white: {
+        DEFAULT: '#fff',
+      },
+      black: {
+        DEFAULT: '#222',
+      },
     },
     spacing: {
       '0': '0',
