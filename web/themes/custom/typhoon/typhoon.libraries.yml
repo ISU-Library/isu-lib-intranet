@@ -2,7 +2,7 @@ global:
   version: 0.1
   css:
     theme:
-      css/tailwind.css: {}
       css/global.css: {}
+      css/tailwind.css: {}
   js:
     js/global.js: {}
