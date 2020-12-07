@@ -38,11 +38,11 @@
  * @ingroup themeable
  */
 #}
+
+{% import "@typhoon/components/_general-content.html.twig" as blocks %}
+
 {%
   set classes = [
-    'gen-con--block',
-    'text-block',
-    'block--link-list',
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
@@ -53,8 +53,10 @@
 
   <div{{attributes.addClass(classes)}}>
     {% block content %}
-      {{ content.field_link_list_text }}
-      {{ content.field_link_list_links }}
+      {{blocks.linkList({
+        text: content.field_link_list_text|field_value,
+        links: content.field_link_list_links.0['#paragraph'],
+      })}}
     {% endblock %}
   </div>
 {% endblock paragraph %}
