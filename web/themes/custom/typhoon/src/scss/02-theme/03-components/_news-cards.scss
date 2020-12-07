@@ -1,7 +1,5 @@
 $news-card-wrap--grid-min: rem(320px);
-
 $news-card-lead-height: rem(300);
-
 
 .news-card--wrap {
   display: grid;
@@ -12,7 +10,6 @@ $news-card-lead-height: rem(300);
 .news-card-basic--wrap {
   grid-template-columns: repeat(auto-fit, minmax($news-card-wrap--grid-min, 1fr));
 }
-
 
 // both lead and basic classes
 .news-card--title {
@@ -29,7 +26,6 @@ $news-card-lead-height: rem(300);
   box-shadow: $vert-dark-2;
   transition: transform 0.5s ease;
   min-height: rem(250);
-
 
   @include bp (md) {
     min-height: $news-card-lead-height;
@@ -185,12 +181,10 @@ $news-card-lead-height: rem(300);
     left: 0;
   }
 
-
   .news-card--text {
     position: relative;
     width: 100%;
     grid-column: 1 / -1;
-
 
     @include bp(sm) {
       grid-column: 2 / 4;

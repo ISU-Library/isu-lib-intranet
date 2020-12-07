@@ -13,9 +13,6 @@
   align-items: flex-start;
   justify-content: space-around;
 
-
-
-
   @include bp(md) {
     align-items: center;
     justify-content: space-between;
@@ -34,7 +31,6 @@
   @include bp(xl) {
     max-width: rem(650px);
   }
-
 }
 
 .cta-card--stack {
