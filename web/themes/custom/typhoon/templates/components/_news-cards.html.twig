@@ -1,0 +1,100 @@
+{% macro lead(data) %}
+
+  {% set defaultData = {
+        imgSrc: '',
+        imgAlt: '',
+        link: '',
+        category: '',
+        title: '',
+        text: '',
+        linkText: '',
+    } %}
+
+  {% set data = data ? defaultData|merge(data) : defaultData %}
+
+  <div class="news-card--lead br4" title="{{ data.title}}">
+    <span class="aria-text">
+      Link to
+      {{ data.title }}
+    </span>
+    <a href="{{ data.Link}}" class="news-card--link br4" style="background-image: url('{{ data.imgSrc}}');">
+      <div class="news-card--text-wrap relative flex flex-col justify-end h-full pr-xl pl-lg pt-2xl pb-lg text-white">
+        {% if data.catergory %}
+          <span class="news-card--category text-white">
+            {{ data.catergory }}
+          </span>
+        {% endif %}
+        <h3 class="news-card--title mb-sm fs-lg text-white">
+          {{ data.title }}
+        </h3>
+        <div class="news-card--text">
+          <p class="text-white mb-sm">
+            {{ data.text }}
+          </p>
+          <div class="cta--wrap">
+            <span class="cta font-bold text-white">
+              {{ data.linkText }}
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="image-overlay"></div>
+    </a>
+  </div>
+
+{% endmacro %}
+
+
+{% macro basic(data) %}
+
+  {% set defaultData = {
+        imgSrc: '',
+        imgAlt: '',
+        link: '',
+        category: '',
+        title: '',
+        text: '',
+        linkText: '',
+    } %}
+
+  {% set data = data ? defaultData|merge(data) : defaultData %}
+
+  <div class="news-card--basic">
+    <div class="news-card--content">
+      <div class="news-card--image-wrap xs:mb-md">
+        <a href="{{ data.link}}">
+          <figure class="br4">
+            <img src="{{ data.imgSrc }}" alt="{{ data.imgAlt}}"/>
+          </figure>
+        </a>
+      </div>
+      <div class="news-card--text">
+        {% if data.category %}
+          <span class="news-card--category">
+            {{ data.catergory }}
+          </span>
+        {% endif %}
+        <h3 title="{{ data.title}}" class="news-card--title mt-2xs mb-md text-lg">
+          <a href="{{ data.link}}">
+            {{ data.title }}
+          </a>
+        </h3>
+        <div class="news-card--desc">
+          <p class="news-card--info mb-md text-sm xl:text-md">
+            {{ data.text}}
+          </p>
+          <div class="cta--wrap">
+            <a href="{{ data.link}}" class="cta">
+              Read More
+              <span class="aria-text">
+                About
+                {{ data.title}}
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endmacro %}

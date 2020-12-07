@@ -3,10 +3,11 @@
     overflow: hidden;
 
     .basic-card--desc {
-      @include bp(sm) {
-        display: none;
+      display: none;
+
+      @include bp(md) {
+        display: block;
       }
     }
   }
-
 }

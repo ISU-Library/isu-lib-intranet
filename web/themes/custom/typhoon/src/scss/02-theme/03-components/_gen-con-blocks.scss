@@ -41,9 +41,9 @@
     margin-bottom: 0;
   }
 
-  &:last-of-type {
-    margin-bottom: 0;
-  }
+  // &:last-of-type {
+  //   margin-bottom: 0;
+  // }
 }
 
 .lead-block p:first-of-type {
@@ -82,7 +82,7 @@
   }
 
   figcaption {
-    padding-top: $space-sm;
+    margin-top: $space-sm;
     background-color: white;
     text-align: center;
     font-style: italic;
@@ -258,9 +258,9 @@
     position: relative;
     margin-bottom: $space-lg;
 
-    &:last-of-type {
-      margin-bottom: 0;
-    }
+    // &:last-of-type {
+    //   margin-bottom: 0;
+    // }
 
     h4 {
       line-height: 1.5;

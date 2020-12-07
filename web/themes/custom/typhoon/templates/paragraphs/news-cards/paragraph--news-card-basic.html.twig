@@ -40,20 +40,28 @@
 #}
 {%
   set classes = [
-    'gen-con--block',
-    'text-block',
-    'block--link-list',
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-    not paragraph.isPublished() ? 'paragraph--unpublished',
+    not paragraph.isPublished() ? 'paragraph--unpublished'
   ]
 %}
-{% block paragraph %}
 
-  <div{{attributes.addClass(classes)}}>
-    {% block content %}
-      {{ content }}
-    {% endblock %}
-  </div>
+{% import "@typhoon/components" as newsCard %}
+
+{% block paragraph %}
+  {% block content %}
+    <div {{attributes.addClass(classes)}}>
+      {{ newsCard.basic({
+          category: content.field_news_card_basic_category.0['#title'],
+          title: content.field_news_card_basic_title|field_value,
+          text: content.field_news_card_basic_text|field_value,
+          linkText: content.field_news_card_basic_link.0['#title'],
+          link: content.field_news_card_basic_link.0['#url'],
+          imgSrc: file_url(paragraph.field_news_card_basic_image.entity.uri.value),
+          imgAlt: content.field_news_card_basic_image.alt,
+      }) }}
+    </div>
+
+  {% endblock %}
 {% endblock paragraph %}

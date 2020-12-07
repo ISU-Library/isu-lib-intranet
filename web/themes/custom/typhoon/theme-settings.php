@@ -31,7 +31,7 @@ function typhoon_form_system_theme_settings_alter(&$form, &$form_state) {
     '#weight' => -800,
     '#open' => TRUE,
   );
-  
+
   // 1
   $form['lib_util_nav_links']['lib_util_nav1_text'] = array(
       '#type'   => 'textfield',
@@ -96,4 +96,28 @@ function typhoon_form_system_theme_settings_alter(&$form, &$form_state) {
       '#title'  => t('Util Nav 5 URL'),
       '#default_value'  => theme_get_setting('lib_util_nav5_url'),
     );
+
+
+
+  // Create a section for Homepage Header and Tagline
+  $form['lib_homepage_header'] = array(
+    '#type'         => 'details',
+    '#title'        => t('Homepage Header and Tagline'),
+    '#description'  => t('Set the header and Tagline text on the homepage'),
+    '#weight' => -800,
+    '#open' => TRUE,
+  );
+
+  $form['lib_homepage_header']['lib_homepage_header_header'] = array(
+    '#type'   => 'textfield',
+    '#title'  => t('Homepage Header'),
+    '#default_value'  => theme_get_setting('lib_homepage_header_header'),
+  );
+  
+  $form['lib_homepage_header']['lib_homepage_header_tagline'] = array(
+    '#type'   => 'textfield',
+    '#title'  => t('Homepage Tagline'),
+    '#default_value'  => theme_get_setting('lib_homepage_header_tagline'),
+  );
+  
 }

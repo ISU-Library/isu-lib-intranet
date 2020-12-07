@@ -44,6 +44,12 @@
  */
 #}
 
+{% import "@typhoon/components/_header-special.html.twig" as headerSpecial %}
+{% import "@typhoon/components/_basic-cards.html.twig" as card %}
+{% import "@typhoon/components/_news-cards.html.twig" as newsCard %}
+
+{% set header = lib_homepage_header_header %}
+{% set tagline = lib_homepage_header_tagline %}
 
 {% set test_image = '/themes/custom/typhoon/images/Above as Below_1.jpg' %}
 
@@ -62,753 +68,378 @@
     <main role="main">
       <a id="main-content" tabindex="-1"></a>
       <article class="hero--wrap">
-        <div class="hero flex flex-column justify-content-end">
+        <div class="hero flex flex-col justify-end">
           <div class="content-wrap xl:px-xl">
-            <div class="hero--text headline-special mt-md mb-3xl xl:mb-5xl xs:mb-4xl mr-auto xl:ml-0">
-              <h1 class="headline-special--text xl:text-5xl xs:text-2xl text-white">
-                Tagline about the Intranet
-              </h1>
-              <span class="headline-special--sub xl:pt-xs xs:pt-sm xl:text-2xl  text-white">
-                Look at this sweet new website! Neat!
-              </span>
+            {{ headerSpecial.header({
+              title: lib_homepage_header_header,
+              tagline: lib_homepage_header_tagline,
+            }) }}
+          </div>
+        </article>
+        <article class="staff-news-feed pt-6xl pb-7xl xl:px-xl">
+          <div aria-hidden="true" class="flair-img staff-news--dots-red-bars">
+            <img src="/themes/custom/typhoon/images/dot-pattern-red-bars.png" alt="">
+          </div>
+          <div aria-hidden="true" class="flair-img staff-news--dots-yellow-triangles">
+            <img src="/themes/custom/typhoon/images/dot-pattern-yellow-triangles.png" alt="">
+          </div>
+          <div class="content-wrap">
+            <h2 class="heading-underline mb-2xl">
+              Staff News
+            </h2>
+            <ul class="news-card--wrap ">
+              <li>
+                {{newsCard.lead({
+                  imgSrc: test_image,
+                  imgAlt: 'alt',
+                  link: custom_test_link_1,
+                  category: 'News things',
+                  title: custom_test_variable_2 ,
+                  text: 'teIrure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint.Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint.Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint.Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint.Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint.',
+                  linkText: 'Read this story',
+                })}}
+              </li>
+              <li>
+                {{newsCard.lead({
+                  imgSrc: test_image,
+                  imgAlt: 'alt',
+                  link: '/',
+                  category: 'News things',
+                  title: 'A title with words here',
+                  text: 'tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam. tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam.',
+                  linkText: 'Read this story',
+                })}}
+              </li>
+              <li>
+                {{newsCard.basic({
+                  imgSrc: test_image,
+                  imgAlt: 'alt',
+                  link: '/',
+                  category: 'News things',
+                  title: 'A title with words here',
+                  text: 'tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam. tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam.',
+                  linkText: 'Read this story',
+                })}}
+              </li>
+              <li>
+                {{newsCard.basic({
+                  imgSrc: test_image,
+                  imgAlt: 'alt',
+                  link: '/',
+                  category: 'News things',
+                  title: 'A title with words here',
+                  text: 'tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam. tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam.',
+                  linkText: 'Read this story',
+                })}}
+              </li>
+              <li>
+                {{newsCard.basic({
+                  imgSrc: test_image,
+                  imgAlt: 'alt',
+                  link: '/',
+                  category: 'News things',
+                  title: 'A title with words here',
+                  text: 'tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam. tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam.',
+                  linkText: 'Read this story',
+                })}}
+              </li>
+              <li>
+                {{newsCard.basic({
+                  imgSrc: test_image,
+                  imgAlt: 'alt',
+                  link: '/',
+                  category: 'News things',
+                  title: 'A title with words here',
+                  text: 'tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam. tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam.',
+                  linkText: 'Read this story',
+                })}}
+              </li>
+
+            </ul>
+            <a class="cta" href="/">
+              More news stories
+            </a>
+          </div>
+        </article>
+        <article class="cta-section">
+          <div class="content-wrap xl:px-xl">
+            <div class="cta-content">
+              <div class="cta-text md:mr-xs">
+                <h2 class="heading-underline text-white">
+                  Explore
+                </h2>
+                <p class="text-white mb-lg lg:text-lg xl:text-lg">
+                  Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint. Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi
+                </p>
+                <a href="/" class="button button-secondary">
+                  Not sure where this should go!
+                </a>
+              </div>
+              <div class="flex flex-col cta-card--stack">
+                <div class="cta-card">
+                  <a href="" class="cta-card--link">
+                    <figure class="cta-card--image">
+                      <img src="{{test_image}}" alt="">
+                      <figcaption class="pl-lg py-xs pr-2xl text-lg text-white">
+                        Forms
+                      </figcaption>
+                    </figure>
+                  </a>
+                </div>
+                <div class="cta-card">
+                  <a href="" class="cta-card--link">
+                    <figure class="cta-card--image">
+                      <img src="{{test_image}}" alt="">
+                      <figcaption class="pl-lg py-xs pr-2xl text-lg text-white">
+                        Resources
+                      </figcaption>
+                    </figure>
+                  </a>
+                </div>
+                <div class="cta-card">
+                  <a href="" class="cta-card--link">
+                    <figure class="cta-card--image">
+                      <img src="{{test_image}}" alt="">
+                      <figcaption class="pl-lg py-xs pr-2xl text-lg text-white">
+                        Staff
+                      </figcaption>
+                    </figure>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </article>
-      <article class="staff-news-feed pt-6xl pb-7xl xl:px-xl">
-        <div aria-hidden="true" class="flair-img staff-news--dots-red-bars">
-          <img src="/themes/custom/typhoon/images/dot-pattern-red-bars.png" alt="">
-        </div>
-        <div aria-hidden="true" class="flair-img staff-news--dots-yellow-triangles">
-          <img src="/themes/custom/typhoon/images/dot-pattern-yellow-triangles.png" alt="">
-        </div>
-        <div class="content-wrap">
-          <h2 class="heading-underline mb-2xl">
-            Staff News
-          </h2>
-          <ul class="news-card--wrap ">
-            <li {#title="{{cardTitle}}" #} class="news-card--lead">
-              <span class="aria-text">
-                Link to
-                {# {{ cardTitle }} #}
-              </span>
-              {% if custom_test_link_1 %}
-                <a href="/{{custom_test_link_1}}" class="news-card--link br4">
-                {% else %}
-                  <a href="/ {# {{cardLink}} #}" class="news-card--link br4">
-                  {% endif %}
-                  <div
-                    class="news-card--text-wrap pr-xl xs:pr-md pl-lg xs:pl-md pt-2xl xs:pt-lg pb-lg xs:pb-sm text-white">
-                    {# {% if cardCatergory %} #}
-                    <span class="news-card--category text-white">{# {{ cardCatergory }} #}
-                      {# Library ITS #}
-                    </span>
-                    {# {% endif %} #}
-                    <h3 class="news-card--title mb-0 fs-lg text-white">
+          {# </div> #}
+        </article>
+        <article class="quick-links-section pt-6xl xl:px-xl">
+          <div aria-hidden="true" class="flair-img quick-links--yellow-triangles">
+            <img src="/themes/custom/typhoon/images/large-yellow-triangles.png" alt="">
+          </div>
+          <div aria-hidden="true" class="flair-img quick-links--red-bars">
+            <img src="/themes/custom/typhoon/images/large-red-bars.png" alt="">
+          </div>
+          <div aria-hidden="true" class="flair-img quick-links--dots">
+            <img src="/themes/custom/typhoon/images/large-dots.png" alt="">
+          </div>
+          <div class="content-wrap">
+            <h2 class="heading-underline mb-2xl">
+              Quick Links
+            </h2>
+            <ul class="basic-card--wrap mb-2xl sm:mr-0 xs:mr-0">
+              {% for story in card %}
+                <li class="test-one">
+                  {{ card.basic({
+                        color: story.color,
+                        link: story.link,
+                        title: story.title,
+                        category: story.category,
+                        icon: story.icon,
+                        text: story.text,
+                        linkText: story.linkText,
+                    }) }}
+                </li>
+              {% endfor %}
+              <li>
+                {{ card.basic({
+                    color: '',
+                    link: '/',
+                    title: 'IT support',
+                    category: '',
+                    icon: 'computing-science',
+                    text: 'Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco.',
+                    linkText: 'Link Words',
+                })}}
+              </li>
+              <li>
+                {{ card.basic({
+                    color: 'basic-card--yellow',
+                    link: '/',
+                    title: 'IT support',
+                    category: '',
+                    icon: 'computing-science',
+                    text: 'Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco.',
+                    linkText: 'Link Words',
+                })}}
+              </li>
+              <li>
+                {{ card.basic({
+                    color: '',
+                    link: '/',
+                    title: 'IT support',
+                    category: '',
+                    icon: 'computing-science',
+                    text: 'Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco.',
+                    linkText: 'Link Words',
+                })}}
+              </li>
+              <li>
+                {{ card.basic({
+                    color: 'basic-card--yellow',
+                    link: '/',
+                    title: 'IT support',
+                    category: '',
+                    icon: 'computing-science',
+                    text: 'Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco.',
+                    linkText: 'Link Words',
+                })}}
+              </li>
+              <li>
+                {{ card.basic({
+                    color: '',
+                    link: '/',
+                    title: 'IT support',
+                    category: '',
+                    icon: 'computing-science',
+                    text: 'Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco.',
+                    linkText: 'Link Words',
+                })}}
+              </li>
+              <li>
+                {{ card.basic({
+                    color: 'basic-card--yellow',
+                    link: '/',
+                    title: 'IT support',
+                    category: '',
+                    icon: 'computing-science',
+                    text: 'Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco.',
+                    linkText: 'Link Words',
+                })}}
+              </li>
+            </ul>
+          </div>
+        </article>
+        <article class="staff-update-feed py-5xl xl:px-xl">
+          <div aria-hidden="true" class="flair-img staff-updates--dots">
+            <img src="/themes/custom/typhoon/images/small-dots.png" alt="">
+          </div>
+          <div class="content-wrap">
+            <h2 class="heading-underline mb-2xl">
+              Staff Updates
+            </h2>
+            <ul class="basic-card--wrap basic-card-image--wrap mt-2xl mr-2xl mb-2xl sm:mr-0 xs:mr-0">
+              <li>
+                <a role="Link" href=" {# {{cardLinkUrl}} #}" class="basic-card--link">
+                  <div class="basic-card basic-card--image flex flex-col  bg-white " {# {{attributes.addClass(classes)}} #}>
+                    <div class="basic-card--image-wrap">
+                      <figure>
+                        <img src=" {{test_image}}{# {{ cardImgSrc }} #}" alt="alt"/>
+                        <div class="image-overlay"></div>
+                      </figure>
+                      <div
+                        class="basic-card--text-wrap pt-xl pr-lg pb-md pl-xl xs:pt-md xs:pr-sm xs:pb-md xs:pl-md">
+                        {# {% if cardCategory %} #}
+                        <span
+                          class="basic-card--category mb-xs">
+                          {# {{ cardCategory }} #}
+                          Category
+                        </span>
+                        {# {% endif %} #}
+                        <h3
+                          class="basic-card--title">
+                          {# {{ cardTitle }} #}
+                          A card title with a lot of words
+                        </h3>
+                      </div>
+                    </div>
+                    <span
+                      class="aria-text">
                       {# {{ cardTitle }} #}
-                      <!-- Some sweet News story! -->
-                        {% if custom_test_variable_2 %}
-                      {{ custom_test_variable_2 }}
-                    {% endif %}
-                    </h3>
-                      <div class="news-card--text"> <p
-                        class="text-white xl:text-lg">
-                        {# {{ cardText }} #}
-                        Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint.Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint.Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint.Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint.Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint.
+                      Card Title
+                    </span>
+                    <div class="basic-card--text-wrap pt-md pr-lg pb-2xl pl-xl xs:pt-md xs:pr-sm xs:pb-lg xs:pl-md">
+                      <p
+                        class="basic-card--desc pb-md">
+                        {# {{ cardText}} #}
+                        Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non. Lorem ullamco ullamco et ullamco sint.
                       </p>
                       <div class="cta--wrap">
-                        <span
-                          class="cta text-white">
+                        <div
+                          class="cta">
                           {# {{ cardLinkText }} #}
-                          A link!
-                        </span>
+                          link text
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div class="image-overlay"></div>
                 </a>
               </li>
-            </li>
-            <li {#title="{{cardTitle}}" #} class="news-card--lead">
-              <span class="aria-text">
-                Link to
-                {# {{ cardTitle }} #}
-              </span>
-              <a href="/{# {{cardLink}} #}" class="news-card--link br4">
-                <div
-                  class="news-card--text-wrap pr-xl xs:pr-md pl-lg xs:pl-md pt-2xl xs:pt-lg pb-lg xs:pb-sm text-white">
-                  {# {% if cardCatergory %} #}
-                  <span
-                    class="news-card--category text-white">
-                    {# {{ cardCatergory }} #}
-                    Library ITS
-                  </span>
-                  {# {% endif %} #}
-                  <h3
-                    class="news-card--title mb-0 fs-lg text-white">
-                    {# {{ cardTitle }} #}
-                    Some sweet News story!
-                  </h3>
-                  <div class="news-card--text">
-                    <p
-                      class="text-white xl:text-lg">
-                      {# {{ cardText }} #}
-                      Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint.
-                    </p>
-                    <div class="cta--wrap">
-                      <span
-                        class="cta text-white">
-                        {# {{ cardLinkText }} #}
-                        A link!
-                      </span>
-                    </div>
-                  </div>
+              <li>
+                <div {{attributes.addClass(classes)}}>
+                  {{ card.basicImg({
+                      color: 'basic-card--yellow',
+                      imgSrc: test_image,
+                      imgAlt: 'alt',
+                      link: '/',
+                      title: 'A card title here',
+                      category: 'Category',
+                      text: 'Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non. Lorem ullamco ullamco et ullamco sint.',
+                      linkText: 'link text',
+                  }) }}
                 </div>
-                <div class="image-overlay"></div>
-              </a>
-            </li>
-            <li
-              class="news-card--basic" {# {{attributes.addClass(classes)}} #}>
-              {# <span class="aria-text">Link to{{ cardTitle }}</span> #}
-              <div class="news-card--content">
-                <div class="news-card--image-wrap mr-sm xs:mb-md">
-                  <a href="/ {# {{cardLink}} #}">
-                    <figure class="br4">
-                      <img src="{{test_image}}" alt="test {# {{cardImgAlt}} #}"/>
-                    </figure>
-                  </a>
-                </div>
-                <div
-                  class="news-card--text">
-                  {# {% if cardCategory %} #}
-                  <span
-                    class="news-card--category">
-                    {# {{ cardCatergory }} #}
-                    Special Collections
-                  </span>
-                  {# {% endif %} #}
-                  <h3 {# title="{{cardTitle}}" #} class="news-card--title mt-2xs mb-md text-lg">
-                    <a
-                      href="/ {# {{cardLink}} #}">
-                      {# {{ cardTitle }} #}
-                      Another neat news title here with a long title to see what happens!
-                    </a>
-                  </h3>
-                  <div class="news-card--desc">
-                    <p
-                      class="news-card--info text-sm xl:text-md">
-                      {# {{ cardText}} #}
-                      Dolore qui excepteur consectetur labore nisi dolor consectetur fugiat tempor. Magna tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam.Dolore qui excepteur consectetur labore nisi dolor consectetur fugiat tempor. Magna tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam.
-                    </p>
-                    <div class="cta--wrap">
-                      <a href="{{cardLink}}" class="cta">
-                        Read More
-                        <span class="aria-text">
-                          About
-                          {# {{cardTitle}} #}
-                          Another neat news title here with a long title to see what happens!
+              </li>
+              <li>
+                <a role="Link" href=" {# {{cardLinkUrl}} #}" class="basic-card--link">
+                  <div class="basic-card basic-card--image flex flex-col  bg-white " {# {{attributes.addClass(classes)}} #}>
+                    <div class="basic-card--image-wrap">
+                      <figure>
+                        <img src=" {{test_image}}{# {{ cardImgSrc }} #}" alt="{{imageAlt}}"/>
+                        <div class="image-overlay"></div>
+                      </figure>
+                      <div
+                        class="basic-card--text-wrap pt-xl pr-lg pb-md pl-xl xs:pt-md xs:pr-sm xs:pb-md xs:pl-md">
+                        {# {% if cardCategory %} #}
+                        <span
+                          class="basic-card--category mb-xs">
+                          {# {{ cardCategory }} #}
+                          Category
                         </span>
-                      </a>
+                        {# {% endif %} #}
+                        <h3
+                          class="basic-card--title">
+                          {# {{ cardTitle }} #}
+                          A card title with a lot of words
+                        </h3>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li
-              class="news-card--basic" {# {{attributes.addClass(classes)}} #}>
-              {# <span class="aria-text">Link to{{ cardTitle }}</span> #}
-              <div class="news-card--content">
-                <div class="news-card--image-wrap mr-sm xs:mb-md">
-                  <a href="/ {# {{cardLink}} #}">
-                    <figure class="br4">
-                      <img src="{{test_image}}" alt="test {# {{cardImgAlt}} #}"/>
-                    </figure>
-                  </a>
-                </div>
-                <div
-                  class="news-card--text">
-                  {# {% if cardCategory %} #}
-                  <span
-                    class="news-card--category">
-                    {# {{ cardCatergory }} #}
-                    Special Collections
-                  </span>
-                  {# {% endif %} #}
-                  <h3 {# title="{{cardTitle}}" #} class="news-card--title mt-2xs mb-md text-lg">
-                    <a
-                      href="/ {# {{cardLink}} #}">
+                    <span
+                      class="aria-text">
                       {# {{ cardTitle }} #}
-                      Another neat news title here with a long title to see what happens!
-                    </a>
-                  </h3>
-                  <div class="news-card--desc">
-                    <p
-                      class="news-card--info text-sm xl:text-md">
-                      {# {{ cardText}} #}
-                      Dolore qui excepteur consectetur labore nisi dolor consectetur fugiat tempor. Magna tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam.Dolore qui excepteur consectetur labore nisi dolor consectetur fugiat tempor. Magna tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam.
-                    </p>
-                    <div class="cta--wrap">
-                      <a href="{{cardLink}}" class="cta">
-                        Read More
-                        <span class="aria-text">
-                          About
-                          {# {{cardTitle}} #}
-                          Another neat news title here with a long title to see what happens!
-                        </span>
-                      </a>
+                      Card Title
+                    </span>
+                    <div class="basic-card--text-wrap pt-md pr-lg pb-2xl pl-xl xs:pt-md xs:pr-sm xs:pb-lg xs:pl-md">
+                      <p
+                        class="basic-card--desc pb-md">
+                        {# {{ cardText}} #}
+                        Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non. Lorem ullamco ullamco et ullamco sint.
+                      </p>
+                      <div class="cta--wrap">
+                        <div
+                          class="cta">
+                          {# {{ cardLinkText }} #}
+                          link text
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </li>
-            <li
-              class="news-card--basic" {# {{attributes.addClass(classes)}} #}>
-              {# <span class="aria-text">Link to{{ cardTitle }}</span> #}
-              <div class="news-card--content">
-                <div class="news-card--image-wrap mr-sm xs:mb-md">
-                  <a href="/ {# {{cardLink}} #}">
-                    <figure class="br4">
-                      <img src="{{test_image}}" alt="test {# {{cardImgAlt}} #}"/>
-                    </figure>
-                  </a>
-                </div>
-                <div
-                  class="news-card--text">
-                  {# {% if cardCategory %} #}
-                  <span
-                    class="news-card--category">
-                    {# {{ cardCatergory }} #}
-                    Special Collections
-                  </span>
-                  {# {% endif %} #}
-                  <h3 {# title="{{cardTitle}}" #} class="news-card--title mt-2xs mb-md text-lg">
-                    <a
-                      href="/ {# {{cardLink}} #}">
-                      {# {{ cardTitle }} #}
-                      Another neat news title here with a long title to see what happens!
-                    </a>
-                  </h3>
-                  <div class="news-card--desc">
-                    <p
-                      class="news-card--info text-sm xl:text-md">
-                      {# {{ cardText}} #}
-                      Dolore qui excepteur consectetur labore nisi dolor consectetur fugiat tempor. Magna tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam.Dolore qui excepteur consectetur labore nisi dolor consectetur fugiat tempor. Magna tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam.
-                    </p>
-                    <div class="cta--wrap">
-                      <a href="{{cardLink}}" class="cta">
-                        Read More
-                        <span class="aria-text">
-                          About
-                          {# {{cardTitle}} #}
-                          Another neat news title here with a long title to see what happens!
-                        </span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li
-              class="news-card--basic" {# {{attributes.addClass(classes)}} #}>
-              {# <span class="aria-text">Link to{{ cardTitle }}</span> #}
-              <div class="news-card--content">
-                <div class="news-card--image-wrap mr-sm xs:mb-md">
-                  <a href="/ {# {{cardLink}} #}">
-                    <figure class="br4">
-                      <img src="{{test_image}}" alt="test {# {{cardImgAlt}} #}"/>
-                    </figure>
-                  </a>
-                </div>
-                <div
-                  class="news-card--text">
-                  {# {% if cardCategory %} #}
-                  <span
-                    class="news-card--category">
-                    {# {{ cardCatergory }} #}
-                    Special Collections
-                  </span>
-                  {# {% endif %} #}
-                  <h3 {# title="{{cardTitle}}" #} class="news-card--title mt-2xs mb-md text-lg">
-                    <a
-                      href="/ {# {{cardLink}} #}">
-                      {# {{ cardTitle }} #}
-                      Another neat news title here with a long title to see what happens!
-                    </a>
-                  </h3>
-                  <div class="news-card--desc">
-                    <p
-                      class="news-card--info text-sm xl:text-md">
-                      {# {{ cardText}} #}
-                      Dolore qui excepteur consectetur labore nisi dolor consectetur fugiat tempor. Magna tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam.Dolore qui excepteur consectetur labore nisi dolor consectetur fugiat tempor. Magna tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam.
-                    </p>
-                    <div class="cta--wrap">
-                      <a href="{{cardLink}}" class="cta">
-                        Read More
-                        <span class="aria-text">
-                          About
-                          {# {{cardTitle}} #}
-                          Another neat news title here with a long title to see what happens!
-                        </span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
-          <a class="cta" href="/">
-            More news stories
-          </a>
-        </div>
-      </article>
-      <article class="cta-section">
-        <div class="content-wrap">
-          <div class="cta-content">
-            <div class="cta-text">
-              <h2 class="heading-underline text-white">
-                Explore
-              </h2>
-              <p class="text-white mb-lg lg:text-lg xl:text-lg">
-                Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint. Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi
-              </p>
-              <a href="/" class="button button-secondary">
-                Not sure where this should go!
-              </a>
-            </div>
-            <div class="flex flex-column cta-card--stack">
-              <div class="cta-card">
-                <a href="" class="cta-card--link">
-                  <figure class="cta-card--image">
-                    <img src="{{test_image}}" alt="">
-                    <figcaption class="pl-lg py-xs pr-2xl text-lg text-white">
-                      Forms
-                    </figcaption>
-                  </figure>
                 </a>
-              </div>
-              <div class="cta-card">
-                <a href="" class="cta-card--link">
-                  <figure class="cta-card--image">
-                    <img src="{{test_image}}" alt="">
-                    <figcaption class="pl-lg py-xs pr-2xl text-lg text-white">
-                      Resources
-                    </figcaption>
-                  </figure>
-                </a>
-              </div>
-              <div class="cta-card">
-                <a href="" class="cta-card--link">
-                  <figure class="cta-card--image">
-                    <img src="{{test_image}}" alt="">
-                    <figcaption class="pl-lg py-xs pr-2xl text-lg text-white">
-                      Staff
-                    </figcaption>
-                  </figure>
-                </a>
-              </div>
-            </div>
+              </li>
+            </ul>
+            <a class="cta" href="/">
+              More news stories
+            </a>
           </div>
-        </div>
-        {# </div> #}
-      </article>
-      <article class="quick-links-section pt-6xl xl:px-xl">
-        <div aria-hidden="true" class="flair-img quick-links--yellow-triangles">
-          <img src="/themes/custom/typhoon/images/large-yellow-triangles.png" alt="">
-        </div>
-        <div aria-hidden="true" class="flair-img quick-links--red-bars">
-          <img src="/themes/custom/typhoon/images/large-red-bars.png" alt="">
-        </div>
-        <div aria-hidden="true" class="flair-img quick-links--dots">
-          <img src="/themes/custom/typhoon/images/large-dots.png" alt="">
-        </div>
-        <div class="content-wrap">
-          <h2 class="heading-underline mb-2xl">
-            Quick Links
-          </h2>
-          <ul class="basic-card--wrap mb-2xl sm:mr-0 xs:mr-0">
-            <li>
-              <a role="Link" href="/ {# {{ cardLink }} #}" class="basic-card--link">
-                <div class="basic-card flex flex-column bg-white" {# {{attributes.addClass(classes)}} #}>
-                  <span
-                    class="aria-text">
-                    {# {{ cardTitle }} #}
-                    title
-                  </span>
-                  <div
-                    class="basic-card--text-wrap pt-xl pr-lg pb-2xl pl-xl xs:pt-md xs:pr-sm xs:pb-lg xs:pl-md">
-                    {# {% if cardCategory %} #}
-                    <span
-                      class="basic-card--category icon-computing-science mb-xs text-2xl">{# {{ cardCategory }} #}
-                    </span>
-                    {# {% endif %} #}
-                    <h3
-                      class="basic-card--title">
-                      {# {{ cardTitle }} #}
-                      IT Support
-                    </h3>
-                    <p
-                      class="basic-card--desc">
-                      {# {{ cardText}} #}
-                      Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco.
-                    </p>
-                    <div class="cta--wrap xs:text-sm">
-                      <div
-                        class="cta">
-                        {# {{ cardLinkText }} #}
-                        Link Words
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a role="Link" href="/ {# {{ cardLink }} #}" class="basic-card--link">
-                <div class="basic-card  flex flex-column basic-card--yellow bg-white" {# {{attributes.addClass(classes)}} #}>
-                  <span
-                    class="aria-text">
-                    {# {{ cardTitle }} #}
-                    title
-                  </span>
-                  <div
-                    class="basic-card--text-wrap pt-xl pr-lg pb-2xl pl-xl xs:pt-md xs:pr-sm xs:pb-lg xs:pl-md">
-                    {# {% if cardCategory %} #}
-                    <span
-                      class="basic-card--category icon-computing-science mb-xs text-2xl">{# {{ cardCategory }} #}
-                    </span>
-                    {# {% endif %} #}
-                    <h3
-                      class="basic-card--title">
-                      {# {{ cardTitle }} #}
-                      IT Support
-                    </h3>
-                    <p
-                      class="basic-card--desc">
-                      {# {{ cardText}} #}
-                      Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco.
-                    </p>
-                    <div class="cta--wrap xs:text-sm">
-                      <div
-                        class="cta">
-                        {# {{ cardLinkText }} #}
-                        Link Words
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a role="Link" href="/ {# {{ cardLink }} #}" class="basic-card--link">
-                <div class="basic-card  flex flex-column bg-white" {# {{attributes.addClass(classes)}} #}>
-                  <span
-                    class="aria-text">
-                    {# {{ cardTitle }} #}
-                    title
-                  </span>
-                  <div
-                    class="basic-card--text-wrap pt-xl pr-lg pb-2xl pl-xl xs:pt-md xs:pr-sm xs:pb-lg xs:pl-md">
-                    {# {% if cardCategory %} #}
-                    <span
-                      class="basic-card--category icon-computing-science mb-xs text-2xl">{# {{ cardCategory }} #}
-                    </span>
-                    {# {% endif %} #}
-                    <h3
-                      class="basic-card--title">
-                      {# {{ cardTitle }} #}
-                      IT Support
-                    </h3>
-                    <p
-                      class="basic-card--desc">
-                      {# {{ cardText}} #}
-                      Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco.
-                    </p>
-                    <div class="cta--wrap xs:text-sm">
-                      <div
-                        class="cta">
-                        {# {{ cardLinkText }} #}
-                        Link Words
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a role="Link" href="/ {# {{ cardLink }} #}" class="basic-card--link">
-                <div class="basic-card  flex flex-column basic-card--yellow bg-white" {# {{attributes.addClass(classes)}} #}>
-                  <span
-                    class="aria-text">
-                    {# {{ cardTitle }} #}
-                    title
-                  </span>
-                  <div
-                    class="basic-card--text-wrap pt-xl pr-lg pb-2xl pl-xl xs:pt-md xs:pr-sm xs:pb-lg xs:pl-md">
-                    {# {% if cardCategory %} #}
-                    <span
-                      class="basic-card--category icon-computing-science mb-xs text-2xl">{# {{ cardCategory }} #}
-                    </span>
-                    {# {% endif %} #}
-                    <h3
-                      class="basic-card--title">
-                      {# {{ cardTitle }} #}
-                      IT Support
-                    </h3>
-                    <p
-                      class="basic-card--desc">
-                      {# {{ cardText}} #}
-                      Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco.
-                    </p>
-                    <div class="cta--wrap xs:text-sm">
-                      <div
-                        class="cta">
-                        {# {{ cardLinkText }} #}
-                        Link Words
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a role="Link" href="/ {# {{ cardLink }} #}" class="basic-card--link">
-                <div class="basic-card  flex flex-column bg-white" {# {{attributes.addClass(classes)}} #}>
-                  <span
-                    class="aria-text">
-                    {# {{ cardTitle }} #}
-                    title
-                  </span>
-                  <div
-                    class="basic-card--text-wrap pt-xl pr-lg pb-2xl pl-xl xs:pt-md xs:pr-sm xs:pb-lg xs:pl-md">
-                    {# {% if cardCategory %} #}
-                    <span
-                      class="basic-card--category icon-computing-science mb-xs text-2xl">{# {{ cardCategory }} #}
-                    </span>
-                    {# {% endif %} #}
-                    <h3
-                      class="basic-card--title">
-                      {# {{ cardTitle }} #}
-                      IT Support
-                    </h3>
-                    <p
-                      class="basic-card--desc">
-                      {# {{ cardText}} #}
-                      Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco.
-                    </p>
-                    <div class="cta--wrap xs:text-sm">
-                      <div
-                        class="cta">
-                        {# {{ cardLinkText }} #}
-                        Link Words
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a role="Link" href="/ {# {{ cardLink }} #}" class="basic-card--link">
-                <div class="basic-card  flex flex-column basic-card--yellow bg-white" {# {{attributes.addClass(classes)}} #}>
-                  <span
-                    class="aria-text">
-                    {# {{ cardTitle }} #}
-                    title
-                  </span>
-                  <div
-                    class="basic-card--text-wrap pt-xl pr-lg pb-2xl pl-xl xs:pt-md xs:pr-sm xs:pb-lg xs:pl-md">
-                    {# {% if cardCategory %} #}
-                    <span
-                      class="basic-card--category icon-computing-science mb-xs text-2xl">{# {{ cardCategory }} #}
-                    </span>
-                    {# {% endif %} #}
-                    <h3
-                      class="basic-card--title">
-                      {# {{ cardTitle }} #}
-                      IT Support
-                    </h3>
-                    <p
-                      class="basic-card--desc">
-                      {# {{ cardText}} #}
-                      Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco.
-                    </p>
-                    <div class="cta--wrap xs:text-sm">
-                      <div
-                        class="cta">
-                        {# {{ cardLinkText }} #}
-                        Link Words
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </article>
-      <article class="staff-update-feed py-5xl xl:px-xl">
-        <div aria-hidden="true" class="flair-img staff-updates--dots">
-          <img src="/themes/custom/typhoon/images/small-dots.png" alt="">
-        </div>
-        <div class="content-wrap">
-          <h2 class="heading-underline mb-2xl">
-            Staff Updates
-          </h2>
-          <ul class="basic-card--wrap basic-card-image--wrap mt-2xl mr-2xl mb-2xl sm:mr-0 xs:mr-0">
-            <li>
-              <a role="Link" href=" {# {{cardLinkUrl}} #}" class="basic-card--link">
-                <div class="basic-card basic-card--image flex flex-column  bg-white " {# {{attributes.addClass(classes)}} #}>
-                  <div class="basic-card--image-wrap">
-                    <figure>
-                      <img src=" {{test_image}}{# {{ cardImgSrc }} #}" alt="alt"/>
-                      <div class="image-overlay"></div>
-                    </figure>
-                    <div
-                      class="basic-card--text-wrap pt-xl pr-lg pb-md pl-xl xs:pt-md xs:pr-sm xs:pb-md xs:pl-md">
-                      {# {% if cardCategory %} #}
-                      <span
-                        class="basic-card--category mb-xs">
-                        {# {{ cardCategory }} #}
-                        Category
-                      </span>
-                      {# {% endif %} #}
-                      <h3
-                        class="basic-card--title">
-                        {# {{ cardTitle }} #}
-                        A card title with a lot of words
-                      </h3>
-                    </div>
-                  </div>
-                  <span
-                    class="aria-text">
-                    {# {{ cardTitle }} #}
-                    Card Title
-                  </span>
-                  <div class="basic-card--text-wrap pt-md pr-lg pb-2xl pl-xl xs:pt-md xs:pr-sm xs:pb-lg xs:pl-md">
-                    <p
-                      class="basic-card--desc">
-                      {# {{ cardText}} #}
-                      Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non. Lorem ullamco ullamco et ullamco sint.
-                    </p>
-                    <div class="cta--wrap">
-                      <div
-                        class="cta">
-                        {# {{ cardLinkText }} #}
-                        link text
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a role="Link" href=" {# {{cardLinkUrl}} #}" class="basic-card--link">
-                <div class="basic-card  flex flex-column basic-card--image" {# {{attributes.addClass(classes)}} #}>
-                  <div class="basic-card--image-wrap">
-                    <figure>
-                      <img src=" {{test_image}}{# {{ cardImgSrc }} #}" alt="alt"/>
-                      <div class="image-overlay"></div>
-                    </figure>
-                    <div
-                      class="basic-card--text-wrap pt-xl pr-lg pb-md pl-xl xs:pt-md xs:pr-sm xs:pb-md xs:pl-md">
-                      {# {% if cardCategory %} #}
-                      <span
-                        class="basic-card--category mb-xs">
-                        {# {{ cardCategory }} #}
-                        Category
-                      </span>
-                      {# {% endif %} #}
-                      <h3
-                        class="basic-card--title">
-                        {# {{ cardTitle }} #}
-                        A card title with a lot of words
-                      </h3>
-                    </div>
-                  </div>
-                  <span
-                    class="aria-text">
-                    {# {{ cardTitle }} #}
-                    Card Title
-                  </span>
-                  <div class="basic-card--text-wrap pt-md pr-lg pb-2xl pl-xl xs:pt-md xs:pr-sm xs:pb-lg xs:pl-md">
-                    <p
-                      class="basic-card--desc">
-                      {# {{ cardText}} #}
-                      Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non. Lorem ullamco ullamco et ullamco sint.
-                    </p>
-                    <div class="cta--wrap">
-                      <div
-                        class="cta">
-                        {# {{ cardLinkText }} #}
-                        link text
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a role="Link" href=" {# {{cardLinkUrl}} #}" class="basic-card--link">
-                <div class="basic-card basic-card--image flex flex-column  bg-white " {# {{attributes.addClass(classes)}} #}>
-                  <div class="basic-card--image-wrap">
-                    <figure>
-                      <img src=" {{test_image}}{# {{ cardImgSrc }} #}" alt="alt"/>
-                      <div class="image-overlay"></div>
-                    </figure>
-                    <div
-                      class="basic-card--text-wrap pt-xl pr-lg pb-md pl-xl xs:pt-md xs:pr-sm xs:pb-md xs:pl-md">
-                      {# {% if cardCategory %} #}
-                      <span
-                        class="basic-card--category mb-xs">
-                        {# {{ cardCategory }} #}
-                        Category
-                      </span>
-                      {# {% endif %} #}
-                      <h3
-                        class="basic-card--title">
-                        {# {{ cardTitle }} #}
-                        A card title with a lot of words
-                      </h3>
-                    </div>
-                  </div>
-                  <span
-                    class="aria-text">
-                    {# {{ cardTitle }} #}
-                    Card Title
-                  </span>
-                  <div class="basic-card--text-wrap pt-md pr-lg pb-2xl pl-xl xs:pt-md xs:pr-sm xs:pb-lg xs:pl-md">
-                    <p
-                      class="basic-card--desc">
-                      {# {{ cardText}} #}
-                      Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non. Lorem ullamco ullamco et ullamco sint.
-                    </p>
-                    <div class="cta--wrap">
-                      <div
-                        class="cta">
-                        {# {{ cardLinkText }} #}
-                        link text
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </li>
-          </ul>
-          <a class="cta" href="/">
-            More news stories
-          </a>
-        </div>
-      </article>
+        </article>
 
-      {# * hiding content for now #}
-    {# {{ page.content }} #}
-      {# /.layout-content #}
-    </main>
-    {# {% if page.sidebar_first %} <aside class="layout-sidebar-first" role="complementary"> {% include "@typhoon/navigation/side-nav.html.twig" %} </aside>{% endif %} #}
+        {# * hiding content for now #}
+      {# {{ page.content }} #}
+        {# /.layout-content #}
+      </main>
+      {# {% if page.sidebar_first %} <aside class="layout-sidebar-first" role="complementary"> {% include "@typhoon/navigation/side-nav.html.twig" %} </aside>{% endif %} #}
+    </div>
+    {# {% if page.footer %} #}
+    <footer role="contentinfo" class="bg-red-500">
+      {{ page.footer }}
+    </footer>
+    {# {% endif %} #}
   </div>
-  {# {% if page.footer %} #}
-  <footer role="contentinfo" class="bg-red-500">
-    {{ page.footer }}
-  </footer>
-  {# {% endif %} #}
-</div>
-{# /.layout-container #}
+  {# /.layout-container #}
