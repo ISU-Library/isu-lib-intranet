@@ -7,20 +7,19 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
   height: 100%;
-  min-height: rem(425);
-
-  @include bp(xl) {
-    min-height: rem(530);
-  }
+  min-height: rem(300);
 
   @include bp(md) {
     min-height: rem(375);
   }
 
-  @include bp(xs) {
-    min-height: rem(300);
+  @include bp (lg) {
+    min-height: rem(425);
+  }
+
+  @include bp(xl) {
+    min-height: rem(530);
   }
 
   .content-wrap {

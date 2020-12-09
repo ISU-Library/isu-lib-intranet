@@ -38,33 +38,26 @@
  * @ingroup themeable
  */
 #}
+{% import "@typhoon/components/_general-content.html.twig" as gcBlock %}
+
 {%
   set classes = [
-  'show--item',
-  'js-open',
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     not paragraph.isPublished() ? 'paragraph--unpublished',
   ]
 %}
+
+
 {% block paragraph %}
-  {# {% for item in items %} #}
-
-  {# {% set cardColor = item.content['#paragraph'].field_basic_card_color.value %} #}
-
+  {% block content %}
     <div{{attributes.addClass(classes)}}>
-      {% block content %}
-        <button class="show--title" data-box-toggle="{{paragraph.id()}}" role="tab" aria-selected="false"> <h4>
-          {{content.field_accordion_headline|field_value}}
-        </h4>
-        <span class="icon"></span>
-      </button>
-
-      <div class="show--content" role="tabpanel" aria-expanded="false" data-box="{{paragraph.id()}}">
-        {{content.field_accordion_body|field_value}}
-      </div>
-    {% endblock %}
-  </div>
-  {# {% endfor %} #}
+      {{ gcBlock.accordian({
+        id: paragraph.id(),
+        title:content.field_accordion_headline|field_value,
+        text: content.field_accordion_body|field_value,
+      }) }}
+    </div>
+  {% endblock %}
 {% endblock paragraph %}

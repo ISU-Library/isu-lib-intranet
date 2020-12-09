@@ -3,5 +3,6 @@ global:
   css:
     theme:
       css/global.css: {}
+      css/tailwind.css: {}
   js:
     js/global.js: {}

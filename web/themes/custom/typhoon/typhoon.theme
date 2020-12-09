@@ -34,20 +34,20 @@ function typhoon_form_alter(array &$form, FormStateInterface $form_state, $form_
 function typhoon_preprocess_page(&$variables) {
   $variables['relative_logo_url'] = file_url_transform_relative(file_create_url(theme_get_setting('logo.url')));
     
-    $variables['lib_util_nav1_text'] = theme_get_setting('lib_util_nav1_text');
-    $variables['lib_util_nav1_url'] = theme_get_setting('lib_util_nav1_url');
-    
-    $variables['lib_util_nav2_text'] = theme_get_setting('lib_util_nav2_text');
-    $variables['lib_util_nav2_url'] = theme_get_setting('lib_util_nav2_url');
+  $variables['lib_util_nav1_text'] = theme_get_setting('lib_util_nav1_text');
+  $variables['lib_util_nav1_url'] = theme_get_setting('lib_util_nav1_url');
+  
+  $variables['lib_util_nav2_text'] = theme_get_setting('lib_util_nav2_text');
+  $variables['lib_util_nav2_url'] = theme_get_setting('lib_util_nav2_url');
 
-    $variables['lib_util_nav3_text'] = theme_get_setting('lib_util_nav3_text');
-    $variables['lib_util_nav3_url'] = theme_get_setting('lib_util_nav3_url');
+  $variables['lib_util_nav3_text'] = theme_get_setting('lib_util_nav3_text');
+  $variables['lib_util_nav3_url'] = theme_get_setting('lib_util_nav3_url');
 
-    $variables['lib_util_nav4_text'] = theme_get_setting('lib_util_nav4_text');
-    $variables['lib_util_nav4_url'] = theme_get_setting('lib_util_nav4_url');
+  $variables['lib_util_nav4_text'] = theme_get_setting('lib_util_nav4_text');
+  $variables['lib_util_nav4_url'] = theme_get_setting('lib_util_nav4_url');
 
-    $variables['lib_util_nav5_text'] = theme_get_setting('lib_util_nav5_text');
-    $variables['lib_util_nav5_url'] = theme_get_setting('lib_util_nav5_url');
+  $variables['lib_util_nav5_text'] = theme_get_setting('lib_util_nav5_text');
+  $variables['lib_util_nav5_url'] = theme_get_setting('lib_util_nav5_url');
 }
 
 /*
@@ -81,6 +81,9 @@ function typhoon_preprocess_page__front(&$variables) {
   $uid= $user->get('uid')->value;
   $variables['custom_test_variable_2'] = "$uid $name $email"; 
 
-
   $variables['custom_test_link_1'] = "about-library"; 
+
+  
+  $variables['lib_homepage_header_header'] = theme_get_setting('lib_homepage_header_header');
+  $variables['lib_homepage_header_tagline'] = theme_get_setting('lib_homepage_header_tagline');
 }

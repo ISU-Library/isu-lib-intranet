@@ -39,47 +39,36 @@ $blue-basic-card-text-color-hover: $white;
 $blue-basic-card-text-blue: $blue-700;
 
 .basic-card--wrap {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  gap: $space-lg;
+  grid-template-columns: repeat(auto-fill, minmax(rem(200), 1fr));
+  width: $card-width-mobile;
 
-  .typhoon-grid & {
-    display: grid;
-    gap: $space-lg;
+
+  @include bp(md) {
     grid-template-columns: repeat(auto-fill, minmax(rem(320), 1fr));
-
-    @include bp(sm) {
-      grid-template-columns: repeat(auto-fill, minmax(rem(200), 1fr));
-    }
-
-    // makes basic-card-image wider
-    &.basic-card-image--wrap {
-      grid-template-columns: repeat(auto-fit, minmax(rem(300), 1fr));
-
-      @include bp(sm) {
-        grid-template-columns: repeat(auto-fit, minmax(rem(250), 1fr));
-      }
-    }
   }
 
+  // makes basic-card-image wider
+  &.basic-card-image--wrap {
+    grid-template-columns: repeat(auto-fit, minmax(rem(250), 1fr));
 
-  @include bp(sm) {
-    width: $card-width-mobile;
+    @include bp (md) {
+      grid-template-columns: repeat(auto-fit, minmax(rem(300), 1fr));
+    }
+
   }
 
   [class*='icon-'] {
-    font-size: $fs-2xl;
     color: $basic-card-text-red;
     transition: color 0.3s ease-in;
   }
 }
 
 .basic-card {
-  display: flex;
-  flex-direction: column;
   position: relative;
-  background-color: $white;
   height: 100%;
-  border-left: 4px solid $basic-card-border-color;
+  border-left: $space-2xs solid $basic-card-border-color;
   text-decoration: none;
   box-shadow: $basic-card-box-shadow;
   overflow: hidden;
@@ -155,21 +144,13 @@ $blue-basic-card-text-blue: $blue-700;
 }
 
 .basic-card--text-wrap {
-  display: flex;
-  flex-direction: column;
   height: 100%;
-  padding: $space-xl $space-lg $space-2xl $space-xl;
   transition: border-color 0.3s ease-in;
-
-  @include bp(xs) {
-    padding: $space-md $space-sm $space-lg $space-md;
-  }
 }
 
 .basic-card--category {
   display: block;
   line-height: 1.5;
-  font-size: $fs-sm;
   font-weight: 400;
   color: $basic-card-text-red;
   transition: color 0.3s ease-in;
@@ -237,7 +218,6 @@ $blue-basic-card-text-blue: $blue-700;
 
 
   [class*='icon-'] {
-    font-size: $fs-2xl;
     color: $yellow-basic-card-text-yellow;
     transition: color 0.3s ease-in;
   }
@@ -302,7 +282,6 @@ $blue-basic-card-text-blue: $blue-700;
 
 
   [class*='icon-'] {
-    font-size: $fs-2xl;
     color: $blue-basic-card-text-blue;
     transition: color 0.3s ease-in;
   }
@@ -323,11 +302,8 @@ $blue-basic-card-text-blue: $blue-700;
 
     &::before,
     &::after {
-      // content: '';
       z-index: 4;
       opacity: 0.5;
-      // width: 0;
-
     }
   }
 
@@ -340,7 +316,6 @@ $blue-basic-card-text-blue: $blue-700;
       left: 0;
       height: auto;
       border: none;
-      padding-bottom: $space-xs;
     }
   }
 
@@ -361,7 +336,7 @@ $blue-basic-card-text-blue: $blue-700;
 
   .basic-card--text-wrap {
     position: relative;
-    padding-top: $space-md;
+    // padding-top: $space-md;
   }
 
   .basic-card--category,

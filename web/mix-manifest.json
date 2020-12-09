@@ -1,6 +1,5 @@
 {
     "/themes/custom/typhoon/js/global.js": "/themes/custom/typhoon/js/global.js",
     "/themes/custom/typhoon/css/global.css": "/themes/custom/typhoon/css/global.css",
-    "/themes/custom/typhoon/js/global.js.map": "/themes/custom/typhoon/js/global.js.map",
-    "/themes/custom/typhoon/css/global.css.map": "/themes/custom/typhoon/css/global.css.map"
+    "/themes/custom/typhoon/css/tailwind.css": "/themes/custom/typhoon/css/tailwind.css"
 }

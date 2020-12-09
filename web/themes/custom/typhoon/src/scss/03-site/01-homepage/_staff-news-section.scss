@@ -1,53 +1,29 @@
 .front-page {
 
   .news-card--wrap {
-    grid-template-columns: repeat(auto-fit, minmax(408px, 1fr));
-    grid-gap: $space-3xl $space-3xl;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: $space-3xl $space-2xl;
 
-    @include bp(xl) {
-      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+    @include bp(sm) {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+
+    @include bp(lg) {
+      grid-template-columns: repeat(auto-fit, minmax(408px, 1fr));
       grid-gap: $space-3xl $space-3xl;
     }
 
-    @include bp(md) {
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      grid-gap: $space-3xl $space-2xl;
-    }
-
-    @include bp(xs) {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      grid-gap: $space-3xl $space-2xl;
+    @include bp(xl) {
+      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
     }
 
   }
 
   .news-card--lead {
+    grid-column: 1 / -1;
+
     @include bp(xl) {
       min-height: rem(366)
-    }
-
-    @include bp(md) {
-      &:first-of-type {
-        grid-column: 1 / 2;
-      }
-
-      &:last-of-type {
-        grid-column: 2 / 3;
-      }
-    }
-
-    @include bp(sm) {
-      grid-column: 1 / -1;
-
-      &:first-of-type {
-        grid-column: 1 / -1;
-      }
-    }
-  }
-
-  .news-card--basic {
-    @include bp(md) {
-      grid-column: 1 / -1;
     }
   }
 }

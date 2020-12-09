@@ -1,0 +1,19 @@
+{% macro header(data) %}
+
+  {% set defaultData = {
+        title: '',
+        tagline: '',
+    } %}
+
+  {% set data = data ? defaultData|merge(data) : defaultData %}
+
+  <div class="hero--text headline-special inline-block relative text-3xl mt-md mb-3xl xl:mb-5xl xs:mb-4xl mr-auto xl:ml-0">
+    <h1 class="headline-special--text text-red-500 xl:text-5xl xs:text-2xl text-white">
+      {{data.title}}
+    </h1>
+    <span class="headline-special--sub xl:pt-xs xs:pt-sm xl:text-2xl text-white h-32">
+      {{data.tagline}}
+    </span>
+  </div>
+
+{% endmacro %}

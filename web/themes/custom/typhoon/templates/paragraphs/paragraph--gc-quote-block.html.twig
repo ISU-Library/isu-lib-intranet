@@ -38,11 +38,10 @@
  * @ingroup themeable
  */
 #}
+
+{% import "@typhoon/components/_general-content.html.twig" as blocks %}
 {%
   set classes = [
-    'gen-con--block',
-    'quote-block',
-    paragraph.field_gc_quote_type.value,
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
@@ -50,21 +49,13 @@
   ]
 %}
 {% block paragraph %}
-
-  <div{{attributes.addClass(classes)}}>
-    <div class="quote--marks">
-      <i class="fas fa-quote-left" aria-hidden="true"></i>
+  {% block content %}
+    <div{{attributes.addClass(classes)}}>
+      {{blocks.quote({
+      quoteType: paragraph.field_gc_quote_type.value,
+      quoteText: content.field_gc_quote_quote,
+      quoteCite: paragraph.field_gc_quote_cite.value,
+    })}}
     </div>
-    {% block content %}
-      <blockquote class="quote">
-        {{ content.field_gc_quote_quote }}
-
-        <cite>
-          {{ paragraph.field_gc_quote_cite.value }}
-        </cite>
-      </blockquote>
-    {% endblock %}
-
-
-  </div>
+  {% endblock %}
 {% endblock paragraph %}

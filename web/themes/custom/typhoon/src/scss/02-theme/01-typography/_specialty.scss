@@ -12,13 +12,12 @@ $headline-special-fs: $space-3xl;
 
 .headline-special {
   position: relative;
-  margin: 0 auto;
   z-index: 1;
 }
 
 .headline-special--text {
-  @include angledSlashes($headline-special-fs);
-  display: inline-block;
+  @include angledSlashes($space-2xl);
+  display: inline;
   position: relative;
   margin: 0 auto $space-xs;
   text-shadow: $vert-dark-1;
@@ -43,30 +42,26 @@ $headline-special-fs: $space-3xl;
     right: -$space-lg;
   }
 
-  @include bp(md) {
+  @include bp(sm) {
     @include angledSlashes($space-3xl);
   }
 
-  @include bp(xs) {
-    @include angledSlashes($space-2xl);
-    display: inline;
+  @include bp(md) {
+    @include angledSlashes($headline-special-fs);
+    display: inline-block;
   }
 }
 
 .headline-special--sub {
   display: block;
   max-width: 100%;
-  padding-left: $space-xs;
-  font-size: $fs-xl;
+  padding-left: 0;
+  font-size: $fs-lg;
   text-align: left;
   text-shadow: $vert-dark-1;
 
   @include bp(md) {
-    font-size: $fs-lg;
-    padding-left: 0;
-  }
-
-  @include bp(sm) {
-    // font-size: $fs-md;
+    font-size: $fs-xl;
+    padding-left: $space-xs;
   }
 }

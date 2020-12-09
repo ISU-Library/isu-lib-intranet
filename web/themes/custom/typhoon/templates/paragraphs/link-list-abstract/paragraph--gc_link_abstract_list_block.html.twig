@@ -38,22 +38,25 @@
  * @ingroup themeable
  */
 #}
+
+{% import "@typhoon/components/_general-content.html.twig" as blocks %}
+
 {%
   set classes = [
-    'gen-con--block',
-    'text-block',
-    'block--link-abstract',
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     not paragraph.isPublished() ? 'paragraph--unpublished',
   ]
 %}
-{% block paragraph %}
 
+{% block paragraph %}
   <div{{attributes.addClass(classes)}}>
     {% block content %}
-      {{ content }}
-    {% endblock %}
+      {{blocks.linkListAbstract({
+        text: content.field_link_abstract_list_text|field_value,
+        links: content.field_link_abstract_list_link,
+      })}}
+    {% endblock content %}
   </div>
 {% endblock paragraph %}

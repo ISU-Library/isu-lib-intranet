@@ -39,60 +39,17 @@
  */
 #}
 
-{% 
+{%
   set classes = [
-  'basic-card', 
-  'basic-card--image',
-  paragraph.field_basic_card_image_color.value,
-  'paragraph',
-  'paragraph--type--' ~ paragraph.bundle|clean_class,
-  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-  not paragraph.isPublished() ? 'paragraph--unpublished'
+    'news-card--wrap',
+    'mb-3xl',
   ]
 %}
 
-{% set cardTitle = content.field_basic_card_image_title|field_value %}
-{% set cardCategory = content.field_basic_card_image_category.0['#title'] %}
-{% set cardText = content.field_basic_card_image_text|field_value %}
-{% set cardLinkText = content.field_basic_card_image_link.0['#title'] %}
-{% set cardLinkUrl = content.field_basic_card_image_link.0['#url'] %}
-{% set cardImgSrc = file_url(paragraph.field_basic_card_image_image.entity.uri.value) %}
-{% set cardImgAlt = content.field_basic_card_image_image.alt %}
-
-{% block paragraph %}
-  {% block content %}
-    <a role="Link" href="{{cardLinkUrl}}" class="basic-card--link">
-      <div {{attributes.addClass(classes)}}>
-        <div class="basic-card--image-wrap">
-          <figure>
-            <img src="{{ cardImgSrc }}" alt="alt"/>
-            <div class="image-overlay"></div>
-          </figure>
-          <div class="basic-card--text-wrap">
-            {% if cardCategory %}
-              <span class="basic-card--category mb-xs">
-                {{ cardCategory }}
-              </span>
-            {% endif %}
-            <h3 class="basic-card--title">
-              {{ cardTitle }}
-            </h3>
-          </div>
-        </div>
-        <span class="aria-text">
-          {{ cardTitle }}
-        </span>
-        <div class="basic-card--text-wrap">
-          <p class="basic-card--desc">
-            {{ cardText}}
-          </p>
-          <div class="cta--wrap">
-            <div class="cta">
-              {{ cardLinkText }}
-            </div>
-          </div>
-        </div>
-      </div>
-    </a>
-  {% endblock content %}
-{% endblock paragraph %}
+<div {{attributes.addclass(classes) }}>
+  {% block paragraph %}
+    {% for item in items %}
+      {{item.content}}
+    {% endfor %}
+  {% endblock paragraph %}
+</div>

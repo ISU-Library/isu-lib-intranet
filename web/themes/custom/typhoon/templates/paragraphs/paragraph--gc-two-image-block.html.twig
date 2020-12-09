@@ -38,11 +38,11 @@
  * @ingroup themeable
  */
 #}
+
+{% import "@typhoon/components/_general-content.html.twig" as blocks %}
+
 {%
   set classes = [
-    'gen-con--block',
-    'img-block',
-    'block--two-img',
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
@@ -52,35 +52,18 @@
 
 {% set leftImgSrc = file_url(paragraph.field_gc_two_img_img_left.entity.uri.value) %}
 {% set leftImgAlt = paragraph.field_gc_two_img_img_left.alt %}
-
 {% set rightImgSrc = file_url(paragraph.field_gc_two_img_img_right.entity.uri.value) %}
 {% set rightImgAlt = paragraph.field_gc_two_img_img_right.alt %}
 
 {% block paragraph %}
-  <div{{attributes.addClass(classes)}}>
-    {% block content %}
-      <div class="gen-con--img-wrap">
-        <figure>
-          {# <div> #}
-          <img
-          src="{{ leftImgSrc }}" alt="{{ leftImgAlt }}"/>
-          {# </div> #}
-          <figcaption>
-            {{ leftImgAlt }}
-          </figcaption>
-        </figure>
-      </div>
-      <div class="gen-con--img-wrap">
-        <figure>
-          {# <div> #}
-          <img
-          src="{{ rightImgSrc }}" alt="{{ rightImgAlt }}"/>
-          {# </div> #}
-          <figcaption>
-            {{ rightImgAlt }}
-          </figcaption>
-        </figure>
-      </div>
-    {% endblock %}
+  {% block content %}
+    <div{{attributes.addClass(classes)}}>
+      {{blocks.twoImg({
+        leftImgSrc: file_url(paragraph.field_gc_two_img_img_left.entity.uri.value) ,
+        leftImgAlt:paragraph.field_gc_two_img_img_left.alt ,
+        rightImgSrc:  file_url(paragraph.field_gc_two_img_img_right.entity.uri.value) ,
+        rightImgAlt: paragraph.field_gc_two_img_img_right.alt ,
+      })}}
+    </div>
   </div>
-{% endblock paragraph %}
+{% endblock %}{% endblock paragraph %}

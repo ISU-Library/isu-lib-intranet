@@ -38,57 +38,33 @@
  * @ingroup themeable
  */
 #}
-{%
+
+{% 
   set classes = [
-    'news-card--lead',
-    'br4',
-    'paragraph',
-    'paragraph--type--' ~ paragraph.bundle|clean_class,
-    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-    not paragraph.isPublished() ? 'paragraph--unpublished'
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished'
   ]
 %}
 
-
-{% set cardCatergory = content.field_news_card_lead_category.0['#title'] %}
-{% set cardTitle = content.field_news_card_lead_title|field_value %}
-{% set cardText = content.field_news_card_lead_text|field_value %}
-{% set cardLinkText = content.field_news_card_lead_link.0['#title'] %}
-{% set cardLink = content.field_news_card_lead_link.0['#url'] %}
-{% set cardImgSrc = file_url(paragraph.field_news_card_lead_image.entity.uri.value) %}
-{% set cardImgAlt = content.field_news_card_lead_image.alt %}
-
+{% import "@typhoon/components/_basic-cards.html.twig" as card %}
 
 {% block paragraph %}
   {% block content %}
-    <div title="{{cardTitle}}" {{attributes.addClass(classes)}}>
-      <span class="aria-text">
-        Link to
-        {{ cardTitle }}
-      </span>
-      <a href="{{cardLink}}" class="news-card--link br4" style="background-image: url('{{cardImgSrc}}');">
-        <div class="news-card--text-wrap pr-xl pl-lg pt-2xl pb-lg text-white">
-          {% if cardCatergory %}
-            <span class="news-card--category text-white">
-              {{ cardCatergory }}
-            </span>
-          {% endif %}
-          <h3 class="news-card--title mb-0 fs-lg text-white">
-            {{ cardTitle }}
-          </h3>
-          <div class="news-card--text">
-            <p class="text-white">
-              {{ cardText }}
-            </p>
-            <div class="cta--wrap">
-              <span class="cta text-white">
-                {{ cardLinkText }}
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="image-overlay"></div>
-      </a>
+
+    <div {{attributes.addClass(classes)}}>
+      {{ card.basicImg({
+        color: paragraph.field_basic_card_image_color.value,
+        imgSrc: file_url(paragraph.field_basic_card_image_image.entity.uri.value),
+        imgAlt: content.field_basic_card_image_image.alt,
+        link: content.field_basic_card_image_link.0['#url'],
+        title: content.field_basic_card_image_title|field_value,
+        category: content.field_basic_card_image_category.0['#title'],
+        text: content.field_basic_card_image_text|field_value,
+        linkText: content.field_basic_card_image_link.0['#title'],
+     }) }}
     </div>
-  {% endblock %}
+
+  {% endblock content %}
 {% endblock paragraph %}

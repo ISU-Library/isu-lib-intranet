@@ -38,11 +38,10 @@
  * @ingroup themeable
  */
 #}
+
+{% import "@typhoon/components/_general-content.html.twig" as blocks %}
 {%
   set classes = [
-    'gen-con--block',
-    'img-block',
-    'block--lg-img',
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
@@ -50,24 +49,13 @@
   ]
 %}
 
-{% set imgSrc = file_url(paragraph.field_gc_large_image_image.entity.uri.value) %}
-{% set imgAlt = paragraph.field_gc_large_image_image.alt %}
-
 {% block paragraph %}
-
   <div{{attributes.addClass(classes)}}>
     {% block content %}
-      <div class="gen-con--img-wrap">
-        <figure>
-          {# <div> #}
-          <img
-          src="{{ imgSrc }}" alt="{{ imgAlt }}"/>
-          {# </div> #}
-          <figcaption>
-            {{ imgAlt }}
-          </figcaption>
-        </figure>
-      </div>
+      {{blocks.largeImg({
+        imgSrc: file_url(paragraph.field_gc_large_image_image.entity.uri.value),
+        imgAlt: paragraph.field_gc_large_image_image.alt
+      })}}
     {% endblock %}
   </div>
 {% endblock paragraph %}
