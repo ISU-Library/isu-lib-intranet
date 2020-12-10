@@ -14,7 +14,7 @@
     min-height: rem(375);
   }
 
-  @include bp (lg) {
+  @include bp(lg) {
     min-height: rem(425);
   }
 

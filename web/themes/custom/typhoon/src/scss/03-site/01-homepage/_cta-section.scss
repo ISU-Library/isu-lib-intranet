@@ -8,57 +8,20 @@
 }
 
 .cta-content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-around;
-
-  @include bp(md) {
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row
-  }
 }
 
 .cta-text {
-  margin-top: $space-5xl;
-  max-width: rem(520px);
-
-  @include bp(md) {
-    margin-top: 0;
-  }
-
-  @include bp(xl) {
-    max-width: rem(650px);
-  }
 }
 
 .cta-card--stack {
-  margin-bottom: -$space-4xl;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-items: center;
-  width: 100%;
-  margin-top: $space-4xl;
-
-  @include bp(md) {
-    flex-direction: column;
-    align-items: center;
-    margin-top: -$space-4xl;
-  }
 }
 
 .cta-card {
-  width: 90%;
   box-shadow: $vert-dark-3;
-  transition: transform ease 0.5s, box-shadow ease 0.3s;
   z-index: 2;
-  overflow: hidden;
 
   &:hover {
     box-shadow: $vert-dark-4;
-    transform: scale(1.13);
     z-index: 3;
   }
 
@@ -73,22 +36,12 @@
       margin-bottom: $space-2xl;
     }
   }
-
-  @include bp(md) {
-    width: rem(300);
-  }
 }
 
 .cta-card--image {
-  position: relative;
   padding-top: percentage(202/280);
-  width: 100%;
-  margin: 0;
-
 
   img {
-    @include absolute-center;
-    max-width: 100%;
     z-index: 1;
   }
 
