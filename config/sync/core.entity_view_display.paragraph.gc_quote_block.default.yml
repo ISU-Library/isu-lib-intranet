@@ -30,8 +30,8 @@ content:
     type: text_default
     region: content
   field_gc_quote_type:
-    weight: 5
-    label: hidden
+    weight: 8
+    label: above
     settings: {  }
     third_party_settings: {  }
     type: list_default

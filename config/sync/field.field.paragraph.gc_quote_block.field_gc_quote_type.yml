@@ -1,4 +1,4 @@
-uuid: 1cfafe90-1f57-441c-b8b8-c23bdb2ac094
+uuid: b28f2186-ae90-4e62-a017-d6336a715866
 langcode: en
 status: true
 dependencies:
@@ -17,7 +17,7 @@ required: true
 translatable: false
 default_value:
   -
-    value: lib-block--quote
+    value: block--quote
 default_value_callback: ''
 settings: {  }
 field_type: list_string
