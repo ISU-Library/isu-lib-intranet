@@ -3,16 +3,16 @@ $side-nav-links: $red-500;
 
 // * top level <ul> in side-nav
 .side-nav {
-  padding: 0;
+  // padding: 0;
 }
 
 // * styles for all <a> in side-nav
 .side-nav--link {
-  display: block;
+  // display: block;
   // height: $side-nav-main-height;
-  padding: $space-sm $space-2xl;
+  // padding: $space-sm $space-2xl;
   // line-height: $side-nav-main-height;
-  position: relative;
+  // position: relative;
 }
 
 // * top level <li> in side nav structure
@@ -21,7 +21,7 @@ $side-nav-links: $red-500;
     &::before,
     &::after {
       display: none;
-      content: "";
+      content: '';
       position: absolute;
       height: 100%;
       width: $space-2xs;
@@ -64,7 +64,7 @@ $side-nav-links: $red-500;
 .sub-list--item {
   .side-nav--link {
     overflow: hidden;
-    padding: 0 $space-xl;
+    // padding: 0 $space-xl;
     color: $text-color;
     font-size: $fs-md;
     font-weight: 400;
@@ -72,8 +72,8 @@ $side-nav-links: $red-500;
 
     &::after {
       @include vert_center;
-      content: "\f054";
-      font-family: "Fontawesome";
+      content: '\f054';
+      font-family: 'Fontawesome';
       display: block;
       background-color: transparent;
       left: -1rem;
@@ -111,5 +111,5 @@ $side-nav-links: $red-500;
 
 // * nested <ul> in side-nav
 .side-nav--sub-list {
-  list-style-type: none;
+  // list-style-type: none;
 }

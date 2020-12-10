@@ -34,53 +34,45 @@
   {% if items %}
     {% if menu_level == 0 %}
       {{ items.title }}
-
       <ul{{attributes.addClass('side-nav')}}>
       {% else %}
-        <ul class="side-nav--sub-list">
+        <ul class="side-nav--sub-list list-none">
         {% endif %}
         {% for item in items %}
           {# Assign classes based on if the item is an open parent, closed parent, active, or a has a submenu. #}
           {% set classes = [
-            menu_level ? 'sub-list--item' : 'side-nav--item',
+            menu_level ? 'sub-list--item' : 'side-nav--item block',
             item.in_active_trail ? 'side-nav--item_active-trail',
           ]%}
 
-          {% if item.below %}
-            {# If the item has children, it will be a dropdown. #}
+          {# {% if item.below %} #}
+          {# If the item has children, it will be a dropdown. #}
             <li{{item.attributes.addClass(classes)}}>
 
-            {% else %}
+            {# {% else %} #}
 
-              {# If the item does not have children, it will not be a dropdown. #}
-              <li{{item.attributes.addClass(classes)}}>
-              {% endif %}
+            {# If the item does not have children, it will not be a dropdown. #}
+            {# <li{{item.attributes.addClass(classes)}}> #}
+            {# {% endif %} #}
 
-              {# Assign classes based on if the link is a parent or not, and if it is active or not #}
-              {% set active_link_class = [
-                'side-nav--link',
+            {% set base_link_class = [
+                  'block',
+                  'py-sm',
+                  'px-2xl',
                   item.in_active_trail ? 'is-active',
-              ]%}
+                  'side-nav--link'
+                ] %}{# {% if item.below %} #}
+            {# If the item has children, it is a toggle. #}
+            {{ link(item.title, item.url, {'class': base_link_class}) }}
+          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+            {# {% else %}
+                                                                            {# If the item does not have children, it's just a normal link. #}
+            {# {{ link(item.title, item.url, {'class': base_link_class}) }} #}{# {% endif %} #}
 
-              {# If the item is a parent, it acts as a toggle to open the menu. #}
-              {% set link_class = [
-                'side-nav--link', 
-              ]%}
 
-              {% if item.below %}
-                {# If the item has children, it is a toggle. #}
-                {{ link(item.title, item.url, {'class': link_class}) }}
-                {# <button class="isu-dropdown-toggle_mobile"><span class="fa fa-angle-down"></span><span class="sr-only">Open dropdown menu</span></button> #}
-                {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
-              {% else %}
-                {# If the item does not have children, it's just a normal link. #}
-                {{ link(item.title, item.url, {'class': active_link_class}) }}
+          </li>
+        {% endfor %}
 
-              {% endif %}
-
-            </li>
-          {% endfor %}
-
-        </ul>
+      </ul>
     {% endif %}
   {% endmacro %}
