@@ -91,26 +91,26 @@
 
 .text-img--right {
   .gen-con--img-wrap {
-    float: right;
-    margin-left: $space-lg;
+    float: initial;
+    // max-width: 100%;
+    margin: 0 auto;
 
-    @include bp(xs) {
-      float: initial;
-      max-width: 100%;
-      margin: 0 auto;
+    @include bp(md) {
+      float: right;
+      margin-left: $space-lg;
     }
   }
 }
 
 .text-img--left {
   .gen-con--img-wrap {
-    float: left;
-    margin-right: $space-lg;
+    float: initial;
+    // max-width: 100%;
+    margin: 0 auto;
 
-    @include bp(xs) {
-      float: initial;
-      max-width: 100%;
-      margin: 0 auto;
+    @include bp(md) {
+      float: left;
+      margin-right: $space-lg;
     }
   }
 }
@@ -130,14 +130,15 @@
 
 .block--two-img {
   .gen-con--img-wrap {
-    max-width: rem(400);
+    max-width: 100%;
+    margin: $space-xs;
 
     @include bp(md) {
       max-width: 45%;
     }
 
-    @include bp(xs) {
-      max-width: 100%;
+    @include bp(lg) {
+      max-width: rem(400);
     }
   }
 }
@@ -145,6 +146,7 @@
 .block--three-img {
   .gen-con--img-wrap {
     max-width: rem(250);
+    margin: $space-xs;
 
     @include bp(md) {
       max-width: 32%;
@@ -158,13 +160,12 @@
 
 .block--two-img,
 .block--three-img {
-  // .content-wrap {
   display: flex;
   justify-content: space-around;
+  flex-direction: column;
 
-  @include bp(xs) {
-    flex-direction: column;
-    // }
+  @include bp(sm) {
+    flex-direction: row;
   }
 }
 
@@ -172,22 +173,22 @@
   .link-list {
     display: flex;
     flex-wrap: wrap;
-    margin: $space-lg 0 0 0;
+    margin: $space-lg 0 0 $space-md;
 
-    @include bp(xs) {
-      margin: $space-lg 0 0 $space-md;
+    @include bp(sm) {
+      margin: $space-lg 0 0 0;
     }
   }
 
   .link-list--item {
     position: relative;
-    width: 50%;
     margin-bottom: $space-md;
-    padding-right: $space-xs;
+    width: 100%;
+    padding: $space-xs 0;
 
-    @include bp(xs) {
-      width: 100%;
-      padding: $space-xs 0;
+    @include bp(sm) {
+      width: 50%;
+      padding-right: $space-xs;
     }
 
     a {
