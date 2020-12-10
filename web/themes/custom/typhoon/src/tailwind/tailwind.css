@@ -1,9 +1,21 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* tailwind */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* custom CSS */
+@import './headers.css';
+
+a {
+  @apply text-red-500;
+}
+
+.absolute-center {
+  @apply absolute transform -translate-y-1/2 -translate-x-1/2 top-1/2 left-1/2;
+}
 
 .paragraph p {
-  @apply my-md
+  @apply my-md;
 }
 
 /* 

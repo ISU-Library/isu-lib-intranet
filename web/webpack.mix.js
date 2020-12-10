@@ -48,9 +48,10 @@ mix.disableSuccessNotifications();
 // CSS vender autoprefixes
 mix.options({
   postCss: [
+    require('postcss-import'),
     tailwindcss(`${tailwindDir}/tailwind.config.js`),
+    require('autoprefixer'),
   ]
-  // autoprefixer: { remove: false }
 });
 
 mix.options({

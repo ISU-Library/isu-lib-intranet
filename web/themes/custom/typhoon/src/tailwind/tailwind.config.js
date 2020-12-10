@@ -118,6 +118,7 @@ module.exports = {
   variants: {
     extend: {
       margin: ['last'],
+      scale: ['active', 'group-hover'],
     }
   },
   plugins: [],
