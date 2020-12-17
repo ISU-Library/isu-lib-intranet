@@ -195,15 +195,13 @@ $header-content-max-width: 1400px;
     }
 
     &:hover,
-    &:focus {
+    &:focus,
+    .is-active {
       .main-nav--dropdown {
         display: block;
       }
 
-      .main-nav--link {
-        background-color: $red-500;
-        color: $white;
-      }
+      .main-nav--link {}
     }
 
     .main-nav--link {
@@ -211,6 +209,13 @@ $header-content-max-width: 1400px;
       height: $header-nav-main-height;
       padding: 0 $space-2xl;
       line-height: $header-nav-main-height;
+
+      &:hover,
+      &:focus,
+      &.is-active {
+        background-color: $red-500;
+        color: $white;
+      }
 
       &::after {
         background-color: transparent;
@@ -236,7 +241,7 @@ $header-content-max-width: 1400px;
     }
 
     &:hover {
-      + .main-nav--item {
+      +.main-nav--item {
         background-color: $red-500;
         color: $white;
       }
