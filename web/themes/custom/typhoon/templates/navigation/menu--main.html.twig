@@ -48,7 +48,6 @@
             item.below ? 'dropdown-menu ',
           ]
         %}
-
           {% if item.below %}
             {# If the item has children, it will be a dropdown. #}
             <li{{item.attributes.addClass(classes).setAttribute('aria-expanded','false')}}>
@@ -59,18 +58,19 @@
 
               {# Assign classes based on if the link is a parent or not, and if it is active or not #}
               {%
-          set link_classes = [
-            not menu_level ? 'main-nav--link',
-            item.in_active_trail ? 'is-active',
-          ]
-        %}
+                set link_classes = [
+                  not menu_level ? 'main-nav--link',
+                  item.in_active_trail ? 'is-active',
+                ]
+              %}
               {# If the item is a parent, it acts as a toggle to open the menu. #}
               {% 
-          set toggle_classes = [
-           'main-nav--link', 
-           'dropdown-toggle'
-          ]
-        %}
+                  set toggle_classes = [
+                  'main-nav--link', 
+                  'dropdown-toggle',
+                  item.in_active_trail ? 'is-active',
+                  ]
+                %}
 
               {% if item.below %}
                 {# If the item has children, it is a toggle. #}

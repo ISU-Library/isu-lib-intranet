@@ -34,45 +34,93 @@
   {% if items %}
     {% if menu_level == 0 %}
       {{ items.title }}
-      <ul{{attributes.addClass('side-nav')}}>
+      <ul{{attributes.addClass('side-nav','rounded','bg-white','overflow-hidden')}}>
       {% else %}
-        <ul class="side-nav--sub-list list-none">
+        <ul class="side-nav--sub-list list-none sm ml-0 p-0">
         {% endif %}
         {% for item in items %}
           {# Assign classes based on if the item is an open parent, closed parent, active, or a has a submenu. #}
           {% set classes = [
-            menu_level ? 'sub-list--item' : 'side-nav--item block',
-            item.in_active_trail ? 'side-nav--item_active-trail',
+            menu_level ? 'sub-list--item' : 'side-nav--item block js-side-nav-select first:border-0',
+            item.in_active_trail ? 'side-nav--item_active-trail',  
           ]%}
 
-          {# {% if item.below %} #}
-          {# If the item has children, it will be a dropdown. #}
+          {% if item.below %}
+            {# If the item has children, it will be a dropdown. #}
             <li{{item.attributes.addClass(classes)}}>
+            {% else %}
 
-            {# {% else %} #}
+              {# If the item does not have children, it will not be a dropdown. #}
+              <li{{item.attributes.addClass(classes)}}>
+              {% endif %}
 
-            {# If the item does not have children, it will not be a dropdown. #}
-            {# <li{{item.attributes.addClass(classes)}}> #}
-            {# {% endif %} #}
-
-            {% set base_link_class = [
+              {% set top_link_class = [
                   'block',
                   'py-sm',
-                  'px-2xl',
+                  'px-md',
+                  item.in_active_trail ? 'is-active' ,
+                  'side-nav--link',
+                  'flex-grow',
+                  'border-t-2',
+                  'border-white'
+                ] %}
+
+              {% set bottom_link_class = [
+                  'block',
+                  'py-sm',
+                  'px-md',
                   item.in_active_trail ? 'is-active',
-                  'side-nav--link'
-                ] %}{# {% if item.below %} #}
-            {# If the item has children, it is a toggle. #}
-            {{ link(item.title, item.url, {'class': base_link_class}) }}
-          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
-            {# {% else %}
-                                                                                        {# If the item does not have children, it's just a normal link. #}
-            {# {{ link(item.title, item.url, {'class': base_link_class}) }} #}{# {% endif %} #}
+                  'side-nav--link',
+                  'border-0',
+                  'flex-grow'
+                ] %}
 
+              {# If the item has children, and is top level. #}
+              {% if item.below and menu_level == 0 %}
+                <div class="flex">
+                  <div title="{{item.title}} section has sub-pages" class="flex icon-wrap justify-center border-t-2 border-warm-grey-50 items-center bg-yellow-500 w-3xl transition-colors duration-300 hover:bg-yellow-600">
+                    {% if item.in_active_trail %}
+                      <i class="fas fa-minus text-red-500 text-lg"></i>
+                    {% else %}
+                      <i class="fas fa-plus text-red-500 text-lg"></i>
+                    {% endif %}
+                  </div>
+                  {{ link(item.title, item.url, {'class': top_link_class}) }}
+                </div>
+                {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+              {% elseif menu_level == 0 %}
+                {# If the is top level with no kids. #}
+                <div
+                  class="flex">
+                  {# {% if item.in_active_trail %} #}
+                  <div title="{{item.title}} doesn't have sub-pages" class="flex icon-wrap justify-center border-t-2 border-warm-grey-50 items-center bg-yellow-500 w-3xl transition-colors duration-300 hover:bg-yellow-600">
+                    <i class=" fas fa-minus text-red-500 text-lg"></i>
+                  </div>
+                  {{ link(item.title, item.url, {'class': top_link_class}) }}
+                {# {% else %} #}
+                  {# <div class="flex justify-center items-center bg-yellow-500 w-3xl"> #}
+                  {# <i class="fas fa-plus text-red-500 text-lg"></i> #}
+                  {# </div> #}
+                  {# {% endif %} #}
+                </div>
+              {% else %}
+                {# If item is not top level #}
+                <div
+                  class="flex">
+                  {# {% if item.in_active_trail %} #}
+                  <div title="{{item.title}} doesn't have sub-pages" class="flex icon-wrap justify-center items-center bg-yellow-500 w-3xl">
+                    {% if item.in_active_trail %}
+                      {# <i class="fas fa-chevron-right text-red-500 text-md"></i> #}
+                      {% else %}
+                      {# <i class="hidden"></i> #}
+                    {% endif %}
+                  </div>
+                  {{ link(item.title, item.url, {'class': bottom_link_class}) }}
+                </div>
+              {% endif %}
+            </li>
+          {% endfor %}
 
-          </li>
-        {% endfor %}
-
-      </ul>
+        </ul>
     {% endif %}
   {% endmacro %}

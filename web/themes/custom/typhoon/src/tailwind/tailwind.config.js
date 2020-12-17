@@ -118,6 +118,7 @@ module.exports = {
   variants: {
     extend: {
       margin: ['last'],
+      borderWidth: ['first'],
       scale: ['active', 'group-hover'],
     }
   },
