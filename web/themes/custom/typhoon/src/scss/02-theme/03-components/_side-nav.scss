@@ -3,7 +3,8 @@ $side-nav-links: $red-500;
 
 // * top level <ul> in side-nav
 .side-nav {
-  // padding: 0;
+  background-color: $white;
+  box-shadow: $vert-light-2
 }
 
 // * styles for all <a> in side-nav
@@ -18,23 +19,14 @@ $side-nav-links: $red-500;
 // * top level <li> in side nav structure
 .side-nav--item {
   .side-nav--link {
+    border-right: $space-2xs solid $yellow-500;
+    // border-left: $space-2xs solid $yellow-500;
+
     &::before,
     &::after {
-      display: none;
       content: '';
-      position: absolute;
-      height: 100%;
-      width: $space-2xs;
-      background-color: $yellow-500;
-      top: 0;
-    }
-
-    &::before {
-      right: 0;
-    }
-
-    &::after {
-      left: 0;
+      background-color: transparent;
+      transition: none;
     }
 
     &:hover,
@@ -42,23 +34,19 @@ $side-nav-links: $red-500;
     &.is-active {
       color: $white;
       background-color: $red-500;
-      box-shadow: $vert-light-1;
-
-      &::before,
-      &::after {
-        display: block;
-      }
+      // box-shadow: $vert-light-1;
+      border-right: $space-2xs solid $yellow-500;
+      // border-left: $space-2xs solid $yellow-500;
+      z-index: 1;
     }
   }
 }
 
-// .side-nav--item_active-trail {
-//   transition: box-shadow 0.3s ease;
-
-//   &:hover {
-//     box-shadow: $vert-light-2;
-//   }
-// }
+.side-nav--item_active-trail {
+  .side-nav--sub-list {
+    display: block;
+  }
+}
 
 // * nested <li> in side-nav structure
 .sub-list--item {
@@ -72,7 +60,7 @@ $side-nav-links: $red-500;
 
     &::after {
       @include vert_center;
-      content: '\f054';
+      // content: '\f054';
       font-family: 'Fontawesome';
       display: block;
       background-color: transparent;
@@ -86,9 +74,11 @@ $side-nav-links: $red-500;
     &:focus,
     &.is-active {
       color: $red-500;
-      background-color: $white;
+      background-color: transparent;
       transition: left ease 0.3s;
       box-shadow: none;
+      // border-right: $space-2xs solid transparent;
+      // border-left: $space-2xs solid transparent;
 
       &::before {
         display: none;
@@ -111,5 +101,5 @@ $side-nav-links: $red-500;
 
 // * nested <ul> in side-nav
 .side-nav--sub-list {
-  // list-style-type: none;
+  display: none;
 }

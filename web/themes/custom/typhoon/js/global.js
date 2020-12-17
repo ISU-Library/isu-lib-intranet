@@ -1415,213 +1415,44 @@ var accordionAnimation = showItems.forEach(function (item) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var smooth_scroll__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! smooth-scroll */ "./node_modules/smooth-scroll/dist/smooth-scroll.polyfills.min.js");
 /* harmony import */ var smooth_scroll__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(smooth_scroll__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _nav_highlight_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./nav-highlight.js */ "./themes/custom/typhoon/src/js/nav-highlight.js");
-/* harmony import */ var _accordion_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./accordion.js */ "./themes/custom/typhoon/src/js/accordion.js");
-/* harmony import */ var _libCapacity__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./libCapacity */ "./themes/custom/typhoon/src/js/libCapacity.js");
-/* harmony import */ var _libCapacity__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_libCapacity__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _mobile_nav_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./mobile-nav.js */ "./themes/custom/typhoon/src/js/mobile-nav.js");
+/* harmony import */ var _accordion_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./accordion.js */ "./themes/custom/typhoon/src/js/accordion.js");
 // elements animation
+ // import { navHighlight } from './nav-highlight.js';
 
-
-
-
+ // import * as capacity from './libCapacity';
+// import { mobileNavAnimation } from './mobile-nav.js';
 
 var scroll = new (smooth_scroll__WEBPACK_IMPORTED_MODULE_0___default())('a[href*="#"]'); // adds highlight to current page in nav
+// navHighlight;
+// accordion
 
-_nav_highlight_js__WEBPACK_IMPORTED_MODULE_1__.navHighlight; // accordion
+_accordion_js__WEBPACK_IMPORTED_MODULE_1__; // capacity
+// capacity;
+// mobile trigger
+// mobileNavAnimation();
 
-_accordion_js__WEBPACK_IMPORTED_MODULE_2__; // capacity
-
-_libCapacity__WEBPACK_IMPORTED_MODULE_3__; // mobile trigger
-
-(0,_mobile_nav_js__WEBPACK_IMPORTED_MODULE_4__.mobileNavAnimation)();
-
-/***/ }),
-
-/***/ "./themes/custom/typhoon/src/js/libCapacity.js":
-/*!*****************************************************!*\
-  !*** ./themes/custom/typhoon/src/js/libCapacity.js ***!
-  \*****************************************************/
-/*! unknown exports (runtime-defined) */
-/*! runtime requirements:  */
-/***/ (function() {
-
-// APi Endpoint
-var baseEndpoint = 'https://api.density.io/v2/'; // API Auth Token
-
-var densityToken = 'tok_X3RAYB1p9dgMYSMU2MICYxD1StPh0Bmx4Jf6gLh1biS'; // API id for room in questions
-
-var space_id = 'spc_825429597414752714';
-var densityEl = document.querySelector('.js-densityHook');
-var densityMessageEl = densityEl.querySelector('.alert-text--main');
-var webSocketOccupants = new XMLHttpRequest();
-var initialOccupants = new XMLHttpRequest();
-
-function occupantsAlert(count) {
-  var full = count >= 1000;
-  var crowded = count > 500 && count < 1000;
-  densityEl.classList.remove('alert--red', 'alert--yellow', 'alert--green');
-
-  if (full) {
-    densityEl.classList.add('alert--red');
-    densityMessageEl.innerHTML = 'Unlikely';
-  } else if (crowded) {
-    densityEl.classList.add('alert--yellow');
-    densityMessageEl.innerHTML = 'Likely';
-  } else {
-    densityEl.classList.add('alert--green');
-    densityMessageEl.innerHTML = 'Available';
-  }
-}
-
-initialOccupants.open('GET', baseEndpoint + 'spaces/' + space_id, true);
-initialOccupants.setRequestHeader('Authorization', 'Bearer ' + densityToken);
-
-initialOccupants.onload = function () {
-  if (this.status >= 200 && this.status < 400) {
-    // Success!
-    var data = JSON.parse(this.response);
-    var count = data.current_count; // set html display
-
-    occupantsAlert(count);
-  } else {
-    console.log('error'); // We reached our target server, but it returned an error
-  }
-};
-
-webSocketOccupants.open('POST', baseEndpoint + 'sockets', true);
-webSocketOccupants.setRequestHeader('Authorization', 'Bearer ' + densityToken);
-
-webSocketOccupants.onload = function () {
-  if (this.status >= 200 && this.status < 400) {
-    // Success!
-    var response = JSON.parse(this.response);
-    var densityWS = new WebSocket(response.url);
-
-    densityWS.onmessage = function (event) {
-      var data = JSON.parse(event.data);
-
-      if (data.payload.space_id == space_id) {
-        var count = data.payload.count;
-        occupantsAlert(count);
-      }
-    };
-  } else {
-    // We reached our target server, but it returned an error
-    console.log('error');
-  }
-};
-
-initialOccupants.onerror = function () {
-  densityMessageEl.innerHTML = 'An error has occurred. Please try again shortly.';
-};
-
-webSocketOccupants.onerror = function () {
-  densityMessageEl.innerHTML = 'An error has occurred. Please try again shortly.';
-};
-
-initialOccupants.send();
-webSocketOccupants.send();
-
-/***/ }),
-
-/***/ "./themes/custom/typhoon/src/js/mobile-nav.js":
-/*!****************************************************!*\
-  !*** ./themes/custom/typhoon/src/js/mobile-nav.js ***!
-  \****************************************************/
-/*! namespace exports */
-/*! export mobileNavAnimation [provided] [no usage info] [missing usage info prevents renaming] */
-/*! other exports [not provided] [no usage info] */
-/*! runtime requirements: __webpack_require__, __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "mobileNavAnimation": function() { return /* binding */ mobileNavAnimation; }
-/* harmony export */ });
-/* harmony import */ var animejs_lib_anime_es_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! animejs/lib/anime.es.js */ "./node_modules/animejs/lib/anime.es.js");
-
-function mobileNavAnimation(e) {
-  var sideNav = document.querySelector('.typhoon-side-nav--wrap');
-  var mobileNavBtn = sideNav.querySelector('.typhoon-side-nav--mobile');
-  var mobileNavEl = sideNav.querySelector('.typhoon-side-menu--wrap');
-  var navHeight = animejs_lib_anime_es_js__WEBPACK_IMPORTED_MODULE_0__.default.get(mobileNavEl, 'height', 'px');
-  animejs_lib_anime_es_js__WEBPACK_IMPORTED_MODULE_0__.default.set(mobileNavEl, {
-    height: 0
-  });
-
-  function openMobileNav() {
-    (0,animejs_lib_anime_es_js__WEBPACK_IMPORTED_MODULE_0__.default)({
-      targets: mobileNavEl,
-      height: navHeight,
-      autoplay: false,
-      easing: 'linear',
-      duration: 200
-    }).play();
-  }
-
-  function closeMobileNav() {
-    (0,animejs_lib_anime_es_js__WEBPACK_IMPORTED_MODULE_0__.default)({
-      targets: mobileNavEl,
-      height: 0,
-      autoplay: false,
-      easing: 'linear',
-      duration: 200
-    }).play();
-  }
-
-  function handleMobileNavClick(event) {
-    var getAriaValue = mobileNavBtn.getAttribute('aria-expanded');
-    var navLinks = sideNav.querySelectorAll('.typhoon-side-nav--sub-page');
-    console.log(event.target);
-
-    if (getAriaValue === 'false') {
-      sideNav.classList.add('js-nav-open');
-      mobileNavBtn.setAttribute('aria-expanded', true);
-      openMobileNav();
-    } else if (event.target === navLinks) {
-      sideNav.classList.remove('js-nav-open');
-      mobileNavBtn.setAttribute('aria-expanded', false);
-      closeMobileNav();
+var sideNavEl = document.querySelectorAll(".js-side-nav-select");
+sideNavEl.forEach(function (subNav) {
+  var openIcon = 'fa-plus';
+  var closeIcon = 'fa-minus';
+  var navTrigger = subNav.querySelector('.icon-wrap');
+  var icon = subNav.querySelector('i');
+  var subPages = subNav.querySelector('ul.side-nav--sub-list');
+  navTrigger.addEventListener('click', function (e) {
+    if (icon.classList.contains(openIcon)) {
+      icon.classList.remove(openIcon);
+      icon.classList.add(closeIcon);
+      subPages.setAttribute('aria-expanded', true);
+      subPages.style.display = 'block';
+    } else if (icon.classList.contains(closeIcon)) {
+      icon.classList.remove(closeIcon);
+      icon.classList.add(openIcon);
+      subPages.style.display = 'none';
+      subPages.setAttribute('aria-expanded', false);
     } else {
-      sideNav.classList.remove('js-nav-open');
-      mobileNavBtn.setAttribute('aria-expanded', false);
-      closeMobileNav();
+      return;
     }
-  }
-
-  sideNav.addEventListener('click', handleMobileNavClick);
-}
-
-/***/ }),
-
-/***/ "./themes/custom/typhoon/src/js/nav-highlight.js":
-/*!*******************************************************!*\
-  !*** ./themes/custom/typhoon/src/js/nav-highlight.js ***!
-  \*******************************************************/
-/*! namespace exports */
-/*! export navHighlight [provided] [no usage info] [missing usage info prevents renaming] */
-/*! other exports [not provided] [no usage info] */
-/*! runtime requirements: __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "navHighlight": function() { return /* binding */ navHighlight; }
-/* harmony export */ });
-var navList = document.querySelectorAll('.typhoon-side-nav--list');
-var navHighlight = navList.forEach(function (navCol) {
-  var link = navCol.querySelector('.typhoon-side-nav--main-link');
-  var currentURL = window.location.pathname;
-  var getHREF = link.getAttribute('href');
-  var cleanURL = currentURL.replace(/^\/|\/$/g, '');
-  var cleanHREF = getHREF.replace(/^\/|\/$/g, '');
-
-  if (cleanURL === cleanHREF) {
-    navCol.classList.add('js-current');
-  }
+  });
 });
 
 /***/ }),
