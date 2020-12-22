@@ -3255,6 +3255,11 @@ input[type=text]:invalid,input[type=password]:invalid,input[type=email]:invalid,
   clear:both
 }
 
+.default-link::after{
+  height:0;
+  content:inherit
+}
+
 .full-width{
   margin-left:calc(50% - 49vw);
   margin-right:calc(50% - 49vw)

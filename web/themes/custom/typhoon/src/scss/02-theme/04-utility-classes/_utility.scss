@@ -18,6 +18,11 @@
   }
 }
 
+.default-link::after {
+  height: 0;
+  content: inherit;
+}
+
 .full-width {
   margin-left: calc(50% - 49vw);
   margin-right: calc(50% - 49vw);

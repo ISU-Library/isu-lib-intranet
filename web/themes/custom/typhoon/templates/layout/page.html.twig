@@ -71,10 +71,10 @@
         </aside>
       {% endif %}
       {# {% if page.sidebar_second %}
-          <aside class="layout-sidebar-second" role="complementary">
-          {{ page.sidebar_second }}
-          </aside>
-          {% endif %} #}
+                      <aside class="layout-sidebar-second" role="complementary">
+                      {{ page.sidebar_second }}
+                      </aside>
+                      {% endif %} #}
     </div>
     <div aria-hidden="true" class="flair-img staff-updates--dots">
       <img src="/themes/custom/typhoon/images/small-dots.png" alt="">
@@ -82,7 +82,7 @@
   </div>
   {% if page.footer %}
     <footer role="contentinfo" class="flex-shrink-0">
-      {{ page.footer }}
+      {% include "@typhoon/navigation/footer-nav.html.twig" %}
     </footer>
   {% endif %}
 </div>
