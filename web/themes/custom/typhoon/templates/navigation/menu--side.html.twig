@@ -78,7 +78,7 @@
               {# If the item has children, and is top level. #}
               {% if item.below and menu_level == 0 %}
                 <div class="flex">
-                  <div title="{{item.title}} section has sub-pages" class="flex icon-wrap justify-center border-t-2 border-warm-grey-50 items-center bg-yellow-500 w-3xl transition-colors duration-300 hover:bg-yellow-600">
+                  <div title="{{item.title}} section has sub-pages" class="flex icon-wrap flex-shrink-0 justify-center border-t-2 border-warm-grey-50 items-center bg-yellow-500 w-3xl transition-colors duration-300 hover:bg-yellow-600">
                     {% if item.in_active_trail %}
                       <i class="fas fa-minus text-red-500 text-lg"></i>
                     {% else %}
@@ -93,7 +93,7 @@
                 <div
                   class="flex">
                   {# {% if item.in_active_trail %} #}
-                  <div title="{{item.title}} doesn't have sub-pages" class="flex icon-wrap justify-center border-t-2 border-warm-grey-50 items-center bg-yellow-500 w-3xl transition-colors duration-300 hover:bg-yellow-600">
+                  <div title="{{item.title}} doesn't have sub-pages" class="flex icon-wrap flex-shrink-0 justify-center border-t-2 border-warm-grey-50 items-center bg-yellow-500 w-3xl transition-colors duration-300 hover:bg-yellow-600">
                     <i class=" fas fa-minus text-red-500 text-lg"></i>
                   </div>
                   {{ link(item.title, item.url, {'class': top_link_class}) }}
@@ -108,7 +108,7 @@
                 <div
                   class="flex">
                   {# {% if item.in_active_trail %} #}
-                  <div title="{{item.title}} doesn't have sub-pages" class="flex icon-wrap justify-center items-center bg-yellow-500 w-3xl">
+                  <div title="{{item.title}} doesn't have sub-pages" class="flex icon-wrap flex-shrink-0 justify-center items-center bg-yellow-500 w-3xl">
                     {% if item.in_active_trail %}
                       {# <i class="fas fa-chevron-right text-red-500 text-md"></i> #}
                       {% else %}
