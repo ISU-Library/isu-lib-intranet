@@ -97,8 +97,6 @@ function typhoon_form_system_theme_settings_alter(&$form, &$form_state) {
       '#default_value'  => theme_get_setting('lib_util_nav5_url'),
     );
 
-
-
   // Create a section for Homepage Header and Tagline
   $form['lib_homepage_header'] = array(
     '#type'         => 'details',
@@ -119,5 +117,40 @@ function typhoon_form_system_theme_settings_alter(&$form, &$form_state) {
     '#title'  => t('Homepage Tagline'),
     '#default_value'  => theme_get_setting('lib_homepage_header_tagline'),
   );
+
+    // Footer social media, phone, and policy items
+    $form['footer_social_media_links'] = array(
+      '#type'         => 'details',
+      '#title'        => t('Footer Social Media'),
+      '#description'  => t('Social Media Links and Icons'),
+      '#weight' => -800,
+      '#open' => TRUE,
+    );
   
+  
+  // Footer social media, phone, and policy items
+  $form['footer_social_media_links'] = array(
+    '#type'         => 'details',
+    '#title'        => t('Footer Social Media'),
+    '#description'  => t('Social Media Links and Icons'),
+    '#weight' => -800,
+    '#open' => TRUE,
+  );
+
+   // 1
+  $form['footer_social_media_links']['footer_social_media1_url'] = array(
+    '#type'   => 'url',
+    '#title'  => t('Social Media URL'),
+    '#default_value'  => theme_get_setting('footer_social_media1_url'),
+  );
+
+  $form['footer_social_media_links']['footer_social_media1_icon'] = array(
+    '#type'   => 'select',
+    '#title'  => t('Icon'),
+    '#options' => [
+      'fab fa-twitter' => t('Twitter'),
+      'fab fa-facebook' => t('Facebook'),
+      'fas fa-external-link-alt' => t('External Link'),
+    ],
+  );
 }
