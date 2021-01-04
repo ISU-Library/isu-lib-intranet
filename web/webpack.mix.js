@@ -50,6 +50,7 @@ mix.options({
   postCss: [
     require('postcss-import'),
     tailwindcss(`${tailwindDir}/tailwind.config.js`),
+    require('postcss-nesting'),
     require('autoprefixer'),
   ]
 });
