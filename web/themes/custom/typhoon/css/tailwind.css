@@ -24586,6 +24586,10 @@ h6 {
   margin-bottom: 0.5rem;
 }
 
+.footer-nav--wrap {
+  max-width: 93.75rem;
+}
+
 a {
   --tw-text-opacity: 1;
   color: rgba(198, 16, 46, var(--tw-text-opacity));
@@ -24622,36 +24626,39 @@ a {
   .sm\:container {
     width: 100%;
   }
+}
 
-  @media (min-width: 640px) {
+@media (min-width: 640px) and (min-width: 640px) {
     .sm\:container {
       max-width: 640px;
     }
   }
 
-  @media (min-width: 768px) {
+@media (min-width: 640px) and (min-width: 768px) {
     .sm\:container {
       max-width: 768px;
     }
   }
 
-  @media (min-width: 1024px) {
+@media (min-width: 640px) and (min-width: 1024px) {
     .sm\:container {
       max-width: 1024px;
     }
   }
 
-  @media (min-width: 1280px) {
+@media (min-width: 640px) and (min-width: 1280px) {
     .sm\:container {
       max-width: 1280px;
     }
   }
 
-  @media (min-width: 1536px) {
+@media (min-width: 640px) and (min-width: 1536px) {
     .sm\:container {
       max-width: 1536px;
     }
   }
+
+@media (min-width: 640px) {
 
   .sm\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-y-reverse: 0;
@@ -48511,36 +48518,39 @@ a {
   .md\:container {
     width: 100%;
   }
+}
 
-  @media (min-width: 640px) {
+@media (min-width: 768px) and (min-width: 640px) {
     .md\:container {
       max-width: 640px;
     }
   }
 
-  @media (min-width: 768px) {
+@media (min-width: 768px) and (min-width: 768px) {
     .md\:container {
       max-width: 768px;
     }
   }
 
-  @media (min-width: 1024px) {
+@media (min-width: 768px) and (min-width: 1024px) {
     .md\:container {
       max-width: 1024px;
     }
   }
 
-  @media (min-width: 1280px) {
+@media (min-width: 768px) and (min-width: 1280px) {
     .md\:container {
       max-width: 1280px;
     }
   }
 
-  @media (min-width: 1536px) {
+@media (min-width: 768px) and (min-width: 1536px) {
     .md\:container {
       max-width: 1536px;
     }
   }
+
+@media (min-width: 768px) {
 
   .md\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-y-reverse: 0;
@@ -72400,36 +72410,39 @@ a {
   .lg\:container {
     width: 100%;
   }
+}
 
-  @media (min-width: 640px) {
+@media (min-width: 1024px) and (min-width: 640px) {
     .lg\:container {
       max-width: 640px;
     }
   }
 
-  @media (min-width: 768px) {
+@media (min-width: 1024px) and (min-width: 768px) {
     .lg\:container {
       max-width: 768px;
     }
   }
 
-  @media (min-width: 1024px) {
+@media (min-width: 1024px) and (min-width: 1024px) {
     .lg\:container {
       max-width: 1024px;
     }
   }
 
-  @media (min-width: 1280px) {
+@media (min-width: 1024px) and (min-width: 1280px) {
     .lg\:container {
       max-width: 1280px;
     }
   }
 
-  @media (min-width: 1536px) {
+@media (min-width: 1024px) and (min-width: 1536px) {
     .lg\:container {
       max-width: 1536px;
     }
   }
+
+@media (min-width: 1024px) {
 
   .lg\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-y-reverse: 0;
@@ -96289,36 +96302,39 @@ a {
   .xl\:container {
     width: 100%;
   }
+}
 
-  @media (min-width: 640px) {
+@media (min-width: 1280px) and (min-width: 640px) {
     .xl\:container {
       max-width: 640px;
     }
   }
 
-  @media (min-width: 768px) {
+@media (min-width: 1280px) and (min-width: 768px) {
     .xl\:container {
       max-width: 768px;
     }
   }
 
-  @media (min-width: 1024px) {
+@media (min-width: 1280px) and (min-width: 1024px) {
     .xl\:container {
       max-width: 1024px;
     }
   }
 
-  @media (min-width: 1280px) {
+@media (min-width: 1280px) and (min-width: 1280px) {
     .xl\:container {
       max-width: 1280px;
     }
   }
 
-  @media (min-width: 1536px) {
+@media (min-width: 1280px) and (min-width: 1536px) {
     .xl\:container {
       max-width: 1536px;
     }
   }
+
+@media (min-width: 1280px) {
 
   .xl\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-y-reverse: 0;
@@ -120178,36 +120194,39 @@ a {
   .\32xl\:container {
     width: 100%;
   }
+}
 
-  @media (min-width: 640px) {
+@media (min-width: 1536px) and (min-width: 640px) {
     .\32xl\:container {
       max-width: 640px;
     }
   }
 
-  @media (min-width: 768px) {
+@media (min-width: 1536px) and (min-width: 768px) {
     .\32xl\:container {
       max-width: 768px;
     }
   }
 
-  @media (min-width: 1024px) {
+@media (min-width: 1536px) and (min-width: 1024px) {
     .\32xl\:container {
       max-width: 1024px;
     }
   }
 
-  @media (min-width: 1280px) {
+@media (min-width: 1536px) and (min-width: 1280px) {
     .\32xl\:container {
       max-width: 1280px;
     }
   }
 
-  @media (min-width: 1536px) {
+@media (min-width: 1536px) and (min-width: 1536px) {
     .\32xl\:container {
       max-width: 1536px;
     }
   }
+
+@media (min-width: 1536px) {
 
   .\32xl\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-y-reverse: 0;

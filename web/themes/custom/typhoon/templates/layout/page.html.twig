@@ -43,13 +43,13 @@
  * @see html.html.twig
  */
 #}
-<div class="layout-container flex flex-col relative">
+<div class="layout-container flex flex-col min-h-screen">
 
   <header role="banner" class="header z-50 flex-shrink-0">
     {{ page.header }}
     {% include "@typhoon/navigation/nav.html.twig" %}
   </header>
-  <div class="relative">
+  <div class="relative flex-grow">
     <div aria-hidden="true" class="flair-img staff-news--dots-red-bars">
       <img src="/themes/custom/typhoon/images/dot-pattern-red-bars.png" alt="">
     </div>
@@ -70,20 +70,14 @@
           {% include "@typhoon/navigation/side-nav.html.twig" %}
         </aside>
       {% endif %}
-      {# {% if page.sidebar_second %}
-                      <aside class="layout-sidebar-second" role="complementary">
-                      {{ page.sidebar_second }}
-                      </aside>
-                      {% endif %} #}
+      {# {% if page.sidebar_second %}<aside class="layout-sidebar-second" role="complementary">{{ page.sidebar_second }}</aside>{% endif %} #}
     </div>
     <div aria-hidden="true" class="flair-img staff-updates--dots">
       <img src="/themes/custom/typhoon/images/small-dots.png" alt="">
     </div>
   </div>
   {% if page.footer %}
-    <footer role="contentinfo" class="flex-shrink-0">
-      {% include "@typhoon/navigation/footer-nav.html.twig" %}
-    </footer>
+    {% include "@typhoon/navigation/footer-nav.html.twig" %}
   {% endif %}
 </div>
 {# /.layout-container #}

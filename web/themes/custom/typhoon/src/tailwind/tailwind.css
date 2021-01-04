@@ -5,6 +5,7 @@
 
 /* custom CSS */
 @import './headers.css';
+@import './footer.css';
 
 a {
   @apply text-red-500;
