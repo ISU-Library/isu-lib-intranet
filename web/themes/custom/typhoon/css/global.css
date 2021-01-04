@@ -3321,20 +3321,20 @@ input[type=text]:invalid,input[type=password]:invalid,input[type=email]:invalid,
   position:relative
 }
 
-.front-page .content-wrap{
+.content-wrap{
   margin-right:6vw;
   margin-left:6vw
 }
 
 @media(min-width: 1280px){
-  .front-page .content-wrap{
+  .content-wrap{
     margin-right:auto;
     margin-left:auto;
     max-width:var(--content-width)
   }
 }
 
-.front-page .content-wrap ul{
+.content-wrap ul{
   padding-left:0
 }
 
@@ -3446,7 +3446,9 @@ input[type=text]:invalid,input[type=password]:invalid,input[type=email]:invalid,
 }
 
 .flair-img img{
-  width:100%
+  position:relative;
+  width:100%;
+  z-index:-1
 }
 
 .staff-news--dots-red-bars{

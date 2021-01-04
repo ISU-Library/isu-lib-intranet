@@ -437,9 +437,7 @@
       {# {% if page.sidebar_first %} <aside class="layout-sidebar-first" role="complementary"> {% include "@typhoon/navigation/side-nav.html.twig" %} </aside>{% endif %} #}
     </div>
     {# {% if page.footer %} #}
-    <footer role="contentinfo" class="flex-shrink-0">
-      {% include "@typhoon/navigation/footer-nav.html.twig" %}
-    </footer>
+    {% include "@typhoon/navigation/footer-nav.html.twig" %}
     {# {% endif %} #}
   </div>
   {# /.layout-container #}
