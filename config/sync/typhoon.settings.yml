@@ -21,4 +21,8 @@ lib_util_nav5_url: ''
 lib_homepage_header_header: 'Hope this Works!'
 lib_homepage_header_tagline: 'Here''s a clever tagline with words about things'
 footer_social_media1_url: 'https://twitter.com/ISU_Library'
+<<<<<<< HEAD
 footer_social_media1_icon: 'fab fa-twitter'
+=======
+footer_social_media1_icon: 'fab fa-facebook'
+>>>>>>> 37bc2363afed0c89f91ab11aaadefe8aa7d469b8

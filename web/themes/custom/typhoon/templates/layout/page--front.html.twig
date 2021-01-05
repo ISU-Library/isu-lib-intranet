@@ -53,8 +53,8 @@
 
 {% set test_image = '/themes/custom/typhoon/images/Above as Below_1.jpg' %}
 
-<div class="layout-container front-page">
-  <header role="banner" class="header">
+<div class="front-page">
+  <header role="banner">
     {{ page.header }}
     {% include "@typhoon/navigation/nav.html.twig" %}
   </header>
@@ -87,6 +87,31 @@
             <h2 class="heading-underline mb-2xl">
               Staff News
             </h2>
+
+  <div class="Parent"> 
+
+<!-- if staff news content found -->
+{% if staff_news_custom %}
+
+    <ul class="news-card--wrap ">
+      {% for item in staff_news_custom %}
+         <!--a href="/node/{{item['id']}}" class="news-card--link br4" style="background-image: url('{{item['image_uri']}}'); z -index: 2;  "-->
+         <li>
+           {{newsCard.lead({
+                  imgSrc: item['image_uri'],
+                  imgAlt: item['title'],
+                  link: item['id'],
+                  category: 'News things',
+                  title: item['title'],
+                  text: item['body_summary'], 
+                  linkText: 'Read this story',
+            })}}
+         </li>
+      {% endfor %}
+
+<!-- else default test content -->
+{% else %}
+
             <ul class="news-card--wrap ">
               <li>
                 {{newsCard.lead({
@@ -110,6 +135,10 @@
                   linkText: 'Read this story',
                 })}}
               </li>
+
+<!-- end staff news -->
+{% endif %}
+
               <li>
                 {{newsCard.basic({
                   imgSrc: test_image,
@@ -437,9 +466,7 @@
       {# {% if page.sidebar_first %} <aside class="layout-sidebar-first" role="complementary"> {% include "@typhoon/navigation/side-nav.html.twig" %} </aside>{% endif %} #}
     </div>
     {# {% if page.footer %} #}
-    <footer role="contentinfo" class="flex-shrink-0">
-      {% include "@typhoon/navigation/footer-nav.html.twig" %}
-    </footer>
+    {% include "@typhoon/navigation/footer-nav.html.twig" %}
     {# {% endif %} #}
   </div>
   {# /.layout-container #}

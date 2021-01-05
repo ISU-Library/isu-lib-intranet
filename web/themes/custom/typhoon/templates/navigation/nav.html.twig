@@ -3,41 +3,41 @@
   <div>{{ page.primary_menu }}</div>
 </div> #}
 
-<div class="util-nav--wrap bg-red-600">
-  <div class="util-nav px-3xl xl:px-0">
-    <div class="triangles"></div>
-    <ul class="util-nav--list">
+<div class="relative overflow-hidden shadow-dark-1 bg-red-600">
+  <div class="max-w-8xl m-auto px-3xl xl:px-0">
+    <div class="nav-triangles"></div>
+    <ul class="util-nav--list flex justify-end mb-0">
       {% if lib_util_nav1_text %}
-        <li>
-          <a href="{{ lib_util_nav1_url }}">
+        <li class="flex flex-col justify-center">
+          <a class="p-md text-sm text-white transition-colors hover:text-warm-grey-200" href="{{ lib_util_nav1_url }}">
             {{ lib_util_nav1_text }}
           </a>
         </li>
       {% endif %}
       {% if lib_util_nav2_text %}
-        <li>
-          <a href="{{ lib_util_nav2_url }}">
+        <li class="flex flex-col justify-center">
+          <a class="p-md text-sm text-white transition-colors hover:text-warm-grey-200" href="{{ lib_util_nav2_url }}">
             {{ lib_util_nav2_text }}
           </a>
         </li>
       {% endif %}
       {% if lib_util_nav3_text %}
-        <li>
-          <a href="{{ lib_util_nav3_url }}">
+        <li class="flex flex-col justify-center">
+          <a class="p-md text-sm text-white transition-colors hover:text-warm-grey-200" href="{{ lib_util_nav3_url }}">
             {{ lib_util_nav3_text }}
           </a>
         </li>
       {% endif %}
       {% if lib_util_nav4_text %}
-        <li>
-          <a href="{{ lib_util_nav4_url }}">
+        <li class="flex flex-col justify-center">
+          <a class="p-md text-sm text-white transition-colors hover:text-warm-grey-200" href="{{ lib_util_nav4_url }}">
             {{ lib_util_nav4_text }}
           </a>
         </li>
       {% endif %}
       {% if lib_util_nav5_text %}
-        <li>
-          <a href="{{ lib_util_nav5_url }}">
+        <li class="flex flex-col justify-center">
+          <a class="p-md text-sm text-white transition-colors hover:text-warm-grey-200" href="{{ lib_util_nav5_url }}">
             {{ lib_util_nav5_text }}
           </a>
         </li>
@@ -46,12 +46,12 @@
     </ul>
   </div>
 </div>
-<div class="main-nav--wrap md:px-lg px-3xl">
-  <div class="main-nav">
-    <div class="logo-wrap">
+<div class="main-nav--wrap border-b-2 border-yellow-500 md:px-lg px-3xl bg-white ">
+  <div class="main-nav max-w-8xl m-auto">
+    <div class="logo-wrap mt-lg mb-md">
       <div class="logo">
         <a href="/">
-          <img src="{{ relative_logo_url }}" alt="ISU Library Logo">
+          <img class="max-w-full" src="{{ relative_logo_url }}" alt="ISU Library Logo">
         </a>
       </div>
     </div>

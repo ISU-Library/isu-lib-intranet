@@ -1,7 +1,10 @@
 // const colors = require('tailwindcss/colors')
 
 module.exports = {
-  purge: [],
+  purge: [
+    './src/**/*.html',
+    './src/**/*.js',
+  ],
   darkMode: false, // or 'media' or 'class'
   theme: {
     colors: {
@@ -83,21 +86,9 @@ module.exports = {
       black: {
         DEFAULT: '#222',
       },
-    },
-    spacing: {
-      '0': '0',
-      '2xs': '0.25rem',
-      'xs': '0.5rem',
-      'sm': '0.75rem',
-      'md': '1rem',
-      'lg': '1.5rem',
-      'xl': '2rem',
-      '2xl': '2.5rem',
-      '3xl': '3rem',
-      '4xl': '4rem',
-      '5xl': '6rem',
-      '6xl': '8rem',
-      '7xl': '12rem',
+      transparent: {
+        DEFAULT: 'transparent',
+      }
     },
     fontSize: {
       '2xs': '0.5rem',
@@ -112,13 +103,47 @@ module.exports = {
       '5xl': '3.75rem',
       '6xl': '4.5rem',
     },
+    boxShadow: {
+      'light-1': '0 1px 2px rgba(0, 0, 0, 0.24), 0 1px 3px rgba(0, 0, 0, 0.12);',
+      'light-2': '0 2px 4px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.15);',
+      'light-3': '0 3px 6px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.15);',
+      'light-4': '0 5px 10px rgba(0, 0, 0, 0.05), 0 15px 25px rgba(0, 0, 0, 0.15);',
+      'light-5': '0 20px 40px rgba(0, 0, 0, 0.2);',
+      'dark-1': '0 1px 2px rgba(0, 0, 0, 0.34), 0 1px 3px rgba(0, 0, 0, 0.22)',
+      'dark-2': '0 2px 4px rgba(0, 0, 0, 0.22), 0 3px 6px rgba(0, 0, 0, 0.25)',
+      'dark-3': '0 3px 6px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.25)',
+      'dark-4': '0 5px 10px rgba(0, 0, 0, 0.15), 0 15px 25px rgba(0, 0, 0, 0.25)',
+      'dark-5': '0 20px 40px rgba(0, 0, 0, 0.3)',
+      inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
+      none: 'none',
+    },
     extend: {
+      spacing: {
+        '0': '0',
+        '2xs': '0.25rem',
+        'xs': '0.5rem',
+        'sm': '0.75rem',
+        'md': '1rem',
+        'lg': '1.5rem',
+        'xl': '2rem',
+        '2xl': '2.5rem',
+        '3xl': '3rem',
+        '4xl': '4rem',
+        '5xl': '6rem',
+        '6xl': '8rem',
+        '7xl': '12rem',
+      },
+      maxWidth: {
+        '8xl': '87.5rem',
+        '9xl': '93.75rem',
+      },
     },
   },
   variants: {
     extend: {
-      margin: ['last'],
       borderWidth: ['first'],
+      display: ['group-hover', 'group-focus'],
+      margin: ['last'],
       scale: ['active', 'group-hover'],
     }
   },
