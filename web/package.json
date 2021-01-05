@@ -25,7 +25,6 @@
     "laravel-mix-purgecss": "^5.0.0-rc.1",
     "melody-idom": "^1.7.5",
     "melody-runtime": "^1.7.5",
-    "postcss-nesting": "^7.0.1",
     "prettier": "^1.19.1",
     "prettier-plugin-twig-melody": "^0.3.7",
     "raw-loader": "^4.0.2",
