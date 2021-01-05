@@ -3,8 +3,11 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-/* custom CSS */
-@import './headers.css';
+/************** custom CSS *********************/
+
+/** Foundations **/
+@import './header.css';
+@import './headlines.css';
 @import './footer.css';
 
 a {
