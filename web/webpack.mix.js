@@ -1,9 +1,10 @@
 const sourceDir = "./themes/custom/typhoon/src";
-const tailwindDir = `${sourceDir}/tailwind/`;
+const tailwindDir = `${sourceDir}/tailwind`;
 const destinationDir = "./themes/custom/typhoon";
 
 const mix = require("laravel-mix");
 const tailwindcss = require('tailwindcss');
+
 
 require("laravel-mix-purgecss");
 require('laravel-mix-postcss-config');
@@ -30,7 +31,6 @@ mix.sass(`${sourceDir}/scss/global.scss`, `${destinationDir}/css/global.css`, {
     whitelistPatternsChildren: [/link-list--item/]
   });
 
-mix.postCss(`${tailwindDir}/tailwind.css`, `${destinationDir}/css/tailwind.css`);
 
 // Only cache bust if production
 if (mix.inProduction()) {
@@ -45,17 +45,14 @@ if (!mix.inProduction()) {
 // disable build notification on success
 mix.disableSuccessNotifications();
 
-// CSS vender autoprefixes
+mix.postCss(`${tailwindDir}/tailwind.css`, `${destinationDir}/css/tailwind.css`);
+
 mix.options({
   postCss: [
     require('postcss-import'),
     tailwindcss(`${tailwindDir}/tailwind.config.js`),
-    require('postcss-nesting'),
     require('autoprefixer'),
   ]
-});
-
-mix.options({
 });
 
 // Full API
