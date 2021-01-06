@@ -1,66 +1,6 @@
 @import url(//cdn.theme.iastate.edu/nimbus-sans/css/nimbus-sans.css);
 @import url(//cdn.theme.iastate.edu/merriweather/css/merriweather.css);
-.grid{
-  display:grid;
-  grid-template-columns:1fr
-}
-
-@media(min-width: 768px){
-  .grid{
-    grid-template-rows:auto 1fr auto
-  }
-}
-
-.grid .footer{
-  grid-column:1/-1
-}
-
-.typhoon-grid{
-  grid-column:1/-1;
-  display:grid;
-  grid-template-columns:repeat(12, 1fr);
-  grid-gap:1rem;
-  width:100%;
-  max-width:93.75rem
-}
-
-.typhoon-grid main{
-  grid-column:1/-1
-}
-
-@media(min-width: 768px){
-  .typhoon-grid main{
-    grid-column:1/10
-  }
-}
-
 .admin-page .typhoon-grid main{
-  grid-column:1/-1
-}
-
-.typhoon-grid .layout-sidebar-first{
-  grid-column:10/13
-}
-
-.typhoon-grid .side-nav{
-  grid-column:1/-1
-}
-
-@media(min-width: 768px){
-  .typhoon-grid .side-nav{
-    grid-column:1/2
-  }
-}
-
-.typhoon-grid.grid-full{
-  max-width:100%
-}
-
-.typhoon-grid.grid-full main{
-  grid-column:1/-1
-}
-
-.full{
   grid-column:1/-1
 }
 
@@ -1777,12 +1717,6 @@ input[type=text]:invalid,input[type=password]:invalid,input[type=email]:invalid,
   }
 }
 
-@media(min-width: 1280px){
-  .front-page .hero .content-wrap{
-    width:var(--content-width)
-  }
-}
-
 .hero--text{
   margin-left:0
 }
@@ -1802,7 +1736,7 @@ input[type=text]:invalid,input[type=password]:invalid,input[type=email]:invalid,
 
 @media(min-width: 768px){
   .basic-card--wrap{
-    grid-template-columns:repeat(auto-fill, minmax(20rem, 1fr))
+    grid-template-columns:repeat(auto-fill, minmax(21rem, 1fr))
   }
 }
 
@@ -3039,23 +2973,6 @@ input[type=text]:invalid,input[type=password]:invalid,input[type=email]:invalid,
   position:relative
 }
 
-.content-wrap{
-  margin-right:6vw;
-  margin-left:6vw
-}
-
-@media(min-width: 1280px){
-  .content-wrap{
-    margin-right:auto;
-    margin-left:auto;
-    max-width:var(--content-width)
-  }
-}
-
-.content-wrap ul{
-  padding-left:0
-}
-
 .front-page .news-card--wrap{
   grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
   grid-gap:3rem 2.5rem
@@ -3076,7 +2993,7 @@ input[type=text]:invalid,input[type=password]:invalid,input[type=email]:invalid,
 
 @media(min-width: 1280px){
   .front-page .news-card--wrap{
-    grid-template-columns:repeat(auto-fit, minmax(420px, 1fr))
+    grid-template-columns:repeat(auto-fit, minmax(435px, 1fr))
   }
 }
 

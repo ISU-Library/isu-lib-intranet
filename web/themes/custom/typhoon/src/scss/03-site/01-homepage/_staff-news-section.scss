@@ -14,7 +14,7 @@
     }
 
     @include bp(xl) {
-      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(435px, 1fr));
     }
 
   }

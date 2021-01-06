@@ -22,13 +22,13 @@
     min-height: rem(530);
   }
 
-  .content-wrap {
-    .front-page & {
-      @include bp(xl) {
-        width: var(--content-width);
-      }
-    }
-  }
+  // .content-wrap {
+  //   .front-page & {
+  //     @include bp(xl) {
+  //       // width: var(--content-width);
+  //     }
+  //   }
+  // }
 }
 
 .hero--text {

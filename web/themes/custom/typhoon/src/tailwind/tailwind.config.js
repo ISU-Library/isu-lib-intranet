@@ -132,6 +132,8 @@ module.exports = {
         '5xl': '6rem',
         '6xl': '8rem',
         '7xl': '12rem',
+        '8xl': '87.5rem',
+        '9xl': '93.75rem',
       },
       maxWidth: {
         '8xl': '87.5rem',

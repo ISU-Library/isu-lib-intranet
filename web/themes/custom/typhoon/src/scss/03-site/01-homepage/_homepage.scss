@@ -10,16 +10,16 @@
 
 .content-wrap {
   // aligns content on page
-  margin-right: 6vw;
-  margin-left: 6vw;
+  // margin-right: 6vw;
+  // margin-left: 6vw;
 
-  @include bp(xl) {
-    margin-right: auto;
-    margin-left: auto;
-    max-width: var(--content-width);
-  }
+  // @include bp(xl) {
+  //   margin-right: auto;
+  //   margin-left: auto;
+  //   max-width: var(--content-width);
+  // }
 
-  ul {
-    padding-left: 0;
-  }
+  // ul {
+  //   padding-left: 0;
+  // }
 }

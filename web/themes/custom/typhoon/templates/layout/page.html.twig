@@ -44,20 +44,20 @@
  */
 #}
 <div class="layout-container flex flex-col min-h-screen">
-
-  <header role="banner" class="header z-50 flex-shrink-0">
+  <header role="banner" class="">
     {{ page.header }}
     {% include "@typhoon/navigation/nav.html.twig" %}
   </header>
+
   <div class="relative flex-grow">
     <div aria-hidden="true" class="flair-img staff-news--dots-red-bars">
       <img src="/themes/custom/typhoon/images/dot-pattern-red-bars.png" alt="">
     </div>
-    <div class="typhoon-grid relative mx-auto px-2xl flex-initial">
+    <div class="typhoon-grid grid grid-cols-12 gap-md relative mx-auto px-2xl flex-initial max-w-9xl">
       {{ page.breadcrumb }}
       {{ page.highlighted }}
       {{ page.help }}
-      <main role="main">
+      <main role="main" class="col-span-full md:col-start-1 md:col-end-10">
         <a id="main-content" tabindex="-1"></a>
         {# link is in html.html.twig #}
         <div class="layout-content">
@@ -66,7 +66,7 @@
         {# /.layout-content #}
       </main>
       {% if page.sidebar_first %}
-        <aside class="layout-sidebar-first" role="complementary">
+        <aside class="layout-sidebar-first col-span-full md:col-start-10 md:col-end-13" role="complementary">
           {% include "@typhoon/navigation/side-nav.html.twig" %}
         </aside>
       {% endif %}
