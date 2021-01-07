@@ -92,24 +92,46 @@
               class="Parent">
 
               <!-- if staff news content found -->
+
               {% if staff_news_custom %}
+
                 <ul class="news-card--wrap ">
+
                   {% for item in staff_news_custom %}
-                    <!--a href="/node/{{item['id']}}" class="news-card--link br4" style="background-image: url('{{item['image_uri']}}'); z -index: 2;  "-->
-                    <li>
-                      {{newsCard.lead({
-                  imgSrc: item['image_uri'],
-                  imgAlt: item['title'],
-                  link: item['id'],
-                  category: 'News things',
-                  title: item['title'],
-                  text: item['body_summary'], 
-                  linkText: 'Read this story',
-            })}}
-                    </li>
+
+                    {% if loop.index < 3 %}
+                      <!--a href="/node/{{item['id']}}" class="news-card--link br4" style="background-image: url('{{item['image_uri']}}'); z -index: 2;  "-->
+                      <li>
+                        {{newsCard.lead({
+                            imgSrc: item['image_uri'],
+                            imgAlt: item['title'],
+                            link: 'node/'.item['id'],
+                            category: 'News things',
+                            title: item['title'],
+                            text: item['body_summary'],
+                            linkText: 'Read this story',
+                        })}}
+                        <!-- {{item['image_uri']}} -->
+                      </li>
+
+                    <!-- smaller subset items?  -->
+                    {% else %}
+                      <li>
+                        {{newsCard.basic({
+                            imgSrc: item['image_uri'],
+                            imgAlt: item['title'],
+                            link: 'node/'.item['id'],
+                            category: 'News things',
+                            title: item['title'],
+                            text: item['body_summary'],
+                            linkText: 'Read this story',
+                        })}}
+                      </li>
+                    {% endif %}
+
                   {% endfor %}
 
-                  <!-- else default test content -->
+                <!-- else default test content -->
                 {% else %}
 
                   <ul class="news-card--wrap ">
@@ -136,53 +158,53 @@
                 })}}
                     </li>
 
-                    <!-- end staff news -->
-                  {% endif %}
+                  <li>
+                    {{newsCard.basic({
+                  imgSrc: test_image,
+                  imgAlt: 'alt',
+                  link: '/',
+                  category: 'News things',
+                  title: 'A title with words here',
+                  text: 'tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam. tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam.',
+                  linkText: 'Read this story',
+                })}}
+                  </li>
+                  <li>
+                    {{newsCard.basic({
+                  imgSrc: test_image,
+                  imgAlt: 'alt',
+                  link: '/',
+                  category: 'News things',
+                  title: 'A title with words here',
+                  text: 'tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam. tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam.',
+                  linkText: 'Read this story',
+                })}}
+                  </li>
+                  <li>
+                    {{newsCard.basic({
+                  imgSrc: test_image,
+                  imgAlt: 'alt',
+                  link: '/',
+                  category: 'News things',
+                  title: 'A title with words here',
+                  text: 'tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam. tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam.',
+                  linkText: 'Read this story',
+                })}}
+                  </li>
+                  <li>
+                    {{newsCard.basic({
+                  imgSrc: test_image,
+                  imgAlt: 'alt',
+                  link: '/',
+                  category: 'News things',
+                  title: 'A title with words here',
+                  text: 'tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam. tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam.',
+                  linkText: 'Read this story',
+                })}}
+                  </li>
 
-                  <li>
-                    {{newsCard.basic({
-                  imgSrc: test_image,
-                  imgAlt: 'alt',
-                  link: '/',
-                  category: 'News things',
-                  title: 'A title with words here',
-                  text: 'tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam. tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam.',
-                  linkText: 'Read this story',
-                })}}
-                  </li>
-                  <li>
-                    {{newsCard.basic({
-                  imgSrc: test_image,
-                  imgAlt: 'alt',
-                  link: '/',
-                  category: 'News things',
-                  title: 'A title with words here',
-                  text: 'tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam. tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam.',
-                  linkText: 'Read this story',
-                })}}
-                  </li>
-                  <li>
-                    {{newsCard.basic({
-                  imgSrc: test_image,
-                  imgAlt: 'alt',
-                  link: '/',
-                  category: 'News things',
-                  title: 'A title with words here',
-                  text: 'tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam. tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam.',
-                  linkText: 'Read this story',
-                })}}
-                  </li>
-                  <li>
-                    {{newsCard.basic({
-                  imgSrc: test_image,
-                  imgAlt: 'alt',
-                  link: '/',
-                  category: 'News things',
-                  title: 'A title with words here',
-                  text: 'tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam. tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam.',
-                  linkText: 'Read this story',
-                })}}
-                  </li>
+             <!-- end staff news -->
+            {% endif %}
 
                 </ul>
                 <a class="cta" href="/">
