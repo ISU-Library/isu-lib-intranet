@@ -96,7 +96,7 @@ function typhoon_preprocess_page__front(&$variables) {
 
   // grab first six sorted by changed (updated)?
   //$results = \Drupal::entityQuery('node')->condition('type', 'staff_news')->sort('created', 'DESC')->range(0, 6)->execute();
-  $results = \Drupal::entityQuery('node')->condition('type', 'staff_news')->sort('changed', 'DESC')->range(0, 6)->execute();
+  $results = \Drupal::entityQuery('node')->condition('type', 'staff_news')->sort('changed', 'DESC')->sort('nid', 'DESC')->range(0, 6)->execute();
 
   foreach ($results as $result) {
   
@@ -123,7 +123,7 @@ function typhoon_preprocess_page__front(&$variables) {
 
     foreach ($refents as $referent) 
     {
-      //print_r('REFERENT_ID-'.$referent->id().'-REFERENT_ID');
+      print_r('REFERENT_ID-'.$referent->id().'-REFERENT_ID');
 
       //print_r('R_ID:'.$referent->id().':R_ID');
       //print_r('R_TYPE-'.$referent->getType().'-R_TYPE');
@@ -183,7 +183,8 @@ function typhoon_preprocess_page__front(&$variables) {
   $staff_updates_articles = [];
 
   // grab first three sorted by changed (updated)?
-  $results = \Drupal::entityQuery('node')->condition('type', 'staff_updates')->sort('changed', 'DESC')->range(0, 3)->execute();
+  //$results = \Drupal::entityQuery('node')->condition('type', 'staff_updates')->sort('changed', 'DESC')->range(0, 3)->execute();
+  $results = \Drupal::entityQuery('node')->condition('type', 'staff_updates')->sort('changed', 'DESC')->sort('nid', 'DESC')->range(0, 3)->execute();
 
   foreach ($results as $result) {
   
