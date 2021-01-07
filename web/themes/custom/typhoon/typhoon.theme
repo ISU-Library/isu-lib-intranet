@@ -88,10 +88,15 @@ function typhoon_preprocess_page__front(&$variables) {
   $variables['lib_homepage_header_tagline'] = theme_get_setting('lib_homepage_header_tagline');
 
 
+  // only check for what we need ....
+  // paragraph_type = array(label => machine_name,)
+  //$paragraph_methods = ['gc_text_block'=>array('body'=>'field_gc_text_text'),'gc_text_img_block'=>array('image'=>'field_gc_text_img_img','image_side'=>'field_gc_text_img_side','image_size'=>'field_gc_text_img_size','image_text'=>'field_gc_text_img_text'),'gc_large_img_block'=>array('image'=>'field_gc_large_image_image'),'gc_link_abstract_list_block'=>array(),];
+
   $staff_news_articles = [];
 
-  // grab first four sorted by created 
-  $results = \Drupal::entityQuery('node')->condition('type', 'staff_news')->sort('created', 'DESC')->range(0, 4)->execute();
+  // grab first six sorted by changed (updated)?
+  //$results = \Drupal::entityQuery('node')->condition('type', 'staff_news')->sort('created', 'DESC')->range(0, 6)->execute();
+  $results = \Drupal::entityQuery('node')->condition('type', 'staff_news')->sort('changed', 'DESC')->range(0, 6)->execute();
 
   foreach ($results as $result) {
   
@@ -114,92 +119,148 @@ function typhoon_preprocess_page__front(&$variables) {
     $news_item['title'] = $node->getTitle();
     $refents = $articles->referencedEntities();
 
-    //$paragraph = Paragraph::load($paragraph_image[0]['target_id']);
-    //      $ogPara = $paragraph->get('field_image')->entity->uri->value;
-    //      $style = ImageStyle::load('list_thumbnail_square_100x100');
-    //      $url = $style->buildUrl($ogPara);
+//  https://drupal.stackexchange.com/questions/253913/how-do-i-access-the-paragraph-value
 
-    $article = $refents[0];
-
-    //foreach ($articles->referencedEntities() as $article) 
-
-    if ($article)
+    foreach ($refents as $referent) 
     {
-      //print_r('FIELD_GC_TEXT_IMG_TEXT-'.$article->field_gc_text_img_text->value.'-FIELD_GC_TEXT_IMG_TEXT');
-      //print_r('ARTICLE_ID-'.$article->id().'-ARTICLE_ID');
-      //$news_item['article_id'] = $article->id();
+      //print_r('REFERENT_ID-'.$referent->id().'-REFERENT_ID');
 
-      if ($article->field_gc_text_img_text)
+      print_r('R_ID:'.$referent->id().':R_ID');
+      print_r('R_TYPE-'.$referent->getType().'-R_TYPE');
+
+      if ($referent->field_gc_text_text)
       {
-        $news_item['body'] = $article->field_gc_text_img_text->value;
-        //$news_item['body_summary'] = $article->field_gc_text_img_text->view('teaser');
-        $news_item['body_summary'] = $article->field_gc_text_img_text->view(array('type'=>'teaser','settings' => array('style'=>'text-white xl:text-lg')));
-  
+        $news_item['body_summary'] = $referent->field_gc_text_text->value;
+        //$news_item['body_summary'] = $referent->field_gc_text_text->view('teaser');
       }
-      elseif ($article->field_gc_text_text)
+      elseif ($referent->field_gc_text_img_text)
       {
-        $news_item['body'] = $article->field_gc_text_text->value;
-        //$news_item['body_summary'] = $article->field_gc_text_text->view('teaser');
-        $news_item['body_summary'] = $article->field_gc_text_text->view(array('type'=>'teaser','settings' => array('style'=>'text-white xl:text-lg')));
+        //$news_item['body_summary'] = $referent->field_gc_text_img_text->view('teaser');
+        $news_item['body_summary'] = $referent->field_gc_text_img_text->value;
       }
-      //elseif ($article->field_gc_link_abstract_list)
-      //elseif ($article->field_gc_link_abstract_list_block)
-      elseif ($article->field_link_abstract_list_text)
+      //elseif ($referent->field_gc_link_abstract_list)
+      //elseif ($referent->field_gc_link_abstract_list_block)
+      elseif ($referent->field_link_abstract_list_text)
       {
-        $news_item['body'] = $article->field_link_abstract_list_text->value;
-        //$news_item['body_summary'] = $article->field_gc_text_text->view('teaser');
-        $news_item['body_summary'] = $article->field_link_abstract_list_text->view(array('type'=>'teaser','settings' => array('style'=>'text-white xl:text-lg')));
+        //$news_item['body_summary'] = $referent->field_link_abstract_list_text->view('teaser');
+        //$news_item['body_summary'] = $referent->field_link_abstract_list_text->value;
       }
 
-      //$field = $article->get('field_background_image')->first();
-      //if ($field) {
-      //    $image_field = $paragraph->get('field_background_image')->first()->getValue();
-      //    $media = Media::load($image_field['target_id']);
-      //    $media_field = $media->get('field_media_image')->first()->getValue();
-      //    $file = File::load($media_field['target_id']);
-      //    if ($file) {
-      //      $background = $file->getFileUri();
-      //      $variables['image_uri'] = file_create_url($background);
-      //    }
-      //  }
-
-
-      if ($article->field_gc_text_img_img)
+      // images if available ....  
+      if ($referent->field_gc_text_img_img)
       {
-        //$news_item['image_uri'] = $article->field_gc_text_img_img->entity->uri->value;
+        //$news_item['image_uri'] = $referent->field_gc_text_img_img->entity->uri->value;
         //$news_item['image_uri'] = file_url_transform_relative(file_create_url(theme_get_setting('logo.url')));
-        $news_item['image_uri'] = file_create_url($article->field_gc_text_img_img->entity->uri->value); 
+        $news_item['image_uri'] = file_create_url($referent->field_gc_text_img_img->entity->uri->value); 
       }
-      //elseif ($article->gc_large_image_image)
-      //elseif ($article->field_gc_large_image_image)
-      //if ($article->field_gc_large_image)
-      if ($article->field_gc_large_image_image)
+      elseif ($referent->field_gc_large_image_image)
       {
-        //field_gc_large_image_image.entity.uri.value
-        $news_item['image_uri'] = file_create_url($article->field_gc_large_image_image->entity->uri->value); 
+        //$url_test = $referent->field_gc_large_image_image->entity->uri->value; 
+        //print_r('field_staff_news_content url:'.$url_test);
+        $news_item['image_uri'] = file_create_url($referent->field_gc_large_image_image->entity->uri->value); 
+      }
+      elseif ($referent->field_gc_two_img_img_left)
+      {
+        //$url_test = $referent->field_gc_large_image_image->entity->uri->value; 
+        //print_r('field_staff_news_content url:'.$url_test);
+        $news_item['image_uri'] = file_create_url($referent->field_gc_two_img_img_left->entity->uri->value); 
+      }
+      elseif ($referent->field_gc_two_img_img_right)
+      {
+        $news_item['image_uri'] = file_create_url($referent->field_gc_two_img_img_right->entity->uri->value); 
       }
 
-      //print_r('REFID-'.$article->id().'-REFID');
-      //print_r('KINT--'.kint($article).'--KINT');
-      //print_r('REFTITLE-'.$article->field_gc_text_img_img.'-REFTITLE');
-      //print_r('FIELD_IMAGE-'.$article.field_image.'-FIELD_IMAGE');
-      // field_gc_text_img_img
-      //print_r('REFLINK-'.$article->field_link_list_text.'-REFLINK');
-      //kint($article);
-      //if ($article->field_gc_text_img_text)
-      //{
-          //print_r('FIELD_GC_TEXT_IMG_TEXT-'.$article->field_gc_text_img_text->value.'-FIELD_GC_TEXT_IMG_TEXT');
-          //print_r('ZZZZ-'.$article->field_gc_text_img_text->summary.'-ZZZZ');
-          //print_r('FIELD_GC_TEXT_IMG_TEXT-'.$article->field_gc_text_img_text->summary.'-FIELD_GC_TEXT_IMG_TEXT');
-          //print_r('FIELD_GC_TEXT_IMG_TEXT-'.$article->get('field_gc_text_img_text')->summary.'-FIELD_GC_TEXT_IMG_TEXT');
-      //}
     }
-
     $staff_news_articles[] = $news_item;
 
   }
+  $variables['staff_news_custom'] = $staff_news_articles; 
 
-//$variables['staff_news_custom'] = $results; 
-$variables['staff_news_custom'] = $staff_news_articles; 
+  // end staff news section 
+
+  // begin staff news updates 
+
+  $staff_updates_articles = [];
+
+  // grab first three sorted by changed (updated)?
+  $results = \Drupal::entityQuery('node')->condition('type', 'staff_updates')->sort('changed', 'DESC')->range(0, 3)->execute();
+
+  foreach ($results as $result) {
+  
+    $node_storage = \Drupal::entityTypeManager()->getStorage('node');
+    // fix this
+    $nid = $result;
+    $node = $node_storage->load($nid);
+    //print_r('ID-'.$node->article.field_image.'-ID');
+
+    //print_r('[ID-'.$node->id().'-ID]');
+    //print_r('TITLE-'.$node->getTitle().'-TITLE');
+
+    //$basic_page = Drupal\node\Entity\Node::load($nid);
+    //print_r('ATITLE-'.$basic_page->getTitle().'-ATITLE');
+    //$articles = $basic_page->get('field_staff_news_content');
+    $articles = $node->get('field_staff_updates_content');
+
+    $news_item = array();
+    $news_item['id'] = $nid;
+    $news_item['title'] = $node->getTitle();
+    $refents = $articles->referencedEntities();
+
+//  https://drupal.stackexchange.com/questions/253913/how-do-i-access-the-paragraph-value
+
+    foreach ($refents as $referent) 
+    {
+      //print_r('REFERENT_ID-'.$referent->id().'-REFERENT_ID');
+
+      print_r('R_ID:'.$referent->id().':R_ID');
+      print_r('R_TYPE-'.$referent->getType().'-R_TYPE');
+
+      if ($referent->field_gc_text_text)
+      {
+        $news_item['body_summary'] = $referent->field_gc_text_text->value;
+        //$news_item['body_summary'] = $referent->field_gc_text_text->view('teaser');
+      }
+      elseif ($referent->field_gc_text_img_text)
+      {
+        //$news_item['body_summary'] = $referent->field_gc_text_img_text->view('teaser');
+        $news_item['body_summary'] = $referent->field_gc_text_img_text->value;
+      }
+      //elseif ($referent->field_gc_link_abstract_list)
+      //elseif ($referent->field_gc_link_abstract_list_block)
+      elseif ($referent->field_link_abstract_list_text)
+      {
+        //$news_item['body_summary'] = $referent->field_link_abstract_list_text->view('teaser');
+        //$news_item['body_summary'] = $referent->field_link_abstract_list_text->value;
+      }
+
+      // images if available ....  
+      if ($referent->field_gc_text_img_img)
+      {
+        //$news_item['image_uri'] = $referent->field_gc_text_img_img->entity->uri->value;
+        //$news_item['image_uri'] = file_url_transform_relative(file_create_url(theme_get_setting('logo.url')));
+        $news_item['image_uri'] = file_create_url($referent->field_gc_text_img_img->entity->uri->value); 
+      }
+      elseif ($referent->field_gc_large_image_image)
+      {
+        //$url_test = $referent->field_gc_large_image_image->entity->uri->value; 
+        //print_r('field_staff_news_content url:'.$url_test);
+        $news_item['image_uri'] = file_create_url($referent->field_gc_large_image_image->entity->uri->value); 
+      }
+      elseif ($referent->field_gc_two_img_img_left)
+      {
+        //$url_test = $referent->field_gc_large_image_image->entity->uri->value; 
+        //print_r('field_staff_news_content url:'.$url_test);
+        $news_item['image_uri'] = file_create_url($referent->field_gc_two_img_img_left->entity->uri->value); 
+      }
+      elseif ($referent->field_gc_two_img_img_right)
+      {
+        $news_item['image_uri'] = file_create_url($referent->field_gc_two_img_img_right->entity->uri->value); 
+      }
+
+    }
+    $staff_updates_articles[] = $news_item;
+
+  }
+  $variables['staff_updates_custom'] = $staff_updates_articles; 
 
 }
