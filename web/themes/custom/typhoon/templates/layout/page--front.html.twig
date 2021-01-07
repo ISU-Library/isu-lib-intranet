@@ -207,6 +207,9 @@
             {% endif %}
 
                 </ul>
+
+
+
                 <a class="cta" href="/">
                   More news stories
                 </a>
@@ -367,7 +370,32 @@
                 <h2 class="heading-underline mb-2xl">
                   Staff Updates
                 </h2>
-                <ul class="basic-card--wrap basic-card-image--wrap mt-2xl mr-2xl mb-2xl sm:mr-0 xs:mr-0">
+
+                <!-- if staff updates found -->
+
+                {% if staff_updates_custom %}
+                  <ul class="basic-card--wrap basic-card-image--wrap mt-2xl mr-2xl mb-2xl sm:mr-0 xs:mr-0">
+
+                    {% for item in staff_updates_custom %}
+                      <li>
+                        <div {{attributes.addClass(classes)}}>
+                              <!-- imgAlt: item['title'], -->
+                          {{ card.basicImg({
+                              color: 'basic-card--yellow',
+                              imgSrc: item['image_uri'], 
+                              link: 'node/'.item['id'], 
+                              title: item['title'], 
+                              category: 'Category',
+                              text: item['body_summary'], 
+                              linkText: 'Read this story',
+                          }) }}
+                        </div>
+                      </li>
+                    {% endfor %}
+
+                <!-- else default test content -->
+                {% else %}
+
                   <li>
                     <a role="Link" href=" {# {{cardLinkUrl}} #}" class="basic-card--link">
                       <div class="basic-card basic-card--image flex flex-col  bg-white " {# {{attributes.addClass(classes)}} #}>
@@ -474,7 +502,12 @@
                       </div>
                     </a>
                   </li>
+
+                 <!-- end staff updates -->
+                 {% endif %}
+
                 </ul>
+
                 <a class="cta" href="/">
                   More news stories
                 </a>
