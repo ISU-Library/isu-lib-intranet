@@ -125,8 +125,8 @@ function typhoon_preprocess_page__front(&$variables) {
     {
       //print_r('REFERENT_ID-'.$referent->id().'-REFERENT_ID');
 
-      print_r('R_ID:'.$referent->id().':R_ID');
-      print_r('R_TYPE-'.$referent->getType().'-R_TYPE');
+      //print_r('R_ID:'.$referent->id().':R_ID');
+      //print_r('R_TYPE-'.$referent->getType().'-R_TYPE');
 
       if ($referent->field_gc_text_text)
       {
@@ -212,8 +212,8 @@ function typhoon_preprocess_page__front(&$variables) {
     {
       //print_r('REFERENT_ID-'.$referent->id().'-REFERENT_ID');
 
-      print_r('R_ID:'.$referent->id().':R_ID');
-      print_r('R_TYPE-'.$referent->getType().'-R_TYPE');
+      //print_r('R_ID:'.$referent->id().':R_ID');
+      //print_r('R_TYPE-'.$referent->getType().'-R_TYPE');
 
       if ($referent->field_gc_text_text)
       {
