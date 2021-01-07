@@ -123,7 +123,7 @@ function typhoon_preprocess_page__front(&$variables) {
 
     foreach ($refents as $referent) 
     {
-      print_r('REFERENT_ID-'.$referent->id().'-REFERENT_ID');
+      //print_r('REFERENT_ID-'.$referent->id().'-REFERENT_ID');
 
       //print_r('R_ID:'.$referent->id().':R_ID');
       //print_r('R_TYPE-'.$referent->getType().'-R_TYPE');
