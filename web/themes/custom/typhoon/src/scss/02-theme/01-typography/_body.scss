@@ -38,24 +38,24 @@ a {
   font-weight: 600;
   transition: 0.3s ease;
 
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background-color: $red-600;
-    height: 2px;
-    width: 0%;
-    transition: 0.3s ease;
-  }
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   bottom: 0;
+  //   left: 0;
+  //   background-color: $red-600;
+  //   height: 2px;
+  //   width: 0%;
+  //   transition: 0.3s ease;
+  // }
 
   &:hover,
   &:focus {
     color: $link-hover-color;
 
-    &::after {
-      width: 100%;
-    }
+    // &::after {
+    //   width: 100%;
+    // }
   }
 }
 
