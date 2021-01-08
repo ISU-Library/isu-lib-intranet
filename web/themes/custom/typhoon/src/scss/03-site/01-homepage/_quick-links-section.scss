@@ -1,12 +1,12 @@
 .front-page {
   .quick-links-section {
-    overflow: hidden;
+    // overflow: hidden;
 
     .basic-card--desc {
-      display: none;
+      // display: none;
 
       @include bp(md) {
-        display: block;
+        // display: block;
       }
     }
   }

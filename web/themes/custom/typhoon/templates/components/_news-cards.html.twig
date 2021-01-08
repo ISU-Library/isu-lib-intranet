@@ -12,22 +12,22 @@
 
   {% set data = data ? defaultData|merge(data) : defaultData %}
 
-  <div class="news-card--lead br4" title="{{ data.title}}">
+  <div class="news-card--lead grid realtive shadow-dark-2 transform transition-transform duration-500  br4" title="{{ data.title}}">
     <span class="aria-text">
       Link to
       {{ data.title }}
     </span>
-    <a href="{{ data.Link}}" class="news-card--link br4" style="background-image: url('{{ data.imgSrc}}');">
-      <div class="news-card--text-wrap relative flex flex-col justify-end h-full pr-xl pl-lg pt-2xl pb-lg text-white">
+    <a href="{{ data.Link}}" class="news-card--link relative no-underline bg-center bg-no-repeat bg-cover overflow-hidden shadow-dark-2 transition-shadow duration-500 z-20 hover:shadow-dark-3 focus:shadow-dark-3 br4 group" style="background-image: url('{{ data.imgSrc}}');">
+      <div class="news-card--text-wrap relative flex flex-col justify-end h-full pr-xl pl-lg pt-2xl pb-lg text-white z-20 transition-all duration-500 group">
         {% if data.catergory %}
           <span class="news-card--category text-white">
             {{ data.catergory }}
           </span>
         {% endif %}
-        <h3 class="news-card--title mb-sm fs-lg text-white">
+        <h3 class="news-card--title news-card--title text-bold w-full leading-tight mb-sm fs-lg text-white">
           {{ data.title }}
         </h3>
-        <div class="news-card--text">
+        <div class="news-card--text flex-auto text-normal overflow-hidden tranistion-all duration-500 shadow-dark-1 md:h-0 md:flex-none group-hover:flex-auto">
           <p class="text-white mb-sm">
             {{ data.text }}
           </p>
@@ -59,34 +59,34 @@
 
   {% set data = data ? defaultData|merge(data) : defaultData %}
 
-  <div class="news-card--basic">
-    <div class="news-card--content">
-      <div class="news-card--image-wrap xs:mb-md">
+  <div class="news-card--basic relative">
+    <div class="news-card--content grid grid-cols-2 md:grid-cols-3 gap-sm md:gap-md lg:gap-lg text-black transition-color duration-300">
+      <div class="news-card--image-wrap hidden lg:block relative w-full z-20 col-span-full sm:col-span-1 xs:mb-md">
         <a href="{{ data.link}}">
-          <figure class="br4">
-            <img src="{{ data.imgSrc }}" alt="{{ data.imgAlt}}"/>
+          <figure class="relative overflow-hidden m-0 tranistion-all duration-300 br4 shadow-dark-2 hover:shadow-dark-3">
+            <img class="absolute top-1/2 transform -translate-y-1/2 w-full" src="{{ data.imgSrc }}" alt="{{ data.imgAlt}}"/>
           </figure>
         </a>
       </div>
-      <div class="news-card--text">
+      <div class="news-card--text col-span-full lg:col-span-2 relative w-full">
         {% if data.category %}
           <span class="news-card--category">
             {{ data.catergory }}
           </span>
         {% endif %}
-        <h3 title="{{ data.title}}" class="news-card--title mt-2xs mb-md text-lg">
+        <h3 title="{{ data.title}}" class="news-card--title news-card--title text-bold w-full leading-tight mt-2xs mb-md text-lg">
           <a href="{{ data.link}}">
             {{ data.title }}
           </a>
         </h3>
         <div class="news-card--desc">
-          <p class="news-card--info mb-md text-sm lg:text-md">
+          <p class="news-card--info mb-md text-sm lg:text-md text-normal">
             {{ data.text}}
           </p>
           <div class="cta--wrap">
             <a href="{{ data.link}}" class="cta">
               Read More
-              <span class="aria-text">
+              <span class="aria-text absolute top-0 left-0">
                 About
                 {{ data.title}}
               </span>
