@@ -139,12 +139,17 @@ module.exports = {
         '8xl': '87.5rem',
         '9xl': '93.75rem',
       },
+      backgroundImage: theme => ({
+        'hero-image': "url('/themes/custom/typhoon/images/intra-hero.jpg')",
+        'lib-staircase-image': "url('/themes/custom/typhoon/images/parks-library-staircase.jpg')",
+      })
     },
   },
   variants: {
     extend: {
       borderWidth: ['first'],
       display: ['group-hover', 'group-focus'],
+      flex: ['group-hover', 'group-focus'],
       margin: ['last'],
       scale: ['active', 'group-hover'],
     }
