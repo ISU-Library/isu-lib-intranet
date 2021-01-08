@@ -39,14 +39,14 @@ $blue-basic-card-text-color-hover: $white;
 $blue-basic-card-text-blue: $blue-700;
 
 .basic-card--wrap {
-  display: grid;
-  gap: $space-lg;
-  grid-template-columns: repeat(auto-fill, minmax(rem(200), 1fr));
-  width: $card-width-mobile;
+  // display: grid;
+  // gap: $space-lg;
+  // grid-template-columns: repeat(auto-fill, minmax(rem(200), 1fr));
+  // width: $card-width-mobile;
 
 
   @include bp(md) {
-    grid-template-columns: repeat(auto-fill, minmax(rem(336), 1fr));
+    // grid-template-columns: repeat(auto-fill, minmax(rem(336), 1fr));
   }
 
   // makes basic-card-image wider
@@ -60,21 +60,21 @@ $blue-basic-card-text-blue: $blue-700;
   }
 
   [class*='icon-'] {
-    color: $basic-card-text-red;
-    transition: color 0.3s ease-in;
+    // color: $basic-card-text-red;
+    // transition: color 0.3s ease-in;
   }
 }
 
 .basic-card {
-  position: relative;
-  height: 100%;
-  border-left: $space-2xs solid $basic-card-border-color;
-  text-decoration: none;
-  box-shadow: $basic-card-box-shadow;
-  overflow: hidden;
-  transition: background-color 0.3s ease-in, border-color 0.3s ease-in,
-    box-shadow 0.3s ease-in;
-  z-index: 1;
+  // position: relative;
+  // height: 100%;
+  // border-left: $space-2xs solid $basic-card-border-color;
+  // text-decoration: none;
+  // box-shadow: $basic-card-box-shadow;
+  // overflow: hidden;
+  // transition: background-color 0.3s ease-in, border-color 0.3s ease-in,
+  //   box-shadow 0.3s ease-in;
+  // z-index: 1;
 
   &::before,
   &::after {
@@ -101,9 +101,9 @@ $blue-basic-card-text-blue: $blue-700;
   // Hover triggers
   &:hover,
   &:focus {
-    background-color: $basic-card-background-hover;
-    border-color: $basic-card-border-color-hover;
-    box-shadow: $basic-card-dark-shadow-hover;
+    // background-color: $basic-card-background-hover;
+    // border-color: $basic-card-border-color-hover;
+    // box-shadow: $basic-card-dark-shadow-hover;
 
     &::before {
       background-color: $basic-card-light-tri-hover;
@@ -114,27 +114,27 @@ $blue-basic-card-text-blue: $blue-700;
     }
 
     [class*='icon-'] {
-      color: $basic-card-text-color-hover;
+      // color: $basic-card-text-color-hover;
     }
 
     .basic-card--image-wrap img {
-      transform: translate(-50%, -50%) scale(1.05);
+      // transform: translate(-50%, -50%) scale(1.05);
     }
 
     .basic-card--category {
-      color: $basic-card-text-color-hover;
+      // color: $basic-card-text-color-hover;
     }
 
     .basic-card--title {
-      color: $basic-card-text-color-hover;
+      // color: $basic-card-text-color-hover;
     }
 
     .basic-card--desc {
-      color: $basic-card-text-color-hover;
+      // color: $basic-card-text-color-hover;
     }
 
     .cta {
-      color: $basic-card-text-color-hover;
+      // color: $basic-card-text-color-hover;
 
       &::after {
         right: 0.6em;
@@ -144,33 +144,33 @@ $blue-basic-card-text-blue: $blue-700;
 }
 
 .basic-card--text-wrap {
-  height: 100%;
-  transition: border-color 0.3s ease-in;
+  // height: 100%;
+  // transition: border-color 0.3s ease-in;
 }
 
 .basic-card--category {
-  display: block;
-  line-height: 1.5;
-  font-weight: 400;
-  color: $basic-card-text-red;
-  transition: color 0.3s ease-in;
+  // display: block;
+  // line-height: 1.5;
+  // font-weight: 400;
+  // color: $basic-card-text-red;
+  // transition: color 0.3s ease-in;
 }
 
 .basic-card--title {
   @include line-clamp(3);
-  transition: color 0.3s ease-in;
+  // transition: color 0.3s ease-in;
 }
 
 .basic-card--desc {
   flex-grow: 1;
   font-weight: 400;
-  transition: color 0.3s ease-in;
+  // transition: color 0.3s ease-in;
 }
 
 // Yellow card
 .basic-card--yellow {
-  box-shadow: $basic-card-box-shadow;
-  border-color: $yellow-basic-card-border-color;
+  // box-shadow: $basic-card-box-shadow;
+  // border-color: $yellow-basic-card-border-color;
 
   &::before {
     background-color: $yellow-basic-card-light-tri;
@@ -183,9 +183,9 @@ $blue-basic-card-text-blue: $blue-700;
   // Hover triggers
   &:hover,
   &:focus {
-    background-color: $yellow-basic-card-background-hover;
-    border-color: $yellow-basic-card-border-color-hover;
-    box-shadow: $basic-card-light-shadow-hover;
+    // background-color: $yellow-basic-card-background-hover;
+    // border-color: $yellow-basic-card-border-color-hover;
+    // box-shadow: $basic-card-light-shadow-hover;
 
     &::before {
       background-color: $yellow-basic-card-light-tri-hover;
@@ -196,45 +196,45 @@ $blue-basic-card-text-blue: $blue-700;
     }
 
     [class*='icon-'] {
-      color: $yellow-basic-card-text-color-hover;
+      // color: $yellow-basic-card-text-color-hover;
     }
 
     .basic-card--category {
-      color: $yellow-basic-card-text-color-hover;
+      // color: $yellow-basic-card-text-color-hover;
     }
 
     .basic-card--title {
-      color: $yellow-basic-card-text-color-hover;
+      // color: $yellow-basic-card-text-color-hover;
     }
 
     .basic-card--desc {
-      color: $yellow-basic-card-text-color-hover;
+      // color: $yellow-basic-card-text-color-hover;
     }
 
     .cta {
-      color: $yellow-basic-card-text-color-hover;
+      // color: $yellow-basic-card-text-color-hover;
     }
   }
 
 
   [class*='icon-'] {
-    color: $yellow-basic-card-text-yellow;
-    transition: color 0.3s ease-in;
+    // color: $yellow-basic-card-text-yellow;
+    // transition: color 0.3s ease-in;
   }
 
   .basic-card--category {
-    color: $yellow-basic-card-text-yellow;
+    // color: $yellow-basic-card-text-yellow;
   }
 
   .cta {
-    color: $yellow-basic-card-text-yellow;
+    // color: $yellow-basic-card-text-yellow;
   }
 }
 
 // blue card
 .basic-card--blue {
-  box-shadow: $basic-card-box-shadow;
-  border-left: 4px solid $blue-basic-card-border-color;
+  // box-shadow: $basic-card-box-shadow;
+  // border-left: 4px solid $blue-basic-card-border-color;
 
   &::before {
     background-color: $blue-basic-card-light-tri;
@@ -247,9 +247,9 @@ $blue-basic-card-text-blue: $blue-700;
   // Hover triggers
   &:hover,
   &:focus {
-    background-color: $blue-basic-card-background-hover;
-    border-color: $blue-basic-card-border-color-hover;
-    box-shadow: $basic-card-light-shadow-hover;
+    // background-color: $blue-basic-card-background-hover;
+    // border-color: $blue-basic-card-border-color-hover;
+    // box-shadow: $basic-card-light-shadow-hover;
 
     &::before {
       background-color: $blue-basic-card-light-tri-hover;
@@ -260,38 +260,38 @@ $blue-basic-card-text-blue: $blue-700;
     }
 
     [class*='icon-'] {
-      color: $blue-basic-card-text-color-hover;
+      // color: $blue-basic-card-text-color-hover;
     }
 
     .basic-card--category {
-      color: $blue-basic-card-text-color-hover;
+      // color: $blue-basic-card-text-color-hover;
     }
 
     .basic-card--title {
-      color: $blue-basic-card-text-color-hover;
+      // color: $blue-basic-card-text-color-hover;
     }
 
     .basic-card--desc {
-      color: $blue-basic-card-text-color-hover;
+      // color: $blue-basic-card-text-color-hover;
     }
 
     .cta {
-      color: $blue-basic-card-text-color-hover;
+      // color: $blue-basic-card-text-color-hover;
     }
   }
 
 
   [class*='icon-'] {
-    color: $blue-basic-card-text-blue;
-    transition: color 0.3s ease-in;
+    // color: $blue-basic-card-text-blue;
+    // transition: color 0.3s ease-in;
   }
 
   .basic-card--category {
-    color: $blue-basic-card-text-blue;
+    // color: $blue-basic-card-text-blue;
   }
 
   .cta {
-    color: $blue-basic-card-text-blue;
+    // color: $blue-basic-card-text-blue;
   }
 }
 
@@ -308,40 +308,40 @@ $blue-basic-card-text-blue: $blue-700;
   }
 
   .basic-card--image-wrap {
-    position: relative;
+    // position: relative;
 
     .basic-card--text-wrap {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: auto;
-      border: none;
+      // position: absolute;
+      // bottom: 0;
+      // left: 0;
+      // height: auto;
+      // border: none;
     }
   }
 
   figure {
-    position: relative;
+    // position: relative;
     padding-top: percentage(473/662);
-    overflow: hidden;
-    margin: 0;
+    // overflow: hidden;
+    // margin: 0;
 
     img {
-      @include absolute-center;
-      max-width: 100%;
-      width: 100%;
-      height: auto;
-      transition: transform 0.5s ease;
+      // @include absolute-center;
+      // max-width: 100%;
+      // width: 100%;
+      // height: auto;
+      // transition: transform 0.5s ease;
     }
   }
 
   .basic-card--text-wrap {
-    position: relative;
+    // position: relative;
     // padding-top: $space-md;
   }
 
   .basic-card--category,
   .basic-card--title {
-    color: $white;
+    // color: $white;
   }
 }
 
@@ -349,11 +349,11 @@ $blue-basic-card-text-blue: $blue-700;
 
   .basic-card--category,
   .basic-card--title {
-    color: $white;
+    // color: $white;
 
     &:hover,
     &:focus {
-      color: $white;
+      // color: $white;
     }
   }
 }
@@ -362,11 +362,11 @@ $blue-basic-card-text-blue: $blue-700;
 
   .basic-card--category,
   .basic-card--title {
-    color: $white;
+    // color: $white;
 
     &:hover,
     &:focus {
-      color: $white;
+      // color: $white;
     }
   }
 }
