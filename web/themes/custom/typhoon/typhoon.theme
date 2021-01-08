@@ -120,6 +120,8 @@ function typhoon_preprocess_page__front(&$variables) {
 
         $news_item = array();
         $news_item['id'] = $nid;
+        // the link: parameter in the newscard call will not allow appending id to stub?
+        $news_item['item_url_stub'] = 'node/'.$nid;
         $news_item['title'] = $node->getTitle();
         $refents = $articles->referencedEntities();
 
