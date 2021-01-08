@@ -105,7 +105,7 @@
                         {{newsCard.lead({
                             imgSrc: item['image_uri'],
                             imgAlt: item['title'],
-                            link: 'node/'.item['id'],
+                            link: item['item_url_stub'],
                             category: 'News things',
                             title: item['title'],
                             text: item['body_summary'],
@@ -120,7 +120,7 @@
                         {{newsCard.basic({
                             imgSrc: item['image_uri'],
                             imgAlt: item['title'],
-                            link: 'node/'.item['id'],
+                            link: item['item_url_stub'],
                             category: 'News things',
                             title: item['title'],
                             text: item['body_summary'],
@@ -384,7 +384,7 @@
                           {{ card.basicImg({
                               color: 'basic-card--yellow',
                               imgSrc: item['image_uri'], 
-                              link: 'node/'.item['id'], 
+                              link: item['item_url_stub'],
                               title: item['title'], 
                               category: 'Category',
                               text: item['body_summary'], 
