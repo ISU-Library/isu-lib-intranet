@@ -17,9 +17,9 @@ $headline-special-fs: $space-3xl;
 
 .headline-special--text {
   @include angledSlashes($space-2xl);
-  display: inline;
-  position: relative;
-  margin: 0 auto $space-xs;
+  // display: inline;
+  // position: relative;
+  // margin: 0 auto $space-xs;
   text-shadow: $vert-dark-1;
 
   &::before,
@@ -48,20 +48,20 @@ $headline-special-fs: $space-3xl;
 
   @include bp(md) {
     @include angledSlashes($headline-special-fs);
-    display: inline-block;
+    // display: inline-block;
   }
 }
 
 .headline-special--sub {
-  display: block;
-  max-width: 100%;
-  padding-left: 0;
-  font-size: $fs-lg;
-  text-align: left;
+  // display: block;
+  // max-width: 100%;
+  // padding-left: 0;
+  // font-size: $fs-lg;
+  // text-align: left;
   text-shadow: $vert-dark-1;
 
   @include bp(md) {
-    font-size: $fs-xl;
-    padding-left: $space-xs;
+    // font-size: $fs-xl;
+    // padding-left: $space-xs;
   }
 }
