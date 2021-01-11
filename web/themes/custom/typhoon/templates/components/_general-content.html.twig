@@ -58,7 +58,7 @@
       <div class="gen-con--img-wrap w-full {{data.imgSize}} float-none my-0 mx-auto {{imgFloat}}">
         <figure class="relative text-center">
           <img class="max-w-full h-auto shadow-dark-2" src="{{ data.imgSrc }}" alt="{{ data.imgAlt }}"/>
-          <figcaption class="mt-sm bg-white text-center font-italic">
+          <figcaption class="mt-sm bg-white text-center italic">
             {{ data.imgAlt }}
           </figcaption>
         </figure>
@@ -217,9 +217,9 @@
 
     <div class="gen-con--block mb-lg img-block block--lg-img">
       <div class="gen-con--img-wrap">
-        <figure class="relative overflow-hidden">
-          <img src="{{ data.imgSrc }}" alt="{{ data.imgAlt }}"/>
-          <figcaption>
+        <figure class="relative">
+          <img class="shadow-dark-2" src="{{ data.imgSrc }}" alt="{{ data.imgAlt }}"/>
+          <figcaption class="pt-xs text-center italic">
             {{ data.imgAlt }}
           </figcaption>
         </figure>
@@ -243,16 +243,16 @@
     <div class="gen-con--block flex flex-col sm:flex-row justify-around mb-2xl img-block block--two-img">
       <div class="gen-con--img-wrap max-w-full m-xs ">
         <figure>
-          <img src="{{ data.leftImgSrc }}" alt="{{ data.leftImgAlt }}"/>
-          <figcaption class="text-center">
+          <img class="shadow-dark-2" src="{{ data.leftImgSrc }}" alt="{{ data.leftImgAlt }}"/>
+          <figcaption class="pt-xs text-center italic">
             {{ data.leftImgAlt }}
           </figcaption>
         </figure>
       </div>
       <div class="gen-con--img-wrap max-w-full m-xs ">
         <figure>
-          <img src="{{ data.rightImgSrc }}" alt="{{ data.rightImgAlt }}"/>
-          <figcaption class="text-center">
+          <img class="shadow-dark-2" src="{{ data.rightImgSrc }}" alt="{{ data.rightImgAlt }}"/>
+          <figcaption class="pt-xs text-center italic">
             {{ data.rightImgAlt }}
           </figcaption>
         </figure>
@@ -276,24 +276,24 @@
       <div class="gen-con--block flex flex-col sm:flex-row justify-around mb-2xl img-block block--three-img">
         <div class="gen-con--img-wrap m-xs">
           <figure>
-            <img src="{{ data.leftImgSrc }}" alt="{{ data.leftImgAlt }}"/>
-            <figcaption class="text-center">
+            <img class="shadow-dark-2" src="{{ data.leftImgSrc }}" alt="{{ data.leftImgAlt }}"/>
+            <figcaption class="pt-xs text-center italic">
               {{ data.leftImgAlt }}
             </figcaption>
           </figure>
         </div>
         <div class="gen-con--img-wrap m-xs">
           <figure>
-            <img src="{{ data.centerImgSrc }}" alt="{{ data.centerImgAlt }}"/>
-            <figcaption class="text-center">
+            <img class="shadow-dark-2" src="{{ data.centerImgSrc }}" alt="{{ data.centerImgAlt }}"/>
+            <figcaption class="pt-xs text-center italic">
               {{ data.centerImgAlt }}
             </figcaption>
           </figure>
         </div>
         <div class="gen-con--img-wrap m-xs">
           <figure>
-            <img src="{{ data.rightImgSrc }}" alt="{{ data.rightImgAlt }}"/>
-            <figcaption class="text-center">
+            <img class="shadow-dark-2" src="{{ data.rightImgSrc }}" alt="{{ data.rightImgAlt }}"/>
+            <figcaption class="pt-xs text-center italic">
               {{ data.rightImgAlt }}
             </figcaption>
           </figure>
