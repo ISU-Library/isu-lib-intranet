@@ -13,19 +13,19 @@
   {% set data = data ? defaultData|merge(data) : defaultData %}
 
     {% if data.lead %}
-      <div class="gen-con--block text-block {{data.lead}} mb-lg"> {% if data.template %}
+      <div class="gen-con--block text-block mb-lg first:text-lg {{data.lead}} "> {% if data.template %}
         {{ data.text }}
       {% else %}
-        <p>
+        <p class="mt-0">
           {{ data.text }}
         </p>
       {% endif %}
     {% else %}
-      <div class="gen-con--block text-block mb-lg">
+      <div class="gen-con--block text-block mb-lg first:text-lg ">
         {% if data.template %}
           {{ data.text }}
         {% else %}
-          <p>
+          <p class="mt-0">
             {{ data.text }}
           </p>
         {% endif %}
@@ -46,11 +46,19 @@
 
     {% set data = data ? defaultData|merge(data) : defaultData %}
 
-    <div class="gen-con--block img-block {{data.imgSide}} mb-lg">
-      <div class="gen-con--img-wrap {{data.imgSize}}">
-        <figure>
-          <img src="{{ data.imgSrc }}" alt="{{ data.imgAlt }}"/>
-          <figcaption>
+    {% if data.imgSide == 'text-img--right' %}
+      {% set imgFloat = 'md:float-right ml-lg' %}
+    {% endif %}
+    {% if data.imgSide == 'text-img--left' %}
+      {% set imgFloat = 'md:float-left mr-lg' %}
+    {% endif %}
+
+
+    <div class="gen-con--block mb-lg img-block {{data.imgSide}}">
+      <div class="gen-con--img-wrap w-full {{data.imgSize}} float-none my-0 mx-auto {{imgFloat}}">
+        <figure class="relative text-center">
+          <img class="max-w-full h-auto shadow-dark-2" src="{{ data.imgSrc }}" alt="{{ data.imgAlt }}"/>
+          <figcaption class="mt-sm bg-white text-center font-italic">
             {{ data.imgAlt }}
           </figcaption>
         </figure>
@@ -58,7 +66,7 @@
       {% if data.template %}
         {{ data.text }}
       {% else %}
-        <p>
+        <p class="mt-0">
           {{ data.text }}
         </p>
       {% endif %}
@@ -89,7 +97,7 @@
         {% if data.template %}
           {{data.text}}
         {% else %}
-          <p>
+          <p class="mt-0">
             {{data.text}}
           </p>
         {% endif %}
@@ -106,7 +114,9 @@
     } %}
     {% set data = data ? defaultData|merge(data) : defaultData %}
 
-    <div class="gen-con--block text-block block--link-abstract">
+    {# todo: add header options through admin #}
+
+    <div class="gen-con--block text-block block--link-abstract mb-2xl">
       {% if data.template %}
         {{data.text}}
       {% else %}
@@ -114,7 +124,7 @@
           {{data.text}}
         </p>
       {% endif %}
-      <ul class="link-list--abstract">
+      <ul class="link-list--abstract mt-lg mx-0 mb-0">
         {% if data.template %}
           {# * the code below reaches down into the paragraph link_abstract_list, set by data.links #}
           {# * then it loops through all fields in the paragraph, yes there are a lot of arrays #}
@@ -123,8 +133,10 @@
               {% for paragraph_field in linkAbstractPara %}
                 {% for abstract_link_value in paragraph_field %}
                   {% if abstract_link_value.title and abstract_link_value.0.url %}
-                    <li class="abstract-item"> <a href="{{abstract_link_value.0.url}}">
-                      {{abstract_link_value.title}}
+                    <li class="abstract-item relative mb-lg"> <a class="block pl-2xl" href="{{abstract_link_value.0.url}}">
+                      <h4 class="text-red-500 m-0 mb-md">
+                        {{abstract_link_value.title}}
+                      </h4>
                     </a>
                     {{ paragraph_field.field_link_abstract_text.value|raw }}
                   </li>
@@ -135,10 +147,12 @@
         {% else %}
           {% for linkList in data.links %}
             <li class="abstract-item">
-              <a href="{{ linkList.url }}">
-                {{ linkList.text }}
+              <a class="block pl-2xl" href="{{ linkList.url }}">
+                <h4 class="text-red-500 m-0">
+                  {{ linkList.text }}
+                </h4>
               </a>
-              <p>
+              <p class="mt-0">
                 {{ linkList.abstract }}
               </p>
             </li>
@@ -158,15 +172,15 @@
 
     {% set data = data ? defaultData|merge(data) : defaultData %}
 
-    <div class="gen-con--block text-block block--link-list">
+    <div class="gen-con--block mb-lg text-block block--link-list">
       {% if data.template %}
         {{data.text}}
       {% else %}
-        <p>
+        <p class="mt-0">
           {{data.text}}
         </p>
       {% endif %}
-      <ul class="link-list">
+      <ul class="link-list flex flex-wrap mt-md mr-0 mb-md ml-md sm:mx-0 sm:mb-0">
         {% if data.template %}
           {# * the code below reaches down into the paragraph link_list_link, set by data,links #}
           {# * then it loops through all fields in the paragraph #}
@@ -174,7 +188,7 @@
             {% for linkListPara in data.links %}
               {% for paragraph_field in linkListPara %}
                 {% if paragraph_field.url and paragraph_field.title %}
-                  <li class="link-list--item"> <a href="{{ paragraph_field.url }}">
+                  <li class="link-list--item relative mb-md w-full py-xs px-0 sm:w-1/2 sm:pr-xs"> <a class="inline-block pl-2xl font-normal leading-normal no-underline" href="{{ paragraph_field.url }}" rel="noreferrer noopener">
                     {{ paragraph_field.title }}
                   </a>
                 </li>
@@ -183,7 +197,7 @@
           {% endfor %}
         {% else %}
           {% for linkList in data.links %}
-            <li class="link-list--item">
+            <li class="link-list--item relative mb-md w-full py-xs px-0 sm:w-1/2 sm:pr-xs">
               {{ linkList }}
             </li>
           {% endfor %}
@@ -201,9 +215,9 @@
       } %}
     {% set data = data ? defaultData|merge(data) : defaultData %}
 
-    <div class="gen-con--block img-block block--lg-img">
+    <div class="gen-con--block mb-lg img-block block--lg-img">
       <div class="gen-con--img-wrap">
-        <figure class="overflow-hidden">
+        <figure class="relative overflow-hidden">
           <img src="{{ data.imgSrc }}" alt="{{ data.imgAlt }}"/>
           <figcaption>
             {{ data.imgAlt }}
@@ -226,30 +240,29 @@
 
     {% set data = data ? defaultData|merge(data) : defaultData %}
 
-    <div class="gen-con--block img-block block--two-img">
-      <div class="gen-con--img-wrap">
+    <div class="gen-con--block flex flex-col sm:flex-row justify-around mb-2xl img-block block--two-img">
+      <div class="gen-con--img-wrap max-w-full m-xs ">
         <figure>
           <img src="{{ data.leftImgSrc }}" alt="{{ data.leftImgAlt }}"/>
-          <figcaption>
+          <figcaption class="text-center">
             {{ data.leftImgAlt }}
           </figcaption>
         </figure>
       </div>
-      <div class="gen-con--img-wrap">
+      <div class="gen-con--img-wrap max-w-full m-xs ">
         <figure>
           <img src="{{ data.rightImgSrc }}" alt="{{ data.rightImgAlt }}"/>
-          <figcaption>
+          <figcaption class="text-center">
             {{ data.rightImgAlt }}
           </figcaption>
         </figure>
       </div>
-    </div>
 
-  {% endmacro %}
+    {% endmacro %}
 
-  {% macro threeImg(data) %}
+    {% macro threeImg(data) %}
 
-    {% set defaultData = {
+      {% set defaultData = {
       template: TRUE,
       leftImgSrc: '',
       leftImgAlt: '',
@@ -258,55 +271,77 @@
       rightImgSrc: '',
       rightImgAlt: '',
       } %}
-    {% set data = data ? defaultData|merge(data) : defaultData %}
+      {% set data = data ? defaultData|merge(data) : defaultData %}
 
-    <div class="gen-con--block img-block block--three-img">
-      <div class="gen-con--img-wrap">
-        <figure>
-          <img src="{{ data.leftImgSrc }}" alt="{{ data.leftImgAlt }}"/>
-          <figcaption>
-            {{ data.leftImgAlt }}
-          </figcaption>
-        </figure>
+      <div class="gen-con--block flex flex-col sm:flex-row justify-around mb-2xl img-block block--three-img">
+        <div class="gen-con--img-wrap m-xs">
+          <figure>
+            <img src="{{ data.leftImgSrc }}" alt="{{ data.leftImgAlt }}"/>
+            <figcaption class="text-center">
+              {{ data.leftImgAlt }}
+            </figcaption>
+          </figure>
+        </div>
+        <div class="gen-con--img-wrap m-xs">
+          <figure>
+            <img src="{{ data.centerImgSrc }}" alt="{{ data.centerImgAlt }}"/>
+            <figcaption class="text-center">
+              {{ data.centerImgAlt }}
+            </figcaption>
+          </figure>
+        </div>
+        <div class="gen-con--img-wrap m-xs">
+          <figure>
+            <img src="{{ data.rightImgSrc }}" alt="{{ data.rightImgAlt }}"/>
+            <figcaption class="text-center">
+              {{ data.rightImgAlt }}
+            </figcaption>
+          </figure>
+        </div>
       </div>
-      <div class="gen-con--img-wrap">
-        <figure>
-          <img src="{{ data.centerImgSrc }}" alt="{{ data.centerImgAlt }}"/>
-          <figcaption>
-            {{ data.centerImgAlt }}
-          </figcaption>
-        </figure>
+    {% endmacro %}
+
+    {% macro quote(data) %}
+
+      {% set defaultData = {
+        quoteType: '',
+        quoteText:'',
+        quoteCite:'',
+      } %}
+
+      {% set data = data ? defaultData|merge(data) : defaultData %}
+
+      {% if data.quoteType == 'block--quote-ribbon' %}
+        {% set quoteTypeClasses = 'pb-2xl bg-white shadow-light-2 rounded border-l-4 border-red-500 overflow-hidden' %}
+        {% set quoteMarksWrap = 'hidden' %}
+        {% set quoteMarks = 'text-red-700' %}
+        {% set quoteClasses = 'w-full lg:w-5/6 text-black px-sm lg:px-0' %}
+        {% set cite = 'text-red-500' %}
+
+      {% elseif data.quoteType == 'block--quote-banner' %}
+        {% set quoteTypeClasses = 'pb-3xl bg-red-600 shadow-light-2 rounded' %}
+        {% set quoteMarksWrap = 'bg-yellow-300' %}
+        {% set quoteMarks = 'text-red-600' %}
+        {% set quoteClasses = 'text-red-50' %}
+        {% set cite = 'text-yellow-300' %}
+
+      {% else %}
+        {% set quoteTypeClasses = 'pb-0' %}
+        {% set quoteMarksWrap = 'bg-red-200' %}
+        {% set quoteMarks = 'text-red-700' %}
+        {% set quoteClasses = 'w-full lg:w-5/6 text-black' %}
+        {% set cite = 'text-red-500' %}
+      {% endif %}
+
+      <div class="gen-con--block {{data.quoteType}} {{quoteTypeClasses}} pt-2xl px-0 mb-2xl quote-block relative text-center ">
+        <div class="quote--marks {{quoteMarksWrap}} inline-block relative my-0 mx-auto w-xl h-xl rounded-full">
+          <i class="fas fa-quote-left {{quoteMarks}} absolute-center text-center" aria-hidden="true"></i>
+        </div>
+        <blockquote class="quote {{quoteClasses}} my-0 mx-auto text-lg italic">
+          {{ data.quoteText }}
+          <cite class="{{cite}} block relative my-0 mx-auto pt-md px-sm pb-0 not-italic">
+            {{ data.quoteCite }}
+          </cite>
+        </blockquote>
       </div>
-      <div class="gen-con--img-wrap">
-        <figure>
-          <img src="{{ data.rightImgSrc }}" alt="{{ data.rightImgAlt }}"/>
-          <figcaption>
-            {{ data.rightImgAlt }}
-          </figcaption>
-        </figure>
-      </div>
-    </div>
-  {% endmacro %}
-
-  {% macro quote(data) %}
-
-    {% set defaultData = {
-    quoteType: '',
-    quoteText:'',
-    quoteCite:'',
-  } %}
-
-    {% set data = data ? defaultData|merge(data) : defaultData %}
-
-    <div class="gen-con--block quote-block {{data.quoteType}}">
-      <div class="quote--marks">
-        <i class="fas fa-quote-left" aria-hidden="true"></i>
-      </div>
-      <blockquote class="quote">
-        {{ data.quoteText }}
-        <cite>
-          {{ data.quoteCite }}
-        </cite>
-      </blockquote>
-    </div>
-  {% endmacro %}
+    {% endmacro %}
