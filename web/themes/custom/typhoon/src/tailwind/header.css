@@ -72,7 +72,7 @@
 .main-nav--dropdown .dropdown--item a::after {
   content: '\f054';
   font-family: 'Fontawesome';
-  @apply -left-md h-auto text-red-500 bg-transparent transition-all duration-300 transform -translate-y-1/2;
+  @apply absolute -left-md top-1/2 h-auto text-red-500 bg-transparent transition-all duration-300 transform -translate-y-1/2;
 }
 
 .main-nav--dropdown .dropdown--item:hover a::after,

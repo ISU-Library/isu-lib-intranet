@@ -60,7 +60,7 @@
         {% for item in items %}
           {# Assign classes based on if the item is an open parent, closed parent, active, or a has a submenu. #}
           {% set mainNavTopItem = 'main-nav--item relative transition-colors' %}
-          {% set mainNavDropdownList = 'dropdown--item' %}
+          {% set mainNavDropdownList = 'dropdown--item overflow-hidden' %}
 
           {% set classes = [
             menu_level ? mainNavDropdownList : mainNavTopItem,
@@ -68,6 +68,7 @@
             item.is_collapsed ? 'main-nav--item_collapsed',
             item.in_active_trail ? 'main-nav--item_active-trail',
             item.below ? 'dropdown-menu group',
+            'relative',
           ]
         %}
           {% if item.below %}
@@ -82,7 +83,7 @@
               {% 
                   set mainNavTopLinks = [
                   'main-nav--link', 
-                  'block',
+                  'inline-block',
                   'py-md',
                   'px-2xl',
                   'hover:bg-red-500',
@@ -96,10 +97,11 @@
               {# Assign classes based on if the link is a parent or not, and if it is active or not #}
               {%
                 set mainNavSubLinks = [
+                  'relative',
                   'block',
                   'overflow-hidden',
                   'py-sm',
-                  'pl-md',
+                  'pl-lg',
                   'pr-lg',
                   'text-md',
                   'font-normal',
@@ -109,7 +111,6 @@
                   item.in_active_trail ? 'is-active text-red-500' : 'text-black',
                 ]
               %}
-
               {% if item.below %}
                 {# <div class="isu-dropdown-toggle_wrapper"> #}
                 {{ link(item.title, item.url, {'class': mainNavTopLinks}) }}
