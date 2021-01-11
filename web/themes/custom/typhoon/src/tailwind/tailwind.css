@@ -18,9 +18,9 @@ a {
   @apply absolute transform -translate-y-1/2 -translate-x-1/2 top-1/2 left-1/2;
 }
 
-.paragraph p {
+/* .paragraph p {
   @apply my-md;
-}
+} */
 
 /* 
 .lead-block p:first-of-type {
