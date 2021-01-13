@@ -18,7 +18,7 @@ body::before{
   }
 }
 
-@media(min-width: 576px){
+@media(min-width: 640px){
   body::before{
     content:"Small"
   }
@@ -531,7 +531,7 @@ sub{
   right:-1.5rem
 }
 
-@media(min-width: 576px){
+@media(min-width: 640px){
   .headline-special--text{
     font-size:3rem
   }
@@ -1143,7 +1143,7 @@ table td,table th{
   color:#f1be46
 }
 
-@media(min-width: 576px){
+@media(min-width: 640px){
   .block--quote-ribbon::before,.block--quote-ribbon::after{
     font-size:4.5rem
   }

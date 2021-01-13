@@ -33,6 +33,10 @@
 {% macro menu_links(items, attributes, menu_level) %}
   {% import _self as menus %}
   {% if items %}
+
+    {% set mainNavTopItem = 'main-nav--item relative transition-colors' %}
+    {% set mainNavDropdownList = 'dropdown--item overflow-hidden' %}
+
     {% if menu_level == 0 %}
       {% set mainNavClasses = [
         'main-nav--list',
@@ -40,8 +44,40 @@
         'justify-end',
         'm-0',
       ] %}
+      {# !This is the top level <li> + <a> styling #}
       <ul{{attributes.addClass(mainNavClasses)}}>
+        {% for item in items %}
+          {# Assign classes based on if the item is an open parent, closed parent, active, or a has a submenu. #}
+          {% set classes = [
+            menu_level ? mainNavDropdownList : mainNavTopItem,
+            item.is_expanded ? 'main-nav--item_expanded',
+            item.is_collapsed ? 'main-nav--item_collapsed',
+            item.in_active_trail ? 'main-nav--item_active-trail',
+            item.below ? 'dropdown-menu group',
+            'relative',
+          ] %}
+
+          {% set mainNavTopLinks = [
+            'main-nav--link', 
+            'inline-block',
+            'py-md',
+            'px-2xl',
+            'hover:bg-red-500',
+            'hover:text-white',
+            'focus:bg-red-500',
+            'focus:text-white',
+            item.in_active_trail ? 'is-active bg-red-500 text-white',
+          ] %}
+
+          <li{{item.attributes.addClass(classes)}}>
+            {{ link(item.title, item.url, {'class': mainNavTopLinks }) }}
+            {% if item.below %}
+              {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+            {% endif %}
+          </li>
+        {% endfor %}
       {% else %}
+        {# !This is the all sub-level <li> + <a> styling #}
         {% set mainNavDropdownClasses = [
           'main-nav--dropdown',
           'hidden',
@@ -56,73 +92,38 @@
           'group-focus:block',
         ] %}
         <ul{{attributes.addClass(mainNavDropdownClasses)}}>
-        {% endif %}
-        {% for item in items %}
-          {# Assign classes based on if the item is an open parent, closed parent, active, or a has a submenu. #}
-          {% set mainNavTopItem = 'main-nav--item relative transition-colors' %}
-          {% set mainNavDropdownList = 'dropdown--item overflow-hidden' %}
-
-          {% set classes = [
-            menu_level ? mainNavDropdownList : mainNavTopItem,
-            item.is_expanded ? 'main-nav--item_expanded',
-            item.is_collapsed ? 'main-nav--item_collapsed',
-            item.in_active_trail ? 'main-nav--item_active-trail',
-            item.below ? 'dropdown-menu group',
-            'relative',
-          ]
-        %}
-          {% if item.below %}
-            {# If the item has children, it will be a dropdown. #}
-            <li{{item.attributes.addClass(classes).setAttribute('aria-expanded','false')}}>
-            {% else %}
-              {# If the item does not have children, it will not be a dropdown. #}
-              <li{{item.attributes.addClass(classes)}}>
-              {% endif %}
-
-              {# If the item is a parent, it acts as a toggle to open the menu. #}
-              {% 
-                  set mainNavTopLinks = [
-                  'main-nav--link', 
-                  'inline-block',
-                  'py-md',
-                  'px-2xl',
-                  'hover:bg-red-500',
-                  'hover:text-white',
-                  'focus:bg-red-500',
-                  'focus:text-white',
-                  item.in_active_trail ? 'is-active bg-red-500 text-white',
-                  ]
-                %}
-
-              {# Assign classes based on if the link is a parent or not, and if it is active or not #}
-              {%
-                set mainNavSubLinks = [
-                  'relative',
-                  'block',
-                  'overflow-hidden',
-                  'py-sm',
-                  'pl-lg',
-                  'pr-lg',
-                  'text-md',
-                  'font-normal',
-                  'transition-all', 
-                  'duration-300',
-                  'hover:text-red-500',
-                  item.in_active_trail ? 'is-active text-red-500' : 'text-black',
-                ]
-              %}
+          {% for item in items %}
+            {# Assign classes based on if the item is an open parent, closed parent, active, or a has a submenu. #}
+            {% set classes = [
+              menu_level ? mainNavDropdownList : mainNavTopItem,
+              item.is_expanded ? 'main-nav--item_expanded',
+              item.is_collapsed ? 'main-nav--item_collapsed',
+              item.in_active_trail ? 'main-nav--item_active-trail',
+              item.below ? 'dropdown-menu group',
+              'relative',
+            ] %}
+            {% set mainNavDropdownLinks = [
+              'relative',
+              'block',
+              'overflow-hidden',
+              'py-sm',
+              'pl-lg',
+              'pr-lg',
+              'text-md',
+              'font-normal',
+              'transition-all', 
+              'duration-300',
+              'hover:text-red-500',
+              item.in_active_trail ? 'is-active text-red-500' : 'text-black',
+            ] %}
+            <li{{item.attributes.addClass(classes)}}>
+              {{ link(item.title, item.url, {'class': mainNavDropdownLinks}) }}
               {% if item.below %}
-                {# <div class="isu-dropdown-toggle_wrapper"> #}
-                {{ link(item.title, item.url, {'class': mainNavTopLinks}) }}
-                {# <button class="isu-dropdown-toggle_mobile"><span class="fa fa-angle-down"></span><span class="sr-only">Open dropdown menu</span></button> #}
-                {# </div> #}
                 {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
-              {% else %}
-                {{ link(item.title, item.url, {'class': mainNavSubLinks}) }}
               {% endif %}
-
             </li>
           {% endfor %}
-        </ul>
+        {% endif %}
+      </ul>
     {% endif %}
   {% endmacro %}
