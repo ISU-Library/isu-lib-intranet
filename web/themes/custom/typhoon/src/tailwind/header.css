@@ -27,7 +27,7 @@
   @apply absolute bg-red-900 z-30;
 }
 
-.util-nav--list li:not(:last-of-type) a::after {
+.util-nav--list>li:not(:last-of-type) a::after {
   content: '';
   left: unset;
   right: 0;
@@ -41,7 +41,7 @@
 }
 
 .search__search-form form {
-  @apply flex py-sm px-md m-0;
+  @apply flex py-sm pl-md m-0;
 }
 
 .search__search-form form .form-item {
@@ -60,7 +60,13 @@
 /****** main nav-section ******/
 
 .main-nav .logo {
-  max-width: 18.75rem;
+  max-width: 12.5rem;
+}
+
+@media (min-width: 640px) {
+  .main-nav .logo {
+    max-width: 15.625rem;
+  }
 }
 
 .main-nav--item:nth-last-child(1) .main-nav--dropdown,
