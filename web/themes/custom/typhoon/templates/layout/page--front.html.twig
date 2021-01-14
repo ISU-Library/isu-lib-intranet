@@ -53,14 +53,13 @@
 
 {% set test_image = '/themes/custom/typhoon/images/Above as Below_1.jpg' %}
 
-<div class="front-page">
-  <header role="banner" class="z-50">
-    {{ page.header }}
-    {% include "@typhoon/navigation/nav.html.twig" %}
-  </header>
+<div
+  class="front-page">
+  {# * header including navs #}
+  {% include "@typhoon/navigation/header.html.twig" %}
+
   <div
     class="typhoon-grid grid grid-cols-12 mx-auto">
-
     {# {{ page.breadcrumb }} #}
     {{ page.highlighted }}
     {{ page.help }}

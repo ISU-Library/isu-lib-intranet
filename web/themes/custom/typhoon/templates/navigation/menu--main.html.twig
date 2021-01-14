@@ -37,93 +37,43 @@
     {% set mainNavTopItem = 'main-nav--item relative transition-colors' %}
     {% set mainNavDropdownList = 'dropdown--item overflow-hidden' %}
 
-    {% if menu_level == 0 %}
-      {% set mainNavClasses = [
-        'main-nav--list',
-        'flex',
-        'justify-end',
-        'm-0',
-      ] %}
-      {# !This is the top level <li> + <a> styling #}
-      <ul{{attributes.addClass(mainNavClasses)}}>
-        {% for item in items %}
-          {# Assign classes based on if the item is an open parent, closed parent, active, or a has a submenu. #}
-          {% set classes = [
+    {% set mainNavClasses = 'main-nav--list flex md:flex justify-end m-0 '  %}
+
+    {% set mainNavDropdownClasses = 'main-nav--dropdown hidden absolute l-0 ml-0 p-lg list-none bg-white rounded-sm shadow-light-2 group-hover:block group-focus:block'%}
+
+    {#* if menu level == 0 add mainNavClass else add mainNavDropdownClasses #}
+    {% set navLevelClasses = menu_level == 0 ? mainNavClasses : mainNavDropdownClasses %}
+
+    <ul class="{{navLevelClasses}}">
+      {% for item in items %}
+        {# Assign classes based on if the item is an open parent, closed parent, active, or a has a submenu. #}
+        {% set classes = [
             menu_level ? mainNavDropdownList : mainNavTopItem,
             item.is_expanded ? 'main-nav--item_expanded',
             item.is_collapsed ? 'main-nav--item_collapsed',
             item.in_active_trail ? 'main-nav--item_active-trail',
             item.below ? 'dropdown-menu group',
             'relative',
+            
           ] %}
 
-          {% set mainNavTopLinks = [
-            'main-nav--link', 
-            'inline-block',
-            'py-md',
-            'px-2xl',
-            'hover:bg-red-500',
-            'hover:text-white',
-            'focus:bg-red-500',
-            'focus:text-white',
-            item.in_active_trail ? 'is-active bg-red-500 text-white',
-          ] %}
-
-          <li{{item.attributes.addClass(classes)}}>
-            {{ link(item.title, item.url, {'class': mainNavTopLinks }) }}
-            {% if item.below %}
-              {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
-            {% endif %}
-          </li>
-        {% endfor %}
-      {% else %}
-        {# !This is the all sub-level <li> + <a> styling #}
-        {% set mainNavDropdownClasses = [
-          'main-nav--dropdown',
-          'hidden',
-          'absolute',
-          'l-0',
-          'p-lg',
-          'list-none',
-          'bg-white',
-          'rounded-sm',
-          'shadow-light-2',
-          'group-hover:block',
-          'group-focus:block',
+        {% set mainNavTopLinks = [ 'main-nav--link inline-block py-md px-2xl hover:bg-red-500 hover:text-white focus:bg-red-500 focus:text-white',
+          item.in_active_trail ? 'is-active bg-red-500 text-white',
         ] %}
-        <ul{{attributes.addClass(mainNavDropdownClasses)}}>
-          {% for item in items %}
-            {# Assign classes based on if the item is an open parent, closed parent, active, or a has a submenu. #}
-            {% set classes = [
-              menu_level ? mainNavDropdownList : mainNavTopItem,
-              item.is_expanded ? 'main-nav--item_expanded',
-              item.is_collapsed ? 'main-nav--item_collapsed',
-              item.in_active_trail ? 'main-nav--item_active-trail',
-              item.below ? 'dropdown-menu group',
-              'relative',
-            ] %}
-            {% set mainNavDropdownLinks = [
-              'relative',
-              'block',
-              'overflow-hidden',
-              'py-sm',
-              'pl-lg',
-              'pr-lg',
-              'text-md',
-              'font-normal',
-              'transition-all', 
-              'duration-300',
-              'hover:text-red-500',
-              item.in_active_trail ? 'is-active text-red-500' : 'text-black',
-            ] %}
-            <li{{item.attributes.addClass(classes)}}>
-              {{ link(item.title, item.url, {'class': mainNavDropdownLinks}) }}
-              {% if item.below %}
-                {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
-              {% endif %}
-            </li>
-          {% endfor %}
-        {% endif %}
-      </ul>
-    {% endif %}
-  {% endmacro %}
+
+        {% set mainNavDropdownLinks = [ 'relative block overflow-hidden py-sm pl-lg pr-lg text-md font-normal transition-all duration-300 hover:text-red-500',
+          item.in_active_trail ? 'is-active text-red-500' : 'text-black',
+        ] %}
+
+        {% set linkLevels = menu_level == 0 ? mainNavTopLinks : mainNavDropdownLinks %}
+
+        <li{{item.attributes.addClass(classes)}}>
+          {{ link(item.title, item.url, {'class': linkLevels }) }}
+          {% if item.below %}
+            {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}
