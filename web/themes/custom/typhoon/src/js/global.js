@@ -46,3 +46,11 @@ sideNavEl.forEach((subNav) => {
 });
 
 
+const searchButtonShow = document.querySelector('.js-main-search-button');
+
+function handleSearchButtonClick(e) {
+  const searchInput = document.querySelector('.js-search-wrapper')
+  searchInput.classList.toggle('hidden');
+}
+
+searchButtonShow.addEventListener('click', handleSearchButtonClick)

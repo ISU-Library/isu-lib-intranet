@@ -1454,6 +1454,14 @@ sideNavEl.forEach(function (subNav) {
     }
   });
 });
+var searchButtonShow = document.querySelector('.js-main-search-button');
+
+function handleSearchButtonClick(e) {
+  var searchInput = document.querySelector('.js-search-wrapper');
+  searchInput.classList.toggle('hidden');
+}
+
+searchButtonShow.addEventListener('click', handleSearchButtonClick);
 
 /***/ }),
 
@@ -1495,7 +1503,6 @@ __webpack_require__.r(__webpack_exports__);
   \************************************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: top-level-this-exports, __webpack_require__.g, __webpack_exports__, module, __webpack_require__.* */
-/*! CommonJS bailout: this is used directly at 2:1304-1308 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! smooth-scroll v16.1.3 | (c) 2020 Chris Ferdinandi | MIT License | http://github.com/cferdinandi/smooth-scroll */
