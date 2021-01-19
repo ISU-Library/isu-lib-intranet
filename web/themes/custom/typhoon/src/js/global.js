@@ -27,7 +27,6 @@ function handleSearchButtonClick(e) {
 searchButtonShow.addEventListener('click', handleSearchButtonClick)
 
 
-const body = document.querySelector('body');
 const mobileMenuButton = document.querySelector('.js-mobile-nav-btn');
 const mobileMenu = document.querySelector('.js-mobile-menu');
 const mobBtnTop = document.querySelector('.mob-btn-top');
@@ -37,8 +36,6 @@ const mobBtnBottom = document.querySelector('.mob-btn-buttom');
 mobileMenuButton.addEventListener('click', (e) => {
 
   if (mobileMenu.classList.contains('js-mobile-open')) {
-    body.classList.remove('overflow-hidden');
-
     mobileMenu.classList.remove('js-mobile-open');
     mobileMenu.classList.add('js-mobile-close');
     mobileMenu.style.right = '-100vw'
@@ -51,8 +48,6 @@ mobileMenuButton.addEventListener('click', (e) => {
     mobBtnBottom.classList.remove('absolute', '-translate-y-1/2', '-translate-x-1/2', 'top-1/2', 'left-1/2', '-rotate-45');
 
   } else if (mobileMenu.classList.contains('js-mobile-close')) {
-    body.classList.add('overflow-hidden');
-
     mobileMenu.style.right = '48px'
     mobileMenu.classList.remove('js-mobile-close');
     mobileMenu.classList.add('js-mobile-open');

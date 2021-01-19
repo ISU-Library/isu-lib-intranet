@@ -1439,7 +1439,6 @@ function handleSearchButtonClick(e) {
 }
 
 searchButtonShow.addEventListener('click', handleSearchButtonClick);
-var body = document.querySelector('body');
 var mobileMenuButton = document.querySelector('.js-mobile-nav-btn');
 var mobileMenu = document.querySelector('.js-mobile-menu');
 var mobBtnTop = document.querySelector('.mob-btn-top');
@@ -1447,7 +1446,6 @@ var mobBtnMiddle = document.querySelector('.mob-btn-middle');
 var mobBtnBottom = document.querySelector('.mob-btn-buttom');
 mobileMenuButton.addEventListener('click', function (e) {
   if (mobileMenu.classList.contains('js-mobile-open')) {
-    body.classList.remove('overflow-hidden');
     mobileMenu.classList.remove('js-mobile-open');
     mobileMenu.classList.add('js-mobile-close');
     mobileMenu.style.right = '-100vw';
@@ -1457,7 +1455,6 @@ mobileMenuButton.addEventListener('click', function (e) {
     mobBtnMiddle.classList.remove('hidden');
     mobBtnBottom.classList.remove('absolute', '-translate-y-1/2', '-translate-x-1/2', 'top-1/2', 'left-1/2', '-rotate-45');
   } else if (mobileMenu.classList.contains('js-mobile-close')) {
-    body.classList.add('overflow-hidden');
     mobileMenu.style.right = '48px';
     mobileMenu.classList.remove('js-mobile-close');
     mobileMenu.classList.add('js-mobile-open');
