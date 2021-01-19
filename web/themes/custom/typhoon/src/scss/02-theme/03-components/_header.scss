@@ -224,11 +224,16 @@ $header-content-max-width: 1400px;
 }
 
 .main-nav--dropdown {
+  width: 100%;
+
+  @include bp(md) {
+    width: rem(300);
+  }
+
   // display: none;
   // position: absolute;
   // top: $header-nav-main-height;
   // left: 0;
-  width: rem(300);
   // padding: $space-lg $space-lg;
   // list-style-type: none;
   // background-color: $white;

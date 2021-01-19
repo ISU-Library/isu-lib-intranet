@@ -103,6 +103,10 @@ module.exports = {
       '5xl': '3.75rem',
       '6xl': '4.5rem',
     },
+    fontFamily: {
+      'body': ['"Nimbus Sans"', '"Helvetica Neue"', 'Helvetica', 'Arial', '"sans-serif"'],
+      'merriweather': ['Merriweather', 'Georgia', 'serif']
+    },
     boxShadow: {
       'light-1': '0 1px 2px rgba(0, 0, 0, 0.24), 0 1px 3px rgba(0, 0, 0, 0.12);',
       'light-2': '0 2px 4px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.15);',
@@ -139,10 +143,16 @@ module.exports = {
         '8xl': '87.5rem',
         '9xl': '93.75rem',
       },
+      width: {
+        '100vw': '100vw',
+      },
+      height: {
+        '100vh': '100vh',
+      },
       backgroundImage: theme => ({
         'hero-image': "url('/themes/custom/typhoon/images/intra-hero.jpg')",
         'lib-staircase-image': "url('/themes/custom/typhoon/images/parks-library-staircase.jpg')",
-      })
+      }),
     },
   },
   variants: {

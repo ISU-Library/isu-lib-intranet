@@ -1361,7 +1361,13 @@ input[type=text]:invalid,input[type=password]:invalid,input[type=email]:invalid,
 }
 
 .main-nav--dropdown{
-  width:18.75rem
+  width:100%
+}
+
+@media(min-width: 768px){
+  .main-nav--dropdown{
+    width:18.75rem
+  }
 }
 
 .side-nav{

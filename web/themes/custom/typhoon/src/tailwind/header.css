@@ -85,3 +85,8 @@
 .main-nav--dropdown .dropdown--item .is-active::after {
   @apply left-0
 }
+
+.js-mobile-menu {
+  height: calc(100vh - 75px);
+  padding-top: 72px;
+}

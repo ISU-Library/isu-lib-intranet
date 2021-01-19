@@ -34,12 +34,12 @@
   {% import _self as menus %}
   {% if items %}
 
-    {% set mainNavTopItem = 'main-nav--item relative transition-colors' %}
+    {% set mainNavTopItem = 'main-nav--item js-main-nav-select relative px-md md:px-0 transition-colors border-b-2 border-yellow-600 md:border-b-0' %}
     {% set mainNavDropdownList = 'dropdown--item overflow-hidden' %}
 
-    {% set mainNavClasses = 'main-nav--list flex md:flex justify-end m-0 '  %}
+    {% set mainNavClasses = 'main-nav--list flex flex-col md:flex-row justify-end m-0 border-t-2 border-red-600 bg-white'  %}
 
-    {% set mainNavDropdownClasses = 'main-nav--dropdown hidden absolute l-0 ml-0 p-lg list-none bg-white rounded-sm shadow-light-2 group-hover:block group-focus:block'%}
+    {% set mainNavDropdownClasses = 'main-nav--dropdown main-nav--sub-list hidden md:absolute l-0 ml-0 py-0 px-lg md:py-lg list-none bg-white rounded-sm md:shadow-light-2 md:group-hover:block md:group-focus:block'%}
 
     {#* if menu level == 0 add mainNavClass else add mainNavDropdownClasses #}
     {% set navLevelClasses = menu_level == 0 ? mainNavClasses : mainNavDropdownClasses %}
@@ -54,10 +54,9 @@
             item.in_active_trail ? 'main-nav--item_active-trail',
             item.below ? 'dropdown-menu group',
             'relative',
-            
           ] %}
 
-        {% set mainNavTopLinks = [ 'main-nav--link inline-block py-md px-2xl hover:bg-red-500 hover:text-white focus:bg-red-500 focus:text-white',
+        {% set mainNavTopLinks = [ 'main-nav--link inline-block py-md px-2xl w-full md:w-auto hover:bg-red-500 hover:text-white focus:bg-red-500 focus:text-white',
           item.in_active_trail ? 'is-active bg-red-500 text-white',
         ] %}
 
@@ -68,7 +67,17 @@
         {% set linkLevels = menu_level == 0 ? mainNavTopLinks : mainNavDropdownLinks %}
 
         <li{{item.attributes.addClass(classes)}}>
-          {{ link(item.title, item.url, {'class': linkLevels }) }}
+          {% if menu_level == 0 %}
+            <div class="flex">
+              {{ link(item.title, item.url, {'class': linkLevels }) }}
+              <div class="icon-wrap flex icon-wrap  md:hidden flex-shrink-0 justify-center items-center bg-yellow-500 w-3xl">
+                <i class=" fas fa-plus text-red-500 text-lg"></i>
+              </div>
+            </div>
+          {% else %}
+            {{ link(item.title, item.url, {'class': linkLevels }) }}
+          {% endif %}
+
           {% if item.below %}
             {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
           {% endif %}
