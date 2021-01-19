@@ -4,11 +4,18 @@
 @import 'tailwindcss/utilities';
 
 /************** custom CSS *********************/
+@import url('//cdn.theme.iastate.edu/nimbus-sans/css/nimbus-sans.css');
+@import url('//cdn.theme.iastate.edu/merriweather/css/merriweather.css');
+
 
 /** Foundations **/
 @import './header.css';
 @import './headlines.css';
 @import './footer.css';
+
+body {
+  font-family: 'Nimbus Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
 
 a {
   @apply text-red-500;
