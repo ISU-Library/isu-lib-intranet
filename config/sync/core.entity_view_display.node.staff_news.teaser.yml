@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.staff_news.field_staff_news_article_summary
     - field.field.node.staff_news.field_staff_news_category
     - field.field.node.staff_news.field_staff_news_content
+    - field.field.node.staff_news.field_staff_news_main_image
     - node.type.staff_news
   module:
     - user
@@ -20,5 +22,7 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_staff_news_article_summary: true
   field_staff_news_category: true
   field_staff_news_content: true
+  field_staff_news_main_image: true

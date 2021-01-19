@@ -3,10 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.staff_news.field_staff_news_article_summary
     - field.field.node.staff_news.field_staff_news_category
     - field.field.node.staff_news.field_staff_news_content
+    - field.field.node.staff_news.field_staff_news_main_image
+    - image.style.thumbnail
     - node.type.staff_news
   module:
+    - image
     - paragraphs
     - path
 id: node.staff_news.default
@@ -20,6 +24,18 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_staff_news_article_summary:
+    type: entity_reference_paragraphs
+    weight: 124
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
   field_staff_news_category:
     weight: 123
     settings:
@@ -41,6 +57,14 @@ content:
       form_display_mode: default
       default_paragraph_type: ''
     third_party_settings: {  }
+    region: content
+  field_staff_news_main_image:
+    weight: 125
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
     region: content
   path:
     type: path

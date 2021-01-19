@@ -6,6 +6,8 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.staff_updates.field_staff_update_category
     - field.field.node.staff_updates.field_staff_updates_content
+    - field.field.node.staff_updates.field_staff_updates_main_image
+    - field.field.node.staff_updates.field_staff_updates_summary
     - node.type.staff_updates
   module:
     - user
@@ -22,3 +24,5 @@ content:
 hidden:
   field_staff_update_category: true
   field_staff_updates_content: true
+  field_staff_updates_main_image: true
+  field_staff_updates_summary: true

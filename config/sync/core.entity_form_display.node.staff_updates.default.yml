@@ -5,8 +5,12 @@ dependencies:
   config:
     - field.field.node.staff_updates.field_staff_update_category
     - field.field.node.staff_updates.field_staff_updates_content
+    - field.field.node.staff_updates.field_staff_updates_main_image
+    - field.field.node.staff_updates.field_staff_updates_summary
+    - image.style.thumbnail
     - node.type.staff_updates
   module:
+    - image
     - paragraphs
     - path
 id: node.staff_updates.default
@@ -33,6 +37,26 @@ content:
   field_staff_updates_content:
     type: entity_reference_paragraphs
     weight: 122
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_staff_updates_main_image:
+    weight: 124
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_staff_updates_summary:
+    type: entity_reference_paragraphs
+    weight: 123
     settings:
       title: Paragraph
       title_plural: Paragraphs
