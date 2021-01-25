@@ -87,8 +87,7 @@
               Staff News
             </h2>
 
-            <div
-              class="Parent">
+            <div class="Parent">
 
               <!-- if staff news content found -->
 
@@ -130,82 +129,9 @@
 
                   {% endfor %}
 
-                  <!-- else default test content -->
-                {% else %}
-
-                  <ul class="news-card--wrap grid grid-cols-2 gap-y-3xl gap-x-2xl lg:gap-x-3xl ">
-                    <li class="col-span-full md:col-span-1">
-                      {{newsCard.lead({
-                  imgSrc: test_image,
-                  imgAlt: 'alt',
-                  link: custom_test_link_1,
-                  category: 'News things',
-                  title: custom_test_variable_2 ,
-                  text: 'teIrure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint.Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint.Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint.Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint.Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint.',
-                  linkText: 'Read this story',
-                })}}
-                    </li>
-                    <li class="col-span-full md:col-span-1">
-                      {{newsCard.lead({
-                  imgSrc: test_image,
-                  imgAlt: 'alt',
-                  link: '/',
-                  category: 'News things',
-                  title: 'A title with words here',
-                  text: 'tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam. tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam.',
-                  linkText: 'Read this story',
-                })}}
-                    </li>
-
-                    <li class="col-span-full md:col-span-1">
-                      {{newsCard.basic({
-                  imgSrc: test_image,
-                  imgAlt: 'alt',
-                  link: '/',
-                  category: 'News things',
-                  title: 'A title with words here',
-                  text: 'tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam. tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam.',
-                  linkText: 'Read this story',
-                })}}
-                    </li>
-                    <li class="col-span-full md:col-span-1">
-                      {{newsCard.basic({
-                  imgSrc: test_image,
-                  imgAlt: 'alt',
-                  link: '/',
-                  category: 'News things',
-                  title: 'A title with words here',
-                  text: 'tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam. tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam.',
-                  linkText: 'Read this story',
-                })}}
-                    </li>
-                    <li class="col-span-full md:col-span-1">
-                      {{newsCard.basic({
-                  imgSrc: test_image,
-                  imgAlt: 'alt',
-                  link: '/',
-                  category: 'News things',
-                  title: 'A title with words here',
-                  text: 'tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam. tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam.',
-                  linkText: 'Read this story',
-                })}}
-                    </li>
-                    <li class="col-span-full md:col-span-1">
-                      {{newsCard.basic({
-                  imgSrc: test_image,
-                  imgAlt: 'alt',
-                  link: '/',
-                  category: 'News things',
-                  title: 'A title with words here',
-                  text: 'tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam. tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam.',
-                  linkText: 'Read this story',
-                })}}
-                    </li>
-
-                    <!-- end staff news -->
-                  {% endif %}
-
                 </ul>
+              {% endif %}
+              <!-- end if staff news content found -->
 
 
                 <a class="cta" href="/">
@@ -370,10 +296,9 @@
                 </h2>
 
                 <!-- if staff updates found -->
+                {% if staff_updates_custom %}
 
-                <ul class="basic-card--wrap basic-card-image--wrap grid grid-cols-1 sm gap-lg mt-2xl mr-2xl mb-2xl sm:mr-0 xs:mr-0">
-
-                  {% if staff_updates_custom %}
+                  <ul class="basic-card--wrap basic-card-image--wrap grid grid-cols-1 sm gap-lg mt-2xl mr-2xl mb-2xl sm:mr-0 xs:mr-0">
 
                     {% for item in staff_updates_custom %}
                       <li>
@@ -393,57 +318,10 @@
                       </li>
                     {% endfor %}
 
-                    <!-- else default test content -->
-                  {% else %}
+                  </ul>
 
-                    <li>
-                      <div {{attributes.addClass(classes)}}>
-                        {{ card.basicImg({
-                      color: '',
-                      imgSrc: test_image,
-                      imgAlt: 'alt',
-                      link: '/',
-                      title: 'A card title here',
-                      category: 'Category',
-                      text: 'Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non. Lorem ullamco ullamco et ullamco sint.',
-                      linkText: 'link text',
-                  }) }}
-                      </div>
-                    </li>
-
-                    <li>
-                      <div {{attributes.addClass(classes)}}>
-                        {{ card.basicImg({
-                      color: 'basic-card--yellow',
-                      imgSrc: test_image,
-                      imgAlt: 'alt',
-                      link: '/',
-                      title: 'A card title here',
-                      category: 'Category',
-                      text: 'Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non. Lorem ullamco ullamco et ullamco sint.',
-                      linkText: 'link text',
-                  }) }}
-                      </div>
-                    </li>
-                    <li>
-                      <div {{attributes.addClass(classes)}}>
-                        {{ card.basicImg({
-                      color: 'basic-card--blue',
-                      imgSrc: test_image,
-                      imgAlt: 'alt',
-                      link: '/',
-                      title: 'A card title here',
-                      category: 'Category',
-                      text: 'Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non. Lorem ullamco ullamco et ullamco sint.',
-                      linkText: 'link text',
-                  }) }}
-                      </div>
-                    </li>
-
-                    <!-- end staff updates -->
-                  {% endif %}
-
-                </ul>
+                <!-- end if staff updates found -->
+                {% endif %}
 
                 <a class="cta" href="/">
                   More news stories
