@@ -28,13 +28,15 @@ searchButtonShow.addEventListener('click', handleSearchButtonClick)
 
 
 const mobileMenuButton = document.querySelector('.js-mobile-nav-btn');
-const mobileMenu = document.querySelector('.js-mobile-menu');
-const mobBtnTop = document.querySelector('.mob-btn-top');
-const mobBtnMiddle = document.querySelector('.mob-btn-middle');
-const mobBtnBottom = document.querySelector('.mob-btn-buttom');
 
 mobileMenuButton.addEventListener('click', (e) => {
+  const body = document.querySelector('body');
+  const mobileMenu = document.querySelector('.js-mobile-menu');
+  const mobBtnTop = document.querySelector('.mob-btn-top');
+  const mobBtnMiddle = document.querySelector('.mob-btn-middle');
+  const mobBtnBottom = document.querySelector('.mob-btn-buttom');
 
+  body.classList.toggle('overflow-hidden')
   if (mobileMenu.classList.contains('js-mobile-open')) {
     mobileMenu.classList.remove('js-mobile-open');
     mobileMenu.classList.add('js-mobile-close');

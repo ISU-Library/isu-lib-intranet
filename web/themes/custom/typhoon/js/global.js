@@ -1440,11 +1440,14 @@ function handleSearchButtonClick(e) {
 
 searchButtonShow.addEventListener('click', handleSearchButtonClick);
 var mobileMenuButton = document.querySelector('.js-mobile-nav-btn');
-var mobileMenu = document.querySelector('.js-mobile-menu');
-var mobBtnTop = document.querySelector('.mob-btn-top');
-var mobBtnMiddle = document.querySelector('.mob-btn-middle');
-var mobBtnBottom = document.querySelector('.mob-btn-buttom');
 mobileMenuButton.addEventListener('click', function (e) {
+  var body = document.querySelector('body');
+  var mobileMenu = document.querySelector('.js-mobile-menu');
+  var mobBtnTop = document.querySelector('.mob-btn-top');
+  var mobBtnMiddle = document.querySelector('.mob-btn-middle');
+  var mobBtnBottom = document.querySelector('.mob-btn-buttom');
+  body.classList.toggle('overflow-hidden');
+
   if (mobileMenu.classList.contains('js-mobile-open')) {
     mobileMenu.classList.remove('js-mobile-open');
     mobileMenu.classList.add('js-mobile-close');
