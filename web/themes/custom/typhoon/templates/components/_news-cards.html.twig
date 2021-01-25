@@ -29,7 +29,7 @@
         </h3>
         <div class="news-card--text flex-auto text-normal overflow-hidden tranistion-all duration-500 md:h-0 md:flex-none group-hover:flex-auto">
           <p class="text-white mb-sm">
-            {{ data.text }}
+            {{ data.text|raw }}
           </p>
           <div class="cta--wrap">
             <span class="cta font-bold text-white">
@@ -81,7 +81,7 @@
         </h3>
         <div class="news-card--desc">
           <p class="news-card--info mb-md text-md text-normal">
-            {{ data.text}}
+            {{ data.text|raw }}
           </p>
           <div class="cta--wrap">
             <a href="{{ data.link}}" class="cta">

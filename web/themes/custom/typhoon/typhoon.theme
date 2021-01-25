@@ -96,6 +96,8 @@ function typhoon_preprocess_page__front(&$variables) {
   // how many "articles" to fetch for each ....
   $staff_types_count = ['staff_news'=>6,'staff_updates'=>3];
 
+  $node_storage = \Drupal::entityTypeManager()->getStorage('node');
+
   foreach ($staff_types as $staff_type) {
 
       // grab first six sorted by changed (updated)?
@@ -106,77 +108,66 @@ function typhoon_preprocess_page__front(&$variables) {
 
       foreach ($results as $result) {
   
-        $node_storage = \Drupal::entityTypeManager()->getStorage('node');
         // fix this
         $nid = $result;
         $node = $node_storage->load($nid);
         //print_r('ID-'.$node->article.field_image.'-ID');
-
-        //print_r('[ID-'.$node->id().'-ID]');
-        //print_r('TITLE-'.$node->getTitle().'-TITLE');
-
-        //$articles = $node->get('field_staff_news_content');
-        $articles = $node->get('field_'.$staff_type.'_content');
 
         $news_item = array();
         $news_item['id'] = $nid;
         // the link: parameter in the newscard call will not allow appending id to stub?
         $news_item['item_url_stub'] = 'node/'.$nid;
         $news_item['title'] = $node->getTitle();
-        $refents = $articles->referencedEntities();
 
-        //  https://drupal.stackexchange.com/questions/253913/how-do-i-access-the-paragraph-value
-
-        foreach ($refents as $referent) 
+        if ($node->field_staff_news_article_summary)
         {
-          //print_r('REFERENT_ID-'.$referent->id().'-REFERENT_ID');
-
-          //print_r('R_ID:'.$referent->id().':R_ID');
-          //print_r('R_TYPE-'.$referent->getType().'-R_TYPE');
-
-          if ($referent->field_gc_text_text)
-          {
-            $news_item['body_summary'] = $referent->field_gc_text_text->value;
-            //$news_item['body_summary'] = $referent->field_gc_text_text->view('teaser');
-          }
-          elseif ($referent->field_gc_text_img_text)
-          {
-            //$news_item['body_summary'] = $referent->field_gc_text_img_text->view('teaser');
-            $news_item['body_summary'] = $referent->field_gc_text_img_text->value;
-          }
-          //elseif ($referent->field_gc_link_abstract_list)
-          //elseif ($referent->field_gc_link_abstract_list_block)
-          //elseif ($referent->field_link_abstract_list_text)
-          //{
-            //$news_item['body_summary'] = $referent->field_link_abstract_list_text->view('teaser');
-            //$news_item['body_summary'] = $referent->field_link_abstract_list_text->value;
-          //}
-
-          // images if available ....  
-          if ($referent->field_gc_text_img_img)
-          {
-            //$news_item['image_uri'] = $referent->field_gc_text_img_img->entity->uri->value;
-            //$news_item['image_uri'] = file_url_transform_relative(file_create_url(theme_get_setting('logo.url')));
-            $news_item['image_uri'] = file_create_url($referent->field_gc_text_img_img->entity->uri->value); 
-          }
-          elseif ($referent->field_gc_large_image_image)
-          {
-            //$url_test = $referent->field_gc_large_image_image->entity->uri->value; 
-            //print_r('field_staff_news_content url:'.$url_test);
-            $news_item['image_uri'] = file_create_url($referent->field_gc_large_image_image->entity->uri->value); 
-          }
-          elseif ($referent->field_gc_two_img_img_left)
-          {
-            //$url_test = $referent->field_gc_large_image_image->entity->uri->value; 
-            //print_r('field_staff_news_content url:'.$url_test);
-            $news_item['image_uri'] = file_create_url($referent->field_gc_two_img_img_left->entity->uri->value); 
-          }
-          elseif ($referent->field_gc_two_img_img_right)
-          {
-            $news_item['image_uri'] = file_create_url($referent->field_gc_two_img_img_right->entity->uri->value); 
-          }
-
+            foreach ($node->field_staff_news_article_summary as $delta => $thing) 
+            {
+                //$referenceItem = $node->get($field)->first();
+                $field = 'field_staff_news_article_summary';
+                $referencedEntity = $node->get($field)->first()->get('entity')->getTarget()->getValue();
+                $news_item['body_summary'] = $referencedEntity->field_gc_text_text->value; 
+                //print_r('thing1-'.$referencedEntity->field_gc_text_text->value.'-thing1');
+                //kint($referencedEntity);
+            }
         }
+        elseif ($node->field_staff_updates_summary)
+        {
+            foreach ($node->field_staff_updates_summary as $delta => $thing) 
+            {
+                //$referenceItem = $node->get($field)->first();
+                $field = 'field_staff_updates_summary';
+                $referencedEntity = $node->get($field)->first()->get('entity')->getTarget()->getValue();
+// need to check for field existence?
+                $news_item['body_summary'] = $referencedEntity->field_gc_text_text->value; 
+                //print_r('thing1-'.$referencedEntity->field_gc_text_text->value.'-thing1');
+                //kint($referencedEntity);
+            }
+        }
+
+        if ($node->field_staff_news_main_image)
+        {
+            foreach ($node->field_staff_news_main_image as $delta => $thing) 
+            {
+                //$referenceItem = $node->get($field)->first();
+                $field = 'field_staff_news_main_image';
+                $referencedEntity = $node->get($field)->first()->get('entity')->getTarget()->getValue();
+                $news_item['image_uri'] = file_create_url($referencedEntity->uri->value); 
+                //kint($referencedEntity);
+            }
+        }
+        elseif ($node->field_staff_updates_main_image)
+        {
+            foreach ($node->field_staff_updates_main_image as $delta => $thing) 
+            {
+                //$referenceItem = $node->get($field)->first();
+                $field = 'field_staff_updates_main_image';
+                $referencedEntity = $node->get($field)->first()->get('entity')->getTarget()->getValue();
+                $news_item['image_uri'] = file_create_url($referencedEntity->uri->value); 
+                //kint($referencedEntity);
+            }
+        }
+
         $staff_news_articles[] = $news_item;
 
       }

@@ -121,152 +121,82 @@
                       </li>
                     {% endif %}
                   {% endfor %}
-                  <!-- else default test content -->
-                {% else %}
-                  <ul class="news-card--wrap grid grid-cols-2 gap-y-3xl gap-x-2xl lg:gap-x-3xl ">
-                    <li class="col-span-full md:col-span-1">
-                      {{newsCard.lead({
-                  imgSrc: test_image,
-                  imgAlt: 'alt',
-                  link: custom_test_link_1,
-                  category: 'News things',
-                  title: custom_test_variable_2 ,
-                  text: 'teIrure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint.Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint.Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint.Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint.Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint.',
-                  linkText: 'Read this story',
-                })}}
-                    </li>
-                    <li class="col-span-full md:col-span-1">
-                      {{newsCard.lead({
-                  imgSrc: test_image,
-                  imgAlt: 'alt',
-                  link: '/',
-                  category: 'News things',
-                  title: 'A title with words here',
-                  text: 'tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam. tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam.',
-                  linkText: 'Read this story',
-                })}}
-                    </li>
-
-                    <li class="col-span-full md:col-span-1">
-                      {{newsCard.basic({
-                  imgSrc: test_image,
-                  imgAlt: 'alt',
-                  link: '/',
-                  category: 'News things',
-                  title: 'A title with words here',
-                  text: 'tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam. tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam.',
-                  linkText: 'Read this story',
-                })}}
-                    </li>
-                    <li class="col-span-full md:col-span-1">
-                      {{newsCard.basic({
-                  imgSrc: test_image,
-                  imgAlt: 'alt',
-                  link: '/',
-                  category: 'News things',
-                  title: 'A title with words here',
-                  text: 'tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam. tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam.',
-                  linkText: 'Read this story',
-                })}}
-                    </li>
-                    <li class="col-span-full md:col-span-1">
-                      {{newsCard.basic({
-                  imgSrc: test_image,
-                  imgAlt: 'alt',
-                  link: '/',
-                  category: 'News things',
-                  title: 'A title with words here',
-                  text: 'tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam. tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam.',
-                  linkText: 'Read this story',
-                })}}
-                    </li>
-                    <li class="col-span-full md:col-span-1">
-                      {{newsCard.basic({
-                  imgSrc: test_image,
-                  imgAlt: 'alt',
-                  link: '/',
-                  category: 'News things',
-                  title: 'A title with words here',
-                  text: 'tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam. tempor dolor ea est. Officia sint ea est eu anim et in dolore cupidatat exercitation enim dolore mollit veniam.',
-                  linkText: 'Read this story',
-                })}}
-                    </li>
-                    <!-- end staff news -->
-                  {% endif %}
                 </ul>
-                <a class="cta mt-lg" href="/">
-                  More news stories
-                </a>
-              </div>
-            </article>
-            <article class="cta-section relative xl:px-xl bg-lib-staircase-image bg-cover bg-center bg-no-repeat bg-fixed">
-              <div class="xl:max-w-8xl mx-xl md:mx-4xl xl:mx-auto">
-                <div class="cta-content flex flex-col items-start justify-around md:items-center md:justify-around md:flex-row">
-                  <div class="cta-text max-w-xl mt-5xl md:mt-0 md:mr-xs mb-4xl sm:mb-0 xl:max-w-2xl">
-                    <h2 class="heading-underline text-white">
-                      Explore
-                    </h2>
-                    <p class="text-white mb-lg lg:text-lg xl:text-lg">
-                      Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint. Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi
-                    </p>
-                    <a href="/" class="button button-secondary">
-                      Not sure where this should go!
+              {% endif %}
+              <!-- end if staff news content found -->
+              <a class="cta" href="/">
+                More news stories
+              </a>
+            </div>
+          </article>
+          <article class="cta-section relative xl:px-xl bg-lib-staircase-image bg-cover bg-center bg-no-repeat bg-fixed">
+            <div class="xl:max-w-8xl mx-xl md:mx-4xl xl:mx-auto">
+              <div class="cta-content flex flex-col items-start justify-around md:items-center md:justify-around md:flex-row">
+                <div class="cta-text max-w-xl mt-5xl md:mt-0 md:mr-xs mb-4xl sm:mb-0 xl:max-w-2xl">
+                  <h2 class="heading-underline text-white">
+                    Explore
+                  </h2>
+                  <p class="text-white mb-lg lg:text-lg xl:text-lg">
+                    Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint. Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi
+                  </p>
+                  <a href="/" class="button button-secondary">
+                    Not sure where this should go!
+                  </a>
+                </div>
+                <div class="cta-card--stack hidden md:flex flex-row flex-wrap justify-around mt-2xl md:mt-4xl -mb-4xl md:flex-col md:items-center md:-mt-4xl">
+                  <div class="cta-card overflow-hidden z-10 w-72 mb-xl md:mb-2xl shadow-dark-3 hover:shadow-dark-4 duration-300 ease transform">
+                    <a href="" class="cta-card--link">
+                      <figure class="cta-card--image relative w-full m-0">
+                        <img class="absolute-center max-w-full z-10" src="{{test_image}}" alt="">
+                        <figcaption class="absolute left-0 bottom-lg w-4/5 pl-lg py-xs pr-2xl text-lg text-white leading-snug z-20">
+                          Forms
+                        </figcaption>
+                      </figure>
                     </a>
                   </div>
-                  <div class="cta-card--stack hidden md:flex flex-row flex-wrap justify-around mt-2xl md:mt-4xl -mb-4xl md:flex-col md:items-center md:-mt-4xl">
-                    <div class="cta-card overflow-hidden z-10 w-72 mb-xl md:mb-2xl shadow-dark-3 hover:shadow-dark-4 duration-300 ease transform">
-                      <a href="" class="cta-card--link">
-                        <figure class="cta-card--image relative w-full m-0">
-                          <img class="absolute-center max-w-full z-10" src="{{test_image}}" alt="">
-                          <figcaption class="absolute left-0 bottom-lg w-4/5 pl-lg py-xs pr-2xl text-lg text-white leading-snug z-20">
-                            Forms
-                          </figcaption>
-                        </figure>
-                      </a>
-                    </div>
-                    <div class="cta-card overflow-hidden z-10 w-72 mb-xl md:mb-2xl shadow-dark-3 hover:shadow-dark-4 duration-300 ease transform">
-                      <a href="" class="cta-card--link">
-                        <figure class="cta-card--image relative w-full m-0">
-                          <img class="absolute-center max-w-full z-10" src="{{test_image}}" alt="">
-                          <figcaption class="absolute left-0 bottom-lg w-4/5 pl-lg py-xs pr-2xl text-lg text-white leading-snug z-20">
-                            Resources
-                          </figcaption>
-                        </figure>
-                      </a>
-                    </div>
-                    <div class="cta-card overflow-hidden z-10 w-72 shadow-dark-3 hover:shadow-dark-4 duration-300 ease transform">
-                      <a href="" class="cta-card--link">
-                        <figure class="cta-card--image relative w-full m-0">
-                          <img class="absolute-center max-w-full z-10" src="{{test_image}}" alt="">
-                          <figcaption class="absolute left-0 bottom-lg w-4/5 pl-lg py-xs pr-2xl text-lg text-white leading-snug z-20">
-                            Staff
-                          </figcaption>
-                        </figure>
-                      </a>
-                    </div>
+                  <div class="cta-card overflow-hidden z-10 w-72 mb-xl md:mb-2xl shadow-dark-3 hover:shadow-dark-4 duration-300 ease transform">
+                    <a href="" class="cta-card--link">
+                      <figure class="cta-card--image relative w-full m-0">
+                        <img class="absolute-center max-w-full z-10" src="{{test_image}}" alt="">
+                        <figcaption class="absolute left-0 bottom-lg w-4/5 pl-lg py-xs pr-2xl text-lg text-white leading-snug z-20">
+                          Resources
+                        </figcaption>
+                      </figure>
+                    </a>
+                  </div>
+                  <div class="cta-card overflow-hidden z-10 w-72 shadow-dark-3 hover:shadow-dark-4 duration-300 ease transform">
+                    <a href="" class="cta-card--link">
+                      <figure class="cta-card--image relative w-full m-0">
+                        <img class="absolute-center max-w-full z-10" src="{{test_image}}" alt="">
+                        <figcaption class="absolute left-0 bottom-lg w-4/5 pl-lg py-xs pr-2xl text-lg text-white leading-snug z-20">
+                          Staff
+                        </figcaption>
+                      </figure>
+                    </a>
                   </div>
                 </div>
               </div>
-              {# </div> #}
-            </article>
-            <article class="quick-links-section relative pt-6xl xl:px-xl overflow-hidden">
-              <div aria-hidden="true" class="flair-img quick-links--yellow-triangles">
-                <img src="/themes/custom/typhoon/images/large-yellow-triangles.png" alt="">
-              </div>
-              <div aria-hidden="true" class="flair-img quick-links--red-bars">
-                <img src="/themes/custom/typhoon/images/large-red-bars.png" alt="">
-              </div>
-              <div aria-hidden="true" class="flair-img quick-links--dots">
-                <img src="/themes/custom/typhoon/images/large-dots.png" alt="">
-              </div>
-              <div class="xl:max-w-8xl mx-xl md:mx-4xl xl:mx-auto">
-                <h2 class="heading-underline mb-2xl">
-                  Quick Links
-                </h2>
-                <ul class="basic-card--wrap grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-lg w-full mb-2xl sm:mr-0 xs:mr-0">
-                  {% for story in card %}
-                    <li class="test-one">
-                      {{ card.basic({
+            </div>
+            {# </div> #}
+          </article>
+          <article class="quick-links-section relative pt-6xl xl:px-xl overflow-hidden">
+            <div aria-hidden="true" class="flair-img quick-links--yellow-triangles">
+              <img src="/themes/custom/typhoon/images/large-yellow-triangles.png" alt="">
+            </div>
+            <div aria-hidden="true" class="flair-img quick-links--red-bars">
+              <img src="/themes/custom/typhoon/images/large-red-bars.png" alt="">
+            </div>
+            <div aria-hidden="true" class="flair-img quick-links--dots">
+              <img src="/themes/custom/typhoon/images/large-dots.png" alt="">
+            </div>
+            <div class="xl:max-w-8xl mx-xl md:mx-4xl xl:mx-auto">
+              <h2 class="heading-underline mb-2xl">
+                Quick Links
+              </h2>
+              <ul class="basic-card--wrap grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-lg w-full mb-2xl sm:mr-0 xs:mr-0">
+                {% for story in card %}
+                  <li class="test-one">
+                    {{ card.basic({
                         color: story.color,
                         link: story.link,
                         title: story.title,
@@ -275,10 +205,10 @@
                         text: story.text,
                         linkText: story.linkText,
                     }) }}
-                    </li>
-                  {% endfor %}
-                  <li>
-                    {{ card.basic({
+                  </li>
+                {% endfor %}
+                <li>
+                  {{ card.basic({
                     color: 'basic-card basic-card--blue',
                     link: '/',
                     title: 'IT support',
@@ -287,9 +217,9 @@
                     text: 'Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco.',
                     linkText: 'Link Words',
                 })}}
-                  </li>
-                  <li>
-                    {{ card.basic({
+                </li>
+                <li>
+                  {{ card.basic({
                     color: 'basic-card basic-card--yellow',
                     link: '/',
                     title: 'IT support',
@@ -298,9 +228,9 @@
                     text: 'Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco.',
                     linkText: 'Link Words',
                 })}}
-                  </li>
-                  <li>
-                    {{ card.basic({
+                </li>
+                <li>
+                  {{ card.basic({
                     color: '',
                     link: '/',
                     title: 'IT support',
@@ -309,9 +239,9 @@
                     text: 'Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco.',
                     linkText: 'Link Words',
                 })}}
-                  </li>
-                  <li>
-                    {{ card.basic({
+                </li>
+                <li>
+                  {{ card.basic({
                     color: 'basic-card basic-card--yellow',
                     link: '/',
                     title: 'IT support',
@@ -320,9 +250,9 @@
                     text: 'Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco.',
                     linkText: 'Link Words',
                 })}}
-                  </li>
-                  <li>
-                    {{ card.basic({
+                </li>
+                <li>
+                  {{ card.basic({
                     color: '',
                     link: '/',
                     title: 'IT support',
@@ -331,9 +261,9 @@
                     text: 'Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco.',
                     linkText: 'Link Words',
                 })}}
-                  </li>
-                  <li>
-                    {{ card.basic({
+                </li>
+                <li>
+                  {{ card.basic({
                     color: 'basic-card basic-card--yellow',
                     link: '/',
                     title: 'IT support',
@@ -342,27 +272,27 @@
                     text: 'Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco.',
                     linkText: 'Link Words',
                 })}}
-                  </li>
-                </ul>
-              </div>
-            </article>
-            <article class="staff-update-feed relative py-5xl xl:px-xl">
-              <div aria-hidden="true" class="flair-img staff-updates--dots">
-                <img src="/themes/custom/typhoon/images/small-dots.png" alt="">
-              </div>
-              <div class="xl:max-w-8xl mx-xl md:mx-4xl xl:mx-auto text-right">
-                <h2 class="heading-underline mb-2xl text-left">
-                  Staff Updates
-                </h2>
-                <!-- if staff updates found -->
-                <ul class="basic-card--wrap basic-card-image--wrap grid grid-cols-1 gap-lg mt-2xl mr-2xl mb-2xl sm:mr-0 xs:mr-0 text-left">
-                  {% if staff_updates_custom %}
-                    {% for item in staff_updates_custom %}
-                      <li>
-                        <div
-                          {{attributes.addClass(classes)}}>
-                          <!-- imgAlt: item['title'], -->
-                          {{ card.basicImg({
+                </li>
+              </ul>
+            </div>
+          </article>
+          <article class="staff-update-feed relative py-5xl xl:px-xl">
+            <div aria-hidden="true" class="flair-img staff-updates--dots">
+              <img src="/themes/custom/typhoon/images/small-dots.png" alt="">
+            </div>
+            <div class="xl:max-w-8xl mx-xl md:mx-4xl xl:mx-auto text-right">
+              <h2 class="heading-underline mb-2xl text-left">
+                Staff Updates
+              </h2>
+              <!-- if staff updates found -->
+              <ul class="basic-card--wrap basic-card-image--wrap grid grid-cols-1 gap-lg mt-2xl mr-2xl mb-2xl sm:mr-0 xs:mr-0 text-left">
+                {% if staff_updates_custom %}
+                  {% for item in staff_updates_custom %}
+                    <li>
+                      <div
+                        {{attributes.addClass(classes)}}>
+                        <!-- imgAlt: item['title'], -->
+                        {{ card.basicImg({
                               color: 'basic-card--yellow',
                               imgSrc: item['image_uri'], 
                               link: item['item_url_stub'],
@@ -371,69 +301,28 @@
                               text: item['body_summary'], 
                               linkText: 'Read this story',
                           }) }}
-                        </div>
-                      </li>
-                    {% endfor %}
-                    <!-- else default test content -->
-                  {% else %}
-                    <li>
-                      <div {{attributes.addClass(classes)}}>
-                        {{ card.basicImg({
-                      color: '',
-                      imgSrc: test_image,
-                      imgAlt: 'alt',
-                      link: '/',
-                      title: 'A card title here',
-                      category: 'Category',
-                      text: 'Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non. Lorem ullamco ullamco et ullamco sint.',
-                      linkText: 'link text',
-                  }) }}
                       </div>
                     </li>
-                    <li>
-                      <div {{attributes.addClass(classes)}}>
-                        {{ card.basicImg({
-                      color: 'basic-card--yellow',
-                      imgSrc: test_image,
-                      imgAlt: 'alt',
-                      link: '/',
-                      title: 'A card title here',
-                      category: 'Category',
-                      text: 'Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non. Lorem ullamco ullamco et ullamco sint.',
-                      linkText: 'link text',
-                  }) }}
-                      </div>
-                    </li>
-                    <li>
-                      <div {{attributes.addClass(classes)}}>
-                        {{ card.basicImg({
-                      color: 'basic-card--blue',
-                      imgSrc: test_image,
-                      imgAlt: 'alt',
-                      link: '/',
-                      title: 'A card title here',
-                      category: 'Category',
-                      text: 'Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non. Lorem ullamco ullamco et ullamco sint.',
-                      linkText: 'link text',
-                  }) }}
-                      </div>
-                    </li>
-                    <!-- end staff updates -->
-                  {% endif %}
+                  {% endfor %}
+
                 </ul>
-                <a class="cta" href="/">
-                  More news stories
-                </a>
-              </div>
-            </article>
-            {# * hiding content for now #}
-          {# {{ page.content }} #}
-            {# /.layout-content #}
-          </main>
-          {# {% if page.sidebar_first %} <aside class="layout-sidebar-first" role="complementary"> {% include "@typhoon/navigation/side-nav.html.twig" %} </aside>{% endif %} #}
-        </div>
-        {# {% if page.footer %} #}
-        {% include "@typhoon/navigation/footer-nav.html.twig" %}
-        {# {% endif %} #}
+
+                <!-- end if staff updates found -->
+              {% endif %}
+
+              <a class="cta" href="/">
+                More news stories
+              </a>
+            </div>
+          </article>
+          {# * hiding content for now #}
+        {# {{ page.content }} #}
+          {# /.layout-content #}
+        </main>
+        {# {% if page.sidebar_first %} <aside class="layout-sidebar-first" role="complementary"> {% include "@typhoon/navigation/side-nav.html.twig" %} </aside>{% endif %} #}
       </div>
-      {# /.layout-container #}
+      {# {% if page.footer %} #}
+      {% include "@typhoon/navigation/footer-nav.html.twig" %}
+      {# {% endif %} #}
+    </div>
+    {# /.layout-container #}
