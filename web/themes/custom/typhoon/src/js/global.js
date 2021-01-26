@@ -36,7 +36,8 @@ mobileMenuButton.addEventListener('click', (e) => {
   const mobBtnMiddle = document.querySelector('.mob-btn-middle');
   const mobBtnBottom = document.querySelector('.mob-btn-buttom');
 
-  body.classList.toggle('overflow-hidden')
+  body.classList.toggle('overflow-hidden');
+
   if (mobileMenu.classList.contains('js-mobile-open')) {
     mobileMenu.classList.remove('js-mobile-open');
     mobileMenu.classList.add('js-mobile-close');
