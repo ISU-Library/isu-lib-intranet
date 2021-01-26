@@ -1440,12 +1440,12 @@ function handleSearchButtonClick(e) {
 
 searchButtonShow.addEventListener('click', handleSearchButtonClick);
 var mobileMenuButton = document.querySelector('.js-mobile-nav-btn');
+var mobileMenu = document.querySelector('.js-mobile-menu');
 mobileMenuButton.addEventListener('click', function (e) {
   var body = document.querySelector('body');
-  var mobileMenu = document.querySelector('.js-mobile-menu');
   var mobBtnTop = document.querySelector('.mob-btn-top');
   var mobBtnMiddle = document.querySelector('.mob-btn-middle');
-  var mobBtnBottom = document.querySelector('.mob-btn-buttom');
+  var mobBtnBottom = document.querySelector('.mob-btn-bottom');
   body.classList.toggle('overflow-hidden');
 
   if (mobileMenu.classList.contains('js-mobile-open')) {
@@ -1468,6 +1468,19 @@ mobileMenuButton.addEventListener('click', function (e) {
     mobBtnBottom.classList.add('absolute', '-translate-y-1/2', '-translate-x-1/2', 'top-1/2', 'left-1/2', '-rotate-45');
   }
 });
+
+function resetNavOnDektop(e) {
+  var mediaQuery = window.matchMedia('(min-width: 768px)');
+  console.log('resize!');
+
+  if (mediaQuery.matches) {
+    mobileMenu.style.right = '0';
+  } else {
+    mobileMenu.style.right = '-100vw';
+  }
+}
+
+window.addEventListener('resize', resetNavOnDektop);
 
 var slideUp = function slideUp(element, duration) {
   element.style.height = element.offsetHeight + 'px';
