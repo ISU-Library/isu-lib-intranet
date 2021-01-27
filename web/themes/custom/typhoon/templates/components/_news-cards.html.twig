@@ -1,13 +1,14 @@
 {% macro lead(data) %}
 
   {% set defaultData = {
-        imgSrc: '',
-        imgAlt: '',
-        link: '',
-        category: '',
-        title: '',
-        text: '',
-        linkText: '',
+      front: '',
+      imgSrc: '',
+      imgAlt: '',
+      link: '',
+      category: '',
+      title: '',
+      text: '',
+      linkText: '',
     } %}
 
   {% set data = data ? defaultData|merge(data) : defaultData %}
@@ -28,9 +29,13 @@
           {{ data.title }}
         </h3>
         <div class="news-card--text flex-auto text-normal overflow-hidden tranistion-all duration-500 md:h-0 md:flex-none group-hover:flex-auto">
-          <p class="text-white mb-sm">
+          {% if data.front == TRUE %}
             {{ data.text|raw }}
-          </p>
+          {% else %}
+            <p class="text-white mb-sm">
+              {{ data.text }}
+            </p>
+          {% endif %}
           <div class="cta--wrap">
             <span class="cta font-bold text-white">
               {{ data.linkText }}

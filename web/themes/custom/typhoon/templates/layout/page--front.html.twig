@@ -96,13 +96,14 @@
                       <!--a href="/node/{{item['id']}}" class="news-card--link br4" style="background-image: url('{{item['image_uri']}}'); z -index: 2;  "-->
                       <li class="col-span-full md:col-span-1">
                         {{newsCard.lead({
-                            imgSrc: item['image_uri'],
-                            imgAlt: item['title'],
-                            link: item['item_url_stub'],
-                            category: 'News things',
-                            title: item['title'],
-                            text: item['body_summary'],
-                            linkText: 'Read this story',
+                          front: TRUE,
+                          imgSrc: item['image_uri'],
+                          imgAlt: item['title'],
+                          link: item['item_url_stub'],
+                          category: 'News things',
+                          title: item['title'],
+                          text: item['body_summary'],
+                          linkText: 'Read this story',
                         })}}
                         <!-- {{item['image_uri']}} -->
                       </li>
