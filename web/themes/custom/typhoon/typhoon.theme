@@ -57,42 +57,13 @@ function typhoon_preprocess_page(&$variables) {
  */
 
 function typhoon_preprocess_page__front(&$variables) {
-  $test_variable = 'zzzz TEST VARIABLE zzzz';
-  $variables['custom_test_variable'] = $test_variable;
 
-  // Create an object of type Select.
-  //$database = \Drupal::database();
-  //$query = $database->select('users', 'u');
-  // (user)name, (e)mail
-  //$query->join('users_field_data', 'usfd', 'usfd.uid = u.uid');
-  // field_staff_member_name
-  //$query->fields('usfd', ['uid','name']);
-  //$user_id = 1; // intradevadmin
-  //$query->condition('u.uid', $user_id, '=');
-  //$result = $query->execute();
-
-  /* Used by User::load below  */
-  //use Drupal\user\Entity\User;
-  //use Drupal\Core\Url;
-  //use Drupal\Core\Link;
-  $user = User::load(1);
-  $email = $user->get('mail')->value;
-  $name = $user->get('name')->value;
-  $uid= $user->get('uid')->value;
-  $variables['custom_test_variable_2'] = "$uid $name $email"; 
-
-  $variables['custom_test_link_1'] = "about-library"; 
-
-  
   $variables['lib_homepage_header_header'] = theme_get_setting('lib_homepage_header_header');
   $variables['lib_homepage_header_tagline'] = theme_get_setting('lib_homepage_header_tagline');
 
-
-  // only check for what we need ....
-  // paragraph_type = array(label => machine_name,)
-  //$paragraph_methods = ['gc_text_block'=>array('body'=>'field_gc_text_text'),'gc_text_img_block'=>array('image'=>'field_gc_text_img_img','image_side'=>'field_gc_text_img_side','image_size'=>'field_gc_text_img_size','image_text'=>'field_gc_text_img_text'),'gc_large_img_block'=>array('image'=>'field_gc_large_image_image'),'gc_link_abstract_list_block'=>array(),];
-
+  // content types to fetch 
   $staff_types = ['staff_news','staff_updates'];
+
   // how many "articles" to fetch for each ....
   $staff_types_count = ['staff_news'=>6,'staff_updates'=>3];
 
@@ -111,7 +82,6 @@ function typhoon_preprocess_page__front(&$variables) {
         // fix this
         $nid = $result;
         $node = $node_storage->load($nid);
-        //print_r('ID-'.$node->article.field_image.'-ID');
 
         $news_item = array();
         $news_item['id'] = $nid;
@@ -123,25 +93,19 @@ function typhoon_preprocess_page__front(&$variables) {
         {
             foreach ($node->field_staff_news_article_summary as $delta => $thing) 
             {
-                //$referenceItem = $node->get($field)->first();
                 $field = 'field_staff_news_article_summary';
                 $referencedEntity = $node->get($field)->first()->get('entity')->getTarget()->getValue();
                 $news_item['body_summary'] = $referencedEntity->field_gc_text_text->value; 
-                //print_r('thing1-'.$referencedEntity->field_gc_text_text->value.'-thing1');
-                //kint($referencedEntity);
             }
         }
         elseif ($node->field_staff_updates_summary)
         {
             foreach ($node->field_staff_updates_summary as $delta => $thing) 
             {
-                //$referenceItem = $node->get($field)->first();
                 $field = 'field_staff_updates_summary';
                 $referencedEntity = $node->get($field)->first()->get('entity')->getTarget()->getValue();
 // need to check for field existence?
                 $news_item['body_summary'] = $referencedEntity->field_gc_text_text->value; 
-                //print_r('thing1-'.$referencedEntity->field_gc_text_text->value.'-thing1');
-                //kint($referencedEntity);
             }
         }
 
@@ -149,22 +113,18 @@ function typhoon_preprocess_page__front(&$variables) {
         {
             foreach ($node->field_staff_news_main_image as $delta => $thing) 
             {
-                //$referenceItem = $node->get($field)->first();
                 $field = 'field_staff_news_main_image';
                 $referencedEntity = $node->get($field)->first()->get('entity')->getTarget()->getValue();
                 $news_item['image_uri'] = file_create_url($referencedEntity->uri->value); 
-                //kint($referencedEntity);
             }
         }
         elseif ($node->field_staff_updates_main_image)
         {
             foreach ($node->field_staff_updates_main_image as $delta => $thing) 
             {
-                //$referenceItem = $node->get($field)->first();
                 $field = 'field_staff_updates_main_image';
                 $referencedEntity = $node->get($field)->first()->get('entity')->getTarget()->getValue();
                 $news_item['image_uri'] = file_create_url($referencedEntity->uri->value); 
-                //kint($referencedEntity);
             }
         }
 
@@ -173,5 +133,6 @@ function typhoon_preprocess_page__front(&$variables) {
       }
       $variables[$staff_type.'_custom'] = $staff_news_articles; 
   }
-
 }
+
+
