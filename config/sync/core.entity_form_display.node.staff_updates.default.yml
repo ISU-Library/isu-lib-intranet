@@ -13,6 +13,7 @@ dependencies:
     - image
     - paragraphs
     - path
+    - text
 id: node.staff_updates.default
 targetEntityType: node
 bundle: staff_updates
@@ -55,16 +56,12 @@ content:
     type: image_image
     region: content
   field_staff_updates_summary:
-    type: entity_reference_paragraphs
-    weight: 123
+    weight: 125
     settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
+      rows: 5
+      placeholder: ''
     third_party_settings: {  }
+    type: text_textarea
     region: content
   path:
     type: path

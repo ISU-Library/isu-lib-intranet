@@ -11,6 +11,7 @@ dependencies:
   module:
     - entity_reference_revisions
     - image
+    - text
     - user
 id: node.staff_updates.default
 targetEntityType: node
@@ -44,13 +45,11 @@ content:
     type: image
     region: content
   field_staff_updates_summary:
-    type: entity_reference_revisions_entity_view
-    weight: 3
+    weight: 5
     label: above
-    settings:
-      view_mode: default
-      link: ''
+    settings: {  }
     third_party_settings: {  }
+    type: text_default
     region: content
   links:
     weight: 0

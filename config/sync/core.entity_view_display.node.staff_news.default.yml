@@ -11,6 +11,7 @@ dependencies:
   module:
     - entity_reference_revisions
     - image
+    - text
     - user
 id: node.staff_news.default
 targetEntityType: node
@@ -18,13 +19,11 @@ bundle: staff_news
 mode: default
 content:
   field_staff_news_article_summary:
-    type: entity_reference_revisions_entity_view
-    weight: 104
+    weight: 106
     label: above
-    settings:
-      view_mode: default
-      link: ''
+    settings: {  }
     third_party_settings: {  }
+    type: text_default
     region: content
   field_staff_news_category:
     weight: 103

@@ -54,13 +54,13 @@
   {% block content %}
     <div {{attributes.addClass(classes)}}>
       {{newsCard.lead({
-            imgSrc: file_url(paragraph.field_news_card_lead_image.entity.uri.value),
-            imgAlt: content.field_news_card_lead_image.alt,
-            link: content.field_news_card_lead_link.0['#url'],
-            category: content.field_news_card_lead_category.0['#title'],
-            title: content.field_news_card_lead_title|field_value,
-            text: content.field_news_card_lead_text|field_value,
-            linkText: content.field_news_card_lead_link.0['#title'],
+        imgSrc: file_url(paragraph.field_news_card_lead_image.entity.uri.value),
+        imgAlt: content.field_news_card_lead_image.alt,
+        link: content.field_news_card_lead_link.0['#url'],
+        category: content.field_news_card_lead_category.0['#title'],
+        title: content.field_news_card_lead_title|field_value,
+        text: content.field_news_card_lead_text|field_value,
+        linkText: content.field_news_card_lead_link.0['#title'],
         }) }}
     </div>
   {% endblock %}

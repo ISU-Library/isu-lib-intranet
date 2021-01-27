@@ -13,6 +13,7 @@ dependencies:
     - image
     - paragraphs
     - path
+    - text
 id: node.staff_news.default
 targetEntityType: node
 bundle: staff_news
@@ -25,16 +26,12 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_staff_news_article_summary:
-    type: entity_reference_paragraphs
-    weight: 124
+    weight: 126
     settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
+      rows: 5
+      placeholder: ''
     third_party_settings: {  }
+    type: text_textarea
     region: content
   field_staff_news_category:
     weight: 123

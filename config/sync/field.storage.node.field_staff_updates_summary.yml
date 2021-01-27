@@ -1,18 +1,16 @@
-uuid: 9ab64dff-b999-4366-aa2f-33f819aab400
+uuid: d830186c-b88a-4d2b-b937-354e56a9e84e
 langcode: en
 status: true
 dependencies:
   module:
-    - entity_reference_revisions
     - node
-    - paragraphs
+    - text
 id: node.field_staff_updates_summary
 field_name: field_staff_updates_summary
 entity_type: node
-type: entity_reference_revisions
-settings:
-  target_type: paragraph
-module: entity_reference_revisions
+type: text_long
+settings: {  }
+module: text
 locked: false
 cardinality: 1
 translatable: true
