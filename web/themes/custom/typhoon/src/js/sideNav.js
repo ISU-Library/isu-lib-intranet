@@ -10,15 +10,14 @@ sideNavEl.forEach((subNav) => {
   const subPages = subNav.querySelector('ul.side-nav--sub-list');
 
   navTrigger.addEventListener('click', (e) => {
+    slideToggle(subPages, 300);
     if (icon.classList.contains(openIcon)) {
       icon.classList.remove(openIcon);
       icon.classList.add(closeIcon);
       subPages.setAttribute('aria-expanded', true)
-      subPages.style.display = 'block';
     } else if (icon.classList.contains(closeIcon)) {
       icon.classList.remove(closeIcon);
       icon.classList.add(openIcon);
-      subPages.style.display = 'none'
       subPages.setAttribute('aria-expanded', false)
     } else {
       return

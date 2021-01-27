@@ -97,24 +97,11 @@
                     <i class=" fas fa-minus text-red-500 text-lg"></i>
                   </div>
                   {{ link(item.title, item.url, {'class': top_link_class}) }}
-                {# {% else %} #}
-                  {# <div class="flex justify-center items-center bg-yellow-500 w-3xl"> #}
-                  {# <i class="fas fa-plus text-red-500 text-lg"></i> #}
-                  {# </div> #}
-                  {# {% endif %} #}
                 </div>
               {% else %}
                 {# If item is not top level #}
-                <div
-                  class="flex">
-                  {# {% if item.in_active_trail %} #}
-                  <div title="{{item.title}} doesn't have sub-pages" class="flex icon-wrap flex-shrink-0 justify-center items-center bg-yellow-500 w-3xl">
-                    {% if item.in_active_trail %}
-                      {# <i class="fas fa-chevron-right text-red-500 text-md"></i> #}
-                      {% else %}
-                      {# <i class="hidden"></i> #}
-                    {% endif %}
-                  </div>
+                <div class="flex">
+                  <div title="{{item.title}} doesn't have sub-pages" class="flex icon-wrap flex-shrink-0 justify-center items-center bg-yellow-500 w-3xl"></div>
                   {{ link(item.title, item.url, {'class': bottom_link_class}) }}
                 </div>
               {% endif %}
