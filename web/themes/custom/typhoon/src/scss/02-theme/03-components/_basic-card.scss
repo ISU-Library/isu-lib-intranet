@@ -162,6 +162,7 @@ $blue-basic-card-text-blue: $blue-700;
 }
 
 .basic-card--desc {
+  @include line-clamp(5);
   // flex-grow: 1;
   // font-weight: 400;
   // transition: color 0.3s ease-in;

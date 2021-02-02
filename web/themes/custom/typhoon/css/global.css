@@ -1165,6 +1165,13 @@ input[type=text]:invalid,input[type=password]:invalid,input[type=email]:invalid,
   -webkit-box-orient:vertical
 }
 
+.basic-card--desc{
+  display:-webkit-box;
+  overflow:hidden;
+  -webkit-line-clamp:5;
+  -webkit-box-orient:vertical
+}
+
 .basic-card--yellow::before{
   background-color:#f1be46
 }
