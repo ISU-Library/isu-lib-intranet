@@ -34,11 +34,16 @@ function typhoon_form_alter(array &$form, FormStateInterface $form_state, $form_
 function typhoon_theme_suggestions_region_alter(array &$suggestions, array $variables) {
 
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
-    $content_type = $node->getType();
+    //$content_type = $node->getType();
+    $content_type = $node->bundle();
     if ($content_type == 'staff_news') {
-      $suggestions[] = 'region__'.$content_type;
+
+      //print_r('-- #region:'.$variables['elements']['#region'].' --');
+      $region = $variables['elements']['#region'];
+      $suggestions[] = 'region__'.$content_type.'_'.$region;
     }
   }
+  return $suggestions;
 }
 
 /*
