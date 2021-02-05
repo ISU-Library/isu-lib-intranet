@@ -446,7 +446,7 @@ a.button.button-secondary,button.button.button-secondary,input[type=reset].butto
 
 a.button.button-secondary:hover,a.button.button-secondary:focus,button.button.button-secondary:hover,button.button.button-secondary:focus,input[type=reset].button-secondary:hover,input[type=reset].button-secondary:focus,input[type=submit].button-secondary:hover,input[type=submit].button-secondary:focus,input[type=button].button-secondary:hover,input[type=button].button-secondary:focus{
   color:#26241c;
-  background-color:#fcda69;
+  background-color:#fce882;
   -webkit-box-shadow:0 2px 4px rgba(0,0,0,.12),0 3px 6px rgba(0,0,0,.15);
           box-shadow:0 2px 4px rgba(0,0,0,.12),0 3px 6px rgba(0,0,0,.15)
 }
