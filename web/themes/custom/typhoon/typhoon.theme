@@ -101,6 +101,7 @@ function typhoon_preprocess_page__front(&$variables) {
 
   $node_storage = \Drupal::entityTypeManager()->getStorage('node');
 
+  $count_for_lead_card_section = 0;
   foreach ($staff_types as $staff_type) {
 
       // grab first six sorted by changed (updated)?
@@ -123,10 +124,15 @@ function typhoon_preprocess_page__front(&$variables) {
 
         if ($node->field_staff_news_article_summary)
         {
+            // only want the first two news items to have the "special" p tag treatment .... hackish
+            $count_for_lead_card_section++;
             foreach ($node->field_staff_news_article_summary as $delta => $thing) 
             {
               $summary_string = $thing->value;
-              $summary_string = str_replace('<p>', '<p class="text-white mb-sm">', $summary_string);
+              if ($count_for_lead_card_section <= 2)
+              {
+                $summary_string = str_replace('<p>', '<p class="text-white mb-sm">', $summary_string);
+              }
               $news_item['body_summary'] = $summary_string; 
             }
         }
