@@ -1,0 +1,21 @@
+uuid: db2dd3fd-a4d1-4f21-af87-69a4bc970d30
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_department_summary
+    - node.type.department_page
+  module:
+    - text
+id: node.department_page.field_department_summary
+field_name: field_department_summary
+entity_type: node
+bundle: department_page
+label: 'Department Summary'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -4,7 +4,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.department_page.field_department_image
     - field.field.node.department_page.field_department_page_content
+    - field.field.node.department_page.field_department_summary
     - node.type.department_page
   module:
     - user
@@ -19,4 +21,6 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_department_image: true
   field_department_page_content: true
+  field_department_summary: true

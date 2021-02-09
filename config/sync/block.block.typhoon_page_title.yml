@@ -2,6 +2,8 @@ uuid: 5e6680be-96e2-42cb-8d01-43c697978cf8
 langcode: en
 status: true
 dependencies:
+  module:
+    - ctools
   theme:
     - typhoon
 _core:
@@ -17,4 +19,12 @@ settings:
   label: 'Page title'
   provider: core
   label_display: '0'
-visibility: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      department_page: department_page
+      staff_news: staff_news
+    negate: true
+    context_mapping:
+      node: '@node.node_route_context:node'
