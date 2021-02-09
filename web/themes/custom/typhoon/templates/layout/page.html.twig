@@ -51,30 +51,40 @@
   <div
     class="relative flex-grow">
     {# <div aria-hidden="true" class="flair-img staff-news--dots-red-bars z-10">
-                  <img src="/themes/custom/typhoon/images/dot-pattern-red-bars.png" alt="">
-                </div> #}
+                      <img src="/themes/custom/typhoon/images/dot-pattern-red-bars.png" alt="">
+                    </div> #}
     <div class="typhoon-grid grid grid-cols-12 gap-md relative mx-auto px-2xl flex-initial max-w-9xl z-20">
       {{ page.breadcrumb }}
       {{ page.highlighted }}
       {{ page.help }}
-      <main role="main" class="col-span-full md:col-start-1 md:col-end-10 xl:col-end-9">
-        <a id="main-content" tabindex="-1"></a>
-        {# link is in html.html.twig #}
-        <div class="layout-content">
-          {{ page.content }}
-        </div>
-        {# /.layout-content #}
-      </main>
       {% if page.sidebar_first %}
+        <main role="main" class="col-span-full md:col-start-1 md:col-end-10 xl:col-end-9">
+          <a id="main-content" tabindex="-1"></a>
+          {# link is in html.html.twig #}
+          <div class="layout-content">
+            {{ page.content }}
+          </div>
+          {# /.layout-content #}
+        </main>
         <aside class="layout-sidebar-first col-span-full md:col-start-10 md:col-end-13" role="complementary">
           {% include "@typhoon/navigation/side-nav.html.twig" %}
         </aside>
+
+      {% else %}
+        <main role="main" class="col-span-full md:col-start-1 md:col-end-13 xl:col-end-13">
+          <a id="main-content" tabindex="-1"></a>
+          {# link is in html.html.twig #}
+          <div class="layout-content">
+            {{ page.content }}
+          </div>
+          {# /.layout-content #}
+        </main>
       {% endif %}
       {# {% if page.sidebar_second %}<aside class="layout-sidebar-second" role="complementary">{{ page.sidebar_second }}</aside>{% endif %} #}
     </div>
     {# <div aria-hidden="true" class="flair-img staff-updates--dots z-10">
-                  <img src="/themes/custom/typhoon/images/small-dots.png" alt="">
-                </div> #}
+                                      <img src="/themes/custom/typhoon/images/small-dots.png" alt="">
+                                    </div> #}
   </div>
   {% if page.footer %}
     {% include "@typhoon/navigation/footer-nav.html.twig" %}
