@@ -27,10 +27,10 @@
   margin-left: calc(50% - 49vw);
   margin-right: calc(50% - 49vw);
 
-  @include bp(xl) {
-    margin-left: calc(25% - 80vw);
-    margin-right: calc(25% - 80vw);
-  }
+  // @include bp(xl) {
+  //   margin-left: calc(25% - 80vw);
+  //   margin-right: calc(25% - 80vw);
+  // }
 }
 
 .aria-text {

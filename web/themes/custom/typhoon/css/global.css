@@ -640,10 +640,6 @@ table td,table th{
   margin-top:1rem
 }
 
-.gen-con--block p+p:last-of-type{
-  margin-bottom:0
-}
-
 .lead-block p:first-of-type{
   color:#212121;
   font-size:1.125rem
@@ -1896,13 +1892,6 @@ input[type=text]:invalid,input[type=password]:invalid,input[type=email]:invalid,
 .full-width{
   margin-left:calc(50% - 49vw);
   margin-right:calc(50% - 49vw)
-}
-
-@media(min-width: 1280px){
-  .full-width{
-    margin-left:calc(25% - 80vw);
-    margin-right:calc(25% - 80vw)
-  }
 }
 
 .aria-text{
