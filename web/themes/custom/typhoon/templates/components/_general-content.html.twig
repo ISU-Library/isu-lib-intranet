@@ -128,7 +128,7 @@
         {% if data.template %}
           {# * the code below reaches down into the paragraph link_abstract_list, set by data.links #}
           {# * then it loops through all fields in the paragraph, yes there are a lot of arrays #}
-          {# * and only redners an element if it has a url and title #}
+          {# * and only renders an element if it has a url and title #}
             {% for linkAbstractPara in data.links %}
               {% for paragraph_field in linkAbstractPara %}
                 {% for abstract_link_value in paragraph_field %}
@@ -184,7 +184,7 @@
         {% if data.template %}
           {# * the code below reaches down into the paragraph link_list_link, set by data,links #}
           {# * then it loops through all fields in the paragraph #}
-          {# * and only redners an element if it has a url and title #}
+          {# * and only renders an element if it has a url and title #}
             {% for linkListPara in data.links %}
               {% for paragraph_field in linkListPara %}
                 {% if paragraph_field.url and paragraph_field.title %}
