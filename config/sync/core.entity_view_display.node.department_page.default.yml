@@ -10,7 +10,6 @@ dependencies:
   module:
     - entity_reference_revisions
     - image
-    - text
     - user
 id: node.department_page.default
 targetEntityType: node
@@ -40,7 +39,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    type: basic_string
     region: content
   links:
     weight: 0

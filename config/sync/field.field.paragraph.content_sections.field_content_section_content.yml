@@ -1,18 +1,25 @@
-uuid: 9e631bf6-5836-48c4-9e31-cc9d8bfb706b
+uuid: 0e0994aa-b22d-492e-bc71-7fa7ad2f9460
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_department_page_content
-    - node.type.department_page
+    - field.storage.paragraph.field_content_section_content
+    - paragraphs.paragraphs_type.accordion_group
+    - paragraphs.paragraphs_type.basic_card_w_image
     - paragraphs.paragraphs_type.content_sections
+    - paragraphs.paragraphs_type.from_library
+    - paragraphs.paragraphs_type.link_abstract_link_list
+    - paragraphs.paragraphs_type.link_list_link
+    - paragraphs.paragraphs_type.news_card_basic
+    - paragraphs.paragraphs_type.news_card_lead
+    - paragraphs.paragraphs_type.sc_basic_card
   module:
     - entity_reference_revisions
-id: node.department_page.field_department_page_content
-field_name: field_department_page_content
-entity_type: node
-bundle: department_page
-label: 'Page Content'
+id: paragraph.content_sections.field_content_section_content
+field_name: field_content_section_content
+entity_type: paragraph
+bundle: content_sections
+label: 'Section Content'
 description: ''
 required: false
 translatable: false
@@ -21,22 +28,30 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
+    negate: 1
     target_bundles:
+      accordion_group: accordion_group
+      basic_card_w_image: basic_card_w_image
       content_sections: content_sections
+      from_library: from_library
+      link_abstract_link_list: link_abstract_link_list
+      link_list_link: link_list_link
+      news_card_basic: news_card_basic
+      news_card_lead: news_card_lead
+      sc_basic_card: sc_basic_card
     target_bundles_drag_drop:
       accordion_group:
+        enabled: true
         weight: 23
-        enabled: false
       basic_card_w_image:
+        enabled: true
         weight: 24
-        enabled: false
       content_sections:
         enabled: true
         weight: 25
       from_library:
+        enabled: true
         weight: 26
-        enabled: false
       gc_accordion_block:
         weight: 27
         enabled: false
@@ -65,20 +80,20 @@ settings:
         weight: 35
         enabled: false
       link_abstract_link_list:
+        enabled: true
         weight: 36
-        enabled: false
       link_list_link:
+        enabled: true
         weight: 37
-        enabled: false
       news_card_basic:
+        enabled: true
         weight: 38
-        enabled: false
       news_card_lead:
+        enabled: true
         weight: 39
-        enabled: false
       sc_basic_card:
+        enabled: true
         weight: 40
-        enabled: false
       sc_basic_cards_block:
         weight: 41
         enabled: false

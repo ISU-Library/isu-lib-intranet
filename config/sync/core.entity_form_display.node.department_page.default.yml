@@ -12,7 +12,6 @@ dependencies:
     - image
     - paragraphs
     - path
-    - text
 id: node.department_page.default
 targetEntityType: node
 bundle: department_page
@@ -34,7 +33,7 @@ content:
     region: content
   field_department_page_content:
     type: entity_reference_paragraphs
-    weight: 9
+    weight: 26
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -50,7 +49,7 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-    type: text_textarea
+    type: string_textarea
     region: content
   path:
     type: path

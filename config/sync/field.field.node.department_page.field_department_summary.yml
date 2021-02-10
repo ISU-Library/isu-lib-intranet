@@ -1,12 +1,10 @@
-uuid: db2dd3fd-a4d1-4f21-af87-69a4bc970d30
+uuid: 9588ee9a-ad78-4638-90a7-64626a5da75d
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_department_summary
     - node.type.department_page
-  module:
-    - text
 id: node.department_page.field_department_summary
 field_name: field_department_summary
 entity_type: node
@@ -18,4 +16,4 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: text_long
+field_type: string_long
