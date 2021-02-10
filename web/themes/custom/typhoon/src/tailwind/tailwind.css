@@ -3,6 +3,7 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+
 /************** custom CSS *********************/
 @import url('//cdn.theme.iastate.edu/nimbus-sans/css/nimbus-sans.css');
 @import url('//cdn.theme.iastate.edu/merriweather/css/merriweather.css');
@@ -17,6 +18,12 @@ body {
   font-family: 'Nimbus Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+@layer utilities {
+  .text-shadow-1 {
+    text-shadow: 0 2px 4px #000000;
+  }
+}
+
 a {
   @apply text-red-500;
 }
@@ -25,9 +32,10 @@ a {
   @apply absolute transform -translate-y-1/2 -translate-x-1/2 top-1/2 left-1/2;
 }
 
-/* .gen-con--block p {
-  @apply mb-md;
-} */
+.center-x {
+  @apply absolute transform -translate-x-1/2 left-1/2;
+}
+
 .gen-con--block p+p {
   @apply mt-md;
 }
@@ -36,7 +44,6 @@ a {
   @apply mt-0;
 }
 
-/* 
-.lead-block p:first-of-type {
-  @apply text-lg
-} */
+.department-nav {
+  top: 135px;
+}

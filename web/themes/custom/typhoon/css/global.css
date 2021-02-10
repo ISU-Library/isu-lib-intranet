@@ -1890,8 +1890,8 @@ input[type=text]:invalid,input[type=password]:invalid,input[type=email]:invalid,
 }
 
 .full-width{
-  margin-left:calc(50% - 49vw);
-  margin-right:calc(50% - 49vw)
+  margin-left:calc(50% - 50vw);
+  margin-right:calc(50% - 50vw)
 }
 
 .aria-text{

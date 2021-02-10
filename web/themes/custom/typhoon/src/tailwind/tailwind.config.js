@@ -140,6 +140,7 @@ module.exports = {
         '9xl': '93.75rem',
       },
       maxWidth: {
+        'readable': '57rem',
         '8xl': '87.5rem',
         '9xl': '93.75rem',
       },
@@ -153,6 +154,9 @@ module.exports = {
         'hero-image': "url('/themes/custom/typhoon/images/intra-hero.jpg')",
         'lib-staircase-image': "url('/themes/custom/typhoon/images/parks-library-staircase.jpg')",
       }),
+      lineHeight: {
+        '0': '0',
+      }
     },
   },
   variants: {
