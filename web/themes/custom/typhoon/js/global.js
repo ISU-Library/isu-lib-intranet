@@ -1327,6 +1327,18 @@ anime.random = function (min, max) { return Math.floor(Math.random() * (max - mi
 
 /***/ }),
 
+/***/ "./themes/custom/typhoon/src/js/SmoothScroll.js":
+/*!******************************************************!*\
+  !*** ./themes/custom/typhoon/src/js/SmoothScroll.js ***!
+  \******************************************************/
+/*! unknown exports (runtime-defined) */
+/*! runtime requirements:  */
+/***/ (function() {
+
+console.log('TEST!');
+
+/***/ }),
+
 /***/ "./themes/custom/typhoon/src/js/accordion.js":
 /*!***************************************************!*\
   !*** ./themes/custom/typhoon/src/js/accordion.js ***!
@@ -1417,9 +1429,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _searchButton_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./searchButton.js */ "./themes/custom/typhoon/src/js/searchButton.js");
 /* harmony import */ var _searchButton_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_searchButton_js__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _sideNav_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sideNav.js */ "./themes/custom/typhoon/src/js/sideNav.js");
-/* harmony import */ var _accordion_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./accordion.js */ "./themes/custom/typhoon/src/js/accordion.js");
+/* harmony import */ var _SmoothScroll_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./SmoothScroll.js */ "./themes/custom/typhoon/src/js/SmoothScroll.js");
+/* harmony import */ var _SmoothScroll_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_SmoothScroll_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _accordion_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./accordion.js */ "./themes/custom/typhoon/src/js/accordion.js");
 // elements animation
 // import SmoothScroll from 'smooth-scroll';
+
 
 
 
@@ -1429,9 +1444,10 @@ __webpack_require__.r(__webpack_exports__);
 _searchButton_js__WEBPACK_IMPORTED_MODULE_1__; // all Js for mobile menu
 
 _mobileNav_js__WEBPACK_IMPORTED_MODULE_0__;
-_sideNav_js__WEBPACK_IMPORTED_MODULE_2__; // accordion
+_sideNav_js__WEBPACK_IMPORTED_MODULE_2__;
+_SmoothScroll_js__WEBPACK_IMPORTED_MODULE_3__; // accordion
 
-_accordion_js__WEBPACK_IMPORTED_MODULE_3__; // capacity
+_accordion_js__WEBPACK_IMPORTED_MODULE_4__; // capacity
 // capacity;
 
 /***/ }),

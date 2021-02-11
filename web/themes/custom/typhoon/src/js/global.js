@@ -3,6 +3,7 @@
 import * as mobileNav from './mobileNav.js';
 import * as searchButtonShow from './searchButton.js';
 import * as sideNav from './sideNav.js';
+import * as SmoothScroll from './SmoothScroll.js';
 
 import * as accordion from './accordion.js';
 
@@ -14,6 +15,7 @@ searchButtonShow;
 // all Js for mobile menu
 mobileNav;
 sideNav;
+SmoothScroll;
 
 // accordion
 accordion;

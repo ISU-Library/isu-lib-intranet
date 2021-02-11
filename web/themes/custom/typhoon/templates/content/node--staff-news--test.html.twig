@@ -89,28 +89,29 @@
 
   {# * Below is the start to custom styling content #}
 
-  {# <div{{content_attributes}}>
-      <div style="background-image:url({{ImgSrc}})" class="mb-lg">
-        <h1>
-          {{ label }}
-        </h1>
-        {{ content.field_staff_news_article_summary|field_value }}
-      </div>
-  
-      {{ content.field_staff_news_content|field_value }}
-    </div> #}
+  <div{{content_attributes}}>
+    <div style="background-image:url({{ImgSrc}})" class="mb-lg">
+      <h1>
+        {{ label }}
+      </h1>
+      {{ content.field_staff_news_article_summary|field_value }}
+    </div>
 
-    {% if display_submitted %}
-      <footer>
+    {{ content.field_staff_news_content|field_value }}
+  </div>
+
+  {% if display_submitted %}
+    <footer>
       {{ author_picture }}
-        <div{{author_attributes}}>
+      <div{{author_attributes}}>
         {% trans %}
         Submitted by
         {{ author_name }}
         on
         {{ date }}
         {% endtrans %}
-      {{ metadata }}
-    </div>
-  </footer>
-{% endif %}</article>
+        {{ metadata }}
+      </div>
+    </footer>
+  {% endif %}
+</article>
