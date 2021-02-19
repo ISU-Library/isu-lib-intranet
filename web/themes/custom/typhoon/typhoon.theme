@@ -41,23 +41,6 @@ function typhoon_theme_suggestions_page_alter(array &$suggestions, array $variab
 }
 
 /*
- * Implements THEME_theme_preprocess_region_alter().
- *
- * Alters named template suggestions for page suggestions
- */
-function typhoon_theme_suggestions_region_alter(array &$suggestions, array $variables) {
-
-  if ($node = \Drupal::routeMatch()->getParameter('node')) {
-    $content_type = $node->bundle();
-    if ($content_type == 'staff_news') {
-      $region = $variables['elements']['#region'];
-      $suggestions[] = 'region__'.$content_type.'__'.$region;
-    }
-  }
-  return $suggestions;
-}
-
-/*
  * Implements theme_preprocess_page().
  *
  * Make theme settings available in templates
@@ -174,5 +157,3 @@ function typhoon_preprocess_page__front(&$variables) {
       $variables[$staff_type.'_custom'] = $staff_news_articles; 
   }
 }
-
-
