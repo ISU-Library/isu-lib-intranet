@@ -1,4 +1,4 @@
-/* tailwind */
+/************** Tailwind *********************/
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
@@ -9,10 +9,21 @@
 @import url('//cdn.theme.iastate.edu/merriweather/css/merriweather.css');
 
 
-/** Foundations **/
+/****** Foundations ******/
 @import './header.css';
 @import './headlines.css';
 @import './footer.css';
+
+/**** components ****/
+@import './department-nav.css';
+
+:root {
+  --header-height: '';
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: 'Nimbus Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -26,6 +37,10 @@ body {
 
 a {
   @apply text-red-500;
+}
+
+p {
+  @apply mt-md;
 }
 
 .absolute-center {
@@ -42,8 +57,4 @@ a {
 
 .gen-con--block p:first-of-type {
   @apply mt-0;
-}
-
-.department-nav {
-  top: 135px;
 }

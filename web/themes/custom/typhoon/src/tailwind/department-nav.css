@@ -1,0 +1,27 @@
+.department-nav {
+  top: var(--header-height);
+}
+
+.department-nav.is-open .js-scrollTrigger {
+  @apply block;
+}
+
+.js-scrollTarget {
+  /* *for safari */
+  scroll-snap-margin-top: 200px;
+  scroll-margin-top: 200px;
+}
+
+.js-scrollTrigger {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .js-scrollTrigger {
+    @apply block
+  }
+}
+
+.js-scrollTrigger.is-active {
+  @apply block
+}

@@ -1,3 +1,4 @@
+
 /****** Utility Nav Section ******/
 
 .nav-triangles {
@@ -88,10 +89,11 @@
 
 .js-mobile-menu {
   height: calc(100vh - 75px);
-  margin-top: 74px;
+  top: var(--header-height);
 }
-@media(min-width: 640px) {
+
+@media (min-width: 768px) {
   .js-mobile-menu {
-    margin-top: 80px;
-  }
+    top: 0;
+  } 
 }
