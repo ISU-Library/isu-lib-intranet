@@ -1327,18 +1327,6 @@ anime.random = function (min, max) { return Math.floor(Math.random() * (max - mi
 
 /***/ }),
 
-/***/ "./themes/custom/typhoon/src/js/SmoothScroll.js":
-/*!******************************************************!*\
-  !*** ./themes/custom/typhoon/src/js/SmoothScroll.js ***!
-  \******************************************************/
-/*! unknown exports (runtime-defined) */
-/*! runtime requirements:  */
-/***/ (function() {
-
-console.log('TEST!');
-
-/***/ }),
-
 /***/ "./themes/custom/typhoon/src/js/accordion.js":
 /*!***************************************************!*\
   !*** ./themes/custom/typhoon/src/js/accordion.js ***!
@@ -1429,25 +1417,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _searchButton_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./searchButton.js */ "./themes/custom/typhoon/src/js/searchButton.js");
 /* harmony import */ var _searchButton_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_searchButton_js__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _sideNav_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sideNav.js */ "./themes/custom/typhoon/src/js/sideNav.js");
-/* harmony import */ var _SmoothScroll_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./SmoothScroll.js */ "./themes/custom/typhoon/src/js/SmoothScroll.js");
-/* harmony import */ var _SmoothScroll_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_SmoothScroll_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _accordion_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./accordion.js */ "./themes/custom/typhoon/src/js/accordion.js");
+/* harmony import */ var _accordion_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./accordion.js */ "./themes/custom/typhoon/src/js/accordion.js");
+/* harmony import */ var _smoothScroll__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./smoothScroll */ "./themes/custom/typhoon/src/js/smoothScroll.js");
+/* harmony import */ var _smoothScroll__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_smoothScroll__WEBPACK_IMPORTED_MODULE_4__);
 // elements animation
-// import SmoothScroll from 'smooth-scroll';
 
 
 
 
- // var scroll = new SmoothScroll('a[href*="#"]');
-// show search button
+ // Todo: split into new file
+
+var header = document.querySelector('header');
+var headerHeight = header.offsetHeight;
+var root = document.documentElement;
+var resizeObserverHeader = new ResizeObserver(function (entries) {
+  entries.forEach(function (entry) {
+    var height = Math.floor(entry.contentRect.height);
+    root.style.setProperty('--header-height', "".concat(height, "px"));
+  });
+}); // initially set headerHeight
+
+root.style.setProperty('--header-height', "".concat(headerHeight, "px")); // Change headerHeight on height change
+
+resizeObserverHeader.observe(header); // show search button
 
 _searchButton_js__WEBPACK_IMPORTED_MODULE_1__; // all Js for mobile menu
 
 _mobileNav_js__WEBPACK_IMPORTED_MODULE_0__;
 _sideNav_js__WEBPACK_IMPORTED_MODULE_2__;
-_SmoothScroll_js__WEBPACK_IMPORTED_MODULE_3__; // accordion
+_smoothScroll__WEBPACK_IMPORTED_MODULE_4__; // accordion
 
-_accordion_js__WEBPACK_IMPORTED_MODULE_4__; // capacity
+_accordion_js__WEBPACK_IMPORTED_MODULE_3__; // capacity
 // capacity;
 
 /***/ }),
@@ -1471,7 +1471,7 @@ var mainNavEl = document.querySelectorAll(".js-main-nav-select");
 
 function resetNavOnDektop(e) {
   var width = window.innerWidth;
-  var mediaQuery = window.matchMedia('(min-width: 768px)');
+  var mediaQuery = window.matchMedia('(min-width: 768px)'); // !change this to use custom property
 
   if (window.innerWidth !== width) {
     if (mediaQuery.matches) {
@@ -1675,6 +1675,100 @@ var slideToggle = function slideToggle(element) {
 };
 
 
+
+/***/ }),
+
+/***/ "./themes/custom/typhoon/src/js/smoothScroll.js":
+/*!******************************************************!*\
+  !*** ./themes/custom/typhoon/src/js/smoothScroll.js ***!
+  \******************************************************/
+/*! unknown exports (runtime-defined) */
+/*! runtime requirements:  */
+/***/ (function() {
+
+// import SmoothScroll from 'smooth-scroll';
+// var scroll = new SmoothScroll('a[href*="#"]');
+// todo: Change focus to selected section
+// todo: If I really wanted to remove smooth scroll, I could try and set data-attributes vs anchors and ID's
+// todo: Doesn't really work well in safari, especially without SmoothScroll
+// todo: Clean this code! It's a mess and jumble of things right now.
+var scrollTriggers = document.querySelectorAll('.js-scrollTrigger');
+var scrollTargets = document.querySelectorAll('.js-scrollTarget');
+var departmentNav = document.querySelector('.department-nav');
+var vh = document.documentElement.clientHeight;
+var topMargin = Math.ceil(-0.45 * vh);
+var botMargin = Math.ceil(-0.55 * vh); // *observes if section is on screen
+
+function handleIntersection(entries) {
+  entries.map(function (entry) {
+    var sectionID = entry.target.id;
+    var triggerEl = document.querySelector("a[href='#".concat(sectionID, "']"));
+    var spanEl = triggerEl.querySelector('span'); // * if on screen, chane url hash, update classes
+
+    if (entry.isIntersecting) {
+      var location = window.location.toString().split('#')[0];
+      history.replaceState(null, null, location + '#' + sectionID); // scrollTriggers.forEach(trigger => {
+      //   trigger.classList.remove('is-active');
+      //   trigger.querySelector('span').classList.add('hidden');
+      // });
+
+      spanEl.classList.remove('hidden');
+      triggerEl.classList.add('is-active');
+    } else {
+      spanEl.classList.add('hidden');
+      triggerEl.classList.remove('is-active');
+    }
+  });
+} // * setting options for observer
+
+
+var mediaQuery = window.matchMedia('min-width: 1024px');
+var options = {
+  // threshold: 0.6,
+  // rootMargin: topMargin + "px 0px " + botMargin + "px",
+  threshold: [0.25, 0.5, 0.75, 1]
+};
+var optionsHalf = {
+  threshold: 0.2
+};
+var observer = new IntersectionObserver(handleIntersection, options); // * calling observe function on sectiions
+
+scrollTargets.forEach(function (target) {
+  observer.observe(target);
+}); // * cleans user input and set it as section ID
+
+scrollTargets.forEach(function (target) {
+  var id = target.id;
+  var idCleaned = id.replace(/\W+/g, '-').replace(/^-|-$/g, '').toLowerCase();
+  target.id = idCleaned;
+}); // * cleans user input and set it as nav HREF anchor
+
+scrollTriggers.forEach(function (trigger) {
+  var id = trigger.getAttribute('href');
+  var hrefCleaned = id.replace(/\W+/g, '-').replace(/^-|-$/g, '').toLowerCase();
+  trigger.setAttribute('href', "#".concat(hrefCleaned));
+}); // * on mobile, when clicking the department nav, show all options
+
+departmentNav.addEventListener('click', function (e) {
+  if (window.innerWidth <= 1024) {
+    e.preventDefault();
+    departmentNav.classList.add('is-open');
+  }
+});
+scrollTriggers.forEach(function (trigger) {
+  var id = trigger.getAttribute('href');
+  var target = document.querySelector("".concat(id));
+  trigger.addEventListener('click', function (e) {
+    if (departmentNav.classList.contains('is-open')) {
+      e.stopPropagation();
+      departmentNav.classList.remove('is-open');
+    }
+
+    target.scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
 
 /***/ }),
 
