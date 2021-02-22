@@ -8,8 +8,15 @@
 
 .js-scrollTarget {
   /* *for safari */
-  scroll-snap-margin-top: 200px;
-  scroll-margin-top: 200px;
+  scroll-snap-margin-top: 160px;
+  scroll-margin-top: 160px;
+}
+
+@media (min-width: 768px) {
+  .js-scrollTarget {
+    scroll-snap-margin-top: 200px;
+    scroll-margin-top: 200px;
+  }
 }
 
 .js-scrollTrigger {

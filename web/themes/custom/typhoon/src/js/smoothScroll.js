@@ -12,7 +12,6 @@ const departmentNav = document.querySelector('.department-nav');
 
 
 window.onscroll = function () {
-
   scrollTargets.forEach(target => {
     const sectionID = target.id;
     const triggerEl = document.querySelector(`a[href='#${sectionID}']`);
@@ -21,6 +20,8 @@ window.onscroll = function () {
     const targetBottom = target.offsetTop + targetHeight
 
     if (targetBottom - window.scrollY > 0 && target.offsetTop - window.scrollY < 0) {
+      const location = window.location.toString().split('#')[0];
+      history.replaceState(null, null, location + '#' + sectionID);
       spanEl.classList.remove('hidden');
       triggerEl.classList.add('is-active');
     } else {
@@ -59,11 +60,15 @@ scrollTriggers.forEach(trigger => {
 });
 
 // * on mobile, when clicking the department nav, show all options
-departmentNav.addEventListener('click', function (e) {
-  if (window.innerWidth <= 1024) {
-    departmentNav.classList.add('is-open');
-  }
-});
+if (departmentNav) {
+  departmentNav.addEventListener('click', function (e) {
+    if (window.innerWidth <= 1024) {
+      departmentNav.classList.add('is-open');
+    }
+  });
+} else {
+
+}
 
 scrollTriggers.forEach((trigger, index) => {
   const id = trigger.getAttribute('href');
