@@ -1705,6 +1705,8 @@ window.onscroll = function () {
     var targetBottom = target.offsetTop + targetHeight;
 
     if (targetBottom - window.scrollY > 0 && target.offsetTop - window.scrollY < 0) {
+      var location = window.location.toString().split('#')[0];
+      history.replaceState(null, null, location + '#' + sectionID);
       spanEl.classList.remove('hidden');
       triggerEl.classList.add('is-active');
     } else {
@@ -1739,11 +1741,14 @@ scrollTriggers.forEach(function (trigger) {
   trigger.setAttribute('href', "#".concat(hrefCleaned));
 }); // * on mobile, when clicking the department nav, show all options
 
-departmentNav.addEventListener('click', function (e) {
-  if (window.innerWidth <= 1024) {
-    departmentNav.classList.add('is-open');
-  }
-});
+if (departmentNav) {
+  departmentNav.addEventListener('click', function (e) {
+    if (window.innerWidth <= 1024) {
+      departmentNav.classList.add('is-open');
+    }
+  });
+} else {}
+
 scrollTriggers.forEach(function (trigger, index) {
   var id = trigger.getAttribute('href');
   var spanEl = trigger.querySelector('span');
