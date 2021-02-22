@@ -44,6 +44,12 @@ settings:
       accordion_group:
         weight: 14
         enabled: false
+      basic_card_w_image:
+        weight: 24
+        enabled: false
+      content_sections:
+        weight: 25
+        enabled: false
       from_library:
         weight: 3
         enabled: false
@@ -79,5 +85,26 @@ settings:
         enabled: false
       link_list_link:
         weight: 16
+        enabled: false
+      news_card_basic:
+        weight: 38
+        enabled: false
+      news_card_lead:
+        weight: 39
+        enabled: false
+      sc_basic_card:
+        weight: 40
+        enabled: false
+      sc_basic_cards_block:
+        weight: 41
+        enabled: false
+      sc_basic_cards_image_block:
+        weight: 42
+        enabled: false
+      sc_news_basic_card_block:
+        weight: 43
+        enabled: false
+      sc_news_lead_card_block:
+        weight: 44
         enabled: false
 field_type: entity_reference_revisions

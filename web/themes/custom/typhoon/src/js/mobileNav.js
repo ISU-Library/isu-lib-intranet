@@ -8,6 +8,7 @@ function resetNavOnDektop(e) {
   const width = window.innerWidth;
   const mediaQuery = window.matchMedia('(min-width: 768px)');
 
+  // !change this to use custom property
   if (window.innerWidth !== width) {
     if (mediaQuery.matches) {
       mobileMenu.style.right = '0';

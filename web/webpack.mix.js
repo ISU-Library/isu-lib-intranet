@@ -14,6 +14,17 @@ require('laravel-mix-postcss-config');
  | Mix Asset Management
  |--------------------------------------------------------------------------
  */
+
+
+mix.browserSync({
+  proxy: 'dev-intra.test',
+  files: [
+    `${destinationDir}/**/*`,
+    `${sourceDir}/**/*`,
+    // `${imagesDir}/**/*.{png,jpg,jpeg,gif,webp,svg}`,
+  ],
+});
+
 // mix.setPublicPath(`${destinationDir}`);
 
 // source ==> production
@@ -54,6 +65,7 @@ mix.options({
     require('autoprefixer'),
   ]
 });
+
 
 // Full API
 // mix.js(src, output);

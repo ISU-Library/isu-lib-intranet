@@ -71,8 +71,8 @@
  */
 #}
 
-{# {% set ImgSrc = file_url(node.field_department_image.entity.fileuri) %} #}
-{% set ImgSrc = '/sites/default/files/default_images/Periodical%20Reading%20Room%20in%20the%20evening%20stylized.jpg' %}
+
+{% set ImgSrc = file_url(node.field_department_image.entity.fileuri) %}
 
 {% set summary = value %}
 <article{{attributes}}>
@@ -88,30 +88,38 @@
   {{ title_suffix }}
 
   <div style="background-image:url({{ImgSrc}})" class="full-width bg-center bg-no-repeat bg-cover">
-    <div{{content_attributes.addClass('flex flex-col justify-end max-w-readable mx-auto p-xl pt-5xl pb-4xl')}}>
-        <h1 class="mb-lg text-white text-shadow-1">
-          {{ label }}
-        </h1>
-        <p class="text-lg text-white text-shadow-1">{{content.field_department_summary|field_value}}</p>
+    <div{{content_attributes.addClass('flex','flex-col','justify-end','max-w-readable','mx-auto','p-xl','pt-5xl','pb-4xl')}}>
+      <h1 class="mb-lg text-white text-shadow-1">
+        {{ label }}
+      </h1>
+      <p class="text-lg text-white text-shadow-1">
+        {{content.field_department_summary|field_value}}
+      </p>
     </div>
   </div>
   <div class="department-nav sticky full-width bg-gradient-to-r from-red-500 to-red-600 border-b-2 border-yellow-600 z-10">
-    <nav class="flex justify-center max-w-readable mx-auto">
+    <nav class="flex flex-col lg:flex-row justify-center items-center max-w-readable mx-auto">
       {% set page_content = content.field_department_page_content %}
-        {% for linkAbstractPara in page_content %}
-          {% for paragraph_field in linkAbstractPara %}
-            {% if paragraph_field.field_content_section_title.value %}
-              {% set anchorLink = paragraph_field.field_content_section_title.value %}
-              {% set anchorText = paragraph_field.field_content_section_title.value %}
-              <a class="realtive px-md py-md text-white hover:text-red-200" href="#{{anchorLink}}">{{anchorText}}<span class="center-x -bottom-1/3 text-2xl text-yellow-600"><i class="fas fa-caret-up"></i></span></a>
-            {% endif %}
+      {% for linkAbstractPara in page_content %}
+        {% for paragraph_field in linkAbstractPara %}
+          {% if paragraph_field.field_content_section_title.value %}
+            {% set anchorLink = paragraph_field.field_content_section_title.value %}
+            {% set anchorText = paragraph_field.field_content_section_title.value %}
+            <a class="js-scrollTrigger realtive px-md py-md text-white hover:text-red-200" href="#{{anchorLink}}">
+              {{anchorText}}
+              <span class="hidden center-x -bottom-1/3 text-2xl text-yellow-600">
+                <i class="fas fa-caret-up"></i>
+              </span>
+            </a>
+          {% endif %}
         {% endfor %}
       {% endfor %}
     </nav>
   </div>
 
-  <div class="mt-4xl">
-    {# See paragraph--content-section.html.twig #}
+  <div
+    class="mt-4xl">
+    {# * See paragraph--content-section.html.twig #}
     {{content.field_department_page_content}}
   </div>
 
