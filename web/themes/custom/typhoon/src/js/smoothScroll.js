@@ -2,7 +2,7 @@
 // var scroll = new SmoothScroll('a[href*="#"]');
 
 // todo: Change focus to selected section
-// todo: If I really wanted to remove smooth scroll, I could try and set data-attributes vs anchors and ID's
+/// todo: If I really wanted to remove smooth scroll, I could try and set data-attributes vs anchors and ID's
 // todo: Doesn't really work well in safari, especially without SmoothScroll
 // todo: Clean this code! It's a mess and jumble of things right now.
 
@@ -10,57 +10,38 @@ const scrollTriggers = document.querySelectorAll('.js-scrollTrigger');
 const scrollTargets = document.querySelectorAll('.js-scrollTarget');
 const departmentNav = document.querySelector('.department-nav');
 
-var vh = document.documentElement.clientHeight;
-var topMargin = Math.ceil(-0.45 * vh);
-var botMargin = Math.ceil(-0.55 * vh);
 
-// *observes if section is on screen
-function handleIntersection(entries) {
-  entries.map(entry => {
-    const sectionID = entry.target.id;
+window.onscroll = function () {
+
+  scrollTargets.forEach(target => {
+    const sectionID = target.id;
     const triggerEl = document.querySelector(`a[href='#${sectionID}']`);
     const spanEl = triggerEl.querySelector('span');
+    const targetHeight = target.offsetHeight;
+    const targetBottom = target.offsetTop + targetHeight
 
-    // * if on screen, chane url hash, update classes
-    if (entry.isIntersecting) {
-      const location = window.location.toString().split('#')[0];
-      history.replaceState(null, null, location + '#' + sectionID);
-
-      // scrollTriggers.forEach(trigger => {
-      //   trigger.classList.remove('is-active');
-      //   trigger.querySelector('span').classList.add('hidden');
-      // });
-
+    if (targetBottom - window.scrollY > 0 && target.offsetTop - window.scrollY < 0) {
       spanEl.classList.remove('hidden');
       triggerEl.classList.add('is-active');
     } else {
       spanEl.classList.add('hidden');
       triggerEl.classList.remove('is-active');
     }
-  })
+  });
+
+  scrollTriggers.forEach((trigger, index) => {
+    const id = trigger.getAttribute('href');
+    const spanEl = trigger.querySelector('span');
+    const target = document.querySelector(`${id}`);
+    const targetHeight = target.offsetHeight;
+    const targetBottom = target.offsetTop + targetHeight;
+
+    if (index == 0 && targetBottom - window.scrollY > 0) {
+      trigger.classList.add('is-active')
+      spanEl.classList.remove('hidden');
+    }
+  });
 }
-
-// * setting options for observer
-const mediaQuery = window.matchMedia('min-width: 1024px');
-
-const options = {
-  // threshold: 0.6,
-  // rootMargin: topMargin + "px 0px " + botMargin + "px",
-  threshold: [0.25, 0.5, 0.75, 1],
-}
-const optionsHalf = {
-  threshold: 0.2,
-}
-const observer = new IntersectionObserver(
-  handleIntersection,
-  options,
-);
-
-
-// * calling observe function on sectiions
-scrollTargets.forEach(target => {
-  observer.observe(target)
-});
 
 // * cleans user input and set it as section ID
 scrollTargets.forEach(target => {
@@ -77,28 +58,38 @@ scrollTriggers.forEach(trigger => {
   trigger.setAttribute('href', `#${hrefCleaned}`);
 });
 
-
 // * on mobile, when clicking the department nav, show all options
-
 departmentNav.addEventListener('click', function (e) {
   if (window.innerWidth <= 1024) {
-    e.preventDefault();
     departmentNav.classList.add('is-open');
   }
 });
 
-scrollTriggers.forEach(trigger => {
+scrollTriggers.forEach((trigger, index) => {
   const id = trigger.getAttribute('href');
+  const spanEl = trigger.querySelector('span');
   const target = document.querySelector(`${id}`)
+  const targetHeight = target.offsetHeight;
+  const targetBottom = target.offsetTop + targetHeight;
+
+  if (index == 0 && targetBottom - window.scrollY > 0) {
+    trigger.classList.add('is-active');
+    spanEl.classList.remove('hidden');
+  }
 
   trigger.addEventListener('click', function (e) {
-    if (departmentNav.classList.contains('is-open')) {
-      e.stopPropagation();
-      departmentNav.classList.remove('is-open');
+    if (window.innerWidth <= 1024) {
+      e.preventDefault();
+
+      if (departmentNav.classList.contains('is-open')) {
+        e.stopPropagation();
+
+        departmentNav.classList.remove('is-open');
+
+        target.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
     }
-    target.scrollIntoView({
-      behavior: 'smooth'
-    });
   })
 });
-

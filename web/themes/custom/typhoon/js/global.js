@@ -1689,29 +1689,22 @@ var slideToggle = function slideToggle(element) {
 // import SmoothScroll from 'smooth-scroll';
 // var scroll = new SmoothScroll('a[href*="#"]');
 // todo: Change focus to selected section
-// todo: If I really wanted to remove smooth scroll, I could try and set data-attributes vs anchors and ID's
+/// todo: If I really wanted to remove smooth scroll, I could try and set data-attributes vs anchors and ID's
 // todo: Doesn't really work well in safari, especially without SmoothScroll
 // todo: Clean this code! It's a mess and jumble of things right now.
 var scrollTriggers = document.querySelectorAll('.js-scrollTrigger');
 var scrollTargets = document.querySelectorAll('.js-scrollTarget');
 var departmentNav = document.querySelector('.department-nav');
-var vh = document.documentElement.clientHeight;
-var topMargin = Math.ceil(-0.45 * vh);
-var botMargin = Math.ceil(-0.55 * vh); // *observes if section is on screen
 
-function handleIntersection(entries) {
-  entries.map(function (entry) {
-    var sectionID = entry.target.id;
+window.onscroll = function () {
+  scrollTargets.forEach(function (target) {
+    var sectionID = target.id;
     var triggerEl = document.querySelector("a[href='#".concat(sectionID, "']"));
-    var spanEl = triggerEl.querySelector('span'); // * if on screen, chane url hash, update classes
+    var spanEl = triggerEl.querySelector('span');
+    var targetHeight = target.offsetHeight;
+    var targetBottom = target.offsetTop + targetHeight;
 
-    if (entry.isIntersecting) {
-      var location = window.location.toString().split('#')[0];
-      history.replaceState(null, null, location + '#' + sectionID); // scrollTriggers.forEach(trigger => {
-      //   trigger.classList.remove('is-active');
-      //   trigger.querySelector('span').classList.add('hidden');
-      // });
-
+    if (targetBottom - window.scrollY > 0 && target.offsetTop - window.scrollY < 0) {
       spanEl.classList.remove('hidden');
       triggerEl.classList.add('is-active');
     } else {
@@ -1719,23 +1712,20 @@ function handleIntersection(entries) {
       triggerEl.classList.remove('is-active');
     }
   });
-} // * setting options for observer
+  scrollTriggers.forEach(function (trigger, index) {
+    var id = trigger.getAttribute('href');
+    var spanEl = trigger.querySelector('span');
+    var target = document.querySelector("".concat(id));
+    var targetHeight = target.offsetHeight;
+    var targetBottom = target.offsetTop + targetHeight;
 
+    if (index == 0 && targetBottom - window.scrollY > 0) {
+      trigger.classList.add('is-active');
+      spanEl.classList.remove('hidden');
+    }
+  });
+}; // * cleans user input and set it as section ID
 
-var mediaQuery = window.matchMedia('min-width: 1024px');
-var options = {
-  // threshold: 0.6,
-  // rootMargin: topMargin + "px 0px " + botMargin + "px",
-  threshold: [0.25, 0.5, 0.75, 1]
-};
-var optionsHalf = {
-  threshold: 0.2
-};
-var observer = new IntersectionObserver(handleIntersection, options); // * calling observe function on sectiions
-
-scrollTargets.forEach(function (target) {
-  observer.observe(target);
-}); // * cleans user input and set it as section ID
 
 scrollTargets.forEach(function (target) {
   var id = target.id;
@@ -1751,22 +1741,33 @@ scrollTriggers.forEach(function (trigger) {
 
 departmentNav.addEventListener('click', function (e) {
   if (window.innerWidth <= 1024) {
-    e.preventDefault();
     departmentNav.classList.add('is-open');
   }
 });
-scrollTriggers.forEach(function (trigger) {
+scrollTriggers.forEach(function (trigger, index) {
   var id = trigger.getAttribute('href');
+  var spanEl = trigger.querySelector('span');
   var target = document.querySelector("".concat(id));
-  trigger.addEventListener('click', function (e) {
-    if (departmentNav.classList.contains('is-open')) {
-      e.stopPropagation();
-      departmentNav.classList.remove('is-open');
-    }
+  var targetHeight = target.offsetHeight;
+  var targetBottom = target.offsetTop + targetHeight;
 
-    target.scrollIntoView({
-      behavior: 'smooth'
-    });
+  if (index == 0 && targetBottom - window.scrollY > 0) {
+    trigger.classList.add('is-active');
+    spanEl.classList.remove('hidden');
+  }
+
+  trigger.addEventListener('click', function (e) {
+    if (window.innerWidth <= 1024) {
+      e.preventDefault();
+
+      if (departmentNav.classList.contains('is-open')) {
+        e.stopPropagation();
+        departmentNav.classList.remove('is-open');
+        target.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+    }
   });
 });
 
