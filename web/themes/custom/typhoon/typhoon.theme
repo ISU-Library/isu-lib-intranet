@@ -83,9 +83,10 @@ if ($node = \Drupal::request()->attributes->get('node'))
     if (!empty($image)) 
     {
       $image_uri = $image->getFileUri();
-      print('image_uri:'.$image_uri);
-      print('image_uri2:'.file_create_url($image_uri));
-      print('image_url:'.file_create_url($image->uri->value));
+      //print('image_uri:'.$image_uri);
+      //print('image_uri2:'.file_create_url($image_uri));
+      //print('image_url:'.file_create_url($image->uri->value));
+      $variables['departments_default_image'] = $image_uri; 
     }
   }
 }
