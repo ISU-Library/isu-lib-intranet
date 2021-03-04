@@ -143,9 +143,9 @@ function typhoon_preprocess_page__front(&$variables) {
               $summary_string = $thing->value;
               if ($count_for_lead_card_section <= 2)
               {
-                $summary_string = str_replace('<p>', '<p class="text-white mb-sm">', $summary_string);
+                $summary_string = str_replace('<p>', '<p class="text-white mb-sm line-clamp-5 xl:line-clamp-7">', $summary_string);
               } elseif ($count_for_lead_card_section > 2) {
-                $summary_string = str_replace('<p>', '<p class="news-card--info mb-md text-md text-normal">', $summary_string);
+                $summary_string = str_replace('<p>', '<p class="news-card--info mb-md text-md line-clamp-5 text-normal">', $summary_string);
               }
               $news_item['body_summary'] = $summary_string; 
             }

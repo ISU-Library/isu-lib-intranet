@@ -157,12 +157,12 @@ $blue-basic-card-text-blue: $blue-700;
 }
 
 .basic-card--title {
-  @include line-clamp(3);
+  // @include line-clamp(3);
   // transition: color 0.3s ease-in;
 }
 
 .basic-card--desc {
-  @include line-clamp(5);
+  // @include line-clamp(5);
   // flex-grow: 1;
   // font-weight: 400;
   // transition: color 0.3s ease-in;
