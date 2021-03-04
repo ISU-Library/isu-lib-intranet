@@ -25,14 +25,14 @@
             {{ data.catergory }}
           </span>
         {% endif %}
-        <h3 class="news-card--title news-card--title text-bold w-full leading-tight mb-sm fs-lg text-white text-shadow-1">
+        <h3 class="news-card--title line-clamp-3 text-bold w-full leading-tight mb-sm fs-lg text-white text-shadow-1">
           {{ data.title }}
         </h3>
         <div class="news-card--text flex-auto text-normal overflow-hidden tranistion-all duration-500 md:h-0 md:flex-none group-hover:flex-auto">
           {% if data.front == TRUE %}
             {{ data.text|raw }}
           {% else %}
-            <p class="text-white mb-sm">
+            <p class="text-white mb-sm line-clamp-5 xl:line-clamp-7">
               {{ data.text }}
             </p>
           {% endif %}
@@ -78,13 +78,13 @@
             {{ data.catergory }}
           </span>
         {% endif %}
-        <h3 title="{{ data.title}}" class="news-card--title news-card--title text-bold w-full leading-tight mt-2xs mb-md text-lg">
+        <h3 title="{{ data.title}}" class="news-card--title line-clamp-2 text-bold w-full leading-tight mt-2xs mb-md text-lg">
           <a href="{{ data.link}}">
             {{ data.title }}
           </a>
         </h3>
         <div class="news-card--desc">
-          <p class="news-card--info mb-md text-md text-normal">
+          <p class="news-card--info mb-md text-md text-normal line-clamp-5">
             {{ data.text|raw }}
           </p>
           <div class="cta--wrap">

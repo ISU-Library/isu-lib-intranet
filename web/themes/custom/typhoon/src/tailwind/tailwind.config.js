@@ -156,6 +156,9 @@ module.exports = {
       }),
       lineHeight: {
         '0': '0',
+      },
+      lineClamp: {
+        7: '7',
       }
     },
   },
@@ -168,5 +171,7 @@ module.exports = {
       scale: ['active', 'group-hover'],
     }
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+  ],
 }

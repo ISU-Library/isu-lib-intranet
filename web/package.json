@@ -42,6 +42,7 @@
     "ie > 10"
   ],
   "dependencies": {
+    "@tailwindcss/line-clamp": "^0.2.0",
     "animejs": "^3.2.1",
     "smooth-scroll": "^16.1.2"
   }

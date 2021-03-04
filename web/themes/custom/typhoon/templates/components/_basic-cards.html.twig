@@ -41,10 +41,10 @@
         {% if data.icon %}
           <span class="basic-card--category icon-{{ data.icon }} {{accentColor}} mb-xs text-2xl"></span>
         {% endif %}
-        <h3 class="basic-card--title {{textColor}}">
+        <h3 class="basic-card--title line-clamp-3 {{textColor}}">
           {{ data.title }}
         </h3>
-        <p class="basic-card--desc flex-grow font-normal mb-md {{textColor}}">
+        <p class="basic-card--desc flex-grow font-normal mb-md line-clamp-5 {{textColor}}">
           {{ data.text|raw }}
         </p>
         <div class="cta--wrap">
@@ -99,7 +99,7 @@
               {{ data.category }}
             </span>
           {% endif %}
-          <h3 class="basic-card--title text-white text-shadow-1">
+          <h3 class="basic-card--title line-clamp-3 text-white text-shadow-1">
             {{ data.title }}
           </h3>
         </div>
@@ -108,7 +108,7 @@
         {{ data.title }}
       </span>
       <div class="basic-card--text-wrap relative pt-md pr-lg pb-2xl pl-xl xs:pt-md xs:pr-sm xs:pb-lg xs:pl-md">
-        <p class="basic-card--desc flex-grow font-normal mb-md {{textColor}}">
+        <p class="basic-card--desc flex-grow font-normal mb-md line-clamp-5 {{textColor}}">
           {{ data.text|raw }}
         </p>
         <div class="cta--wrap">

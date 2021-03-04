@@ -8,6 +8,8 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\user\Entity\User;
+// get field config vars, for example field default images 
+use Drupal\field\Entity\FieldConfig;
 
 function typhoon_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
   if( $form_id == 'search_block_form') {
@@ -63,7 +65,34 @@ function typhoon_preprocess_page(&$variables) {
   // footer
   $variables['footer_social_media1_url'] = theme_get_setting('footer_social_media1_url');
   $variables['footer_social_media1_icon'] = theme_get_setting('footer_social_media1_icon');
+
+
+// TEMP ... example to fetch default images ....
+// TEMP .... just process for type / bundle of 'department_page'
+if ($node = \Drupal::request()->attributes->get('node')) 
+{
+  if ($node->bundle() == 'department_page')
+  {
+    //print('nodetype:'.$node->bundle());
+
+    $field_info = FieldConfig::loadByName('node', 'department_page', 'field_department_image');
+    $image_uuid = $field_info->getSetting('default_image')['uuid'];
+    $image = Drupal::service('entity.repository')->loadEntityByUuid('file', $image_uuid);
+
+    // only if there is a default image ....
+    if (!empty($image)) 
+    {
+      $image_uri = $image->getFileUri();
+      //print('image_uri:'.$image_uri);
+      //print('image_uri2:'.file_create_url($image_uri));
+      //print('image_url:'.file_create_url($image->uri->value));
+      $variables['departments_default_image'] = $image_uri; 
+    }
+  }
 }
+
+
+} // end of function call, not test code :-P
 
 /*
  * Implements theme_preprocess_page().
@@ -114,9 +143,9 @@ function typhoon_preprocess_page__front(&$variables) {
               $summary_string = $thing->value;
               if ($count_for_lead_card_section <= 2)
               {
-                $summary_string = str_replace('<p>', '<p class="text-white mb-sm">', $summary_string);
+                $summary_string = str_replace('<p>', '<p class="text-white mb-sm line-clamp-5 xl:line-clamp-7">', $summary_string);
               } elseif ($count_for_lead_card_section > 2) {
-                $summary_string = str_replace('<p>', '<p class="news-card--info mb-md text-md text-normal">', $summary_string);
+                $summary_string = str_replace('<p>', '<p class="news-card--info mb-md text-md line-clamp-5 text-normal">', $summary_string);
               }
               $news_item['body_summary'] = $summary_string; 
             }
