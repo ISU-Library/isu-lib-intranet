@@ -5,10 +5,6 @@
 /*!**********************************************!*\
   !*** ./node_modules/animejs/lib/anime.es.js ***!
   \**********************************************/
-/*! namespace exports */
-/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
-/*! other exports [not provided] [no usage info] */
-/*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.* */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1331,11 +1327,6 @@ anime.random = function (min, max) { return Math.floor(Math.random() * (max - mi
 /*!***************************************************!*\
   !*** ./themes/custom/typhoon/src/js/accordion.js ***!
   \***************************************************/
-/*! namespace exports */
-/*! export accordionAnimation [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export handleAccordionClick [provided] [no usage info] [missing usage info prevents renaming] */
-/*! other exports [not provided] [no usage info] */
-/*! runtime requirements: __webpack_require__, __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1406,9 +1397,6 @@ var accordionAnimation = showItems.forEach(function (item) {
 /*!************************************************!*\
   !*** ./themes/custom/typhoon/src/js/global.js ***!
   \************************************************/
-/*! namespace exports */
-/*! exports [not provided] [no usage info] */
-/*! runtime requirements: __webpack_require__, __webpack_require__.n, __webpack_require__.r, __webpack_exports__, __webpack_require__.* */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1456,9 +1444,6 @@ _accordion_js__WEBPACK_IMPORTED_MODULE_3__; // capacity
 /*!***************************************************!*\
   !*** ./themes/custom/typhoon/src/js/mobileNav.js ***!
   \***************************************************/
-/*! namespace exports */
-/*! exports [not provided] [no usage info] */
-/*! runtime requirements: __webpack_require__, __webpack_require__.r, __webpack_exports__, __webpack_require__.* */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1539,8 +1524,6 @@ window.addEventListener('resize', resetNavOnDektop);
 /*!******************************************************!*\
   !*** ./themes/custom/typhoon/src/js/searchButton.js ***!
   \******************************************************/
-/*! unknown exports (runtime-defined) */
-/*! runtime requirements:  */
 /***/ (function() {
 
 var searchButton = document.querySelector('.js-main-search-button');
@@ -1558,9 +1541,6 @@ searchButton.addEventListener('click', handleSearchButtonClick);
 /*!*************************************************!*\
   !*** ./themes/custom/typhoon/src/js/sideNav.js ***!
   \*************************************************/
-/*! namespace exports */
-/*! exports [not provided] [no usage info] */
-/*! runtime requirements: __webpack_require__, __webpack_require__.r, __webpack_exports__, __webpack_require__.* */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1597,12 +1577,6 @@ sideNavEl.forEach(function (subNav) {
 /*!***********************************************!*\
   !*** ./themes/custom/typhoon/src/js/slide.js ***!
   \***********************************************/
-/*! namespace exports */
-/*! export slideDown [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export slideToggle [provided] [no usage info] [missing usage info prevents renaming] */
-/*! export slideUp [provided] [no usage info] [missing usage info prevents renaming] */
-/*! other exports [not provided] [no usage info] */
-/*! runtime requirements: __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1682,8 +1656,6 @@ var slideToggle = function slideToggle(element) {
 /*!******************************************************!*\
   !*** ./themes/custom/typhoon/src/js/smoothScroll.js ***!
   \******************************************************/
-/*! unknown exports (runtime-defined) */
-/*! runtime requirements:  */
 /***/ (function() {
 
 // import SmoothScroll from 'smooth-scroll';
@@ -1782,9 +1754,6 @@ scrollTriggers.forEach(function (trigger, index) {
 /*!****************************************************!*\
   !*** ./themes/custom/typhoon/src/scss/global.scss ***!
   \****************************************************/
-/*! namespace exports */
-/*! exports [not provided] [no usage info] */
-/*! runtime requirements: __webpack_require__.r, __webpack_exports__, __webpack_require__.* */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1798,9 +1767,6 @@ __webpack_require__.r(__webpack_exports__);
 /*!*********************************************************!*\
   !*** ./themes/custom/typhoon/src/tailwind/tailwind.css ***!
   \*********************************************************/
-/*! namespace exports */
-/*! exports [not provided] [no usage info] */
-/*! runtime requirements: __webpack_require__.r, __webpack_exports__, __webpack_require__.* */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1838,6 +1804,9 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = __webpack_modules__;
 /******/ 	
+/******/ 	// the startup function
+/******/ 	// It's empty as some runtime module handles the default behavior
+/******/ 	__webpack_require__.x = function() {};
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	!function() {
@@ -1887,7 +1856,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// Promise = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"/themes/custom/typhoon/js/global": 0
+/******/ 			"/js/global": 0
 /******/ 		};
 /******/ 		
 /******/ 		var deferredModules = [
@@ -1905,43 +1874,10 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		
 /******/ 		// no HMR manifest
 /******/ 		
-/******/ 		var checkDeferredModules = function() {
-/******/ 		
-/******/ 		};
-/******/ 		function checkDeferredModulesImpl() {
-/******/ 			var result;
-/******/ 			for(var i = 0; i < deferredModules.length; i++) {
-/******/ 				var deferredModule = deferredModules[i];
-/******/ 				var fulfilled = true;
-/******/ 				for(var j = 1; j < deferredModule.length; j++) {
-/******/ 					var depId = deferredModule[j];
-/******/ 					if(installedChunks[depId] !== 0) fulfilled = false;
-/******/ 				}
-/******/ 				if(fulfilled) {
-/******/ 					deferredModules.splice(i--, 1);
-/******/ 					result = __webpack_require__(__webpack_require__.s = deferredModule[0]);
-/******/ 				}
-/******/ 			}
-/******/ 			if(deferredModules.length === 0) {
-/******/ 				__webpack_require__.x();
-/******/ 				__webpack_require__.x = function() {
-/******/ 		
-/******/ 				}
-/******/ 			}
-/******/ 			return result;
-/******/ 		}
-/******/ 		__webpack_require__.x = function() {
-/******/ 			// reset startup function so it can be called again when more startup code is added
-/******/ 			__webpack_require__.x = function() {
-/******/ 		
-/******/ 			}
-/******/ 			chunkLoadingGlobal = chunkLoadingGlobal.slice();
-/******/ 			for(var i = 0; i < chunkLoadingGlobal.length; i++) webpackJsonpCallback(chunkLoadingGlobal[i]);
-/******/ 			return (checkDeferredModules = checkDeferredModulesImpl)();
-/******/ 		};
+/******/ 		var checkDeferredModules = function() {};
 /******/ 		
 /******/ 		// install a JSONP callback for chunk loading
-/******/ 		var webpackJsonpCallback = function(data) {
+/******/ 		var webpackJsonpCallback = function(parentChunkLoadingFunction, data) {
 /******/ 			var chunkIds = data[0];
 /******/ 			var moreModules = data[1];
 /******/ 			var runtime = data[2];
@@ -1962,7 +1898,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 				}
 /******/ 			}
 /******/ 			if(runtime) runtime(__webpack_require__);
-/******/ 			parentChunkLoadingFunction(data);
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
 /******/ 			while(resolves.length) {
 /******/ 				resolves.shift()();
 /******/ 			}
@@ -1975,13 +1911,42 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		}
 /******/ 		
 /******/ 		var chunkLoadingGlobal = self["webpackChunkiowa_state_library_intranet"] = self["webpackChunkiowa_state_library_intranet"] || [];
-/******/ 		var parentChunkLoadingFunction = chunkLoadingGlobal.push.bind(chunkLoadingGlobal);
-/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback;
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 		
+/******/ 		function checkDeferredModulesImpl() {
+/******/ 			var result;
+/******/ 			for(var i = 0; i < deferredModules.length; i++) {
+/******/ 				var deferredModule = deferredModules[i];
+/******/ 				var fulfilled = true;
+/******/ 				for(var j = 1; j < deferredModule.length; j++) {
+/******/ 					var depId = deferredModule[j];
+/******/ 					if(installedChunks[depId] !== 0) fulfilled = false;
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferredModules.splice(i--, 1);
+/******/ 					result = __webpack_require__(__webpack_require__.s = deferredModule[0]);
+/******/ 				}
+/******/ 			}
+/******/ 			if(deferredModules.length === 0) {
+/******/ 				__webpack_require__.x();
+/******/ 				__webpack_require__.x = function() {};
+/******/ 			}
+/******/ 			return result;
+/******/ 		}
+/******/ 		var startup = __webpack_require__.x;
+/******/ 		__webpack_require__.x = function() {
+/******/ 			// reset startup function so it can be called again when more startup code is added
+/******/ 			__webpack_require__.x = startup || (function() {});
+/******/ 			return (checkDeferredModules = checkDeferredModulesImpl)();
+/******/ 		};
 /******/ 	}();
 /******/ 	
 /************************************************************************/
+/******/ 	
 /******/ 	// run startup
-/******/ 	return __webpack_require__.x();
+/******/ 	var __webpack_exports__ = __webpack_require__.x();
+/******/ 	
 /******/ })()
 ;
 //# sourceMappingURL=global.js.map

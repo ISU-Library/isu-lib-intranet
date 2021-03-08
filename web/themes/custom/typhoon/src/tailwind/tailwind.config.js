@@ -2,7 +2,9 @@
 
 module.exports = {
   purge: [
-    './src/**/*.html',
+    './templates/*.twig',
+    './templates/**/*.twig',
+    './templates/***/**/*.twig',
     './src/**/*.js',
   ],
   darkMode: false, // or 'media' or 'class'

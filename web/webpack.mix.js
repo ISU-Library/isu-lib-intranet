@@ -7,7 +7,6 @@ const tailwindcss = require('tailwindcss');
 
 
 require("laravel-mix-purgecss");
-require('laravel-mix-postcss-config');
 
 /*
  |--------------------------------------------------------------------------
@@ -25,7 +24,7 @@ mix.browserSync({
   ],
 });
 
-// mix.setPublicPath(`${destinationDir}`);
+mix.setPublicPath(`${destinationDir}`);
 
 // source ==> production
 mix.js(`${sourceDir}/js/global.js`, `${destinationDir}/js/global.js`);
@@ -34,13 +33,13 @@ mix.sass(`${sourceDir}/scss/global.scss`, `${destinationDir}/css/global.css`, {
   sassOptions: {
     outputStyle: "compressed"
   }
-})
-  .purgeCss({
-    content: [`public/*/**.html`],
-    css: [`${destinationDir}/css/global.css`],
-    whitelistPatterns: [/js-/],
-    whitelistPatternsChildren: [/link-list--item/]
-  });
+});
+// .purgeCss({
+//   content: [`public/*/**.html`],
+//   css: [`${destinationDir}/css/global.css`],
+//   whitelistPatterns: [/js-/],
+//   whitelistPatternsChildren: [/link-list--item/]
+// });
 
 
 // Only cache bust if production
@@ -59,6 +58,7 @@ mix.disableSuccessNotifications();
 mix.postCss(`${tailwindDir}/tailwind.css`, `${destinationDir}/css/tailwind.css`);
 
 mix.options({
+  autoprefixer: { remove: false },
   postCss: [
     require('postcss-import'),
     tailwindcss(`${tailwindDir}/tailwind.config.js`),

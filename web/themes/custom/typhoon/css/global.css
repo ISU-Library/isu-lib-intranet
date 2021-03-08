@@ -1550,9 +1550,9 @@ input[type=text]:invalid,input[type=password]:invalid,input[type=email]:invalid,
 @font-face{
   font-family:"library-icons";
 
-  src:url(/fonts/library-icons.eot?6222910a83adb0372252e3c17713ecc3);
+  src:url("/themes/custom/typhoon/fonts/library-icons/library-icons.eot");
 
-  src:url(/fonts/library-icons.ttf?d9beaf8e4f43211628e4975c5cfcf0d1) format("truetype"),url(/fonts/library-icons.woff?a7cf48f20b01de81a4b258b6bf9e775e) format("woff"),url(/fonts/library-icons.svg?c8f716e9b3d0ba065d4f6ac0b5ec8176#library-icons) format("svg");
+  src:url("/themes/custom/typhoon/fonts/library-icons/library-icons.ttf?5458qa") format("truetype"),url("/themes/custom/typhoon/fonts/library-icons/library-icons.woff?5458qa") format("woff"),url("/themes/custom/typhoon/fonts/library-icons/library-icons.svg?5458qa#library-icons") format("svg");
 
   font-weight:normal;
 

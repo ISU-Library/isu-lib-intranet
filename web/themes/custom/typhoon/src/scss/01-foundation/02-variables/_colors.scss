@@ -3,75 +3,75 @@
 ==================================================*/
 
 // Primary Color
-$red-900: hsla(348, 90, 20, 1);
-$red-800: hsla(350, 85, 26, 1);
-$red-700: hsla(350, 79, 32, 1);
-$red-600: hsla(350, 82, 38, 1);
-$red-500: hsla(350, 85, 42, 1);
-$red-400: hsla(357, 74, 56, 1);
-$red-300: hsla(358, 82, 67, 1);
-$red-200: hsla(358, 86, 82, 1);
-$red-100: hsla(360, 94, 95, 1);
-$red-50: hsla(360, 94, 98, 1);
+$red-900: hsl(348, 90%, 20%);
+$red-800: hsl(350, 85%, 26%);
+$red-700: hsl(350, 79%, 32%);
+$red-600: hsl(350, 82%, 38%);
+$red-500: hsl(350, 85%, 42%);
+$red-400: hsl(357, 74%, 56%);
+$red-300: hsl(358, 82%, 67%);
+$red-200: hsl(358, 86%, 82%);
+$red-100: hsl(360, 94%, 95%);
+$red-50: hsl(360, 94%, 98%);
 
 // Secodary Color
-$yellow-900: hsla(18, 90, 26, 1);
-$yellow-800: hsla(26, 93, 35, 1);
-$yellow-700: hsla(37, 98, 41, 1);
-$yellow-600: hsla(41, 91, 49, 1);
-$yellow-500: hsla(42, 86, 61, 1);
-$yellow-400: hsla(46, 96, 70, 1);
-$yellow-300: hsla(50, 96, 75, 1);
-$yellow-200: hsla(52, 96, 85, 1);
-$yellow-100: hsla(50, 99, 92, 1);
-$yellow-50: hsla(50, 99, 96, 1);
+$yellow-900: hsl(18, 90%, 26%);
+$yellow-800: hsl(26, 93%, 35%);
+$yellow-700: hsl(37, 98%, 41%);
+$yellow-600: hsl(41, 91%, 49%);
+$yellow-500: hsl(42, 86%, 61%);
+$yellow-400: hsl(46, 96%, 70%);
+$yellow-300: hsl(50, 96%, 75%);
+$yellow-200: hsl(52, 96%, 85%);
+$yellow-100: hsl(50, 99%, 92%);
+$yellow-50: hsl(50, 99%, 96%);
 
 // Neutrals
-$warm-grey-900: hsl(48, 15, 13, 1);
-$warm-grey-800: hsla(47, 13, 23, 1);
-$warm-grey-700: hsla(47, 11, 28, 1);
-$warm-grey-600: hsla(47, 9, 35, 1);
-$warm-grey-500: hsla(47, 8, 48, 1);
-$warm-grey-400: hsla(47, 8, 61, 1);
-$warm-grey-300: hsla(47, 11, 69, 1);
-$warm-grey-200: hsla(47, 15, 80, 1);
-$warm-grey-100: hsla(47, 13, 90, 1);
-$warm-grey-50: hsla(47, 13, 96, 1);
+$warm-grey-900: hsl(48, 15%, 13%);
+$warm-grey-800: hsl(47, 13%, 23%);
+$warm-grey-700: hsl(47, 11%, 28%);
+$warm-grey-600: hsl(47, 9%, 35%);
+$warm-grey-500: hsl(47, 8%, 48%);
+$warm-grey-400: hsl(47, 8%, 61%);
+$warm-grey-300: hsl(47, 11%, 69%);
+$warm-grey-200: hsl(47, 15%, 80%);
+$warm-grey-100: hsl(47, 13%, 90%);
+$warm-grey-50: hsl(47, 13%, 96%);
 
-$grey-900: hsla(0, 0, 13, 1);
-$grey-800: hsla(0, 0, 23, 1);
-$grey-700: hsla(0, 0, 32, 1);
-$grey-600: hsla(0, 0, 38, 1);
-$grey-500: hsla(0, 0, 49, 1);
-$grey-400: hsla(0, 0, 62, 1);
-$grey-300: hsla(0, 0, 69, 1);
-$grey-200: hsla(0, 0, 81, 1);
-$grey-100: hsla(0, 0, 88, 1);
-$grey-50: hsla(0, 0, 95, 1);
+$grey-900: hsl(0, 0%, 13%);
+$grey-800: hsl(0, 0%, 23%);
+$grey-700: hsl(0, 0%, 32%);
+$grey-600: hsl(0, 0%, 38%);
+$grey-500: hsl(0, 0%, 49%);
+$grey-400: hsl(0, 0%, 62%);
+$grey-300: hsl(0, 0%, 69%);
+$grey-200: hsl(0, 0%, 81%);
+$grey-100: hsl(0, 0%, 88%);
+$grey-50: hsl(0, 0%, 95%);
 
 // Accent colors
-$blue-900: hsla(204, 90, 15, 1);
-$blue-800: hsla(203, 92, 23, 1);
-$blue-700: hsla(201, 100, 33, 1);
-$blue-600: hsla(201, 88, 42, 1);
-$blue-500: hsla(200, 84, 49, 1);
-$blue-400: hsla(199, 93, 53, 1);
-$blue-300: hsla(199, 97, 63, 1);
-$blue-200: hsla(201, 93, 82, 1);
-$blue-100: hsla(202, 92, 95, 1);
-$blue-50: hsla(204, 90, 97, 1);
+$blue-900: hsl(204, 90%, 15%);
+$blue-800: hsl(203, 92%, 23%);
+$blue-700: hsl(201, 100%, 33%);
+$blue-600: hsl(201, 88%, 42%);
+$blue-500: hsl(200, 84%, 49%);
+$blue-400: hsl(199, 93%, 53%);
+$blue-300: hsl(199, 97%, 63%);
+$blue-200: hsl(201, 93%, 82%);
+$blue-100: hsl(202, 92%, 95%);
+$blue-50: hsl(204, 90%, 97%);
 
 // success colors
-$green-900: hsla(125, 97, 14, 1);
-$green-800: hsla(125, 86, 20, 1);
-$green-700: hsla(125, 79, 26, 1);
-$green-600: hsla(124, 75, 30, 1);
-$green-500: hsla(122, 73, 35, 1);
-$green-400: hsla(123, 57, 45, 1);
-$green-300: hsla(123, 53, 55, 1);
-$green-200: hsla(124, 63, 74, 1);
-$green-100: hsla(127, 65, 85, 1);
-$green-50: hsla(125, 65, 93, 1);
+$green-900: hsl(125, 97%, 14%);
+$green-800: hsl(125, 86%, 20%);
+$green-700: hsl(125, 79%, 26%);
+$green-600: hsl(124, 75%, 30%);
+$green-500: hsl(122, 73%, 35%);
+$green-400: hsl(123, 57%, 45%);
+$green-300: hsl(123, 53%, 55%);
+$green-200: hsl(124, 63%, 74%);
+$green-100: hsl(127, 65%, 85%);
+$green-50: hsl(125, 65%, 93%);
 
 $black: $grey-900;
-$white: hsla(0, 0, 100, 1);
+$white: hsl(0, 0%, 100%);
