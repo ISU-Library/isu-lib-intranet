@@ -55,7 +55,6 @@ scrollTargets.forEach(target => {
 scrollTriggers.forEach(trigger => {
   const id = trigger.getAttribute('href');
   const hrefCleaned = id.replace(/\W+/g, '-').replace(/^-|-$/g, '').toLowerCase();
-
   trigger.setAttribute('href', `#${hrefCleaned}`);
 });
 
@@ -66,8 +65,6 @@ if (departmentNav) {
       departmentNav.classList.add('is-open');
     }
   });
-} else {
-
 }
 
 scrollTriggers.forEach((trigger, index) => {
