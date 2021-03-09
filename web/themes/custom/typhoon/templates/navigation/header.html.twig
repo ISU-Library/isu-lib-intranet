@@ -1,41 +1,41 @@
 <header role="banner" class="sticky top-0 z-50">
   {{ page.header }}
   <div class="relative overflow-hidden md:px-3xl shadow-dark-1 bg-red-600 z-50">
-    <div class="flex sm:flex-col sm:justify-end items-end max-w-8xl m-auto px-md sm:px-xl md:px-lg">
-      <div class="flex">
+    <div class="flex flex-col max-w-8xl m-auto px-2xs sm:px-md sm:px-xl md:px-lg">
+      <div class="flex flex-col sm:flex-row items-end sm:justify-end w-full">
         <div class="nav-triangles"></div>
-        <ul class="util-nav--list flex justify-end mb-0">
+        <ul class="util-nav--list flex justify-end mb-0 z-10">
           {% if lib_util_nav1_text %}
             <li class="flex flex-col justify-center">
-              <a class="p-md text-sm text-white transition-colors hover:text-warm-grey-200" href="{{ lib_util_nav1_url }}">
+              <a class="p-sm md:p-md text-xs sm:text-sm text-white text-center sm:text-left transition-colors hover:text-warm-grey-200" href="{{ lib_util_nav1_url }}">
                 {{ lib_util_nav1_text }}
               </a>
             </li>
           {% endif %}
           {% if lib_util_nav2_text %}
             <li class="flex flex-col justify-center">
-              <a class="p-md text-sm text-white transition-colors hover:text-warm-grey-200" href="{{ lib_util_nav2_url }}">
+              <a class="p-sm md:p-md text-xs sm:text-sm text-white text-center sm:text-left transition-colors hover:text-warm-grey-200" href="{{ lib_util_nav2_url }}">
                 {{ lib_util_nav2_text }}
               </a>
             </li>
           {% endif %}
           {% if lib_util_nav3_text %}
             <li class="flex flex-col justify-center">
-              <a class="p-md text-sm text-white transition-colors hover:text-warm-grey-200" href="{{ lib_util_nav3_url }}">
+              <a class="p-sm md:p-md text-xs sm:text-sm text-white text-center sm:text-left transition-colors hover:text-warm-grey-200" href="{{ lib_util_nav3_url }}">
                 {{ lib_util_nav3_text }}
               </a>
             </li>
           {% endif %}
           {% if lib_util_nav4_text %}
             <li class="flex flex-col justify-center">
-              <a class="p-md text-sm text-white transition-colors hover:text-warm-grey-200" href="{{ lib_util_nav4_url }}">
+              <a class="p-sm md:p-md text-xs sm:text-sm text-white text-center sm:text-left transition-colors hover:text-warm-grey-200" href="{{ lib_util_nav4_url }}">
                 {{ lib_util_nav4_text }}
               </a>
             </li>
           {% endif %}
           {% if lib_util_nav5_text %}
             <li class="flex flex-col justify-center">
-              <a class="p-md text-sm text-white transition-colors hover:text-warm-grey-200" href="{{ lib_util_nav5_url }}">
+              <a class="p-sm md:p-md text-xs sm:text-sm text-white text-center sm:text-left transition-colors hover:text-warm-grey-200" href="{{ lib_util_nav5_url }}">
                 {{ lib_util_nav5_text }}
               </a>
             </li>
