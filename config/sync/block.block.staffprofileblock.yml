@@ -1,0 +1,25 @@
+uuid: a93cd22a-0ae0-406f-b0b5-d18af9393428
+langcode: en
+status: true
+dependencies:
+  module:
+    - staffdir
+    - system
+  theme:
+    - typhoon
+id: staffprofileblock
+theme: typhoon
+region: content
+weight: 0
+provider: null
+plugin: staff_profile_block
+settings:
+  id: staff_profile_block
+  label: 'Staff Profile Block'
+  provider: staffdir
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: /staff-profile
+    negate: false

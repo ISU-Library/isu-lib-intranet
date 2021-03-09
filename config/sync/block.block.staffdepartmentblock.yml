@@ -1,0 +1,28 @@
+uuid: 32b7976a-64ec-48e6-87ea-1ea43653a650
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - staffdir
+  theme:
+    - typhoon
+id: staffdepartmentblock
+theme: typhoon
+region: content
+weight: 8
+provider: null
+plugin: staff_dept_block
+settings:
+  id: staff_dept_block
+  label: 'Department Staff'
+  provider: staffdir
+  label_display: visible
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      department_page: department_page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
