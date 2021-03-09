@@ -9,7 +9,7 @@ logo:
 favicon:
   use_default: 1
 lib_util_nav1_text: 'Staff Directory'
-lib_util_nav1_url: 'http://dev-intra.lib.iastate.edu/staffdir'
+lib_util_nav1_url: 'http://dev-intra.lib.iastate.edu/staff-directory'
 lib_util_nav2_text: Forms
 lib_util_nav2_url: 'http://dev-intra.test/forms'
 lib_util_nav3_text: Ipsum
