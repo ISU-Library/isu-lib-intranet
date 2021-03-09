@@ -1,0 +1,30 @@
+<?php
+
+
+/**
+ * Implements hook_theme().
+ */
+function staffdir_theme($existing, $type, $theme, $path) {
+  return [
+    'staff_list' => [
+      'template' => 'staff_list',
+      'variables' => [
+        'staffpersons' => [],
+      ],
+    ],
+    'staff_profile' => [
+      'template' => 'staff_profile',
+      'variables' => [
+        'staffattributes' => [],
+      ],
+    ],
+    'staff_dept' => [
+      'template' => 'staff_dept',
+      'variables' => [
+        'deptpersons' => [],
+      ],
+    ],
+  ];
+}
+
+

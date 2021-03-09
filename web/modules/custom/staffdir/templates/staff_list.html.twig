@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * Default template for the staff list page.
+ *
+ * Available variables:
+ * - staffpersons: Array of staffperson informations.
+ *   A staffperson information consists of:
+ *   - netid
+ *   - surname, firstname
+ *   - title
+ *   - unitname
+ *   - not used (midname, firstchar, staff_ord, unit_ord)
+ */
+#}
+
+<h3>
+    Library staff directory
+</h3>
+<table>
+    <tbody>
+    {% for staffperson in staffpersons %}
+        <tr>
+            <td><a href="/staff-profile?netid={{ staffperson.netid }}">{{ staffperson.surname }}, {{ staffperson.firstname }}</a></td>
+            <td>{{ staffperson.title }}</td>
+            <td>{{ staffperson.unitname }}</td>
+            <td><a href="mailto:{{ staffperson.netid }}@iastate.edu">{{ staffperson.netid }}@iastate.edu</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

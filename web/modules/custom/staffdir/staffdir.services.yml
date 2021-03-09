@@ -1,0 +1,6 @@
+services:
+  staffdir.staffdir_client:
+    class: Drupal\staffdir\StaffdirClient
+    arguments:
+      - '@http_client_factory'
+
