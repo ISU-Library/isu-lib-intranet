@@ -1403,7 +1403,6 @@ var accordionAnimation = showItems.forEach(function (item) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mobileNav_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mobileNav.js */ "./themes/custom/typhoon/src/js/mobileNav.js");
 /* harmony import */ var _searchButton_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./searchButton.js */ "./themes/custom/typhoon/src/js/searchButton.js");
-/* harmony import */ var _searchButton_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_searchButton_js__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _sideNav_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sideNav.js */ "./themes/custom/typhoon/src/js/sideNav.js");
 /* harmony import */ var _accordion_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./accordion.js */ "./themes/custom/typhoon/src/js/accordion.js");
 /* harmony import */ var _smoothScroll__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./smoothScroll */ "./themes/custom/typhoon/src/js/smoothScroll.js");
@@ -1524,13 +1523,17 @@ window.addEventListener('resize', resetNavOnDektop);
 /*!******************************************************!*\
   !*** ./themes/custom/typhoon/src/js/searchButton.js ***!
   \******************************************************/
-/***/ (function() {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _slide_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./slide.js */ "./themes/custom/typhoon/src/js/slide.js");
 
 var searchButton = document.querySelector('.js-main-search-button');
 
 function handleSearchButtonClick(e) {
   var searchInput = document.querySelector('.js-search-wrapper');
-  searchInput.classList.toggle('hidden');
+  (0,_slide_js__WEBPACK_IMPORTED_MODULE_0__.slideToggle)(searchInput);
 }
 
 searchButton.addEventListener('click', handleSearchButtonClick);
@@ -1719,7 +1722,7 @@ if (departmentNav) {
       departmentNav.classList.add('is-open');
     }
   });
-} else {}
+}
 
 scrollTriggers.forEach(function (trigger, index) {
   var id = trigger.getAttribute('href');

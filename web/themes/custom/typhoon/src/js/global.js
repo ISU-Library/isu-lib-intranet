@@ -10,7 +10,6 @@ import * as smoothScroll from './smoothScroll';
 // Todo: split into new file
 const header = document.querySelector('header');
 const headerHeight = header.offsetHeight;
-
 const root = document.documentElement;
 
 const resizeObserverHeader = new ResizeObserver(entries => {
