@@ -1,5 +1,5 @@
 staffdir.content:
-  path: '/staffdir' 
+  path: '/staff-directory' 
   defaults: 
     _controller: '\Drupal\staffdir\Controller\StaffdirController::content' 
     _title: 'Staff directory'
