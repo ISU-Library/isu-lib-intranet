@@ -42,7 +42,7 @@
 }
 
 .search__search-form form {
-  @apply flex py-sm pl-md m-0;
+  @apply flex justify-end py-sm pl-md pr-md sm:pr-0 m-0;
 }
 
 .search__search-form form .form-item {
