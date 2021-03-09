@@ -1,0 +1,7 @@
+staffdir.content:
+  path: '/staffdir' 
+  defaults: 
+    _controller: '\Drupal\staffdir\Controller\StaffdirController::content' 
+    _title: 'Staff directory'
+  requirements: 
+    _permission: 'access content' 
