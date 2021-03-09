@@ -1676,7 +1676,7 @@ window.onscroll = function () {
     var targetHeight = target.offsetHeight;
     var targetBottom = target.offsetTop + targetHeight;
 
-    if (targetBottom - window.scrollY > 0 && target.offsetTop - window.scrollY < 0) {
+    if (targetBottom - window.scrollY > 58 && target.offsetTop - window.scrollY < 58) {
       var location = window.location.toString().split('#')[0];
       history.replaceState(null, null, location + '#' + sectionID);
       spanEl.classList.remove('hidden');
@@ -1693,7 +1693,7 @@ window.onscroll = function () {
     var targetHeight = target.offsetHeight;
     var targetBottom = target.offsetTop + targetHeight;
 
-    if (index == 0 && targetBottom - window.scrollY > 0) {
+    if (index == 0 && targetBottom - window.scrollY > 58) {
       trigger.classList.add('is-active');
       spanEl.classList.remove('hidden');
     }
