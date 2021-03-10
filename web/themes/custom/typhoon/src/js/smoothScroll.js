@@ -70,7 +70,7 @@ if (departmentNav) {
 scrollTriggers.forEach((trigger, index) => {
   const id = trigger.getAttribute('href');
   const spanEl = trigger.querySelector('span');
-  const target = document.querySelector(`${id}`)
+  const target = document.querySelector(`${id}`);
   const targetHeight = target.offsetHeight;
   const targetBottom = target.offsetTop + targetHeight;
 

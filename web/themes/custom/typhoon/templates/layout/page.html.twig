@@ -50,11 +50,7 @@
 
   {% set sidebar = page.sidebar_first ? 'max-w-9xl' : 'max-w-readable' %}
 
-  <div
-    class="relative flex-grow">
-    {# <div aria-hidden="true" class="flair-img staff-news--dots-red-bars z-10">
-                                              <img src="/themes/custom/typhoon/images/dot-pattern-red-bars.png" alt="">
-                                            </div> #}
+  <div class="relative flex-grow">
     <div class="typhoon-grid grid grid-cols-12 gap-md relative mx-auto px-2xl flex-initial {{sidebar}} z-20">
       {{ page.breadcrumb }}
       {{ page.highlighted }}
@@ -84,9 +80,6 @@
       {% endif %}
       {# {% if page.sidebar_second %}<aside class="layout-sidebar-second" role="complementary">{{ page.sidebar_second }}</aside>{% endif %} #}
     </div>
-    {# <div aria-hidden="true" class="flair-img staff-updates--dots z-10">
-                                                              <img src="/themes/custom/typhoon/images/small-dots.png" alt="">
-                                                            </div> #}
   </div>
   {% if page.footer %}
     {% include "@typhoon/navigation/footer-nav.html.twig" %}
