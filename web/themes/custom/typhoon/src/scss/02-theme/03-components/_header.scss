@@ -224,10 +224,10 @@ $header-content-max-width: 1400px;
 }
 
 .main-nav--dropdown {
-  width: 100%;
+  // width: 100%;
 
   @include bp(md) {
-    width: rem(300);
+    // width: rem(300);
   }
 
   // display: none;
