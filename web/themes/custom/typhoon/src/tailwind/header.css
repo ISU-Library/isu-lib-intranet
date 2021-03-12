@@ -1,4 +1,3 @@
-
 /****** Utility Nav Section ******/
 
 .nav-triangles {
@@ -76,15 +75,26 @@
   @apply right-0;
 }
 
-.main-nav--dropdown .dropdown--item a::after {
+@media (min-width: 768px) {
+  .main-nav--dropdown{
+    width: 500px;
+  }
+}
+
+.main-nav--dropdown>.dropdown--item>a::after {
   content: '\f054';
   font-family: 'Fontawesome';
   @apply absolute -left-md top-1/2 h-auto text-white md:text-red-500 bg-transparent transition-all duration-300 transform -translate-y-1/2;
 }
 
-.main-nav--dropdown .dropdown--item:hover a::after,
-.main-nav--dropdown .dropdown--item .is-active::after {
+.main-nav--dropdown>.dropdown--item:hover>a::after,
+.main-nav--dropdown>.dropdown--item>.is-active::after {
   @apply left-0
+}
+@media (min-width: 768px) {
+  .second-nav--item.js-active .main-nav--third-list{
+    @apply block;
+  }
 }
 
 .js-mobile-menu {
@@ -95,5 +105,5 @@
 @media (min-width: 768px) {
   .js-mobile-menu {
     top: 0;
-  } 
+  }
 }

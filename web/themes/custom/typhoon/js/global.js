@@ -1402,12 +1402,15 @@ var accordionAnimation = showItems.forEach(function (item) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mobileNav_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mobileNav.js */ "./themes/custom/typhoon/src/js/mobileNav.js");
-/* harmony import */ var _searchButton_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./searchButton.js */ "./themes/custom/typhoon/src/js/searchButton.js");
-/* harmony import */ var _sideNav_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sideNav.js */ "./themes/custom/typhoon/src/js/sideNav.js");
-/* harmony import */ var _accordion_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./accordion.js */ "./themes/custom/typhoon/src/js/accordion.js");
-/* harmony import */ var _smoothScroll__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./smoothScroll */ "./themes/custom/typhoon/src/js/smoothScroll.js");
-/* harmony import */ var _smoothScroll__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_smoothScroll__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _thirdLevelNavSelect_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./thirdLevelNavSelect.js */ "./themes/custom/typhoon/src/js/thirdLevelNavSelect.js");
+/* harmony import */ var _thirdLevelNavSelect_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_thirdLevelNavSelect_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _searchButton_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./searchButton.js */ "./themes/custom/typhoon/src/js/searchButton.js");
+/* harmony import */ var _sideNav_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./sideNav.js */ "./themes/custom/typhoon/src/js/sideNav.js");
+/* harmony import */ var _accordion_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./accordion.js */ "./themes/custom/typhoon/src/js/accordion.js");
+/* harmony import */ var _smoothScroll__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./smoothScroll */ "./themes/custom/typhoon/src/js/smoothScroll.js");
+/* harmony import */ var _smoothScroll__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_smoothScroll__WEBPACK_IMPORTED_MODULE_5__);
 // elements animation
+
 
 
 
@@ -1428,13 +1431,14 @@ root.style.setProperty('--header-height', "".concat(headerHeight, "px")); // Cha
 
 resizeObserverHeader.observe(header); // show search button
 
-_searchButton_js__WEBPACK_IMPORTED_MODULE_1__; // all Js for mobile menu
+_searchButton_js__WEBPACK_IMPORTED_MODULE_2__; // all Js for mobile menu
 
 _mobileNav_js__WEBPACK_IMPORTED_MODULE_0__;
-_sideNav_js__WEBPACK_IMPORTED_MODULE_2__;
-_smoothScroll__WEBPACK_IMPORTED_MODULE_4__; // accordion
+_thirdLevelNavSelect_js__WEBPACK_IMPORTED_MODULE_1__;
+_sideNav_js__WEBPACK_IMPORTED_MODULE_3__;
+_smoothScroll__WEBPACK_IMPORTED_MODULE_5__; // accordion
 
-_accordion_js__WEBPACK_IMPORTED_MODULE_3__; // capacity
+_accordion_js__WEBPACK_IMPORTED_MODULE_4__; // capacity
 // capacity;
 
 /***/ }),
@@ -1748,6 +1752,29 @@ scrollTriggers.forEach(function (trigger, index) {
         });
       }
     }
+  });
+});
+
+/***/ }),
+
+/***/ "./themes/custom/typhoon/src/js/thirdLevelNavSelect.js":
+/*!*************************************************************!*\
+  !*** ./themes/custom/typhoon/src/js/thirdLevelNavSelect.js ***!
+  \*************************************************************/
+/***/ (function() {
+
+// third-level nav
+var mainNavItem = document.querySelectorAll('.main-nav--item'); // todo: Only works with mouseover, needs to work with screenreaders
+
+mainNavItem.forEach(function (navItem) {
+  var secondNavEls = navItem.querySelectorAll('.second-nav--item');
+  secondNavEls.forEach(function (secondNavEl) {
+    secondNavEl.addEventListener('mouseover', function () {
+      secondNavEls.forEach(function (allSecondNavEls) {
+        allSecondNavEls.classList.remove('js-active');
+      });
+      secondNavEl.classList.add('js-active');
+    });
   });
 });
 

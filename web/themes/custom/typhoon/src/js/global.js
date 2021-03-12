@@ -1,5 +1,6 @@
 // elements animation
 import * as mobileNav from './mobileNav.js';
+import * as thirdLevelNav from './thirdLevelNavSelect.js';
 import * as searchButtonShow from './searchButton.js';
 import * as sideNav from './sideNav.js';
 
@@ -25,12 +26,12 @@ root.style.setProperty('--header-height', `${headerHeight}px`);
 // Change headerHeight on height change
 resizeObserverHeader.observe(header);
 
-
 // show search button
 searchButtonShow;
 
 // all Js for mobile menu
 mobileNav;
+thirdLevelNav;
 sideNav;
 smoothScroll;
 
