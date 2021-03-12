@@ -195,20 +195,6 @@ ul ul,ol ol,ul ol,ol ul{
   padding-left:1rem
 }
 
-ul{
-  list-style:none;
-  padding-left:1rem
-}
-
-ul ul{
-  list-style:initial;
-  margin-left:.5rem
-}
-
-ul ul ul{
-  list-style:circle
-}
-
 ol ol{
   list-style:lower-alpha
 }
@@ -1317,16 +1303,6 @@ input[type=text]:invalid,input[type=password]:invalid,input[type=email]:invalid,
 
 .main-nav--wrap .main-nav nav{
   z-index:10
-}
-
-.main-nav--dropdown{
-  width:100%
-}
-
-@media(min-width: 768px){
-  .main-nav--dropdown{
-    width:18.75rem
-  }
 }
 
 .side-nav{
