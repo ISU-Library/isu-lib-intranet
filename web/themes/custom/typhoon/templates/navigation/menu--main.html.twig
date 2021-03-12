@@ -36,13 +36,13 @@
 
     {% set mainNavTopItem = 'main-nav--item js-main-nav-select relative md:px-0 transition-colors' %}
     {% set mainNavDropdownList = 'dropdown--item overflow-hidden' %}
-    {% set thirdLevel = 'py-sm md:py-0 pl-sm md:pl-0' %}
+    {% set thirdLevel = 'py-sm md:py-xs pl-sm md:pl-0' %}
 
     {% set mainNavClasses = 'main-nav--list flex flex-col md:flex-row justify-end m-0 border-t-2 md:border-t-0 border-red-600 md:bg-white'  %}
 
     {% set secondNavClasses = 'main-nav--dropdown main-nav--sub-list hidden overflow-hidden md:absolute l-0 ml-0 mt-xs md:mt-0 py-0 px-lg md:py-lg list-none md:bg-white rounded-sm md:shadow-light-2 md:group-hover:block md:group-focus:block'%}
 
-    {% set thirdNavClasses = 'main-nav--third-list md:hidden md:absolute md:w-1/2 md:h-full top-0 left-1/2 px-lg md:py-lg md:border-l-2 md:zborder-warm-grey-50'%}
+    {% set thirdNavClasses = 'main-nav--third-list md:hidden md:absolute md:w-1/2 md:h-full top-0 left-1/2 px-lg md:py-lg md:border-l-2 md:border-warm-grey-50'%}
 
     {% if menu_level == 0 %}
       {# *sets top level nav #}
@@ -70,7 +70,7 @@
               mainNavDropdownList,
               item.is_expanded ? 'main-nav--item_expanded',
               item.is_collapsed ? 'main-nav--item_collapsed',
-              item.in_active_trail ? 'main-nav--item_active-trail',
+              item.in_active_trail ? 'main-nav--item_active-trail js-active',
               item.below ? 'dropdown-menu group',
               'second-nav--item md:w-1/2'
             ] %}
@@ -88,7 +88,7 @@
               item.in_active_trail ? 'is-active bg-red-500 text-white',
             ] %}
 
-            {% set secondLevelLinks = [ 'relative block py-sm pl-md md:pl-lg pr-lg text-md font-semibold transition-all duration-300 hover:text-warm-grey-200 md:hover:text-red-500 focus:text-white md:focus:text-red-500',
+            {% set secondLevelLinks = [ 'relative block py-sm pl-md md:pl-lg pr-lg text-md font-semibold md:font-normal transition-all duration-300 hover:text-warm-grey-200 md:hover:text-red-500 focus:text-white md:focus:text-red-500',
               item.in_active_trail ? 'is-active text-white md:text-red-500' : 'text-white md:text-black',
             ] %}
 
