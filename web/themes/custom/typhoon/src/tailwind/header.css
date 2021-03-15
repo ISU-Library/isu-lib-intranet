@@ -59,6 +59,11 @@
 
 /****** main nav-section ******/
 
+header{
+  --nav-height: calc(100vh - 75px);
+}
+
+
 .main-nav .logo {
   max-width: 12.5rem;
 }
@@ -67,6 +72,10 @@
   .main-nav .logo {
     max-width: 15.625rem;
   }
+}
+
+.main-nav nav {
+  height: var(--nav-height);
 }
 
 .main-nav--item:nth-last-child(1) .main-nav--dropdown,
@@ -98,7 +107,7 @@
 }
 
 .js-mobile-menu {
-  height: calc(100vh - 75px);
+  height: var(--nav-height);
   top: var(--header-height);
 }
 
