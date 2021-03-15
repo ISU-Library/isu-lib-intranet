@@ -1407,8 +1407,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _searchButton_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./searchButton.js */ "./themes/custom/typhoon/src/js/searchButton.js");
 /* harmony import */ var _sideNav_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./sideNav.js */ "./themes/custom/typhoon/src/js/sideNav.js");
 /* harmony import */ var _accordion_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./accordion.js */ "./themes/custom/typhoon/src/js/accordion.js");
-/* harmony import */ var _smoothScroll__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./smoothScroll */ "./themes/custom/typhoon/src/js/smoothScroll.js");
-/* harmony import */ var _smoothScroll__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_smoothScroll__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _scrollSpy__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./scrollSpy */ "./themes/custom/typhoon/src/js/scrollSpy.js");
+/* harmony import */ var _scrollSpy__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_scrollSpy__WEBPACK_IMPORTED_MODULE_5__);
 // elements animation
 
 
@@ -1436,7 +1436,7 @@ _searchButton_js__WEBPACK_IMPORTED_MODULE_2__; // all Js for mobile menu
 _mobileNav_js__WEBPACK_IMPORTED_MODULE_0__;
 _thirdLevelNavSelect_js__WEBPACK_IMPORTED_MODULE_1__;
 _sideNav_js__WEBPACK_IMPORTED_MODULE_3__;
-_smoothScroll__WEBPACK_IMPORTED_MODULE_5__; // accordion
+_scrollSpy__WEBPACK_IMPORTED_MODULE_5__; // accordion
 
 _accordion_js__WEBPACK_IMPORTED_MODULE_4__; // capacity
 // capacity;
@@ -1520,6 +1520,114 @@ mainNavEl.forEach(function (subNav) {
   });
 });
 window.addEventListener('resize', resetNavOnDektop);
+
+/***/ }),
+
+/***/ "./themes/custom/typhoon/src/js/scrollSpy.js":
+/*!***************************************************!*\
+  !*** ./themes/custom/typhoon/src/js/scrollSpy.js ***!
+  \***************************************************/
+/***/ (function() {
+
+// import SmoothScroll from 'smooth-scroll';
+// var scroll = new SmoothScroll('a[href*="#"]');
+// todo: Change focus to selected section
+/// todo: If I really wanted to remove smooth scroll, I could try and set data-attributes vs anchors and ID's
+// todo: Doesn't really work well in safari, especially without SmoothScroll
+// todo: Clean this code! It's a mess and jumble of things right now.
+var scrollTriggers = document.querySelectorAll('.js-scrollTrigger');
+var scrollTargets = document.querySelectorAll('.js-scrollTarget');
+var departmentNav = document.querySelector('.department-nav'); // * cleans user input and set it as section ID
+
+scrollTargets.forEach(function (target) {
+  var id = target.id;
+  var idCleaned = id.replace(/\W+/g, '-').replace(/^-|-$/g, '').toLowerCase();
+  target.id = idCleaned;
+}); // * cleans user input and set it as nav HREF anchor
+
+scrollTriggers.forEach(function (trigger) {
+  var id = trigger.getAttribute('href');
+  var hrefCleaned = id.replace(/\W+/g, '-').replace(/^-|-$/g, '').toLowerCase();
+  trigger.setAttribute('href', "#".concat(hrefCleaned));
+}); // * on mobile, when clicking the department nav, show all options
+
+if (departmentNav) {
+  departmentNav.addEventListener('click', function (e) {
+    if (window.innerWidth <= 1024) {
+      departmentNav.classList.add('is-open');
+    }
+  });
+} // * For BigPipe Data, page needs to be loaded. 
+
+
+var checkReadyState = setInterval(function () {
+  // * this checks if the page is loaded
+  if (document.readyState === "complete") {
+    clearInterval(checkReadyState); // *Scroll spy works on Scroll 
+
+    window.onscroll = function () {
+      scrollTargets.forEach(function (target) {
+        var sectionID = target.id;
+        var triggerEl = document.querySelector("a[href='#".concat(sectionID, "']"));
+        var spanEl = triggerEl.querySelector('span');
+        var targetHeight = target.offsetHeight;
+        var targetBottom = target.offsetTop + targetHeight; // * checks scroll locations and updates url Hash
+
+        if (targetBottom - window.scrollY > 58 && target.offsetTop - window.scrollY < 58) {
+          var location = window.location.toString().split('#')[0];
+          history.replaceState(null, null, location + '#' + sectionID); // * updates nav indicator
+
+          spanEl.classList.remove('hidden');
+          triggerEl.classList.add('is-active');
+        } else {
+          spanEl.classList.add('hidden');
+          triggerEl.classList.remove('is-active');
+        }
+      }); // * commented out on 3/15/20 - Seems to work without it.
+      // scrollTriggers.forEach((trigger, index) => {
+      //   const id = trigger.getAttribute('href');
+      //   const spanEl = trigger.querySelector('span');
+      //   const target = document.querySelector(`${id}`);
+      //   const targetHeight = target.offsetHeight;
+      //   const targetBottom = target.offsetTop + targetHeight;
+      //   if (index == 0 && targetBottom - window.scrollY > 58) {
+      //     trigger.classList.add('is-active')
+      //     spanEl.classList.remove('hidden');
+      //   }
+      // });
+    }; // *sets the first trigger on click
+
+
+    scrollTriggers.forEach(function (trigger, index) {
+      var id = trigger.getAttribute('href');
+      var spanEl = trigger.querySelector('span');
+      var target = document.querySelector("".concat(id));
+      var targetHeight = target.offsetHeight;
+      var targetBottom = target.offsetTop + targetHeight;
+
+      if (index == 0 && targetBottom - window.scrollY > 0) {
+        trigger.classList.add('is-active');
+        spanEl.classList.remove('hidden');
+      } // * makes the scroll spy work on click.
+
+
+      trigger.addEventListener('click', function (e) {
+        if (window.innerWidth <= 1024) {
+          e.preventDefault();
+
+          if (departmentNav.classList.contains('is-open')) {
+            e.stopPropagation();
+            departmentNav.classList.remove('is-open');
+            target.scrollIntoView({
+              behavior: 'smooth'
+            });
+          }
+        }
+      });
+    });
+  }
+}, 100);
+checkReadyState;
 
 /***/ }),
 
@@ -1656,104 +1764,6 @@ var slideToggle = function slideToggle(element) {
 };
 
 
-
-/***/ }),
-
-/***/ "./themes/custom/typhoon/src/js/smoothScroll.js":
-/*!******************************************************!*\
-  !*** ./themes/custom/typhoon/src/js/smoothScroll.js ***!
-  \******************************************************/
-/***/ (function() {
-
-// import SmoothScroll from 'smooth-scroll';
-// var scroll = new SmoothScroll('a[href*="#"]');
-// todo: Change focus to selected section
-/// todo: If I really wanted to remove smooth scroll, I could try and set data-attributes vs anchors and ID's
-// todo: Doesn't really work well in safari, especially without SmoothScroll
-// todo: Clean this code! It's a mess and jumble of things right now.
-var scrollTriggers = document.querySelectorAll('.js-scrollTrigger');
-var scrollTargets = document.querySelectorAll('.js-scrollTarget');
-var departmentNav = document.querySelector('.department-nav');
-
-window.onscroll = function () {
-  scrollTargets.forEach(function (target) {
-    var sectionID = target.id;
-    var triggerEl = document.querySelector("a[href='#".concat(sectionID, "']"));
-    var spanEl = triggerEl.querySelector('span');
-    var targetHeight = target.offsetHeight;
-    var targetBottom = target.offsetTop + targetHeight;
-
-    if (targetBottom - window.scrollY > 58 && target.offsetTop - window.scrollY < 58) {
-      var location = window.location.toString().split('#')[0];
-      history.replaceState(null, null, location + '#' + sectionID);
-      spanEl.classList.remove('hidden');
-      triggerEl.classList.add('is-active');
-    } else {
-      spanEl.classList.add('hidden');
-      triggerEl.classList.remove('is-active');
-    }
-  });
-  scrollTriggers.forEach(function (trigger, index) {
-    var id = trigger.getAttribute('href');
-    var spanEl = trigger.querySelector('span');
-    var target = document.querySelector("".concat(id));
-    var targetHeight = target.offsetHeight;
-    var targetBottom = target.offsetTop + targetHeight;
-
-    if (index == 0 && targetBottom - window.scrollY > 58) {
-      trigger.classList.add('is-active');
-      spanEl.classList.remove('hidden');
-    }
-  });
-}; // * cleans user input and set it as section ID
-
-
-scrollTargets.forEach(function (target) {
-  var id = target.id;
-  var idCleaned = id.replace(/\W+/g, '-').replace(/^-|-$/g, '').toLowerCase();
-  target.id = idCleaned;
-}); // * cleans user input and set it as nav HREF anchor
-
-scrollTriggers.forEach(function (trigger) {
-  var id = trigger.getAttribute('href');
-  var hrefCleaned = id.replace(/\W+/g, '-').replace(/^-|-$/g, '').toLowerCase();
-  trigger.setAttribute('href', "#".concat(hrefCleaned));
-}); // * on mobile, when clicking the department nav, show all options
-
-if (departmentNav) {
-  departmentNav.addEventListener('click', function (e) {
-    if (window.innerWidth <= 1024) {
-      departmentNav.classList.add('is-open');
-    }
-  });
-}
-
-scrollTriggers.forEach(function (trigger, index) {
-  var id = trigger.getAttribute('href');
-  var spanEl = trigger.querySelector('span');
-  var target = document.querySelector("".concat(id));
-  var targetHeight = target.offsetHeight;
-  var targetBottom = target.offsetTop + targetHeight;
-
-  if (index == 0 && targetBottom - window.scrollY > 0) {
-    trigger.classList.add('is-active');
-    spanEl.classList.remove('hidden');
-  }
-
-  trigger.addEventListener('click', function (e) {
-    if (window.innerWidth <= 1024) {
-      e.preventDefault();
-
-      if (departmentNav.classList.contains('is-open')) {
-        e.stopPropagation();
-        departmentNav.classList.remove('is-open');
-        target.scrollIntoView({
-          behavior: 'smooth'
-        });
-      }
-    }
-  });
-});
 
 /***/ }),
 
