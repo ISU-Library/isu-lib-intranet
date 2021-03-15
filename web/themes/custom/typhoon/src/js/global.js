@@ -5,7 +5,7 @@ import * as searchButtonShow from './searchButton.js';
 import * as sideNav from './sideNav.js';
 
 import * as accordion from './accordion.js';
-import * as smoothScroll from './smoothScroll';
+import * as scrollSpy from './scrollSpy';
 
 
 // Todo: split into new file
@@ -33,7 +33,7 @@ searchButtonShow;
 mobileNav;
 thirdLevelNav;
 sideNav;
-smoothScroll;
+scrollSpy;
 
 // accordion
 accordion;
