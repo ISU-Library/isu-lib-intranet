@@ -60,7 +60,7 @@
 /****** main nav-section ******/
 
 header{
-  --nav-height: calc(100vh - 75px);
+  --nav-height: calc(100vh - 122px);
 }
 
 
