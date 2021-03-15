@@ -3,10 +3,10 @@ const tailwindDir = `${sourceDir}/tailwind`;
 const destinationDir = "./themes/custom/typhoon";
 
 const mix = require("laravel-mix");
-const tailwindcss = require('tailwindcss');
+const tailwindcss = require('@tailwindcss/jit');
 
 
-require("laravel-mix-purgecss");
+// require("laravel-mix-purgecss");
 
 /*
  |--------------------------------------------------------------------------
@@ -34,13 +34,6 @@ mix.sass(`${sourceDir}/scss/global.scss`, `${destinationDir}/css/global.css`, {
     outputStyle: "compressed"
   }
 });
-// .purgeCss({
-//   content: [`public/*/**.html`],
-//   css: [`${destinationDir}/css/global.css`],
-//   whitelistPatterns: [/js-/],
-//   whitelistPatternsChildren: [/link-list--item/]
-// });
-
 
 // Only cache bust if production
 if (mix.inProduction()) {

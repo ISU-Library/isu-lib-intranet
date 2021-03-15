@@ -1,12 +1,18 @@
 // const colors = require('tailwindcss/colors')
 
+const sourceDir = "./themes/custom/typhoon/src";
+const destinationDir = "./themes/custom/typhoon";
+
 module.exports = {
-  purge: [
-    './templates/*.twig',
-    './templates/**/*.twig',
-    './templates/***/**/*.twig',
-    './src/**/*.js',
-  ],
+  purge: {
+    enabled: true,
+    content: [
+      `${destinationDir}/templates/*.twig`,
+      `${destinationDir}/templates/**/*.twig`,
+      `${destinationDir}/templates/***/**/*.twig`,
+      `${sourceDir}/js/*.js`,
+    ],
+  },
   darkMode: false, // or 'media' or 'class'
   theme: {
     colors: {
@@ -138,19 +144,6 @@ module.exports = {
         '5xl': '6rem',
         '6xl': '8rem',
         '7xl': '12rem',
-        '8xl': '87.5rem',
-        '9xl': '93.75rem',
-      },
-      maxWidth: {
-        'readable': '57rem',
-        '8xl': '87.5rem',
-        '9xl': '93.75rem',
-      },
-      width: {
-        '100vw': '100vw',
-      },
-      height: {
-        '100vh': '100vh',
       },
       backgroundImage: theme => ({
         'hero-image': "url('/themes/custom/typhoon/images/intra-hero.jpg')",
@@ -166,11 +159,11 @@ module.exports = {
   },
   variants: {
     extend: {
-      borderWidth: ['first'],
-      display: ['group-hover', 'group-focus'],
-      flex: ['group-hover', 'group-focus'],
-      margin: ['last'],
-      scale: ['active', 'group-hover'],
+      // borderWidth: ['first'],
+      // display: ['group-hover', 'group-focus'],
+      // flex: ['group-hover', 'group-focus'],
+      // margin: ['last'],
+      // scale: ['active', 'group-hover'],
     }
   },
   plugins: [

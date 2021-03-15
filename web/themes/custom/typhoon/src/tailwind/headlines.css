@@ -3,7 +3,7 @@ h1 {
 }
 
 h1 + h2 {
-  @apply mb-3xl;
+  @layers mb-3xl;
 }
 
 h2 {
