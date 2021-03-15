@@ -78,6 +78,12 @@ header{
   height: var(--nav-height);
 }
 
+@media (min-width: 768px) {
+  .main-nav nav {
+    height: auto;
+  }
+}
+
 .main-nav--item:nth-last-child(1) .main-nav--dropdown,
 .main-nav--item:nth-last-child(2) .main-nav--dropdown {
   left: unset;
@@ -113,6 +119,7 @@ header{
 
 @media (min-width: 768px) {
   .js-mobile-menu {
+    height: auto;
     top: 0;
   }
 }
