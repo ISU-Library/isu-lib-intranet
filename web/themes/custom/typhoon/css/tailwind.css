@@ -541,9 +541,6 @@ video {
 .bottom-lg{
 	bottom: 1.5rem;
 }
-.-right-8xl{
-	right: -87.5rem;
-}
 .left-1\/2{
 	left: 50%;
 }
@@ -737,50 +734,32 @@ video {
 .w-xl{
 	width: 2rem;
 }
+.w-\[57rem\]{
+	width: 57rem;
+}
 .w-72{
 	width: 18rem;
 }
 .w-4\/5{
 	width: 80%;
 }
-.w-100vw{
+.w-\[100vw\]{
 	width: 100vw;
 }
 .w-3xl{
 	width: 3rem;
 }
-.w-\[100vw\]{
-	width: 100vw;
-}
-.w-\[57rem\]{
-	width: 57rem;
-}
-.w-\[7rem\]{
-	width: 7rem;
-}
-.w-\[12rem\]{
-	width: 12rem;
-}
 .max-w-full{
 	max-width: 100%;
-}
-.max-w-readable{
-	max-width: 57rem;
-}
-.max-w-9xl{
-	max-width: 93.75rem;
-}
-.max-w-xl{
-	max-width: 36rem;
-}
-.max-w-8xl{
-	max-width: 87.5rem;
 }
 .max-w-\[57rem\]{
 	max-width: 57rem;
 }
 .max-w-\[93\.75rem\]{
 	max-width: 93.75rem;
+}
+.max-w-xl{
+	max-width: 36rem;
 }
 .flex-auto{
 	-webkit-box-flex: 1;
@@ -2183,10 +2162,10 @@ p{
 	.xl\:ml-0{
 		margin-left: 0;
 	}
-	.xl\:w-8xl{
+	.xl\:w-\[87\.5rem\]{
 		width: 87.5rem;
 	}
-	.xl\:max-w-8xl{
+	.xl\:max-w-\[87\.5rem\]{
 		max-width: 87.5rem;
 	}
 	.xl\:max-w-2xl{
@@ -2213,12 +2192,6 @@ p{
 		display: -webkit-box;
 		-webkit-box-orient: vertical;
 		-webkit-line-clamp: 7;
-	}
-	.xl\:w-\[87\.5rem\]{
-		width: 87.5rem;
-	}
-	.xl\:max-w-\[87\.5rem\]{
-		max-width: 87.5rem;
 	}
 }
 
