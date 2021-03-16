@@ -1,0 +1,50 @@
+{#
+/**
+ * @file
+ * Default template for individual staff profile page.
+ *
+ * Available variables:
+ * - staffattributes: Array of staffattribute informations.
+ *   A staffattribute information consists of:
+ *   - netid
+ *   - surname, firstname, midname
+ *   - fullname
+ *   - address
+ *   - zipcode
+ *   - telephone
+ *   - title
+ *   - unitname_str
+ *   - photo_fileid
+ *   - uri
+ *   - selworks
+ *   - not used (alt, width, height)
+ */
+#}
+
+<table>
+  <tbody>
+    {% for staffattribute in staffattributes %}
+      <tr>
+        <td>
+          {{ staffattribute.fullname }}
+          <br/>
+          {{ staffattribute.title }}
+          <br/>
+          {{ staffattribute.unitname_str }}
+          <br/>
+          {{ staffattribute.address }}
+          <br/>
+          {{ staffattribute.telephone }}
+          <br/>
+          <a href="mailto={{ staffattribute.netid }}@iastate.edu">
+            {{ staffattribute.netid }}
+            @iastate.edu
+          </a>
+        </td>
+        <td>
+          <img src="{{ staffattribute.uri }}" alt="{{ staffattribute.fullname }}" width="144" height="180"/>
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
