@@ -85,7 +85,7 @@ class Staffprofile extends BlockBase implements ContainerFactoryPluginInterface 
           "fullname" => "$r_fullname",
           "title" => "$r_title",
 	  "unitname_str" => "$r_unitname_str",
-	  "unitname_alias => "$r_unitname_alias",
+	  "unitname_alias" => "$r_unitname_alias",
           "address" => "$r_address",
           "telephone" => "$r_telephone",
           "uri" => "$r_uri"
