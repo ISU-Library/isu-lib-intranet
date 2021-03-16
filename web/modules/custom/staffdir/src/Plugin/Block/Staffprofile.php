@@ -75,6 +75,7 @@ class Staffprofile extends BlockBase implements ContainerFactoryPluginInterface 
           $r_fullname = $staffattribute['FULLNAME'];
           $r_title = $staffattribute['TITLE'];
           $r_unitname_str = $staffattribute['UNITNAME_STR'];
+          $r_unitname_alias = strtolower(str_replace(" ", "-", $r_unitname_str));
           $r_address = $staffattribute['ADDRESS'];
           $r_telephone = $staffattribute['TELEPHONE'];
           $r_uri = $staffattribute['URI'];
@@ -83,7 +84,8 @@ class Staffprofile extends BlockBase implements ContainerFactoryPluginInterface 
           "netid" => "$r_netid",
           "fullname" => "$r_fullname",
           "title" => "$r_title",
-          "unitname_str" => "$r_unitname_str",
+	  "unitname_str" => "$r_unitname_str",
+	  "unitname_alias => "$r_unitname_alias",
           "address" => "$r_address",
           "telephone" => "$r_telephone",
           "uri" => "$r_uri"
