@@ -27,7 +27,7 @@
         <tr>
             <td>{{ staffattribute.fullname }}<br/>
             {{ staffattribute.title }}<br/>
-            {{ staffattribute.unitname_str }}<br/>
+            <a href="/departments/{{ staffattribute.unitname_alias }}">{{ staffattribute.unitname_str }}</a><br/>
             {{ staffattribute.address }}<br/>
             {{ staffattribute.telephone }}<br/>
             <a href="mailto={{ staffattribute.netid }}@iastate.edu">{{ staffattribute.netid }}@iastate.edu</a></td>
