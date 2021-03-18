@@ -1,14 +1,14 @@
-.heading-underline {
-  position: relative;
-  padding-bottom: $space-xs;
+// .heading-underline {
+//   position: relative;
+//   padding-bottom: $space-xs;
 
-  &::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: rem(60);
-    height: rem(4);
-    background-color: $yellow-600;
-  }
-}
+//   &::before {
+//     content: '';
+//     position: absolute;
+//     left: 0;
+//     bottom: 0;
+//     width: rem(60);
+//     height: rem(4);
+//     background-color: $yellow-600;
+//   }
+// }

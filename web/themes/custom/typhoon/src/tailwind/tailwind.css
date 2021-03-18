@@ -58,3 +58,37 @@ p {
 .gen-con--block p:first-of-type {
   @apply mt-0;
 }
+
+.grid-staff-directory {
+  grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+}
+
+@media (min-width: 768px) {
+  .grid-staff-directory {
+    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+  }
+}
+
+.heading-underline {
+  position: relative;
+  @apply pb-xs;
+}
+
+.basic-card--staff .heading-underline {
+  z-index: 1;
+}
+
+.heading-underline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px;
+  height: 4px;
+  @apply bg-yellow-600;
+}
+
+.basic-card--staff .heading-underline::before {
+  z-index: -1;
+  @apply w-full bg-yellow-600 bottom-xs;
+}
