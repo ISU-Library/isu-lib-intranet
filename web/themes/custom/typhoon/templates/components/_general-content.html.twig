@@ -13,7 +13,7 @@
   {% set data = data ? defaultData|merge(data) : defaultData %}
 
     {% if data.lead %}
-      <div class="gen-con--block text-block mb-lg first:text-lg {{data.lead}} "> {% if data.template %}
+      <div class="gen-con--block max-w-[50rem] text-block mb-lg first:text-lg {{data.lead}} "> {% if data.template %}
         {{ data.text }}
       {% else %}
         <p class="mt-0">
@@ -21,7 +21,7 @@
         </p>
       {% endif %}
     {% else %}
-      <div class="gen-con--block text-block mb-lg first:text-lg ">
+      <div class="gen-con--block max-w-[50rem] text-block mb-lg first:text-lg ">
         {% if data.template %}
           {{ data.text }}
         {% else %}
@@ -54,7 +54,7 @@
     {% endif %}
 
 
-    <div class="gen-con--block mb-lg img-block {{data.imgSide}}">
+    <div class="gen-con--block max-w-[50rem] mb-lg img-block {{data.imgSide}}">
       <div class="gen-con--img-wrap w-full {{data.imgSize}} float-none my-0 mx-auto {{imgFloat}}">
         <figure class="relative text-center">
           <img class="max-w-full h-auto shadow-dark-2" src="{{ data.imgSrc }}" alt="{{ data.imgAlt }}"/>
@@ -116,7 +116,7 @@
 
     {# todo: add header options through admin #}
 
-    <div class="gen-con--block text-block block--link-abstract mb-2xl">
+    <div class="gen-con--block max-w-[50rem] text-block block--link-abstract mb-2xl">
       {% if data.template %}
         {{data.text}}
       {% else %}
@@ -172,7 +172,7 @@
 
     {% set data = data ? defaultData|merge(data) : defaultData %}
 
-    <div class="gen-con--block mb-lg text-block block--link-list">
+    <div class="gen-con--block max-w-[50rem] mb-lg text-block block--link-list">
       {% if data.template %}
         {{data.text}}
       {% else %}
@@ -215,7 +215,7 @@
       } %}
     {% set data = data ? defaultData|merge(data) : defaultData %}
 
-    <div class="gen-con--block mb-lg img-block block--lg-img">
+    <div class="gen-con--block max-w-[50rem] mb-lg img-block block--lg-img">
       <div class="gen-con--img-wrap">
         <figure class="relative">
           <img class="shadow-dark-2" src="{{ data.imgSrc }}" alt="{{ data.imgAlt }}"/>
@@ -240,7 +240,7 @@
 
     {% set data = data ? defaultData|merge(data) : defaultData %}
 
-    <div class="gen-con--block flex flex-col sm:flex-row justify-around mb-2xl img-block block--two-img">
+    <div class="gen-con--block max-w-[50rem] flex flex-col sm:flex-row justify-around mb-2xl img-block block--two-img">
       <div class="gen-con--img-wrap max-w-full m-xs ">
         <figure>
           <img class="shadow-dark-2" src="{{ data.leftImgSrc }}" alt="{{ data.leftImgAlt }}"/>
@@ -273,7 +273,7 @@
       } %}
       {% set data = data ? defaultData|merge(data) : defaultData %}
 
-      <div class="gen-con--block flex flex-col sm:flex-row justify-around mb-2xl img-block block--three-img">
+      <div class="gen-con--block max-w-[50rem] flex flex-col sm:flex-row justify-around mb-2xl img-block block--three-img">
         <div class="gen-con--img-wrap m-xs">
           <figure>
             <img class="shadow-dark-2" src="{{ data.leftImgSrc }}" alt="{{ data.leftImgAlt }}"/>
@@ -333,7 +333,7 @@
         {% set cite = 'text-red-500' %}
       {% endif %}
 
-      <div class="gen-con--block {{data.quoteType}} {{quoteTypeClasses}} pt-2xl px-0 mb-2xl quote-block relative text-center ">
+      <div class="gen-con--block max-w-[50rem] {{data.quoteType}} {{quoteTypeClasses}} pt-2xl px-0 mb-2xl quote-block relative text-center ">
         <div class="quote--marks {{quoteMarksWrap}} inline-block relative my-0 mx-auto w-xl h-xl rounded-full">
           <i class="fas fa-quote-left {{quoteMarks}} absolute-center text-center" aria-hidden="true"></i>
         </div>

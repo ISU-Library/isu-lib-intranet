@@ -51,7 +51,7 @@
   {% set sidebar = page.sidebar_first ? 'max-w-[93.75rem]' : 'w-[57rem]' %}
 
   <div class="relative flex-grow">
-    <div class="typhoon-grid grid grid-cols-12 gap-md relative mx-auto px-2xl flex-initial {{sidebar}} z-20">
+    <div class="typhoon-grid grid grid-cols-12 gap-md relative mx-auto px-lg sm:px-2xl flex-initial {{sidebar}} z-20">
       {{ page.breadcrumb }}
       {{ page.highlighted }}
       {{ page.help }}
