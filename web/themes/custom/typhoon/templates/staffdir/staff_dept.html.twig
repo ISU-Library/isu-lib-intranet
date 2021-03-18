@@ -14,24 +14,29 @@
  */
 #}
 
+{% set imgClasses = 'absolute left-1/2 tr w-full transform -translate-y-1/2 -translate-x-1/2' %}
 
-{% for deptperson in deptpersons %}
-  <figure style="display:inline-block;width:200px;padding-bottom:2em;">
-    {% if deptperson.uri == "" %}
-      <img src="https://app.lib.iastate.edu/images/grantwoodmural.jpg" alt="Grant Wood mural" width="144" height="180"/>
-    {% endif %}
-    {% if deptperson.uri != "" %}
-      <img src="{{ deptperson.uri }}" alt="{{ deptperson.firstname }} {{ deptperson.surname }}" width="144" height="180"/>
-    {% endif %}
-    <figcaption>
-      <a href="/staff-profile?netid={{ deptperson.netid }}">
-        {{ deptperson.firstname }}
-        {{ deptperson.surname }}
-      </a>
-      <br/>
-      <span style="font-size:80%;">
-        {{ deptperson.title }}
-      </span>
-    </figcaption>
-  </figure>
-{% endfor %}
+<div class="grid grid-cols-4 gap-x-xl gap-y-4xl pt-xl mb-4xl">
+  {% for deptperson in deptpersons %}
+    <a class="group" role="link" title="{{deptperson.firstname }} {{ deptperson.surname }} staff profile" href="/staff-profile?netid={{ deptperson.netid }}">
+      <figure class="text-center">
+        <div class="rounded-full transition-shadow transition-300 overflow-hidden relative h-[150px] w-[150px] mx-auto shadow-light-2 group-hover:shadow-light-3">
+          {% if deptperson.uri == "" %}
+            <img loading="lazy" class="{{imgClasses}} top-1/2" src="https://app.lib.iastate.edu/images/grantwoodmural.jpg" alt="Grant Wood mural"/>
+          {% else %}
+            <img loading="lazy" class="{{imgClasses}} top-[60%] " src="{{ deptperson.uri }}" alt="{{ deptperson.firstname }} {{ deptperson.surname }}"/>
+          {% endif %}
+        </div>
+        <figcaption>
+          <div class="block text-lg pt-md">
+            {{ deptperson.firstname }}
+            {{ deptperson.surname }}
+          </div>
+          <span class="block pt-md font-normal text-warm-grey-800">
+            {{ deptperson.title }}
+          </span>
+        </figcaption>
+      </figure>
+    </a>
+  {% endfor %}
+</div>
