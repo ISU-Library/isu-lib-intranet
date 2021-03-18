@@ -75,7 +75,7 @@ header{
 }
 
 .main-nav nav {
-  height: var(--nav-height);
+  /* height: var(--nav-height); */
 }
 
 @media (min-width: 768px) {
