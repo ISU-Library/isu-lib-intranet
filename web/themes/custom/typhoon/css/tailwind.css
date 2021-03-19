@@ -565,6 +565,12 @@ video {
 .col-span-full{
 	grid-column: 1 / -1;
 }
+.col-span-1{
+	grid-column: span 1 / span 1;
+}
+.col-span-2{
+	grid-column: span 2 / span 2;
+}
 .float-none{
 	float: none;
 }
@@ -860,6 +866,9 @@ video {
 .grid-cols-4{
 	grid-template-columns: repeat(4, minmax(0, 1fr));
 }
+.grid-cols-3{
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+}
 .flex-col{
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
@@ -986,6 +995,9 @@ video {
 }
 .border-t-2{
 	border-top-width: 2px;
+}
+.border-r-2{
+	border-right-width: 2px;
 }
 .border-yellow-500{
 	--tw-border-opacity: 1;
