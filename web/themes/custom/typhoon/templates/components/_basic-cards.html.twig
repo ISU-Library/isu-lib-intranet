@@ -160,7 +160,7 @@
     </div>
     <div class="mt-lg mb-sm z-10 h-[130px] w-[130px] m-auto">
       <figure class="relative overflow-hidden rounded-full w-full h-full transition-shadow shadow-light-2 group-hover:shadow-dark-2">
-        <img loading="lazy" class="absolute-center  max-w-full " src="{{ data.imgSrc }}" alt="{{data.imgAlt}}"/>
+        <img loading="lazy" class="absolute-center max-w-full " src="{{ data.imgSrc }}" alt="{{data.imgAlt}}"/>
       </figure>
     </div>
     <div class="basic-card--text-wrap flex flex-col flex-grow pt-md pl-xl pb-2xl pr-lg xs:pt-md xs:pr-sm xs:pb-lg xs:pl-md text-left">
@@ -188,9 +188,7 @@
           's profile
         </div>
       </div>
-      {# <a href="tel:{{data.phone}}" class="{{textColor}}"><i class="fas fa-phone"></i>{{data.phone}}</a><a href="mailto:{{data.email}}@iastate.edu" class="{{textColor}}"><i class="fas fa-envelope"></i>Email</a> #}
     </div>
   </a>
-  {# </a> #}
 
 {% endmacro %}
