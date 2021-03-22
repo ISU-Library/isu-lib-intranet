@@ -24,28 +24,28 @@
 
       {# {{ staffattribute.address }} #}
 {% for staffattribute in staffattributes %}
-  <div class="flex">
+  <div class="flex flex-col md:flex-row">
     <figure class="h-[150px] w-[150px] relative rounded-full overflow-hidden shadow-light-2">
       <img src="https://app.lib.iastate.edu/images/grantwoodmural.jpg" alt=" {{ staffattribute.fullname }}" class="absolute-center max-w-full" loading="lazy"/>
     </figure>
-    <div class="w-4/5 pl-2xl">
-      <h3 class="heading-underline text-2xl">
+    <div class="md:w-4/5 md:pl-2xl">
+      <h3 class="heading-underline text-2xl pt-lg md:pt-0">
           {{ staffattribute.fullname }}
       </h3>
       <div class="pb-md">
-        <span class="pr-sm border-r-2 border-red-600 text-lg">
+        <span class="inline-block pr-sm border-r-2 border-red-600 md:text-lg">
           {{ staffattribute.unitname_str }}
         </span>
-        <span class="pl-sm text-lg">
+        <span class="inline-block pl-sm md:text-lg">
           {{ staffattribute.title }}
         </span>
       </div>
       <div>
-        <a href="tel:{{ staffattribute.telephone }}" class="pr-sm border-r-2 text-black font-normal border-red-600">
+        <a href="tel:{{ staffattribute.telephone }}" class="md:w-1/4 pr-sm border-r-2 text-black font-normal border-red-600">
           <i class="fas fa-phone text-red-600"></i>
           {{ staffattribute.telephone }}
         </a>
-        <a href="mailto={{ staffattribute.netid }}@iastate.edu" class="pl-sm text-black font-normal border-red-600">
+        <a href="mailto={{ staffattribute.netid }}@iastate.edu" class="md:w-3/4 pl-sm text-black font-normal border-red-600">
           <i class="fas fa-envelope text-red-600"></i>
           email
         </a>
