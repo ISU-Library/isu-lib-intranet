@@ -33,19 +33,19 @@
           {{ staffattribute.fullname }}
       </h3>
       <div class="pb-md">
-        <span class="inline-block pr-sm border-r-2 border-red-600 md:text-lg">
+        <span class="md:w-1/3 inline-block pr-sm border-r-2 border-red-600 md:text-lg">
           {{ staffattribute.unitname_str }}
         </span>
-        <span class="inline-block pl-sm md:text-lg">
+        <span class="md:w-2/3 inline-block pl-sm md:text-lg">
           {{ staffattribute.title }}
         </span>
       </div>
       <div>
-        <a href="tel:{{ staffattribute.telephone }}" class="md:w-1/4 pr-sm border-r-2 text-black font-normal border-red-600">
+        <a href="tel:{{ staffattribute.telephone }}" class="pr-sm border-r-2 text-black font-normal border-red-600">
           <i class="fas fa-phone text-red-600"></i>
           {{ staffattribute.telephone }}
         </a>
-        <a href="mailto={{ staffattribute.netid }}@iastate.edu" class="md:w-3/4 pl-sm text-black font-normal border-red-600">
+        <a href="mailto={{ staffattribute.netid }}@iastate.edu" class="pl-sm text-black font-normal border-red-600">
           <i class="fas fa-envelope text-red-600"></i>
           email
         </a>
