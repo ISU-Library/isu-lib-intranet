@@ -16,11 +16,11 @@
 
 {% set imgClasses = 'absolute left-1/2 tr w-full transform -translate-y-1/2 -translate-x-1/2' %}
 
-<div class="grid grid-cols-4 gap-x-xl gap-y-4xl pt-xl mb-4xl">
+<div class="grid grid-department-staff gap-x-xl gap-y-4xl pt-xl mb-4xl">
   {% for deptperson in deptpersons %}
     <a class="group" role="link" title="{{deptperson.firstname }} {{ deptperson.surname }} staff profile" href="/staff-profile?netid={{ deptperson.netid }}">
       <figure class="text-center">
-        <div class="rounded-full transition-shadow transition-300 overflow-hidden relative h-[150px] w-[150px] mx-auto shadow-light-2 group-hover:shadow-light-3">
+        <div class="rounded-full transition-shadow transition-300 overflow-hidden relative h-[120px] md:h-[150px] w-[120px] md:w-[150px] mx-auto shadow-light-2 group-hover:shadow-light-3">
           {% if deptperson.uri == "" %}
             <img loading="lazy" class="{{imgClasses}} top-1/2" src="https://app.lib.iastate.edu/images/grantwoodmural.jpg" alt="Grant Wood mural"/>
           {% else %}
