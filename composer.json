@@ -28,6 +28,7 @@
         "drupal/entity_usage": "^2.0@beta",
         "drupal/login_security": "^2.0",
         "drupal/menu_block": "^1.6",
+        "drupal/oauth_login_oauth2": "^1.223",
         "drupal/paragraphs": "^1.12",
         "drupal/pathauto": "^1.8",
         "drupal/token": "^1.7",
