@@ -50,36 +50,31 @@ miniorange_oauth_client_idp_nameid_attr_map: ''
 miniorange_oauth_send_with_header_oauth: true
 miniorange_oauth_send_with_body_oauth: false
 miniorange_auth_client_display_name: 'Login using Okta'
-miniorange_oauth_enable_login_with_oauth: false
+miniorange_oauth_enable_login_with_oauth: true
 _core:
   default_config_hash: hQJ9ofbaznMDCcVe6jwiUZUi0IOXGweAsmlzXZQPw64
 miniorange_oauth_client_free_users: '0'
 miniorange_oauth_client_feedback: '1'
-miniorange_auth_client_callback_uri: 'https://dev-intra.lib.iastate.edu/mo_login'
+miniorange_auth_client_callback_uri: 'http://dev-intra.test/mo_login'
 miniorange_oauth_client_disabled: false
 mo_saml_tourTaken_config_clc: true
 miniorange_oauth_client_app: Okta
 miniorange_oauth_client_appval:
   client_id: 0oabzjdtq8yaCAUk95d6
-  client_secret: YUC-dxNYH2F4QJjNewOfAd6OjW1ssL6SkcSFNYPn
+  client_secret: dxNYH2F4QJjNewOfAd6OjW1ssL6SkcSFNYPn
   app_name: Login
   display_name: 'Login using Okta'
   scope: 'openid email profile'
-  authorize_endpoint: 'https://dev-14104891.okta.com/oauth2/default/v1/authorize'
-  access_token_ep: 'https://dev-14104891.okta.com/oauth2/default/v1/token'
-  user_info_ep: 'https://dev-14104891.okta.com/oauth2/default/v1/userinfo'
-  callback_uri: 'https://dev-intra.lib.iastate.edu/mo_login'
+  authorize_endpoint: 'https://dev-14104891.com/oauth2/default/v1/authorize'
+  access_token_ep: 'https://dev-14104891.com/oauth2/default/v1/token'
+  user_info_ep: 'https://dev-14104891.com/oauth2/default/v1/userinfo'
+  callback_uri: 'http://dev-intra.test/mo_login'
   client_app: Okta
-  miniorange_oauth_client_email_attr: email
-  miniorange_oauth_client_name_attr: ''
 miniorange_auth_client_app_name: Login
 miniorange_auth_client_client_id: 0oabzjdtq8yaCAUk95d6
-miniorange_auth_client_client_secret: YUC-dxNYH2F4QJjNewOfAd6OjW1ssL6SkcSFNYPn
+miniorange_auth_client_client_secret: dxNYH2F4QJjNewOfAd6OjW1ssL6SkcSFNYPn
 miniorange_auth_client_scope: 'openid email profile'
-miniorange_auth_client_authorize_endpoint: 'https://dev-14104891.okta.com/oauth2/default/v1/authorize'
-miniorange_auth_client_access_token_ep: 'https://dev-14104891.okta.com/oauth2/default/v1/token'
-miniorange_auth_client_user_info_ep: 'https://dev-14104891.okta.com/oauth2/default/v1/userinfo'
+miniorange_auth_client_authorize_endpoint: 'https://dev-14104891.com/oauth2/default/v1/authorize'
+miniorange_auth_client_access_token_ep: 'https://dev-14104891.com/oauth2/default/v1/token'
+miniorange_auth_client_user_info_ep: 'https://dev-14104891.com/oauth2/default/v1/userinfo'
 miniorange_auth_client_stat: 'Review Config'
-mo_saml_tourTaken_mapping: true
-miniorange_oauth_client_email_attr_val: email
-miniorange_oauth_client_name_attr_val: ''
