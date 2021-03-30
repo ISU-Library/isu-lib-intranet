@@ -24,8 +24,7 @@
 <div class=" grid-staff-directory grid grid-cols-4 gap-y-3xl gap-x-xl">
   {% for staffperson in staffpersons %}
     {{ card.staffCard({
-      imgSrc: 'https://app.lib.iastate.edu/images/grantwoodmural.jpg',
-      imgAlt: 'Grantwood',
+      imgSrc: staffperson.uri ? staffperson.uri : 'https://app.lib.iastate.edu/images/grantwoodmural.jpg',
       color: loop.index % 2 == 0 ? 'basic-card--yellow' : '',
       link: staffperson.netid,
       department: staffperson.unitname,

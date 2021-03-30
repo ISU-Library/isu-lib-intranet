@@ -821,6 +821,12 @@ video {
 .-translate-x-1\/2{
 	--tw-translate-x: -50%;
 }
+.translate-y-1\/2{
+	--tw-translate-y: 50%;
+}
+.translate-x-1\/2{
+	--tw-translate-x: 50%;
+}
 .rotate-45{
 	--tw-rotate: 45deg;
 }
@@ -1217,14 +1223,14 @@ video {
 .pl-md{
 	padding-left: 1rem;
 }
+.pr-0{
+	padding-right: 0;
+}
 .pl-sm{
 	padding-left: 0.75rem;
 }
 .pt-lg{
 	padding-top: 1.5rem;
-}
-.pr-0{
-	padding-right: 0;
 }
 .text-left{
 	text-align: left;
@@ -2168,8 +2174,8 @@ p{
 	.md\:pb-0{
 		padding-bottom: 0;
 	}
-	.md\:pl-lg{
-		padding-left: 1.5rem;
+	.md\:pl-sm{
+		padding-left: 0.75rem;
 	}
 	.md\:pl-0{
 		padding-left: 0;
@@ -2226,9 +2232,6 @@ p{
 	}
 	.group:focus .md\:group-focus\:block{
 		display: block;
-	}
-	.md\:pl-sm{
-		padding-left: 0.75rem;
 	}
 }
 @media (min-width: 1024px){

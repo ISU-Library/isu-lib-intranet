@@ -26,7 +26,11 @@
 {% for staffattribute in staffattributes %}
   <div class="flex flex-col md:flex-row">
     <figure class="h-[150px] w-[150px] relative rounded-full overflow-hidden shadow-light-2">
-      <img src="https://app.lib.iastate.edu/images/grantwoodmural.jpg" alt=" {{ staffattribute.fullname }}" class="absolute-center max-w-full" loading="lazy"/>
+     {% if staffattribute.uri %}
+        <img src="{{staffattribute.uri}}" alt="{{ staffattribute.fullname }}" class="absolute left-1/2 top-[60%] transform -translate-x-1/2 -translate-y-1/2 max-w-full" loading="lazy"/>
+      {% else %}
+       <img src="https://app.lib.iastate.edu/images/grantwoodmural.jpg" alt="Placeholder ror {{ staffattribute.fullname }}" class="absolute-center max-w-full" loading="lazy"/>
+      {% endif %}
     </figure>
     <div class="md:w-4/5 md:pl-2xl">
       <h3 class="heading-underline text-2xl pt-lg md:pt-0">
