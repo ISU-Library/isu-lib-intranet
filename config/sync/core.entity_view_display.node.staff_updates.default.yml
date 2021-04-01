@@ -19,7 +19,7 @@ bundle: staff_updates
 mode: default
 content:
   field_staff_update_category:
-    weight: 4
+    weight: 1
     label: hidden
     settings:
       link: true
@@ -28,7 +28,7 @@ content:
     region: content
   field_staff_updates_content:
     type: entity_reference_revisions_entity_view
-    weight: 3
+    weight: 4
     label: hidden
     settings:
       view_mode: default
@@ -36,7 +36,7 @@ content:
     third_party_settings: {  }
     region: content
   field_staff_updates_main_image:
-    weight: 1
+    weight: 2
     label: hidden
     settings:
       image_style: ''
@@ -45,7 +45,7 @@ content:
     type: image
     region: content
   field_staff_updates_summary:
-    weight: 2
+    weight: 3
     label: hidden
     settings: {  }
     third_party_settings: {  }
