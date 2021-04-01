@@ -22,7 +22,7 @@
       <figure class="text-center">
         <div class="rounded-full transition-shadow transition-300 overflow-hidden relative h-[120px] md:h-[150px] w-[120px] md:w-[150px] mx-auto shadow-light-2 group-hover:shadow-light-3">
           {% if deptperson.uri == "" %}
-            <img loading="lazy" class="{{imgClasses}} top-1/2" src="https://app.lib.iastate.edu/images/grantwoodmural.jpg" alt="Grant Wood mural"/>
+            <img loading="lazy" class="{{imgClasses}} top-1/2" src="https://app.lib.iastate.edu/images/grantwoodmural.jpg" alt="Placeholder for {{ deptperson.firstname }} {{ deptperson.surname }}"/>
           {% else %}
             <img loading="lazy" class="{{imgClasses}} top-[60%] " src="{{ deptperson.uri }}" alt="{{ deptperson.firstname }} {{ deptperson.surname }}"/>
           {% endif %}

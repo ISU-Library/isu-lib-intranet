@@ -54,7 +54,7 @@ _core:
   default_config_hash: hQJ9ofbaznMDCcVe6jwiUZUi0IOXGweAsmlzXZQPw64
 miniorange_oauth_client_free_users: '0'
 miniorange_oauth_client_feedback: '1'
-miniorange_auth_client_callback_uri: 'https://dev-intra.lib.iastate.edu/mo_login'
+miniorange_auth_client_callback_uri: 'http://dev-intra.test/mo_login'
 miniorange_oauth_client_disabled: false
 mo_saml_tourTaken_config_clc: true
 mo_saml_tourTaken_mapping: true

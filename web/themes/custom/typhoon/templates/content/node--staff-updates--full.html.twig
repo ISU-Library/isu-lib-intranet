@@ -71,8 +71,10 @@
  */
 #}
 
-{% set ImgSrc = file_url(node.field_staff_news_main_image.entity.fileuri) %}
-{% set ImgAlt = node.field_staff_news_main_image.alt %}
+{# ! This styles the staff news articles page #}
+
+{% set ImgSrc = file_url(node.field_staff_updates_main_image.entity.fileuri) %}
+{% set ImgAlt = node.field_staff_updates_main_image.alt %}
 
 
 <article{{attributes}}>
@@ -89,15 +91,20 @@
 
   {# * Below is the start to custom styling content #}
 
+  <div>
+    <figure>
+      <img src="{{ImgSrc}}" alt="">
+    </figure>
+  </div>
   <div{{content_attributes}}>
-    <div style="background-image:url({{ImgSrc}})" class="mb-lg">
-      <h1>
-        {{ label }}
-      </h1>
-      {{ content.field_staff_news_article_summary|field_value }}
-    </div>
+    {# <div style="background-image:url({{ImgSrc}})" class="mb-lg"> #}
+    <h1>
+      {{ label }}
+    </h1>
+    {{ content.field_staff_updates_article_summary|field_value }}
+    {# </div> #}
 
-    {{ content.field_staff_news_content|field_value }}
+    {{ content.field_staff_updates_content|field_value }}
   </div>
 
   {% if display_submitted %}

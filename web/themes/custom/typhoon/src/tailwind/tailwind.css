@@ -96,3 +96,18 @@ p {
   z-index: -1;
   @apply w-full bg-yellow-600 bottom-xs;
 }
+
+.staff-news--article-list {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-y-3xl gap-x-2xl mt-2xl text-left
+}
+
+.staff-updates--article-list {
+  @apply grid grid-cols-1 gap-y-3xl gap-x-2xl mt-2xl text-left
+}
+
+@media (min-width: 640px) {
+  .staff-updates--article-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+

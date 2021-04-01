@@ -9,6 +9,8 @@
       title: '',
       text: '',
       linkText: '',
+       authorName: '',
+        date:'',
     } %}
 
   {% set data = data ? defaultData|merge(data) : defaultData %}
@@ -20,22 +22,18 @@
     </span>
     <a href="{{ data.link}}" class="news-card--link relative no-underline bg-center bg-no-repeat bg-cover overflow-hidden shadow-dark-2 transition-shadow duration-500 z-20 hover:shadow-dark-3 focus:shadow-dark-3 br4 group" style="background-image: url('{{ data.imgSrc}}');">
       <div class="news-card--text-wrap relative flex flex-col justify-end h-full pr-xl pl-lg pt-2xl pb-lg text-white z-20 transition-all duration-500 group">
-        {% if data.catergory %}
-          <span class="news-card--category text-white">
-            {{ data.catergory }}
+        {% if data.category %}
+          <span class="news-card--category text-white text-shadow-1">
+            {{ data.category }}
           </span>
         {% endif %}
         <h3 class="news-card--title line-clamp-3 text-bold w-full leading-tight mb-sm fs-lg text-white text-shadow-1">
           {{ data.title }}
         </h3>
         <div class="news-card--text flex-auto text-normal overflow-hidden tranistion-all duration-500 md:h-0 md:flex-none group-hover:flex-auto">
-          {% if data.front == TRUE %}
-            {{ data.text|raw }}
-          {% else %}
-            <p class="text-white mb-sm line-clamp-5 xl:line-clamp-7">
-              {{ data.text }}
-            </p>
-          {% endif %}
+          <p class="text-white mb-sm text-shadow-1 line-clamp-5 xl:line-clamp-7">
+            {{ data.text }}
+          </p>
           <div class="cta--wrap">
             <span class="cta font-bold text-white">
               {{ data.linkText }}
@@ -59,6 +57,8 @@
         title: '',
         text: '',
         linkText: '',
+        authorName: '',
+        date:'',
     } %}
 
   {% set data = data ? defaultData|merge(data) : defaultData %}
@@ -71,11 +71,18 @@
             <img class="absolute top-1/2 transform -translate-y-1/2 w-full" src="{{ data.imgSrc }}" alt="{{ data.imgAlt}}"/>
           </figure>
         </a>
+        {% if data.authorName and data.date %}
+          <span class="news-card--category block text-sm">
+            {{ data.authorName }}
+            -
+            {{ data.date }}
+          </span>
+        {% endif %}
       </div>
       <div class="news-card--text col-span-full lg:col-span-2 relative w-full">
         {% if data.category %}
           <span class="news-card--category">
-            {{ data.catergory }}
+            {{ data.category }}
           </span>
         {% endif %}
         <h3 title="{{ data.title}}" class="news-card--title line-clamp-2 text-bold w-full leading-tight mt-2xs mb-md text-lg">
@@ -89,7 +96,7 @@
           </p>
           <div class="cta--wrap">
             <a href="{{ data.link}}" class="cta">
-              Read More
+              {{data.linkText}}
               <span class="aria-text absolute top-0 left-0">
                 About
                 {{ data.title}}

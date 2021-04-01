@@ -125,7 +125,6 @@
 
   {% set defaultData = {
         imgSrc: '',
-        imgAlt: '',
         color: '',
         link: '',
         title: '',
@@ -160,7 +159,7 @@
     </div>
     <div class="mt-lg mb-sm z-10 h-[130px] w-[130px] m-auto">
       <figure class="relative overflow-hidden rounded-full w-full h-full transition-shadow shadow-light-2 group-hover:shadow-dark-2">
-        <img loading="lazy" class="absolute-center max-w-full " src="{{ data.imgSrc }}" alt="{{data.imgAlt}}"/>
+          <img loading="lazy" class="absolute left-1/2 top-[60%] transform -translate-x-1/2 -translate-y-1/2 max-w-full " src="{{ data.imgSrc }}" alt="{{ data.firstName }} {{ data.lastName }}"/>
       </figure>
     </div>
     <div class="basic-card--text-wrap flex flex-col flex-grow pt-md pl-xl pb-2xl pr-lg xs:pt-md xs:pr-sm xs:pb-lg xs:pl-md text-left">
@@ -175,8 +174,7 @@
           {{ data.department }}
         </span>
         <h2 class="basic-card--title text-xl {{textColor}}">
-          {{ data.firstName }}
-          {{ data.lastName }}
+          {{ data.firstName }} {{ data.lastName }}
         </h2>
       </div>
       <p class="basic-card--desc flex-grow font-normal mt-0 pb-md text-black {{textColor}}">
