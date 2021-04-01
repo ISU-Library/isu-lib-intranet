@@ -56,3 +56,4 @@ _core:
   default_config_hash: JLXDL-Kr_NmiWVHz_M_oA72iD56lXrqC2Y_KOxUPp7A
 miniorange_oauth_client_feedback: '1'
 miniorange_auth_client_callback_uri: 'http://dev-intra.test/mo_login'
+miniorange_oauth_redirect_url: 'http://dev-intra.test/user/login'

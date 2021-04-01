@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
     - node.type.staff_updates
+    - system.menu.main
   module:
     - node
     - user
@@ -70,7 +70,8 @@ display:
       row:
         type: 'entity:node'
         options:
-          view_mode: teaser
+          relationship: none
+          view_mode: default
       fields:
         title:
           id: title
@@ -198,6 +199,7 @@ display:
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
+      css_class: staff-updates--article-list
     cache_metadata:
       max-age: -1
       contexts:
@@ -215,6 +217,15 @@ display:
     display_options:
       display_extenders: {  }
       path: staff/staff-updates
+      menu:
+        type: normal
+        title: 'Staff Updates'
+        description: ''
+        expanded: false
+        parent: 'menu_link_content:c2830e37-e30d-4268-a651-e5542deb95e5'
+        weight: 0
+        context: '0'
+        menu_name: main
     cache_metadata:
       max-age: -1
       contexts:
