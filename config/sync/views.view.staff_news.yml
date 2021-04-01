@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_staff_news_article_summary
     - node.type.staff_news
+    - system.menu.main
   module:
     - node
     - text
@@ -286,7 +287,7 @@ display:
       display_extenders: {  }
       path: staff/staff-news
       menu:
-        type: none
+        type: normal
         title: 'Staff News'
         description: ''
         expanded: false
