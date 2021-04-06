@@ -10,14 +10,14 @@ dependencies:
 id: staffcommitteeblock
 theme: typhoon
 region: content
-weight: 0
+weight: 8
 provider: null
 plugin: staff_committee_block
 settings:
   id: staff_committee_block
-  label: 'Staff Committee Block'
+  label: Membership
   provider: staffdir
-  label_display: '0'
+  label_display: visible
 visibility:
   request_path:
     id: request_path
