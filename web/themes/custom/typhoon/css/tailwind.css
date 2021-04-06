@@ -1213,6 +1213,12 @@ video {
 .pt-lg{
 	padding-top: 1.5rem;
 }
+.pb-sm{
+	padding-bottom: 0.75rem;
+}
+.pb-xs{
+	padding-bottom: 0.5rem;
+}
 .text-left{
 	text-align: left;
 }
@@ -1224,6 +1230,9 @@ video {
 }
 .align-bottom{
 	vertical-align: bottom;
+}
+.font-merriweather{
+	font-family: Merriweather, Georgia, serif;
 }
 .text-sm{
 	font-size: 0.875rem;

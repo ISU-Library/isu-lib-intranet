@@ -99,7 +99,7 @@
                       <!--a href="/node/{{item['id']}}" class="news-card--link br4" style="background-image: url('{{item['image_uri']}}'); z -index: 2;  "-->
                       <li class="col-span-full md:col-span-1">
                         {{newsCard.lead({
-                          front: '',
+                          front: TRUE,
                           imgSrc: item['image_uri'],
                           imgAlt: item['title'],
                           link: item['item_url_stub'],
@@ -128,7 +128,7 @@
                 </ul>
               {% endif %}
               <!-- end if staff news content found -->
-              <a class="cta mt-md" href="/staff/staff-news">
+              <a class="cta mt-3xl" href="/staff/staff-news">
                 More news stories
               </a>
             </div>
@@ -200,18 +200,18 @@
               <ul
                 class="basic-card--wrap grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-lg w-full mb-2xl sm:mr-0 xs:mr-0">
                 {# {% for story in card %}
-                                                                  <li class="test-one">
-                                                                    {{ card.basic({
-                                                                        color: story.color,
-                                                                        link: story.link,
-                                                                        title: story.title,
-                                                                        category: story.category,
-                                                                        icon: story.icon,
-                                                                        text: story.text,
-                                                                        linkText: story.linkText,
-                                                                    }) }}
-                                                                  </li>
-                                                                {% endfor %} #}
+                                                                                                                  <li class="test-one">
+                                                                                                                    {{ card.basic({
+                                                                                                                        color: story.color,
+                                                                                                                        link: story.link,
+                                                                                                                        title: story.title,
+                                                                                                                        category: story.category,
+                                                                                                                        icon: story.icon,
+                                                                                                                        text: story.text,
+                                                                                                                        linkText: story.linkText,
+                                                                                                                    }) }}
+                                                                                                                  </li>
+                                                                                                                {% endfor %} #}
                 <li>
                   {{ card.basic({
                     color: 'basic-card basic-card--blue',
