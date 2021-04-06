@@ -1,0 +1,25 @@
+uuid: b0d590e7-495a-4842-95fe-3ea172b93af9
+langcode: en
+status: true
+dependencies:
+  module:
+    - staffdir
+    - system
+  theme:
+    - typhoon
+id: staffcommitteeblock
+theme: typhoon
+region: content
+weight: 0
+provider: null
+plugin: staff_committee_block
+settings:
+  id: staff_committee_block
+  label: 'Staff Committee Block'
+  provider: staffdir
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '/about/committees/*'
+    negate: false
