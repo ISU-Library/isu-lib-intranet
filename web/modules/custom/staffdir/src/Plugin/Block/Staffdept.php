@@ -62,14 +62,16 @@ class Staffdept extends BlockBase implements ContainerFactoryPluginInterface {
   /**
    * Returns a render-able array for a test page.
    * need to read in uri/path of existing page [alias version] for
-   *   deptname, e.g. /departments/business-services, and store path pieces
-   *   in array; then use last path piece (i.e. $path_args[2]) to
-   *   extract deptname; convert hyphen in path piece to "%20" space
+   *   deptname, e.g.
+   *     /divisions/research-and-instruction-services/research-services   
+   *   and store path pieces in array; then use last path piece
+   *   (i.e. $path_args[3]) to extract deptname; convert hyphen
+   *   in path piece to "%20" space
    */
 	$current_path = \Drupal::service('path.current')->getPath();
 	$path = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
 	$path_args = explode("/", $path);
-	$deptname_orig = $path_args[2];
+	$deptname_orig = $path_args[3];
 	$deptname = str_replace("-", " ", $deptname_orig);
 
         $deptpersons = $this->staffdirClient->dept($deptname);
