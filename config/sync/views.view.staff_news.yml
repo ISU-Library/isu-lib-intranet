@@ -291,8 +291,8 @@ display:
         title: 'Staff News'
         description: ''
         expanded: false
-        parent: 'menu_link_content:fb541f03-239c-494f-916d-65c42301f207'
-        weight: 0
+        parent: 'menu_link_content:c2830e37-e30d-4268-a651-e5542deb95e5'
+        weight: -50
         context: '0'
         menu_name: main
     cache_metadata:
