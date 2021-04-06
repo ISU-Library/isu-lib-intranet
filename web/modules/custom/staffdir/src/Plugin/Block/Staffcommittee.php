@@ -7,14 +7,14 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Block for staff department personnel
+ * Block for staff committee personnel
  *
  * @Block(
- *   id = "staff_dept_block",
- *   admin_label = @Translation("Staff Department Block")
+ *   id = "staff_committee_block",
+ *   admin_label = @Translation("Staff Committee Block")
  * )
  */
-class Staffdept extends BlockBase implements ContainerFactoryPluginInterface {
+class Staffcommittee extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
    * @var \Drupal\cat_facts\CatFactsClient
@@ -48,7 +48,7 @@ class Staffdept extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
    * make sure block is never cached, since it includes a [different]
-   *   dynamically-assigned deptname each time it is called
+   *   dynamically-assigned committeename each time it is called
    */
   public function getCacheMaxAge() {
 	return 0;
@@ -62,41 +62,41 @@ class Staffdept extends BlockBase implements ContainerFactoryPluginInterface {
   /**
    * Returns a render-able array for a test page.
    * need to read in uri/path of existing page [alias version] for
-   *   deptname, e.g.
-   *     /divisions/research-and-instruction-services/research-services   
-   *   and store path pieces in array; then use last path piece
-   *   (i.e. $path_args[3]) to extract deptname; convert hyphen
-   *   in path piece to "%20" space
+   *   committeename, e.g. /about/committees/events, and store path pieces
+   *   in array; then use last path piece (i.e. $path_args[3]) to
+   *   extract committeename; convert hyphen in path piece to "%20" space
    */
 	$current_path = \Drupal::service('path.current')->getPath();
 	$path = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
 	$path_args = explode("/", $path);
-	$deptname_orig = $path_args[3];
-	$deptname = str_replace("-", " ", $deptname_orig);
+	$committeename_orig = $path_args[3];
+	$committeename = str_replace("-", " ", $committeename_orig);
 
-        $deptpersons = $this->staffdirClient->dept($deptname);
+        $committeepersons = $this->staffdirClient->committee($committeename);
         $items = [];
 
-        foreach($deptpersons as $deptperson) {
-          $r_netid = $deptperson['NETID'];
-          $r_surname = $deptperson['SURNAME'];
-          $r_firstname = $deptperson['FIRSTNAME'];
-          $r_title = $deptperson['TITLE'];
-          $r_uri = $deptperson['URI'];
+        foreach($committeepersons as $committeeperson) {
+          $r_netid = $committeeperson['NETID'];
+          $r_surname = $committeeperson['SURNAME'];
+          $r_firstname = $committeeperson['FIRSTNAME'];
+          $r_title = $committeeperson['TITLE'];
+          $r_uri = $committeeperson['URI'];
+          $r_role = $committeeperson['ROLE'];
           $thisRow = array
           (
           "netid" => "$r_netid",
           "surname" => "$r_surname",
           "firstname" => "$r_firstname",
           "title" => "$r_title",
-          "uri" => "$r_uri"
+          "uri" => "$r_uri",
+          "role" => "$r_role"
           );
           $items[] = $thisRow;
         }
 
         return [
-          '#theme' => 'staff_dept',
-          '#deptpersons' => $items,
+          '#theme' => 'staff_committee',
+          '#committeepersons' => $items,
         ];
 
   }

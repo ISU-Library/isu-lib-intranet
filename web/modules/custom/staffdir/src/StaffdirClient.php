@@ -71,4 +71,21 @@ class StaffdirClient {
   }
 
 
+  /**
+   * Get staff in a specific committee
+   *
+   * @param string $committeename
+   *
+   * @return array
+   */
+  public function committee($committeename) {
+        $response = $this->client->get('committee', [
+          'query' => [
+                'committeename' => $committeename
+          ]
+        ]);
+        $data = Json::decode($response->getBody());
+        return $data;
+  }
+
 }
