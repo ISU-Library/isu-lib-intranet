@@ -10,7 +10,7 @@ module.exports = {
       `${destinationDir}/templates/*.twig`,
       `${destinationDir}/templates/**/*.twig`,
       `${destinationDir}/templates/***/**/*.twig`,
-      `${sourceDir}/js/*.js`,
+      `${destinationDir}/js/*.js`,
     ],
   },
   darkMode: false, // or 'media' or 'class'

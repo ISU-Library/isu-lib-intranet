@@ -1,0 +1,38 @@
+{#
+/**
+ * @file
+ * Default template for the staff list page.
+ *
+ * Available variables:
+ * - staffpersons: Array of staffperson informations.
+ *   A staffperson information consists of:
+ *   - netid
+ *   - surname, firstname
+ *   - title
+ *   - unitname
+ *   - not used (midname, firstchar, staff_ord, unit_ord)
+ */
+#}
+
+{% import "@typhoon/components/_basic-cards.html.twig" as card %}
+
+
+<h1 class="mt-3xl">
+  Library Staff Directory
+</h1>
+
+<div class=" grid-staff-directory grid grid-cols-4 gap-y-3xl gap-x-xl">
+  {% for staffperson in staffpersons %}
+    {{ card.staffCard({
+      imgSrc: staffperson.uri ? staffperson.uri : 'https://app.lib.iastate.edu/images/grantwoodmural.jpg',
+      color: loop.index % 2 == 0 ? 'basic-card--yellow' : '',
+      link: staffperson.netid,
+      department: staffperson.unitname,
+      firstName: staffperson.firstname,
+      lastName: staffperson.surname,
+      title: staffperson.title,
+      phone: '123-456-6789',
+      email: staffperson.netid,
+    }) }}
+  {% endfor %}
+</div>

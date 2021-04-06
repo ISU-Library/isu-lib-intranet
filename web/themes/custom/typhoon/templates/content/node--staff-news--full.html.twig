@@ -15,7 +15,7 @@
  *   Calling other methods, such as node.delete(), will result in an exception.
  *   See \Drupal\node\Entity\Node for a full list of public properties and
  *   methods for the node object.
- * - label: The title of the node.
+ * - label: (optional) The title of the node.
  * - content: All node items. Use {{ content }} to print them all,
  *   or print a subset such as {{ content.field_example }}. Use
  *   {{ content|without('field_example') }} to temporarily suppress the printing
@@ -23,8 +23,8 @@
  * - author_picture: The node author user entity, rendered using the "compact"
  *   view mode.
  * - metadata: Metadata for this node.
- * - date: Themed creation date field.
- * - author_name: Themed author name field.
+ * - date: (optional) Themed creation date field.
+ * - author_name: (optional) Themed author name field.
  * - url: Direct URL of the current node.
  * - display_submitted: Whether submission information should be displayed.
  * - attributes: HTML attributes for the containing element.
@@ -71,83 +71,54 @@
  */
 #}
 
+{# ! This styles the staff news articles page #}
 
-{% set ImgSrc = file_url(node.field_employee_image.entity.fileuri) %}
-{% set ImgAlt = node.field_employee_image.alt %}
-
-{% set CyImg = './images/cy.jpg' %}
-
-{% set employee_image = content.field_employee_image|field_value %}
-{% set employee_name = content.field_employee_name|field_value %}
-{% set employee_department = content.field_employee_department|field_value %}
-{% set employee_job = content.field_employee_job_title|field_value %}
-{% set employee_phone = content.field_employee_phone|field_value %}
-{% set employee_email = content.field_employee_email|field_value %}
+{% set ImgSrc = file_url(node.field_staff_news_main_image.entity.fileuri) %}
+{% set ImgAlt = node.field_staff_news_main_image.alt %}
 
 
-{% set staff_card_class = [
-  'staff-card',
-  'basic-card',
-  'mx-sm',
-  'pt-3xl', 
-  'pb-2xl'
-] %}
+<article{{attributes}}>
 
-
-<article{{attributes.addClass(staff_card_class)}}>
-
-  {# <div {{content_attributes}} class="basic-card "> #}
-  {% if employee_image is not empty %}
-    <a class="staff--image-link" href="{{url}}">
-      <div class="staff--image--wrap">
-        <div class="staff--image" style="background-image: url({{ImgSrc}});" aria-label="Picture of {{ImgAlt}}"></div>
-      </div>
-    </a>
-  {% else %}
-    <a class="staff--image-link" href="{{url}}">
-      <div class="staff--image--wrap">
-        <div class="staff--image" style="background-image: url({{CyImg}});" aria-label="{{employee_name}} has no picture"></div>
-      </div>
-    </a>
+  {{ title_prefix }}
+  {% if label and not page %}
+    <h2{{title_attributes}}>
+      <a href="{{ url }}" rel="bookmark">
+        {{ label }}
+      </a>
+    </h2>
   {% endif %}
+  {{ title_suffix }}
 
-  <div class="basic-card--text-wrap">
-    {{ title_prefix }}
-    <h3 class="basic-card--title staff--name mb-sm text-center">
-      {{employee_name}}
-    </h3>
-    {{ title_suffix }}
+  {# * Below is the start to custom styling content #}
 
-    <div class="staff-info">
-      <div class="flex flex-col justify-content-center mb-xs">
-        <span class="text-align-center mb-2xs">
-          {{employee_department}}
-        </span>
-        <span class="pipe"></span>
-        <span class="staff--job-title text-align-center">
-          {{employee_job}}
-        </span>
-      </div>
-
-      <div class="flex justify-content-center">
-        {% if node.field_employee_phone is not empty %}
-          <span class="staff--phone mr-sm">
-            {{employee_phone}}
-          </span>
-
-        {% endif %}
-        {% if node.field_employee_email is not empty %}
-          <span class="pipe"></span>
-          <a class="staff--email ml-sm text-align-center" href="mailto:{{employee_email}}">
-            Email
-          </a>
-        {% endif %}
-      </div>
-    </div>
+  <div>
+    <figure>
+      <img src="{{ImgSrc}}" alt="">
+    </figure>
   </div>
-  <a href="{{ url }}" rel="bookmark" class="button">
-    More about
-    {{employee_name}}
-  </a>
-  {# </div> #}
+  <div{{content_attributes}}>
+    {# <div style="background-image:url({{ImgSrc}})" class="mb-lg"> #}
+    <h1>
+      {{ label }}
+    </h1>
+    {{ content.field_staff_news_article_summary|field_value }}
+    {# </div> #}
+
+    {{ content.field_staff_news_content|field_value }}
+  </div>
+
+  {% if display_submitted %}
+    <footer>
+      {{ author_picture }}
+      <div{{author_attributes}}>
+        {% trans %}
+        Submitted by
+        {{ author_name }}
+        on
+        {{ date }}
+        {% endtrans %}
+        {{ metadata }}
+      </div>
+    </footer>
+  {% endif %}
 </article>

@@ -1,0 +1,63 @@
+{#
+/**
+ * @file
+ * Default template for individual staff profile page.
+ *
+ * Available variables:
+ * - staffattributes: Array of staffattribute informations.
+ *   A staffattribute information consists of:
+ *   - netid
+ *   - surname, firstname, midname
+ *   - fullname
+ *   - address
+ *   - zipcode
+ *   - telephone
+ *   - title
+ *   - unitname_str
+ *   - photo_fileid
+ *   - uri
+ *   - selworks
+ *   - not used (alt, width, height)
+ */
+#}
+
+
+      {# {{ staffattribute.address }} #}
+{% for staffattribute in staffattributes %}
+  <div class="flex flex-col md:flex-row">
+    <figure class="h-[150px] w-[150px] relative rounded-full overflow-hidden shadow-light-2">
+     {% if staffattribute.uri %}
+        <img src="{{staffattribute.uri}}" alt="{{ staffattribute.fullname }}" class="absolute left-1/2 top-[60%] transform -translate-x-1/2 -translate-y-1/2 max-w-full" loading="lazy"/>
+      {% else %}
+       <img src="https://app.lib.iastate.edu/images/grantwoodmural.jpg" alt="Placeholder ror {{ staffattribute.fullname }}" class="absolute-center max-w-full" loading="lazy"/>
+      {% endif %}
+    </figure>
+    <div class="md:w-4/5 md:pl-2xl">
+      <h3 class="heading-underline text-2xl pt-lg md:pt-0">
+          {{ staffattribute.fullname }}
+      </h3>
+      <div class="flex pb-md">
+        <span class="inline-block pr-sm border-r-2 border-red-600 md:text-lg">
+          {{ staffattribute.unitname_str }}
+        </span>
+        <span class="md:w-2/3 inline-block pl-sm md:text-lg">
+          {{ staffattribute.title }}
+        </span>
+      </div>
+      <div>
+        <a href="tel:{{ staffattribute.telephone }}" class="pr-sm border-r-2 text-black font-normal border-red-600">
+          <i class="fas fa-phone text-red-600"></i>
+          {{ staffattribute.telephone }}
+        </a>
+        <a href="mailto={{ staffattribute.netid }}@iastate.edu" class="pl-sm text-black font-normal border-red-600">
+          <i class="fas fa-envelope text-red-600"></i>
+          Email
+        </a>
+      </div>
+      <p>
+        {# {{staffattribute.bio}} #}
+        Air plant occupy artisan salvia kickstarter flannel. Bushwick raw denim 3 wolf moon butcher pug food truck occupy tattooed pour-over. Williamsburg pickled single-origin coffee irony Air plant occupy artisan salvia kickstarter flannel. Bushwick raw denim 3 wolf moon butcher pug food truck occupy tattooed pour-over. Williamsburg pickled single-origin coffee irony.
+      </p>
+    </div>
+  </div>
+{% endfor %}

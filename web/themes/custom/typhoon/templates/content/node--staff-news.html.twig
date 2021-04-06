@@ -15,7 +15,7 @@
  *   Calling other methods, such as node.delete(), will result in an exception.
  *   See \Drupal\node\Entity\Node for a full list of public properties and
  *   methods for the node object.
- * - label: The title of the node.
+ * - label: (optional) The title of the node.
  * - content: All node items. Use {{ content }} to print them all,
  *   or print a subset such as {{ content.field_example }}. Use
  *   {{ content|without('field_example') }} to temporarily suppress the printing
@@ -23,8 +23,8 @@
  * - author_picture: The node author user entity, rendered using the "compact"
  *   view mode.
  * - metadata: Metadata for this node.
- * - date: Themed creation date field.
- * - author_name: Themed author name field.
+ * - date: (optional) Themed creation date field.
+ * - author_name: (optional) Themed author name field.
  * - url: Direct URL of the current node.
  * - display_submitted: Whether submission information should be displayed.
  * - attributes: HTML attributes for the containing element.
@@ -71,71 +71,46 @@
  */
 #}
 
+{# ! This styles the staff news list page #}
 
-{% set ImgSrc = file_url(node.field_employee_image.entity.fileuri) %}
-{% set ImgAlt = node.field_employee_image.alt %}
+{% import "@typhoon/components/_news-cards.html.twig" as newsCard %}
 
-{% set employee_name = content.field_employee_name|field_value %}
-{% set employee_department = content.field_employee_department|field_value %}
-{% set employee_job = content.field_employee_job_title|field_value %}
-{% set employee_phone = content.field_employee_phone|field_value %}
-{% set employee_email = content.field_employee_email|field_value %}
+{% set ImgSrc = file_url(node.field_staff_news_main_image.entity.fileuri) %}
+{% set ImgAlt = node.field_staff_news_main_image.alt %}
 
 
-{% set staff_card_class = [
-  'staff--page',
-] %}
+<article{{attributes}}>
+  {# * Below is the start to custom styling content #}
 
-<article{{attributes.addClass(staff_card_class)}}>
+  {{ title_prefix }}
+  {% if label and not page %}
+  <div{{content_attributes}}>
+   {{newsCard.lead({
+      imgSrc: ImgSrc,
+      imgAlt: label|field_value,
+      link: url,
+      category: '',
+      title: label|field_value,
+      text: content.field_staff_news_summary|render|striptags|trim,
+      linkText: 'Read this story',
+      authorName: author_name,
+      date: date,
+    })}}
+  </div>
+  {% endif %}
+  {{ title_suffix }}
 
-  <div {{content_attributes.addClass('staff')}}>
-
-    <div class="staff--image--wrap">
-      <img src="{{ImgSrc}}" alt="{{ImgAlt}}">
-    </div>
-
-    <div class="staff-info pl-2xl">
-      {{ title_prefix }}
-      <h1 class="staff--name mb-md text-3xl">
-        {{employee_name}}
-      </h1>
-      {{ title_suffix }}
-
-      <div class="staff-info">
-        <div class="flex justify-content-start pb-xs">
-          <span class="staff--job-title mr-sm">
-            {{employee_job}}
-          </span>
-          <span class="pipe"></span>
-          <span class="ml-sm">
-            {{employee_department}}
-          </span>
-        </div>
-
-        <div class="flex justify-content-start">
-          {% if node.field_employee_phone is not empty %}
-            <span class="staff--phone mr-sm">
-              {{employee_phone}}
-            </span>
-
-          {% endif %}
-          {% if node.field_employee_email is not empty %}
-            <span class="pipe"></span>
-            <a class="staff--email ml-sm" href="mailto:{{employee_email}}">
-              Email
-            </a>
-          {% endif %}
-        </div>
+  {# {% if display_submitted %}
+    <footer>
+      {{ author_picture }}
+      <div{{author_attributes}}>
+        {% trans %}
+        {{ author_name }}
+        -
+        {{ date }}
+        {% endtrans %}
+        {{ metadata }}
       </div>
-    </div>
-  </div>
-  <div class="staff--text-wrap">
-    <div class="pb-md">
-      {{content.field_employee_bio}}
-    </div>
-    <a href="/staff/staff-directory" class="button button-icon--back px-2xl">
-      Return
-    </a>
-  </div>
-
+    </footer>
+  {% endif %} #}
 </article>

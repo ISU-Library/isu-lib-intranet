@@ -90,7 +90,7 @@
     <div class="basic-card basic-card--image flex flex-col relative overflow-hidden border-l-4 {{data.color}} bg-white {{cardColor}} shadow-light-2 transition-all duration-300 group">
       <div class="basic-card--image-wrap relative">
         <figure class="relative overflow-hidden m-0">
-          <img class="absolute-center max-w-full w-full h-auto" src="{{ data.imgSrc }}" alt="{{data.imgAlt}}"/>
+          <img loading="lazy" class="absolute-center max-w-full w-full h-auto" src="{{ data.imgSrc }}" alt="{{data.imgAlt}}"/>
           <div class="image-overlay"></div>
         </figure>
         <div class="basic-card--text-wrap absolute left-0 bottom-0 h-auto border-0 pt-xl pr-lg pb-md pl-xl xs:pt-md xs:pr-sm xs:pb-md xs:pl-md">
@@ -119,4 +119,74 @@
       </div>
     </div>
   </a>
+{% endmacro %}
+
+{% macro staffCard(data) %}
+
+  {% set defaultData = {
+        imgSrc: '',
+        color: '',
+        link: '',
+        title: '',
+        department: '',
+        firstName: '',
+        lastName: '',
+        phone: '',
+        email: '',
+    } %}
+
+  {% set data = data ? defaultData|merge(data) : defaultData %}
+
+  {% set transitions = value %}
+
+  {% if data.color == 'basic-card--yellow' %}
+    {% set cardColor = 'border-yellow-500 hover:border-yellow-600 hover:bg-yellow-400 hover:shadow-dark-4' %}
+    {% set accentColor = 'text-yellow-800 group-hover:text-black transition-color duration-300 ease-in' %}
+  {% elseif data.color == 'basic-card--blue' %}
+    {% set cardColor = 'border-blue-500 hover:border-blue-700 hover:bg-blue-500 hover:shadow-dark-4' %}
+    {% set accentColor = 'text-blue-700 group-hover:text-white transition-color duration-300 ease-in' %}
+    {% set textColor = 'group-hover:text-white transition-color duration-300 ease-in' %}
+  {% else %}
+    {% set cardColor = 'border-red-400 hover:border-red-700 hover:bg-red-500 hover:shadow-dark-4' %}
+    {% set accentColor = 'text-red-500 group-hover:text-white transition-color duration-300 ease-in' %}
+    {% set textColor = 'group-hover:text-white transition-color duration-300 ease-in' %}
+  {% endif %}
+
+  {# <a role="Link" href="/staff-profile?netid={{data.link}}" class="block"> #}
+  <a role="Link" href="/staff-profile?netid={{data.link}}" title="{{data.firstname }} {{ data.surname }} staff profile" class="basic-card basic-card--staff flex relative flex-col relative overflow-hidden border-l-4 {{data.color}} bg-white {{cardColor}} shadow-light-2 transition-all duration-300 group">
+    <div aria-hidden="true" class="flair-img top-0 left-0 z-10">
+      <img loading="lazy" class="opacity-50" src="/themes/custom/typhoon/images/dot-pattern-small.png" alt="">
+    </div>
+    <div class="mt-lg mb-sm z-10 h-[130px] w-[130px] m-auto">
+      <figure class="relative overflow-hidden rounded-full w-full h-full transition-shadow shadow-light-2 group-hover:shadow-dark-2">
+          <img loading="lazy" class="absolute left-1/2 top-[60%] transform -translate-x-1/2 -translate-y-1/2 max-w-full " src="{{ data.imgSrc }}" alt="{{ data.firstName }} {{ data.lastName }}"/>
+      </figure>
+    </div>
+    <div class="basic-card--text-wrap flex flex-col flex-grow pt-md pl-xl pb-2xl pr-lg xs:pt-md xs:pr-sm xs:pb-lg xs:pl-md text-left">
+      <span class="aria-text">
+        View
+        {{ data.firstName }}
+        {{ data.lastName }}
+        info page
+      </span>
+      <div>
+        <span class="block pb-2xs text-sm font-bold {{accentColor}}">
+          {{ data.department }}
+        </span>
+        <h2 class="basic-card--title text-xl {{textColor}}">
+          {{ data.firstName }} {{ data.lastName }}
+        </h2>
+      </div>
+      <p class="basic-card--desc flex-grow font-normal mt-0 pb-md text-black {{textColor}}">
+        {{data.title}}
+      </p>
+      <div class="cta--wrap">
+        <div class="cta font-normal {{accentColor}}">
+          {{ data.firstName }}
+          's profile
+        </div>
+      </div>
+    </div>
+  </a>
+
 {% endmacro %}

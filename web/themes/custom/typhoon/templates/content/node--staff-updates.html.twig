@@ -71,47 +71,46 @@
  */
 #}
 
-{% set ImgSrc = file_url(node.field_staff_news_main_image.entity.fileuri) %}
-{% set ImgAlt = node.field_staff_news_main_image.alt %}
+{# ! This styles the staff news list page #}
+
+{% import "@typhoon/components/_news-cards.html.twig" as newsCard %}
+
+{% set ImgSrc = file_url(node.field_staff_updates_main_image.entity.fileuri) %}
+{% set ImgAlt = node.field_staff_updates_main_image.alt %}
 
 
 <article{{attributes}}>
+  {# * Below is the start to custom styling content #}
 
   {{ title_prefix }}
   {% if label and not page %}
-    <h2{{title_attributes}}>
-      <a href="{{ url }}" rel="bookmark">
-        {{ label }}
-      </a>
-    </h2>
+  <div{{content_attributes}}>
+    {{newsCard.basic({
+      imgSrc: ImgSrc,
+      imgAlt: label|field_value,
+      link: url,
+      category: '',
+      title: label|field_value,
+      text: content.field_staff_updates_summary|render|striptags|trim,
+      linkText: 'Read this story',
+      authorName: author_name,
+      date: date,
+    })}}
+  </div>
   {% endif %}
   {{ title_suffix }}
 
-  {# * Below is the start to custom styling content #}
-
-  <div{{content_attributes}}>
-    <div style="background-image:url({{ImgSrc}})" class="mb-lg">
-      <h1>
-        {{ label }}
-      </h1>
-      {{ content.field_staff_news_article_summary|field_value }}
-    </div>
-
-    {{ content.field_staff_news_content|field_value }}
-  </div>
-
-  {% if display_submitted %}
+  {# {% if display_submitted %}
     <footer>
       {{ author_picture }}
       <div{{author_attributes}}>
         {% trans %}
-        Submitted by
         {{ author_name }}
-        on
+        -
         {{ date }}
         {% endtrans %}
         {{ metadata }}
       </div>
     </footer>
-  {% endif %}
+  {% endif %} #}
 </article>
