@@ -24,6 +24,12 @@ function staffdir_theme($existing, $type, $theme, $path) {
         'deptpersons' => [],
       ],
     ],
+    'staff_committee' => [
+      'template' => 'staff_committee',
+      'variables' => [
+        'committeepersons' => [],
+      ],
+    ],
   ];
 }
 
