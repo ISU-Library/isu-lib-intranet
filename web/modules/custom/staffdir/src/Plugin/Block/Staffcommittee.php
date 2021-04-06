@@ -81,13 +81,15 @@ class Staffcommittee extends BlockBase implements ContainerFactoryPluginInterfac
           $r_firstname = $committeeperson['FIRSTNAME'];
           $r_title = $committeeperson['TITLE'];
           $r_uri = $committeeperson['URI'];
+          $r_role = $committeeperson['ROLE'];
           $thisRow = array
           (
           "netid" => "$r_netid",
           "surname" => "$r_surname",
           "firstname" => "$r_firstname",
           "title" => "$r_title",
-          "uri" => "$r_uri"
+          "uri" => "$r_uri",
+          "role" => "$r_role"
           );
           $items[] = $thisRow;
         }
