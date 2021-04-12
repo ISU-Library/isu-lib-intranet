@@ -1,4 +1,4 @@
-{#
+{# 
 /**
  * @file
  * Theme override to display a node.
@@ -73,34 +73,35 @@
 
 {# ! This styles the staff news list page #}
 
-{% import "@typhoon/components/_news-cards.html.twig" as newsCard %}
+{% import '@typhoon/components/_news-cards.html.twig' as newsCard %}
 
 {% set ImgSrc = file_url(node.field_staff_news_main_image.entity.fileuri) %}
 {% set ImgAlt = node.field_staff_news_main_image.alt %}
 
-
-<article{{attributes}}>
+<article {{ attributes }}>
   {# * Below is the start to custom styling content #}
 
   {{ title_prefix }}
   {% if label and not page %}
-  <div{{content_attributes}}>
-   {{newsCard.lead({
-      imgSrc: ImgSrc,
-      imgAlt: label|field_value,
-      link: url,
-      category: '',
-      title: label|field_value,
-      text: content.field_staff_news_article_summary|render|striptags|trim,
-      linkText: 'Read this story',
-      authorName: author_name,
-      date: date,
-    })}}
-  </div>
+    <div {{ content_attributes }}>
+      {{
+        newsCard.lead({
+          imgSrc: ImgSrc,
+          imgAlt: label|field_value,
+          link: url,
+          category: '',
+          title: label|field_value,
+          text: content.field_staff_news_article_summary|render|striptags|trim,
+          linkText: 'Read this story',
+          authorName: author_name,
+          date: date
+        })
+      }}
+    </div>
   {% endif %}
   {{ title_suffix }}
 
-  {# {% if display_submitted %}
+  {#  {% if display_submitted %}
     <footer>
       {{ author_picture }}
       <div{{author_attributes}}>

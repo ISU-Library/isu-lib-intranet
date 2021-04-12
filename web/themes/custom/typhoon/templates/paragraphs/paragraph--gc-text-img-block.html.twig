@@ -1,4 +1,4 @@
-{#
+{# 
 /**
  * @file
  * Default theme implementation to display a paragraph.
@@ -39,27 +39,27 @@
  */
 #}
 
-{% import "@typhoon/components/_general-content.html.twig" as gcBlock %}
+{% import '@typhoon/components/_general-content.html.twig' as gcBlock %}
 
-{%
-  set classes = [
-    'paragraph',
-    'paragraph--type--' ~ paragraph.bundle|clean_class,
-    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-    not paragraph.isPublished() ? 'paragraph--unpublished',
-  ]
-%}
+{% set classes = [
+  'paragraph',
+  'paragraph--type--' ~ (paragraph.bundle|clean_class),
+  view_mode ? 'paragraph--view-mode--' ~ (view_mode|clean_class),
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+] %}
 
-<div{{attributes.addClass(classes)}}>
+<div {{ attributes.addClass(classes) }}>
   {% block paragraph %}
     {% block content %}
-      {{ gcBlock.textImg({
-        imgSide: paragraph.field_gc_text_img_side.value,
-        imgSize: paragraph.field_gc_text_img_size.value,
-        imgSrc: file_url(paragraph.field_gc_text_img_img.entity.uri.value),
-        imgAlt: paragraph.field_gc_text_img_img.alt,
-        text: content.field_gc_text_img_text,
-      }) }}
+      {{
+        gcBlock.textImg({
+          imgSide: paragraph.field_gc_text_img_side.value,
+          imgSize: paragraph.field_gc_text_img_size.value,
+          imgSrc: file_url(paragraph.field_gc_text_img_img.entity.uri.value),
+          imgAlt: paragraph.field_gc_text_img_img.alt,
+          text: content.field_gc_text_img_text
+        })
+      }}
     {% endblock %}
-  {% endblock paragraph %}
+  {% endblock %}
 </div>

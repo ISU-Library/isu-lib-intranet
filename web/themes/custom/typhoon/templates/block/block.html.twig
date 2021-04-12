@@ -1,4 +1,4 @@
-{#
+{# 
 /**
  * @file
  * Theme override to display a block.
@@ -25,10 +25,10 @@
  * @see template_preprocess_block()
  */
 #}
-<div{{ attributes }}>
+<div {{ attributes }}>
   {{ title_prefix }}
   {% if label %}
-    <h2{{ title_attributes }}>{{ label }}</h2>
+    <h2 {{ title_attributes }}>{{ label }}</h2>
   {% endif %}
   {{ title_suffix }}
   {% block content %}

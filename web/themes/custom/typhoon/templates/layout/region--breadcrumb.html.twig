@@ -1,4 +1,4 @@
-{#
+{# 
 /**
  * @file
  * Theme override to display a region.
@@ -13,7 +13,5 @@
  */
 #}
 {% if content %}
-  <div{{attributes.addClass('col-span-full')}}>
-    {{ content }}
-  </div>
+  <div {{ attributes.addClass('col-span-full') }}>{{ content }}</div>
 {% endif %}

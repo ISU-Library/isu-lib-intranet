@@ -3,11 +3,9 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-
 /************** custom CSS *********************/
 @import url('//cdn.theme.iastate.edu/nimbus-sans/css/nimbus-sans.css');
 @import url('//cdn.theme.iastate.edu/merriweather/css/merriweather.css');
-
 
 /****** Foundations ******/
 @import './header.css';
@@ -51,7 +49,7 @@ p {
   @apply absolute transform -translate-x-1/2 left-1/2;
 }
 
-.gen-con--block p+p {
+.gen-con--block p + p {
   @apply mt-md;
 }
 
@@ -70,7 +68,7 @@ p {
 }
 
 .grid-department-staff {
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
 }
 
 .heading-underline {
@@ -98,11 +96,11 @@ p {
 }
 
 .staff-news--article-list {
-  @apply grid grid-cols-1 md:grid-cols-2 gap-y-3xl gap-x-2xl mt-2xl text-left
+  @apply grid grid-cols-1 md:grid-cols-2 gap-y-3xl gap-x-2xl mt-2xl text-left;
 }
 
 .staff-updates--article-list {
-  @apply grid grid-cols-1 gap-y-3xl gap-x-2xl mt-2xl text-left
+  @apply grid grid-cols-1 gap-y-3xl gap-x-2xl mt-2xl text-left;
 }
 
 @media (min-width: 640px) {
@@ -110,4 +108,3 @@ p {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
-

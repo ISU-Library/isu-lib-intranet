@@ -1,4 +1,4 @@
-{#
+{# 
 /**
  * @file
  * Default theme implementation to display a paragraph.
@@ -38,30 +38,31 @@
  * @ingroup themeable
  */
 #}
-{%
-  set classes = [
-    'paragraph',
-    'paragraph--type--' ~ paragraph.bundle|clean_class,
-    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-    not paragraph.isPublished() ? 'paragraph--unpublished'
-  ]
-%}
+{% set classes = [
+  'paragraph',
+  'paragraph--type--' ~ (paragraph.bundle|clean_class),
+  view_mode ? 'paragraph--view-mode--' ~ (view_mode|clean_class),
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+] %}
 
-{% import "@typhoon/components/_news-cards.html.twig" as newsCard %}
-
+{% import '@typhoon/components/_news-cards.html.twig' as newsCard %}
 
 {% block paragraph %}
   {% block content %}
-    <div {{attributes.addClass(classes)}}>
-      {{newsCard.lead({
-        imgSrc: file_url(paragraph.field_news_card_lead_image.entity.uri.value),
-        imgAlt: content.field_news_card_lead_image.alt,
-        link: content.field_news_card_lead_link.0['#url'],
-        category: content.field_news_card_lead_category.0['#title'],
-        title: content.field_news_card_lead_title|field_value,
-        text: content.field_news_card_lead_text|field_value,
-        linkText: content.field_news_card_lead_link.0['#title'],
-        }) }}
+    <div {{ attributes.addClass(classes) }}>
+      {{
+        newsCard.lead({
+          imgSrc: file_url(
+            paragraph.field_news_card_lead_image.entity.uri.value
+          ),
+          imgAlt: content.field_news_card_lead_image.alt,
+          link: content.field_news_card_lead_link[0]['#url'],
+          category: content.field_news_card_lead_category[0]['#title'],
+          title: content.field_news_card_lead_title|field_value,
+          text: content.field_news_card_lead_text|field_value,
+          linkText: content.field_news_card_lead_link[0]['#title']
+        })
+      }}
     </div>
   {% endblock %}
-{% endblock paragraph %}
+{% endblock %}

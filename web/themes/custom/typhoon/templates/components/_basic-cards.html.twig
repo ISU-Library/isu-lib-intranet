@@ -1,56 +1,83 @@
 {% macro basic(data) %}
-
   {% set defaultData = {
-        color: '',
-        link: '',
-        title: '',
-        category: '',
-        icon: '',
-        text: '',
-        linkText: '',
-    } %}
+    color: '',
+    link: '',
+    title: '',
+    category: '',
+    icon: '',
+    text: '',
+    linkText: ''
+  } %}
 
   {% set data = data ? defaultData|merge(data) : defaultData %}
 
   {% if data.color == 'basic-card basic-card--yellow' %}
-    {% set cardColor = 'border-yellow-500 hover:border-yellow-600 hover:bg-yellow-400 hover:shadow-dark-4' %}
-    {% set accentColor = 'text-yellow-800 group-hover:text-black transition-color duration-300 ease-in' %}
-
+    {% set cardColor =
+      'border-yellow-500 hover:border-yellow-600 hover:bg-yellow-400 hover:shadow-dark-4'
+    %}
+    {% set accentColor =
+      'text-yellow-800 group-hover:text-black transition-color duration-300 ease-in'
+    %}
   {% elseif data.color == 'basic-card basic-card--blue' %}
-    {% set cardColor = 'border-blue-500 hover:border-blue-700 hover:bg-blue-500 hover:shadow-dark-4' %}
-    {% set accentColor = 'text-blue-700 group-hover:text-white transition-color duration-300 ease-in' %}
-    {% set textColor = 'group-hover:text-white transition-color duration-300 ease-in' %}
-
+    {% set cardColor =
+      'border-blue-500 hover:border-blue-700 hover:bg-blue-500 hover:shadow-dark-4'
+    %}
+    {% set accentColor =
+      'text-blue-700 group-hover:text-white transition-color duration-300 ease-in'
+    %}
+    {% set textColor =
+      'group-hover:text-white transition-color duration-300 ease-in'
+    %}
   {% else %}
-    {% set cardColor = 'border-red-400 hover:border-red-700 hover:bg-red-500 hover:shadow-dark-4' %}
-    {% set accentColor = 'text-red-500 group-hover:text-white transition-color duration-300 ease-in' %}
-    {% set textColor = 'group-hover:text-white transition-color duration-300 ease-in' %}
+    {% set cardColor =
+      'border-red-400 hover:border-red-700 hover:bg-red-500 hover:shadow-dark-4'
+    %}
+    {% set accentColor =
+      'text-red-500 group-hover:text-white transition-color duration-300 ease-in'
+    %}
+    {% set textColor =
+      'group-hover:text-white transition-color duration-300 ease-in'
+    %}
   {% endif %}
 
   <a role="Link" href="{{ data.link }}" class="basic-card--link">
-    <div class="bg-white flex flex-col basic-card relative h-full overflow-hidden border-l-4 {{data.color}} {{cardColor}} shadow-light-2 transition-all duration-300 group">
-      <span class="aria-text border">
-        {{ data.title }}
-      </span>
-      <div class="basic-card--text-wrap h-full flex flex-col pt-xl pr-lg pb-2xl pl-xl xs:pt-md xs:pr-sm xs:pb-lg xs:pl-md">
+    <div
+      class="bg-white flex flex-col basic-card relative h-full overflow-hidden border-l-4 {{
+      data.color
+      }} {{ cardColor }} shadow-light-2 transition-all duration-300 group"
+    >
+      <span class="aria-text border">{{ data.title }}</span>
+      <div
+        class="basic-card--text-wrap h-full flex flex-col pt-xl pr-lg pb-2xl pl-xl xs:pt-md xs:pr-sm xs:pb-lg xs:pl-md"
+      >
         {% if data.category %}
-          <span class="basic-card--category block line-normal font-normal {{accentColor}} text-sm mb-xs">
+          <span
+            class="basic-card--category block line-normal font-normal {{
+            accentColor
+            }} text-sm mb-xs"
+          >
             {{ data.category }}
           </span>
         {% endif %}
         {% if data.icon %}
-          <span class="basic-card--category icon-{{ data.icon }} {{accentColor}} mb-xs text-2xl"></span>
+          <span
+            class="basic-card--category icon-{{ data.icon }} {{
+            accentColor
+            }} mb-xs text-2xl"
+          ></span>
         {% endif %}
-        <h3 class="basic-card--title line-clamp-3 {{textColor}}">
+        <h3 class="basic-card--title line-clamp-3 {{ textColor }}">
           {{ data.title }}
         </h3>
-        <p class="basic-card--desc flex-grow font-normal mb-md line-clamp-5 {{textColor}}">
+        <p
+          class="basic-card--desc flex-grow font-normal mb-md line-clamp-5 {{
+          textColor
+          }}"
+        >
           {{ data.text|raw }}
         </p>
         <div class="cta--wrap">
-          <div class="cta {{accentColor}}">
-            {{ data.linkText }}
-          </div>
+          <div class="cta {{ accentColor }}">{{ data.linkText }}</div>
         </div>
       </div>
     </div>
@@ -58,44 +85,73 @@
 {% endmacro %}
 
 {% macro basicImg(data) %}
-
   {% set defaultData = {
-        imgSrc: '',
-        imgAlt: '',
-        color: '',
-        link: '',
-        title: '',
-        category: '',
-        text: '',
-        linkText: '',
-    } %}
+    imgSrc: '',
+    imgAlt: '',
+    color: '',
+    link: '',
+    title: '',
+    category: '',
+    text: '',
+    linkText: ''
+  } %}
 
   {% set data = data ? defaultData|merge(data) : defaultData %}
 
   {% if data.color == 'basic-card--yellow' %}
-    {% set cardColor = 'border-yellow-500 hover:border-yellow-600 hover:bg-yellow-400 hover:shadow-dark-4' %}
-    {% set accentColor = 'text-yellow-800 group-hover:text-black transition-color duration-300 ease-in' %}
+    {% set cardColor =
+      'border-yellow-500 hover:border-yellow-600 hover:bg-yellow-400 hover:shadow-dark-4'
+    %}
+    {% set accentColor =
+      'text-yellow-800 group-hover:text-black transition-color duration-300 ease-in'
+    %}
   {% elseif data.color == 'basic-card--blue' %}
-    {% set cardColor = 'border-blue-500 hover:border-blue-700 hover:bg-blue-500 hover:shadow-dark-4' %}
-    {% set accentColor = 'text-blue-700 group-hover:text-white transition-color duration-300 ease-in' %}
-    {% set textColor = 'group-hover:text-white transition-color duration-300 ease-in' %}
+    {% set cardColor =
+      'border-blue-500 hover:border-blue-700 hover:bg-blue-500 hover:shadow-dark-4'
+    %}
+    {% set accentColor =
+      'text-blue-700 group-hover:text-white transition-color duration-300 ease-in'
+    %}
+    {% set textColor =
+      'group-hover:text-white transition-color duration-300 ease-in'
+    %}
   {% else %}
-    {% set cardColor = 'border-red-400 hover:border-red-700 hover:bg-red-500 hover:shadow-dark-4' %}
-    {% set accentColor = 'text-red-500 group-hover:text-white transition-color duration-300 ease-in' %}
-    {% set textColor = 'group-hover:text-white transition-color duration-300 ease-in' %}
-
+    {% set cardColor =
+      'border-red-400 hover:border-red-700 hover:bg-red-500 hover:shadow-dark-4'
+    %}
+    {% set accentColor =
+      'text-red-500 group-hover:text-white transition-color duration-300 ease-in'
+    %}
+    {% set textColor =
+      'group-hover:text-white transition-color duration-300 ease-in'
+    %}
   {% endif %}
 
-  <a role="Link" href="{{data.link}}" class="basic-card--link">
-    <div class="basic-card basic-card--image flex flex-col relative overflow-hidden border-l-4 {{data.color}} bg-white {{cardColor}} shadow-light-2 transition-all duration-300 group">
+  <a role="Link" href="{{ data.link }}" class="basic-card--link">
+    <div
+      class="basic-card basic-card--image flex flex-col relative overflow-hidden border-l-4 {{
+      data.color
+      }} bg-white {{
+      cardColor
+      }} shadow-light-2 transition-all duration-300 group"
+    >
       <div class="basic-card--image-wrap relative">
         <figure class="relative overflow-hidden m-0">
-          <img loading="lazy" class="absolute-center max-w-full w-full h-auto" src="{{ data.imgSrc }}" alt="{{data.imgAlt}}"/>
+          <img
+            loading="lazy"
+            class="absolute-center max-w-full w-full h-auto"
+            src="{{ data.imgSrc }}"
+            alt="{{ data.imgAlt }}"
+          />
           <div class="image-overlay"></div>
         </figure>
-        <div class="basic-card--text-wrap absolute left-0 bottom-0 h-auto border-0 pt-xl pr-lg pb-md pl-xl xs:pt-md xs:pr-sm xs:pb-md xs:pl-md">
+        <div
+          class="basic-card--text-wrap absolute left-0 bottom-0 h-auto border-0 pt-xl pr-lg pb-md pl-xl xs:pt-md xs:pr-sm xs:pb-md xs:pl-md"
+        >
           {% if data.category %}
-            <span class="basic-card--category text-white mb-xs text-shadow-1">
+            <span
+              class="basic-card--category block text-white pb-xs text-shadow-1"
+            >
               {{ data.category }}
             </span>
           {% endif %}
@@ -104,17 +160,19 @@
           </h3>
         </div>
       </div>
-      <span class="aria-text">
-        {{ data.title }}
-      </span>
-      <div class="basic-card--text-wrap relative pt-md pr-lg pb-2xl pl-xl xs:pt-md xs:pr-sm xs:pb-lg xs:pl-md">
-        <p class="basic-card--desc flex-grow font-normal mb-md line-clamp-5 {{textColor}}">
+      <span class="aria-text">{{ data.title }}</span>
+      <div
+        class="basic-card--text-wrap relative pt-md pr-lg pb-2xl pl-xl xs:pt-md xs:pr-sm xs:pb-lg xs:pl-md"
+      >
+        <p
+          class="basic-card--desc flex-grow font-normal mb-md line-clamp-5 {{
+          textColor
+          }}"
+        >
           {{ data.text|raw }}
         </p>
         <div class="cta--wrap">
-          <div class="cta {{accentColor}}">
-            {{ data.linkText }}
-          </div>
+          <div class="cta {{ accentColor }}">{{ data.linkText }}</div>
         </div>
       </div>
     </div>
@@ -122,47 +180,85 @@
 {% endmacro %}
 
 {% macro staffCard(data) %}
-
   {% set defaultData = {
-        imgSrc: '',
-        color: '',
-        link: '',
-        title: '',
-        department: '',
-        firstName: '',
-        lastName: '',
-        phone: '',
-        email: '',
-    } %}
+    imgSrc: '',
+    color: '',
+    link: '',
+    title: '',
+    department: '',
+    firstName: '',
+    lastName: '',
+    phone: '',
+    email: ''
+  } %}
 
   {% set data = data ? defaultData|merge(data) : defaultData %}
 
   {% set transitions = value %}
 
   {% if data.color == 'basic-card--yellow' %}
-    {% set cardColor = 'border-yellow-500 hover:border-yellow-600 hover:bg-yellow-400 hover:shadow-dark-4' %}
-    {% set accentColor = 'text-yellow-800 group-hover:text-black transition-color duration-300 ease-in' %}
+    {% set cardColor =
+      'border-yellow-500 hover:border-yellow-600 hover:bg-yellow-400 hover:shadow-dark-4'
+    %}
+    {% set accentColor =
+      'text-yellow-800 group-hover:text-black transition-color duration-300 ease-in'
+    %}
   {% elseif data.color == 'basic-card--blue' %}
-    {% set cardColor = 'border-blue-500 hover:border-blue-700 hover:bg-blue-500 hover:shadow-dark-4' %}
-    {% set accentColor = 'text-blue-700 group-hover:text-white transition-color duration-300 ease-in' %}
-    {% set textColor = 'group-hover:text-white transition-color duration-300 ease-in' %}
+    {% set cardColor =
+      'border-blue-500 hover:border-blue-700 hover:bg-blue-500 hover:shadow-dark-4'
+    %}
+    {% set accentColor =
+      'text-blue-700 group-hover:text-white transition-color duration-300 ease-in'
+    %}
+    {% set textColor =
+      'group-hover:text-white transition-color duration-300 ease-in'
+    %}
   {% else %}
-    {% set cardColor = 'border-red-400 hover:border-red-700 hover:bg-red-500 hover:shadow-dark-4' %}
-    {% set accentColor = 'text-red-500 group-hover:text-white transition-color duration-300 ease-in' %}
-    {% set textColor = 'group-hover:text-white transition-color duration-300 ease-in' %}
+    {% set cardColor =
+      'border-red-400 hover:border-red-700 hover:bg-red-500 hover:shadow-dark-4'
+    %}
+    {% set accentColor =
+      'text-red-500 group-hover:text-white transition-color duration-300 ease-in'
+    %}
+    {% set textColor =
+      'group-hover:text-white transition-color duration-300 ease-in'
+    %}
   {% endif %}
 
   {# <a role="Link" href="/staff-profile?netid={{data.link}}" class="block"> #}
-  <a role="Link" href="/staff-profile?netid={{data.link}}" title="{{data.firstname }} {{ data.surname }} staff profile" class="basic-card basic-card--staff flex relative flex-col relative overflow-hidden border-l-4 {{data.color}} bg-white {{cardColor}} shadow-light-2 transition-all duration-300 group">
+  <a
+    role="Link"
+    href="/staff-profile?netid={{ data.link }}"
+    title="{{ data.firstname }} {{ data.surname }} staff profile"
+    class="basic-card basic-card--staff flex relative flex-col relative overflow-hidden border-l-4 {{
+    data.color
+    }} bg-white {{
+    cardColor
+    }} shadow-light-2 transition-all duration-300 group"
+  >
     <div aria-hidden="true" class="flair-img top-0 left-0 z-10">
-      <img loading="lazy" class="opacity-50" src="/themes/custom/typhoon/images/dot-pattern-small.png" alt="">
+      <img
+        loading="lazy"
+        class="opacity-50"
+        src="/themes/custom/typhoon/images/dot-pattern-small.png"
+        alt=""
+      />
     </div>
     <div class="mt-lg mb-sm z-10 h-[130px] w-[130px] m-auto">
-      <figure class="relative overflow-hidden rounded-full w-full h-full transition-shadow shadow-light-2 group-hover:shadow-dark-2">
-          <img loading="lazy" class="absolute left-1/2 top-[60%] transform -translate-x-1/2 -translate-y-1/2 max-w-full " src="{{ data.imgSrc }}" alt="{{ data.firstName }} {{ data.lastName }}"/>
+      <figure
+        class="relative overflow-hidden rounded-full w-full h-full transition-shadow shadow-light-2 group-hover:shadow-dark-2"
+      >
+        <img
+          loading="lazy"
+          class="absolute left-1/2 top-[60%] transform -translate-x-1/2 -translate-y-1/2 max-w-full"
+          src="{{ data.imgSrc }}"
+          alt="{{ data.firstName }} {{ data.lastName }}"
+        />
       </figure>
     </div>
-    <div class="basic-card--text-wrap flex flex-col flex-grow pt-md pl-xl pb-2xl pr-lg xs:pt-md xs:pr-sm xs:pb-lg xs:pl-md text-left">
+    <div
+      class="basic-card--text-wrap flex flex-col flex-grow pt-md pl-xl pb-2xl pr-lg xs:pt-md xs:pr-sm xs:pb-lg xs:pl-md text-left"
+    >
       <span class="aria-text">
         View
         {{ data.firstName }}
@@ -170,23 +266,27 @@
         info page
       </span>
       <div>
-        <span class="block pb-2xs text-sm font-bold {{accentColor}}">
+        <span class="block pb-2xs text-sm font-bold {{ accentColor }}">
           {{ data.department }}
         </span>
-        <h2 class="basic-card--title text-xl {{textColor}}">
-          {{ data.firstName }} {{ data.lastName }}
+        <h2 class="basic-card--title text-xl {{ textColor }}">
+          {{ data.firstName }}
+          {{ data.lastName }}
         </h2>
       </div>
-      <p class="basic-card--desc flex-grow font-normal mt-0 pb-md text-black {{textColor}}">
-        {{data.title}}
+      <p
+        class="basic-card--desc flex-grow font-normal mt-0 pb-md text-black {{
+        textColor
+        }}"
+      >
+        {{ data.title }}
       </p>
       <div class="cta--wrap">
-        <div class="cta font-normal {{accentColor}}">
+        <div class="cta font-normal {{ accentColor }}">
           {{ data.firstName }}
           's profile
         </div>
       </div>
     </div>
   </a>
-
 {% endmacro %}

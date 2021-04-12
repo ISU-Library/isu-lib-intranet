@@ -1,0 +1,32 @@
+{# 
+/**
+ * @file
+ * Default template for the committee staff list page.
+ *
+ * Available variables:
+ * - committeepersons: Array of committeeperson informations.
+ *   A staffperson information consists of:
+ *   - netid
+ *   - surname, firstname
+ *   - title
+ *   - uri
+ *   - role
+ *   - not used (midname, firstchar, staff_ord, unit_ord)
+ */
+#}
+
+{% import '@typhoon/components/_staff.html.twig' as staff %}
+<div class="grid grid-department-staff gap-x-xl gap-y-4xl pt-xl mb-4xl">
+  {% for committeeperson in committeepersons %}
+    {{
+      staff.staffBrief({
+        firstName: committeeperson.firstname,
+        lastName: committeeperson.surname,
+        netID: committeeperson.netid,
+        imgSrc: committeeperson.uri,
+        committeeRole: committeeperson.role,
+        staffTitle: committeeperson.title
+      })
+    }}
+  {% endfor %}
+</div>

@@ -1,4 +1,4 @@
-{#
+{# 
 /**
  * @file
  * Theme override to display a block.
@@ -25,12 +25,10 @@
  * @see template_preprocess_block()
  */
 #}
-<section id="department-staff" {{attributes.addClass('js-scrollTarget')}}>
+<section id="department-staff" {{ attributes.addClass('js-scrollTarget') }}>
   {{ title_prefix }}
   {% if label %}
-    <h2{{title_attributes}}>
-      {{ label }}
-    </h2>
+    <h2 {{ title_attributes }}>{{ label }}</h2>
   {% endif %}
   {{ title_suffix }}
   {% block content %}

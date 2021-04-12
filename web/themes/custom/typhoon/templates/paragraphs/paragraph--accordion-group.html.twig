@@ -1,4 +1,4 @@
-{#
+{# 
 /**
  * @file
  * Default theme implementation to display a paragraph.
@@ -38,26 +38,25 @@
  * @ingroup themeable
  */
 #}
-{% import "@typhoon/components/_general-content.html.twig" as gcBlock %}
+{% import '@typhoon/components/_general-content.html.twig' as gcBlock %}
 
-{%
-  set classes = [
-    'paragraph',
-    'paragraph--type--' ~ paragraph.bundle|clean_class,
-    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-    not paragraph.isPublished() ? 'paragraph--unpublished',
-  ]
-%}
-
+{% set classes = [
+  'paragraph',
+  'paragraph--type--' ~ (paragraph.bundle|clean_class),
+  view_mode ? 'paragraph--view-mode--' ~ (view_mode|clean_class),
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+] %}
 
 {% block paragraph %}
   {% block content %}
-    <div{{attributes.addClass(classes)}}>
-      {{ gcBlock.accordian({
-        id: paragraph.id(),
-        title:content.field_accordion_headline|field_value,
-        text: content.field_accordion_body|field_value,
-      }) }}
+    <div {{ attributes.addClass(classes) }}>
+      {{
+        gcBlock.accordian({
+          id: paragraph.id(),
+          title: content.field_accordion_headline|field_value,
+          text: content.field_accordion_body|field_value
+        })
+      }}
     </div>
   {% endblock %}
-{% endblock paragraph %}
+{% endblock %}

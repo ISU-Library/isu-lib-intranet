@@ -1,72 +1,107 @@
 <header role="banner" class="sticky top-0 z-50">
   {{ page.header }}
   <div class="relative overflow-hidden md:px-3xl shadow-dark-1 bg-red-600 z-50">
-    <div class="flex flex-col max-w-[93.75rem] m-auto px-2xs sm:px-md sm:px-xl md:px-lg">
+    <div
+      class="flex flex-col max-w-[93.75rem] m-auto px-2xs sm:px-md sm:px-xl md:px-lg"
+    >
       <div class="flex flex-col sm:flex-row items-end sm:justify-end w-full">
         <div class="nav-triangles"></div>
         <ul class="util-nav--list hidden sm:flex justify-end mb-0 z-10">
           {% if lib_util_nav1_text %}
             <li class="flex flex-col justify-center">
-              <a class="p-sm md:p-md text-xs sm:text-sm text-white text-center sm:text-left transition-colors hover:text-warm-grey-200" href="{{ lib_util_nav1_url }}">
+              <a
+                class="p-sm md:p-md text-xs sm:text-sm text-white text-center sm:text-left transition-colors hover:text-warm-grey-200"
+                href="{{ lib_util_nav1_url }}"
+              >
                 {{ lib_util_nav1_text }}
               </a>
             </li>
           {% endif %}
           {% if lib_util_nav2_text %}
             <li class="flex flex-col justify-center">
-              <a class="p-sm md:p-md text-xs sm:text-sm text-white text-center sm:text-left transition-colors hover:text-warm-grey-200" href="{{ lib_util_nav2_url }}">
+              <a
+                class="p-sm md:p-md text-xs sm:text-sm text-white text-center sm:text-left transition-colors hover:text-warm-grey-200"
+                href="{{ lib_util_nav2_url }}"
+              >
                 {{ lib_util_nav2_text }}
               </a>
             </li>
           {% endif %}
           {% if lib_util_nav3_text %}
             <li class="flex flex-col justify-center">
-              <a class="p-sm md:p-md text-xs sm:text-sm text-white text-center sm:text-left transition-colors hover:text-warm-grey-200" href="{{ lib_util_nav3_url }}">
+              <a
+                class="p-sm md:p-md text-xs sm:text-sm text-white text-center sm:text-left transition-colors hover:text-warm-grey-200"
+                href="{{ lib_util_nav3_url }}"
+              >
                 {{ lib_util_nav3_text }}
               </a>
             </li>
           {% endif %}
           {% if lib_util_nav4_text %}
             <li class="flex flex-col justify-center">
-              <a class="p-sm md:p-md text-xs sm:text-sm text-white text-center sm:text-left transition-colors hover:text-warm-grey-200" href="{{ lib_util_nav4_url }}">
+              <a
+                class="p-sm md:p-md text-xs sm:text-sm text-white text-center sm:text-left transition-colors hover:text-warm-grey-200"
+                href="{{ lib_util_nav4_url }}"
+              >
                 {{ lib_util_nav4_text }}
               </a>
             </li>
           {% endif %}
           {% if lib_util_nav5_text %}
             <li class="flex flex-col justify-center">
-              <a class="p-sm md:p-md text-xs sm:text-sm text-white text-center sm:text-left transition-colors hover:text-warm-grey-200" href="{{ lib_util_nav5_url }}">
+              <a
+                class="p-sm md:p-md text-xs sm:text-sm text-white text-center sm:text-left transition-colors hover:text-warm-grey-200"
+                href="{{ lib_util_nav5_url }}"
+              >
                 {{ lib_util_nav5_text }}
               </a>
             </li>
           {% endif %}
         </ul>
-        <button class="js-main-search-button bg-red-600 hover:bg-red-400 hover:shadow-dark-2 rounded text-md text-white hover:text-warm-grey-200 transition-colors">
+        <button
+          class="js-main-search-button bg-red-600 hover:bg-red-400 hover:shadow-dark-2 rounded text-md text-white hover:text-warm-grey-200 transition-colors"
+        >
           <i class="fas fa-search leading-normal p-md"></i>
         </button>
       </div>
-      <span class="js-search-wrapper hidden">
-        {{page.utility_menu}}
-      </span>
+      <span class="js-search-wrapper hidden">{{ page.utility_menu }}</span>
     </div>
   </div>
-  <div class="main-nav--wrap border-b-2 border-yellow-500 px-lg sm:px-3xl md:px-5xl bg-white ">
-    <div class="main-nav relative flex flex-wrap justify-between align-bottom max-w-[93.75rem] m-auto">
+  <div
+    class="main-nav--wrap border-b-2 border-yellow-500 px-lg sm:px-3xl md:px-5xl bg-white"
+  >
+    <div
+      class="main-nav relative flex flex-wrap justify-between align-bottom max-w-[93.75rem] m-auto"
+    >
       <div class="logo-wrap flex-shrink-0 mt-lg mb-md z-50">
         <div class="logo">
           <a href="/">
-            <img class="max-w-full" src="{{ relative_logo_url }}" alt="ISU Library Logo">
+            <img
+              class="max-w-full"
+              src="{{ relative_logo_url }}"
+              alt="ISU Library Logo"
+            />
           </a>
         </div>
       </div>
       {# <div class="inline-block"> #}
       {# </div> #}
-      <div class="md:hidden js-mobile-nav-btn js-close relative flex flex-col justify-around w-xl h-xl mt-lg mb-md cursor-pointer z-50">
-        <span class="mob-btn-top block w-full h-2xs bg-red-500 rounded transform"></span>
-        <span class="mob-btn-middle block w-full h-2xs bg-red-500 rounded"></span>
-        <span class="mob-btn-bottom block w-full h-2xs bg-red-500 rounded transform"></span>
+      <div
+        class="md:hidden js-mobile-nav-btn js-close relative flex flex-col justify-around w-xl h-xl mt-lg mb-md cursor-pointer z-50"
+      >
+        <span
+          class="mob-btn-top block w-full h-2xs bg-red-500 rounded transform"
+        ></span>
+        <span
+          class="mob-btn-middle block w-full h-2xs bg-red-500 rounded"
+        ></span>
+        <span
+          class="mob-btn-bottom block w-full h-2xs bg-red-500 rounded transform"
+        ></span>
       </div>
-      <div class="js-mobile-menu js-mobile-close overflow-y-auto md:overflow-y-visible fixed md:absolute w-[100vw] md:w-auto md:h-auto md:relative right-[-80rem] md:right-0 md:right-0 -mx-3xl md:mx-0 md:mt-0 md:relative flex-grow flex flex-col md:justify-end md:pt-0 bg-red-700 md:bg-white z-40 md:z-0 transition-all ease duration-500">
+      <div
+        class="js-mobile-menu js-mobile-close overflow-y-auto md:overflow-y-visible fixed md:absolute w-[100vw] md:w-auto md:h-auto md:relative right-[-80rem] md:right-0 md:right-0 -mx-3xl md:mx-0 md:mt-0 md:relative flex-grow flex flex-col md:justify-end md:pt-0 bg-red-700 md:bg-white z-40 md:z-0 transition-all ease duration-500"
+      >
         {{ page.primary_menu }}
       </div>
     </div>

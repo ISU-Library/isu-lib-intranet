@@ -1,4 +1,4 @@
-{#
+{# 
 /**
  * @file
  * Default template for individual staff profile page.
@@ -22,17 +22,28 @@
 #}
 
 <table>
-    <tbody>
+  <tbody>
     {% for staffattribute in staffattributes %}
-        <tr>
-            <td>{{ staffattribute.fullname }}<br/>
-            {{ staffattribute.title }}<br/>
-            <a href="/departments/{{ staffattribute.unitname_alias }}">{{ staffattribute.unitname_str }}</a><br/>
-            {{ staffattribute.address }}<br/>
-            {{ staffattribute.telephone }}<br/>
-            <a href="mailto={{ staffattribute.netid }}@iastate.edu">{{ staffattribute.netid }}@iastate.edu</a></td>
-            <td><img src="{{ staffattribute.uri }}" alt="{{ staffattribute.fullname }}" width="144" height="180" /></td>
-        </tr>
+      <tr>
+        <td>
+          {{ staffattribute.fullname }}<br />
+          {{ staffattribute.title }}<br />
+          <a href="/departments/{{ staffattribute.unitname_alias }}">
+            {{ staffattribute.unitname_str }}
+          </a><br />
+          {{ staffattribute.address }}<br />
+          {{ staffattribute.telephone }}<br />
+          <a href="mailto={{ staffattribute.netid }}@iastate.edu">
+            {{ staffattribute.netid }}@iastate.edu
+          </a>
+        </td>
+        <td>
+          <img src="{{ staffattribute.uri }}"
+            alt="{{ staffattribute.fullname }}"
+            width="144"
+            height="180" />
+        </td>
+      </tr>
     {% endfor %}
-    </tbody>
+  </tbody>
 </table>

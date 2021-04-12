@@ -39,31 +39,39 @@
  */
 #}
 
-{% import "@typhoon/components/_general-content.html.twig" as blocks %}
+{% import '@typhoon/components/_general-content.html.twig' as blocks %}
 
-{%
-  set classes = [
-    'paragraph',
-    'paragraph--type--' ~ paragraph.bundle|clean_class,
-    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-    not paragraph.isPublished() ? 'paragraph--unpublished',
-  ]
+{% set classes = [
+  'paragraph',
+  'paragraph--type--' ~ (paragraph.bundle|clean_class),
+  view_mode ? 'paragraph--view-mode--' ~ (view_mode|clean_class),
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+] %}
+
+{% set leftImgSrc =
+  file_url(paragraph.field_gc_two_img_img_left.entity.uri.value)
 %}
-
-{% set leftImgSrc = file_url(paragraph.field_gc_two_img_img_left.entity.uri.value) %}
 {% set leftImgAlt = paragraph.field_gc_two_img_img_left.alt %}
-{% set rightImgSrc = file_url(paragraph.field_gc_two_img_img_right.entity.uri.value) %}
+{% set rightImgSrc =
+  file_url(paragraph.field_gc_two_img_img_right.entity.uri.value)
+%}
 {% set rightImgAlt = paragraph.field_gc_two_img_img_right.alt %}
 
 {% block paragraph %}
   {% block content %}
-    <div{{attributes.addClass(classes)}}>
-      {{blocks.twoImg({
-        leftImgSrc: file_url(paragraph.field_gc_two_img_img_left.entity.uri.value) ,
-        leftImgAlt:paragraph.field_gc_two_img_img_left.alt ,
-        rightImgSrc:  file_url(paragraph.field_gc_two_img_img_right.entity.uri.value) ,
-        rightImgAlt: paragraph.field_gc_two_img_img_right.alt ,
-      })}}
+    <div {{ attributes.addClass(classes) }}>
+      {{
+        blocks.twoImg({
+          leftImgSrc: file_url(
+            paragraph.field_gc_two_img_img_left.entity.uri.value
+          ),
+          leftImgAlt: paragraph.field_gc_two_img_img_left.alt,
+          rightImgSrc: file_url(
+            paragraph.field_gc_two_img_img_right.entity.uri.value
+          ),
+          rightImgAlt: paragraph.field_gc_two_img_img_right.alt
+        })
+      }}
     </div>
-  </div>
-{% endblock %}{% endblock paragraph %}
+  {% endblock %}
+{% endblock %}
