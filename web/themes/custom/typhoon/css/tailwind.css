@@ -1742,7 +1742,7 @@ p{
 	        transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 	        --tw-translate-x: -50%;
 }
-.gen-con--block p+p{
+.gen-con--block p + p{
 	margin-top: 1rem;
 }
 .gen-con--block p:first-of-type{
@@ -1757,7 +1757,7 @@ p{
   }
 }
 .grid-department-staff {
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
 }
 .heading-underline {
   position: relative;
@@ -2344,7 +2344,6 @@ p{
 		-webkit-line-clamp: 7;
 	}
 }
-
 
 
 /*# sourceMappingURL=tailwind.css.map*/

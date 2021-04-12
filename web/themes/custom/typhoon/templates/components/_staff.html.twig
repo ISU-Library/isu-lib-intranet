@@ -42,8 +42,8 @@
           {{ data.firstName }}
           {{ data.lastName }}
           {% if data.committeeRole == 'chair' %}
-            <span class="block text-black font-normal">
-              {{ data.committeeRole|capitalize }}
+            <span class="text-black font-normal">
+              - {{ data.committeeRole|capitalize }}
             </span>
           {% endif %}
         </div>
