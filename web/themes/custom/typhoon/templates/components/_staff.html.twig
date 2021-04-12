@@ -1,0 +1,56 @@
+{% macro staffBrief(data) %}
+  {% set defaultData = {
+    firstName: '',
+    lastName: '',
+    netID: '',
+    imgSrc: '',
+    imgClasses: 'absolute left-1/2 w-full transform -translate-y-1/2 -translate-x-1/2',
+    committeeRole: '',
+    staffTitle: ''
+  } %}
+
+  {% set data = data ? defaultData|merge(data) : defaultData %}
+
+  <a
+    class="group"
+    role="link"
+    title="{{ data.firstName }} {{ data.lastName }} staff profile"
+    href="/staff-profile?netid={{ data.netID }}"
+  >
+    <figure class="text-center">
+      <div
+        class="rounded-full transition-shadow transition-300 overflow-hidden relative h-[120px] md:h-[150px] w-[120px] md:w-[150px] mx-auto shadow-light-2 group-hover:shadow-light-3"
+      >
+        {% if data.imgSrc == '' %}
+          <img
+            loading="lazy"
+            class="{{ data.imgClasses }} top-1/2"
+            src="https://app.lib.iastate.edu/images/grantwoodmural.jpg"
+            alt="Placeholder for {{ data.firstName }} {{ data.lastName }}"
+          />
+        {% else %}
+          <img
+            loading="lazy"
+            class="{{ data.imgClasses }} top-[60%] "
+            src="{{ data.imgSrc }}"
+            alt="{{ data.firstName }} {{ data.lastName }}"
+          />
+        {% endif %}
+      </div>
+      <figcaption>
+        <div class="block text-lg pt-md">
+          {{ data.firstName }}
+          {{ data.lastName }}
+          {% if data.committeeRole == 'chair' %}
+            <span class="block text-black font-normal">
+              {{ data.committeeRole|capitalize }}
+            </span>
+          {% endif %}
+        </div>
+        <span class="block pt-md text-sm font-normal text-warm-grey-800">
+          {{ data.staffTitle }}
+        </span>
+      </figcaption>
+    </figure>
+  </a>
+{% endmacro %}

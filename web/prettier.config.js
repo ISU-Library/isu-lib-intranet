@@ -1,0 +1,17 @@
+module.exports = {
+  trailingComma: 'es5',
+  singleQuote: true,
+  tabWidth: 2,
+  useTabs: false,
+  semi: true,
+  bracketSpacing: true,
+  arrowParens: 'avoid',
+  printWidth: 80,
+  proseWrap: 'preserve',
+  endOfLine: 'lf',
+  quoteProps: 'as-needed',
+  htmlWhitespaceSensitivity: 'css',
+  insertPragma: false,
+  twigMelodyPlugins: ['node_modules/prettier-plugin-twig-enhancements'],
+  plugins: ['./node_modules/prettier-plugin-twig-melody'],
+};

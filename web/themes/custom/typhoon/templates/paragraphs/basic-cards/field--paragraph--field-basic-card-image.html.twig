@@ -1,4 +1,4 @@
-{#
+{# 
 /**
  * @file
  * Default theme implementation to display a paragraph.
@@ -38,22 +38,20 @@
  * @ingroup themeable
  */
 #}
-{%
-  set classes = [
+{% set classes = [
   'basic-card--wrap',
   'basic-card-image--wrap',
-  'mt-2xl', 
+  'mt-2xl',
   'mr-2xl',
-  'mb-2xl', 
+  'mb-2xl',
   'sm:mr-0',
-  'xs:mr-0',
-  ]
-%}
+  'xs:mr-0'
+] %}
 
-<div {{attributes.addClass(classes)}}>
+<div {{ attributes.addClass(classes) }}>
   {% block paragraph %}
     {% for item in items %}
-      {{item.content}}
+      {{ item.content }}
     {% endfor %}
-  {% endblock paragraph %}
+  {% endblock %}
 </div>

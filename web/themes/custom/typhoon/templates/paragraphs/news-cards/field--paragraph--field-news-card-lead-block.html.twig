@@ -1,4 +1,4 @@
-{#
+{# 
 /**
  * @file
  * Default theme implementation to display a paragraph.
@@ -39,17 +39,12 @@
  */
 #}
 
-{%
-  set classes = [
-    'news-card--wrap',
-    'mb-3xl',
-  ]
-%}
+{% set classes = ['news-card--wrap', 'mb-3xl'] %}
 
-<div {{attributes.addclass(classes) }}>
+<div {{ attributes.addclass(classes) }}>
   {% block paragraph %}
     {% for item in items %}
-      {{item.content}}
+      {{ item.content }}
     {% endfor %}
-  {% endblock paragraph %}
+  {% endblock %}
 </div>

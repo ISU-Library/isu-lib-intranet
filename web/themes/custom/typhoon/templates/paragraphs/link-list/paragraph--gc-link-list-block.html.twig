@@ -1,4 +1,4 @@
-{#
+{# 
 /**
  * @file
  * Default theme implementation to display a paragraph.
@@ -39,24 +39,23 @@
  */
 #}
 
-{% import "@typhoon/components/_general-content.html.twig" as blocks %}
+{% import '@typhoon/components/_general-content.html.twig' as blocks %}
 
-{%
-  set classes = [
-    'paragraph',
-    'paragraph--type--' ~ paragraph.bundle|clean_class,
-    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-    not paragraph.isPublished() ? 'paragraph--unpublished',
-  ]
-%}
+{% set classes = [
+  'paragraph',
+  'paragraph--type--' ~ (paragraph.bundle|clean_class),
+  view_mode ? 'paragraph--view-mode--' ~ (view_mode|clean_class),
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+] %}
 {% block paragraph %}
-
-  <div{{attributes.addClass(classes)}}>
+  <div {{ attributes.addClass(classes) }}>
     {% block content %}
-      {{blocks.linkList({
-        text: content.field_link_list_text|field_value,
-        links: content.field_link_list_links.0['#paragraph'],
-      })}}
+      {{
+        blocks.linkList({
+          text: content.field_link_list_text|field_value,
+          links: content.field_link_list_links[0]['#paragraph']
+        })
+      }}
     {% endblock %}
   </div>
-{% endblock paragraph %}
+{% endblock %}

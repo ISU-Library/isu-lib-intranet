@@ -1,4 +1,4 @@
-{#
+{# 
 /**
  * @file
  * Theme override for main view template.
@@ -30,24 +30,14 @@
  * @see template_preprocess_views_view()
  */
 #}
-{%
-  set classes = [
-    dom_id ? 'js-view-dom-id-' ~ dom_id,
-  ]
-%}
-<div{{attributes.addClass(classes)}}>
+{% set classes = [dom_id ? 'js-view-dom-id-' ~ dom_id] %}
+<div {{ attributes.addClass(classes) }}>
   {{ title_prefix }}
-  <div class="col-span-full mt-2xl">
-    <h1 class="mb-0">
-      {{ view.title }}
-    </h1>
-  </div>
+  <div class="col-span-full mt-2xl"><h1 class="mb-0">{{ view.title }}</h1></div>
   {{ title_suffix }}
 
   {% if header %}
-    <header>
-      {{ header }}
-    </header>
+    <header>{{ header }}</header>
   {% endif %}
 
   {{ exposed }}
@@ -64,9 +54,7 @@
   {{ more }}
 
   {% if footer %}
-    <footer>
-      {{ footer }}
-    </footer>
+    <footer>{{ footer }}</footer>
   {% endif %}
 
   {{ feed_icons }}

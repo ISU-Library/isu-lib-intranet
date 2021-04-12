@@ -1,4 +1,4 @@
-{#
+{# 
 /**
  * @file
  * Theme override for an 'submit' #type form element.
@@ -14,11 +14,20 @@
 {% if attributes.hasClass('search__search-button') %}
   {# This class is added with a preprocess function in iastate_theme.theme #}
 
-  <button{{attributes.addClass('').setAttribute('id','search_edit-submit').setAttribute('aria-label','Submitsearch')}}>
+  <button
+    {{
+    attributes.addClass('').setAttribute(
+      'id',
+      'search_edit-submit'
+    ).setAttribute(
+      'aria-label',
+      'Submitsearch'
+    )
+    }}
+  >
     <i class="fas fa-arrow-right"></i>
   </button>
 {% else %}
-  <input{{attributes.addClass('button','button-accent')}}/>
+  <input {{ attributes.addClass('button', 'button-accent') }} />
   {{ children }}
-
 {% endif %}

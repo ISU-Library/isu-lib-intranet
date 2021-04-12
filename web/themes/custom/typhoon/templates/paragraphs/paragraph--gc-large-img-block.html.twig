@@ -1,4 +1,4 @@
-{#
+{# 
 /**
  * @file
  * Default theme implementation to display a paragraph.
@@ -39,23 +39,25 @@
  */
 #}
 
-{% import "@typhoon/components/_general-content.html.twig" as blocks %}
-{%
-  set classes = [
-    'paragraph',
-    'paragraph--type--' ~ paragraph.bundle|clean_class,
-    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-    not paragraph.isPublished() ? 'paragraph--unpublished',
-  ]
-%}
+{% import '@typhoon/components/_general-content.html.twig' as blocks %}
+{% set classes = [
+  'paragraph',
+  'paragraph--type--' ~ (paragraph.bundle|clean_class),
+  view_mode ? 'paragraph--view-mode--' ~ (view_mode|clean_class),
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+] %}
 
 {% block paragraph %}
-  <div{{attributes.addClass(classes)}}>
+  <div {{ attributes.addClass(classes) }}>
     {% block content %}
-      {{blocks.largeImg({
-        imgSrc: file_url(paragraph.field_gc_large_image_image.entity.uri.value),
-        imgAlt: paragraph.field_gc_large_image_image.alt
-      })}}
+      {{
+        blocks.largeImg({
+          imgSrc: file_url(
+            paragraph.field_gc_large_image_image.entity.uri.value
+          ),
+          imgAlt: paragraph.field_gc_large_image_image.alt
+        })
+      }}
     {% endblock %}
   </div>
-{% endblock paragraph %}
+{% endblock %}

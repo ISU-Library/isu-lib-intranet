@@ -1,4 +1,4 @@
-{#
+{# 
 /**
  * @file
  * Theme override to display a menu.
@@ -23,7 +23,7 @@
 #}
 {% import _self as menus %}
 
-{#
+{# 
   We call a macro which calls itself to render the full tree.
   @see https://twig.symfony.com/doc/1.x/tags/macro.html
 #}
@@ -33,32 +33,33 @@
   {% import _self as menus %}
 
   {% if items %}
-    <ul{{attributes.addClass('footer-nav--list')}}>
+    <ul {{ attributes.addClass('footer-nav--list') }}>
       {% for item in items %}
         {# Assign classes based on if the item is an open parent, closed parent, active, or a has a submenu. #}
-        {%
-          set classes = [
-            'footer-nav--item',
-            'mb-md',
-            'last:mb-0'
-          ]
-        %}
+        {% set classes = ['footer-nav--item', 'mb-md', 'last:mb-0'] %}
         {# If the item has children, it will be a dropdown. #}
         {# If the item does not have children, it will not be a dropdown. #}
-          <li{{item.attributes.addClass(classes)}}>
+        <li {{ item.attributes.addClass(classes) }}>
           {# Assign classes based on if the link is a parent or not, and if it is active or not #}
-          {%
-            set link_classes = [
-              'block',
-              'footer-nav--link',
-              'text-red-100',
-              'hover:text-red-300',
-              'default-link'
-            ]
-          %}
+          {% set link_classes = [
+            'block',
+            'footer-nav--link',
+            'text-red-100',
+            'hover:text-red-300',
+            'default-link'
+          ] %}
           {# If the item does not have children, it's just a normal link. #}
-        {{ link(item.title, item.url, {'class': link_classes}) }}
-      </li>
-    {% endfor %}
-  </ul>
-{% endif %}{% endmacro %}
+          {{
+            link(
+              item.title,
+              item.url,
+              {
+                class: link_classes
+              }
+            )
+          }}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}

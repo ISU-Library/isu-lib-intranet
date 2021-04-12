@@ -1,4 +1,4 @@
-{#
+{# 
 /**
  * @file
  * Default theme implementation to display a paragraph.
@@ -38,27 +38,22 @@
  * @ingroup themeable
  */
 #}
-{%
-  set classes = [
-    'show',
-    'paragraph',
-    'paragraph--type--' ~ paragraph.bundle|clean_class,
-    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-    not paragraph.isPublished() ? 'paragraph--unpublished',
-  ]
-%}
+{% set classes = [
+  'show',
+  'paragraph',
+  'paragraph--type--' ~ (paragraph.bundle|clean_class),
+  view_mode ? 'paragraph--view-mode--' ~ (view_mode|clean_class),
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+] %}
 
 {% set sectionTitle = content.field_accordion_section_title|field_value %}
 {% set accordionContent = content|without('field_accordion_section_title') %}
 
 {% block paragraph %}
-
-  <div{{attributes.addClass(classes)}}>
+  <div {{ attributes.addClass(classes) }}>
     {% block content %}
-      <h2>
-        {{ sectionTitle }}
-      </h2>
-      {{ accordionContent}}
+      <h2>{{ sectionTitle }}</h2>
+      {{ accordionContent }}
     {% endblock %}
   </div>
-{% endblock paragraph %}
+{% endblock %}
