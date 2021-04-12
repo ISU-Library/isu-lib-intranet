@@ -36,6 +36,7 @@ module:
   menu_link_content: 0
   menu_ui: 0
   node: 0
+  oauth_login_oauth2: 0
   options: 0
   page_cache: 0
   paragraphs_library: 0
