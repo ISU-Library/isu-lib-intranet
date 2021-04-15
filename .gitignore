@@ -75,7 +75,11 @@
 /update.php
 /web.config
 
+# Ignore drupal node
 /node_modules
 node
+
+# Ignore drupal local config splits
+/config/local/
 
 web/themes/custom/typhoon/src/scss/_todo.scss
