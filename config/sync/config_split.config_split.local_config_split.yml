@@ -1,4 +1,4 @@
-uuid: e8fc1cce-9012-4702-a358-e9aa75f9132e
+uuid: f551e276-81e4-4060-8550-02835e2a7849
 langcode: en
 status: true
 dependencies: {  }
@@ -9,7 +9,9 @@ folder: ../config/local/
 module:
   oauth_login_oauth2: 0
 theme: {  }
-blacklist: {  }
+blacklist:
+  - miniorange_oauth_client.settings
+  - oauth_login_oauth2.settings
 graylist: {  }
 graylist_dependents: true
 graylist_skip_equal: true
