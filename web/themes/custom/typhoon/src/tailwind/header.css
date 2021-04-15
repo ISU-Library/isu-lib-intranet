@@ -27,7 +27,7 @@
   @apply absolute bg-red-900 z-30;
 }
 
-.util-nav--list>li:not(:last-of-type) a::after {
+.util-nav--list > li:not(:last-of-type) a::after {
   content: '';
   left: unset;
   right: 0;
@@ -59,10 +59,9 @@
 
 /****** main nav-section ******/
 
-header{
+header {
   --nav-height: calc(100vh - 122px);
 }
-
 
 .main-nav .logo {
   max-width: 12.5rem;
@@ -91,23 +90,30 @@ header{
 }
 
 @media (min-width: 768px) {
-  .main-nav--dropdown{
+  .main-nav--dropdown {
     width: 500px;
+    min-height: var(--nav-dropdown-height);
+  }
+
+  .main-nav--dropdown::after {
+    content: '';
+    @apply absolute w-[2px] h-full bg-warm-grey-50 top-0 left-1/2 transform translate-x-1/2;
   }
 }
 
-.main-nav--dropdown>.dropdown--item>a::after {
+.main-nav--dropdown > .dropdown--item > a::after {
   content: '\f054';
   font-family: 'Fontawesome';
   @apply absolute -left-md top-1/2 h-auto text-white md:text-red-500 bg-transparent transition-all duration-300 transform -translate-y-1/2;
 }
 
-.main-nav--dropdown>.dropdown--item:hover>a::after,
-.main-nav--dropdown>.dropdown--item>.is-active::after {
-  @apply left-0
+.main-nav--dropdown > .dropdown--item:hover > a::after,
+.main-nav--dropdown > .dropdown--item > .is-active::after {
+  @apply left-0;
 }
+
 @media (min-width: 768px) {
-  .second-nav--item.js-active .main-nav--third-list{
+  .second-nav--item.js-active .main-nav--third-list {
     @apply block;
   }
 }
@@ -121,5 +127,21 @@ header{
   .js-mobile-menu {
     height: auto;
     top: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-nav--link:focus + .main-nav--dropdown,
+  .main-nav--link:hover + .main-nav--dropdown {
+    @apply block;
+  }
+
+  .second-nav--item:focus > .main-nav--third-list,
+  .second-nav--item:hover > .main-nav--third-list {
+    @apply md:block;
+  }
+
+  .main-nav--link.is-active {
+    @apply bg-red-500 text-white;
   }
 }
