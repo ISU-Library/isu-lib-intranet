@@ -10,6 +10,7 @@
 /****** Foundations ******/
 @import './header.css';
 @import './headlines.css';
+@import './breadcrumbs.css';
 @import './footer.css';
 
 /**** components ****/

@@ -1,11 +1,11 @@
-.breadcrumbs {
-  li {
-    position: relative;
+// .breadcrumbs {
+//   li {
+//     position: relative;
 
-    &::after {
-      @include vert_center;
-      content: '>';
-      right: 0;
-    }
-  }
-}
+//     &::after {
+//       @include vert_center;
+//       content: '>';
+//       right: 0;
+//     }
+//   }
+// }

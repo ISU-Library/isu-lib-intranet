@@ -1,0 +1,4 @@
+.breadcrumbs li:not(:last-of-type)::after {
+  content: '>';
+  @apply absolute transform top-1/2 right-0 -translate-y-1/2;
+}
