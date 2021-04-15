@@ -9,7 +9,8 @@ folder: ../config/local/
 module:
   oauth_login_oauth2: 0
 theme: {  }
-blacklist: {  }
+blacklist:
+  - oauth_login_oauth2.settings
 graylist: {  }
 graylist_dependents: true
 graylist_skip_equal: true
