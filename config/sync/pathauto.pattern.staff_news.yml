@@ -7,17 +7,16 @@ dependencies:
 id: staff_news
 label: 'Staff News URL'
 type: 'canonical_entities:node'
-pattern: 'staff/[node:content-type]/[node:title]'
+pattern: '[node:content-type]/[node:field_staff_news_category]/[node:title]'
 selection_criteria:
-  75d4e3bb-70c2-40da-889d-d25dbaa02060:
+  ba936a31-169c-4a73-bc9f-cbcabf7e1924:
     id: node_type
     bundles:
       staff_news: staff_news
-      staff_updates: staff_updates
     negate: false
     context_mapping:
       node: node
-    uuid: 75d4e3bb-70c2-40da-889d-d25dbaa02060
+    uuid: ba936a31-169c-4a73-bc9f-cbcabf7e1924
 selection_logic: and
 weight: -5
 relationships: {  }

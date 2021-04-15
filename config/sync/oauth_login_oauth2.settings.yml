@@ -78,3 +78,5 @@ miniorange_auth_client_authorize_endpoint: 'https://iastate.okta.com/oauth2/defa
 miniorange_auth_client_access_token_ep: 'https://iastate.okta.com/oauth2/default/v1/token'
 miniorange_auth_client_user_info_ep: 'https://iastate.okta.com/oauth2/default/v1/userinfo'
 miniorange_auth_client_stat: 'Review Config'
+mo_saml_tourTaken_mapping: true
+mo_saml_tourTaken_licensing: true
