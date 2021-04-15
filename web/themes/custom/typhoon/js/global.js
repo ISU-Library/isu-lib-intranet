@@ -1455,7 +1455,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var mobileMenuButton = document.querySelector('.js-mobile-nav-btn');
 var mobileMenu = document.querySelector('.js-mobile-menu');
-var mainNavEl = document.querySelectorAll(".js-main-nav-select");
+var mainNavEl = document.querySelectorAll('.js-main-nav-select');
 
 function resetNavOnDektop(e) {
   var width = window.innerWidth;
@@ -1662,7 +1662,7 @@ searchButton.addEventListener('click', handleSearchButtonClick);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _slide_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./slide.js */ "./themes/custom/typhoon/src/js/slide.js");
 
-var sideNavEl = document.querySelectorAll(".js-side-nav-select");
+var sideNavEl = document.querySelectorAll('.js-side-nav-select');
 sideNavEl.forEach(function (subNav) {
   var openIcon = 'fa-plus';
   var closeIcon = 'fa-minus';
@@ -1773,16 +1773,26 @@ var slideToggle = function slideToggle(element) {
   \*************************************************************/
 /***/ (function() {
 
-// third-level nav
+var root = document.documentElement; // third-level nav
+
 var mainNavItem = document.querySelectorAll('.main-nav--item'); // todo: Only works with mouseover, needs to work with screenreaders
 
 mainNavItem.forEach(function (navItem) {
+  var mainNavDropdown = navItem.querySelector('.main-nav--dropdown');
   var secondNavEls = navItem.querySelectorAll('.second-nav--item');
   secondNavEls.forEach(function (secondNavEl) {
     secondNavEl.addEventListener('mouseover', function () {
+      var thirdList = secondNavEl.querySelector('ul');
       secondNavEls.forEach(function (allSecondNavEls) {
         allSecondNavEls.classList.remove('js-active');
-      });
+      }); // * sets min-height on dropdown based on 3rd level element height
+      // * prevents list from being clipped
+
+      if (thirdList) {
+        var thirdListHeight = thirdList.offsetHeight;
+        mainNavDropdown.style.minHeight = "".concat(thirdListHeight, "px");
+      }
+
       secondNavEl.classList.add('js-active');
     });
   });
