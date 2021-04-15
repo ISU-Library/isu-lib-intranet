@@ -1,4 +1,4 @@
-{#
+{# 
 /**
  * @file
  * Default template for the department staff list page.
@@ -14,6 +14,7 @@
  */
 #}
 
+<<<<<<< HEAD
 
     {% for deptperson in deptpersons %}
 	<figure style="display:inline-block;width:200px;padding-bottom:2em;">
@@ -28,3 +29,27 @@
     {% endfor %}
 
 
+=======
+{% for deptperson in deptpersons %}
+  <figure style="display:inline-block;width:200px;padding-bottom:2em;">
+    {% if deptperson.uri == '' %}
+      <img src="https://app.lib.iastate.edu/images/grantwoodmural.jpg"
+        alt="Grant Wood mural"
+        width="144"
+        height="180" />
+    {% endif %}
+    {% if deptperson.uri != '' %}
+      <img src="{{ deptperson.uri }}"
+        alt="{{ deptperson.firstname }} {{ deptperson.surname }}"
+        width="144"
+        height="180" />
+    {% endif %}
+    <figcaption>
+      <a href="/staff-profile?netid={{ deptperson.netid }}">
+        {{ deptperson.firstname }} {{ deptperson.surname }}
+      </a>
+      <br /><span style="font-size:80%;">{{ deptperson.title }}</span>
+    </figcaption>
+  </figure>
+{% endfor %}
+>>>>>>> df3897c1b4e844a6ec0a73774d4a8e143191c903

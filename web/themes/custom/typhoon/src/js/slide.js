@@ -1,4 +1,3 @@
-
 let slideUp = (element, duration) => {
   element.style.height = element.offsetHeight + 'px';
   element.style.transitionProperty = `height, margin, padding`;
@@ -21,14 +20,13 @@ let slideUp = (element, duration) => {
     element.style.removeProperty('transition-duration');
     element.style.removeProperty('transition-property');
     // resolve(false);
-  }, duration)
-}
+  }, duration);
+};
 
 let slideDown = (element, duration) => {
   element.style.removeProperty('display');
   let display = window.getComputedStyle(element).display;
-  if (display === 'none')
-    display = 'block';
+  if (display === 'none') display = 'block';
   element.style.display = display;
   let height = element.offsetHeight;
   element.style.overflow = 'hidden';
@@ -50,8 +48,8 @@ let slideDown = (element, duration) => {
     element.style.removeProperty('overflow');
     element.style.removeProperty('transition-duration');
     element.style.removeProperty('transition-property');
-  }, duration)
-}
+  }, duration);
+};
 
 let slideToggle = (element, duration = 500) => {
   if (window.getComputedStyle(element).display === 'none') {
@@ -59,6 +57,6 @@ let slideToggle = (element, duration = 500) => {
   } else {
     return slideUp(element, duration);
   }
-}
+};
 
-export { slideUp, slideDown, slideToggle }
+export { slideUp, slideDown, slideToggle };

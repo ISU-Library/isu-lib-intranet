@@ -1,4 +1,4 @@
-{#
+{# 
 /**
  * @file
  * Default theme implementation to display a paragraph.
@@ -39,23 +39,23 @@
  */
 #}
 
-{% import "@typhoon/components/_general-content.html.twig" as blocks %}
-{%
-  set classes = [
-    'paragraph',
-    'paragraph--type--' ~ paragraph.bundle|clean_class,
-    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-    not paragraph.isPublished() ? 'paragraph--unpublished',
-  ]
-%}
+{% import '@typhoon/components/_general-content.html.twig' as blocks %}
+{% set classes = [
+  'paragraph',
+  'paragraph--type--' ~ (paragraph.bundle|clean_class),
+  view_mode ? 'paragraph--view-mode--' ~ (view_mode|clean_class),
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+] %}
 {% block paragraph %}
   {% block content %}
-    <div{{attributes.addClass(classes)}}>
-      {{blocks.quote({
-      quoteType: paragraph.field_gc_quote_type.value,
-      quoteText: content.field_gc_quote_quote,
-      quoteCite: paragraph.field_gc_quote_cite.value,
-    })}}
+    <div {{ attributes.addClass(classes) }}>
+      {{
+        blocks.quote({
+          quoteType: paragraph.field_gc_quote_type.value,
+          quoteText: content.field_gc_quote_quote,
+          quoteCite: paragraph.field_gc_quote_cite.value
+        })
+      }}
     </div>
   {% endblock %}
-{% endblock paragraph %}
+{% endblock %}

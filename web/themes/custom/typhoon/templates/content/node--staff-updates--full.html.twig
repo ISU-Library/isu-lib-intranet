@@ -81,10 +81,10 @@
 
   {{ title_prefix }}
   {% if label and not page %}
-    <h2{{title_attributes}}>
+    {# <h2{{title_attributes}}>
       <a href="{{ url }}" rel="bookmark">
         {{ label }}
-      </a>
+      </a> #}
     </h2>
   {% endif %}
   {{ title_suffix }}
@@ -93,21 +93,24 @@
 
   <div>
     <figure>
-      <img src="{{ImgSrc}}" alt="">
+      <img src="{{ImgSrc}}" alt="{{ImgAlt}}">
     </figure>
   </div>
   <div{{content_attributes}}>
     {# <div style="background-image:url({{ImgSrc}})" class="mb-lg"> #}
-    <h1>
-      {{ label }}
-    </h1>
+    <div class="mb-3xl">
+      <h1 class=" mb-0">
+        {{ label }}
+      </h1>
+      <div> {{ author_name }}-{{ date }} </div>
+    </div>
     {{ content.field_staff_updates_article_summary|field_value }}
-    {# </div> #}
+    {# </h1> #}
 
     {{ content.field_staff_updates_content|field_value }}
   </div>
 
-  {% if display_submitted %}
+  {# {% if display_submitted %}
     <footer>
       {{ author_picture }}
       <div{{author_attributes}}>
@@ -120,5 +123,5 @@
         {{ metadata }}
       </div>
     </footer>
-  {% endif %}
+  {% endif %} #}
 </article>

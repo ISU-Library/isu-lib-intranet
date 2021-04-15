@@ -1,4 +1,4 @@
-{#
+{# 
 /**
  * @file
  * Default theme implementation to display a paragraph.
@@ -38,31 +38,27 @@
  * @ingroup themeable
  */
 #}
-{%
-  set classes = [
-    'paragraph',
-    'paragraph--type--' ~ paragraph.bundle|clean_class,
-    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-    not paragraph.isPublished() ? 'paragraph--unpublished',
-    'js-scrollTarget',
-    'pb-md',
-    'pt-xl',
-    'md:pb-2xl',
-    'md:pt-3xl',
-    'lg:pt-0'
-  ]
-%}
+{% set classes = [
+  'paragraph',
+  'paragraph--type--' ~ (paragraph.bundle|clean_class),
+  view_mode ? 'paragraph--view-mode--' ~ (view_mode|clean_class),
+  not paragraph.isPublished() ? 'paragraph--unpublished',
+  'js-scrollTarget',
+  'pb-md',
+  'pt-xl',
+  'md:pb-2xl',
+  'md:pt-3xl',
+  'lg:pt-0'
+] %}
 
-{% set sectionID = content.field_content_section_title.0 %}
+{% set sectionID = content.field_content_section_title[0] %}
 {% set sectionTitle = content.field_content_section_title %}
 
 {% block paragraph %}
-  <section id="{{sectionID}}" {{attributes.addClass(classes)}}>
+  <section id="{{ sectionID }}" {{ attributes.addClass(classes) }}>
     {% block content %}
-      <h2>
-        {{ sectionTitle }}
-      </h2>
+      <h2>{{ sectionTitle }}</h2>
       {{ content.field_content_section_content }}
     {% endblock %}
   </section>
-{% endblock paragraph %}
+{% endblock %}

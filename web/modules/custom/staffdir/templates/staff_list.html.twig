@@ -1,4 +1,4 @@
-{#
+{# 
 /**
  * @file
  * Default template for the staff list page.
@@ -16,11 +16,12 @@
 #}
 
 <h3>
-    Library staff directory
+  Library staff directory
 </h3>
 <table>
-    <tbody>
+  <tbody>
     {% for staffperson in staffpersons %}
+<<<<<<< HEAD
         <tr>
             <td><a href="/staff-profile?netid={{ staffperson.netid }}">{{ staffperson.surname }}, {{ staffperson.firstname }}</a></td>
             <td>{{ staffperson.jobdescr }}</td>
@@ -28,6 +29,29 @@
             <td>{{ staffperson.uri }}</td>
             <td><a href="mailto:{{ staffperson.netid }}@iastate.edu">{{ staffperson.netid }}@iastate.edu</a></td>
         </tr>
+=======
+      <tr>
+        <td>
+          <a href="/staff-profile?netid={{ staffperson.netid }}">
+            {{ staffperson.surname }}, {{ staffperson.firstname }}
+          </a>
+        </td>
+        <td>
+          {{ staffperson.title }}
+        </td>
+        <td>
+          {{ staffperson.unitname }}
+        </td>
+        <td>
+          {{ staffperson.uri }}
+        </td>
+        <td>
+          <a href="mailto:{{ staffperson.netid }}@iastate.edu">
+            {{ staffperson.netid }}@iastate.edu
+          </a>
+        </td>
+      </tr>
+>>>>>>> df3897c1b4e844a6ec0a73774d4a8e143191c903
     {% endfor %}
-    </tbody>
+  </tbody>
 </table>

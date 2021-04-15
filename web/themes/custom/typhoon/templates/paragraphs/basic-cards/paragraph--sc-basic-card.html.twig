@@ -1,4 +1,4 @@
-{#
+{# 
 /**
  * @file
  * Default theme implementation to display a paragraph.
@@ -40,35 +40,32 @@
 #}
 
 {# * imports the basic card partial macro #}
-{% import "@typhoon/components/_basic-cards.html.twig" as card %}
-
+{% import '@typhoon/components/_basic-cards.html.twig' as card %}
 
 {# * Classes set by drupal #}
-{%
-  set classes = [
-    'paragraph',
-    'paragraph--type--' ~ paragraph.bundle|clean_class,
-    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-    not paragraph.isPublished() ? 'paragraph--unpublished'
-  ]
-%}
+{% set classes = [
+  'paragraph',
+  'paragraph--type--' ~ (paragraph.bundle|clean_class),
+  view_mode ? 'paragraph--view-mode--' ~ (view_mode|clean_class),
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+] %}
 
 {# * Setting all values for the Card macro #}
 
 {% block paragraph %}
   {% block content %}
-
-    <div {{attributes.addClass(classes)}}>
-      {{ card.basic({
-        color: paragraph.field_basic_card_color.value,
-        link: content.field_basic_card_link.0['#url'],
-        title: content.field_basic_card_title|field_value,
-        category: content.field_basic_card_category.0['#title'],
-        icon: content.field_basic_card_icon|field_value,
-        text: content.field_basic_card_text|field_value,
-        linkText: content.field_basic_card_link.0['#title'],
-     }) }}
+    <div {{ attributes.addClass(classes) }}>
+      {{
+        card.basic({
+          color: paragraph.field_basic_card_color.value,
+          link: content.field_basic_card_link[0]['#url'],
+          title: content.field_basic_card_title|field_value,
+          category: content.field_basic_card_category[0]['#title'],
+          icon: content.field_basic_card_icon|field_value,
+          text: content.field_basic_card_text|field_value,
+          linkText: content.field_basic_card_link[0]['#title']
+        })
+      }}
     </div>
-
   {% endblock %}
-{% endblock paragraph %}
+{% endblock %}

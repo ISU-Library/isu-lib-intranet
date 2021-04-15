@@ -2,7 +2,7 @@ import { slideToggle } from './slide.js';
 
 const mobileMenuButton = document.querySelector('.js-mobile-nav-btn');
 const mobileMenu = document.querySelector('.js-mobile-menu');
-const mainNavEl = document.querySelectorAll(".js-main-nav-select");
+const mainNavEl = document.querySelectorAll('.js-main-nav-select');
 
 function resetNavOnDektop(e) {
   const width = window.innerWidth;
@@ -18,7 +18,7 @@ function resetNavOnDektop(e) {
   }
 }
 
-mobileMenuButton.addEventListener('click', (e) => {
+mobileMenuButton.addEventListener('click', e => {
   const body = document.querySelector('body');
   const mobBtnTop = document.querySelector('.mob-btn-top');
   const mobBtnMiddle = document.querySelector('.mob-btn-middle');
@@ -34,21 +34,48 @@ mobileMenuButton.addEventListener('click', (e) => {
     mobileMenuButton.classList.add('flex');
     mobileMenuButton.classList.remove('block');
 
-    mobBtnTop.classList.remove('absolute', '-translate-y-1/2', '-translate-x-1/2', 'top-1/2', 'left-1/2', 'rotate-45');
+    mobBtnTop.classList.remove(
+      'absolute',
+      '-translate-y-1/2',
+      '-translate-x-1/2',
+      'top-1/2',
+      'left-1/2',
+      'rotate-45'
+    );
     mobBtnMiddle.classList.remove('hidden');
-    mobBtnBottom.classList.remove('absolute', '-translate-y-1/2', '-translate-x-1/2', 'top-1/2', 'left-1/2', '-rotate-45');
-
+    mobBtnBottom.classList.remove(
+      'absolute',
+      '-translate-y-1/2',
+      '-translate-x-1/2',
+      'top-1/2',
+      'left-1/2',
+      '-rotate-45'
+    );
   } else if (mobileMenu.classList.contains('js-mobile-close')) {
-    mobileMenu.style.right = '48px'
+    mobileMenu.style.right = '48px';
     mobileMenu.classList.remove('js-mobile-close');
     mobileMenu.classList.add('js-mobile-open');
 
     mobileMenuButton.classList.add('block');
     mobileMenuButton.classList.remove('flex');
 
-    mobBtnTop.classList.add('absolute', '-translate-y-1/2', '-translate-x-1/2', 'top-1/2', 'left-1/2', 'rotate-45');
+    mobBtnTop.classList.add(
+      'absolute',
+      '-translate-y-1/2',
+      '-translate-x-1/2',
+      'top-1/2',
+      'left-1/2',
+      'rotate-45'
+    );
     mobBtnMiddle.classList.add('hidden');
-    mobBtnBottom.classList.add('absolute', '-translate-y-1/2', '-translate-x-1/2', 'top-1/2', 'left-1/2', '-rotate-45');
+    mobBtnBottom.classList.add(
+      'absolute',
+      '-translate-y-1/2',
+      '-translate-x-1/2',
+      'top-1/2',
+      'left-1/2',
+      '-rotate-45'
+    );
   }
 });
 
@@ -64,13 +91,13 @@ mainNavEl.forEach(subNav => {
     if (icon.classList.contains(openIcon)) {
       icon.classList.remove(openIcon);
       icon.classList.add(closeIcon);
-      subPages.setAttribute('aria-expanded', true)
+      subPages.setAttribute('aria-expanded', true);
     } else if (icon.classList.contains(closeIcon)) {
       icon.classList.remove(closeIcon);
       icon.classList.add(openIcon);
-      subPages.setAttribute('aria-expanded', false)
+      subPages.setAttribute('aria-expanded', false);
     } else {
-      return
+      return;
     }
   });
 });

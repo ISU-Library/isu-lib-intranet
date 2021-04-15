@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
     - node.type.staff_news
   module:
     - node
@@ -67,10 +66,15 @@ display:
             next: ››
       style:
         type: default
+        options:
+          row_class: ''
+          default_row_class: false
+          uses_fields: false
       row:
         type: 'entity:node'
         options:
-          view_mode: teaser
+          relationship: none
+          view_mode: default
       fields:
         title:
           id: title
@@ -198,6 +202,7 @@ display:
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
+      css_class: staff-news--article-list
     cache_metadata:
       max-age: -1
       contexts:

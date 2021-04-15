@@ -1,60 +1,89 @@
-{# <div>
+{#  <div>
   <div>{{ page.secondary_menu }}</div>
   <div>{{ page.primary_menu }}</div>
 </div> #}
 
-<footer role="contentinfo" class="flex-shrink-0 mt-3xl border-t-4 border-yellow-500 bg-gradient-to-b from-red-600 to-red-700">
+<footer
+  role="contentinfo"
+  class="flex-shrink-0 mt-3xl border-t-4 border-yellow-500 bg-gradient-to-b from-red-600 to-red-700"
+>
   <div class="footer-nav--wrap mx-auto px-2xl py-2xl">
     <div class="flex flex-wrap items-center mb-xl md:mb-3xl">
       <div class="pr-3xl">
         <div class="mb-lg">
           <a href="/">
-            <img src="/themes/custom/typhoon/images/isu_library_left_white.png" alt="Library Logo">
+            <img
+              src="/themes/custom/typhoon/images/isu_library_left_white.png"
+              alt="Library Logo"
+            />
           </a>
         </div>
         <div class="flex flex-col md:flex-row mb-xs">
-          <span class="pr-sm text-red-100 mb-2xs md:mb-0">
-            701 Morrill Rd
-          </span>
-          <span class="md:px-sm md:border-l-2 text-red-100 border-yellow-400 mb-2xs md:mb-0">
+          <span class="pr-sm text-red-100 mb-2xs md:mb-0">701 Morrill Rd</span>
+          <span
+            class="md:px-sm md:border-l-2 text-red-100 border-yellow-400 mb-2xs md:mb-0"
+          >
             Ames, IA 50011
           </span>
-          <a href="tel:5152943642" class="default-link md:px-sm  md:border-l-2 text-red-100 hover:text-red-300 border-yellow-400">
+          <a
+            href="tel:5152943642"
+            class="default-link md:px-sm md:border-l-2 text-red-100 hover:text-red-300 border-yellow-400"
+          >
             515.294.3642
           </a>
         </div>
         <div class="flex">
           {% if lib_util_nav1_text %}
-            <a class="p-md pl-0 text-red-100 hover:text-red-300 text-lg default-link" href="{{footer_social_media1_url}}">
-              <i class="{{footer_social_media1_icon}}"></i>
+            <a
+              class="p-md pl-0 text-red-100 hover:text-red-300 text-lg default-link"
+              href="{{ footer_social_media1_url }}"
+            >
+              <i class="{{ footer_social_media1_icon }}"></i>
             </a>
           {% endif %}
-          <a class="p-md text-red-100 hover:text-red-300 text-lg default-link" href="/">
+          <a
+            class="p-md text-red-100 hover:text-red-300 text-lg default-link"
+            href="/"
+          >
             <i class="fab fa-facebook"></i>
           </a>
-          <a class="p-md text-red-100 hover:text-red-300 text-lg default-link" href="/">
+          <a
+            class="p-md text-red-100 hover:text-red-300 text-lg default-link"
+            href="/"
+          >
             <i class="fas fa-external-link-alt"></i>
           </a>
         </div>
       </div>
       {# see menu--footer #}
-      <div class="w-full md:w-auto border-t-2 border-b-2 md:border-t-0 md:border-b-0 md:border-l-2 border-yellow-400 mt-md py-lg md:m-0 md:p-3xl">
+      <div
+        class="w-full md:w-auto border-t-2 border-b-2 md:border-t-0 md:border-b-0 md:border-l-2 border-yellow-400 mt-md py-lg md:m-0 md:p-3xl"
+      >
         {{ page.footer }}
       </div>
     </div>
     <div class="flex flex-wrap">
-      <a href="/non-discrimination-policy" class="text-red-100 hover:text-red-300 mb-sm pr-md underline">
+      <a
+        href="/non-discrimination-policy"
+        class="text-red-100 hover:text-red-300 mb-sm pr-md underline"
+      >
         Non-discrimination Policy
       </a>
-      <a href="/privacy-policy" class="text-red-100 hover:text-red-300 mb-sm pr-md underline">
+      <a
+        href="/privacy-policy"
+        class="text-red-100 hover:text-red-300 mb-sm pr-md underline"
+      >
         Privacy Policy
       </a>
-      <a href="/digital-access-and-accessibility" class="text-red-100 hover:text-red-300 mb-sm pr-md underline">
+      <a
+        href="/digital-access-and-accessibility"
+        class="text-red-100 hover:text-red-300 mb-sm pr-md underline"
+      >
         Digital Access &amp; Accessibility
       </a>
       <span class="text-red-100">
         Copyright &#169;
-        {{ "now"|date("Y") }}
+        {{ 'now'|date('Y') }}
       </span>
     </div>
   </div>

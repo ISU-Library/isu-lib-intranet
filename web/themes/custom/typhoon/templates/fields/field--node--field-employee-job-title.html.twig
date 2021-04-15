@@ -1,4 +1,4 @@
-{#
+{# 
 /**
  * @file
  * Theme override for a field.
@@ -36,14 +36,10 @@
  * @see template_preprocess_field()
  */
 #}
-{%
-  set title_classes = [
-    'employee-title'
-  ]
-%}
+{% set title_classes = ['employee-title'] %}
 
 {# {% if label_hidden %} #}
-{# {% if multiple %}
+{#  {% if multiple %}
     <div{{attributes.addClass('employee-titles-1')}}>
       {% for item in items %}
         {{ item.content }}
@@ -51,12 +47,10 @@
       {% endfor %}
     </div>
   {% else %} #}
-  {% for item in items %}
-    <p{{attributes}}>
-  {{ item.content }}
-</p>
+{% for item in items %}
+  <p {{ attributes }}>{{ item.content }}</p>
 {% endfor %}
-{# {% endif %}
+{#  {% endif %}
 {% else %}
   <div{{attributes}}>
     <div{{title_attributes.addClass(title_classes)}}>

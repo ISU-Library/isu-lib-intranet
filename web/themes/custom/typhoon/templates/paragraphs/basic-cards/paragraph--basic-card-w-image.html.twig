@@ -1,4 +1,4 @@
-{#
+{# 
 /**
  * @file
  * Default theme implementation to display a paragraph.
@@ -39,32 +39,32 @@
  */
 #}
 
-{% 
-  set classes = [
+{% set classes = [
   'paragraph',
-  'paragraph--type--' ~ paragraph.bundle|clean_class,
-  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  'paragraph--type--' ~ (paragraph.bundle|clean_class),
+  view_mode ? 'paragraph--view-mode--' ~ (view_mode|clean_class),
   not paragraph.isPublished() ? 'paragraph--unpublished'
-  ]
-%}
+] %}
 
-{% import "@typhoon/components/_basic-cards.html.twig" as card %}
+{% import '@typhoon/components/_basic-cards.html.twig' as card %}
 
 {% block paragraph %}
   {% block content %}
-
-    <div {{attributes.addClass(classes)}}>
-      {{ card.basicImg({
-        color: paragraph.field_basic_card_image_color.value,
-        imgSrc: file_url(paragraph.field_basic_card_image_image.entity.uri.value),
-        imgAlt: content.field_basic_card_image_image.alt,
-        link: content.field_basic_card_image_link.0['#url'],
-        title: content.field_basic_card_image_title|field_value,
-        category: content.field_basic_card_image_category.0['#title'],
-        text: content.field_basic_card_image_text|field_value,
-        linkText: content.field_basic_card_image_link.0['#title'],
-     }) }}
+    <div {{ attributes.addClass(classes) }}>
+      {{
+        card.basicImg({
+          color: paragraph.field_basic_card_image_color.value,
+          imgSrc: file_url(
+            paragraph.field_basic_card_image_image.entity.uri.value
+          ),
+          imgAlt: content.field_basic_card_image_image.alt,
+          link: content.field_basic_card_image_link[0]['#url'],
+          title: content.field_basic_card_image_title|field_value,
+          category: content.field_basic_card_image_category[0]['#title'],
+          text: content.field_basic_card_image_text|field_value,
+          linkText: content.field_basic_card_image_link[0]['#title']
+        })
+      }}
     </div>
-
-  {% endblock content %}
-{% endblock paragraph %}
+  {% endblock %}
+{% endblock %}

@@ -1,4 +1,4 @@
-{#
+{# 
 /**
  * @file
  * Default theme implementation to display a paragraph.
@@ -39,27 +39,33 @@
  */
 #}
 
-{% import "@typhoon/components/_general-content.html.twig" as blocks %}
+{% import '@typhoon/components/_general-content.html.twig' as blocks %}
 
-{%
-  set classes = [
-    'paragraph',
-    'paragraph--type--' ~ paragraph.bundle|clean_class,
-    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-    not paragraph.isPublished() ? 'paragraph--unpublished',
-  ]
-%}
+{% set classes = [
+  'paragraph',
+  'paragraph--type--' ~ (paragraph.bundle|clean_class),
+  view_mode ? 'paragraph--view-mode--' ~ (view_mode|clean_class),
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+] %}
 {% block paragraph %}
   {% block content %}
-    <div{{attributes.addClass(classes)}}>
-      {{blocks.threeImg({
-        leftImgSrc:file_url(paragraph.field_gc_three_img_img_left.entity.uri.value),
-        leftImgAlt:paragraph.field_gc_three_img_img_left.alt,
-        centerImgSrc:file_url(paragraph.field_gc_three_img_img_center.entity.uri.value),
-        centerImgAlt:paragraph.field_gc_three_img_img_center.alt,
-        rightImgSrc:file_url(paragraph.field_gc_three_img_img_right.entity.uri.value),
-        rightImgAlt:paragraph.field_gc_three_img_img_right.alt,
-      })}}
+    <div {{ attributes.addClass(classes) }}>
+      {{
+        blocks.threeImg({
+          leftImgSrc: file_url(
+            paragraph.field_gc_three_img_img_left.entity.uri.value
+          ),
+          leftImgAlt: paragraph.field_gc_three_img_img_left.alt,
+          centerImgSrc: file_url(
+            paragraph.field_gc_three_img_img_center.entity.uri.value
+          ),
+          centerImgAlt: paragraph.field_gc_three_img_img_center.alt,
+          rightImgSrc: file_url(
+            paragraph.field_gc_three_img_img_right.entity.uri.value
+          ),
+          rightImgAlt: paragraph.field_gc_three_img_img_right.alt
+        })
+      }}
     </div>
   {% endblock %}
-{% endblock paragraph %}
+{% endblock %}

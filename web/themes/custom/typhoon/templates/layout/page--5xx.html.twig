@@ -1,4 +1,4 @@
-{#
+{# 
 /**
  * @file
  * Theme override to display a single page.
@@ -43,33 +43,35 @@
  * @see html.html.twig
  */
 #}
-<div
-  class="layout-container flex flex-col min-h-screen">
+<div class="layout-container flex flex-col min-h-screen">
   {# * header including navs #}
-  {% include "@typhoon/navigation/header.html.twig" %}
+  {% include '@typhoon/navigation/header.html.twig' %}
 
   {% set sidebar = page.sidebar_first ? 'max-w-[93.75rem]' : 'max-w-[57rem]' %}
 
   <div class="relative flex-grow">
-    <div class="typhoon-grid grid grid-cols-12 gap-md relative mx-auto px-2xl flex-initial {{sidebar}} z-20">
+    <div
+      class="typhoon-grid grid grid-cols-12 gap-md relative mx-auto px-2xl flex-initial {{
+      sidebar
+      }} z-20"
+    >
       {{ page.breadcrumb }}
       {{ page.highlighted }}
       {{ page.help }}
-      <main role="main" class="col-span-full md:col-start-1 md:col-end-13 xl:col-end-13">
+      <main
+        role="main"
+        class="col-span-full md:col-start-1 md:col-end-13 xl:col-end-13"
+      >
         <a id="main-content" tabindex="-1"></a>
         <div class="layout-content mt-xl">
-          <h1>
-            Bummer!
-          </h1>
-          <p>
-            Looks like we couldn't find what you're looking for!
-          </p>
+          <h1>Bummer!</h1>
+          <p>Looks like we couldn't find what you're looking for!</p>
         </div>
       </main>
     </div>
   </div>
   {% if page.footer %}
-    {% include "@typhoon/navigation/footer-nav.html.twig" %}
+    {% include '@typhoon/navigation/footer-nav.html.twig' %}
   {% endif %}
 </div>
 {# /.layout-container #}
