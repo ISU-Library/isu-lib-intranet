@@ -13,14 +13,15 @@ mainNavItem.forEach(navItem => {
 
       secondNavEls.forEach(allSecondNavEls => {
         allSecondNavEls.classList.remove('js-active');
-      });
 
-      // * sets min-height on dropdown based on 3rd level element height
-      // * prevents list from being clipped
-      if (thirdList) {
-        const thirdListHeight = thirdList.offsetHeight;
-        mainNavDropdown.style.minHeight = `${thirdListHeight}px`;
-      }
+        // * sets min-height on dropdown based on 3rd level element height
+        // * prevents list from being clipped
+        if (thirdList) {
+          const thirdListHeight = thirdList.offsetHeight;
+          console.log(thirdListHeight);
+          mainNavDropdown.style.minHeight = `${thirdListHeight}px`;
+        }
+      });
 
       secondNavEl.classList.add('js-active');
     });
