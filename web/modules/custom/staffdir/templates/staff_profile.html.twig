@@ -12,12 +12,11 @@
  *   - address
  *   - zipcode
  *   - telephone
- *   - title
+ *   - jobdescr
  *   - unitname_str
- *   - photo_fileid
  *   - uri
+ *   - alt
  *   - selworks
- *   - not used (alt, width, height)
  */
 #}
 
@@ -26,7 +25,7 @@
     {% for staffattribute in staffattributes %}
         <tr>
             <td>{{ staffattribute.fullname }}<br/>
-            {{ staffattribute.title }}<br/>
+            {{ staffattribute.jobdescr }}<br/>
             <a href="/departments/{{ staffattribute.unitname_alias }}">{{ staffattribute.unitname_str }}</a><br/>
             {{ staffattribute.address }}<br/>
             {{ staffattribute.telephone }}<br/>

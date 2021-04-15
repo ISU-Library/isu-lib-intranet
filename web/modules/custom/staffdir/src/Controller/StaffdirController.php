@@ -35,7 +35,7 @@ class StaffdirController extends ControllerBase {
 	  $r_netid = $staffperson['NETID'];
 	  $r_surname = $staffperson['SURNAME'];
 	  $r_firstname = $staffperson['FIRSTNAME'];
-	  $r_title = $staffperson['TITLE'];
+	  $r_jobdescr = $staffperson['JOBDESCR'];
 	  $r_unitname = $staffperson['UNITNAME'];
 	  $r_uri = $staffperson['URI'];
 	  $thisRow = array
@@ -43,7 +43,7 @@ class StaffdirController extends ControllerBase {
 	  "netid" => "$r_netid",
 	  "surname" => "$r_surname",
 	  "firstname" => "$r_firstname",
-	  "title" => "$r_title",
+	  "jobdescr" => "$r_jobdescr",
 	  "unitname" => "$r_unitname",
 	  "uri" => "$r_uri"
 	  );

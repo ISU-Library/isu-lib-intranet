@@ -8,7 +8,7 @@
  *   A staffperson information consists of:
  *   - netid
  *   - surname, firstname
- *   - title
+ *   - jobdescr
  *   - unitname
  *   - uri
  *   - not used (midname, firstchar, staff_ord, unit_ord)
@@ -23,7 +23,7 @@
     {% for staffperson in staffpersons %}
         <tr>
             <td><a href="/staff-profile?netid={{ staffperson.netid }}">{{ staffperson.surname }}, {{ staffperson.firstname }}</a></td>
-            <td>{{ staffperson.title }}</td>
+            <td>{{ staffperson.jobdescr }}</td>
             <td>{{ staffperson.unitname }}</td>
             <td>{{ staffperson.uri }}</td>
             <td><a href="mailto:{{ staffperson.netid }}@iastate.edu">{{ staffperson.netid }}@iastate.edu</a></td>

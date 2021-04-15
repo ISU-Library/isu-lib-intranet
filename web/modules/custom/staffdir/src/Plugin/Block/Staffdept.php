@@ -81,14 +81,14 @@ class Staffdept extends BlockBase implements ContainerFactoryPluginInterface {
           $r_netid = $deptperson['NETID'];
           $r_surname = $deptperson['SURNAME'];
           $r_firstname = $deptperson['FIRSTNAME'];
-          $r_title = $deptperson['TITLE'];
+          $r_jobdescr = $deptperson['JOBDESCR'];
           $r_uri = $deptperson['URI'];
           $thisRow = array
           (
           "netid" => "$r_netid",
           "surname" => "$r_surname",
           "firstname" => "$r_firstname",
-          "title" => "$r_title",
+          "jobdescr" => "$r_jobdescr",
           "uri" => "$r_uri"
           );
           $items[] = $thisRow;

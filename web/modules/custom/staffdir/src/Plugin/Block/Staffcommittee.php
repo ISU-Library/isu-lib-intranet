@@ -79,7 +79,7 @@ class Staffcommittee extends BlockBase implements ContainerFactoryPluginInterfac
           $r_netid = $committeeperson['NETID'];
           $r_surname = $committeeperson['SURNAME'];
           $r_firstname = $committeeperson['FIRSTNAME'];
-          $r_title = $committeeperson['TITLE'];
+          $r_jobdescr = $committeeperson['JOBDESCR'];
           $r_uri = $committeeperson['URI'];
           $r_role = $committeeperson['ROLE'];
           $thisRow = array
@@ -87,7 +87,7 @@ class Staffcommittee extends BlockBase implements ContainerFactoryPluginInterfac
           "netid" => "$r_netid",
           "surname" => "$r_surname",
           "firstname" => "$r_firstname",
-          "title" => "$r_title",
+          "jobdescr" => "$r_jobdescr",
           "uri" => "$r_uri",
           "role" => "$r_role"
           );
