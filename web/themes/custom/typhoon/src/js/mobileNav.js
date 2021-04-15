@@ -7,14 +7,12 @@ const mainNavEl = document.querySelectorAll('.js-main-nav-select');
 function resetNavOnDektop(e) {
   const width = window.innerWidth;
   const mediaQuery = window.matchMedia('(min-width: 768px)');
-
   // !change this to use custom property
-  if (window.innerWidth !== width) {
-    if (mediaQuery.matches) {
-      mobileMenu.style.right = '0';
-    } else {
-      mobileMenu.style.right = '-100vw';
-    }
+  console.log('resize');
+  if (mediaQuery.matches) {
+    mobileMenu.style.right = '0';
+  } else {
+    mobileMenu.style.right = '-100vw';
   }
 }
 

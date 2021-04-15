@@ -1582,7 +1582,6 @@ header {
 @media (min-width: 768px) {
   .main-nav--dropdown {
     width: 500px;
-    min-height: var(--nav-dropdown-height);
   }
 
   .main-nav--dropdown::after {
@@ -1659,8 +1658,12 @@ header {
 	left: 0;
 }
 @media (min-width: 768px) {
+  /* !js adds and removes js-active and slides element on/off screen */
+  .second-nav--item .main-nav--third-list{
+		left: -9999px;
+	}
 .second-nav--item.js-active .main-nav--third-list{
-		display: block;
+		left: 50%;
 	}
 }
 .js-mobile-menu {
@@ -2065,6 +2068,9 @@ p{
 	}
 	.md\:right-0{
 		right: 0;
+	}
+	.md\:left-\[9999px\]{
+		left: 9999px;
 	}
 	.md\:z-0{
 		z-index: 0;

@@ -1461,12 +1461,12 @@ function resetNavOnDektop(e) {
   var width = window.innerWidth;
   var mediaQuery = window.matchMedia('(min-width: 768px)'); // !change this to use custom property
 
-  if (window.innerWidth !== width) {
-    if (mediaQuery.matches) {
-      mobileMenu.style.right = '0';
-    } else {
-      mobileMenu.style.right = '-100vw';
-    }
+  console.log('resize');
+
+  if (mediaQuery.matches) {
+    mobileMenu.style.right = '0';
+  } else {
+    mobileMenu.style.right = '-100vw';
   }
 }
 
@@ -1784,15 +1784,15 @@ mainNavItem.forEach(function (navItem) {
     secondNavEl.addEventListener('mouseover', function () {
       var thirdList = secondNavEl.querySelector('ul');
       secondNavEls.forEach(function (allSecondNavEls) {
-        allSecondNavEls.classList.remove('js-active');
-      }); // * sets min-height on dropdown based on 3rd level element height
-      // * prevents list from being clipped
+        allSecondNavEls.classList.remove('js-active'); // * sets min-height on dropdown based on 3rd level element height
+        // * prevents list from being clipped
 
-      if (thirdList) {
-        var thirdListHeight = thirdList.offsetHeight;
-        mainNavDropdown.style.minHeight = "".concat(thirdListHeight, "px");
-      }
-
+        if (thirdList) {
+          var thirdListHeight = thirdList.offsetHeight;
+          console.log(thirdListHeight);
+          mainNavDropdown.style.minHeight = "".concat(thirdListHeight, "px");
+        }
+      });
       secondNavEl.classList.add('js-active');
     });
   });

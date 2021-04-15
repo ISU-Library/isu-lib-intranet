@@ -92,7 +92,6 @@ header {
 @media (min-width: 768px) {
   .main-nav--dropdown {
     width: 500px;
-    min-height: var(--nav-dropdown-height);
   }
 
   .main-nav--dropdown::after {
@@ -113,8 +112,13 @@ header {
 }
 
 @media (min-width: 768px) {
+  /* !js adds and removes js-active and slides element on/off screen */
+  .second-nav--item .main-nav--third-list {
+    @apply left-[-9999px];
+  }
+
   .second-nav--item.js-active .main-nav--third-list {
-    @apply block;
+    @apply left-1/2;
   }
 }
 
