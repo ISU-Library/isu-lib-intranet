@@ -91,18 +91,23 @@
 
   {# * Below is the start to custom styling content #}
 
-  <div>
+  {# <div>
     <figure>
       <img src="{{ImgSrc}}" alt="{{ImgAlt}}">
     </figure>
+  </div> #}
+   <div
+    style="background-image:url({{ ImgSrc }})"
+    class="bg-center bg-no-repeat bg-cover max-w-[57rem] mx-auto mb-2xl pt-[46%] shadow-light-2"
+  >
   </div>
   <div{{content_attributes}}>
     {# <div style="background-image:url({{ImgSrc}})" class="mb-lg"> #}
-    <div class="mb-3xl">
-      <h1 class=" mb-0">
+    <div class="mb-xl">
+      <h1 class="mb-0">
         {{ label }}
       </h1>
-      <div> {{ author_name }}-{{ date }} </div>
+      <div class="text-warm-grey-600 italic"> {{ author_name }}-{{ date }} </div>
     </div>
     {{ content.field_staff_updates_article_summary|field_value }}
     {# </h1> #}

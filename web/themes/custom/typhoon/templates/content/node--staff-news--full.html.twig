@@ -86,18 +86,36 @@
   {{ title_suffix }}
 
   {# * Below is the start to custom styling content #}
+  <div
+    style="background-image:url({{ ImgSrc }})"
+    class="bg-center bg-no-repeat bg-cover max-w-[57rem] mx-auto mb-2xl pt-[46%] shadow-light-2"
+  >
+    {# <div
+      {{
+      content_attributes.addClass(
+        'flex',
+        'flex-col',
+        'justify-end',
+        'max-w-[57rem]',
+        'mx-auto',
+        'pt-7xl'
+      )
+      }}
+    >
+      <h1 class="mb-lg text-white text-shadow-1">{{ label }}</h1>
+      <p class="text-lg text-white text-shadow-1">
+        {{ content.field_department_summary|field_value }}
+      </p>
+    </div> #}
+  </div>
 
-  <div><figure><img src="{{ ImgSrc }}" alt="" /></figure></div>
   <div {{ content_attributes }}>
-    {# <div style="background-image:url({{ImgSrc}})" class="mb-lg"> #}
-    <h1>{{ label }}</h1>
+    <h1 class="mb-xl">{{ label }}</h1>
     {{ content.field_staff_news_article_summary|field_value }}
-    {# </div> #}
-
     {{ content.field_staff_news_content|field_value }}
   </div>
 
-  {% if display_submitted %}
+  {# {% if display_submitted %}
     <footer>
       {{ author_picture }}
       <div {{ author_attributes }}>
@@ -109,5 +127,5 @@
         {{ metadata }}
       </div>
     </footer>
-  {% endif %}
+  {% endif %} #}
 </article>
