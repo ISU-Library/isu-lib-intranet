@@ -659,8 +659,8 @@ video {
 .mt-2xl{
 	margin-top: 2.5rem;
 }
-.mb-3xl{
-	margin-bottom: 3rem;
+.mb-xl{
+	margin-bottom: 2rem;
 }
 .mt-xl{
 	margin-top: 2rem;
@@ -670,9 +670,6 @@ video {
 }
 .-mb-4xl{
 	margin-bottom: -4rem;
-}
-.mb-xl{
-	margin-bottom: 2rem;
 }
 .mr-2xl{
 	margin-right: 2.5rem;
@@ -685,6 +682,9 @@ video {
 }
 .ml-0{
 	margin-left: 0;
+}
+.mb-3xl{
+	margin-bottom: 3rem;
 }
 .block{
 	display: block;
@@ -729,6 +729,9 @@ video {
 }
 .h-\[150px\]{
 	height: 150px;
+}
+.h-lg{
+	height: 1.5rem;
 }
 .min-h-screen{
 	min-height: 100vh;
@@ -813,6 +816,9 @@ video {
 }
 .-translate-y-1\/2{
 	--tw-translate-y: -50%;
+}
+.rotate-180{
+	--tw-rotate: 180deg;
 }
 .rotate-45{
 	--tw-rotate: 45deg;
@@ -1108,9 +1114,9 @@ video {
 	padding-top: 1.5rem;
 	padding-bottom: 1.5rem;
 }
-.px-2xs{
-	padding-left: 0.25rem;
-	padding-right: 0.25rem;
+.px-3xl{
+	padding-left: 3rem;
+	padding-right: 3rem;
 }
 .py-0{
 	padding-top: 0;
@@ -1176,6 +1182,12 @@ video {
 }
 .pb-4xl{
 	padding-bottom: 4rem;
+}
+.pt-\[46\%\]{
+	padding-top: 46%;
+}
+.pt-7xl{
+	padding-top: 12rem;
 }
 .pt-4xl{
 	padding-top: 4rem;
@@ -1322,6 +1334,10 @@ video {
 .text-yellow-600{
 	--tw-text-opacity: 1;
 	color: rgba(238, 166, 11, var(--tw-text-opacity));
+}
+.text-warm-grey-600{
+	--tw-text-opacity: 1;
+	color: rgba(97, 93, 81, var(--tw-text-opacity));
 }
 .text-red-100{
 	--tw-text-opacity: 1;
@@ -1773,6 +1789,7 @@ h6{
 }
 html {
   scroll-behavior: smooth;
+  margin-right: calc(-1 * (100vw - 100%));
 }
 body {
   font-family: 'Nimbus Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -1893,6 +1910,10 @@ p{
 }
 .last\:mb-0:last-child{
 	margin-bottom: 0;
+}
+.hover\:scale-105:hover{
+	--tw-scale-x: 1.05;
+	--tw-scale-y: 1.05;
 }
 .hover\:border-yellow-600:hover{
 	--tw-border-opacity: 1;
@@ -2037,17 +2058,9 @@ p{
 		padding-left: 2.5rem;
 		padding-right: 2.5rem;
 	}
-	.sm\:px-md{
-		padding-left: 1rem;
-		padding-right: 1rem;
-	}
 	.sm\:px-xl{
 		padding-left: 2rem;
 		padding-right: 2rem;
-	}
-	.sm\:px-3xl{
-		padding-left: 3rem;
-		padding-right: 3rem;
 	}
 	.sm\:pr-xs{
 		padding-right: 0.5rem;

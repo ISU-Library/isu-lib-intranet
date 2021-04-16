@@ -1458,10 +1458,7 @@ var mobileMenu = document.querySelector('.js-mobile-menu');
 var mainNavEl = document.querySelectorAll('.js-main-nav-select');
 
 function resetNavOnDektop(e) {
-  var width = window.innerWidth;
   var mediaQuery = window.matchMedia('(min-width: 768px)'); // !change this to use custom property
-
-  console.log('resize');
 
   if (mediaQuery.matches) {
     mobileMenu.style.right = '0';

@@ -5,10 +5,8 @@ const mobileMenu = document.querySelector('.js-mobile-menu');
 const mainNavEl = document.querySelectorAll('.js-main-nav-select');
 
 function resetNavOnDektop(e) {
-  const width = window.innerWidth;
   const mediaQuery = window.matchMedia('(min-width: 768px)');
   // !change this to use custom property
-  console.log('resize');
   if (mediaQuery.matches) {
     mobileMenu.style.right = '0';
   } else {

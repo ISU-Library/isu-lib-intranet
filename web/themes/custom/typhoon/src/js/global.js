@@ -7,7 +7,6 @@ import * as sideNav from './sideNav.js';
 import * as accordion from './accordion.js';
 import * as scrollSpy from './scrollSpy';
 
-
 // Todo: split into new file
 const header = document.querySelector('header');
 const headerHeight = header.offsetHeight;
@@ -40,7 +39,3 @@ accordion;
 
 // capacity
 // capacity;
-
-
-
-
