@@ -23,6 +23,7 @@
 html {
   scroll-behavior: smooth;
   margin-right: calc(-1 * (100vw - 100%));
+  /* * ^ this snippet prevents layout shift with mobile nav*/
 }
 
 body {

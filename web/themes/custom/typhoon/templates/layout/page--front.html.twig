@@ -66,8 +66,8 @@
     <main role="main" class="col-span-full">
       <a id="main-content" tabindex="-1"></a>
       <article class="hero--wrap relative">
-        <div class="hero flex flex-col justify-end xl:px-xl h-full bg-hero-image bg-center bg-cover bg-no-repeat">
-          <div class="xl:w-[87.5rem] xl:max-w-[87.5rem] mx-xl md:mx-4xl xl:mx-auto">
+        <div class="hero flex flex-col justify-end xl:px-xl h-full bg-hero-image-xs sm:bg-hero-image-sm md:bg-hero-image-md lg:bg-hero-image-lg xl:bg-hero-image-xl bg-center bg-cover bg-no-repeat">
+          <div class="xl:max-w-[87.5rem] xl:w-full mx-xl md:mx-4xl xl:mx-auto ">
             <div class="inline-block relative text-3xl mt-md mb-4xl xl:mb-5xl xs:mb-4xl mr-auto xl:ml-0">
               <h1 class="inline md:inline-block relative mt-0 mx-auto mb-xs text-shadow-1 text-red-500 xl:text-5xl xs:text-2xl text-white">
                 {{headline}}
@@ -80,7 +80,8 @@
         </article>
         <article class="staff-news-feed relative pt-4xl md:pt-6xl pb-5xl md:pb-7xl xl:px-xl">
           <div aria-hidden="true" class="flair-img staff-news--dots-red-bars">
-            <img src="/themes/custom/typhoon/images/dot-pattern-red-bars.png" alt="">
+            <img srcset="/themes/custom/typhoon/images/dot-pattern-red-bars-sm.png 376w, /themes/custom/typhoon/images/dot-pattern-red-bars-md.png 425w, /themes/custom/typhoon/images/dot-pattern-red-bars-lg.png 436w, /themes/custom/typhoon/images/dot-pattern-red-bars-xl.png 606w" sizes="(max-width: 600px) 480px,
+            800px" alt="">
           </div>
           <div aria-hidden="true" class="flair-img staff-news--dots-yellow-triangles">
             <img src="/themes/custom/typhoon/images/dot-pattern-yellow-triangles.png" alt="">

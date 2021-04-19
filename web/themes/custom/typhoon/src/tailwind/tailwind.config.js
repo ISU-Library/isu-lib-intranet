@@ -1,7 +1,7 @@
 // const colors = require('tailwindcss/colors')
 
-const sourceDir = "./themes/custom/typhoon/src";
-const destinationDir = "./themes/custom/typhoon";
+const sourceDir = './themes/custom/typhoon/src';
+const destinationDir = './themes/custom/typhoon';
 
 module.exports = {
   purge: {
@@ -96,15 +96,15 @@ module.exports = {
       },
       transparent: {
         DEFAULT: 'transparent',
-      }
+      },
     },
     fontSize: {
       '2xs': '0.5rem',
-      'xs': '0.75rem',
-      'sm': '0.875rem',
-      'md': '1rem',
-      'lg': '1.125rem',
-      'xl': '1.5rem',
+      xs: '0.75rem',
+      sm: '0.875rem',
+      md: '1rem',
+      lg: '1.125rem',
+      xl: '1.5rem',
       '2xl': '2rem',
       '3xl': '2.5rem',
       '4xl': '3rem',
@@ -112,32 +112,43 @@ module.exports = {
       '6xl': '4.5rem',
     },
     fontFamily: {
-      'body': ['"Nimbus Sans"', '"Helvetica Neue"', 'Helvetica', 'Arial', '"sans-serif"'],
-      'merriweather': ['Merriweather', 'Georgia', 'serif']
+      body: [
+        '"Nimbus Sans"',
+        '"Helvetica Neue"',
+        'Helvetica',
+        'Arial',
+        '"sans-serif"',
+      ],
+      merriweather: ['Merriweather', 'Georgia', 'serif'],
     },
     boxShadow: {
-      'light-1': '0 1px 2px rgba(0, 0, 0, 0.24), 0 1px 3px rgba(0, 0, 0, 0.12);',
-      'light-2': '0 2px 4px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.15);',
-      'light-3': '0 3px 6px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.15);',
-      'light-4': '0 5px 10px rgba(0, 0, 0, 0.05), 0 15px 25px rgba(0, 0, 0, 0.15);',
+      'light-1':
+        '0 1px 2px rgba(0, 0, 0, 0.24), 0 1px 3px rgba(0, 0, 0, 0.12);',
+      'light-2':
+        '0 2px 4px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.15);',
+      'light-3':
+        '0 3px 6px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.15);',
+      'light-4':
+        '0 5px 10px rgba(0, 0, 0, 0.05), 0 15px 25px rgba(0, 0, 0, 0.15);',
       'light-5': '0 20px 40px rgba(0, 0, 0, 0.2);',
       'dark-1': '0 1px 2px rgba(0, 0, 0, 0.34), 0 1px 3px rgba(0, 0, 0, 0.22)',
       'dark-2': '0 2px 4px rgba(0, 0, 0, 0.22), 0 3px 6px rgba(0, 0, 0, 0.25)',
       'dark-3': '0 3px 6px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.25)',
-      'dark-4': '0 5px 10px rgba(0, 0, 0, 0.15), 0 15px 25px rgba(0, 0, 0, 0.25)',
+      'dark-4':
+        '0 5px 10px rgba(0, 0, 0, 0.15), 0 15px 25px rgba(0, 0, 0, 0.25)',
       'dark-5': '0 20px 40px rgba(0, 0, 0, 0.3)',
       inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
       none: 'none',
     },
     extend: {
       spacing: {
-        '0': '0',
+        0: '0',
         '2xs': '0.25rem',
-        'xs': '0.5rem',
-        'sm': '0.75rem',
-        'md': '1rem',
-        'lg': '1.5rem',
-        'xl': '2rem',
+        xs: '0.5rem',
+        sm: '0.75rem',
+        md: '1rem',
+        lg: '1.5rem',
+        xl: '2rem',
         '2xl': '2.5rem',
         '3xl': '3rem',
         '4xl': '4rem',
@@ -146,15 +157,25 @@ module.exports = {
         '7xl': '12rem',
       },
       backgroundImage: theme => ({
-        'hero-image': "url('/themes/custom/typhoon/images/intra-hero.jpg')",
-        'lib-staircase-image': "url('/themes/custom/typhoon/images/parks-library-staircase.jpg')",
+        'hero-image-xs':
+          "url('/themes/custom/typhoon/images/intra-hero-xs.jpg')",
+        'hero-image-lg':
+          "url('/themes/custom/typhoon/images/intra-hero-lg.jpg')",
+        'hero-image-sm':
+          "url('/themes/custom/typhoon/images/intra-hero-sm.jpg')",
+        'hero-image-md':
+          "url('/themes/custom/typhoon/images/intra-hero-md.jpg')",
+        'hero-image-xl':
+          "url('/themes/custom/typhoon/images/intra-hero-xl.jpg')",
+        'lib-staircase-image':
+          "url('/themes/custom/typhoon/images/parks-library-staircase.jpg')",
       }),
       lineHeight: {
-        '0': '0',
+        0: '0',
       },
       lineClamp: {
         7: '7',
-      }
+      },
     },
   },
   variants: {
@@ -164,9 +185,7 @@ module.exports = {
       // flex: ['group-hover', 'group-focus'],
       // margin: ['last'],
       // scale: ['active', 'group-hover'],
-    }
+    },
   },
-  plugins: [
-    require('@tailwindcss/line-clamp'),
-  ],
-}
+  plugins: [require('@tailwindcss/line-clamp')],
+};

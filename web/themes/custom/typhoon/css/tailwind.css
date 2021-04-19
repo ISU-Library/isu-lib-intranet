@@ -1026,8 +1026,8 @@ video {
 	background-image: -webkit-gradient(linear, left top, right top, from(var(--tw-gradient-stops)));
 	background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
-.bg-hero-image{
-	background-image: url('/themes/custom/typhoon/images/intra-hero.jpg');
+.bg-hero-image-xs{
+	background-image: url('/themes/custom/typhoon/images/intra-hero-xs.jpg');
 }
 .bg-lib-staircase-image{
 	background-image: url('/themes/custom/typhoon/images/parks-library-staircase.jpg');
@@ -1790,6 +1790,7 @@ h6{
 html {
   scroll-behavior: smooth;
   margin-right: calc(-1 * (100vw - 100%));
+  /* * ^ this snippet prevents layout shift with mobile nav*/
 }
 body {
   font-family: 'Nimbus Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -2054,6 +2055,9 @@ p{
 		    -ms-flex-pack: end;
 		        justify-content: flex-end;
 	}
+	.sm\:bg-hero-image-sm{
+		background-image: url('/themes/custom/typhoon/images/intra-hero-sm.jpg');
+	}
 	.sm\:px-2xl{
 		padding-left: 2.5rem;
 		padding-right: 2.5rem;
@@ -2232,6 +2236,9 @@ p{
 		--tw-bg-opacity: 1;
 		background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
 	}
+	.md\:bg-hero-image-md{
+		background-image: url('/themes/custom/typhoon/images/intra-hero-md.jpg');
+	}
 	.md\:p-3xl{
 		padding: 3rem;
 	}
@@ -2368,6 +2375,9 @@ p{
 		   -moz-column-gap: 3rem;
 		        column-gap: 3rem;
 	}
+	.lg\:bg-hero-image-lg{
+		background-image: url('/themes/custom/typhoon/images/intra-hero-lg.jpg');
+	}
 	.lg\:px-0{
 		padding-left: 0;
 		padding-right: 0;
@@ -2396,14 +2406,17 @@ p{
 	.xl\:ml-0{
 		margin-left: 0;
 	}
-	.xl\:w-\[87\.5rem\]{
-		width: 87.5rem;
+	.xl\:w-full{
+		width: 100%;
 	}
 	.xl\:max-w-\[87\.5rem\]{
 		max-width: 87.5rem;
 	}
 	.xl\:max-w-2xl{
 		max-width: 42rem;
+	}
+	.xl\:bg-hero-image-xl{
+		background-image: url('/themes/custom/typhoon/images/intra-hero-xl.jpg');
 	}
 	.xl\:px-xl{
 		padding-left: 2rem;
