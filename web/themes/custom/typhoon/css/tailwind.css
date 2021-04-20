@@ -1,5 +1,4 @@
 @import url(//cdn.theme.iastate.edu/nimbus-sans/css/nimbus-sans.css);
-@import url(//cdn.theme.iastate.edu/merriweather/css/merriweather.css);
 
 /************** Tailwind *********************/
 /*! tailwindcss v2.0.3 | MIT License | https://tailwindcss.com*/
@@ -547,20 +546,17 @@ video {
 .bottom-lg{
 	bottom: 1.5rem;
 }
-.right-\[-80rem\]{
-	right: -80rem;
+.top-\[30\%\]{
+	top: 30%;
 }
 .right-0{
 	right: 0;
 }
-.top-\[10\%\]{
-	top: 10%;
-}
-.top-\[30\%\]{
-	top: 30%;
-}
 .top-1\/4{
 	top: 25%;
+}
+.right-\[-80rem\]{
+	right: -80rem;
 }
 .z-10{
 	z-index: 10;
@@ -1463,6 +1459,93 @@ video {
   }
 /************** custom CSS *********************/
 /****** Foundations ******/
+/*
+ * The Merriweather font family is licensed under the Open Font License
+ * https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
+ * from Google Fonts https://fonts.google.com/.
+ */
+@font-face {
+  font-family: 'Merriweather';
+  src: url('/themes/custom/typhoon/fonts/Merriweather/Merriweather-Black.woff2')
+      format('woff2'),
+    url('/themes/custom/typhoon/fonts/Merriweather/Merriweather-Black.woff')
+      format('woff'),
+    url('/themes/custom/typhoon/fonts/Merriweather/Merriweather-Black.ttf')
+      format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+  font-family: 'Merriweather';
+  src: url('/themes/custom/typhoon/fonts/Merriweather/Merriweather-BlackItalic.woff2')
+      format('woff2'),
+    url('/themes/custom/typhoon/fonts/Merriweather/Merriweather-BlackItalic.woff')
+      format('woff'),
+    url('/themes/custom/typhoon/fonts/Merriweather/Merriweather-BlackItalic.ttf')
+      format('truetype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+  font-family: 'Merriweather';
+  src: url('/themes/custom/typhoon/fonts/Merriweather/Merriweather-Bold.woff2')
+      format('woff2'),
+    url('/themes/custom/typhoon/fonts/Merriweather/Merriweather-Bold.woff')
+      format('woff'),
+    url('/themes/custom/typhoon/fonts/Merriweather/Merriweather-Bold.ttf')
+      format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+  font-family: 'Merriweather';
+  src: url('/themes/custom/typhoon/fonts/Merriweather/Merriweather-Light.woff2')
+      format('woff2'),
+    url('/themes/custom/typhoon/fonts/Merriweather/Merriweather-Light.woff')
+      format('woff'),
+    url('/themes/custom/typhoon/fonts/Merriweather/Merriweather-Light.ttf')
+      format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  font-family: 'Merriweather';
+  src: url('/themes/custom/typhoon/fonts/Merriweather/Merriweather-LightItalic.woff2')
+      format('woff2'),
+    url('/themes/custom/typhoon/fonts/Merriweather/Merriweather-LightItalic.woff')
+      format('woff'),
+    url('/themes/custom/typhoon/fonts/Merriweather/Merriweather-LightItalic.ttf')
+      format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+  font-family: 'Merriweather';
+  src: url('/themes/custom/typhoon/fonts/Merriweather/Merriweather-Italic.woff2')
+      format('woff2'),
+    url('/themes/custom/typhoon/fonts/Merriweather/Merriweather-Italic.woff')
+      format('woff'),
+    url('/themes/custom/typhoon/fonts/Merriweather/Merriweather-Italic.ttf')
+      format('truetype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+  font-family: 'Merriweather';
+  src: url('/themes/custom/typhoon/fonts/Merriweather/Merriweather-Regular.woff2')
+      format('woff2'),
+    url('/themes/custom/typhoon/fonts/Merriweather/Merriweather-Regular.woff')
+      format('woff'),
+    url('/themes/custom/typhoon/fonts/Merriweather/Merriweather-Regular.ttf')
+      format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  font-family: 'Merriweather';
+  src: url('/themes/custom/typhoon/fonts/Merriweather/Merriweather-BoldItalic.woff2')
+      format('woff2'),
+    url('/themes/custom/typhoon/fonts/Merriweather/Merriweather-BoldItalic.woff')
+      format('woff'),
+    url('/themes/custom/typhoon/fonts/Merriweather/Merriweather-BoldItalic.ttf')
+      format('truetype');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
 /****** Utility Nav Section ******/
 .nav-triangles {
   position: absolute;
@@ -2355,9 +2438,6 @@ p{
 	}
 	.group:focus .md\:group-focus\:block{
 		display: block;
-	}
-	.md\:top-\[30\%\]{
-		top: 30%;
 	}
 }
 @media (min-width: 1024px){

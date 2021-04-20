@@ -5,9 +5,9 @@
 
 /************** custom CSS *********************/
 @import url('//cdn.theme.iastate.edu/nimbus-sans/css/nimbus-sans.css');
-@import url('//cdn.theme.iastate.edu/merriweather/css/merriweather.css');
 
 /****** Foundations ******/
+@import './fonts.css';
 @import './header.css';
 @import './headlines.css';
 @import './breadcrumbs.css';
