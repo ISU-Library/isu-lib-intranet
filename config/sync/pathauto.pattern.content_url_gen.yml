@@ -9,7 +9,7 @@ label: 'content URL Gen'
 type: 'canonical_entities:node'
 pattern: '[node:menu-link:parents:join-path]/[node:title]'
 selection_criteria:
-  b04d8ad1-d17a-40c3-a108-586a8a894f32:
+  4ad53a6b-4279-4b17-be5b-009c28b3737b:
     id: node_type
     bundles:
       department_page: department_page
@@ -19,7 +19,7 @@ selection_criteria:
     negate: false
     context_mapping:
       node: node
-    uuid: b04d8ad1-d17a-40c3-a108-586a8a894f32
+    uuid: 4ad53a6b-4279-4b17-be5b-009c28b3737b
 selection_logic: and
 weight: -5
 relationships: {  }

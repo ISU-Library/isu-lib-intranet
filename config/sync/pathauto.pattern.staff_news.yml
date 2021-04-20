@@ -1,15 +1,15 @@
-uuid: 2010aad4-20e4-49a8-9d21-b3b32479e550
+uuid: 1215ede6-68ba-4825-aec5-48c44f27d673
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: staff_news_url
+id: staff_news
 label: 'Staff News URL'
 type: 'canonical_entities:node'
 pattern: 'staff/[node:content-type]/[node:title]'
 selection_criteria:
-  5781a90b-9d76-4961-977e-7ca2ff7b48d9:
+  a558236f-3a33-49cc-885a-8cb199379380:
     id: node_type
     bundles:
       staff_news: staff_news
@@ -17,7 +17,7 @@ selection_criteria:
     negate: false
     context_mapping:
       node: node
-    uuid: 5781a90b-9d76-4961-977e-7ca2ff7b48d9
+    uuid: a558236f-3a33-49cc-885a-8cb199379380
 selection_logic: and
 weight: -5
 relationships: {  }
