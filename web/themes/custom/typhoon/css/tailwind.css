@@ -1466,6 +1466,18 @@ video {
  */
 @font-face {
   font-family: 'Merriweather';
+  src: url('/themes/custom/typhoon/fonts/Merriweather/Merriweather-Regular.woff2')
+      format('woff2'),
+    url('/themes/custom/typhoon/fonts/Merriweather/Merriweather-Regular.woff')
+      format('woff'),
+    url('/themes/custom/typhoon/fonts/Merriweather/Merriweather-Regular.ttf')
+      format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+/* @font-face {
+  font-family: 'Merriweather';
   src: url('/themes/custom/typhoon/fonts/Merriweather/Merriweather-Black.woff2')
       format('woff2'),
     url('/themes/custom/typhoon/fonts/Merriweather/Merriweather-Black.woff')
@@ -1475,6 +1487,9 @@ video {
   font-weight: 900;
   font-style: normal;
   font-display: swap;
+}
+
+@font-face {
   font-family: 'Merriweather';
   src: url('/themes/custom/typhoon/fonts/Merriweather/Merriweather-BlackItalic.woff2')
       format('woff2'),
@@ -1485,6 +1500,8 @@ video {
   font-weight: 900;
   font-style: italic;
   font-display: swap;
+} */
+@font-face {
   font-family: 'Merriweather';
   src: url('/themes/custom/typhoon/fonts/Merriweather/Merriweather-Bold.woff2')
       format('woff2'),
@@ -1524,16 +1541,6 @@ video {
       format('truetype');
   font-weight: normal;
   font-style: italic;
-  font-display: swap;
-  font-family: 'Merriweather';
-  src: url('/themes/custom/typhoon/fonts/Merriweather/Merriweather-Regular.woff2')
-      format('woff2'),
-    url('/themes/custom/typhoon/fonts/Merriweather/Merriweather-Regular.woff')
-      format('woff'),
-    url('/themes/custom/typhoon/fonts/Merriweather/Merriweather-Regular.ttf')
-      format('truetype');
-  font-weight: normal;
-  font-style: normal;
   font-display: swap;
   font-family: 'Merriweather';
   src: url('/themes/custom/typhoon/fonts/Merriweather/Merriweather-BoldItalic.woff2')
