@@ -9,19 +9,17 @@ label: 'content URL Gen'
 type: 'canonical_entities:node'
 pattern: '[node:menu-link:parents:join-path]/[node:title]'
 selection_criteria:
-  cd8b9ccb-5fad-4f00-b0f0-1d3fc97b9912:
+  b04d8ad1-d17a-40c3-a108-586a8a894f32:
     id: node_type
     bundles:
       department_page: department_page
       employee: employee
       page: page
       specialty_page: specialty_page
-      staff_news: staff_news
-      staff_updates: staff_updates
     negate: false
     context_mapping:
       node: node
-    uuid: cd8b9ccb-5fad-4f00-b0f0-1d3fc97b9912
+    uuid: b04d8ad1-d17a-40c3-a108-586a8a894f32
 selection_logic: and
 weight: -5
 relationships: {  }

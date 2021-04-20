@@ -1,0 +1,23 @@
+uuid: 2010aad4-20e4-49a8-9d21-b3b32479e550
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: staff_news_url
+label: 'Staff News URL'
+type: 'canonical_entities:node'
+pattern: 'staff/[node:content-type]/[node:title]'
+selection_criteria:
+  5781a90b-9d76-4961-977e-7ca2ff7b48d9:
+    id: node_type
+    bundles:
+      staff_news: staff_news
+      staff_updates: staff_updates
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 5781a90b-9d76-4961-977e-7ca2ff7b48d9
+selection_logic: and
+weight: -5
+relationships: {  }
