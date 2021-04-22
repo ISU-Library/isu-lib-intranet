@@ -76,16 +76,16 @@
 {% set ImgSrc = file_url(node.field_staff_updates_main_image.entity.fileuri) %}
 {% set ImgAlt = node.field_staff_updates_main_image.alt %}
 
+{% set categories = content.field_staff_update_category|field_value %}
 
-<article{{attributes}}>
-
+<article {{ attributes }}>
   {{ title_prefix }}
   {% if label and not page %}
     {# <h2{{title_attributes}}>
       <a href="{{ url }}" rel="bookmark">
         {{ label }}
       </a> #}
-    </h2>
+    {# </h2> #}
   {% endif %}
   {{ title_suffix }}
 
@@ -96,20 +96,23 @@
       <img src="{{ImgSrc}}" alt="{{ImgAlt}}">
     </figure>
   </div> #}
-   <div
-    style="background-image:url({{ ImgSrc }})"
-    class="bg-center bg-no-repeat bg-cover max-w-[57rem] mx-auto mb-2xl pt-[46%] shadow-light-2"
-  >
-  </div>
-  <div{{content_attributes}}>
+  {% if ImgSrc %}
+    <div
+      style="background-image:url({{ ImgSrc }})"
+      class="bg-center bg-no-repeat bg-cover max-w-[57rem] mx-auto mb-2xl pt-[46%] shadow-light-2"
+    ></div>
+  {% endif %}
+  <div {{ content_attributes }}>
     {# <div style="background-image:url({{ImgSrc}})" class="mb-lg"> #}
     <div class="mb-xl">
-      <h1 class="mb-0">
-        {{ label }}
-      </h1>
-      <div  class="text-warm-grey-600 italic"> {{ author_name }}-{{ date }} 
-        {{content.field_staff_update_category }}
-      </div>
+      <div class="text-sm">{{ date }} - Author:{{ author_name }}</div>
+      <h1 class="mb-0">{{ label }}</h1>
+      <ul class="flex">
+        <span class="pr-sm text-sm">Category:</span>
+        {% for item in categories %}
+          <li class="pr-sm text-sm">{{ item }}</li>
+        {% endfor %}
+      </ul>
     </div>
     {{ content.field_staff_updates_article_summary|field_value }}
     {# </h1> #}

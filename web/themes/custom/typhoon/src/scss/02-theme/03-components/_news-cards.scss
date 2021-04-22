@@ -27,7 +27,7 @@ $news-card-lead-height: rem(300);
   // transition: transform 0.5s ease;
   min-height: rem(250);
 
-  @include bp (md) {
+  @include bp(md) {
     min-height: $news-card-lead-height;
   }
 
@@ -91,7 +91,6 @@ $news-card-lead-height: rem(300);
       // flex: 0 0 0;
     }
 
-
     p {
       // @include line-clamp(5);
 
@@ -102,10 +101,12 @@ $news-card-lead-height: rem(300);
   }
 
   .image-overlay {
-    background: linear-gradient(180deg,
-        rgba(0, 0, 0, 0.1) 0%,
-        rgba(0, 0, 0, 0.75) 100%,
-        rgba(0, 0, 0, 0.75) 150%);
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.1) 0%,
+      rgba(0, 0, 0, 0.75) 100%,
+      rgba(0, 0, 0, 0.75) 150%
+    );
     background-size: auto 150%;
     background-position: 0 50%;
     transition: background-position 0.5s ease;
@@ -124,7 +125,6 @@ $news-card-lead-height: rem(300);
     // text-decoration: none;
     // transition: color 0.3s ease;
 
-
     @include bp(md) {
       // gap: $space-md;
     }
@@ -132,7 +132,6 @@ $news-card-lead-height: rem(300);
     @include bp(lg) {
       // gap: $space-lg;
     }
-
 
     &::after {
       height: 0;
@@ -184,11 +183,10 @@ $news-card-lead-height: rem(300);
     @include bp(sm) {
       // grid-column: 2 / 4;
     }
-
   }
 
   .news-card--category {
-    color: inherit;
+    // color: inherit;
   }
 
   .news-card--info {

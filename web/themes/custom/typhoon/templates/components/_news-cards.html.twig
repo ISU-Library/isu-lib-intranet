@@ -74,12 +74,15 @@
       </div>
       <div class="news-card--text col-span-full lg:col-span-2 relative w-full">
         {% if data.category %}
-          <span class="news-card--category">
-            {{ data.category }}
-          </span>
+          <ul class="flex news-card--category">
+            <span class="pr-sm text-sm">Category:</span>
+            {% for item in data.category %}
+              <li class="pr-sm text-sm">{{ item }}</li>
+            {% endfor %}
+          </ul>
         {% endif %}
         <div class="mb-md">
-          <h3 title="{{ data.title}}" class="news-card--title line-clamp-2 text-bold w-full leading-tight mt-2xs mb-0 text-lg">
+          <h3 title="{{ data.title}}" class="news-card--title line-clamp-2 font-bold w-full leading-tight mt-2xs mb-0 text-lg">
             <a href="{{ data.link}}">
               {{ data.title }}
             </a>
