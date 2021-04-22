@@ -175,7 +175,7 @@ function typhoon_preprocess_page__front(&$variables) {
               $summary_string = $thing->value;
               // do not want to replace the p tag?
               //$summary_string = str_replace('<p>', '<p class="text-white mb-sm">', $summary_string);
-              $news_item['body_summary'] = $summary_string; 
+              $news_item['body_summary'] = strip_tags($summary_string); 
             }
         }
 
