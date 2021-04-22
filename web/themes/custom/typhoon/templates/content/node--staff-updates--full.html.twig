@@ -107,7 +107,9 @@
       <h1 class="mb-0">
         {{ label }}
       </h1>
-      <div class="text-warm-grey-600 italic"> {{ author_name }}-{{ date }} </div>
+      <div  class="text-warm-grey-600 italic"> {{ author_name }}-{{ date }} 
+        {{content.field_staff_update_category }}
+      </div>
     </div>
     {{ content.field_staff_updates_article_summary|field_value }}
     {# </h1> #}
