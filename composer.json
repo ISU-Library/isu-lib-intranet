@@ -24,6 +24,7 @@
         "drupal/core-composer-scaffold": "^9.0",
         "drupal/core-recommended": "^9.0",
         "drupal/ctools": "^3.4",
+        "drupal/custom_search": "^1.0@beta",
         "drupal/devel": "^4.0",
         "drupal/entity_usage": "^2.0@beta",
         "drupal/login_security": "^2.0",
