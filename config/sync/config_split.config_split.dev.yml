@@ -1,0 +1,16 @@
+uuid: e02dacc0-bcec-4612-921e-f180c4000af8
+langcode: en
+status: true
+dependencies: {  }
+id: dev
+label: 'Dev config Split'
+description: ''
+folder: ''
+module:
+  oauth_login_oauth2: 0
+theme: {  }
+blacklist: {  }
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0

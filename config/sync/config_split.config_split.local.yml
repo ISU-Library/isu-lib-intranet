@@ -2,16 +2,15 @@ uuid: f551e276-81e4-4060-8550-02835e2a7849
 langcode: en
 status: true
 dependencies: {  }
-id: local_config_split
+id: local
 label: local-config-split
 description: ''
 folder: ../config/local/
-module:
-  oauth_login_oauth2: 0
+module: {  }
 theme: {  }
 blacklist:
-  - miniorange_oauth_client.settings
   - oauth_login_oauth2.settings
+  - miniorange_oauth_client.settings
 graylist: {  }
 graylist_dependents: true
 graylist_skip_equal: true

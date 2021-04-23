@@ -2,12 +2,12 @@ $p-color: $warm-grey-900;
 $p-fs: $fs-md;
 $p-lh: 1.5;
 
-h1+p,
-h2+p,
-h3+p,
-h4+p,
-h5+p,
-h6+p {
+h1 + p,
+h2 + p,
+h3 + p,
+h4 + p,
+h5 + p,
+h6 + p {
   margin-top: 0;
 }
 
@@ -68,7 +68,7 @@ a {
 // 	margin-top: 0em;
 // 	margin-bottom: 1em;
 // }
-ul ul,
+// ul ul,
 ol ol,
 ul ol,
 ol ul {
