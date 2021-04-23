@@ -8,8 +8,7 @@ description: ''
 folder: ../config/dev/
 module: {  }
 theme: {  }
-blacklist:
-  - oauth_login_oauth2.settings
+blacklist: {  }
 graylist: {  }
 graylist_dependents: true
 graylist_skip_equal: true
