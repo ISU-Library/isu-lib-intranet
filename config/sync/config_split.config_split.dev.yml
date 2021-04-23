@@ -1,18 +1,19 @@
 uuid: 84f2b43f-e9da-43a7-96fb-4fe343aeb608
 langcode: en
-status: true
-dependencies: {}
+status: false
+dependencies: {  }
 id: dev
-label: "Dev config Split"
-description: ""
+label: 'Dev config Split'
+description: ''
 folder: ../config/dev/
 module:
   oauth_login_oauth2: 0
-theme: {}
+theme: {  }
 blacklist:
+  - config_split.config_split.dev
   - miniorange_oauth_client.settings
   - oauth_login_oauth2.settings
-graylist: {}
+graylist: {  }
 graylist_dependents: true
 graylist_skip_equal: true
 weight: 0
