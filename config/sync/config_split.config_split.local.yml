@@ -1,6 +1,6 @@
 uuid: f551e276-81e4-4060-8550-02835e2a7849
 langcode: en
-status: true
+status: false
 dependencies: {  }
 id: local
 label: local-config-split
