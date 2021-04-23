@@ -5,7 +5,7 @@ dependencies: {  }
 id: dev
 label: 'Dev config Split'
 description: ''
-folder: ''
+folder: ../config/dev/
 module:
   oauth_login_oauth2: 0
 theme: {  }
