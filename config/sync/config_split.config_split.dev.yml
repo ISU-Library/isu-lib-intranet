@@ -1,6 +1,6 @@
 uuid: 84f2b43f-e9da-43a7-96fb-4fe343aeb608
 langcode: en
-status: true
+status: false
 dependencies: {  }
 id: dev
 label: 'Dev config Split'
