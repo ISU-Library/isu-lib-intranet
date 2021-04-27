@@ -22,14 +22,14 @@
     // display: inline-block;
   }
 
-  p+h2 {
+  p + h2 {
     margin-top: $space-lg;
   }
 
-  p+h3,
-  p+h4,
-  p+h5,
-  p+h6 {
+  p + h3,
+  p + h4,
+  p + h5,
+  p + h6 {
     margin-top: $space-md;
   }
 
@@ -230,7 +230,8 @@
  | Changes icon based on file type
  |--------------------------------------------------------------------------
 */
-    $doc-types: ('.com': '\f35d',
+    $doc-types: (
+      '.com': '\f35d',
       '.net': '\f35d',
       '.edu': '\f35d',
       '.org': '\f35d',
@@ -241,8 +242,7 @@
       '.png': '\f1c5',
     );
 
-    @each $docType,
-    $icon in $doc-types {
+    @each $docType, $icon in $doc-types {
       @if "a[href*='#{$docType}']" {
         a[href*='#{$docType}']::before {
           content: $icon;
@@ -306,7 +306,8 @@
       padding-left: $space-2xl;
     }
 
-    $doc-types: ('.com': '\f35d',
+    $doc-types: (
+      '.com': '\f35d',
       '.net': '\f35d',
       '.edu': '\f35d',
       '.org': '\f35d',
@@ -317,8 +318,7 @@
       '.png': '\f1c5',
     );
 
-    @each $docType,
-    $icon in $doc-types {
+    @each $docType, $icon in $doc-types {
       @if "a[href*='#{$docType}']" {
         a[href*='#{$docType}']::before {
           content: $icon;
@@ -335,7 +335,8 @@
   // text-align: center;
 }
 
-.block--quote {}
+.block--quote {
+}
 
 .quote {
   // max-width: 75%;
@@ -444,7 +445,7 @@
   // box-shadow: $vert-light-2;
   // border-radius: $br2;
   // border-left: solid 4px $red-500;
-  quotes: '“''”';
+  quotes: '“' '”';
   // overflow: hidden;
 
   &::before,

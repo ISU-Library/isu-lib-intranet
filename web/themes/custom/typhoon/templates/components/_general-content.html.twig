@@ -1,347 +1,382 @@
-{# !! Template default is true. This is for drupal templating Set to false if outside paragraph template #}
-
 {% macro text(data) %}
-  {# * When importanted, setting template to false wraps content with a <d>  #}
-  {#* <d> plus drupal data is provided with {{ content }}. #}
-
   {% set defaultData = {
-    template: TRUE,
+    template: true,
     lead: '',
-    text: '',
+    text: ''
   } %}
 
   {% set data = data ? defaultData|merge(data) : defaultData %}
+  {# 
+ {{item.in_active_trail? 'is-active': ''}}" #}
 
-    {% if data.lead %}
-      <div class="gen-con--block max-w-[50rem] text-block mb-lg first:text-lg {{data.lead}} "> {% if data.template %}
-        {{ data.text }}
-      {% else %}
-        <p class="mt-0">
-          {{ data.text }}
-        </p>
-      {% endif %}
+  <div
+    class="gen-con--block max-w-[50rem] text-block mb-lg first:text-lg {{
+    data.lead
+    }} "
+  >
+    {% if data.template %}
+      {{ data.text }}
     {% else %}
-      <div class="gen-con--block max-w-[50rem] text-block mb-lg first:text-lg ">
-        {% if data.template %}
-          {{ data.text }}
-        {% else %}
-          <p class="mt-0">
-            {{ data.text }}
-          </p>
-        {% endif %}
-      {% endif %}
-    </div>
-  {% endmacro %}
+      <p class="mt-0">{{ data.text }}</p>
+    {% endif %}
+  </div>
+{% endmacro %}
 
-  {% macro textImg(data) %}
-
-    {% set defaultData = {
-    template: TRUE,
+{% macro textImg(data) %}
+  {% set defaultData = {
+    template: true,
     imgSide: '',
     imgSize: '',
     imgSrc: '',
     imgAlt: '',
-    text: '',
+    text: ''
   } %}
 
-    {% set data = data ? defaultData|merge(data) : defaultData %}
+  {% set data = data ? defaultData|merge(data) : defaultData %}
 
-    {% if data.imgSide == 'text-img--right' %}
-      {% set imgFloat = 'md:float-right ml-lg' %}
+  {% if data.imgSide == 'text-img--right' %}
+    {% set imgFloat = 'md:float-right ml-lg' %}
+  {% else %}
+    {% set imgFloat = 'md:float-left mr-lg' %}
+  {% endif %}
+
+  <div class="gen-con--block max-w-[50rem] mb-lg img-block {{ data.imgSide }}">
+    <div
+      class="gen-con--img-wrap w-full {{
+      data.imgSize
+      }} float-none my-0 mx-auto {{ imgFloat }}"
+    >
+      <figure class="relative text-center">
+        <img
+          class="max-w-full h-auto shadow-dark-2"
+          src="{{ data.imgSrc }}"
+          alt="{{ data.imgAlt }}"
+        />
+        <figcaption class="mt-sm bg-white text-center italic">
+          {{ data.imgAlt }}
+        </figcaption>
+      </figure>
+    </div>
+    {% if data.template %}
+      {{ data.text }}
+    {% else %}
+      <p class="mt-0">{{ data.text }}</p>
     {% endif %}
-    {% if data.imgSide == 'text-img--left' %}
-      {% set imgFloat = 'md:float-left mr-lg' %}
-    {% endif %}
+  </div>
+{% endmacro %}
 
+{% macro accordian(data) %}
+  {% set defaultData = {
+    template: true,
+    id: '',
+    title: '',
+    text: ''
+  } %}
 
-    <div class="gen-con--block max-w-[50rem] mb-lg img-block {{data.imgSide}}">
-      <div class="gen-con--img-wrap w-full {{data.imgSize}} float-none my-0 mx-auto {{imgFloat}}">
-        <figure class="relative text-center">
-          <img class="max-w-full h-auto shadow-dark-2" src="{{ data.imgSrc }}" alt="{{ data.imgAlt }}"/>
-          <figcaption class="mt-sm bg-white text-center italic">
-            {{ data.imgAlt }}
-          </figcaption>
-        </figure>
-      </div>
+  {% set data = data ? defaultData|merge(data) : defaultData %}
+
+  <div class="bg-white show--item js-open">
+    <button
+      class="show--title"
+      data-box-toggle="{{ data.id }}"
+      role="tab"
+      aria-selected="false"
+    >
+      <h4>{{ data.title }}</h4>
+      <span class="icon"></span>
+    </button>
+
+    <div
+      class="show--content"
+      role="tabpanel"
+      aria-expanded="false"
+      data-box="{{ data.id }}"
+    >
       {% if data.template %}
         {{ data.text }}
       {% else %}
-        <p class="mt-0">
-          {{ data.text }}
-        </p>
+        <p class="mt-0">{{ data.text }}</p>
       {% endif %}
     </div>
+  </div>
+{% endmacro %}
 
-  {% endmacro %}
+{% macro linkListAbstract(data) %}
+  {% set defaultData = {
+    text: '',
+    links: ''
+  } %}
+  {% set data = data ? defaultData|merge(data) : defaultData %}
 
-  {% macro accordian(data) %}
-    {% set defaultData = {
-      template: TRUE,
-      id:'',
-      title:'',
-      text:'',
+  {# todo: add header options through admin #}
 
-    } %}
+  <div
+    class="gen-con--block max-w-[50rem] text-block block--link-abstract mb-2xl"
+  >
+    {% if data.template %}
+      {{ data.text }}
+    {% else %}
+      <p>{{ data.text }}</p>
+    {% endif %}
+    <ul class="link-list--abstract mt-lg mx-0 mb-0">
+      {# {% if data.template %} #}
+      {# * the code below reaches down into the paragraph link_abstract_list, set by data.links #}
+      {# * then it loops through all fields in the paragraph, yes there are a lot of arrays #}
+      {# * and only renders an element if it has a url and title #}
+      {% for linkAbstractPara in data.links %}
+        {% for paragraph_field in linkAbstractPara %}
+          {% for abstract_link_value in paragraph_field %}
+            {% if abstract_link_value.title and abstract_link_value[0].url %}
+              <li class="abstract-item relative mb-lg">
+                <a class="block pl-2xl" href="{{ abstract_link_value[0].url }}">
+                  <h4 class="text-red-500 m-0 mb-md">
+                    {{ abstract_link_value.title }}
+                  </h4>
+                </a>
+                {{ paragraph_field.field_link_abstract_text.value|raw }}
+              </li>
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      {% endfor %}
+      {# {% else %}
+        {% for linkList in data.links %}
+          <li class="abstract-item">
+            <a class="block pl-2xl" href="{{ linkList.url }}">
+              <h4 class="text-red-500 m-0">{{ linkList.text }}</h4>
+            </a>
+            <p class="mt-0">{{ linkList.abstract }}</p>
+          </li>
+        {% endfor %}
+      {% endif %} #}
+    </ul>
+  </div>
+{% endmacro %}
 
-    {% set data = data ? defaultData|merge(data) : defaultData %}
+{% macro linkList(data) %}
+  {% set defaultData = {
+    template: true,
+    text: '',
+    links: ''
+  } %}
 
-    <div class="bg-white show--item js-open">
-      <button class="show--title" data-box-toggle="{{data.id}}" role="tab" aria-selected="false">
-        <h4>
-          {{data.title}}
-        </h4>
-        <span class="icon"></span>
-      </button>
+  {% set data = data ? defaultData|merge(data) : defaultData %}
 
-      <div class="show--content" role="tabpanel" aria-expanded="false" data-box="{{data.id}}">
-        {% if data.template %}
-          {{data.text}}
-        {% else %}
-          <p class="mt-0">
-            {{data.text}}
-          </p>
-        {% endif %}
-      </div>
-    </div>
-
-  {% endmacro %}
-
-  {% macro linkListAbstract(data) %}
-    {% set defaultData = {
-      template: TRUE,
-      text:'',
-      links: '',
-    } %}
-    {% set data = data ? defaultData|merge(data) : defaultData %}
-
-    {# todo: add header options through admin #}
-
-    <div class="gen-con--block max-w-[50rem] text-block block--link-abstract mb-2xl">
+  <div class="gen-con--block max-w-[50rem] mb-lg text-block block--link-list">
+    {% if data.template %}
+      {{ data.text }}
+    {% else %}
+      <p class="mt-0">{{ data.text }}</p>
+    {% endif %}
+    <ul class="link-list flex flex-wrap mt-md mr-0 mb-md ml-md sm:mx-0 sm:mb-0">
       {% if data.template %}
-        {{data.text}}
+        {# * the code below reaches down into the paragraph link_list_link, set by data,links #}
+        {# * then it loops through all fields in the paragraph #}
+        {# * and only renders an element if it has a url and title #}
+        {% for linkListPara in data.links %}
+          {% for paragraph_field in linkListPara %}
+            {% if paragraph_field.url and paragraph_field.title %}
+              <li
+                class="link-list--item relative mb-md w-full py-xs px-0 sm:w-1/2 sm:pr-xs"
+              >
+                <a
+                  class="inline-block pl-2xl font-normal leading-normal no-underline"
+                  href="{{ paragraph_field.url }}"
+                  rel="noreferrer noopener"
+                >
+                  {{ paragraph_field.title }}
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
       {% else %}
-        <p>
-          {{data.text}}
-        </p>
+        {% for linkList in data.links %}
+          <li
+            class="link-list--item relative mb-md w-full py-xs px-0 sm:w-1/2 sm:pr-xs"
+          >
+            {{ linkList }}
+          </li>
+        {% endfor %}
       {% endif %}
-      <ul class="link-list--abstract mt-lg mx-0 mb-0">
-        {% if data.template %}
-          {# * the code below reaches down into the paragraph link_abstract_list, set by data.links #}
-          {# * then it loops through all fields in the paragraph, yes there are a lot of arrays #}
-          {# * and only renders an element if it has a url and title #}
-            {% for linkAbstractPara in data.links %}
-              {% for paragraph_field in linkAbstractPara %}
-                {% for abstract_link_value in paragraph_field %}
-                  {% if abstract_link_value.title and abstract_link_value.0.url %}
-                    <li class="abstract-item relative mb-lg"> <a class="block pl-2xl" href="{{abstract_link_value.0.url}}">
-                      <h4 class="text-red-500 m-0 mb-md">
-                        {{abstract_link_value.title}}
-                      </h4>
-                    </a>
-                    {{ paragraph_field.field_link_abstract_text.value|raw }}
-                  </li>
-                {% endif %}
-              {% endfor %}
-            {% endfor %}
-          {% endfor %}
-        {% else %}
-          {% for linkList in data.links %}
-            <li class="abstract-item">
-              <a class="block pl-2xl" href="{{ linkList.url }}">
-                <h4 class="text-red-500 m-0">
-                  {{ linkList.text }}
-                </h4>
-              </a>
-              <p class="mt-0">
-                {{ linkList.abstract }}
-              </p>
-            </li>
-          {% endfor %}
-        {% endif %}
-      </ul>
+    </ul>
+  </div>
+{% endmacro %}
+
+{% macro largeImg(data) %}
+  {% set defaultData = {
+    template: true,
+    imgSrc: '',
+    imgAlt: ''
+  } %}
+  {% set data = data ? defaultData|merge(data) : defaultData %}
+
+  <div class="gen-con--block max-w-[50rem] mb-lg img-block block--lg-img">
+    <div class="gen-con--img-wrap">
+      <figure class="relative">
+        <img
+          class="shadow-dark-2"
+          src="{{ data.imgSrc }}"
+          alt="{{ data.imgAlt }}"
+        />
+        <figcaption class="pt-xs text-center italic">
+          {{ data.imgAlt }}
+        </figcaption>
+      </figure>
     </div>
+  </div>
+{% endmacro %}
 
-  {% endmacro %}
+{% macro twoImg(data) %}
+  {% set defaultData = {
+    template: true,
+    leftImgSrc: '',
+    leftImgAlt: '',
+    rightImgSrc: '',
+    rightImgAlt: ''
+  } %}
 
-  {% macro linkList(data) %}
-    {% set defaultData = {
-      template: TRUE,
-      text:'',
-      links: '',
-    } %}
+  {% set data = data ? defaultData|merge(data) : defaultData %}
 
-    {% set data = data ? defaultData|merge(data) : defaultData %}
-
-    <div class="gen-con--block max-w-[50rem] mb-lg text-block block--link-list">
-      {% if data.template %}
-        {{data.text}}
-      {% else %}
-        <p class="mt-0">
-          {{data.text}}
-        </p>
-      {% endif %}
-      <ul class="link-list flex flex-wrap mt-md mr-0 mb-md ml-md sm:mx-0 sm:mb-0">
-        {% if data.template %}
-          {# * the code below reaches down into the paragraph link_list_link, set by data,links #}
-          {# * then it loops through all fields in the paragraph #}
-          {# * and only renders an element if it has a url and title #}
-            {% for linkListPara in data.links %}
-              {% for paragraph_field in linkListPara %}
-                {% if paragraph_field.url and paragraph_field.title %}
-                  <li class="link-list--item relative mb-md w-full py-xs px-0 sm:w-1/2 sm:pr-xs"> <a class="inline-block pl-2xl font-normal leading-normal no-underline" href="{{ paragraph_field.url }}" rel="noreferrer noopener">
-                    {{ paragraph_field.title }}
-                  </a>
-                </li>
-              {% endif %}
-            {% endfor %}
-          {% endfor %}
-        {% else %}
-          {% for linkList in data.links %}
-            <li class="link-list--item relative mb-md w-full py-xs px-0 sm:w-1/2 sm:pr-xs">
-              {{ linkList }}
-            </li>
-          {% endfor %}
-        {% endif %}
-      </ul>
+  <div
+    class="gen-con--block max-w-[50rem] flex flex-col sm:flex-row justify-around mb-2xl img-block block--two-img"
+  >
+    <div class="gen-con--img-wrap max-w-full m-xs">
+      <figure>
+        <img
+          class="shadow-dark-2"
+          src="{{ data.leftImgSrc }}"
+          alt="{{ data.leftImgAlt }}"
+        />
+        <figcaption class="pt-xs text-center italic">
+          {{ data.leftImgAlt }}
+        </figcaption>
+      </figure>
     </div>
-  {% endmacro %}
-
-  {% macro largeImg(data) %}
-
-    {% set defaultData = {
-      template: TRUE,
-      imgSrc: '',
-      imgAlt: ''
-      } %}
-    {% set data = data ? defaultData|merge(data) : defaultData %}
-
-    <div class="gen-con--block max-w-[50rem] mb-lg img-block block--lg-img">
-      <div class="gen-con--img-wrap">
-        <figure class="relative">
-          <img class="shadow-dark-2" src="{{ data.imgSrc }}" alt="{{ data.imgAlt }}"/>
-          <figcaption class="pt-xs text-center italic">
-            {{ data.imgAlt }}
-          </figcaption>
-        </figure>
-      </div>
+    <div class="gen-con--img-wrap max-w-full m-xs">
+      <figure>
+        <img
+          class="shadow-dark-2"
+          src="{{ data.rightImgSrc }}"
+          alt="{{ data.rightImgAlt }}"
+        />
+        <figcaption class="pt-xs text-center italic">
+          {{ data.rightImgAlt }}
+        </figcaption>
+      </figure>
     </div>
+  </div>
+{% endmacro %}
 
-  {% endmacro %}
+{% macro threeImg(data) %}
+  {% set defaultData = {
+    template: true,
+    leftImgSrc: '',
+    leftImgAlt: '',
+    centerImgSrc: '',
+    centerImgAlt: '',
+    rightImgSrc: '',
+    rightImgAlt: ''
+  } %}
+  {% set data = data ? defaultData|merge(data) : defaultData %}
 
-  {% macro twoImg(data) %}
+  <div
+    class="gen-con--block max-w-[50rem] flex flex-col sm:flex-row justify-around mb-2xl img-block block--three-img"
+  >
+    <div class="gen-con--img-wrap m-xs">
+      <figure>
+        <img
+          class="shadow-dark-2"
+          src="{{ data.leftImgSrc }}"
+          alt="{{ data.leftImgAlt }}"
+        />
+        <figcaption class="pt-xs text-center italic">
+          {{ data.leftImgAlt }}
+        </figcaption>
+      </figure>
+    </div>
+    <div class="gen-con--img-wrap m-xs">
+      <figure>
+        <img
+          class="shadow-dark-2"
+          src="{{ data.centerImgSrc }}"
+          alt="{{ data.centerImgAlt }}"
+        />
+        <figcaption class="pt-xs text-center italic">
+          {{ data.centerImgAlt }}
+        </figcaption>
+      </figure>
+    </div>
+    <div class="gen-con--img-wrap m-xs">
+      <figure>
+        <img
+          class="shadow-dark-2"
+          src="{{ data.rightImgSrc }}"
+          alt="{{ data.rightImgAlt }}"
+        />
+        <figcaption class="pt-xs text-center italic">
+          {{ data.rightImgAlt }}
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+{% endmacro %}
 
-    {% set defaultData = {
-      template: TRUE,
-      leftImgSrc: '',
-      leftImgAlt: '',
-      rightImgSrc: '',
-      rightImgAlt: '',
-      } %}
+{% macro quote(data) %}
+  {% set defaultData = {
+    quoteType: '',
+    quoteText: '',
+    quoteCite: ''
+  } %}
 
-    {% set data = data ? defaultData|merge(data) : defaultData %}
+  {% set data = data ? defaultData|merge(data) : defaultData %}
 
-    <div class="gen-con--block max-w-[50rem] flex flex-col sm:flex-row justify-around mb-2xl img-block block--two-img">
-      <div class="gen-con--img-wrap max-w-full m-xs ">
-        <figure>
-          <img class="shadow-dark-2" src="{{ data.leftImgSrc }}" alt="{{ data.leftImgAlt }}"/>
-          <figcaption class="pt-xs text-center italic">
-            {{ data.leftImgAlt }}
-          </figcaption>
-        </figure>
-      </div>
-      <div class="gen-con--img-wrap max-w-full m-xs ">
-        <figure>
-          <img class="shadow-dark-2" src="{{ data.rightImgSrc }}" alt="{{ data.rightImgAlt }}"/>
-          <figcaption class="pt-xs text-center italic">
-            {{ data.rightImgAlt }}
-          </figcaption>
-        </figure>
-      </div>
+  {% if data.quoteType == 'block--quote-ribbon' %}
+    {% set quoteTypeClasses =
+      'pb-2xl bg-white shadow-light-2 rounded border-l-4 border-red-500 overflow-hidden'
+    %}
+    {% set quoteMarksWrap = 'hidden' %}
+    {% set quoteMarks = 'text-red-700' %}
+    {% set quoteClasses = 'w-full lg:w-5/6 text-black px-sm lg:px-0' %}
+    {% set cite = 'text-red-500' %}
+  {% elseif data.quoteType == 'block--quote-banner' %}
+    {% set quoteTypeClasses = 'pb-3xl bg-red-600 shadow-light-2 rounded' %}
+    {% set quoteMarksWrap = 'bg-yellow-300' %}
+    {% set quoteMarks = 'text-red-600' %}
+    {% set quoteClasses = 'text-red-50' %}
+    {% set cite = 'text-yellow-300' %}
+  {% else %}
+    {% set quoteTypeClasses = 'pb-0' %}
+    {% set quoteMarksWrap = 'bg-red-200' %}
+    {% set quoteMarks = 'text-red-700' %}
+    {% set quoteClasses = 'w-full lg:w-5/6 text-black' %}
+    {% set cite = 'text-red-500' %}
+  {% endif %}
 
-    {% endmacro %}
-
-    {% macro threeImg(data) %}
-
-      {% set defaultData = {
-      template: TRUE,
-      leftImgSrc: '',
-      leftImgAlt: '',
-      centerImgSrc: '',
-      centerImgAlt: '',
-      rightImgSrc: '',
-      rightImgAlt: '',
-      } %}
-      {% set data = data ? defaultData|merge(data) : defaultData %}
-
-      <div class="gen-con--block max-w-[50rem] flex flex-col sm:flex-row justify-around mb-2xl img-block block--three-img">
-        <div class="gen-con--img-wrap m-xs">
-          <figure>
-            <img class="shadow-dark-2" src="{{ data.leftImgSrc }}" alt="{{ data.leftImgAlt }}"/>
-            <figcaption class="pt-xs text-center italic">
-              {{ data.leftImgAlt }}
-            </figcaption>
-          </figure>
-        </div>
-        <div class="gen-con--img-wrap m-xs">
-          <figure>
-            <img class="shadow-dark-2" src="{{ data.centerImgSrc }}" alt="{{ data.centerImgAlt }}"/>
-            <figcaption class="pt-xs text-center italic">
-              {{ data.centerImgAlt }}
-            </figcaption>
-          </figure>
-        </div>
-        <div class="gen-con--img-wrap m-xs">
-          <figure>
-            <img class="shadow-dark-2" src="{{ data.rightImgSrc }}" alt="{{ data.rightImgAlt }}"/>
-            <figcaption class="pt-xs text-center italic">
-              {{ data.rightImgAlt }}
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-    {% endmacro %}
-
-    {% macro quote(data) %}
-
-      {% set defaultData = {
-        quoteType: '',
-        quoteText:'',
-        quoteCite:'',
-      } %}
-
-      {% set data = data ? defaultData|merge(data) : defaultData %}
-
-      {% if data.quoteType == 'block--quote-ribbon' %}
-        {% set quoteTypeClasses = 'pb-2xl bg-white shadow-light-2 rounded border-l-4 border-red-500 overflow-hidden' %}
-        {% set quoteMarksWrap = 'hidden' %}
-        {% set quoteMarks = 'text-red-700' %}
-        {% set quoteClasses = 'w-full lg:w-5/6 text-black px-sm lg:px-0' %}
-        {% set cite = 'text-red-500' %}
-
-      {% elseif data.quoteType == 'block--quote-banner' %}
-        {% set quoteTypeClasses = 'pb-3xl bg-red-600 shadow-light-2 rounded' %}
-        {% set quoteMarksWrap = 'bg-yellow-300' %}
-        {% set quoteMarks = 'text-red-600' %}
-        {% set quoteClasses = 'text-red-50' %}
-        {% set cite = 'text-yellow-300' %}
-
-      {% else %}
-        {% set quoteTypeClasses = 'pb-0' %}
-        {% set quoteMarksWrap = 'bg-red-200' %}
-        {% set quoteMarks = 'text-red-700' %}
-        {% set quoteClasses = 'w-full lg:w-5/6 text-black' %}
-        {% set cite = 'text-red-500' %}
-      {% endif %}
-
-      <div class="gen-con--block max-w-[50rem] {{data.quoteType}} {{quoteTypeClasses}} pt-2xl px-0 mb-2xl quote-block relative text-center ">
-        <div class="quote--marks {{quoteMarksWrap}} inline-block relative my-0 mx-auto w-xl h-xl rounded-full">
-          <i class="fas fa-quote-left {{quoteMarks}} absolute-center text-center" aria-hidden="true"></i>
-        </div>
-        <blockquote class="quote {{quoteClasses}} my-0 mx-auto text-lg italic">
-          {{ data.quoteText }}
-          <cite class="{{cite}} block relative my-0 mx-auto pt-md px-sm pb-0 not-italic">
-            {{ data.quoteCite }}
-          </cite>
-        </blockquote>
-      </div>
-    {% endmacro %}
+  <div
+    class="gen-con--block max-w-[50rem] {{ data.quoteType }} {{
+    quoteTypeClasses
+    }} pt-2xl px-0 mb-2xl quote-block relative text-center "
+  >
+    <div
+      class="quote--marks {{
+      quoteMarksWrap
+      }} inline-block relative my-0 mx-auto w-xl h-xl rounded-full"
+    >
+      <i
+        class="fas fa-quote-left {{ quoteMarks }} absolute-center text-center"
+        aria-hidden="true"
+      ></i>
+    </div>
+    <blockquote class="quote {{ quoteClasses }} my-0 mx-auto text-lg italic">
+      {{ data.quoteText }}
+      <cite
+        class="{{
+        cite
+        }} block relative my-0 mx-auto pt-md px-sm pb-0 not-italic"
+      >
+        {{ data.quoteCite }}
+      </cite>
+    </blockquote>
+  </div>
+{% endmacro %}
