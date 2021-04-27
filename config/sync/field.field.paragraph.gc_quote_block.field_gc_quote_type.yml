@@ -11,7 +11,7 @@ id: paragraph.gc_quote_block.field_gc_quote_type
 field_name: field_gc_quote_type
 entity_type: paragraph
 bundle: gc_quote_block
-label: gc_quote_type
+label: 'Quote Type'
 description: ''
 required: true
 translatable: false

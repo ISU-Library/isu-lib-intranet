@@ -7,7 +7,6 @@ dependencies:
     - field.field.paragraph.gc_text_img_block.field_gc_text_img_side
     - field.field.paragraph.gc_text_img_block.field_gc_text_img_size
     - field.field.paragraph.gc_text_img_block.field_gc_text_img_text
-    - image.style.thumbnail
     - paragraphs.paragraphs_type.gc_text_img_block
   module:
     - image
@@ -20,8 +19,8 @@ content:
   field_gc_text_img_img:
     weight: 1
     settings:
+      preview_image_style: ''
       progress_indicator: throbber
-      preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
     region: content
