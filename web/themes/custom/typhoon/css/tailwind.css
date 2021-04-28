@@ -628,20 +628,14 @@ video {
 .mt-0{
 	margin-top: 0;
 }
-.mb-lg{
-	margin-bottom: 1.5rem;
-}
-.ml-lg{
-	margin-left: 1.5rem;
-}
-.mr-lg{
-	margin-right: 1.5rem;
+.mb-2xl{
+	margin-bottom: 2.5rem;
 }
 .mt-sm{
 	margin-top: 0.75rem;
 }
-.mb-2xl{
-	margin-bottom: 2.5rem;
+.mb-lg{
+	margin-bottom: 1.5rem;
 }
 .mb-0{
 	margin-bottom: 0;
@@ -693,6 +687,12 @@ video {
 }
 .mb-3xl{
 	margin-bottom: 3rem;
+}
+.ml-sm{
+	margin-left: 0.75rem;
+}
+.ml-xs{
+	margin-left: 0.5rem;
 }
 .block{
 	display: block;
@@ -749,6 +749,9 @@ video {
 }
 .w-\[130px\]{
 	width: 130px;
+}
+.w-11\/12{
+	width: 91.666667%;
 }
 .w-xl{
 	width: 2rem;
@@ -1070,6 +1073,9 @@ video {
 .bg-no-repeat{
 	background-repeat: no-repeat;
 }
+.p-0{
+	padding: 0;
+}
 .p-xl{
 	padding: 2rem;
 }
@@ -1078,9 +1084,6 @@ video {
 }
 .p-sm{
 	padding: 0.75rem;
-}
-.p-0{
-	padding: 0;
 }
 .py-xs{
 	padding-top: 0.5rem;
@@ -1933,7 +1936,7 @@ p{
 .gen-con--block p + p{
 	margin-top: 1rem;
 }
-.gen-con--block p:first-of-type{
+.gen-con--block > *:first-of-type{
 	margin-top: 0;
 }
 .grid-staff-directory {
@@ -2004,11 +2007,49 @@ p{
 .news-card--category a{
 	font-weight: 400;
 }
+.gen-con--block ul{
+	list-style-type: disc;
+	padding-left: 2.5rem;
+}
+.gen-con--block .link-list--abstract, .gen-con--block .link-list{
+	padding-left: 0;
+}
+.gen-con--block ol{
+	list-style-type: decimal;
+	padding-left: 2.5rem;
+}
+.gen-con--block ol ol {
+  list-style: lower-alpha;
+}
+.gen-con--block ol ol ol {
+  list-style: lower-roman;
+}
+.gen-con--block p + *{
+	margin-top: 1rem;
+}
+.abstract-item > ul{
+	padding-left: 4rem;
+}
+.show--content{
+	overflow: hidden;
+	text-align: left;
+	-webkit-transition-property: all;
+	transition-property: all;
+	-webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	-webkit-transition-duration: 150ms;
+	        transition-duration: 150ms;
+	-webkit-transition-duration: 300ms;
+	        transition-duration: 300ms;
+}
+.show--content > *:first-of-type{
+	margin-top: 1rem;
+}
+.show--content ul{
+	padding-left: 1.5rem;
+}
 .first\:border-0:first-child{
 	border-width: 0px;
-}
-.first\:text-lg:first-child{
-	font-size: 1.125rem;
 }
 .last\:mb-0:last-child{
 	margin-bottom: 0;
@@ -2224,6 +2265,12 @@ p{
 	.md\:mx-0{
 		margin-left: 0;
 		margin-right: 0;
+	}
+	.md\:ml-lg{
+		margin-left: 1.5rem;
+	}
+	.md\:mr-lg{
+		margin-right: 1.5rem;
 	}
 	.md\:mt-0{
 		margin-top: 0;

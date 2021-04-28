@@ -121,7 +121,7 @@
 
     figure {
       // position: relative;
-      max-height: rem(478);
+      // max-height: rem(478);
       // overflow: hidden;
       // padding-top: percentage(9/16);
     }
@@ -202,7 +202,9 @@
       // transition: 0.3s ease;
 
       &::before {
-        @include vert_center;
+        // @include vert_center;
+        position: absolute;
+        top: 0;
         font-family: 'FontAwesome';
         content: '\f15c';
         font-size: $fs-lg;

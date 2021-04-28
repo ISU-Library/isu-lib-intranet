@@ -9,11 +9,7 @@
   {# 
  {{item.in_active_trail? 'is-active': ''}}" #}
 
-  <div
-    class="gen-con--block max-w-[50rem] text-block mb-lg first:text-lg {{
-    data.lead
-    }} "
-  >
+  <div class="gen-con--block max-w-[50rem] mb-2xl text-block {{ data.lead }} ">
     {% if data.template %}
       {{ data.text }}
     {% else %}
@@ -35,18 +31,18 @@
   {% set data = data ? defaultData|merge(data) : defaultData %}
 
   {% if data.imgSide == 'text-img--right' %}
-    {% set imgFloat = 'md:float-right ml-lg' %}
+    {% set imgFloat = 'md:float-right md:ml-lg' %}
   {% else %}
-    {% set imgFloat = 'md:float-left mr-lg' %}
+    {% set imgFloat = 'md:float-left md:mr-lg' %}
   {% endif %}
 
-  <div class="gen-con--block max-w-[50rem] mb-lg img-block {{ data.imgSide }}">
+  <div class="gen-con--block max-w-[50rem] mb-2xl img-block {{ data.imgSide }}">
     <div
       class="gen-con--img-wrap w-full {{
       data.imgSize
       }} float-none my-0 mx-auto {{ imgFloat }}"
     >
-      <figure class="relative text-center">
+      <figure class="relative mb-md text-center">
         <img
           class="max-w-full h-auto shadow-dark-2"
           src="{{ data.imgSrc }}"
@@ -75,28 +71,30 @@
 
   {% set data = data ? defaultData|merge(data) : defaultData %}
 
-  <div class="bg-white show--item js-open">
-    <button
-      class="show--title"
-      data-box-toggle="{{ data.id }}"
-      role="tab"
-      aria-selected="false"
-    >
-      <h4>{{ data.title }}</h4>
-      <span class="icon"></span>
-    </button>
+  <div class="gen-con--block max-w-[50rem] mb-lg">
+    <div class="bg-white show--item js-open">
+      <button
+        class="show--title"
+        data-box-toggle="{{ data.id }}"
+        role="tab"
+        aria-selected="false"
+      >
+        <h4>{{ data.title }}</h4>
+        <span class="icon"></span>
+      </button>
 
-    <div
-      class="show--content"
-      role="tabpanel"
-      aria-expanded="false"
-      data-box="{{ data.id }}"
-    >
-      {% if data.template %}
-        {{ data.text }}
-      {% else %}
-        <p class="mt-0">{{ data.text }}</p>
-      {% endif %}
+      <div
+        class="show--content"
+        role="tabpanel"
+        aria-expanded="false"
+        data-box="{{ data.id }}"
+      >
+        {% if data.template %}
+          {{ data.text }}
+        {% else %}
+          <p class="mt-0">{{ data.text }}</p>
+        {% endif %}
+      </div>
     </div>
   </div>
 {% endmacro %}
@@ -118,7 +116,7 @@
     {% else %}
       <p>{{ data.text }}</p>
     {% endif %}
-    <ul class="link-list--abstract mt-lg mx-0 mb-0">
+    <ul class="link-list--abstract mt-lg m-0 mx-0 mb-0 p-0">
       {# {% if data.template %} #}
       {# * the code below reaches down into the paragraph link_abstract_list, set by data.links #}
       {# * then it loops through all fields in the paragraph, yes there are a lot of arrays #}
@@ -127,7 +125,7 @@
         {% for paragraph_field in linkAbstractPara %}
           {% for abstract_link_value in paragraph_field %}
             {% if abstract_link_value.title and abstract_link_value[0].url %}
-              <li class="abstract-item relative mb-lg">
+              <li class="abstract-item list-none relative mb-lg">
                 <a class="block pl-2xl" href="{{ abstract_link_value[0].url }}">
                   <h4 class="text-red-500 m-0 mb-md">
                     {{ abstract_link_value.title }}
@@ -162,13 +160,13 @@
 
   {% set data = data ? defaultData|merge(data) : defaultData %}
 
-  <div class="gen-con--block max-w-[50rem] mb-lg text-block block--link-list">
+  <div class="gen-con--block max-w-[50rem] mb-2xl text-block block--link-list">
     {% if data.template %}
       {{ data.text }}
     {% else %}
       <p class="mt-0">{{ data.text }}</p>
     {% endif %}
-    <ul class="link-list flex flex-wrap mt-md mr-0 mb-md ml-md sm:mx-0 sm:mb-0">
+    <ul class="link-list flex flex-wrap mt-md mr-0 mb-md ml-xs sm:mx-0 sm:mb-0">
       {% if data.template %}
         {# * the code below reaches down into the paragraph link_list_link, set by data,links #}
         {# * then it loops through all fields in the paragraph #}
@@ -177,7 +175,7 @@
           {% for paragraph_field in linkListPara %}
             {% if paragraph_field.url and paragraph_field.title %}
               <li
-                class="link-list--item relative mb-md w-full py-xs px-0 sm:w-1/2 sm:pr-xs"
+                class="link-list--item list-none relative mb-md w-full py-xs px-0 sm:w-1/2 sm:pr-xs"
               >
                 <a
                   class="inline-block pl-2xl font-normal leading-normal no-underline"
@@ -211,7 +209,7 @@
   } %}
   {% set data = data ? defaultData|merge(data) : defaultData %}
 
-  <div class="gen-con--block max-w-[50rem] mb-lg img-block block--lg-img">
+  <div class="gen-con--block max-w-[50rem] mb-2xl img-block block--lg-img">
     <div class="gen-con--img-wrap">
       <figure class="relative">
         <img
@@ -337,7 +335,7 @@
     %}
     {% set quoteMarksWrap = 'hidden' %}
     {% set quoteMarks = 'text-red-700' %}
-    {% set quoteClasses = 'w-full lg:w-5/6 text-black px-sm lg:px-0' %}
+    {% set quoteClasses = 'w-full w-11/12 lg:w-5/6 text-black px-sm lg:px-0' %}
     {% set cite = 'text-red-500' %}
   {% elseif data.quoteType == 'block--quote-banner' %}
     {% set quoteTypeClasses = 'pb-3xl bg-red-600 shadow-light-2 rounded' %}
@@ -354,7 +352,7 @@
   {% endif %}
 
   <div
-    class="gen-con--block max-w-[50rem] {{ data.quoteType }} {{
+    class="gen-con--block mb-lg max-w-[50rem] {{ data.quoteType }} {{
     quoteTypeClasses
     }} pt-2xl px-0 mb-2xl quote-block relative text-center "
   >

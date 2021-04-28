@@ -72,7 +72,7 @@ a {
 ol ol,
 ul ol,
 ol ul {
-  padding-left: $space-md;
+  // padding-left: $space-md;
 }
 
 ul {
@@ -89,13 +89,13 @@ ul {
   }
 }
 
-ol ol {
-  list-style: lower-alpha;
+// ol ol {
+//   list-style: lower-alpha;
 
-  ol {
-    list-style: lower-roman;
-  }
-}
+//   ol {
+//     list-style: lower-roman;
+//   }
+// }
 
 // /* Let's make sure all's aligned */
 hr,
