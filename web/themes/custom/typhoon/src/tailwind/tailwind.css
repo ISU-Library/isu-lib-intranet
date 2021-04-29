@@ -156,3 +156,7 @@ p {
 .show--content ul {
   @apply pl-lg;
 }
+
+.basic-card--wrap {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}

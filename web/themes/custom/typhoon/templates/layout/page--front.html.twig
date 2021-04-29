@@ -214,6 +214,7 @@
                                                                                                                                 {% endfor %} #}
                 <li>
                   {{ card.basic({
+                    front: true,
                     color: 'basic-card basic-card--blue',
                     link: '/',
                     title: 'IT support',
@@ -225,6 +226,7 @@
                 </li>
                 <li>
                   {{ card.basic({
+                    front: true,
                     color: 'basic-card basic-card--yellow',
                     link: '/',
                     title: 'IT support',
@@ -236,6 +238,7 @@
                 </li>
                 <li>
                   {{ card.basic({
+                    front: true,
                     color: '',
                     link: '/',
                     title: 'IT support',
@@ -247,6 +250,7 @@
                 </li>
                 <li>
                   {{ card.basic({
+                    front: true,
                     color: 'basic-card basic-card--yellow',
                     link: '/',
                     title: 'IT support',
@@ -258,6 +262,7 @@
                 </li>
                 <li>
                   {{ card.basic({
+                    front: true,
                     color: '',
                     link: '/',
                     title: 'IT support',
@@ -269,6 +274,7 @@
                 </li>
                 <li>
                   {{ card.basic({
+                    front: true,
                     color: 'basic-card basic-card--yellow',
                     link: '/',
                     title: 'IT support',
@@ -290,7 +296,7 @@
                 Staff Updates
               </h2>
               <!-- if staff updates found -->
-              <ul class="basic-card--wrap basic-card-image--wrap grid grid-cols-1 gap-lg mt-2xl mr-2xl mb-2xl sm:mr-0 xs:mr-0 text-left">
+              <ul class="basic-card--wrap basic-card-image--wrap grid grid-cols-3 gap-lg mt-2xl mr-2xl mb-2xl sm:mr-0 xs:mr-0 text-left">
                 {% if staff_updates_custom %}
                   {% for item in staff_updates_custom %}
                     <li>
@@ -298,6 +304,7 @@
                         {{attributes.addClass(classes)}}>
                         <!-- imgAlt: item['title'], -->
                         {{ card.basicImg({
+                              front:'true',
                               color: '',
                               imgSrc: item['image_uri'], 
                               link: item['item_url_stub'],

@@ -15,7 +15,7 @@
 
   {% set data = data ? defaultData|merge(data) : defaultData %}
 
-  <div class="news-card--lead grid realtive shadow-dark-2 transform transition-transform duration-500  br4" title="{{ data.title}}">
+  <div class="news-card--lead grid realtive mb-lg shadow-dark-2 transform transition-transform duration-500 br4" title="{{ data.title}}">
     <span class="aria-text">
       Link to
       {{ data.title }}
@@ -27,7 +27,7 @@
             {{ data.category }}
           </span>
         {% endif %}
-        <h3 class="news-card--title line-clamp-3 text-bold w-full leading-tight pb-sm mb-0 fs-lg text-white text-shadow-1">
+        <h3 class="news-card--title line-clamp-3 text-bold w-full leading-tight mb-sm pb-0 fs-lg text-white text-shadow-1">
           {{ data.title }}
         </h3>
         <div class="news-card--text flex-auto text-normal overflow-hidden tranistion-all duration-500 md:h-0 md:flex-none group-hover:flex-auto">
@@ -63,7 +63,7 @@
 
   {% set data = data ? defaultData|merge(data) : defaultData %}
 
-  <div class="news-card--basic relative">
+  <div class="news-card--basic relative mb-lg">
     <div class="news-card--content grid grid-cols-2 md:grid-cols-3 gap-sm md:gap-md lg:gap-lg text-black transition-color duration-300">
       <div class="news-card--image-wrap hidden lg:block relative w-full z-20 col-span-full sm:col-span-1 xs:mb-md">
         <a href="{{ data.link}}">
@@ -75,10 +75,10 @@
       <div class="news-card--text col-span-full lg:col-span-2 relative w-full">
         {% if data.category %}
           <ul class="flex news-card--category">
-            <span class="pr-sm text-sm">Category:</span>
-            {% for item in data.category %}
-              <li class="pr-sm text-sm">{{ item }}</li>
-            {% endfor %}
+            <span class="pr-sm text-sm font-bold">Category:</span>
+            {# {% for item in data.category %} #}
+              <li class="pr-sm text-sm">{{ data.category }}</li>
+            {# {% endfor %} #}
           </ul>
         {% endif %}
         <div class="mb-md">

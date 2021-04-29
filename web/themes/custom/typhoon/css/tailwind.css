@@ -582,9 +582,6 @@ video {
 .m-auto{
 	margin: auto;
 }
-.m-xs{
-	margin: 0.5rem;
-}
 .my-0{
 	margin-top: 0;
 	margin-bottom: 0;
@@ -596,6 +593,10 @@ video {
 .mx-0{
 	margin-left: 0;
 	margin-right: 0;
+}
+.mx-xs{
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
 }
 .mx-xl{
 	margin-left: 2rem;
@@ -646,8 +647,8 @@ video {
 .mr-0{
 	margin-right: 0;
 }
-.ml-md{
-	margin-left: 1rem;
+.ml-xs{
+	margin-left: 0.5rem;
 }
 .mb-4xl{
 	margin-bottom: 4rem;
@@ -687,12 +688,6 @@ video {
 }
 .mb-3xl{
 	margin-bottom: 3rem;
-}
-.ml-sm{
-	margin-left: 0.75rem;
-}
-.ml-xs{
-	margin-left: 0.5rem;
 }
 .block{
 	display: block;
@@ -740,6 +735,9 @@ video {
 }
 .h-lg{
 	height: 1.5rem;
+}
+.max-h-96{
+	max-height: 24rem;
 }
 .min-h-screen{
 	min-height: 100vh;
@@ -854,6 +852,9 @@ video {
 }
 .grid-cols-1{
 	grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.grid-cols-3{
+	grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 .grid-cols-4{
 	grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1256,6 +1257,9 @@ video {
 }
 .font-merriweather{
 	font-family: Merriweather, Georgia, serif;
+}
+.font-body{
+	font-family: "Nimbus Sans", "Helvetica Neue", Helvetica, Arial, "sans-serif";
 }
 .text-sm{
 	font-size: 0.875rem;
@@ -2047,6 +2051,9 @@ p{
 }
 .show--content ul{
 	padding-left: 1.5rem;
+}
+.basic-card--wrap {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 .first\:border-0:first-child{
 	border-width: 0px;
