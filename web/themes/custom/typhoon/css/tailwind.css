@@ -775,6 +775,11 @@ video {
 .w-\[150px\]{
 	width: 150px;
 }
+.w-max{
+	width: -webkit-max-content;
+	width: -moz-max-content;
+	width: max-content;
+}
 .max-w-full{
 	max-width: 100%;
 }
@@ -2220,6 +2225,9 @@ p{
 	}
 	.sm\:text-sm{
 		font-size: 0.875rem;
+	}
+	.sm\:pl-sm{
+		padding-left: 0.75rem;
 	}
 }
 @media (min-width: 768px){
