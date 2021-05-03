@@ -2548,6 +2548,15 @@ p{
 	.lg\:text-lg{
 		font-size: 1.125rem;
 	}
+	.lg\:pt-3xl{
+		padding-top: 3rem;
+	}
+	.lg\:pt-xl{
+		padding-top: 2rem;
+	}
+	.lg\:pt-md{
+		padding-top: 1rem;
+	}
 }
 @media (min-width: 1280px){
 	.xl\:top-1\/4{
