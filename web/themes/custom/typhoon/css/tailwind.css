@@ -739,6 +739,9 @@ video {
 .max-h-96{
 	max-height: 24rem;
 }
+.min-h-\[56px\]{
+	min-height: 56px;
+}
 .min-h-screen{
 	min-height: 100vh;
 }
@@ -1186,9 +1189,6 @@ video {
 .pb-lg{
 	padding-bottom: 1.5rem;
 }
-.pb-sm{
-	padding-bottom: 0.75rem;
-}
 .pr-sm{
 	padding-right: 0.75rem;
 }
@@ -1257,9 +1257,6 @@ video {
 }
 .font-merriweather{
 	font-family: Merriweather, Georgia, serif;
-}
-.font-body{
-	font-family: "Nimbus Sans", "Helvetica Neue", Helvetica, Arial, "sans-serif";
 }
 .text-sm{
 	font-size: 0.875rem;

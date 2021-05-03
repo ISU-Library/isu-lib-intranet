@@ -1529,7 +1529,7 @@ window.addEventListener('resize', resetNavOnDektop);
 // import SmoothScroll from 'smooth-scroll';
 // var scroll = new SmoothScroll('a[href*="#"]');
 // todo: Change focus to selected section
-/// todo: If I really wanted to remove smooth scroll, I could try and set data-attributes vs anchors and ID's
+// todo: If I really wanted to remove smooth scroll, I could try and set data-attributes vs anchors and ID's
 // todo: Doesn't really work well in safari, especially without SmoothScroll
 // todo: Clean this code! It's a mess and jumble of things right now.
 var scrollTriggers = document.querySelectorAll('.js-scrollTrigger');
@@ -1554,25 +1554,36 @@ if (departmentNav) {
       departmentNav.classList.add('is-open');
     }
   });
-} // * For BigPipe Data, page needs to be loaded. 
+} // * For BigPipe Data, page needs to be loaded.
 
 
 var checkReadyState = setInterval(function () {
   // * this checks if the page is loaded
-  if (document.readyState === "complete") {
-    clearInterval(checkReadyState); // *Scroll spy works on Scroll 
+  if (document.readyState === 'complete') {
+    clearInterval(checkReadyState); // *Scroll spy works on Scroll
 
     window.onscroll = function () {
-      scrollTargets.forEach(function (target) {
+      scrollTargets.forEach(function (target, index) {
         var sectionID = target.id;
         var triggerEl = document.querySelector("a[href='#".concat(sectionID, "']"));
         var spanEl = triggerEl.querySelector('span');
         var targetHeight = target.offsetHeight;
-        var targetBottom = target.offsetTop + targetHeight; // * checks scroll locations and updates url Hash
+        var targetBottom = target.offsetTop + targetHeight;
+        var location = window.location.toString().split('#')[0];
+        var scrollSpyNavHeight = 58; //* updates the URL hash
 
-        if (targetBottom - window.scrollY > 58 && target.offsetTop - window.scrollY < 58) {
-          var location = window.location.toString().split('#')[0];
-          history.replaceState(null, null, location + '#' + sectionID); // * updates nav indicator
+        function updateUrlHash() {
+          history.replaceState(null, null, location + '#' + sectionID);
+        } // * checks scroll locations and updates url Hash
+
+
+        if (index == 0 && targetBottom - window.scrollY > scrollSpyNavHeight) {
+          updateUrlHash();
+          triggerEl.classList.add('is-active');
+          spanEl.classList.remove('hidden');
+        } else if ( // * checks scroll locations and updates url Hash
+        targetBottom - window.scrollY > scrollSpyNavHeight && target.offsetTop - window.scrollY < scrollSpyNavHeight) {
+          updateUrlHash(); // * updates nav indicator
 
           spanEl.classList.remove('hidden');
           triggerEl.classList.add('is-active');
@@ -1592,15 +1603,14 @@ var checkReadyState = setInterval(function () {
       //     spanEl.classList.remove('hidden');
       //   }
       // });
-    }; // *sets the first trigger on click
-
+    };
 
     scrollTriggers.forEach(function (trigger, index) {
       var id = trigger.getAttribute('href');
       var spanEl = trigger.querySelector('span');
       var target = document.querySelector("".concat(id));
       var targetHeight = target.offsetHeight;
-      var targetBottom = target.offsetTop + targetHeight;
+      var targetBottom = target.offsetTop + targetHeight; // *sets the first trigger on click
 
       if (index == 0 && targetBottom - window.scrollY > 0) {
         trigger.classList.add('is-active');
