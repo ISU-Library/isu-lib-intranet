@@ -70,10 +70,32 @@
  *   in different view modes.
  */
 #}
-<article {{ attributes }}>
-  {{ title_prefix }}
+
+{% import '@typhoon/components/_news-cards.html.twig' as newsCard %}
+
+{% set ImgSrc = file_url(node.field_staff_updates_main_image.entity.fileuri) %}
+{% set ImgAlt = node.field_staff_updates_main_image.alt %}
+
+<article class="mt-xl" {{ attributes }}>
+  {% if label and not page %}
+    <div {{ content_attributes }}>
+      {{
+        newsCard.basic({
+          imgSrc: ImgSrc,
+          imgAlt: label|field_value,
+          link: url,
+          title: label|field_value,
+          text: content.field_staff_updates_summary|render|striptags|trim,
+          linkText: 'Read this story',
+          authorName: author_name,
+          date: date
+        })
+      }}
+    </div>
+  {% endif %}
+  {# {{ title_prefix }}
   {% if not page %}
-    <h2 {{ title_attributes }}>
+    <h2 class="h3" {{ title_attributes }}>
       <a href="{{ url }}" rel="bookmark">{{ label }}</a>
     </h2>
   {% endif %}
@@ -94,8 +116,8 @@
   {% endif %}
 
   <div {{ content_attributes }}>
-    {# {{ node.hasField('field_employee_name') }} #}
+    {{ node.hasField('field_employee_name') }}
     {{ content.field_employee_name }}
     {{ content }}
-  </div>
+  </div> #}
 </article>
