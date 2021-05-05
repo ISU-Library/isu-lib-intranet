@@ -35,7 +35,7 @@
             {{ data.text }}
           </p>
           <div class="cta--wrap">
-            <span class="cta font-bold text-white">
+            <span class="cta font-bold text-white text-shadow-1">
               {{ data.linkText }}
             </span>
           </div>
@@ -76,9 +76,9 @@
         {% if data.category %}
           <ul class="flex news-card--category">
             <span class="pr-sm text-sm font-bold">Category:</span>
-            {# {% for item in data.category %} #}
-              <li class="pr-sm text-sm">{{ data.category }}</li>
-            {# {% endfor %} #}
+            {% for item in data.category %}
+              <li class="pr-sm text-sm">{{ item }}</li>
+            {% endfor %}
           </ul>
         {% endif %}
         <div class="mb-md">
