@@ -10,6 +10,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\user\Entity\User;
 // get field config vars, for example field default images 
 use Drupal\field\Entity\FieldConfig;
+use Drupal\taxonomy\Entity\Term; 
 
 function typhoon_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
   if( $form_id == 'search_block_form') {
@@ -130,7 +131,8 @@ function typhoon_preprocess_page__front(&$variables) {
   $node_storage = \Drupal::entityTypeManager()->getStorage('node');
 
   $count_for_lead_card_section = 0;
-  foreach ($staff_types as $staff_type) {
+  foreach ($staff_types as $staff_type) 
+  {
 
       // grab first six sorted by changed (updated)?
       $results = \Drupal::entityQuery('node')->condition('type', $staff_type)->sort('changed', 'DESC')->sort('nid', 'DESC')->range(0, $staff_types_count[$staff_type])->execute();
@@ -138,69 +140,108 @@ function typhoon_preprocess_page__front(&$variables) {
       // save the results to pass to the template for each type 
       $staff_news_articles = array();
 
-      foreach ($results as $result) {
+      foreach ($results as $result) 
+      {
   
-        // fix this
-        $nid = $result;
-        $node = $node_storage->load($nid);
+          // fix this
+          $nid = $result;
+          $node = $node_storage->load($nid);
 
-        $news_item = array();
-        $news_item['id'] = $nid;
-        // the link: parameter in the newscard call will not allow appending id to stub?
-        $news_item['item_url_stub'] = 'node/'.$nid;
-        $news_item['title'] = $node->getTitle();
-
-        if ($node->field_staff_news_article_summary)
-        {
-            // only want the first two news items to have the "special" p tag treatment .... hackish
-            $count_for_lead_card_section++;
-            foreach ($node->field_staff_news_article_summary as $delta => $thing) 
-            {
-              $summary_string = $thing->value;
-              if ($count_for_lead_card_section <= 2)
+          //- Array of terms
+          $taxonomy_terms = [];
+          if ($node->bundle() == $staff_type) 
+          {
+              foreach ($node->getFields() as $key => $field) 
               {
-                // $summary_string = str_replace('<p>', '<p class="text-white mb-sm line-clamp-5 xl:line-clamp-7">', $summary_string);
-                $summary_string = strip_tags($summary_string);
-              } elseif ($count_for_lead_card_section > 2) {
-                // $summary_string = str_replace('<p>', '<p class="news-card--info mb-md text-md line-clamp-5 text-normal">', $summary_string);
-                $summary_string = strip_tags($summary_string);
+                  //print($key.'<br >');
+                  if ($key == 'field_staff_news_category' or $key == 'field_staff_update_category')
+                  {
+                      //print($key);
+                      if ($field->getFieldDefinition()->getType() == 'entity_reference') 
+                      {
+                          $targetType = $field->getFieldDefinition()->getItemDefinition()->getSetting('target_type');
+                          if ($targetType == 'taxonomy_term') 
+                          {
+                              //$new_terms = array_map(function (\Drupal\taxonomy\TermInterface $term) {
+                              //  return $term->label();
+                              //}, $field->referencedEntities());
+                              //$terms = array_merge($terms, $new_terms);
+  
+                              foreach ($field->referencedEntities() as $term) 
+                              {
+                                  //print($key);
+                                  //print('term:'.$term->label());
+                                  $taxonomy_terms[] = $term->label();
+                              }
+                              //print_r($taxonomy_terms);
+                          }
+                      }
+                  }
               }
-              $news_item['body_summary'] = $summary_string; 
-            }
-        }
-        elseif ($node->field_staff_updates_summary)
-        {
-            foreach ($node->field_staff_updates_summary as $delta => $thing) 
-            {
-              $summary_string = $thing->value;
-              // do not want to replace the p tag?
-              //$summary_string = str_replace('<p>', '<p class="text-white mb-sm">', $summary_string);
-              $news_item['body_summary'] = strip_tags($summary_string); 
-            }
-        }
+          }
 
-        if ($node->field_staff_news_main_image)
-        {
-            foreach ($node->field_staff_news_main_image as $delta => $thing) 
-            {
-                $field = 'field_staff_news_main_image';
-                $referencedEntity = $node->get($field)->first()->get('entity')->getTarget()->getValue();
-                $news_item['image_uri'] = file_create_url($referencedEntity->uri->value); 
-            }
-        }
-        elseif ($node->field_staff_updates_main_image)
-        {
-            foreach ($node->field_staff_updates_main_image as $delta => $thing) 
-            {
-                $field = 'field_staff_updates_main_image';
-                $referencedEntity = $node->get($field)->first()->get('entity')->getTarget()->getValue();
-                $news_item['image_uri'] = file_create_url($referencedEntity->uri->value); 
-            }
-        }
+          $news_item = array();
+          $news_item['id'] = $nid;
+          // the link: parameter in the newscard call will not allow appending id to stub?
+          $news_item['item_url_stub'] = 'node/'.$nid;
+          $news_item['title'] = $node->getTitle();
+  
+          if (!empty($taxonomy_terms))
+          {
+              $news_item['taxonomy_terms'] = implode(", ",$taxonomy_terms);
+          }
 
-        $staff_news_articles[] = $news_item;
+          if ($node->field_staff_news_article_summary)
+          {
+              // only want the first two news items to have the "special" p tag treatment .... hackish
+              $count_for_lead_card_section++;
+              foreach ($node->field_staff_news_article_summary as $delta => $thing) 
+              {
+                  $summary_string = $thing->value;
+                  if ($count_for_lead_card_section <= 2)
+                  {
+                      // $summary_string = str_replace('<p>', '<p class="text-white mb-sm line-clamp-5 xl:line-clamp-7">', $summary_string);
+                      $summary_string = strip_tags($summary_string);
+                  } elseif ($count_for_lead_card_section > 2) {
+                      // $summary_string = str_replace('<p>', '<p class="news-card--info mb-md text-md line-clamp-5 text-normal">', $summary_string);
+                      $summary_string = strip_tags($summary_string);
+                  }
+                  $news_item['body_summary'] = $summary_string; 
+              }
+          }
+          elseif ($node->field_staff_updates_summary)
+          {
+              foreach ($node->field_staff_updates_summary as $delta => $thing) 
+              {
+                  $summary_string = $thing->value;
+                  // do not want to replace the p tag?
+                  //$summary_string = str_replace('<p>', '<p class="text-white mb-sm">', $summary_string);
+                  $news_item['body_summary'] = strip_tags($summary_string); 
+              }
+          }
+
+          if ($node->field_staff_news_main_image)
+          {
+              foreach ($node->field_staff_news_main_image as $delta => $thing) 
+              {
+                  $field = 'field_staff_news_main_image';
+                  $referencedEntity = $node->get($field)->first()->get('entity')->getTarget()->getValue();
+                  $news_item['image_uri'] = file_create_url($referencedEntity->uri->value); 
+              }
+          }
+          elseif ($node->field_staff_updates_main_image)
+          {
+              foreach ($node->field_staff_updates_main_image as $delta => $thing) 
+              {
+                  $field = 'field_staff_updates_main_image';
+                  $referencedEntity = $node->get($field)->first()->get('entity')->getTarget()->getValue();
+                  $news_item['image_uri'] = file_create_url($referencedEntity->uri->value); 
+              }
+          }
+
+          $staff_news_articles[] = $news_item;
 
       }
       $variables[$staff_type.'_custom'] = $staff_news_articles; 
-  }
+    }
 }
