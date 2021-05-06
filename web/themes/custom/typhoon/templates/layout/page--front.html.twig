@@ -109,6 +109,7 @@
                           linkText: 'Read this story',
                         })}}
                         <!-- {{item['image_uri']}} -->
+                        {{item['taxonomy_terms']}}
                       </li>
                       <!-- smaller subset items?  -->
                     {% else %}
@@ -122,6 +123,7 @@
                             text: item['body_summary'],
                             linkText: 'Read this story',
                         })}}
+                        {{item['taxonomy_terms']}}
                       </li>
                     {% endif %}
                   {% endfor %}
@@ -314,6 +316,7 @@
                               linkText: 'Read this story',
                           }) }}
                       </div>
+                      {{item['taxonomy_terms']}}
                     </li>
                   {% endfor %}
                 </ul>
