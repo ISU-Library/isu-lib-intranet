@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.paragraph.field_basic_card_category
     - paragraphs.paragraphs_type.sc_basic_card
-    - taxonomy.vocabulary.staff_updates_categories
     - taxonomy.vocabulary.tags
     - taxonomy.vocabulary.taxonomy_departments
 id: paragraph.sc_basic_card.field_basic_card_category
@@ -24,7 +23,6 @@ settings:
     target_bundles:
       taxonomy_departments: taxonomy_departments
       tags: tags
-      staff_updates_categories: staff_updates_categories
     sort:
       field: name
       direction: asc
