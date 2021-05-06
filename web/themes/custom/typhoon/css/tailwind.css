@@ -614,6 +614,9 @@ video {
 	margin-left: -3rem;
 	margin-right: -3rem;
 }
+.mb-xl{
+	margin-bottom: 2rem;
+}
 .mb-xs{
 	margin-bottom: 0.5rem;
 }
@@ -661,9 +664,6 @@ video {
 }
 .mt-2xl{
 	margin-top: 2.5rem;
-}
-.mb-xl{
-	margin-bottom: 2rem;
 }
 .mt-xl{
 	margin-top: 2rem;
@@ -2220,14 +2220,14 @@ p{
 	.sm\:pr-xs{
 		padding-right: 0.5rem;
 	}
+	.sm\:pl-sm{
+		padding-left: 0.75rem;
+	}
 	.sm\:text-left{
 		text-align: left;
 	}
 	.sm\:text-sm{
 		font-size: 0.875rem;
-	}
-	.sm\:pl-sm{
-		padding-left: 0.75rem;
 	}
 }
 @media (min-width: 768px){
@@ -2451,12 +2451,6 @@ p{
 	.md\:pl-0{
 		padding-left: 0;
 	}
-	.md\:pb-2xl{
-		padding-bottom: 2.5rem;
-	}
-	.md\:pt-3xl{
-		padding-top: 3rem;
-	}
 	.md\:pl-2xl{
 		padding-left: 2.5rem;
 	}
@@ -2542,20 +2536,11 @@ p{
 		padding-left: 0;
 		padding-right: 0;
 	}
-	.lg\:pt-0{
-		padding-top: 0;
+	.lg\:pt-md{
+		padding-top: 1rem;
 	}
 	.lg\:text-lg{
 		font-size: 1.125rem;
-	}
-	.lg\:pt-3xl{
-		padding-top: 3rem;
-	}
-	.lg\:pt-xl{
-		padding-top: 2rem;
-	}
-	.lg\:pt-md{
-		padding-top: 1rem;
 	}
 }
 @media (min-width: 1280px){
