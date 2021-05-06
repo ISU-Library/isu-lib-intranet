@@ -103,13 +103,12 @@
                           imgSrc: item['image_uri'],
                           imgAlt: item['title'],
                           link: item['item_url_stub'],
-                          category: 'News things',
+                          category: item['taxonomy_terms'],
                           title: item['title'],
                           text: item['body_summary'],
                           linkText: 'Read this story',
                         })}}
                         <!-- {{item['image_uri']}} -->
-                        {{item['taxonomy_terms']}}
                       </li>
                       <!-- smaller subset items?  -->
                     {% else %}
@@ -118,12 +117,11 @@
                             imgSrc: item['image_uri'],
                             imgAlt: item['title'],
                             link: item['item_url_stub'],
-                            category: '',
+                            category: item['taxonomy_terms'],
                             title: item['title'],
                             text: item['body_summary'],
                             linkText: 'Read this story',
                         })}}
-                        {{item['taxonomy_terms']}}
                       </li>
                     {% endif %}
                   {% endfor %}
@@ -311,12 +309,11 @@
                               imgSrc: item['image_uri'], 
                               link: item['item_url_stub'],
                               title: item['title'], 
-                              category: 'Category',
+                              category: item['taxonomy_terms'],
                               text: item['body_summary'], 
                               linkText: 'Read this story',
                           }) }}
                       </div>
-                      {{item['taxonomy_terms']}}
                     </li>
                   {% endfor %}
                 </ul>

@@ -111,6 +111,12 @@
 
   <div {{ content_attributes }}>
     <h1 class="mb-xl">{{ label }}</h1>
+    <ul class="flex">
+      <span class="pr-sm text-sm">Category:</span>
+      {% for item in categories %}
+        <li class="pr-sm text-sm">{{ item }}</li>
+      {% endfor %}
+    </ul>
     {{ content.field_staff_news_article_summary|field_value }}
     {{ content.field_staff_news_content|field_value }}
   </div>
