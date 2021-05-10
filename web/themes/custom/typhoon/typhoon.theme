@@ -65,7 +65,15 @@ function typhoon_preprocess_breadcrumb(&$variables) {
  * Make theme settings available in templates
  */
 
+function typhoon_preprocess_html(&$variables) {
+  // meta data in header
+  $site_config = \Drupal::config('system.site');
+  $variables['site_slogan'] = $site_config->get('slogan');
+}
+
 function typhoon_preprocess_page(&$variables) {
+
+
   // header content
   $variables['relative_logo_url'] = file_url_transform_relative(file_create_url(theme_get_setting('logo.url')));
   $variables['lib_util_nav1_text'] = theme_get_setting('lib_util_nav1_text');

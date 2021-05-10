@@ -27,29 +27,28 @@
 <html{{html_attributes}}>
   <head>
     <head-placeholder token="{{ placeholder_token }}">
-      {# <title>
-        {{ head_title|safe_join(' | ') }}
-      </title> #}
       <css-placeholder token="{{ placeholder_token }}">
         <js-placeholder token="{{ placeholder_token }}">
           <script src="https://kit.fontawesome.com/91b7cf6753.js" crossorigin="anonymous"></script>
           <!-- Primary Meta Tags -->
-          <title>Iowa State Library Intranet Website</title>
-          <meta name="title" content="Iowa State Library Intranet Website">
-          <meta name="description" content="Intranet website for Iowa State Library Staff">
+      <title>
+        {{ head_title|safe_join(' | ') }}
+      </title>
+          <meta name="title" content="{{ head_title|safe_join(' | ') }}">
+          <meta name="description" content="{{ site_slogan }}">
 
           <!-- Open Graph / Facebook -->
           <meta property="og:type" content="website">
           <meta property="og:url" content="https://dev-intra.lib.iastate.edu/">
-          <meta property="og:title" content="Iowa State Library Intranet Website">
-          <meta property="og:description" content="Intranet website for Iowa State Library Staff">
+          <meta property="og:title" content="{{ head_title|safe_join(' | ') }}">
+          <meta property="og:description" content="{{site_slogan}}">
           <meta property="og:image" content="https://dev-intra.lib.iastate.edu/images/Social-media-img.jpg">
 
           <!-- Twitter -->
           <meta property="twitter:card" content="summary_large_image">
           <meta property="twitter:url" content="https://dev-intra.lib.iastate.edu/">
-          <meta property="twitter:title" content="Iowa State Library Intranet Website">
-          <meta property="twitter:description" content="Intranet website for Iowa State Library Staff">
+          <meta property="twitter:title" content="{{ head_title|safe_join(' | ') }}">
+          <meta property="twitter:description" content="{{site_slogan}}">
           <meta property="twitter:image" content="https://dev-intra.lib.iastate.edu/images/Social-media-img.jpg">
         </head>
         <body{{attributes}}>
