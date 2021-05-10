@@ -1,0 +1,13 @@
+uuid: 89bf0730-8956-48b8-8bfd-e4d029bbb808
+langcode: en
+status: true
+dependencies: {  }
+name: testgraphql
+label: testgraphQL
+schema: example
+schema_configuration: {  }
+persisted_queries_settings: {  }
+endpoint: /graphql
+debug_flag: 0
+caching: true
+batching: true
