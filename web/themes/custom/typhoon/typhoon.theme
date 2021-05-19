@@ -59,6 +59,7 @@ function typhoon_preprocess_breadcrumb(&$variables) {
   }
 }
 
+
 /*
  * Implements theme_preprocess_page().
  *
@@ -254,16 +255,5 @@ function typhoon_preprocess_page__front(&$variables) {
     }
 }
 
-/**
- * Implements hook_preprocess_breadcrumb().
- */
-function typhoon_preprocess_breadcrumb(&$variables){
-  if(($node = \Drupal::routeMatch()->getParameter('node')) && $variables['breadcrumb']){
-    $variables['breadcrumb'][] = array(
-     'text' => $node->getTitle(),
-     'url' => $node->URL()
-   );
-  $variables['#cache']['contexts'][] = 'url';
-  }
-}
+
 
