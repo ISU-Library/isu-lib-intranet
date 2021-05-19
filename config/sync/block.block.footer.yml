@@ -23,7 +23,9 @@ settings:
   follow_parent: child
   level: 1
   depth: 2
-  expand: false
+  expand_all_items: false
   parent: 'footer:'
   suggestion: footer
+  label_type: block
+  label_link: false
 visibility: {  }

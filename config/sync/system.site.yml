@@ -1,7 +1,7 @@
 uuid: e59a0e65-0cf4-449c-b2a5-1c8d12d9f6ce
-name: Drupal
+name: 'ISU Library Intranet'
 mail: admin@example.com
-slogan: ''
+slogan: 'Intranet website for Iowa State Library Staff'
 page:
   403: ''
   404: ''
