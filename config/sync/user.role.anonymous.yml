@@ -17,6 +17,7 @@ permissions:
   - 'view media'
   - 'view paragraph content accordion_group'
   - 'view paragraph content basic_card_w_image'
+  - 'view paragraph content content_sections'
   - 'view paragraph content from_library'
   - 'view paragraph content gc_accordion_block'
   - 'view paragraph content gc_large_img_block'
