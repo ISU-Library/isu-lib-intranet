@@ -42,24 +42,6 @@ function typhoon_theme_suggestions_page_alter(array &$suggestions, array $variab
   return $suggestions;
 }
 
-
-/*
- * Implements THEME_preprocess_breadcrumb().
- *
- * Breadcrumbs show current page title
- */
-
-function typhoon_preprocess_breadcrumb(&$variables) {
-  if (($node = \Drupal::routeMatch()->getParameter('node')) && $variables['breadcrumb']) {
-    $variables['breadcrumb'][] = array(
-      'text' => $node->getTitle(),
-      // comment below line if you do not want to link current page.
-      // 'url'  => $node->URL(),
-    );
-  }
-}
-
-
 /*
  * Implements theme_preprocess_page().
  *
