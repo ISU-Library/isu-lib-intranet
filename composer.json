@@ -27,6 +27,7 @@
         "drupal/custom_search": "^1.0@beta",
         "drupal/devel": "^4.0",
         "drupal/entity_usage": "^2.0@beta",
+        "drupal/graphql": "^4.0",
         "drupal/login_security": "^2.0",
         "drupal/menu_block": "^1.6",
         "drupal/oauth_login_oauth2": "^1.223",
