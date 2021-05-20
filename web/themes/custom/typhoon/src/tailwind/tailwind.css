@@ -8,13 +8,14 @@
 
 /****** Foundations ******/
 @import './fonts.css';
-@import './header.css';
-@import './headlines.css';
-@import './breadcrumbs.css';
-@import './footer.css';
 
 /**** components ****/
+@import './header.css';
+@import './breadcrumbs.css';
+@import './headlines.css';
 @import './department-nav.css';
+@import './gen-con.css';
+@import './footer.css';
 
 :root {
   --header-height: '';
@@ -50,18 +51,6 @@ p {
 
 .center-x {
   @apply absolute transform -translate-x-1/2 left-1/2;
-}
-
-.gen-con--block h3 {
-  @apply text-red-50 p-xs inline-block;
-}
-
-.gen-con--block p + p {
-  @apply mt-md;
-}
-
-.gen-con--block > *:first-of-type {
-  @apply mt-0;
 }
 
 .grid-staff-directory {
@@ -118,47 +107,6 @@ p {
 
 .news-card--category a {
   @apply font-normal;
-}
-
-.gen-con--block ul {
-  @apply list-disc pl-2xl;
-}
-
-.gen-con--block .link-list--abstract,
-.gen-con--block .link-list {
-  @apply pl-0;
-}
-
-.gen-con--block ol {
-  @apply list-decimal pl-2xl;
-}
-
-.gen-con--block ol ol {
-  list-style: lower-alpha;
-}
-
-.gen-con--block ol ol ol {
-  list-style: lower-roman;
-}
-
-.gen-con--block p + * {
-  @apply mt-md;
-}
-
-.abstract-item > ul {
-  @apply pl-4xl;
-}
-
-.show--content {
-  @apply overflow-hidden text-left transition-all duration-300;
-}
-
-.show--content > *:first-of-type {
-  @apply mt-md;
-}
-
-.show--content ul {
-  @apply pl-lg;
 }
 
 .basic-card--wrap {
