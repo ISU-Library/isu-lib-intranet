@@ -1,10 +1,9 @@
-const sourceDir = "./themes/custom/typhoon/src";
+const sourceDir = './themes/custom/typhoon/src';
 const tailwindDir = `${sourceDir}/tailwind`;
-const destinationDir = "./themes/custom/typhoon";
+const destinationDir = './themes/custom/typhoon';
 
-const mix = require("laravel-mix");
+const mix = require('laravel-mix');
 const tailwindcss = require('@tailwindcss/jit');
-
 
 // require("laravel-mix-purgecss");
 
@@ -14,9 +13,8 @@ const tailwindcss = require('@tailwindcss/jit');
  |--------------------------------------------------------------------------
  */
 
-
 mix.browserSync({
-  proxy: 'dev-intra.test',
+  proxy: 'https://dev-intra.test',
   files: [
     `${destinationDir}/**/*`,
     `${sourceDir}/**/*`,
@@ -31,8 +29,8 @@ mix.js(`${sourceDir}/js/global.js`, `${destinationDir}/js/global.js`);
 
 mix.sass(`${sourceDir}/scss/global.scss`, `${destinationDir}/css/global.css`, {
   sassOptions: {
-    outputStyle: "compressed"
-  }
+    outputStyle: 'compressed',
+  },
 });
 
 // Only cache bust if production
@@ -42,13 +40,16 @@ if (mix.inProduction()) {
 
 // Sourcemaps workaround
 if (!mix.inProduction()) {
-  mix.sourceMaps(true, "source-map");
+  mix.sourceMaps(true, 'source-map');
 }
 
 // disable build notification on success
 mix.disableSuccessNotifications();
 
-mix.postCss(`${tailwindDir}/tailwind.css`, `${destinationDir}/css/tailwind.css`);
+mix.postCss(
+  `${tailwindDir}/tailwind.css`,
+  `${destinationDir}/css/tailwind.css`
+);
 
 mix.options({
   autoprefixer: { remove: false },
@@ -56,9 +57,8 @@ mix.options({
     require('postcss-import'),
     tailwindcss(`${tailwindDir}/tailwind.config.js`),
     require('autoprefixer'),
-  ]
+  ],
 });
-
 
 // Full API
 // mix.js(src, output);
