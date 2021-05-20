@@ -1820,8 +1820,8 @@ h1{
 		font-size: 3rem;
 	}
 }
-h1 + h2 {
-  @layers mb-3xl;
+h1 + h2{
+	margin-bottom: 3rem;
 }
 h2{
 	margin-bottom: 1rem;
@@ -1938,6 +1938,12 @@ p{
 	-webkit-transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 	        transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 	        --tw-translate-x: -50%;
+}
+.gen-con--block h3{
+	display: inline-block;
+	padding: 0.5rem;
+	--tw-text-opacity: 1;
+	color: rgba(254, 245, 245, var(--tw-text-opacity));
 }
 .gen-con--block p + p{
 	margin-top: 1rem;

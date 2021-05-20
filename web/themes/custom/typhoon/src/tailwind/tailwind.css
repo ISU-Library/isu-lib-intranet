@@ -52,6 +52,10 @@ p {
   @apply absolute transform -translate-x-1/2 left-1/2;
 }
 
+.gen-con--block h3 {
+  @apply text-red-50 p-xs inline-block;
+}
+
 .gen-con--block p + p {
   @apply mt-md;
 }
