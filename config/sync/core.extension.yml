@@ -14,6 +14,7 @@ module:
   contextual: 0
   ctools: 0
   ctools_entity_mask: 0
+  current_page_crumb: 0
   datetime: 0
   dblog: 0
   devel: 0
@@ -27,8 +28,11 @@ module:
   file: 0
   filter: 0
   graphql: 0
+<<<<<<< HEAD
   graphql_composable: 0
   graphql_examples: 0
+=======
+>>>>>>> main
   help: 0
   history: 0
   image: 0

@@ -9,9 +9,9 @@
   "scripts": {
     "dev": "npm run development",
     "development": "mix",
-    "watch": "mix watch",
+    "watch": "mix watch --https",
     "watch-poll": "mix watch -- --watch-options-poll=1000",
-    "hot": "mix watch --hot",
+    "hot": "mix watch --hot --https",
     "production": "mix --production",
     "build": "npm run production",
     "start": "NODE_ENV=production node server.js",
