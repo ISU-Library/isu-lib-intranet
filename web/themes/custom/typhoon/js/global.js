@@ -1407,9 +1407,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _searchButton_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./searchButton.js */ "./themes/custom/typhoon/src/js/searchButton.js");
 /* harmony import */ var _sideNav_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./sideNav.js */ "./themes/custom/typhoon/src/js/sideNav.js");
 /* harmony import */ var _accordion_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./accordion.js */ "./themes/custom/typhoon/src/js/accordion.js");
-/* harmony import */ var _scrollSpy__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./scrollSpy */ "./themes/custom/typhoon/src/js/scrollSpy.js");
-/* harmony import */ var _scrollSpy__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_scrollSpy__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _scrollSpy_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./scrollSpy.js */ "./themes/custom/typhoon/src/js/scrollSpy.js");
+/* harmony import */ var _scrollSpy_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_scrollSpy_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _imgModal_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./imgModal.js */ "./themes/custom/typhoon/src/js/imgModal.js");
+/* harmony import */ var _imgModal_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_imgModal_js__WEBPACK_IMPORTED_MODULE_6__);
 // elements animation
+
 
 
 
@@ -1436,10 +1439,53 @@ _searchButton_js__WEBPACK_IMPORTED_MODULE_2__; // all Js for mobile menu
 _mobileNav_js__WEBPACK_IMPORTED_MODULE_0__;
 _thirdLevelNavSelect_js__WEBPACK_IMPORTED_MODULE_1__;
 _sideNav_js__WEBPACK_IMPORTED_MODULE_3__;
-_scrollSpy__WEBPACK_IMPORTED_MODULE_5__; // accordion
+_scrollSpy_js__WEBPACK_IMPORTED_MODULE_5__; // accordion
 
 _accordion_js__WEBPACK_IMPORTED_MODULE_4__; // capacity
 // capacity;
+
+/***/ }),
+
+/***/ "./themes/custom/typhoon/src/js/imgModal.js":
+/*!**************************************************!*\
+  !*** ./themes/custom/typhoon/src/js/imgModal.js ***!
+  \**************************************************/
+/***/ (function() {
+
+var genConImgs = document.querySelectorAll('.gen-con--img-wrap');
+var modalOuter = document.querySelector('.modal-outer');
+var modalInner = document.querySelector('.modal-inner');
+
+function handleImgClick(e) {
+  var img = e.currentTarget;
+  var imgSrc = img.querySelector('img').src;
+  var imgAlt = img.querySelector('img').alt;
+  modalInner.innerHTML = "\n    <figure class=\"max-h-[80%] max-w-[80%] lg:max-w-[70%] text-center mx-auto\">\n      <img class=\"w-full h-full shadow-dark-1 rounded\" src=\"".concat(imgSrc, "\" alt=\"").concat(imgAlt, "\" />\n      <figcaption class=\"text-white text-shadow-1 text-xl\">").concat(imgAlt, "</figcaption>\n    </figure>\n  "); // show modal
+
+  modalOuter.classList.add('open', 'fixed', 'bg-red-500', 'opacity-100', 'bg-opacity-50', 'z-50', 'pointer-events-auto');
+  modalInner.classList.add('opacity-100');
+}
+
+genConImgs.forEach(function (img) {
+  return img.addEventListener('click', handleImgClick);
+});
+
+function closeModal() {
+  modalOuter.classList.remove('open', 'fixed', 'bg-red-500', 'opacity-100', 'bg-opacity-50', 'z-50', 'pointer-events-auto');
+}
+
+modalOuter.addEventListener('click', function (e) {
+  var isOutside = !e.target.closest('.modal-inner');
+
+  if (isOutside) {
+    closeModal();
+  }
+});
+window.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') {
+    closeModal();
+  }
+});
 
 /***/ }),
 

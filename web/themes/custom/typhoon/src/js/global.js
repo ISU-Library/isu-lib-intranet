@@ -5,7 +5,8 @@ import * as searchButtonShow from './searchButton.js';
 import * as sideNav from './sideNav.js';
 
 import * as accordion from './accordion.js';
-import * as scrollSpy from './scrollSpy';
+import * as scrollSpy from './scrollSpy.js';
+import * as imgModal from './imgModal.js';
 
 // Todo: split into new file
 const header = document.querySelector('header');
