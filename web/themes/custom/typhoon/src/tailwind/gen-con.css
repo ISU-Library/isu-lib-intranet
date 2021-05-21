@@ -1,5 +1,5 @@
 .gen-con--block h3 {
-  @apply text-red-50 p-xs inline-block;
+  @apply text-red-500 p-xs inline-block;
 }
 
 .gen-con--block p + p {
