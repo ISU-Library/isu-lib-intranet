@@ -1453,29 +1453,29 @@ _accordion_js__WEBPACK_IMPORTED_MODULE_4__; // capacity
 /***/ (function() {
 
 var genConImgs = document.querySelectorAll('.gen-con--img-wrap');
-var modalOuter = document.querySelector('.modal-outer');
-var modalInner = document.querySelector('.modal-inner');
+var modalOuter = document.querySelector('.js-modal-outer');
+var modalInner = modalOuter.querySelector('figure');
 
 function handleImgClick(e) {
+  var body = document.querySelector('body');
   var img = e.currentTarget;
   var imgSrc = img.querySelector('img').src;
   var imgAlt = img.querySelector('img').alt;
-  modalInner.innerHTML = "\n    <figure class=\"max-h-[80%] max-w-[80%] lg:max-w-[70%] text-center mx-auto\">\n      <img class=\"w-full h-full shadow-dark-1 rounded\" src=\"".concat(imgSrc, "\" alt=\"").concat(imgAlt, "\" />\n      <figcaption class=\"text-white text-shadow-1 text-xl\">").concat(imgAlt, "</figcaption>\n    </figure>\n  "); // show modal
+  modalInner.innerHTML = "\n  <img class=\"max-w-full shadow-dark-1 rounded\" src=\"".concat(imgSrc, "\" alt=\"").concat(imgAlt, "\" />\n  <figcaption class=\"text-white text-shadow-1 text-xl\">").concat(imgAlt, "</figcaption>\n  "); // show modal
 
-  modalOuter.classList.add('open', 'fixed', 'bg-red-500', 'opacity-100', 'bg-opacity-50', 'z-50', 'pointer-events-auto');
+  modalOuter.classList.add('open', 'fixed', 'opacity-100', 'bg-opacity-50', 'z-50', 'pointer-events-auto');
   modalInner.classList.add('opacity-100');
+}
+
+function closeModal() {
+  modalOuter.classList.remove('open', 'opacity-100', 'z-50', 'pointer-events-auto');
 }
 
 genConImgs.forEach(function (img) {
   return img.addEventListener('click', handleImgClick);
 });
-
-function closeModal() {
-  modalOuter.classList.remove('open', 'fixed', 'bg-red-500', 'opacity-100', 'bg-opacity-50', 'z-50', 'pointer-events-auto');
-}
-
 modalOuter.addEventListener('click', function (e) {
-  var isOutside = !e.target.closest('.modal-inner');
+  var isOutside = !e.target.closest('figure');
 
   if (isOutside) {
     closeModal();

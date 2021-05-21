@@ -1,24 +1,22 @@
 const genConImgs = document.querySelectorAll('.gen-con--img-wrap');
-const modalOuter = document.querySelector('.modal-outer');
-const modalInner = document.querySelector('.modal-inner');
+const modalOuter = document.querySelector('.js-modal-outer');
+const modalInner = modalOuter.querySelector('figure');
 
 function handleImgClick(e) {
+  const body = document.querySelector('body');
   const img = e.currentTarget;
   const imgSrc = img.querySelector('img').src;
   const imgAlt = img.querySelector('img').alt;
 
   modalInner.innerHTML = `
-    <figure class="max-h-[80%] max-w-[80%] lg:max-w-[70%] text-center mx-auto">
-      <img class="w-full h-full shadow-dark-1 rounded" src="${imgSrc}" alt="${imgAlt}" />
-      <figcaption class="text-white text-shadow-1 text-xl">${imgAlt}</figcaption>
-    </figure>
+  <img class="max-w-full shadow-dark-1 rounded" src="${imgSrc}" alt="${imgAlt}" />
+  <figcaption class="text-white text-shadow-1 text-xl">${imgAlt}</figcaption>
   `;
 
   // show modal
   modalOuter.classList.add(
     'open',
     'fixed',
-    'bg-red-500',
     'opacity-100',
     'bg-opacity-50',
     'z-50',
@@ -28,22 +26,19 @@ function handleImgClick(e) {
   modalInner.classList.add('opacity-100');
 }
 
-genConImgs.forEach(img => img.addEventListener('click', handleImgClick));
-
 function closeModal() {
   modalOuter.classList.remove(
     'open',
-    'fixed',
-    'bg-red-500',
     'opacity-100',
-    'bg-opacity-50',
     'z-50',
     'pointer-events-auto'
   );
 }
 
+genConImgs.forEach(img => img.addEventListener('click', handleImgClick));
+
 modalOuter.addEventListener('click', function (e) {
-  const isOutside = !e.target.closest('.modal-inner');
+  const isOutside = !e.target.closest('figure');
   if (isOutside) {
     closeModal();
   }
