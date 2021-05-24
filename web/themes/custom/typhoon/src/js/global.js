@@ -38,5 +38,8 @@ scrollSpy;
 // accordion
 accordion;
 
+// imagModal
+imgModal;
+
 // capacity
 // capacity;

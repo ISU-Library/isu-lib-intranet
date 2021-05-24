@@ -18,7 +18,6 @@ mainNavItem.forEach(navItem => {
         // * prevents list from being clipped
         if (thirdList) {
           const thirdListHeight = thirdList.offsetHeight;
-          console.log(thirdListHeight);
           mainNavDropdown.style.minHeight = `${thirdListHeight}px`;
         }
       });

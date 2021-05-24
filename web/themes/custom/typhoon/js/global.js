@@ -1441,7 +1441,9 @@ _thirdLevelNavSelect_js__WEBPACK_IMPORTED_MODULE_1__;
 _sideNav_js__WEBPACK_IMPORTED_MODULE_3__;
 _scrollSpy_js__WEBPACK_IMPORTED_MODULE_5__; // accordion
 
-_accordion_js__WEBPACK_IMPORTED_MODULE_4__; // capacity
+_accordion_js__WEBPACK_IMPORTED_MODULE_4__; // imagModal
+
+_imgModal_js__WEBPACK_IMPORTED_MODULE_6__; // capacity
 // capacity;
 
 /***/ }),
@@ -1842,7 +1844,6 @@ mainNavItem.forEach(function (navItem) {
 
         if (thirdList) {
           var thirdListHeight = thirdList.offsetHeight;
-          console.log(thirdListHeight);
           mainNavDropdown.style.minHeight = "".concat(thirdListHeight, "px");
         }
       });
