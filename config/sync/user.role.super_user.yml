@@ -12,6 +12,7 @@ permissions:
   - 'access contextual links'
   - 'access entity usage statistics'
   - 'access files overview'
+  - 'access in-place editing'
   - 'access media overview'
   - 'access security review list'
   - 'access site in maintenance mode'
