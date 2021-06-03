@@ -11,7 +11,7 @@ h2 {
 }
 
 h3 {
-  @apply md:text-xl text-lg mb-md;
+  @apply md:text-xl text-xl mb-xs;
 }
 
 h4 {

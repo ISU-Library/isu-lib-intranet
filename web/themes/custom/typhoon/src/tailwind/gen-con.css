@@ -1,5 +1,5 @@
 .gen-con--block h3 {
-  @apply text-red-500 p-xs inline-block;
+  @apply text-red-500 inline-block py-xs;
 }
 
 .gen-con--block p + p {
@@ -49,4 +49,14 @@
 
 .show--content ul {
   @apply pl-lg;
+}
+
+.quote {
+  @apply tracking-wide;
+}
+
+.quote p {
+  font-size: inherit;
+  color: inherit;
+  letter-spacing: inherit;
 }

@@ -1888,8 +1888,8 @@ h2{
 	}
 }
 h3{
-	margin-bottom: 1rem;
-	font-size: 1.125rem;
+	margin-bottom: 0.5rem;
+	font-size: 1.5rem;
 }
 @media (min-width: 768px){}
 h4{
@@ -1928,7 +1928,8 @@ h6{
 }
 .gen-con--block h3{
 	display: inline-block;
-	padding: 0.5rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
 	--tw-text-opacity: 1;
 	color: rgba(198, 16, 46, var(--tw-text-opacity));
 }
@@ -1978,6 +1979,14 @@ h6{
 }
 .show--content ul{
 	padding-left: 1.5rem;
+}
+.quote{
+	letter-spacing: 0.025em;
+}
+.quote p {
+  font-size: inherit;
+  color: inherit;
+  letter-spacing: inherit;
 }
 .footer-nav--wrap {
   max-width: 93.75rem;
