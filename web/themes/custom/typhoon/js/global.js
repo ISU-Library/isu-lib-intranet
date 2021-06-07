@@ -1582,7 +1582,7 @@ window.addEventListener('resize', resetNavOnDektop);
 // todo: Clean this code! It's a mess and jumble of things right now.
 var scrollTriggers = document.querySelectorAll('.js-scrollTrigger');
 var scrollTargets = document.querySelectorAll('.js-scrollTarget');
-var departmentNav = document.querySelector('.department-nav'); // * cleans user input and set it as section ID
+var scrollSpyNav = document.querySelector('.js-scrollSpyNav'); // * cleans user input and set it as section ID
 
 scrollTargets.forEach(function (target) {
   var id = target.id;
@@ -1596,10 +1596,10 @@ scrollTriggers.forEach(function (trigger) {
   trigger.setAttribute('href', "#".concat(hrefCleaned));
 }); // * on mobile, when clicking the department nav, show all options
 
-if (departmentNav) {
-  departmentNav.addEventListener('click', function (e) {
+if (scrollSpyNav) {
+  scrollSpyNav.addEventListener('click', function (e) {
     if (window.innerWidth <= 1024) {
-      departmentNav.classList.add('is-open');
+      scrollSpyNav.classList.add('is-open');
     }
   });
 } // * For BigPipe Data, page needs to be loaded.
@@ -1639,18 +1639,7 @@ var checkReadyState = setInterval(function () {
           spanEl.classList.add('hidden');
           triggerEl.classList.remove('is-active');
         }
-      }); // * commented out on 3/15/20 - Seems to work without it.
-      // scrollTriggers.forEach((trigger, index) => {
-      //   const id = trigger.getAttribute('href');
-      //   const spanEl = trigger.querySelector('span');
-      //   const target = document.querySelector(`${id}`);
-      //   const targetHeight = target.offsetHeight;
-      //   const targetBottom = target.offsetTop + targetHeight;
-      //   if (index == 0 && targetBottom - window.scrollY > 58) {
-      //     trigger.classList.add('is-active')
-      //     spanEl.classList.remove('hidden');
-      //   }
-      // });
+      });
     };
 
     scrollTriggers.forEach(function (trigger, index) {
@@ -1670,9 +1659,9 @@ var checkReadyState = setInterval(function () {
         if (window.innerWidth <= 1024) {
           e.preventDefault();
 
-          if (departmentNav.classList.contains('is-open')) {
+          if (scrollSpyNav.classList.contains('is-open')) {
             e.stopPropagation();
-            departmentNav.classList.remove('is-open');
+            scrollSpyNav.classList.remove('is-open');
             target.scrollIntoView({
               behavior: 'smooth'
             });

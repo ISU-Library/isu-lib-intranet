@@ -8,7 +8,7 @@
 
 const scrollTriggers = document.querySelectorAll('.js-scrollTrigger');
 const scrollTargets = document.querySelectorAll('.js-scrollTarget');
-const departmentNav = document.querySelector('.department-nav');
+const scrollSpyNav = document.querySelector('.js-scrollSpyNav');
 
 // * cleans user input and set it as section ID
 scrollTargets.forEach(target => {
@@ -28,10 +28,10 @@ scrollTriggers.forEach(trigger => {
 });
 
 // * on mobile, when clicking the department nav, show all options
-if (departmentNav) {
-  departmentNav.addEventListener('click', function (e) {
+if (scrollSpyNav) {
+  scrollSpyNav.addEventListener('click', function (e) {
     if (window.innerWidth <= 1024) {
-      departmentNav.classList.add('is-open');
+      scrollSpyNav.classList.add('is-open');
     }
   });
 }
@@ -78,20 +78,6 @@ var checkReadyState = setInterval(() => {
           triggerEl.classList.remove('is-active');
         }
       });
-
-      // * commented out on 3/15/20 - Seems to work without it.
-      // scrollTriggers.forEach((trigger, index) => {
-      //   const id = trigger.getAttribute('href');
-      //   const spanEl = trigger.querySelector('span');
-      //   const target = document.querySelector(`${id}`);
-      //   const targetHeight = target.offsetHeight;
-      //   const targetBottom = target.offsetTop + targetHeight;
-
-      //   if (index == 0 && targetBottom - window.scrollY > 58) {
-      //     trigger.classList.add('is-active')
-      //     spanEl.classList.remove('hidden');
-      //   }
-      // });
     };
 
     scrollTriggers.forEach((trigger, index) => {
@@ -112,10 +98,10 @@ var checkReadyState = setInterval(() => {
         if (window.innerWidth <= 1024) {
           e.preventDefault();
 
-          if (departmentNav.classList.contains('is-open')) {
+          if (scrollSpyNav.classList.contains('is-open')) {
             e.stopPropagation();
 
-            departmentNav.classList.remove('is-open');
+            scrollSpyNav.classList.remove('is-open');
 
             target.scrollIntoView({
               behavior: 'smooth',

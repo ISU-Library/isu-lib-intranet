@@ -13,7 +13,7 @@
 @import './header.css';
 @import './breadcrumbs.css';
 @import './headlines.css';
-@import './department-nav.css';
+@import './scrollSpyNav.css';
 @import './gen-con.css';
 @import './footer.css';
 
@@ -45,12 +45,20 @@ p {
   @apply mt-md;
 }
 
-.absolute-center {
-  @apply absolute transform -translate-y-1/2 -translate-x-1/2 top-1/2 left-1/2;
-}
+@layer utilities {
+  @variants responsive {
+    .absolute-center {
+      @apply absolute transform -translate-y-1/2 -translate-x-1/2 top-1/2 left-1/2;
+    }
 
-.center-x {
-  @apply absolute transform -translate-x-1/2 left-1/2;
+    .center-x {
+      @apply absolute transform -translate-x-1/2 left-1/2;
+    }
+
+    .center-y {
+      @apply absolute transform -translate-y-1/2 top-1/2;
+    }
+  }
 }
 
 .grid-staff-directory {
@@ -111,4 +119,12 @@ p {
 
 .basic-card--wrap {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.sidebar-nav--grid {
+  grid-template-columns: 259px 1fr;
+  /* grid-template-rows: auto; */
+}
+
+@media (min-width: 768px) {
 }
