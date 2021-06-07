@@ -1,5 +1,5 @@
 h1 {
-  @apply md:text-4xl text-3xl mb-3xl;
+  @apply text-3xl md:text-4xl mb-3xl;
 }
 
 h1 + h2 {
@@ -7,7 +7,7 @@ h1 + h2 {
 }
 
 h2 {
-  @apply xl:text-4xl text-2xl mb-md;
+  @apply xl:text-3xl text-2xl mb-md;
 }
 
 h3 {
