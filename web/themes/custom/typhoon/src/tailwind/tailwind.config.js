@@ -176,6 +176,9 @@ module.exports = {
       lineClamp: {
         7: '7',
       },
+      height: {
+        'min-content': 'min-content',
+      },
     },
   },
   variants: {
