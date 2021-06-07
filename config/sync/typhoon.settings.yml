@@ -11,9 +11,9 @@ favicon:
 lib_util_nav1_text: 'Staff Directory'
 lib_util_nav1_url: 'http://dev-intra.lib.iastate.edu/staff-directory'
 lib_util_nav2_text: Forms
-lib_util_nav2_url: 'http://dev-intra.test/forms'
-lib_util_nav3_text: Ipsum
-lib_util_nav3_url: 'http://dev-intra.test'
+lib_util_nav2_url: 'http://dev-intra.lib.iastate.edu/forms'
+lib_util_nav3_text: Signons
+lib_util_nav3_url: 'https://web.iastate.edu/signons/'
 lib_util_nav4_text: Pipsum
 lib_util_nav4_url: 'http://dev-intra.test'
 lib_util_nav5_text: 'Whoopidy Do'
