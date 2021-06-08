@@ -2656,14 +2656,11 @@ p{
 	.lg\:col-span-2{
 		grid-column: span 2 / span 2;
 	}
-	.lg\:col-end-13{
-		grid-column-end: 13;
-	}
 	.lg\:col-end-10{
 		grid-column-end: 10;
 	}
-	.lg\:col-start-9{
-		grid-column-start: 9;
+	.lg\:col-end-13{
+		grid-column-end: 13;
 	}
 	.lg\:col-start-1{
 		grid-column-start: 1;

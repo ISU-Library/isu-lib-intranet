@@ -5,97 +5,55 @@
 // todo: If I really wanted to remove smooth scroll, I could try and set data-attributes vs anchors and ID's
 // todo: Doesn't really work well in safari, especially without SmoothScroll
 // todo: Clean this code! It's a mess and jumble of things right now.
-
 const scrollTriggers = document.querySelectorAll('.js-scrollTrigger');
 const scrollTargets = document.querySelectorAll('.js-scrollTarget');
 const scrollSpyNav = document.querySelector('.js-scrollSpyNav');
 
 // * cleans user input and set it as section ID
-scrollTargets.forEach(target => {
-  const id = target.id;
-  const idCleaned = id.replace(/\W+/g, '-').replace(/^-|-$/g, '').toLowerCase();
-  target.id = idCleaned;
-});
-
-// * cleans user input and set it as nav HREF anchor
-scrollTriggers.forEach(trigger => {
-  const id = trigger.getAttribute('href');
-  const hrefCleaned = id
-    .replace(/\W+/g, '-')
-    .replace(/^-|-$/g, '')
-    .toLowerCase();
-  trigger.setAttribute('href', `#${hrefCleaned}`);
-});
-
-// * on mobile, when clicking the department nav, show all options
-if (scrollSpyNav) {
-  scrollSpyNav.addEventListener('click', function (e) {
-    if (window.innerWidth <= 1024) {
-      scrollSpyNav.classList.add('is-open');
-    }
+function sanatizeId() {
+  scrollTargets.forEach(target => {
+    const id = target.id;
+    const idCleaned = id
+      .replace(/\W+/g, '-')
+      .replace(/^-|-$/g, '')
+      .toLowerCase();
+    target.id = idCleaned;
   });
 }
 
-// * For BigPipe Data, page needs to be loaded.
-var checkReadyState = setInterval(() => {
-  // * this checks if the page is loaded
-  if (document.readyState === 'complete') {
-    clearInterval(checkReadyState);
+// * cleans user input and set it as nav HREF anchor
+function sanatizeHref() {
+  scrollTriggers.forEach(trigger => {
+    const id = trigger.getAttribute('href');
+    const hrefCleaned = id
+      .replace(/\W+/g, '-')
+      .replace(/^-|-$/g, '')
+      .toLowerCase();
+    trigger.setAttribute('href', `#${hrefCleaned}`);
+  });
+}
 
-    // *Scroll spy works on Scroll
-    window.onscroll = function () {
-      scrollTargets.forEach((target, index) => {
-        const sectionID = target.id;
-        const triggerEl = document.querySelector(`a[href='#${sectionID}']`);
-        const spanEl = triggerEl.querySelector('span');
-        const targetHeight = target.offsetHeight;
-        const targetBottom = target.offsetTop + targetHeight;
-        const location = window.location.toString().split('#')[0];
-        const scrollSpyNavHeight = 58;
+// * scrolls to target section on click
+function scrollOnClick(target, breakpoint) {
+  const targetNav = document.querySelector(`.${target}`);
 
-        //* updates the URL hash
-        function updateUrlHash() {
-          history.replaceState(null, null, location + '#' + sectionID);
-        }
+  scrollTriggers.forEach((trigger, index) => {
+    const id = trigger.getAttribute('href');
+    const spanEl = trigger.querySelector('span');
+    const target = document.querySelector(`${id}`);
+    const targetHeight = target.offsetHeight;
+    const targetBottom = target.offsetTop + targetHeight;
 
-        // * checks scroll locations and updates url Hash
-        if (index == 0 && targetBottom - window.scrollY > scrollSpyNavHeight) {
-          updateUrlHash();
+    // *sets the first trigger on click
+    if (index == 0 && targetBottom - window.scrollY > 0) {
+      trigger.classList.add('is-active');
+      spanEl.classList.remove('hidden');
+    }
 
-          triggerEl.classList.add('is-active');
-          spanEl.classList.remove('hidden');
-        } else if (
-          // * checks scroll locations and updates url Hash
-          targetBottom - window.scrollY > scrollSpyNavHeight &&
-          target.offsetTop - window.scrollY < scrollSpyNavHeight
-        ) {
-          updateUrlHash();
-          // * updates nav indicator
-          spanEl.classList.remove('hidden');
-          triggerEl.classList.add('is-active');
-        } else {
-          spanEl.classList.add('hidden');
-          triggerEl.classList.remove('is-active');
-        }
-      });
-    };
-
-    scrollTriggers.forEach((trigger, index) => {
-      const id = trigger.getAttribute('href');
-      const spanEl = trigger.querySelector('span');
-      const target = document.querySelector(`${id}`);
-      const targetHeight = target.offsetHeight;
-      const targetBottom = target.offsetTop + targetHeight;
-
-      // *sets the first trigger on click
-      if (index == 0 && targetBottom - window.scrollY > 0) {
-        trigger.classList.add('is-active');
-        spanEl.classList.remove('hidden');
-      }
-
-      // * makes the scroll spy work on click.
+    // * makes the scroll spy work on click.
+    if (targetNav) {
       trigger.addEventListener('click', function (e) {
-        if (window.innerWidth <= 1024) {
+        if (window.innerWidth <= breakpoint) {
           e.preventDefault();
 
           if (scrollSpyNav.classList.contains('is-open')) {
@@ -109,8 +67,82 @@ var checkReadyState = setInterval(() => {
           }
         }
       });
-    });
-  }
-}, 100);
+    }
+  });
+}
 
-checkReadyState;
+function scrollSpy(target, breakpoint) {
+  const targetNav = document.querySelector(`.${target}`);
+
+  // * For BigPipe Data, page needs to be loaded.
+  var checkReadyState = setInterval(() => {
+    // * cleans user input and set it as section ID
+    sanatizeId();
+
+    // * cleans user input and set it as nav HREF anchor
+    sanatizeHref();
+
+    // * on mobile, when clicking the scrollSpyNav, show all options
+    if (targetNav) {
+      scrollSpyNav.addEventListener('click', function (e) {
+        if (window.innerWidth <= breakpoint) {
+          scrollSpyNav.classList.add('is-open');
+        }
+      });
+    }
+
+    // * this checks if the page is loaded
+    if (document.readyState === 'complete') {
+      clearInterval(checkReadyState);
+
+      // *Scroll spy works on Scroll
+      window.onscroll = function () {
+        scrollTargets.forEach((target, index) => {
+          const sectionID = target.id;
+          const triggerEl = document.querySelector(`a[href='#${sectionID}']`);
+          const spanEl = triggerEl.querySelector('span');
+          const targetHeight = target.offsetHeight;
+          const targetBottom = target.offsetTop + targetHeight;
+          const location = window.location.toString().split('#')[0];
+          const scrollSpyNavHeight = 58;
+
+          //* updates the URL hash
+          function updateUrlHash() {
+            history.replaceState(null, null, location + '#' + sectionID);
+          }
+
+          // * checks scroll locations and updates url Hash
+          if (
+            index == 0 &&
+            targetBottom - window.scrollY > scrollSpyNavHeight
+          ) {
+            updateUrlHash();
+
+            triggerEl.classList.add('is-active');
+            spanEl.classList.remove('hidden');
+          } else if (
+            // * checks scroll locations and updates url Hash
+            targetBottom - window.scrollY > scrollSpyNavHeight &&
+            target.offsetTop - window.scrollY < scrollSpyNavHeight
+          ) {
+            updateUrlHash();
+            // * updates nav indicator
+            spanEl.classList.remove('hidden');
+            triggerEl.classList.add('is-active');
+          } else {
+            spanEl.classList.add('hidden');
+            triggerEl.classList.remove('is-active');
+          }
+        });
+      };
+
+      // * scrolls to target section on click
+      scrollOnClick(target, breakpoint);
+    }
+  }, 100);
+
+  checkReadyState;
+}
+
+scrollSpy(`toc-nav`, 768);
+scrollSpy(`department-nav`, 1024);

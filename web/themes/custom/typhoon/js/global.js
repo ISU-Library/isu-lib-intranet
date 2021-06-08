@@ -1584,79 +1584,42 @@ var scrollTriggers = document.querySelectorAll('.js-scrollTrigger');
 var scrollTargets = document.querySelectorAll('.js-scrollTarget');
 var scrollSpyNav = document.querySelector('.js-scrollSpyNav'); // * cleans user input and set it as section ID
 
-scrollTargets.forEach(function (target) {
-  var id = target.id;
-  var idCleaned = id.replace(/\W+/g, '-').replace(/^-|-$/g, '').toLowerCase();
-  target.id = idCleaned;
-}); // * cleans user input and set it as nav HREF anchor
-
-scrollTriggers.forEach(function (trigger) {
-  var id = trigger.getAttribute('href');
-  var hrefCleaned = id.replace(/\W+/g, '-').replace(/^-|-$/g, '').toLowerCase();
-  trigger.setAttribute('href', "#".concat(hrefCleaned));
-}); // * on mobile, when clicking the department nav, show all options
-
-if (scrollSpyNav) {
-  scrollSpyNav.addEventListener('click', function (e) {
-    if (window.innerWidth <= 1024) {
-      scrollSpyNav.classList.add('is-open');
-    }
+function sanatizeId() {
+  scrollTargets.forEach(function (target) {
+    var id = target.id;
+    var idCleaned = id.replace(/\W+/g, '-').replace(/^-|-$/g, '').toLowerCase();
+    target.id = idCleaned;
   });
-} // * For BigPipe Data, page needs to be loaded.
+} // * cleans user input and set it as nav HREF anchor
 
 
-var checkReadyState = setInterval(function () {
-  // * this checks if the page is loaded
-  if (document.readyState === 'complete') {
-    clearInterval(checkReadyState); // *Scroll spy works on Scroll
-
-    window.onscroll = function () {
-      scrollTargets.forEach(function (target, index) {
-        var sectionID = target.id;
-        var triggerEl = document.querySelector("a[href='#".concat(sectionID, "']"));
-        var spanEl = triggerEl.querySelector('span');
-        var targetHeight = target.offsetHeight;
-        var targetBottom = target.offsetTop + targetHeight;
-        var location = window.location.toString().split('#')[0];
-        var scrollSpyNavHeight = 58; //* updates the URL hash
-
-        function updateUrlHash() {
-          history.replaceState(null, null, location + '#' + sectionID);
-        } // * checks scroll locations and updates url Hash
+function sanatizeHref() {
+  scrollTriggers.forEach(function (trigger) {
+    var id = trigger.getAttribute('href');
+    var hrefCleaned = id.replace(/\W+/g, '-').replace(/^-|-$/g, '').toLowerCase();
+    trigger.setAttribute('href', "#".concat(hrefCleaned));
+  });
+} // * scrolls to target section on click
 
 
-        if (index == 0 && targetBottom - window.scrollY > scrollSpyNavHeight) {
-          updateUrlHash();
-          triggerEl.classList.add('is-active');
-          spanEl.classList.remove('hidden');
-        } else if ( // * checks scroll locations and updates url Hash
-        targetBottom - window.scrollY > scrollSpyNavHeight && target.offsetTop - window.scrollY < scrollSpyNavHeight) {
-          updateUrlHash(); // * updates nav indicator
+function scrollOnClick(target, breakpoint) {
+  var targetNav = document.querySelector(".".concat(target));
+  scrollTriggers.forEach(function (trigger, index) {
+    var id = trigger.getAttribute('href');
+    var spanEl = trigger.querySelector('span');
+    var target = document.querySelector("".concat(id));
+    var targetHeight = target.offsetHeight;
+    var targetBottom = target.offsetTop + targetHeight; // *sets the first trigger on click
 
-          spanEl.classList.remove('hidden');
-          triggerEl.classList.add('is-active');
-        } else {
-          spanEl.classList.add('hidden');
-          triggerEl.classList.remove('is-active');
-        }
-      });
-    };
-
-    scrollTriggers.forEach(function (trigger, index) {
-      var id = trigger.getAttribute('href');
-      var spanEl = trigger.querySelector('span');
-      var target = document.querySelector("".concat(id));
-      var targetHeight = target.offsetHeight;
-      var targetBottom = target.offsetTop + targetHeight; // *sets the first trigger on click
-
-      if (index == 0 && targetBottom - window.scrollY > 0) {
-        trigger.classList.add('is-active');
-        spanEl.classList.remove('hidden');
-      } // * makes the scroll spy work on click.
+    if (index == 0 && targetBottom - window.scrollY > 0) {
+      trigger.classList.add('is-active');
+      spanEl.classList.remove('hidden');
+    } // * makes the scroll spy work on click.
 
 
+    if (targetNav) {
       trigger.addEventListener('click', function (e) {
-        if (window.innerWidth <= 1024) {
+        if (window.innerWidth <= breakpoint) {
           e.preventDefault();
 
           if (scrollSpyNav.classList.contains('is-open')) {
@@ -1668,10 +1631,72 @@ var checkReadyState = setInterval(function () {
           }
         }
       });
-    });
-  }
-}, 100);
-checkReadyState;
+    }
+  });
+}
+
+function scrollSpy(target, breakpoint) {
+  var targetNav = document.querySelector(".".concat(target)); // * For BigPipe Data, page needs to be loaded.
+
+  var checkReadyState = setInterval(function () {
+    // * cleans user input and set it as section ID
+    sanatizeId(); // * cleans user input and set it as nav HREF anchor
+
+    sanatizeHref(); // * on mobile, when clicking the scrollSpyNav, show all options
+
+    if (targetNav) {
+      scrollSpyNav.addEventListener('click', function (e) {
+        if (window.innerWidth <= breakpoint) {
+          scrollSpyNav.classList.add('is-open');
+        }
+      });
+    } // * this checks if the page is loaded
+
+
+    if (document.readyState === 'complete') {
+      clearInterval(checkReadyState); // *Scroll spy works on Scroll
+
+      window.onscroll = function () {
+        scrollTargets.forEach(function (target, index) {
+          var sectionID = target.id;
+          var triggerEl = document.querySelector("a[href='#".concat(sectionID, "']"));
+          var spanEl = triggerEl.querySelector('span');
+          var targetHeight = target.offsetHeight;
+          var targetBottom = target.offsetTop + targetHeight;
+          var location = window.location.toString().split('#')[0];
+          var scrollSpyNavHeight = 58; //* updates the URL hash
+
+          function updateUrlHash() {
+            history.replaceState(null, null, location + '#' + sectionID);
+          } // * checks scroll locations and updates url Hash
+
+
+          if (index == 0 && targetBottom - window.scrollY > scrollSpyNavHeight) {
+            updateUrlHash();
+            triggerEl.classList.add('is-active');
+            spanEl.classList.remove('hidden');
+          } else if ( // * checks scroll locations and updates url Hash
+          targetBottom - window.scrollY > scrollSpyNavHeight && target.offsetTop - window.scrollY < scrollSpyNavHeight) {
+            updateUrlHash(); // * updates nav indicator
+
+            spanEl.classList.remove('hidden');
+            triggerEl.classList.add('is-active');
+          } else {
+            spanEl.classList.add('hidden');
+            triggerEl.classList.remove('is-active');
+          }
+        });
+      }; // * scrolls to target section on click
+
+
+      scrollOnClick(target, breakpoint);
+    }
+  }, 100);
+  checkReadyState;
+}
+
+scrollSpy("toc-nav", 768);
+scrollSpy("department-nav", 1024);
 
 /***/ }),
 
