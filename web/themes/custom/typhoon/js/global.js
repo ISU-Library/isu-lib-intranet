@@ -1408,7 +1408,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _sideNav_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./sideNav.js */ "./themes/custom/typhoon/src/js/sideNav.js");
 /* harmony import */ var _accordion_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./accordion.js */ "./themes/custom/typhoon/src/js/accordion.js");
 /* harmony import */ var _scrollSpy_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./scrollSpy.js */ "./themes/custom/typhoon/src/js/scrollSpy.js");
-/* harmony import */ var _scrollSpy_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_scrollSpy_js__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _imgModal_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./imgModal.js */ "./themes/custom/typhoon/src/js/imgModal.js");
 /* harmony import */ var _imgModal_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_imgModal_js__WEBPACK_IMPORTED_MODULE_6__);
 // elements animation
@@ -1438,8 +1437,10 @@ _searchButton_js__WEBPACK_IMPORTED_MODULE_2__; // all Js for mobile menu
 
 _mobileNav_js__WEBPACK_IMPORTED_MODULE_0__;
 _thirdLevelNavSelect_js__WEBPACK_IMPORTED_MODULE_1__;
-_sideNav_js__WEBPACK_IMPORTED_MODULE_3__;
-_scrollSpy_js__WEBPACK_IMPORTED_MODULE_5__; // accordion
+_sideNav_js__WEBPACK_IMPORTED_MODULE_3__; // * scrollSpy;
+
+(0,_scrollSpy_js__WEBPACK_IMPORTED_MODULE_5__.default)(".toc-nav", 768);
+(0,_scrollSpy_js__WEBPACK_IMPORTED_MODULE_5__.default)(".department-nav", 1024); // accordion
 
 _accordion_js__WEBPACK_IMPORTED_MODULE_4__; // imagModal
 
@@ -1572,8 +1573,13 @@ window.addEventListener('resize', resetNavOnDektop);
 /*!***************************************************!*\
   !*** ./themes/custom/typhoon/src/js/scrollSpy.js ***!
   \***************************************************/
-/***/ (function() {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ scrollSpy; }
+/* harmony export */ });
 // import SmoothScroll from 'smooth-scroll';
 // var scroll = new SmoothScroll('a[href*="#"]');
 // todo: Change focus to selected section
@@ -1603,7 +1609,7 @@ function sanatizeHref() {
 
 
 function scrollOnClick(target, breakpoint) {
-  var targetNav = document.querySelector(".".concat(target));
+  var targetNav = document.querySelector("".concat(target));
   scrollTriggers.forEach(function (trigger, index) {
     var id = trigger.getAttribute('href');
     var spanEl = trigger.querySelector('span');
@@ -1636,7 +1642,7 @@ function scrollOnClick(target, breakpoint) {
 }
 
 function scrollSpy(target, breakpoint) {
-  var targetNav = document.querySelector(".".concat(target)); // * For BigPipe Data, page needs to be loaded.
+  var targetNav = document.querySelector("".concat(target)); // * For BigPipe Data, page needs to be loaded.
 
   var checkReadyState = setInterval(function () {
     // * cleans user input and set it as section ID
@@ -1694,9 +1700,6 @@ function scrollSpy(target, breakpoint) {
   }, 100);
   checkReadyState;
 }
-
-scrollSpy("toc-nav", 768);
-scrollSpy("department-nav", 1024);
 
 /***/ }),
 

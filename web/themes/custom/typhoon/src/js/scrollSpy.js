@@ -35,7 +35,7 @@ function sanatizeHref() {
 
 // * scrolls to target section on click
 function scrollOnClick(target, breakpoint) {
-  const targetNav = document.querySelector(`.${target}`);
+  const targetNav = document.querySelector(`${target}`);
 
   scrollTriggers.forEach((trigger, index) => {
     const id = trigger.getAttribute('href');
@@ -71,8 +71,8 @@ function scrollOnClick(target, breakpoint) {
   });
 }
 
-function scrollSpy(target, breakpoint) {
-  const targetNav = document.querySelector(`.${target}`);
+export default function scrollSpy(target, breakpoint) {
+  const targetNav = document.querySelector(`${target}`);
 
   // * For BigPipe Data, page needs to be loaded.
   var checkReadyState = setInterval(() => {
@@ -143,6 +143,3 @@ function scrollSpy(target, breakpoint) {
 
   checkReadyState;
 }
-
-scrollSpy(`toc-nav`, 768);
-scrollSpy(`department-nav`, 1024);
