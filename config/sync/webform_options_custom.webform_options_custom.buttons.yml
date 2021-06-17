@@ -1,0 +1,25 @@
+uuid: 15e0bee3-f459-4b6f-9723-d1144112b82e
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: TABA4k7qc_23n1AToUmJbQSNlXry5Me_aUE855mV2pw
+id: buttons
+label: Buttons
+description: 'An example of custom buttons.'
+help: ''
+category: Buttons
+type: template
+template: "<div class=\"webform-custom-options-buttons\">\n{% for value, text in options %}\n  <div class=\"webform-custom-options-button\" data-option-value=\"{{ value }}\" style=\"text-align:center\">\n  {{ text }}\n  {% if descriptions[value] %}<div class=\"description\">{{ descriptions[value] }}</div>{% endif %}\n  </div>\n{% endfor %}\n</div>\n"
+url: ''
+css: ".webform-custom-options-buttons {\n  display: flex;\n  flex-wrap: wrap;\n  margin: 0 -5px;\n}\n\n.webform-custom-options-button {\n  flex: 1;\n  display: table-cell;\n  margin: 0 5px 10px 5px;\n  border: 3px solid #ccc;\n  border-radius: 3px;\n  background-color: #fff;\n  padding: 10px;\n  vertical-align: middle;\n  text-align: center;\n  color: #666;\n}\n\n.webform-custom-options-button .description {\n  font-size: .8em;\n}\n\n.webform-custom-options-button[data-option-value]:hover {\n  border-color: #999;\n  color: #333;\n}\n\n.webform-custom-options-button[data-option-value]:focus {\n  border-color: #999;\n  color: #333;\n}\n\n.webform-custom-options-button[data-option-value][aria-checked=true] {\n  border-color: #0074bd;\n  color: #000;\n}\n\n.webform-custom-options-button[data-option-value][aria-checked=true]:focus {\n  box-shadow: 0 0 5px #0074bd;\n}\n\n.webform-custom-options-button[data-option-value][aria-disabled=true],\n.webform-custom-options-button[data-option-value][aria-disabled=true]:hover,\n.webform-custom-options-button[data-option-value][aria-disabled=true]:focus {\n  cursor: not-allowed;\n  border-color: #ccc;\n  color: #999;\n}\n\n@media (max-width: 600px) {\n  .webform-custom-options-buttons {\n    display: block;\n    margin: 0;\n  }\n\n  .webform-custom-options-button {\n    display: block;\n    margin: 5px 0;\n  }\n}\n"
+javascript: ''
+options: '{  }'
+value_attributes: ''
+text_attributes: ''
+fill: false
+zoom: false
+tooltip: false
+show_select: false
+element: true
+entity_reference: false
