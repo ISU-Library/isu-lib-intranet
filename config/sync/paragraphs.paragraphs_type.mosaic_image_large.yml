@@ -1,0 +1,10 @@
+uuid: 22706de9-6ca2-4a8b-96ca-a36a3e69fcbf
+langcode: en
+status: true
+dependencies: {  }
+id: mosaic_image_large
+label: 'Mosaic Image Large'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

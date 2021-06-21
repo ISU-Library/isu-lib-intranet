@@ -85,6 +85,9 @@ settings:
       link_list_link:
         enabled: true
         weight: 37
+      mosiac_image:
+        enabled: true
+        weight: 41
       news_card_basic:
         enabled: true
         weight: 38
@@ -99,6 +102,9 @@ settings:
         enabled: false
       sc_basic_cards_image_block:
         weight: 42
+        enabled: false
+      sc_mosaic_image:
+        weight: 25
         enabled: false
       sc_news_basic_card_block:
         weight: 43

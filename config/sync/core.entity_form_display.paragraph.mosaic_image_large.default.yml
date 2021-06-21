@@ -1,0 +1,26 @@
+uuid: 8da96b5b-cdf2-4f8c-9cae-26dc124f323e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.mosaic_image_large.field_mosaic_image_large
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.mosaic_image_large
+  module:
+    - image
+id: paragraph.mosaic_image_large.default
+targetEntityType: paragraph
+bundle: mosaic_image_large
+mode: default
+content:
+  field_mosaic_image_large:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+hidden:
+  created: true
+  status: true

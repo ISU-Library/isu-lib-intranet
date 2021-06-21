@@ -1,0 +1,20 @@
+uuid: f6444a1e-c43a-4ec0-87c1-5b691a868e32
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - paragraphs
+id: paragraph.field_sc_mosaic_image_block
+field_name: field_sc_mosaic_image_block
+entity_type: paragraph
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

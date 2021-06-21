@@ -1,0 +1,29 @@
+uuid: 70fbbc89-29a0-44d2-bede-c7418531ab94
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sc_mosaic_image.field_sc_mosaic_image_block
+    - paragraphs.paragraphs_type.sc_mosaic_image
+  module:
+    - paragraphs
+id: paragraph.sc_mosaic_image.default
+targetEntityType: paragraph
+bundle: sc_mosaic_image
+mode: default
+content:
+  field_sc_mosaic_image_block:
+    type: entity_reference_paragraphs
+    weight: 1
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true
