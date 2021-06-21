@@ -1,15 +1,14 @@
-const genConImgs = document.querySelectorAll('.gen-con--img-wrap');
+const genConImgs = document.querySelectorAll('.js-img-modal');
 const modalOuter = document.querySelector('.js-modal-outer');
 const modalInner = modalOuter.querySelector('figure');
 
 function handleImgClick(e) {
-  const body = document.querySelector('body');
   const img = e.currentTarget;
   const imgSrc = img.querySelector('img').src;
   const imgAlt = img.querySelector('img').alt;
 
   modalInner.innerHTML = `
-  <img class="max-w-full shadow-dark-1 rounded" src="${imgSrc}" alt="${imgAlt}" />
+  <img class="max-w-full md:max-h-[90vh] lg:max-h-[80vh] shadow-dark-1 rounded" src="${imgSrc}" alt="${imgAlt}" />
   <figcaption class="text-white text-shadow-1 text-xl">${imgAlt}</figcaption>
   `;
 

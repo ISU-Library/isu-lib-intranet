@@ -1455,16 +1455,15 @@ _imgModal_js__WEBPACK_IMPORTED_MODULE_6__; // capacity
   \**************************************************/
 /***/ (function() {
 
-var genConImgs = document.querySelectorAll('.gen-con--img-wrap');
+var genConImgs = document.querySelectorAll('.js-img-modal');
 var modalOuter = document.querySelector('.js-modal-outer');
 var modalInner = modalOuter.querySelector('figure');
 
 function handleImgClick(e) {
-  var body = document.querySelector('body');
   var img = e.currentTarget;
   var imgSrc = img.querySelector('img').src;
   var imgAlt = img.querySelector('img').alt;
-  modalInner.innerHTML = "\n  <img class=\"max-w-full shadow-dark-1 rounded\" src=\"".concat(imgSrc, "\" alt=\"").concat(imgAlt, "\" />\n  <figcaption class=\"text-white text-shadow-1 text-xl\">").concat(imgAlt, "</figcaption>\n  "); // show modal
+  modalInner.innerHTML = "\n  <img class=\"max-w-full md:max-h-[90vh] lg:max-h-[80vh] shadow-dark-1 rounded\" src=\"".concat(imgSrc, "\" alt=\"").concat(imgAlt, "\" />\n  <figcaption class=\"text-white text-shadow-1 text-xl\">").concat(imgAlt, "</figcaption>\n  "); // show modal
 
   modalOuter.classList.add('open', 'fixed', 'opacity-100', 'bg-opacity-50', 'z-50', 'pointer-events-auto');
   modalInner.classList.add('opacity-100');

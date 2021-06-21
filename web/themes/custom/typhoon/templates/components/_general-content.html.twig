@@ -38,7 +38,7 @@
 
   <div class="gen-con--block max-w-[50rem] mb-2xl img-block {{ data.imgSide }}">
     <div
-      class="gen-con--img-wrap w-full {{
+      class="js-img-modal gen-con--img-wrap w-full {{
       data.imgSize
       }} float-none my-0 mx-auto {{ imgFloat }}"
     >
@@ -210,7 +210,7 @@
   {% set data = data ? defaultData|merge(data) : defaultData %}
 
   <div class="gen-con--block max-w-[50rem] mb-2xl img-block block--lg-img">
-    <div class="gen-con--img-wrap">
+    <div class="js-img-modal gen-con--img-wrap">
       <figure class="relative">
         <img
           class="shadow-dark-2"
@@ -239,7 +239,7 @@
   <div
     class="gen-con--block max-w-[50rem] flex flex-col sm:flex-row justify-around mb-2xl img-block block--two-img"
   >
-    <div class="gen-con--img-wrap max-w-full mx-xs mb-sm sm:mb-0">
+    <div class="js-img-modal gen-con--img-wrap max-w-full mx-xs mb-sm sm:mb-0">
       <figure class="flex flex-col items-center">
         <img
           class="shadow-dark-2 w-4/5 sm:w-full sm:max-h-96"
@@ -251,7 +251,7 @@
         </figcaption>
       </figure>
     </div>
-    <div class="gen-con--img-wrap max-w-full mx-xs">
+    <div class="js-img-modal gen-con--img-wrap max-w-full mx-xs">
       <figure class="flex flex-col items-center">
         <img
           class="shadow-dark-2 w-4/5 sm:w-full sm:max-h-96"
@@ -281,7 +281,7 @@
   <div
     class="gen-con--block max-w-[50rem] flex flex-col sm:flex-row justify-around mb-2xl img-block block--three-img"
   >
-    <div class="gen-con--img-wrap mx-xs">
+    <div class="js-img-modal gen-con--img-wrap mx-xs">
       <figure>
         <img
           class="shadow-dark-2"
@@ -293,7 +293,7 @@
         </figcaption>
       </figure>
     </div>
-    <div class="gen-con--img-wrap mx-xs">
+    <div class="js-img-modal gen-con--img-wrap mx-xs">
       <figure>
         <img
           class="shadow-dark-2"
@@ -305,7 +305,7 @@
         </figcaption>
       </figure>
     </div>
-    <div class="gen-con--img-wrap mx-xs">
+    <div class="js-img-modal gen-con--img-wrap mx-xs">
       <figure>
         <img
           class="shadow-dark-2"
@@ -366,7 +366,11 @@
         aria-hidden="true"
       ></i>
     </div>
-    <blockquote class="quote font-merriweather {{ quoteClasses }} my-0 mx-auto text-lg italic">
+    <blockquote
+      class="quote font-merriweather {{
+      quoteClasses
+      }} my-0 mx-auto text-lg italic"
+    >
       {{ data.quoteText }}
       <cite
         class="{{
