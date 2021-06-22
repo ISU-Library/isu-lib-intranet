@@ -44,7 +44,7 @@
             item.is_expanded ? 'main-nav--item_expanded',
             item.is_collapsed ? 'main-nav--item_collapsed',
             item.in_active_trail ? 'main-nav--item_active-trail ',
-            item.below ? 'dropdown-menu group'
+            item.below ? 'dropdown-menu '
           ] %}
 
           {% set mainNavTopLinks = [
@@ -52,7 +52,18 @@
             item.in_active_trail ? 'is-active bg-red-500 text-white'
           ] %}
 
-          <li {{ item.attributes.addClass(topNavClasses) }}>
+          <li
+            {{ item.attributes.addClass(topNavClasses) }}
+            {# ! sets aria-controls if there is another nav level #}
+            {% if item.below %}
+              aria-controls="{{ item.title
+                |lower
+                |replace({
+                  ' ': '-'
+                }) }}-dropdown"
+              aria-expanded="false"
+            {% endif %}
+          >
             {# ! mobile nav with icon functionality #}
             <div class="md:hidden main-nav--link flex mt-xs md:mt-0">
               <a
@@ -94,6 +105,10 @@
             </a>
             {# ! injects second level nav #}
             {% if item.below %}
+              {% set dropdownID = item.title ~ '-dropdown' %}
+              {% set attributes =
+                attributes.setAttribute('id', dropdownID|lower)
+              %}
               {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
             {% endif %}
           </li>
@@ -106,7 +121,8 @@
     {% if menu_level == 1 %}
       {# ! second level nav #}
       <ul
-        class="main-nav--dropdown main-nav--sub-list hidden md:absolute overflow-hidden l-0 ml-0 mt-xs md:mt-0 py-0 px-lg md:py-lg list-none md:bg-white rounded-sm md:shadow-light-2 md:group-hover:block md:group-focus:block"
+        {{ attributes }}
+        class="main-nav--dropdown main-nav--sub-list hidden md:absolute overflow-hidden l-0 ml-0 mt-xs md:mt-0 py-0 px-lg md:py-lg list-none md:bg-white rounded-sm md:shadow-light-2"
       >
         {% for item in items %}
           {% set secondNavClasses = [
@@ -124,7 +140,18 @@
               : 'text-white md:text-black'
           ] %}
 
-          <li {{ item.attributes.addClass(secondNavClasses) }}>
+          <li
+            {{ item.attributes.addClass(secondNavClasses) }}
+            {# ! sets aria-controls if there is another nav level #}
+            {% if item.below %}
+              aria-controls="{{ item.title
+                |lower
+                |replace({
+                  ' ': '-'
+                }) }}-dropdown"
+              aria-expanded="false"
+            {% endif %}
+          >
             {{
               link(
                 item.title,
@@ -136,6 +163,10 @@
             }}
             {# ! injects third level nav #}
             {% if item.below %}
+              {% set subDropdownID = item.title ~ '-dropdown' %}
+              {% set attributes =
+                attributes.setAttribute('id', subDropdownID|lower)
+              %}
               {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
             {% endif %}
           </li>
@@ -148,6 +179,7 @@
     {% if menu_level == 2 %}
       {# ! third level nav #}
       <ul
+        {{ attributes }}
         class="main-nav--third-list md:left-[9999px] md:absolute md:w-1/2 top-0 left-1/2 px-lg md:py-lg"
       >
         {% for item in items %}

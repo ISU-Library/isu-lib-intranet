@@ -1,4 +1,3 @@
-const root = document.documentElement;
 // third-level nav
 const mainNavItem = document.querySelectorAll('.main-nav--item');
 // todo: Only works with mouseover, needs to work with screenreaders

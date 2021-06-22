@@ -117,7 +117,8 @@ header {
     @apply left-[-9999px];
   }
 
-  .second-nav--item.js-active .main-nav--third-list {
+  .second-nav--item.js-active .main-nav--third-list,
+  .second-nav--item:focus-within .main-nav--third-list {
     @apply left-1/2;
   }
 }
@@ -135,14 +136,19 @@ header {
 }
 
 @media (min-width: 768px) {
-  .main-nav--link:focus + .main-nav--dropdown,
-  .main-nav--link:hover + .main-nav--dropdown {
+  .main-nav--item:hover > .main-nav--dropdown,
+  .main-nav--item:focus-within > .main-nav--dropdown {
     @apply block;
   }
 
-  .second-nav--item:focus > .main-nav--third-list,
-  .second-nav--item:hover > .main-nav--third-list {
-    @apply md:block;
+  /* .main-nav--dropdown:hover,
+  .main-nav--dropdown:focus-within {
+    @apply block;
+  } */
+
+  .dropdown--item:focus-within > .main-nav--third-list,
+  .dropdown--item:hover > .main-nav--third-list {
+    @apply block;
   }
 
   .main-nav--link.is-active {

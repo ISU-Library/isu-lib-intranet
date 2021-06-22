@@ -1844,8 +1844,7 @@ var slideToggle = function slideToggle(element) {
   \*************************************************************/
 /***/ (function() {
 
-var root = document.documentElement; // third-level nav
-
+// third-level nav
 var mainNavItem = document.querySelectorAll('.main-nav--item'); // todo: Only works with mouseover, needs to work with screenreaders
 
 mainNavItem.forEach(function (navItem) {
