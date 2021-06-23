@@ -41,7 +41,11 @@
     %}
   {% endif %}
 
-  <a role="Link" href="{{ data.link }}" class="basic-card--link">
+  <a
+    aria-label="Read more about {{ data.title }}"
+    href="{{ data.link }}"
+    class="basic-card--link"
+  >
     <div
       class="bg-white basic-card relative h-full overflow-hidden border-l-4 {{
       data.color
@@ -131,7 +135,11 @@
     %}
   {% endif %}
 
-  <a role="Link" href="{{ data.link }}" class="basic-card--link">
+  <a
+    aria-label="Read more about {{ data.title }}"
+    href="{{ data.link }}"
+    class="basic-card--link"
+  >
     <div
       class="basic-card basic-card--image flex flex-col relative overflow-hidden h-full border-l-4 {{
       data.color
@@ -231,9 +239,9 @@
     %}
   {% endif %}
 
-  {# <a role="Link" href="/staff-profile?netid={{data.link}}" class="block"> #}
+  {# <a aria-label="Read more about {{data.title}}" href="/staff-profile?netid={{data.link}}" class="block"> #}
   <a
-    role="Link"
+    aria-label="Read more about {{ data.title }}"
     href="/staff-profile?netid={{ data.link }}"
     title="{{ data.firstname }} {{ data.surname }} staff profile"
     class="basic-card basic-card--staff flex relative flex-col relative overflow-hidden border-l-4 {{
