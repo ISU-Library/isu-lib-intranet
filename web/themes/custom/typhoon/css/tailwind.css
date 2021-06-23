@@ -2290,6 +2290,10 @@ p{
 	--tw-bg-opacity: 1;
 	background-color: rgba(238, 166, 11, var(--tw-bg-opacity));
 }
+.focus\:text-red-300:focus{
+	--tw-text-opacity: 1;
+	color: rgba(239, 101, 106, var(--tw-text-opacity));
+}
 .focus\:text-white:focus{
 	--tw-text-opacity: 1;
 	color: rgba(255, 255, 255, var(--tw-text-opacity));
@@ -2297,10 +2301,6 @@ p{
 .focus\:text-warm-grey-200:focus{
 	--tw-text-opacity: 1;
 	color: rgba(211, 208, 196, var(--tw-text-opacity));
-}
-.focus\:text-red-300:focus{
-	--tw-text-opacity: 1;
-	color: rgba(239, 101, 106, var(--tw-text-opacity));
 }
 .focus\:shadow-dark-3:focus{
 	--tw-shadow: 0 3px 6px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.25);
@@ -2704,10 +2704,6 @@ p{
 		--tw-text-opacity: 1;
 		color: rgba(198, 16, 46, var(--tw-text-opacity));
 	}
-	.md\:focus\:text-grey-500:focus{
-		--tw-text-opacity: 1;
-		color: rgba(124, 124, 124, var(--tw-text-opacity));
-	}
 }
 @media (min-width: 1024px){
 	.lg\:col-span-2{
@@ -2825,12 +2821,6 @@ p{
 	}
 	.xl\:text-lg{
 		font-size: 1.125rem;
-	}
-	.xl\:line-clamp-7{
-		overflow: hidden;
-		display: -webkit-box;
-		-webkit-box-orient: vertical;
-		-webkit-line-clamp: 7;
 	}
 }
 
