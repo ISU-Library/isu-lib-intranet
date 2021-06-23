@@ -2286,6 +2286,10 @@ p{
 	--tw-bg-opacity: 1;
 	background-color: rgba(176, 17, 43, var(--tw-bg-opacity));
 }
+.focus\:bg-yellow-600:focus{
+	--tw-bg-opacity: 1;
+	background-color: rgba(238, 166, 11, var(--tw-bg-opacity));
+}
 .focus\:text-white:focus{
 	--tw-text-opacity: 1;
 	color: rgba(255, 255, 255, var(--tw-text-opacity));
@@ -2317,6 +2321,11 @@ p{
 	--tw-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.15);;
 	-webkit-box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 	        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.group:focus .group-focus\:flex-auto{
+	-webkit-box-flex: 1;
+	    -ms-flex: 1 1 auto;
+	        flex: 1 1 auto;
 }
 @media (min-width: 640px){
 	.sm\:col-span-1{

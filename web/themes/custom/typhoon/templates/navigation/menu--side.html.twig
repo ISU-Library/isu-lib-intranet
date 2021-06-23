@@ -79,13 +79,16 @@
               {# If the item has children, and is top level. #}
               {% if item.below and menu_level == 0 %}
                 <div class="flex">
-                  <div title="{{item.title}} section has sub-pages" class="flex icon-wrap flex-shrink-0 justify-center border-t-2 border-warm-grey-50 items-center bg-yellow-500 w-3xl transition-colors duration-300 hover:bg-yellow-600">
+                  <button 
+                    aria-label="{{ item.in_active_trail ? 'close ' ~ item.title ~ ' sub-menu' : 'open ' ~ item.title ~ ' sub-menu'}}" title="{{item.title}} section has sub-pages" 
+                    class="flex icon-wrap flex-shrink-0 justify-center border-t-2 border-warm-grey-50 items-center bg-yellow-500 w-3xl transition-colors duration-300 hover:bg-yellow-600 focus:bg-yellow-600"
+                  >
                     {% if item.in_active_trail %}
                       <i class="fas fa-minus text-red-500 text-lg"></i>
                     {% else %}
                       <i class="fas fa-plus text-red-500 text-lg"></i>
                     {% endif %}
-                  </div>
+                  </button>
                   {{ link(item.title, item.url, {'class': top_link_class}) }}
                 </div>
                 {{ menus.menu_links(item.below, attributes, menu_level + 1) }}

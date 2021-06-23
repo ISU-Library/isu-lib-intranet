@@ -21,7 +21,7 @@ mainNavItem.forEach(navItem => {
   });
 
   secondNavEls.forEach(secondNavEl => {
-    secondNavEl.addEventListener('mouseover', function () {
+    secondNavEl.addEventListener('mouseover', () => {
       const thirdList = secondNavEl.querySelector('ul');
 
       secondNavEls.forEach(allSecondNavEls => {
@@ -44,7 +44,7 @@ mainNavItem.forEach(navItem => {
     });
 
     secondNavEls.forEach(secondNavEl => {
-      secondNavEl.addEventListener('focusin', function () {
+      secondNavEl.addEventListener('focusin', () => {
         secondNavEl.setAttribute('aria-expanded', 'true');
       });
     });
