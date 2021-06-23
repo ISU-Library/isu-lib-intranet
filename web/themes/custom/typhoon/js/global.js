@@ -1850,6 +1850,18 @@ var mainNavItem = document.querySelectorAll('.main-nav--item'); // todo: Only wo
 mainNavItem.forEach(function (navItem) {
   var mainNavDropdown = navItem.querySelector('.main-nav--dropdown');
   var secondNavEls = navItem.querySelectorAll('.second-nav--item');
+  navItem.addEventListener('mouseover', function () {
+    navItem.setAttribute('aria-expanded', 'true');
+  });
+  navItem.addEventListener('mouseout', function () {
+    navItem.setAttribute('aria-expanded', 'false');
+  });
+  navItem.addEventListener('focusin', function () {
+    navItem.setAttribute('aria-expanded', 'true');
+  });
+  navItem.addEventListener('focusout', function () {
+    navItem.setAttribute('aria-expanded', 'false');
+  });
   secondNavEls.forEach(function (secondNavEl) {
     secondNavEl.addEventListener('mouseover', function () {
       var thirdList = secondNavEl.querySelector('ul');
@@ -1863,6 +1875,18 @@ mainNavItem.forEach(function (navItem) {
         }
       });
       secondNavEl.classList.add('js-active');
+      secondNavEl.setAttribute('aria-expanded', 'true');
+    });
+    secondNavEl.addEventListener('mouseout', function () {
+      secondNavEl.setAttribute('aria-expanded', 'false');
+    });
+    secondNavEls.forEach(function (secondNavEl) {
+      secondNavEl.addEventListener('focusin', function () {
+        secondNavEl.setAttribute('aria-expanded', 'true');
+      });
+    });
+    secondNavEl.addEventListener('focusout', function () {
+      secondNavEl.setAttribute('aria-expanded', 'false');
     });
   });
 });

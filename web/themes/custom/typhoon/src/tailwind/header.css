@@ -137,7 +137,8 @@ header {
 
 @media (min-width: 768px) {
   .main-nav--item:hover > .main-nav--dropdown,
-  .main-nav--item:focus-within > .main-nav--dropdown {
+  .main-nav--item:focus-within > .main-nav--dropdown,
+  .main-nav--item:focus > .main-nav--dropdown {
     @apply block;
   }
 
@@ -146,6 +147,7 @@ header {
     @apply block;
   } */
 
+  .dropdown--item:focus > .main-nav--third-list,
   .dropdown--item:focus-within > .main-nav--third-list,
   .dropdown--item:hover > .main-nav--third-list {
     @apply block;
