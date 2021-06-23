@@ -1857,7 +1857,7 @@ header {
 	        transition-duration: 300ms;
 }
 @media (min-width: 768px){}
-.main-nav--dropdown > .dropdown--item:hover > a::after, .main-nav--dropdown > .dropdown--item > .is-active::after{
+.main-nav--dropdown > .dropdown--item:hover > a::after, .main-nav--dropdown > .dropdown--item:focus-within > a::after, .main-nav--dropdown > .dropdown--item > .is-active::after{
 	left: 0;
 }
 @media (min-width: 768px) {
@@ -2294,6 +2294,14 @@ p{
 	--tw-text-opacity: 1;
 	color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
+.focus\:text-warm-grey-200:focus{
+	--tw-text-opacity: 1;
+	color: rgba(211, 208, 196, var(--tw-text-opacity));
+}
+.focus\:text-red-300:focus{
+	--tw-text-opacity: 1;
+	color: rgba(239, 101, 106, var(--tw-text-opacity));
+}
 .focus\:shadow-dark-3:focus{
 	--tw-shadow: 0 3px 6px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.25);
 	-webkit-box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -2695,6 +2703,10 @@ p{
 	.md\:focus\:text-red-500:focus{
 		--tw-text-opacity: 1;
 		color: rgba(198, 16, 46, var(--tw-text-opacity));
+	}
+	.md\:focus\:text-grey-500:focus{
+		--tw-text-opacity: 1;
+		color: rgba(124, 124, 124, var(--tw-text-opacity));
 	}
 }
 @media (min-width: 1024px){

@@ -77,15 +77,15 @@
                 {{ item.title }}
               </a>
               {% if item.below %}
-                <span
-                  class="icon-wrap flex icon-wrap md:hidden flex-shrink-0 justify-center items-center bg-yellow-500 transition-color duration-300 hover:bg-yellow-600 w-3xl"
+                <button
+                  class="icon-wrap flex icon-wrap md:hidden flex-shrink-0 justify-center items-center bg-yellow-500 transition-color duration-300 hover:bg-yellow-600 focus:bg-yellow-600 w-3xl"
                 >
                   <i class="fas fa-plus text-red-500 text-lg"></i>
-                </span>
+                </button>
               {% else %}
-                <a class="md:hidden" href="{{ item.url }}">
+                <a class="md:hidden bg-yellow-500 transition-color duration-300 hover:bg-yellow-600 focus:bg-yellow-600" href="{{ item.url }}">
                   <div
-                    class="icon-wrap flex icon-wrap h-full md:hidden flex-shrink-0 justify-center items-center bg-yellow-500 transition-color duration-300 hover:bg-yellow-600 w-3xl"
+                    class="icon-wrap flex icon-wrap h-full md:hidden flex-shrink-0 justify-center items-center w-3xl"
                   >
                     <i class="fas fa-chevron-right text-red-500 text-lg"></i>
                   </div>
@@ -192,7 +192,7 @@
           ] %}
 
           {% set thirdLevelLinks = [
-            'text-white font-normal hover:text-warm-grey-200 md:hover:text-red-500',
+            'text-white font-normal hover:text-warm-grey-200 md:hover:text-red-500 focus:text-warm-grey-200 md:focus:text-red-500',
             item.in_active_trail
               ? 'is-active text-white md:text-red-500'
               : 'text-white md:text-black'

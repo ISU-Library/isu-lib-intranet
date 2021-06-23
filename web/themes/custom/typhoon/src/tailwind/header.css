@@ -107,6 +107,7 @@ header {
 }
 
 .main-nav--dropdown > .dropdown--item:hover > a::after,
+.main-nav--dropdown > .dropdown--item:focus-within > a::after,
 .main-nav--dropdown > .dropdown--item > .is-active::after {
   @apply left-0;
 }
