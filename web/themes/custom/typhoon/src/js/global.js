@@ -4,7 +4,7 @@ import * as thirdLevelNav from './thirdLevelNavSelect.js';
 import * as searchButtonShow from './searchButton.js';
 import * as sideNav from './sideNav.js';
 
-import * as accordion from './accordion.js';
+import { accordion } from './accordion.js';
 import scrollSpy from './scrollSpy.js';
 import * as imgModal from './imgModal.js';
 

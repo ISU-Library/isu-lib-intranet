@@ -51,7 +51,7 @@
   {% block content %}
     <div {{ attributes.addClass(classes) }}>
       {{
-        gcBlock.accordian({
+        gcBlock.accordion({
           id: paragraph.id(),
           title: content.field_accordion_headline|field_value,
           text: content.field_accordion_body|field_value

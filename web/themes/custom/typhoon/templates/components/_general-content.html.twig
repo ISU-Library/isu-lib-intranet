@@ -61,7 +61,7 @@
   </div>
 {% endmacro %}
 
-{% macro accordian(data) %}
+{% macro accordion(data) %}
   {% set defaultData = {
     template: true,
     id: '',
@@ -87,7 +87,11 @@
         ></span>
       </button>
 
-      <div class="show--content" aria-expanded="false" data-box="{{ data.id }}">
+      <div
+        class="show--content hidden"
+        aria-expanded="false"
+        data-box="{{ data.id }}"
+      >
         {% if data.template %}
           <div class="border-t-2 border-warm-grey-100">{{ data.text }}</div>
         {% else %}
