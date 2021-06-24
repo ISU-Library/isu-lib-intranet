@@ -72,27 +72,26 @@
   {% set data = data ? defaultData|merge(data) : defaultData %}
 
   <div class="gen-con--block max-w-[50rem] mb-lg">
-    <div class="bg-white show--item">
+    <div
+      class="accordion show--item flex flex-col w-full py-md px-2xl relative overflow-hidden cursor-pointer bg-white shadow-light-2 transform transition-shadow duration-300"
+    >
       <button
-        class="show--title"
+        class="show--title flex w-full justify-between bg-white"
         data-box-toggle="{{ data.id }}"
         role="tab"
         aria-selected="false"
       >
-        <h4>{{ data.title }}</h4>
-        <span class="icon"></span>
+        <h4 class="inline-block m-0">{{ data.title }}</h4>
+        <span
+          class="icon inline-block relative h-[1rem] w-[1rem] transform transition duration-500"
+        ></span>
       </button>
 
-      <div
-        class="show--content"
-        role="tabpanel"
-        aria-expanded="false"
-        data-box="{{ data.id }}"
-      >
+      <div class="show--content" aria-expanded="false" data-box="{{ data.id }}">
         {% if data.template %}
-          {{ data.text }}
+          <div class="border-t-2 border-warm-grey-100">{{ data.text }}</div>
         {% else %}
-          <p class="mt-0">{{ data.text }}</p>
+          <p class="mt-0 order-t-2">{{ data.text }}</p>
         {% endif %}
       </div>
     </div>

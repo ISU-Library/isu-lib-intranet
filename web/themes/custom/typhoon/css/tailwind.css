@@ -727,6 +727,9 @@ video {
 .h-\[130px\]{
 	height: 130px;
 }
+.h-\[1rem\]{
+	height: 1rem;
+}
 .h-xl{
 	height: 2rem;
 }
@@ -761,6 +764,9 @@ video {
 }
 .w-\[130px\]{
 	width: 130px;
+}
+.w-\[1rem\]{
+	width: 1rem;
 }
 .w-4\/5{
 	width: 80%;
@@ -915,6 +921,11 @@ video {
 	    -ms-flex-align: end;
 	        align-items: flex-end;
 }
+.justify-between{
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+}
 .justify-around{
 	-ms-flex-pack: distribute;
 	    justify-content: space-around;
@@ -928,11 +939,6 @@ video {
 	-webkit-box-pack: end;
 	    -ms-flex-pack: end;
 	        justify-content: flex-end;
-}
-.justify-between{
-	-webkit-box-pack: justify;
-	    -ms-flex-pack: justify;
-	        justify-content: space-between;
 }
 .justify-items-center{
 	justify-items: center;
@@ -989,14 +995,14 @@ video {
 .border-l-4{
 	border-left-width: 4px;
 }
+.border-t-2{
+	border-top-width: 2px;
+}
 .border-b-2{
 	border-bottom-width: 2px;
 }
 .border-t-4{
 	border-top-width: 4px;
-}
-.border-t-2{
-	border-top-width: 2px;
 }
 .border-r-2{
 	border-right-width: 2px;
@@ -1012,6 +1018,10 @@ video {
 .border-red-400{
 	--tw-border-opacity: 1;
 	border-color: rgba(225, 59, 68, var(--tw-border-opacity));
+}
+.border-warm-grey-100{
+	--tw-border-opacity: 1;
+	border-color: rgba(232, 231, 226, var(--tw-border-opacity));
 }
 .border-red-500{
 	--tw-border-opacity: 1;
@@ -1127,6 +1137,14 @@ video {
 .p-sm{
 	padding: 0.75rem;
 }
+.py-md{
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+.px-2xl{
+	padding-left: 2.5rem;
+	padding-right: 2.5rem;
+}
 .py-xs{
 	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
@@ -1142,14 +1160,6 @@ video {
 .px-md{
 	padding-left: 1rem;
 	padding-right: 1rem;
-}
-.py-md{
-	padding-top: 1rem;
-	padding-bottom: 1rem;
-}
-.px-2xl{
-	padding-left: 2.5rem;
-	padding-right: 2.5rem;
 }
 .py-5xl{
 	padding-top: 6rem;
@@ -1442,21 +1452,21 @@ video {
 	-webkit-transition-duration: 150ms;
 	        transition-duration: 150ms;
 }
-.transition-transform{
-	-webkit-transition-property: -webkit-transform;
-	transition-property: -webkit-transform;
-	transition-property: transform;
-	transition-property: transform, -webkit-transform;
-	-webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-	        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-	-webkit-transition-duration: 150ms;
-	        transition-duration: 150ms;
-}
 .transition{
 	-webkit-transition-property: background-color, border-color, color, fill, stroke, opacity, -webkit-box-shadow, -webkit-transform;
 	transition-property: background-color, border-color, color, fill, stroke, opacity, -webkit-box-shadow, -webkit-transform;
 	transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
 	transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, -webkit-box-shadow, -webkit-transform;
+	-webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	-webkit-transition-duration: 150ms;
+	        transition-duration: 150ms;
+}
+.transition-transform{
+	-webkit-transition-property: -webkit-transform;
+	transition-property: -webkit-transform;
+	transition-property: transform;
+	transition-property: transform, -webkit-transform;
 	-webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	-webkit-transition-duration: 150ms;
@@ -2070,6 +2080,29 @@ h6{
   font-size: inherit;
   color: inherit;
   letter-spacing: inherit;
+}
+.accordion::before,
+.accordion::after {
+  content: '';
+  width: 88px;
+  height: 50px;
+  position: absolute;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transition: background-color 0.3s ease-in;
+  transition: background-color 0.3s ease-in;
+}
+.accordion::before {
+  top: calc(375px * -0.07);
+  right: calc(375px * -0.08);
+  --tw-bg-opacity: 1;
+  background-color: rgba(241, 189, 70, var(--tw-bg-opacity));
+}
+.accordion::after {
+  top: calc(375px * -0.1);
+  right: calc(375px * -0.11);
+  --tw-bg-opacity: 1;
+  background-color: rgba(238, 166, 11, var(--tw-bg-opacity));
 }
 .footer-nav--wrap {
   max-width: 93.75rem;

@@ -1371,6 +1371,7 @@ var accordionAnimation = showItems.forEach(function (item) {
   var contentEl = item.querySelector('.show--content');
   var contentNum = contentEl.dataset.box;
   var contentHeight = animejs_lib_anime_es_js__WEBPACK_IMPORTED_MODULE_0__.default.get(contentEl, 'height', 'px');
+  console.log(contentHeight);
   animejs_lib_anime_es_js__WEBPACK_IMPORTED_MODULE_0__.default.set(contentEl, {
     height: 0
   });

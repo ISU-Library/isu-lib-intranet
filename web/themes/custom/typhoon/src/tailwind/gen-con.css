@@ -60,3 +60,25 @@
   color: inherit;
   letter-spacing: inherit;
 }
+
+.accordion::before,
+.accordion::after {
+  content: '';
+  width: 88px;
+  height: 50px;
+  position: absolute;
+  transform: rotate(45deg);
+  transition: background-color 0.3s ease-in;
+}
+
+.accordion::before {
+  top: calc(375px * -0.07);
+  right: calc(375px * -0.08);
+  @apply bg-yellow-500;
+}
+
+.accordion::after {
+  top: calc(375px * -0.1);
+  right: calc(375px * -0.11);
+  @apply bg-yellow-600;
+}
