@@ -129,7 +129,11 @@
           {% for abstract_link_value in paragraph_field %}
             {% if abstract_link_value.title and abstract_link_value[0].url %}
               <li class="abstract-item list-none relative mb-lg">
-                <a class="block pl-2xl" href="{{ abstract_link_value[0].url }}">
+                <a
+                  class="block pl-2xl"
+                  href="{{ abstract_link_value[0].url }}"
+                  rel="noreferrer noopener"
+                >
                   <h4 class="text-red-500 m-0 mb-md">
                     {{ abstract_link_value.title }}
                   </h4>

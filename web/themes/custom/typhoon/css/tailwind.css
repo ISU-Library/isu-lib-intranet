@@ -1816,9 +1816,6 @@ header {
     max-width: 15.625rem;
   }
 }
-.main-nav nav {
-  /* height: var(--nav-height); */
-}
 @media (min-width: 768px) {
   .main-nav nav {
     height: auto;
@@ -2515,11 +2512,11 @@ p{
 	}
 }
 @media (min-width: 768px){
-	.md\:absolute{
-		position: absolute;
-	}
 	.md\:relative{
 		position: relative;
+	}
+	.md\:absolute{
+		position: absolute;
 	}
 	.md\:top-1\/2{
 		top: 50%;
@@ -2597,9 +2594,6 @@ p{
 	}
 	.md\:mt-4xl{
 		margin-top: 4rem;
-	}
-	.md\:-mt-4xl{
-		margin-top: -4rem;
 	}
 	.md\:mb-2xl{
 		margin-bottom: 2.5rem;

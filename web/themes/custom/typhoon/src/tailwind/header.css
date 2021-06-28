@@ -102,10 +102,6 @@ header {
   }
 }
 
-.main-nav nav {
-  /* height: var(--nav-height); */
-}
-
 @media (min-width: 768px) {
   .main-nav nav {
     height: auto;

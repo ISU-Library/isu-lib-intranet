@@ -18,7 +18,7 @@
  *   - in_active_trail: TRUE if the link is in the active trail.
 
   * TODO: When a final Menu is decided. Need to be made a11y. Takes a combo of 'role' attributes and JS
-  ! nav was refactored on 3/14/21 1) for clarity and readibility over brevity 2) 3rd level lists now set the min-height for the 2nd level ul to prevent list from being clipped.
+  ! nav was refactored on 3/14/21 1) for clarity and readability over brevity 2) 3rd level lists now set the min-height for the 2nd level ul to prevent list from being clipped.
  */
 #}
 {% import _self as menus %}
@@ -95,7 +95,7 @@
             {# ! Desktop nav without icon functionality #}
             <a
               href="{{ item.url }}"
-              class="main-nav--link hidden md:block inline-block py-md px-2xl w-full md:w-auto bg-red-500 md:bg-white text-white md:text-red-500 hover:bg-red-600 md:hover:bg-red-500 hover:text-white focus:bg-red-600 md:focus:bg-red-500 focus:text-white {{
+              class="main-nav--link hidden md:block py-md px-2xl w-full md:w-auto bg-red-500 md:bg-white text-white md:text-red-500 hover:bg-red-600 md:hover:bg-red-500 hover:text-white focus:bg-red-600 md:focus:bg-red-500 focus:text-white {{
               item.in_active_trail
                 ? 'is-active'
                 : ''
