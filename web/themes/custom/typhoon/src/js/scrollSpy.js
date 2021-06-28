@@ -10,7 +10,7 @@ const scrollTargets = document.querySelectorAll('.js-scrollTarget');
 const scrollSpyNav = document.querySelector('.js-scrollSpyNav');
 
 // * cleans user input and set it as section ID
-function sanatizeId() {
+function sanitizeId() {
   scrollTargets.forEach(target => {
     const id = target.id;
     const idCleaned = id
@@ -22,7 +22,7 @@ function sanatizeId() {
 }
 
 // * cleans user input and set it as nav HREF anchor
-function sanatizeHref() {
+function sanitizeHref() {
   scrollTriggers.forEach(trigger => {
     const id = trigger.getAttribute('href');
     const hrefCleaned = id
@@ -77,10 +77,10 @@ export default function scrollSpy(target, breakpoint) {
   // * For BigPipe Data, page needs to be loaded.
   var checkReadyState = setInterval(() => {
     // * cleans user input and set it as section ID
-    sanatizeId();
+    sanitizeId();
 
     // * cleans user input and set it as nav HREF anchor
-    sanatizeHref();
+    sanitizeHref();
 
     // * on mobile, when clicking the scrollSpyNav, show all options
     if (targetNav) {

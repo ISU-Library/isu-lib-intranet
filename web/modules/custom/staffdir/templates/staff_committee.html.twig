@@ -15,35 +15,25 @@
  */
 #}
 
-<<<<<<< HEAD
-
-    {% for committeeperson in committeepersons %}
-	<figure style="display:inline-block;width:200px;padding-bottom:2em;">
-	 {% if committeeperson.uri == "" %}
-	  <img src="https://app.lib.iastate.edu/images/grantwoodmural.jpg" alt="Grant Wood mural" width="144" height="180" />
-	 {% endif %}
-	 {% if committeeperson.uri != "" %}
-	  <img src="{{ committeeperson.uri }}" alt="{{ committeeperson.firstname }} {{ committeeperson.surname }}" width="144" height="180" />
-	 {% endif %}
-	  <figcaption><a href="/staff-profile?netid={{ committeeperson.netid }}">{{ committeeperson.firstname }} {{ committeeperson.surname }} - {{committeeperson.role }}</a> <br/><span style="font-size:80%;">{{ committeeperson.jobdescr }}</span></figcaption>
-	</figure>
-    {% endfor %}
-
-
-=======
 {% for committeeperson in committeepersons %}
   <figure style="display:inline-block;width:200px;padding-bottom:2em;">
     {% if committeeperson.uri == '' %}
-      <img src="https://app.lib.iastate.edu/images/grantwoodmural.jpg"
+      <img
+        src="https://app.lib.iastate.edu/images/grantwoodmural.jpg"
         alt="Grant Wood mural"
         width="144"
-        height="180" />
+        height="180"
+        loading="lazy"
+      />
     {% endif %}
     {% if committeeperson.uri != '' %}
-      <img src="{{ committeeperson.uri }}"
+      <img
+        src="{{ committeeperson.uri }}"
         alt="{{ committeeperson.firstname }} {{ committeeperson.surname }}"
         width="144"
-        height="180" />
+        height="180"
+        loading="lazy"
+      />
     {% endif %}
     <figcaption>
       <a href="/staff-profile?netid={{ committeeperson.netid }}">
@@ -55,4 +45,3 @@
     </figcaption>
   </figure>
 {% endfor %}
->>>>>>> df3897c1b4e844a6ec0a73774d4a8e143191c903

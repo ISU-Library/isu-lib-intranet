@@ -146,7 +146,7 @@ var mobileMenuButton = document.querySelector('.js-mobile-nav-btn');
 var mobileMenu = document.querySelector('.js-mobile-menu');
 var mainNavEl = document.querySelectorAll('.js-main-nav-select');
 
-function resetNavOnDektop(e) {
+function resetNavOnDesktop(e) {
   var mediaQuery = window.matchMedia('(min-width: 768px)'); // !change this to use custom property
 
   if (mediaQuery.matches) {
@@ -205,7 +205,7 @@ mainNavEl.forEach(function (subNav) {
     }
   });
 });
-window.addEventListener('resize', resetNavOnDektop);
+window.addEventListener('resize', resetNavOnDesktop);
 
 /***/ }),
 
@@ -230,7 +230,7 @@ var scrollTriggers = document.querySelectorAll('.js-scrollTrigger');
 var scrollTargets = document.querySelectorAll('.js-scrollTarget');
 var scrollSpyNav = document.querySelector('.js-scrollSpyNav'); // * cleans user input and set it as section ID
 
-function sanatizeId() {
+function sanitizeId() {
   scrollTargets.forEach(function (target) {
     var id = target.id;
     var idCleaned = id.replace(/\W+/g, '-').replace(/^-|-$/g, '').toLowerCase();
@@ -239,7 +239,7 @@ function sanatizeId() {
 } // * cleans user input and set it as nav HREF anchor
 
 
-function sanatizeHref() {
+function sanitizeHref() {
   scrollTriggers.forEach(function (trigger) {
     var id = trigger.getAttribute('href');
     var hrefCleaned = id.replace(/\W+/g, '-').replace(/^-|-$/g, '').toLowerCase();
@@ -286,9 +286,9 @@ function scrollSpy(target, breakpoint) {
 
   var checkReadyState = setInterval(function () {
     // * cleans user input and set it as section ID
-    sanatizeId(); // * cleans user input and set it as nav HREF anchor
+    sanitizeId(); // * cleans user input and set it as nav HREF anchor
 
-    sanatizeHref(); // * on mobile, when clicking the scrollSpyNav, show all options
+    sanitizeHref(); // * on mobile, when clicking the scrollSpyNav, show all options
 
     if (targetNav) {
       scrollSpyNav.addEventListener('click', function (e) {

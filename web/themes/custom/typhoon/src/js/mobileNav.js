@@ -4,7 +4,7 @@ const mobileMenuButton = document.querySelector('.js-mobile-nav-btn');
 const mobileMenu = document.querySelector('.js-mobile-menu');
 const mainNavEl = document.querySelectorAll('.js-main-nav-select');
 
-function resetNavOnDektop(e) {
+function resetNavOnDesktop(e) {
   const mediaQuery = window.matchMedia('(min-width: 768px)');
   // !change this to use custom property
   if (mediaQuery.matches) {
@@ -98,4 +98,4 @@ mainNavEl.forEach(subNav => {
   });
 });
 
-window.addEventListener('resize', resetNavOnDektop);
+window.addEventListener('resize', resetNavOnDesktop);
