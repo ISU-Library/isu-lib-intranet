@@ -1,1 +1,6 @@
 lib_navbar: 1
+features:
+  favicon: true
+favicon:
+  use_default: false
+  path: 'themes/typhoon/favicon-32x32.png'
