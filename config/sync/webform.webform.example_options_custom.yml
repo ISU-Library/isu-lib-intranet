@@ -17,7 +17,19 @@ id: example_options_custom
 title: 'Example: Custom Options'
 description: 'Example of a custom options element.'
 category: Example
-elements: "states:\n  '#type': 'webform_options_custom:us_states'\n  '#title': 'U.S. States'\n  '#required': true\nbutton:\n  '#type': 'webform_options_custom:buttons'\n  '#title': 'Buttons'\n  '#required': true\n  '#options':\n    one: One -- This is the number 1.\n    two: Two -- This is the number 2.\n    three:  Three -- This is the number 3.\n"
+elements: |
+  states:
+    '#type': 'webform_options_custom:us_states'
+    '#title': 'U.S. States'
+    '#required': true
+  button:
+    '#type': 'webform_options_custom:buttons'
+    '#title': 'Buttons'
+    '#required': true
+    '#options':
+      one: One -- This is the number 1.
+      two: Two -- This is the number 2.
+      three:  Three -- This is the number 3.
 css: ''
 javascript: ''
 settings:

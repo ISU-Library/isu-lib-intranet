@@ -2140,6 +2140,19 @@ h6{
   --tw-bg-opacity: 1;
   background-color: rgba(238, 166, 11, var(--tw-bg-opacity));
 }
+/* * underscores come from drupal admin */
+.it-form__service-category legend{
+	margin-bottom: 1rem;
+}
+.it-form__service-category .input--checkbox{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	padding-bottom: 1rem;
+}
+.it-form__service-category .input--checkbox > label{
+	padding-left: 0.75rem;
+}
 .footer-nav--wrap {
   max-width: 93.75rem;
 }

@@ -17,7 +17,51 @@ id: contact
 title: Contact
 description: 'Basic email contact webform.'
 category: ''
-elements: "name:\n  '#title': 'Your Name'\n  '#type': textfield\n  '#required': true\n  '#default_value': '[current-user:display-name]'\nemail:\n  '#title': 'Your Email'\n  '#type': email\n  '#required': true\n  '#default_value': '[current-user:mail]'\nsubject:\n  '#title': Subject\n  '#type': textfield\n  '#required': true\n  '#test': 'Testing contact webform from [site:name]'\nmessage:\n  '#title': Message\n  '#type': textarea\n  '#required': true\n  '#test': 'Please ignore this email.'\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit__label': 'Send message'\n"
+elements: |-
+  '#attributes':
+    class:
+      - mt-lg
+  name:
+    '#type': textfield
+    '#title': 'Your Name'
+    '#required': true
+    '#default_value': '[current-user:display-name]'
+  email:
+    '#title': 'Your Email'
+    '#type': email
+    '#required': true
+    '#default_value': '[current-user:mail]'
+  service_request_category:
+    '#type': checkboxes
+    '#title': 'Service Request Category'
+    '#options':
+      'Request new equipment': 'Request new equipment'
+      'Accounts and access (new employee, sponsored/role account, security groups) ': 'Accounts and access (new employee, sponsored/role account, security groups) '
+      'Audio/Video (event help, video equipment, displays, solstice, audio conferencing, video teleconference)': 'Audio/Video (event help, video equipment, displays, solstice, audio conferencing, video teleconference)'
+      'Data and voice (network setup, telephone) ': 'Data and voice (network setup, telephone) '
+      'Library systems and applications (improvement or features to library-managed systems) ': 'Library systems and applications (improvement or features to library-managed systems) '
+      'Messaging and collaboration (email, chat, mailing lists, calendar, file sharing) ': 'Messaging and collaboration (email, chat, mailing lists, calendar, file sharing) '
+      'Print (printing, copy, printer maintenance, supplies)': 'Print (printing, copy, printer maintenance, supplies)'
+      'Software (software distribution, licensing, implementation, licensed software) ': 'Software (software distribution, licensing, implementation, licensed software) '
+      ' Support and training (FAQs, training, knowledge sharing) ': ' Support and training (FAQs, training, knowledge sharing) '
+      'Website (add/remove/update content, feature request, bug) ': 'Website (add/remove/update content, feature request, bug) '
+      'Question/Inquiry ': 'Question/Inquiry '
+    '#required': true
+    '#wrapper_attributes':
+      class:
+        - it-form__service-category
+  message:
+    '#type': textarea
+    '#title': Description
+    '#required': true
+    '#test': 'Please ignore this email.'
+  actions:
+    '#type': webform_actions
+    '#title': 'Submit button(s)'
+    '#submit__label': 'Send message'
+    '#submit__attributes':
+      class:
+        - mt-lg
 css: ''
 javascript: ''
 settings:
@@ -27,11 +71,11 @@ settings:
   ajax_effect: ''
   ajax_speed: null
   page: true
-  page_submit_path: /about/contact
-  page_confirm_path: /about/contact/success
+  page_submit_path: /resources/it-service-request
+  page_confirm_path: /resources/it-service-request/success
   page_theme_name: typhoon
   form_title: source_entity_webform
-  form_submit_once: false
+  form_submit_once: true
   form_exception_message: ''
   form_open_message: ''
   form_close_message: ''
@@ -49,7 +93,7 @@ settings:
   form_novalidate: false
   form_disable_inline_errors: false
   form_required: false
-  form_unsaved: false
+  form_unsaved: true
   form_disable_back: false
   form_submit_back: false
   form_autofocus: false
@@ -99,7 +143,7 @@ settings:
   wizard_track: ''
   wizard_prev_button_label: ''
   wizard_next_button_label: ''
-  wizard_toggle: false
+  wizard_toggle: true
   wizard_toggle_show_label: ''
   wizard_toggle_hide_label: ''
   preview: 0

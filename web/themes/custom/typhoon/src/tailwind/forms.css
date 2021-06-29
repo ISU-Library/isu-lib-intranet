@@ -1,0 +1,12 @@
+/* * underscores come from drupal admin */
+.it-form__service-category legend {
+  @apply mb-md;
+}
+
+.it-form__service-category .input--checkbox {
+  @apply flex pb-md;
+}
+
+.it-form__service-category .input--checkbox > label {
+  @apply pl-sm;
+}
