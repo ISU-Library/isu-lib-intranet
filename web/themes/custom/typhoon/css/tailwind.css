@@ -659,6 +659,9 @@ video {
 .ml-xs{
 	margin-left: 0.5rem;
 }
+.mt-2xl{
+	margin-top: 2.5rem;
+}
 .mb-4xl{
 	margin-bottom: 4rem;
 }
@@ -667,9 +670,6 @@ video {
 }
 .mt-2xs{
 	margin-top: 0.25rem;
-}
-.mt-2xl{
-	margin-top: 2.5rem;
 }
 .mt-xl{
 	margin-top: 2rem;
@@ -2174,8 +2174,8 @@ a{
 	--tw-text-opacity: 1;
 	color: rgba(198, 16, 46, var(--tw-text-opacity));
 }
-p {
-  /* @apply mt-md; */
+p{
+	margin-top: 1rem;
 }
 .grid-staff-directory {
   grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
