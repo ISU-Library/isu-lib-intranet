@@ -6,7 +6,7 @@
   @apply mt-md;
 }
 
-.gen-con--block > *:first-of-type {
+.gen-con--block > *:first-child {
   @apply mt-0;
 }
 
@@ -33,6 +33,10 @@
 
 .gen-con--block p + * {
   @apply mt-md;
+}
+
+.gen-con--block.img-block p {
+  @apply mt-0;
 }
 
 .abstract-item > ul {

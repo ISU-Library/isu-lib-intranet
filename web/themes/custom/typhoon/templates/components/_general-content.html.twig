@@ -352,13 +352,15 @@
     {% set quoteClasses = 'w-full w-11/12 lg:w-5/6 text-black px-sm lg:px-0' %}
     {% set cite = 'text-red-500' %}
   {% elseif data.quoteType == 'block--quote-banner' %}
-    {% set quoteTypeClasses = 'pb-3xl bg-red-600 shadow-light-2 rounded' %}
+    {% set quoteTypeClasses =
+      'mt-2xl pb-3xl bg-red-600 shadow-light-2 rounded'
+    %}
     {% set quoteMarksWrap = 'bg-yellow-300' %}
     {% set quoteMarks = 'text-red-600' %}
     {% set quoteClasses = 'text-red-50' %}
     {% set cite = 'text-yellow-300' %}
   {% else %}
-    {% set quoteTypeClasses = 'pb-0' %}
+    {% set quoteTypeClasses = 'mt-2xl pb-0' %}
     {% set quoteMarksWrap = 'bg-red-200' %}
     {% set quoteMarks = 'text-red-700' %}
     {% set quoteClasses = 'w-full lg:w-5/6 text-black' %}

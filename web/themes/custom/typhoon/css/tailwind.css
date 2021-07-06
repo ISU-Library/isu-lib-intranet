@@ -2065,7 +2065,7 @@ h6{
 .gen-con--block p + p{
 	margin-top: 1rem;
 }
-.gen-con--block > *:first-of-type{
+.gen-con--block > *:first-child{
 	margin-top: 0;
 }
 .gen-con--block ul{
@@ -2087,6 +2087,9 @@ h6{
 }
 .gen-con--block p + *{
 	margin-top: 1rem;
+}
+.gen-con--block.img-block p{
+	margin-top: 0;
 }
 .abstract-item > ul{
 	padding-left: 4rem;
@@ -2171,8 +2174,8 @@ a{
 	--tw-text-opacity: 1;
 	color: rgba(198, 16, 46, var(--tw-text-opacity));
 }
-p{
-	margin-top: 1rem;
+p {
+  /* @apply mt-md; */
 }
 .grid-staff-directory {
   grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
