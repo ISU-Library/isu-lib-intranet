@@ -1,0 +1,14 @@
+uuid: 83751563-1b29-48c8-a135-1120b25d7e04
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.content_provider
+  module:
+    - user
+id: user_add_role_action.content_provider
+label: 'Add the Content Provider role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: content_provider

@@ -1,0 +1,14 @@
+uuid: e7b3b796-1569-4a22-bcdb-8b392d5c78a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.requester
+  module:
+    - user
+id: user_remove_role_action.requester
+label: 'Remove the Requester role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: requester

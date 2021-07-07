@@ -1,0 +1,14 @@
+uuid: 76794b46-4f31-43a2-a877-ad176f506720
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.content_provider
+  module:
+    - user
+id: user_remove_role_action.content_provider
+label: 'Remove the Content Provider role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: content_provider
