@@ -105,14 +105,14 @@
                 paragraph_field.field_content_section_title.value
               %}
               <a
-                class="js-scrollTrigger w-full relative px-md py-md text-center md:text-left md:text-sm text-white md:text-warm-grey-600"
+                class="js-scrollTrigger block w-full relative px-md py-md text-center md:text-left md:text-sm text-white md:text-warm-grey-600"
                 href="#{{ anchorLink }}"
               >
                 {{ anchorText }}
                 <span
-                  class="hidden absolute transform -translate-x-1/2 translate-y-0 md:translate-x-0 left-1/2 -bottom-1/3 md:-translate-y-1/2 md:top-1/2 md:-left-sm md:-bottom-1/2 md:rotate-90 text-2xl text-yellow-600 md:text-red-500"
+                  class="hidden flex flex-col justify-center absolute h-md w-md transform -rotate-90 md:rotate-0 left-1/2 -bottom-2xs -translate-x-1/2 translate-y-0 md:-translate-y-1/2 md:translate-x-0 md:-left-xs md:top-1/2 md:-bottom-1/2 text-2xl text-yellow-600 md:text-red-500"
                 >
-                  <i class="fas fa-caret-up"></i>
+                  <i class="hidden fas fa-caret-right"></i>
                 </span>
               </a>
             {% endif %}
@@ -126,7 +126,7 @@
       {{ content.field_toc_content }}
     </div>
   </div>
-
+  {# 
   {% if display_submitted %}
     <footer>
       {{ author_picture }}
@@ -139,5 +139,5 @@
         {{ metadata }}
       </div>
     </footer>
-  {% endif %}
+  {% endif %} #}
 </article>
