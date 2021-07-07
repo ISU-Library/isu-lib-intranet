@@ -576,6 +576,9 @@ video {
 .z-40{
 	z-index: 40;
 }
+.z-30{
+	z-index: 30;
+}
 .col-span-full{
 	grid-column: 1 / -1;
 }
@@ -619,6 +622,10 @@ video {
 .-mx-3xl{
 	margin-left: -3rem;
 	margin-right: -3rem;
+}
+.my-2xl{
+	margin-top: 2.5rem;
+	margin-bottom: 2.5rem;
 }
 .mb-xl{
 	margin-bottom: 2rem;

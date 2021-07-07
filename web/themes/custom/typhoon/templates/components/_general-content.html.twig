@@ -9,7 +9,11 @@
   {# 
  {{item.in_active_trail? 'is-active': ''}}" #}
 
-  <div class="gen-con--block max-w-[50rem] mb-2xl text-block {{ data.lead }} ">
+  <div
+    class="gen-con--block max-w-[50rem] mx-auto mb-2xl text-block {{
+    data.lead
+    }} "
+  >
     {% if data.template %}
       {{ data.text }}
     {% else %}
@@ -36,7 +40,11 @@
     {% set imgFloat = 'md:float-left md:mr-lg' %}
   {% endif %}
 
-  <div class="gen-con--block max-w-[50rem] mb-2xl img-block {{ data.imgSide }}">
+  <div
+    class="gen-con--block max-w-[50rem] mx-auto mb-2xl img-block {{
+    data.imgSide
+    }}"
+  >
     <div
       class="js-img-modal gen-con--img-wrap w-full {{
       data.imgSize
@@ -72,7 +80,7 @@
 
   {% set data = data ? defaultData|merge(data) : defaultData %}
 
-  <div class="gen-con--block max-w-[50rem] mb-lg">
+  <div class="gen-con--block max-w-[50rem] mx-auto mb-lg">
     <div
       class="accordion show--item flex flex-col w-full py-md px-2xl relative overflow-hidden cursor-pointer bg-white shadow-light-2 transform transition-shadow duration-300"
     >
@@ -113,7 +121,7 @@
   {# todo: add header options through admin #}
 
   <div
-    class="gen-con--block max-w-[50rem] text-block block--link-abstract mb-2xl"
+    class="gen-con--block max-w-[50rem] mx-auto text-block block--link-abstract mb-2xl"
   >
     {% if data.template %}
       {{ data.text }}
@@ -168,7 +176,9 @@
 
   {% set data = data ? defaultData|merge(data) : defaultData %}
 
-  <div class="gen-con--block max-w-[50rem] mb-2xl text-block block--link-list">
+  <div
+    class="gen-con--block max-w-[50rem] mx-auto mb-2xl text-block block--link-list"
+  >
     {% if data.template %}
       {{ data.text }}
     {% else %}
@@ -217,7 +227,9 @@
   } %}
   {% set data = data ? defaultData|merge(data) : defaultData %}
 
-  <div class="gen-con--block max-w-[50rem] mb-2xl img-block block--lg-img">
+  <div
+    class="gen-con--block max-w-[50rem] mx-auto mb-2xl img-block block--lg-img"
+  >
     <div class="js-img-modal gen-con--img-wrap">
       <figure class="relative">
         <img
@@ -246,7 +258,7 @@
   {% set data = data ? defaultData|merge(data) : defaultData %}
 
   <div
-    class="gen-con--block max-w-[50rem] flex flex-col sm:flex-row justify-around mb-2xl img-block block--two-img"
+    class="gen-con--block max-w-[50rem] mx-auto flex flex-col sm:flex-row justify-around mb-2xl img-block block--two-img"
   >
     <div class="js-img-modal gen-con--img-wrap max-w-full mx-xs mb-sm sm:mb-0">
       <figure class="flex flex-col items-center">
@@ -290,7 +302,7 @@
   {% set data = data ? defaultData|merge(data) : defaultData %}
 
   <div
-    class="gen-con--block max-w-[50rem] flex flex-col sm:flex-row justify-around mb-2xl img-block block--three-img"
+    class="gen-con--block max-w-[50rem] mx-auto flex flex-col sm:flex-row justify-around mb-2xl img-block block--three-img"
   >
     <div class="js-img-modal gen-con--img-wrap mx-xs">
       <figure>
@@ -368,7 +380,7 @@
   {% endif %}
 
   <div
-    class="gen-con--block mb-lg max-w-[50rem] {{ data.quoteType }} {{
+    class="gen-con--block max-w-[50rem] mx-auto {{ data.quoteType }} {{
     quoteTypeClasses
     }} pt-2xl px-0 mb-2xl quote-block relative text-center "
   >
