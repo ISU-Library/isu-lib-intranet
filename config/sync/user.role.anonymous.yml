@@ -13,6 +13,7 @@ permissions:
   - 'access content'
   - 'access site-wide contact form'
   - 'search content'
+  - 'use advanced search'
   - 'use text format restricted_html'
   - 'view media'
   - 'view paragraph content accordion_group'
