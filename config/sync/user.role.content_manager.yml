@@ -6,4 +6,6 @@ id: content_manager
 label: 'Content Manager'
 weight: 6
 is_admin: null
-permissions: {  }
+permissions:
+  - 'access toolbar'
+  - 'edit own comments'

@@ -6,4 +6,6 @@ id: requester
 label: Requester
 weight: 4
 is_admin: null
-permissions: {  }
+permissions:
+  - 'access toolbar'
+  - 'edit own comments'
