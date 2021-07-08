@@ -1,4 +1,4 @@
-uuid: 6e7334b3-d354-4ba7-9a56-4441c2c19b86
+uuid: fd2d625d-fb2e-45a3-9789-c116dd759f1e
 langcode: en
 status: open
 dependencies:
@@ -10,10 +10,10 @@ _core:
 open: null
 close: null
 weight: 0
-uid: null
+uid: 1
 template: false
 archive: false
-id: contact
+id: it_service_request
 title: 'IT Service Request'
 description: 'Basic email contact webform.'
 category: ''
@@ -164,7 +164,7 @@ settings:
   confirmation_type: url_message
   confirmation_title: ''
   confirmation_message: 'Your message has been sent.'
-  confirmation_url: '<front>'
+  confirmation_url: /resources/it-service-request/success
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''
@@ -260,8 +260,8 @@ handlers:
       from_mail: _default
       from_options: {  }
       from_name: _default
-      subject: '[webform_submission:values:subject:raw]'
-      body: '[webform_submission:values:message:value]'
+      subject: 'Library Intranet Form Confirmation'
+      body: "<p>Your form was submitted on {{ webform_token('[webform_submission:created]', webform_submission, [], options) }}</p>\r\n<p>Submitted by: {{ webform_token('[webform_submission:user]', webform_submission, [], options) }}</p>\r\n<p>Submitted values are:</p>\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n"
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: true
@@ -269,7 +269,7 @@ handlers:
       exclude_attachments: false
       html: true
       attachments: false
-      twig: false
+      twig: true
       theme_name: ''
       parameters: {  }
       debug: false
@@ -297,8 +297,8 @@ handlers:
       from_mail: '[webform_submission:values:email:raw]'
       from_options: {  }
       from_name: '[webform_submission:values:name:raw]'
-      subject: '[webform_submission:values:subject:raw]'
-      body: '[webform_submission:values:message:value]'
+      subject: '[current-user:account-name] Submitted IT Service Request Form'
+      body: "<p>Submitted on {{ webform_token('[webform_submission:created]', webform_submission, [], options) }}</p>\r\n<p>Submitted by: {{ webform_token('[webform_submission:user]', webform_submission, [], options) }}</p>\r\n<p>Submitted values are:</p>\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n"
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: true
@@ -306,7 +306,7 @@ handlers:
       exclude_attachments: false
       html: true
       attachments: false
-      twig: false
+      twig: true
       theme_name: ''
       parameters: {  }
       debug: false
