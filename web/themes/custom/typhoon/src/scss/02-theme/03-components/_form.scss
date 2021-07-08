@@ -29,7 +29,7 @@ table {
 .input {
   position: relative;
 
-  textarea+.input--label {
+  textarea + .input--label {
     top: $space-md;
     transform: translateY(0);
   }
@@ -57,12 +57,12 @@ table {
   }
 }
 
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="tel"],
-input[type="number"],
-input[type="search"],
+input[type='text'],
+input[type='password'],
+input[type='email'],
+input[type='tel'],
+input[type='number'],
+input[type='search'],
 textarea,
 select {
   @include appearance(none);
@@ -91,7 +91,7 @@ select {
     }
   }
 
-  +label {
+  + label {
     top: -$space-md;
     font-size: $fs-md;
     color: $black;
@@ -149,20 +149,19 @@ select {
 .input--select {
   &::after {
     @include vert_center;
-    content: "\f078";
+    content: '\f078';
     right: $space-xl;
     font-size: $fs-md;
-    font-family: "FontAwesome";
+    font-family: 'FontAwesome';
   }
 
   select {
     position: relative;
 
     &:not(:placeholder-shown) {
-
       &:valid,
       &:invalid {
-        +label {
+        + label {
           position: absolute;
           top: -$space-md;
           left: 0;
@@ -173,7 +172,7 @@ select {
           &::after {
             @include vert_center;
             left: $space-2xs;
-            font-family: "FontAwesome";
+            font-family: 'FontAwesome';
             font-size: $fs-md;
           }
         }

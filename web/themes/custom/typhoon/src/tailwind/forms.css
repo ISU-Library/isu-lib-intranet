@@ -1,3 +1,16 @@
+textarea {
+  @apply my-md py-xs px-lg;
+}
+
+.form-required {
+  @apply relative;
+}
+
+.form-required::after {
+  content: '*';
+  @apply ml-2xs text-red-400;
+}
+
 /* * underscores come from drupal admin */
 .it-form__service-category legend {
   @apply mb-md;
