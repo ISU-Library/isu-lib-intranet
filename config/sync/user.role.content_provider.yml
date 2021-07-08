@@ -1,9 +1,0 @@
-uuid: c79dc846-3d0c-402b-909a-c104e744b3c7
-langcode: en
-status: true
-dependencies: {  }
-id: content_provider
-label: 'Content Provider'
-weight: 5
-is_admin: null
-permissions: {  }
