@@ -2873,6 +2873,12 @@ p{
 	.md\:-translate-x-1\/2{
 		--tw-translate-x: -50%;
 	}
+	.md\:border-transparent{
+		border-color: transparent;
+	}
+	.md\:border-r-2{
+		border-right-width: 2px;
+	}
 }
 @media (min-width: 1024px){
 	.lg\:col-span-2{
