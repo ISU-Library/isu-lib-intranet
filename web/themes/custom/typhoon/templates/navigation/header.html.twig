@@ -55,6 +55,23 @@
               </a>
             </li>
           {% endif %}
+          <li class="flex flex-col justify-center">
+            {% if logged_in %}
+              <a
+                class="p-sm md:p-md text-xs sm:text-sm text-white text-center sm:text-left transition-colors hover:text-warm-grey-200"
+                href="/isulogout"
+              >
+                Logout {{ user.name[0].value }}
+              </a>
+            {% else %}
+              <a
+                class="p-sm md:p-md text-xs sm:text-sm text-white text-center sm:text-left transition-colors hover:text-warm-grey-200"
+                href="/isulogin"
+              >
+                Login
+              </a>
+            {% endif %}
+          </li>
         </ul>
         <button
           aria-label="open search input"

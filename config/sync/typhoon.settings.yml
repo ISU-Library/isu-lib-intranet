@@ -14,11 +14,11 @@ lib_util_nav2_text: Forms
 lib_util_nav2_url: 'http://dev-intra.lib.iastate.edu/forms'
 lib_util_nav3_text: Signons
 lib_util_nav3_url: 'https://web.iastate.edu/signons/'
-lib_util_nav4_text: Pipsum
-lib_util_nav4_url: 'http://dev-intra.test'
-lib_util_nav5_text: 'Whoopidy Do'
-lib_util_nav5_url: 'http://dev-intra.test'
-lib_homepage_header_header: 'Hope this Works!'
-lib_homepage_header_tagline: 'Here''s a clever tagline with words about things'
+lib_util_nav4_text: 'IT Service Request'
+lib_util_nav4_url: 'https://dev-intra.lib.iastate.edu/resources/it-service-request'
+lib_util_nav5_text: ''
+lib_util_nav5_url: ''
+lib_homepage_header_header: 'Welcome! '
+lib_homepage_header_tagline: 'Here is the new ISU Library Intranet!'
 footer_social_media1_url: 'https://twitter.com/ISU_Library'
 footer_social_media1_icon: 'fab fa-twitter'
