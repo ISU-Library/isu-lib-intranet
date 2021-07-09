@@ -176,5 +176,6 @@ permissions:
   - 'view staff_news revisions'
   - 'view staff_updates revisions'
   - 'view table_of_contents revisions'
+  - 'view the administration theme'
   - 'view unpublished paragraphs'
   - 'view webform revisions'
