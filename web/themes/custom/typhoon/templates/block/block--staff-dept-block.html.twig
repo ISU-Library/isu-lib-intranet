@@ -28,7 +28,7 @@
 {% set currentPath = url('<current>') %}
 
 <section id="department-staff" {{ attributes.addClass('js-scrollTarget') }}>
-  {% if 'divisions' in currentPath %}
+  {% if '/divisions' in (currentPath|render|render) %}
     {{ title_prefix }}
     {% if label %}
       <h2 {{ title_attributes }}>{{ label }}</h2>
