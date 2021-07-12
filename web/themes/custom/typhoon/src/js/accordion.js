@@ -6,7 +6,7 @@ export const accordion = showItems.forEach(item => {
   const button = document.querySelector('.show--title');
   const ariaValue = button.getAttribute('aria-selected');
   const contentEl = item.querySelector('.show--content');
-  const icon = button.querySelector('.icon');
+  const icon = item.querySelector('span');
   item.addEventListener('click', () => {
     slideToggle(contentEl, 300);
     icon.classList.toggle('rotate-180');
