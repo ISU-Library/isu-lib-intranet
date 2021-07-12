@@ -2534,6 +2534,12 @@ p{
 		    -ms-flex-direction: row;
 		        flex-direction: row;
 	}
+	.sm\:flex-col{
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+	}
 	.sm\:justify-end{
 		-webkit-box-pack: end;
 		    -ms-flex-pack: end;
@@ -2558,12 +2564,6 @@ p{
 	}
 	.sm\:text-sm{
 		font-size: 0.875rem;
-	}
-.sm\:flex-col{
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	    -ms-flex-direction: column;
-	        flex-direction: column;
 	}
 }
 @media (min-width: 768px){
