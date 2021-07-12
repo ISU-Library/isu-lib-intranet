@@ -1,0 +1,59 @@
+{% macro imgSmall(data) %}
+  {% set defaultData = {
+    imgSrc: '',
+    imgAlt: ''
+  } %}
+
+  {% set data = data ? defaultData|merge(data) : defaultData %}
+
+  <figure
+    class="flex justify-center items-center js-img-modal overflow-hidden h-full mosaic-image--small"
+  >
+    <img
+      class="max-w-full"
+      loading="lazy"
+      src="{{ data.imgSrc }}"
+      alt="{{ data.imgAlt }}"
+    />
+  </figure>
+{% endmacro %}
+
+{% macro imgMedium(data) %}
+  {% set defaultData = {
+    imgSrc: '',
+    imgAlt: ''
+  } %}
+
+  {% set data = data ? defaultData|merge(data) : defaultData %}
+
+  <figure
+    class="flex justify-center items-center js-img-modal overflow-hidden h-full mosaic-image--medium"
+  >
+    <img
+      class="max-w-full"
+      loading="lazy"
+      src="{{ data.imgSrc }}"
+      alt="{{ data.imgAlt }}"
+    />
+  </figure>
+{% endmacro %}
+
+{% macro imgLarge(data) %}
+  {% set defaultData = {
+    imgSrc: '',
+    imgAlt: ''
+  } %}
+
+  {% set data = data ? defaultData|merge(data) : defaultData %}
+
+  <figure
+    class="flex justify-center items-center js-img-modal overflow-hidden h-full mosaic-image--large"
+  >
+    <img
+      class="max-w-full"
+      loading="lazy"
+      src="{{ data.imgSrc }}"
+      alt="{{ data.imgAlt }}"
+    />
+  </figure>
+{% endmacro %}

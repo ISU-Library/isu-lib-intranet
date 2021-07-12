@@ -1,0 +1,24 @@
+uuid: 8b716a01-bcf3-4394-b664-c6e8bdd53ec3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.mosaic_image_small.field_mosaic_image_small
+    - paragraphs.paragraphs_type.mosaic_image_small
+  module:
+    - image
+id: paragraph.mosaic_image_small.default
+targetEntityType: paragraph
+bundle: mosaic_image_small
+mode: default
+content:
+  field_mosaic_image_small:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden: {  }

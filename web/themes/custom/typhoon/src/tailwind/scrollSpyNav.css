@@ -1,0 +1,50 @@
+.js-scrollSpyNav {
+  top: var(--header-height);
+}
+
+.js-scrollSpyNav.toc-nav {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+@media (min-width: 768px) {
+  .js-scrollSpyNav.toc-nav {
+    top: calc(var(--header-height) + 12px);
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.js-scrollSpyNav.is-open .js-scrollTrigger {
+  @apply block;
+}
+
+.toc-nav a.is-active {
+  @apply md:text-warm-grey-900 md:bg-red-50 md:border-r-2 md:border-red-400 transition-none;
+}
+
+.js-scrollTarget {
+  /* *for safari */
+  scroll-snap-margin-top: calc(var(--header-height) + 57px);
+  scroll-margin-top: calc(var(--header-height) + 57px);
+}
+
+.js-scrollTrigger {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .toc-nav .js-scrollTrigger {
+    @apply block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .js-scrollTrigger {
+    @apply block;
+  }
+}
+
+.js-scrollTrigger.is-active {
+  @apply block;
+}

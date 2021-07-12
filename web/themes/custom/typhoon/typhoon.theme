@@ -1,5 +1,15 @@
 <?php
 
+
+/*
+ * Implements THEMENAME_preprocess().
+ *
+ * creates usable variable for username
+ */
+function typhoon_preprocess(&$variables, $hook, $info) {
+  $variables['username'] = $variables['user']->getDisplayName();
+}
+
 /*
  * Implements theme_form_alter().
  *

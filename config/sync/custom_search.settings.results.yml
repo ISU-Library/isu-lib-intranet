@@ -1,0 +1,38 @@
+node_search:
+  path: node
+  search: true
+  advanced:
+    visibility: true
+    collapsible: true
+    collapsed: true
+    criteria:
+      or: or
+      phrase: phrase
+      negative: negative
+    types:
+      article: article
+      department_page: department_page
+      employee: employee
+      page: page
+      specialty_page: specialty_page
+      staff_news: staff_news
+      staff_updates: staff_updates
+      table_of_contents: table_of_contents
+      webform: webform
+    languages:
+      en: en
+      und: und
+      zxx: zxx
+  info:
+    type: type
+    user: user
+    date: date
+    comment: comment
+  filter:
+    position: disabled
+    label: 'Filter the results'
+    any: '- Any -'
+user_search:
+  advanced:
+    types:
+      webform: webform

@@ -1,0 +1,10 @@
+uuid: 8dd1f2b3-fc3f-4ee9-a62f-ea1298c0fa50
+langcode: en
+status: true
+dependencies: {  }
+id: sc_mosaic_image
+label: 'SC Mosaic Image'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

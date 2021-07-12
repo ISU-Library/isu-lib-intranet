@@ -9,7 +9,7 @@ $h2-lh: 1.1;
 
 $h3-color: $text-color;
 $h3-fs: $fs-xl;
-$h3-lh: 1.13;
+$h3-lh: 1.35;
 
 $h4-color: $text-color;
 $h4-fs: $fs-lg;
@@ -42,7 +42,7 @@ h1,
   }
 }
 
-h1+h2 {
+h1 + h2 {
   margin-bottom: $space-3xl;
 }
 
@@ -66,7 +66,8 @@ h3,
   color: $h3-color;
   line-height: $h3-lh;
   margin: 0;
-  margin-bottom: $space-md;
+  // margin-bottom: $space-md;
+  letter-spacing: 0.532;
   font-size: $fs-lg;
 
   @include bp(md) {

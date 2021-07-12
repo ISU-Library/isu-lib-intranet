@@ -38,7 +38,7 @@
 
   <div class="gen-con--block max-w-[50rem] mb-2xl img-block {{ data.imgSide }}">
     <div
-      class="gen-con--img-wrap w-full {{
+      class="js-img-modal gen-con--img-wrap w-full {{
       data.imgSize
       }} float-none my-0 mx-auto {{ imgFloat }}"
     >
@@ -47,6 +47,7 @@
           class="max-w-full h-auto shadow-dark-2"
           src="{{ data.imgSrc }}"
           alt="{{ data.imgAlt }}"
+          loading="lazy"
         />
         <figcaption class="mt-sm bg-white text-center italic">
           {{ data.imgAlt }}
@@ -61,7 +62,7 @@
   </div>
 {% endmacro %}
 
-{% macro accordian(data) %}
+{% macro accordion(data) %}
   {% set defaultData = {
     template: true,
     id: '',
@@ -72,27 +73,30 @@
   {% set data = data ? defaultData|merge(data) : defaultData %}
 
   <div class="gen-con--block max-w-[50rem] mb-lg">
-    <div class="bg-white show--item js-open">
+    <div
+      class="accordion show--item flex flex-col w-full py-md px-2xl relative overflow-hidden cursor-pointer bg-white shadow-light-2 transform transition-shadow duration-300"
+    >
       <button
-        class="show--title"
+        class="show--title flex w-full justify-between bg-white"
         data-box-toggle="{{ data.id }}"
         role="tab"
         aria-selected="false"
       >
-        <h4>{{ data.title }}</h4>
-        <span class="icon"></span>
+        <h4 class="inline-block m-0">{{ data.title }}</h4>
+        <span
+          class="icon inline-block relative h-[1rem] w-[1rem] transform transition duration-500"
+        ></span>
       </button>
 
       <div
-        class="show--content"
-        role="tabpanel"
+        class="show--content hidden"
         aria-expanded="false"
         data-box="{{ data.id }}"
       >
         {% if data.template %}
-          {{ data.text }}
+          <div class="border-t-2 border-warm-grey-100">{{ data.text }}</div>
         {% else %}
-          <p class="mt-0">{{ data.text }}</p>
+          <p class="mt-0 order-t-2">{{ data.text }}</p>
         {% endif %}
       </div>
     </div>
@@ -126,7 +130,11 @@
           {% for abstract_link_value in paragraph_field %}
             {% if abstract_link_value.title and abstract_link_value[0].url %}
               <li class="abstract-item list-none relative mb-lg">
-                <a class="block pl-2xl" href="{{ abstract_link_value[0].url }}">
+                <a
+                  class="block pl-2xl"
+                  href="{{ abstract_link_value[0].url }}"
+                  rel="noreferrer noopener"
+                >
                   <h4 class="text-red-500 m-0 mb-md">
                     {{ abstract_link_value.title }}
                   </h4>
@@ -210,12 +218,13 @@
   {% set data = data ? defaultData|merge(data) : defaultData %}
 
   <div class="gen-con--block max-w-[50rem] mb-2xl img-block block--lg-img">
-    <div class="gen-con--img-wrap">
+    <div class="js-img-modal gen-con--img-wrap">
       <figure class="relative">
         <img
           class="shadow-dark-2"
           src="{{ data.imgSrc }}"
           alt="{{ data.imgAlt }}"
+          loading="lazy"
         />
         <figcaption class="pt-xs text-center italic">
           {{ data.imgAlt }}
@@ -239,24 +248,26 @@
   <div
     class="gen-con--block max-w-[50rem] flex flex-col sm:flex-row justify-around mb-2xl img-block block--two-img"
   >
-    <div class="gen-con--img-wrap max-w-full mx-xs mb-sm sm:mb-0">
+    <div class="js-img-modal gen-con--img-wrap max-w-full mx-xs mb-sm sm:mb-0">
       <figure class="flex flex-col items-center">
         <img
           class="shadow-dark-2 w-4/5 sm:w-full sm:max-h-96"
           src="{{ data.leftImgSrc }}"
           alt="{{ data.leftImgAlt }}"
+          loading="lazy"
         />
         <figcaption class="pt-xs text-center italic">
           {{ data.leftImgAlt }}
         </figcaption>
       </figure>
     </div>
-    <div class="gen-con--img-wrap max-w-full mx-xs">
+    <div class="js-img-modal gen-con--img-wrap max-w-full mx-xs">
       <figure class="flex flex-col items-center">
         <img
           class="shadow-dark-2 w-4/5 sm:w-full sm:max-h-96"
           src="{{ data.rightImgSrc }}"
           alt="{{ data.rightImgAlt }}"
+          loading="lazy"
         />
         <figcaption class="pt-xs text-center italic">
           {{ data.rightImgAlt }}
@@ -281,36 +292,39 @@
   <div
     class="gen-con--block max-w-[50rem] flex flex-col sm:flex-row justify-around mb-2xl img-block block--three-img"
   >
-    <div class="gen-con--img-wrap mx-xs">
+    <div class="js-img-modal gen-con--img-wrap mx-xs">
       <figure>
         <img
           class="shadow-dark-2"
           src="{{ data.leftImgSrc }}"
           alt="{{ data.leftImgAlt }}"
+          loading="lazy"
         />
         <figcaption class="pt-xs text-center italic">
           {{ data.leftImgAlt }}
         </figcaption>
       </figure>
     </div>
-    <div class="gen-con--img-wrap mx-xs">
+    <div class="js-img-modal gen-con--img-wrap mx-xs">
       <figure>
         <img
           class="shadow-dark-2"
           src="{{ data.centerImgSrc }}"
           alt="{{ data.centerImgAlt }}"
+          loading="lazy"
         />
         <figcaption class="pt-xs text-center italic">
           {{ data.centerImgAlt }}
         </figcaption>
       </figure>
     </div>
-    <div class="gen-con--img-wrap mx-xs">
+    <div class="js-img-modal gen-con--img-wrap mx-xs">
       <figure>
         <img
           class="shadow-dark-2"
           src="{{ data.rightImgSrc }}"
           alt="{{ data.rightImgAlt }}"
+          loading="lazy"
         />
         <figcaption class="pt-xs text-center italic">
           {{ data.rightImgAlt }}
@@ -338,13 +352,15 @@
     {% set quoteClasses = 'w-full w-11/12 lg:w-5/6 text-black px-sm lg:px-0' %}
     {% set cite = 'text-red-500' %}
   {% elseif data.quoteType == 'block--quote-banner' %}
-    {% set quoteTypeClasses = 'pb-3xl bg-red-600 shadow-light-2 rounded' %}
+    {% set quoteTypeClasses =
+      'mt-2xl pb-3xl bg-red-600 shadow-light-2 rounded'
+    %}
     {% set quoteMarksWrap = 'bg-yellow-300' %}
     {% set quoteMarks = 'text-red-600' %}
     {% set quoteClasses = 'text-red-50' %}
     {% set cite = 'text-yellow-300' %}
   {% else %}
-    {% set quoteTypeClasses = 'pb-0' %}
+    {% set quoteTypeClasses = 'mt-2xl pb-0' %}
     {% set quoteMarksWrap = 'bg-red-200' %}
     {% set quoteMarks = 'text-red-700' %}
     {% set quoteClasses = 'w-full lg:w-5/6 text-black' %}
@@ -352,7 +368,7 @@
   {% endif %}
 
   <div
-    class="gen-con--block mb-lg max-w-[50rem] {{ data.quoteType }} {{
+    class="gen-con--block max-w-[50rem] {{ data.quoteType }} {{
     quoteTypeClasses
     }} pt-2xl px-0 mb-2xl quote-block relative text-center "
   >
@@ -366,7 +382,11 @@
         aria-hidden="true"
       ></i>
     </div>
-    <blockquote class="quote {{ quoteClasses }} my-0 mx-auto text-lg italic">
+    <blockquote
+      class="quote font-merriweather {{
+      quoteClasses
+      }} my-0 mx-auto text-lg italic"
+    >
       {{ data.quoteText }}
       <cite
         class="{{

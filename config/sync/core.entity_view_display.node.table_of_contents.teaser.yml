@@ -1,0 +1,22 @@
+uuid: 7ef3bc59-8af7-44c2-b68a-5a02bac65dcb
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.table_of_contents.field_toc_content
+    - node.type.table_of_contents
+  module:
+    - user
+id: node.table_of_contents.teaser
+targetEntityType: node
+bundle: table_of_contents
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_toc_content: true

@@ -1,12 +1,12 @@
 .gen-con--block h3 {
-  @apply text-red-50 p-xs inline-block;
+  @apply inline-block py-xs;
 }
 
 .gen-con--block p + p {
   @apply mt-md;
 }
 
-.gen-con--block > *:first-of-type {
+.gen-con--block > *:first-child {
   @apply mt-0;
 }
 
@@ -35,6 +35,10 @@
   @apply mt-md;
 }
 
+.gen-con--block.img-block p {
+  @apply mt-0;
+}
+
 .abstract-item > ul {
   @apply pl-4xl;
 }
@@ -49,4 +53,36 @@
 
 .show--content ul {
   @apply pl-lg;
+}
+
+.quote {
+  @apply tracking-wide;
+}
+
+.quote p {
+  font-size: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+}
+
+.accordion::before,
+.accordion::after {
+  content: '';
+  width: 88px;
+  height: 50px;
+  position: absolute;
+  transform: rotate(45deg);
+  transition: background-color 0.3s ease-in;
+}
+
+.accordion::before {
+  top: calc(375px * -0.07);
+  right: calc(375px * -0.08);
+  @apply bg-yellow-500;
+}
+
+.accordion::after {
+  top: calc(375px * -0.1);
+  right: calc(375px * -0.11);
+  @apply bg-yellow-600;
 }

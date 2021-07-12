@@ -55,8 +55,26 @@
               </a>
             </li>
           {% endif %}
+          <li class="flex flex-col justify-center">
+            {% if logged_in %}
+              <a
+                class="p-sm md:p-md text-xs sm:text-sm text-white text-center sm:text-left transition-colors hover:text-warm-grey-200"
+                href="/isulogout"
+              >
+                Logout {{ user.name[0].value }}
+              </a>
+            {% else %}
+              <a
+                class="p-sm md:p-md text-xs sm:text-sm text-white text-center sm:text-left transition-colors hover:text-warm-grey-200"
+                href="/isulogin"
+              >
+                Login
+              </a>
+            {% endif %}
+          </li>
         </ul>
         <button
+          aria-label="open search input"
           class="js-main-search-button bg-red-600 hover:bg-red-400 hover:shadow-dark-2 rounded text-md text-white hover:text-warm-grey-200 transition-colors"
         >
           <i class="fas fa-search leading-normal p-md"></i>
@@ -66,7 +84,7 @@
     </div>
   </div>
   <div
-    class="main-nav--wrap border-b-2 border-yellow-500 px-3xl md:px-5xl bg-white"
+    class="main-nav--wrap border-b-2 border-yellow-500 px-3xl lg:px-5xl bg-white"
   >
     <div
       class="main-nav relative flex flex-wrap justify-between align-bottom max-w-[93.75rem] m-auto"
@@ -78,13 +96,13 @@
               class="max-w-full"
               src="{{ relative_logo_url }}"
               alt="ISU Library Logo"
+              loading="lazy"
             />
           </a>
         </div>
       </div>
-      {# <div class="inline-block"> #}
-      {# </div> #}
-      <div
+      <button
+        aria-label=""
         class="md:hidden js-mobile-nav-btn js-close relative flex flex-col justify-around w-xl h-xl mt-lg mb-md cursor-pointer z-50"
       >
         <span
@@ -96,9 +114,9 @@
         <span
           class="mob-btn-bottom block w-full h-2xs bg-red-500 rounded transform"
         ></span>
-      </div>
+      </button>
       <div
-        class="js-mobile-menu js-mobile-close overflow-y-auto md:overflow-y-visible fixed md:absolute w-[100vw] md:w-auto md:h-auto md:relative right-[-80rem] md:right-0 md:right-0 -mx-3xl md:mx-0 md:mt-0 md:relative flex-grow flex flex-col md:l-0 md:justify-end md:pt-0 bg-red-700 md:bg-white z-40 md:z-0 transition-all ease duration-500"
+        class="js-mobile-menu js-mobile-close overflow-y-auto md:overflow-y-visible fixed md:relative w-[100vw] md:w-auto md:h-auto right-[-80rem] md:right-0 -mx-3xl md:mx-0 md:mt-0 flex-grow flex flex-col md:l-0 md:justify-end md:pt-0 bg-red-700 md:bg-white z-40 md:z-0 transition-all ease duration-500"
       >
         {{ page.primary_menu }}
       </div>

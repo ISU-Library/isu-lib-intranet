@@ -1,37 +1,49 @@
 {% macro lead(data) %}
-
   {% set defaultData = {
-      front: '',
-      imgSrc: '',
-      imgAlt: '',
-      link: '',
-      category: '',
-      title: '',
-      text: '',
-      linkText: '',
-       authorName: '',
-        date:'',
-    } %}
+    front: '',
+    imgSrc: '',
+    imgAlt: '',
+    link: '',
+    category: '',
+    title: '',
+    text: '',
+    linkText: '',
+    authorName: '',
+    date: ''
+  } %}
 
   {% set data = data ? defaultData|merge(data) : defaultData %}
 
-  <div class="news-card--lead grid realtive mb-lg shadow-dark-2 transform transition-transform duration-500 br4" title="{{ data.title}}">
-    <span class="aria-text">
-      Link to
-      {{ data.title }}
-    </span>
-    <a href="{{ data.link}}" class="news-card--link relative no-underline bg-center bg-no-repeat bg-cover overflow-hidden shadow-dark-2 transition-shadow duration-500 z-20 hover:shadow-dark-3 focus:shadow-dark-3 br4 group" style="background-image: url('{{ data.imgSrc}}');">
-      <div class="news-card--text-wrap relative flex flex-col justify-end h-full pr-xl pl-lg pt-2xl pb-lg text-white z-20 transition-all duration-500 group">
+  <div
+    class="news-card--lead grid realtive mb-lg shadow-dark-2 transform transition-transform duration-500 br4"
+    title="{{ data.title }}"
+  >
+    <a
+      href="{{ data.link }}"
+      class="news-card--link relative no-underline bg-center bg-no-repeat bg-cover overflow-hidden shadow-dark-2 transition-shadow duration-500 z-20 hover:shadow-dark-3 focus:shadow-dark-3 br4 group"
+      style="background-image: url('{{ data.imgSrc }}');"
+      aria-label="Read more about {{ data.title }}"
+      rel="noreferrer noopener"
+    >
+      <div
+        class="news-card--text-wrap relative flex flex-col justify-end h-full pr-xl pl-lg pt-2xl pb-lg text-white z-20 transition-all duration-500 group"
+      >
         {% if data.category %}
-          <span class="news-card--category pb-2xs font-merriweather text-white text-shadow-1">
+          <span
+            class="news-card--category pb-2xs font-merriweather text-white text-shadow-1"
+          >
             {{ data.category }}
           </span>
         {% endif %}
-        <h3 class="news-card--title line-clamp-3 text-bold w-full leading-tight mb-sm pb-0 fs-lg text-white text-shadow-1">
+        <h3
+          class="news-card--title line-clamp-2 text-bold w-full leading-tight mb-sm pb-0 fs-lg text-white text-shadow-1"
+        >
           {{ data.title }}
         </h3>
-        <div class="news-card--text flex-auto text-normal overflow-hidden tranistion-all duration-500 md:h-0 md:flex-none group-hover:flex-auto">
-          <p class="text-white mb-sm text-shadow-1 line-clamp-5 {% if data.front %} xl:line-clamp-7 {% endif %}">
+        <div
+          class="news-card--text flex-auto text-normal overflow-hidden tranistion-all duration-500 md:h-0 md:flex-none group-hover:flex-auto group-focus:flex-auto"
+        >
+          <p class="text-white mb-sm text-shadow-1 line-clamp-5">
             {{ data.text }}
           </p>
           <div class="cta--wrap">
@@ -46,29 +58,41 @@
   </div>
 {% endmacro %}
 
-
 {% macro basic(data) %}
-
   {% set defaultData = {
-        imgSrc: '',
-        imgAlt: '',
-        link: '',
-        category: '',
-        title: '',
-        text: '',
-        linkText: '',
-        authorName: '',
-        date:'',
-    } %}
+    imgSrc: '',
+    imgAlt: '',
+    link: '',
+    category: '',
+    title: '',
+    text: '',
+    linkText: '',
+    authorName: '',
+    date: ''
+  } %}
 
   {% set data = data ? defaultData|merge(data) : defaultData %}
 
   <div class="news-card--basic relative mb-lg">
-    <div class="news-card--content grid grid-cols-2 md:grid-cols-3 gap-sm md:gap-md lg:gap-lg text-black transition-color duration-300">
-      <div class="news-card--image-wrap hidden lg:block relative w-full z-20 col-span-full sm:col-span-1 xs:mb-md">
-        <a href="{{ data.link}}">
-          <figure class="relative overflow-hidden m-0 tranistion-all duration-300 br4 shadow-dark-2 hover:shadow-dark-3">
-            <img class="absolute top-1/2 transform -translate-y-1/2 w-full" src="{{ data.imgSrc }}" alt="{{ data.imgAlt}}"/>
+    <div
+      class="news-card--content grid grid-cols-2 md:grid-cols-3 gap-sm md:gap-md lg:gap-lg text-black transition-color duration-300"
+    >
+      <div
+        class="news-card--image-wrap hidden lg:block relative w-full z-20 col-span-full sm:col-span-1 xs:mb-md"
+      >
+        <a
+          href="{{ data.link }}"
+          aria-label="Read more about {{ data.title }} "
+          rel="noreferrer noopener"
+        >
+          <figure
+            class="relative overflow-hidden m-0 tranistion-all duration-300 br4 shadow-dark-2 hover:shadow-dark-3"
+          >
+            <img
+              class="absolute top-1/2 transform -translate-y-1/2 w-full"
+              src="{{ data.imgSrc }}"
+              alt="{{ data.imgAlt }}"
+            />
           </figure>
         </a>
       </div>
@@ -82,8 +106,15 @@
           </ul>
         {% endif %}
         <div class="mb-md">
-          <h3 title="{{ data.title}}" class="news-card--title line-clamp-2 font-bold w-full leading-tight mt-2xs mb-0 text-lg">
-            <a href="{{ data.link}}">
+          <h3
+            title="{{ data.title }}"
+            class="news-card--title line-clamp-2 font-bold w-full leading-tight mt-2xs mb-0 text-lg"
+          >
+            <a
+              href="{{ data.link }}"
+              aria-label="Read more about {{ data.title }}"
+              rel="noreferrer noopener"
+            >
               {{ data.title }}
             </a>
           </h3>
@@ -100,17 +131,17 @@
             {{ data.text|raw }}
           </p>
           <div class="cta--wrap">
-            <a href="{{ data.link}}" class="cta">
-              {{data.linkText}}
-              <span class="aria-text absolute top-0 left-0">
-                About
-                {{ data.title}}
-              </span>
+            <a
+              href="{{ data.link }}"
+              class="cta"
+              aria-label="Read more about {{ data.title }}"
+              rel="noreferrer noopener"
+            >
+              {{ data.linkText }}
             </a>
           </div>
         </div>
       </div>
     </div>
   </div>
-
 {% endmacro %}

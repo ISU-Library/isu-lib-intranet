@@ -14,13 +14,9 @@ var webSocketOccupants = new XMLHttpRequest();
 var initialOccupants = new XMLHttpRequest();
 
 function occupantsAlert(count) {
-  var full = count >= 1000;
-  var crowded = count > 500 && count < 1000;
-  densityEl.classList.remove(
-    'alert--red',
-    'alert--yellow',
-    'alert--green'
-  );
+  var full = count >= 1950;
+  var crowded = count > 800 && count < 1950;
+  densityEl.classList.remove('alert--red', 'alert--yellow', 'alert--green');
 
   if (full) {
     densityEl.classList.add('alert--red');
@@ -37,7 +33,7 @@ function occupantsAlert(count) {
 initialOccupants.open('GET', baseEndpoint + 'spaces/' + space_id, true);
 initialOccupants.setRequestHeader('Authorization', 'Bearer ' + densityToken);
 
-initialOccupants.onload = function() {
+initialOccupants.onload = function () {
   if (this.status >= 200 && this.status < 400) {
     // Success!
     var data = JSON.parse(this.response);
@@ -54,13 +50,13 @@ initialOccupants.onload = function() {
 webSocketOccupants.open('POST', baseEndpoint + 'sockets', true);
 webSocketOccupants.setRequestHeader('Authorization', 'Bearer ' + densityToken);
 
-webSocketOccupants.onload = function() {
+webSocketOccupants.onload = function () {
   if (this.status >= 200 && this.status < 400) {
     // Success!
     var response = JSON.parse(this.response);
     var densityWS = new WebSocket(response.url);
 
-    densityWS.onmessage = function(event) {
+    densityWS.onmessage = function (event) {
       var data = JSON.parse(event.data);
 
       if (data.payload.space_id == space_id) {
@@ -75,12 +71,12 @@ webSocketOccupants.onload = function() {
   }
 };
 
-initialOccupants.onerror = function() {
+initialOccupants.onerror = function () {
   densityMessageEl.innerHTML =
     'An error has occurred. Please try again shortly.';
 };
 
-webSocketOccupants.onerror = function() {
+webSocketOccupants.onerror = function () {
   densityMessageEl.innerHTML =
     'An error has occurred. Please try again shortly.';
 };

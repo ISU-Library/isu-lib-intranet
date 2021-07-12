@@ -16,6 +16,7 @@ dependencies:
     - paragraphs.paragraphs_type.gc_two_image_block
     - paragraphs.paragraphs_type.sc_basic_cards_block
     - paragraphs.paragraphs_type.sc_basic_cards_image_block
+    - paragraphs.paragraphs_type.sc_mosaic_image
     - paragraphs.paragraphs_type.sc_news_basic_card_block
     - paragraphs.paragraphs_type.sc_news_lead_card_block
   module:
@@ -46,70 +47,80 @@ settings:
       gc_two_image_block: gc_two_image_block
       sc_basic_cards_block: sc_basic_cards_block
       sc_basic_cards_image_block: sc_basic_cards_image_block
+      sc_mosaic_image: sc_mosaic_image
       sc_news_basic_card_block: sc_news_basic_card_block
       sc_news_lead_card_block: sc_news_lead_card_block
     target_bundles_drag_drop:
       accordion_group:
-        weight: 22
+        weight: -49
         enabled: false
       basic_card_w_image:
-        weight: 23
+        weight: -48
+        enabled: false
+      content_sections:
+        weight: -46
         enabled: false
       from_library:
-        weight: 24
+        weight: -47
         enabled: false
       gc_accordion_block:
         enabled: true
-        weight: 25
+        weight: -45
       gc_large_img_block:
         enabled: true
-        weight: 26
+        weight: -44
       gc_link_abstract_list_block:
         enabled: true
-        weight: 27
+        weight: -43
       gc_link_list_block:
         enabled: true
-        weight: 28
+        weight: -42
       gc_quote_block:
         enabled: true
-        weight: 29
+        weight: -41
       gc_text_block:
         enabled: true
-        weight: 30
+        weight: -40
       gc_text_img_block:
         enabled: true
-        weight: 31
+        weight: -39
       gc_three_image_block:
         enabled: true
-        weight: 32
+        weight: -38
       gc_two_image_block:
         enabled: true
-        weight: 33
+        weight: -37
       link_abstract_link_list:
-        weight: 34
+        weight: -36
         enabled: false
       link_list_link:
-        weight: 35
+        weight: -35
+        enabled: false
+      mosiac_image:
+        weight: -32
         enabled: false
       news_card_basic:
-        weight: 36
+        weight: -34
         enabled: false
       news_card_lead:
-        weight: 37
+        weight: -33
         enabled: false
       sc_basic_card:
-        weight: 38
+        weight: -31
         enabled: false
       sc_basic_cards_block:
         enabled: true
-        weight: 39
+        weight: -30
       sc_basic_cards_image_block:
         enabled: true
-        weight: 40
+        weight: -29
+      sc_mosaic_image:
+        enabled: true
+        weight: -28
       sc_news_basic_card_block:
         enabled: true
-        weight: 41
+        weight: -27
       sc_news_lead_card_block:
         enabled: true
-        weight: 42
+        weight: -26
 field_type: entity_reference_revisions

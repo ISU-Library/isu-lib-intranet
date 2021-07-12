@@ -49,6 +49,14 @@
 
   {% set sidebar = page.sidebar_first ? 'max-w-[93.75rem]' : 'max-w-[57rem]' %}
 
+  {% if node.type.entity.label == 'Table of Contents' %}
+    {% set mainWidth = 'lg:col-start-1 lg:col-end-10 xl:col-end-10' %}
+    {% set asideWidth = 'lg:col-start-10 lg:col-end-13' %}
+  {% else %}
+    {% set mainWidth = 'md:col-start-1 md:col-end-10 xl:col-end-9' %}
+    {% set asideWidth = 'md:col-start-10 md:col-end-13' %}
+  {% endif %}
+
   <div class="relative flex-grow">
     <div
       class="typhoon-grid grid grid-cols-12 gap-md relative mx-auto px-lg sm:px-2xl flex-initial {{
@@ -59,26 +67,20 @@
       {{ page.highlighted }}
       {{ page.help }}
       {% if page.sidebar_first %}
-        <main
-          role="main"
-          class="col-span-full md:col-start-1 md:col-end-10 xl:col-end-9"
-        >
+        <main role="main" class="col-span-full {{ mainWidth }}">
           <a id="main-content" tabindex="-1"></a>
           {# link is in html.html.twig #}
           <div class="layout-content">{{ page.content }}</div>
           {# /.layout-content #}
         </main>
         <aside
-          class="layout-sidebar-first col-span-full md:col-start-10 md:col-end-13"
+          class="layout-sidebar-first col-span-full {{ asideWidth }}"
           role="complementary"
         >
           {% include '@typhoon/navigation/side-nav.html.twig' %}
         </aside>
       {% else %}
-        <main
-          role="main"
-          class="col-span-full md:col-start-1 md:col-end-13 xl:col-end-13"
-        >
+        <main role="main" class="col-span-full md:col-start-1 md:col-end-13">
           <a id="main-content" tabindex="-1"></a>
           {# link is in html.html.twig #}
           <div class="layout-content">{{ page.content }}</div>

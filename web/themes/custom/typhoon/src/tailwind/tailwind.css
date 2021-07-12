@@ -13,8 +13,9 @@
 @import './header.css';
 @import './breadcrumbs.css';
 @import './headlines.css';
-@import './department-nav.css';
+@import './scrollSpyNav.css';
 @import './gen-con.css';
+@import './forms.css';
 @import './footer.css';
 
 :root {
@@ -45,12 +46,20 @@ p {
   @apply mt-md;
 }
 
-.absolute-center {
-  @apply absolute transform -translate-y-1/2 -translate-x-1/2 top-1/2 left-1/2;
-}
+@layer utilities {
+  @variants responsive {
+    .absolute-center {
+      @apply absolute transform -translate-y-1/2 -translate-x-1/2 top-1/2 left-1/2;
+    }
 
-.center-x {
-  @apply absolute transform -translate-x-1/2 left-1/2;
+    .center-x {
+      @apply absolute transform -translate-x-1/2 left-1/2;
+    }
+
+    .center-y {
+      @apply absolute transform -translate-y-1/2 top-1/2;
+    }
+  }
 }
 
 .grid-staff-directory {
@@ -111,4 +120,84 @@ p {
 
 .basic-card--wrap {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.sidebar-nav--grid {
+  grid-template-columns: 259px 1fr;
+}
+
+.mosaic-grid {
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-auto-rows: 32px;
+}
+
+@media (min-width: 550px) {
+  .mosaic-grid {
+    grid-template-columns: repeat(auto-fill, minmax(245px, 1fr));
+    grid-auto-rows: 32px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .mosaic-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+.mosaic-image--small {
+  grid-row: span 4;
+}
+
+@media (min-width: 640px) {
+  .mosaic-image--small {
+    grid-row: span 5;
+  }
+}
+
+.mosaic-image--medium {
+  grid-row: span 5;
+}
+
+@media (min-width: 640px) {
+  .mosaic-image--medium {
+    grid-row: span 8;
+  }
+}
+
+.mosaic-image--large {
+  grid-row: span 6;
+}
+
+@media (min-width: 640px) {
+  .mosaic-image--large {
+    grid-row: span 10;
+  }
+}
+
+.node-preview-container {
+  @apply px-3xl;
+}
+
+.node-preview-backlink {
+  @apply w-full mb-lg text-white hover:text-warm-grey-200 text-shadow-1;
+}
+
+.node-preview-container {
+  @apply bg-warm-grey-400 bg-opacity-80;
+}
+
+.node-preview-form-select {
+  @apply flex flex-wrap;
+}
+
+.node-preview-form-select .input--select::after {
+  @apply top-3/4 right-md;
+}
+
+.node-preview-form-select .input--label {
+  @apply text-lg text-white text-shadow-1;
+}
+
+.node-preview-form-select input[type='submit'].button-accent {
+  @apply ml-xl px-xs py-sm;
 }

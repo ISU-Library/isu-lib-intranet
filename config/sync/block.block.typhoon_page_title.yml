@@ -26,6 +26,8 @@ visibility:
       department_page: department_page
       staff_news: staff_news
       staff_updates: staff_updates
+      table_of_contents: table_of_contents
+      webform: webform
     negate: true
     context_mapping:
       node: '@node.node_route_context:node'

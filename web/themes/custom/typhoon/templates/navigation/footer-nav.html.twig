@@ -15,6 +15,7 @@
             <img
               src="/themes/custom/typhoon/images/isu_library_left_white.png"
               alt="Library Logo"
+              loading="lazy"
             />
           </a>
         </div>
@@ -27,7 +28,7 @@
           </span>
           <a
             href="tel:5152943642"
-            class="default-link md:px-sm md:border-l-2 text-red-100 hover:text-red-300 border-yellow-400"
+            class="default-link md:px-sm md:border-l-2 text-red-100 hover:text-red-300 focus:text-red-300 border-yellow-400"
           >
             515.294.3642
           </a>
@@ -35,20 +36,20 @@
         <div class="flex">
           {% if lib_util_nav1_text %}
             <a
-              class="p-md pl-0 text-red-100 hover:text-red-300 text-lg default-link"
+              class="p-md pl-0 text-red-100 hover:text-red-300 focus:text-red-300 text-lg default-link"
               href="{{ footer_social_media1_url }}"
             >
               <i class="{{ footer_social_media1_icon }}"></i>
             </a>
           {% endif %}
           <a
-            class="p-md text-red-100 hover:text-red-300 text-lg default-link"
+            class="p-md text-red-100 hover:text-red-300 focus:text-red-300 text-lg default-link"
             href="/"
           >
             <i class="fab fa-facebook"></i>
           </a>
           <a
-            class="p-md text-red-100 hover:text-red-300 text-lg default-link"
+            class="p-md text-red-100 hover:text-red-300 focus:text-red-300 text-lg default-link"
             href="/"
           >
             <i class="fas fa-external-link-alt"></i>
@@ -65,19 +66,19 @@
     <div class="flex flex-wrap">
       <a
         href="/non-discrimination-policy"
-        class="text-red-100 hover:text-red-300 mb-sm pr-md underline"
+        class="text-red-100 hover:text-red-300 focus:text-red-300 mb-sm pr-md underline"
       >
         Non-discrimination Policy
       </a>
       <a
         href="/privacy-policy"
-        class="text-red-100 hover:text-red-300 mb-sm pr-md underline"
+        class="text-red-100 hover:text-red-300 focus:text-red-300 mb-sm pr-md underline"
       >
         Privacy Policy
       </a>
       <a
         href="/digital-access-and-accessibility"
-        class="text-red-100 hover:text-red-300 mb-sm pr-md underline"
+        class="text-red-100 hover:text-red-300 focus:text-red-300 mb-sm pr-md underline"
       >
         Digital Access &amp; Accessibility
       </a>

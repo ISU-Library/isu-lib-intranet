@@ -1,10 +1,13 @@
 module:
+  webform_clientside_validation: -1
   automated_cron: 0
   big_pipe: 0
   block: 0
   block_content: 0
   breakpoint: 0
   ckeditor: 0
+  clientside_validation: 0
+  clientside_validation_jquery: 0
   color: 0
   comment: 0
   config: 0
@@ -36,6 +39,7 @@ module:
   help: 0
   history: 0
   image: 0
+  inline_form_errors: 0
   jsonapi: 0
   link: 0
   media: 0
@@ -69,9 +73,27 @@ module:
   update: 0
   user: 0
   views_ui: 0
+  webform: 0
+  webform_access: 0
+  webform_attachment: 0
+  webform_cards: 0
+  webform_devel: 0
+  webform_image_select: 0
+  webform_node: 0
+  webform_options_custom: 0
+  webform_options_limit: 0
+  webform_scheduled_email: 0
+  webform_share: 0
+  webform_shortcuts: 0
+  webform_submission_export_import: 0
+  webform_submission_log: 0
+  webform_templates: 0
+  webform_ui: 0
   pathauto: 1
+  webform_bootstrap: 1
   views: 10
   paragraphs: 11
+  custom_search: 50
   standard: 1000
 theme:
   bartik: 0

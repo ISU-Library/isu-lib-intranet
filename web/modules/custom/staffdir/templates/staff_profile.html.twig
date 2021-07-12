@@ -23,17 +23,6 @@
 <table>
   <tbody>
     {% for staffattribute in staffattributes %}
-<<<<<<< HEAD
-        <tr>
-            <td>{{ staffattribute.fullname }}<br/>
-            {{ staffattribute.jobdescr }}<br/>
-            <a href="/departments/{{ staffattribute.unitname_alias }}">{{ staffattribute.unitname_str }}</a><br/>
-            {{ staffattribute.address }}<br/>
-            {{ staffattribute.telephone }}<br/>
-            <a href="mailto={{ staffattribute.netid }}@iastate.edu">{{ staffattribute.netid }}@iastate.edu</a></td>
-            <td><img src="{{ staffattribute.uri }}" alt="{{ staffattribute.fullname }}" width="144" height="180" /></td>
-        </tr>
-=======
       <tr>
         <td>
           {{ staffattribute.fullname }}<br />
@@ -48,13 +37,15 @@
           </a>
         </td>
         <td>
-          <img src="{{ staffattribute.uri }}"
+          <img
+            src="{{ staffattribute.uri }}"
             alt="{{ staffattribute.fullname }}"
             width="144"
-            height="180" />
+            height="180"
+            loading="lazy"
+          />
         </td>
       </tr>
->>>>>>> df3897c1b4e844a6ec0a73774d4a8e143191c903
     {% endfor %}
   </tbody>
 </table>

@@ -4,15 +4,21 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_content_section_content
-    - paragraphs.paragraphs_type.accordion_group
-    - paragraphs.paragraphs_type.basic_card_w_image
     - paragraphs.paragraphs_type.content_sections
-    - paragraphs.paragraphs_type.from_library
-    - paragraphs.paragraphs_type.link_abstract_link_list
-    - paragraphs.paragraphs_type.link_list_link
-    - paragraphs.paragraphs_type.news_card_basic
-    - paragraphs.paragraphs_type.news_card_lead
-    - paragraphs.paragraphs_type.sc_basic_card
+    - paragraphs.paragraphs_type.gc_accordion_block
+    - paragraphs.paragraphs_type.gc_large_img_block
+    - paragraphs.paragraphs_type.gc_link_abstract_list_block
+    - paragraphs.paragraphs_type.gc_link_list_block
+    - paragraphs.paragraphs_type.gc_quote_block
+    - paragraphs.paragraphs_type.gc_text_block
+    - paragraphs.paragraphs_type.gc_text_img_block
+    - paragraphs.paragraphs_type.gc_three_image_block
+    - paragraphs.paragraphs_type.gc_two_image_block
+    - paragraphs.paragraphs_type.sc_basic_cards_block
+    - paragraphs.paragraphs_type.sc_basic_cards_image_block
+    - paragraphs.paragraphs_type.sc_mosaic_image
+    - paragraphs.paragraphs_type.sc_news_basic_card_block
+    - paragraphs.paragraphs_type.sc_news_lead_card_block
   module:
     - entity_reference_revisions
 id: paragraph.content_sections.field_content_section_content
@@ -28,82 +34,99 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 1
+    negate: 0
     target_bundles:
-      accordion_group: accordion_group
-      basic_card_w_image: basic_card_w_image
-      content_sections: content_sections
-      from_library: from_library
-      link_abstract_link_list: link_abstract_link_list
-      link_list_link: link_list_link
-      news_card_basic: news_card_basic
-      news_card_lead: news_card_lead
-      sc_basic_card: sc_basic_card
+      sc_mosaic_image: sc_mosaic_image
+      gc_accordion_block: gc_accordion_block
+      gc_large_img_block: gc_large_img_block
+      gc_link_abstract_list_block: gc_link_abstract_list_block
+      gc_link_list_block: gc_link_list_block
+      gc_quote_block: gc_quote_block
+      gc_text_block: gc_text_block
+      gc_text_img_block: gc_text_img_block
+      gc_three_image_block: gc_three_image_block
+      gc_two_image_block: gc_two_image_block
+      sc_basic_cards_block: sc_basic_cards_block
+      sc_basic_cards_image_block: sc_basic_cards_image_block
+      sc_news_basic_card_block: sc_news_basic_card_block
+      sc_news_lead_card_block: sc_news_lead_card_block
     target_bundles_drag_drop:
       accordion_group:
-        enabled: true
         weight: 23
+        enabled: false
       basic_card_w_image:
-        enabled: true
         weight: 24
+        enabled: false
       content_sections:
-        enabled: true
         weight: 25
+        enabled: false
       from_library:
-        enabled: true
         weight: 26
+        enabled: false
       gc_accordion_block:
+        enabled: true
         weight: 27
-        enabled: false
       gc_large_img_block:
+        enabled: true
         weight: 28
-        enabled: false
       gc_link_abstract_list_block:
+        enabled: true
         weight: 29
-        enabled: false
       gc_link_list_block:
+        enabled: true
         weight: 30
-        enabled: false
       gc_quote_block:
+        enabled: true
         weight: 31
-        enabled: false
       gc_text_block:
+        enabled: true
         weight: 32
-        enabled: false
       gc_text_img_block:
+        enabled: true
         weight: 33
-        enabled: false
       gc_three_image_block:
+        enabled: true
         weight: 34
-        enabled: false
       gc_two_image_block:
+        enabled: true
         weight: 35
-        enabled: false
       link_abstract_link_list:
-        enabled: true
         weight: 36
-      link_list_link:
-        enabled: true
-        weight: 37
-      news_card_basic:
-        enabled: true
-        weight: 38
-      news_card_lead:
-        enabled: true
-        weight: 39
-      sc_basic_card:
-        enabled: true
-        weight: 40
-      sc_basic_cards_block:
-        weight: 41
         enabled: false
-      sc_basic_cards_image_block:
+      link_list_link:
+        weight: 37
+        enabled: false
+      mosaic_image_large:
         weight: 42
         enabled: false
-      sc_news_basic_card_block:
+      mosaic_image_medium:
         weight: 43
         enabled: false
-      sc_news_lead_card_block:
+      mosaic_image_small:
         weight: 44
         enabled: false
+      news_card_basic:
+        weight: 38
+        enabled: false
+      news_card_lead:
+        weight: 39
+        enabled: false
+      sc_basic_card:
+        weight: 40
+        enabled: false
+      sc_basic_cards_block:
+        enabled: true
+        weight: 41
+      sc_basic_cards_image_block:
+        enabled: true
+        weight: 42
+      sc_mosaic_image:
+        enabled: true
+        weight: 25
+      sc_news_basic_card_block:
+        enabled: true
+        weight: 43
+      sc_news_lead_card_block:
+        enabled: true
+        weight: 44
 field_type: entity_reference_revisions
