@@ -142,20 +142,25 @@
         {% endfor %}
       {% endfor %}
       {# ! doing Department Staff this way breaks the JS #}
-      <a
-        class="js-scrollTrigger realtive px-md py-md text-white hover:text-red-200"
-        href="{{ staffAnchor }}"
-      >
-        {{ staff }}
-        <span class="hidden center-x -bottom-1/3 text-2xl text-yellow-600">
-          <i class="fas fa-caret-up"></i>
-        </span>
-      </a>
+      {% set currentPath = url('<current>') %}
+      {% if 'divisions' in currentPath %}
+        <a
+          class="js-scrollTrigger realtive px-md py-md text-white hover:text-red-200"
+          href="{{ staffAnchor }}"
+        >
+          {{ staff }}
+          NO!!!
+          <span class="hidden center-x -bottom-1/3 text-2xl text-yellow-600">
+            <i class="fas fa-caret-up"></i>
+          </span>
+        </a>
+      {% endif %}
     </nav>
   </div>
 
   <div class="mt-2xl lg:mt-4xl">
     {# * See paragraph--content-section.html.twig #}
+
     {{ content.field_department_page_content }}
   </div>
 
