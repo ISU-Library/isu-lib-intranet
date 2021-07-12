@@ -2559,6 +2559,12 @@ p{
 	.sm\:text-sm{
 		font-size: 0.875rem;
 	}
+.sm\:flex-col{
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	}
 }
 @media (min-width: 768px){
 	.md\:relative{
