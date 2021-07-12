@@ -19,8 +19,10 @@ var accordion = showItems.forEach(function (item) {
   var button = document.querySelector('.show--title');
   var ariaValue = button.getAttribute('aria-selected');
   var contentEl = item.querySelector('.show--content');
+  var icon = button.querySelector('.icon');
   item.addEventListener('click', function () {
     (0,_slide_js__WEBPACK_IMPORTED_MODULE_0__.slideToggle)(contentEl, 300);
+    icon.classList.toggle('rotate-180');
 
     if (ariaValue === 'false') {
       button.setAttribute('aria-selected', true);
