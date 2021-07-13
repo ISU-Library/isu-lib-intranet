@@ -18,6 +18,8 @@
 @import './forms.css';
 @import './footer.css';
 
+@import 'modules/sitemap.css';
+
 :root {
   --header-height: '';
 }
