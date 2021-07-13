@@ -1,0 +1,27 @@
+.sitemap--wrap > ul {
+  @apply flex flex-wrap;
+}
+
+.sitemap--wrap > ul > li {
+  @apply md:w-1/3 pr-sm;
+}
+
+.sitemap--wrap > ul > li > a {
+  @apply inline-block pb-2xs text-xl;
+}
+
+.sitemap--wrap > ul > li > ul > li {
+  @apply pb-sm;
+}
+
+.sitemap--wrap > ul > li > ul > li > a {
+  @apply inline-block pb-sm text-lg leading-tight;
+}
+
+.sitemap--wrap > ul > li > ul > li li {
+  @apply pl-sm pb-xs;
+}
+
+.sitemap--wrap > ul > li > ul a {
+  @apply font-normal text-black hover:text-red-800;
+}
