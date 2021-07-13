@@ -15,6 +15,7 @@ permissions:
   - 'access user profiles'
   - 'edit own comments'
   - 'post comments'
+  - 'search Google CSE'
   - 'search content'
   - 'skip comment approval'
   - 'use advanced search'
