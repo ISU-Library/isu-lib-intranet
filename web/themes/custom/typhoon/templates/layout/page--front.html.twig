@@ -199,19 +199,6 @@
               </h2>
               <ul
                 class="basic-card--wrap grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-lg w-full mb-2xl sm:mr-0 xs:mr-0">
-                {# {% for story in card %}
-                                                                                                                                  <li class="test-one">
-                                                                                                                                    {{ card.basic({
-                                                                                                                                        color: story.color,
-                                                                                                                                        link: story.link,
-                                                                                                                                        title: story.title,
-                                                                                                                                        category: story.category,
-                                                                                                                                        icon: story.icon,
-                                                                                                                                        text: story.text,
-                                                                                                                                        linkText: story.linkText,
-                                                                                                                                    }) }}
-                                                                                                                                  </li>
-                                                                                                                                {% endfor %} #}
                 <li>
                   {{ card.basic({
                     front: true,
@@ -228,11 +215,11 @@
                   {{ card.basic({
                     front: true,
                     color: 'basic-card basic-card--yellow',
-                    link: '/',
-                    title: 'IT support',
+                    link: '/resources/it-service-request',
+                    title: 'IT Service Request',
                     category: '',
                     icon: 'computing-science',
-                    text: 'Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco.',
+                    text: "Have an IT related issue? Submit the following form and we'll help you solve it",
                     linkText: 'Link Words',
                 })}}
                 </li>
@@ -240,11 +227,11 @@
                   {{ card.basic({
                     front: true,
                     color: '',
-                    link: '/',
-                    title: 'IT support',
+                    link: '/resources/emergency-procedures',
+                    title: 'Emergency Procedures',
                     category: '',
-                    icon: 'computing-science',
-                    text: 'Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco.',
+                    icon: 'hospital',
+                    text: "Have an Emergency and not sure what to do? Please see our Emergency Procedures. Hopefully, you're just refreshing so you're prepared if the moment does come.",
                     linkText: 'Link Words',
                 })}}
                 </li>
