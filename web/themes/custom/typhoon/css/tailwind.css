@@ -2200,6 +2200,8 @@ textarea{
 	    flex-wrap: wrap;
 }
 .sitemap--wrap > ul > li{
+	width: 100%;
+	padding-bottom: 0.75rem;
 	padding-right: 0.75rem;
 }
 @media (min-width: 768px){
@@ -2212,8 +2214,10 @@ textarea{
 	padding-bottom: 0.25rem;
 	font-size: 1.5rem;
 }
-.sitemap--wrap > ul > li > ul > li{
-	padding-bottom: 0.75rem;
+@media (min-width: 768px){
+	.sitemap--wrap > ul > li > ul > li{
+		padding-bottom: 0.75rem;
+	}
 }
 .sitemap--wrap > ul > li > ul > li > a{
 	display: inline-block;

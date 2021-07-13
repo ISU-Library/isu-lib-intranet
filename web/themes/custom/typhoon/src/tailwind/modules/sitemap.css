@@ -3,7 +3,7 @@
 }
 
 .sitemap--wrap > ul > li {
-  @apply md:w-1/3 pr-sm;
+  @apply w-full md:w-1/3 pr-sm pb-sm;
 }
 
 .sitemap--wrap > ul > li > a {
@@ -11,7 +11,7 @@
 }
 
 .sitemap--wrap > ul > li > ul > li {
-  @apply pb-sm;
+  @apply md:pb-sm;
 }
 
 .sitemap--wrap > ul > li > ul > li > a {
