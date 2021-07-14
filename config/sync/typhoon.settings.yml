@@ -5,7 +5,7 @@ features:
   favicon: 1
 logo:
   use_default: 0
-  path: themes/custom/typhoon/logo.svg
+  path: themes/custom/typhoon/logo.png
 favicon:
   use_default: 1
 lib_util_nav1_text: 'Staff Directory'
