@@ -39,6 +39,10 @@
   @apply mt-0;
 }
 
+.gen-con--block.img-block p + p {
+  @apply mt-md;
+}
+
 .abstract-item > ul {
   @apply pl-4xl;
 }
@@ -63,6 +67,10 @@
   font-size: inherit;
   color: inherit;
   letter-spacing: inherit;
+}
+
+.accordion .show--content div:first-child {
+  @apply mt-md;
 }
 
 .accordion::before,
