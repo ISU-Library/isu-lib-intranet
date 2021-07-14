@@ -50,7 +50,7 @@
 {% set headline = lib_homepage_header_header %}
 {% set tagline = lib_homepage_header_tagline %}
 
-{% set test_image = '/themes/custom/typhoon/images/Above as Below_1.jpg' %}
+{% set ctaImagePath = '/themes/custom/typhoon/images/front-cta' %}
 
 <div
   class="front-page">
@@ -138,30 +138,30 @@
               <div class="cta-content flex flex-col items-start justify-around md:items-center md:justify-around md:flex-row">
                 <div class="cta-text max-w-xl my-5xl md:mt-0 md:mr-xs mb-4xl md:mb-0 xl:max-w-2xl">
                   <h2 class="heading-underline text-white text-shadow-1">
-                    Explore
+                    Take a Look  Around
                   </h2>
                   <p class="text-white mb-lg lg:text-lg xl:text-lg text-shadow-1">
-                    Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco sint. Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi
+                    The new intranet hopes to streamline access to information, resources, and the major things staff needs to be successful. Staff is easier to find in each department. Writing guides, policies, and other resources are in a single collection.
                   </p>
-                  <a href="/" class="button button-secondary">
-                    Not sure where this should go!
+                  <a href="/about" class="button button-secondary">
+                    Visit About pages
                   </a>
                 </div>
-                <div class="cta-card--stack hidden md:flex flex-row flex-wrap justify-around mt-2xl md:mt-4xl -mb-4xl md:flex-col md:items-center">
+                <div class="cta-card--stack hidden md:flex flex-row flex-wrap justify-around mt-2xl md:-mt-4xl -mb-4xl md:flex-col md:items-center">
                   <div class="cta-card overflow-hidden z-10 w-72 mb-xl md:mb-2xl shadow-dark-3 hover:shadow-dark-4 duration-300 ease transform hover:scale-105">
-                    <a href="" class="cta-card--link">
+                    <a href="/divisions" class="cta-card--link">
                       <figure class="cta-card--image relative w-full m-0">
-                        <img class="absolute-center max-w-full z-10" src="{{test_image}}" alt="" loading="lazy">
+                        <img class="absolute-center max-w-full z-10" src="{{ctaImagePath}}-1.jpg" alt="" loading="lazy">
                         <figcaption class="absolute left-0 bottom-lg w-4/5 pl-lg py-xs pr-2xl text-lg text-white leading-snug z-20">
-                          Forms
+                          Divisions
                         </figcaption>
                       </figure>
                     </a>
                   </div>
                   <div class="cta-card overflow-hidden z-10 w-72 mb-xl md:mb-2xl shadow-dark-3 hover:shadow-dark-4 duration-300 ease transform hover:scale-105">
-                    <a href="" class="cta-card--link">
+                    <a href="/resources" class="cta-card--link">
                       <figure class="cta-card--image relative w-full m-0">
-                        <img class="absolute-center max-w-full z-10" src="{{test_image}}" alt="" loading="lazy">
+                        <img class="absolute-center max-w-full z-10" src="{{ctaImagePath}}-2.jpg" alt="" loading="lazy">
                         <figcaption class="absolute left-0 bottom-lg w-4/5 pl-lg py-xs pr-2xl text-lg text-white leading-snug z-20">
                           Resources
                         </figcaption>
@@ -169,9 +169,9 @@
                     </a>
                   </div>
                   <div class="cta-card overflow-hidden z-10 w-72 shadow-dark-3 hover:shadow-dark-4 duration-300 ease transform hover:scale-105">
-                    <a href="" class="cta-card--link">
+                    <a href="/staff" class="cta-card--link">
                       <figure class="cta-card--image relative w-full m-0">
-                        <img class="absolute-center max-w-full z-10" src="{{test_image}}" alt="" loading="lazy">
+                        <img class="absolute-center max-w-full z-10" src="{{ctaImagePath}}-3.jpg" alt="" loading="lazy">
                         <figcaption class="absolute left-0 bottom-lg w-4/5 pl-lg py-xs pr-2xl text-lg text-white leading-snug z-20">
                           Staff
                         </figcaption>
@@ -203,12 +203,12 @@
                   {{ card.basic({
                     front: true,
                     color: 'basic-card basic-card--blue',
-                    link: '/',
-                    title: 'IT support',
+                    link: '/staff-directory',
+                    title: 'Staff Directory',
                     category: '',
-                    icon: 'computing-science',
-                    text: 'Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco.',
-                    linkText: 'Link Words',
+                    icon: 'professor-consultation',
+                    text: 'All staff members in one easy to find location.',
+                    linkText: 'View Directory',
                 })}}
                 </li>
                 <li>
@@ -220,7 +220,7 @@
                     category: '',
                     icon: 'computing-science',
                     text: "Have an IT related issue? Submit the following form and we'll help you solve it",
-                    linkText: 'Link Words',
+                    linkText: 'Request Help',
                 })}}
                 </li>
                 <li>
@@ -232,7 +232,7 @@
                     category: '',
                     icon: 'hospital',
                     text: "Have an Emergency and not sure what to do? Please see our Emergency Procedures. Hopefully, you're just refreshing so you're prepared if the moment does come.",
-                    linkText: 'Link Words',
+                    linkText: 'View Procedures',
                 })}}
                 </li>
                 <li>
@@ -240,11 +240,11 @@
                     front: true,
                     color: 'basic-card basic-card--yellow',
                     link: '/',
-                    title: 'IT support',
+                    title: 'Evaluation & Promotion',
                     category: '',
-                    icon: 'computing-science',
-                    text: 'Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco.',
-                    linkText: 'Link Words',
+                    icon: 'documents',
+                    text: 'All evaluation and promotion forms in one making those annual reviews just a little bit easier.',
+                    linkText: 'View Forms',
                 })}}
                 </li>
                 <li>
@@ -252,22 +252,22 @@
                     front: true,
                     color: '',
                     link: '/',
-                    title: 'IT support',
+                    title: 'New Staff',
                     category: '',
-                    icon: 'computing-science',
-                    text: 'Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco.',
+                    icon: 'military',
+                    text: 'New around here? This section is for you. These links and resources were curated to make your start here a bit easier.',
                     linkText: 'Link Words',
                 })}}
                 </li>
                 <li>
                   {{ card.basic({
                     front: true,
-                    color: 'basic-card basic-card--yellow',
+                    color: 'basic-card basic-card--blue',
                     link: '/',
-                    title: 'IT support',
+                    title: 'Printers',
                     category: '',
-                    icon: 'computing-science',
-                    text: 'Irure nisi incididunt deserunt quis nostrud cillum anim ea ex nisi veniam exercitation nisi sit. Labore nulla ex id non Lorem ullamco ullamco et ullamco.',
+                    icon: 'engineering',
+                    text: "Don't go hunting for a printer, use this page instead. Find all Staff and Public Printers as well how to add them as known devices.",
                     linkText: 'Link Words',
                 })}}
                 </li>
