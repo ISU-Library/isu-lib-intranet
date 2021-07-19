@@ -2,11 +2,11 @@
 
 .nav-triangles {
   position: absolute;
-  top: -2.1rem;
+  /* top: -2.1rem; */
   left: -2.3rem;
   width: 72px;
   height: 72px;
-  @apply absolute bg-red-700 transform rotate-45 z-10;
+  @apply top-[-2.3rem] sm:top-[-2.1rem] absolute bg-red-700 transform rotate-45 z-10;
 }
 
 .nav-triangles::before {
@@ -47,12 +47,12 @@
 }
 
 .search__search-form form .form-item {
-  @apply mb-0;
+  @apply w-full sm:w-[16.625rem] mb-0;
 }
 
 .search__search-form .search__search-input {
-  width: 15.625rem;
-  @apply h-full text-sm border-none rounded-sm bg-red-100 pl-md m-0 shadow-none;
+  /* width: 15.625rem; */
+  @apply w-full sm:w-[15.625rem] h-full text-sm border-none rounded-sm bg-red-100 pl-md m-0 shadow-none;
 }
 
 .search__search-form .search__search-button {
