@@ -59,14 +59,26 @@
   // width: 100%;
 
   &.large {
+    @include bp(md) {
+      max-width: 100%;
+    }
+
     max-width: rem(400);
   }
 
   &.medium {
+    @include bp(md) {
+      max-width: 100%;
+    }
+
     max-width: rem(300);
   }
 
   &.small {
+    @include bp(md) {
+      max-width: 100%;
+    }
+
     max-width: rem(200);
   }
 
