@@ -29,19 +29,22 @@
 }
 
 .quick-links--yellow-triangles {
-  top: 25%;
+  top: 80%;
   left: 0;
-}
 
-.quick-links--red-bars {
-  top: 30%;
-  right: 0;
-
-  @include bp(xl) {
+  @include bp(sm) {
     top: 25%;
   }
 }
 
+.quick-links--red-bars {
+  // top: 30%;
+  // right: 0;
+
+  // @include bp(xl) {
+  //   top: 25%;
+  // }
+}
 
 // * staff updates flair section
 .staff-updates--dots {
