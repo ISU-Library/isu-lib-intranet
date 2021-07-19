@@ -34,6 +34,7 @@
         "drupal/oauth_login_oauth2": "^1.223",
         "drupal/paragraphs": "^1.12",
         "drupal/pathauto": "^1.8",
+        "drupal/smtp": "^1.0",
         "drupal/token": "^1.7",
         "drupal/twig_field_value": "^2.0",
         "drupal/webform": "^6.0",
