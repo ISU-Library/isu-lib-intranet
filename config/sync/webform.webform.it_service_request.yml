@@ -55,6 +55,20 @@ elements: |-
     '#title': Description
     '#required': true
     '#test': 'Please ignore this email.'
+  optional_attachement:
+    '#type': webform_attachment_token
+    '#title': 'Optional attachement'
+    '#access_create_roles':
+      - authenticated
+    '#access_update_roles':
+      - authenticated
+    '#access_view_roles':
+      - authenticated
+    '#sanitize': true
+  testfile:
+    '#type': webform_attachment_twig
+    '#title': 'Test Email Attachement'
+    '#display_on': form
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'
@@ -305,7 +319,7 @@ handlers:
       exclude_empty_checkbox: false
       exclude_attachments: false
       html: true
-      attachments: false
+      attachments: true
       twig: true
       theme_name: ''
       parameters: {  }
