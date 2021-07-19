@@ -107,16 +107,16 @@ export default function scrollSpy(target, breakpoint) {
           const scrollSpyNavHeight = 58;
 
           //* updates the URL hash
-          function updateUrlHash() {
-            history.replaceState(null, null, location + '#' + sectionID);
-          }
+          // function updateUrlHash() {
+          //   history.replaceState(null, null, location + '#' + sectionID);
+          // }
 
           // * checks scroll locations and updates url Hash
           if (
             index == 0 &&
             targetBottom - window.scrollY > scrollSpyNavHeight
           ) {
-            updateUrlHash();
+            // updateUrlHash();
 
             triggerEl.classList.add('is-active');
             spanEl.classList.remove('hidden');
@@ -125,7 +125,7 @@ export default function scrollSpy(target, breakpoint) {
             targetBottom - window.scrollY > scrollSpyNavHeight &&
             target.offsetTop - window.scrollY < scrollSpyNavHeight
           ) {
-            updateUrlHash();
+            // updateUrlHash();
             // * updates nav indicator
             spanEl.classList.remove('hidden');
             triggerEl.classList.add('is-active');
