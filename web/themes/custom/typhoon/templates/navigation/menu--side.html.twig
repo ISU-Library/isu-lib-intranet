@@ -34,15 +34,15 @@
   {% if items %}
     {% if menu_level == 0 %}
       {{ items.title }}
-      <ul{{attributes.addClass('side-nav','rounded','bg-white','overflow-hidden')}}>
+      <ul{{attributes.addClass('side-nav', 'shadow-light-2','rounded','bg-white','overflow-hidden')}}>
       {% else %}
-        <ul class="side-nav--sub-list list-none sm ml-0 p-0">
+        <ul class="side-nav--sub-list hidden list-none sm ml-0 p-0">
         {% endif %}
 
         {% for item in items %}
           {# Assign classes based on if the item is an open parent, closed parent, active, or a has a submenu. #}
           {% set classes = [
-            menu_level ? 'sub-list--item' : 'side-nav--item block js-side-nav-select first:border-0',
+            menu_level ? 'sub-list--item' : 'side-nav--item border-t-2 border-white block js-side-nav-select first:border-0',
             item.in_active_trail ? 'side-nav--item_active-trail',  
           ]%}
 
@@ -61,9 +61,9 @@
                   'px-md',
                   item.in_active_trail ? 'is-active' ,
                   'side-nav--link',
+                  'border-r-4',
+                  'border-yellow-500',
                   'flex-grow',
-                  'border-t-2',
-                  'border-white'
                 ] %}
 
               {% set bottom_link_class = [
@@ -72,6 +72,8 @@
                   'px-md',
                   item.in_active_trail ? 'is-active',
                   'side-nav--link',
+                  'border-r-4',
+                  'border-yellow-500',
                   'border-0',
                   'flex-grow'
                 ] %}
@@ -81,7 +83,7 @@
                 <div class="flex">
                   <button 
                     aria-label="{{ item.in_active_trail ? 'close ' ~ item.title ~ ' sub-menu' : 'open ' ~ item.title ~ ' sub-menu'}}" title="{{item.title}} section has sub-pages" 
-                    class="flex icon-wrap flex-shrink-0 justify-center border-t-2 border-warm-grey-50 items-center bg-yellow-500 w-3xl transition-colors duration-300 hover:bg-yellow-600 focus:bg-yellow-600"
+                    class="flex icon-wrap flex-shrink-0 justify-center  border-warm-grey-50 items-center bg-yellow-500 w-3xl transition-colors duration-300 hover:bg-yellow-600 focus:bg-yellow-600"
                   >
                     {% if item.in_active_trail %}
                       <i class="fas fa-minus text-red-500 text-lg"></i>
@@ -97,7 +99,7 @@
                 <div
                   class="flex">
                   {# {% if item.in_active_trail %} #}
-                  <a href="{{item.url}}" class="bg-yellow-500 transition-colors duration-300 hover:bg-yellow-600 focus:bg-yellow-600 border-t-2 border-warm-grey-50">
+                  <a href="{{item.url}}" class="bg-yellow-500 transition-colors duration-300 hover:bg-yellow-600 focus:bg-yellow-600  border-warm-grey-50">
                     <div title="{{item.title}} doesn't have sub-pages" class="flex icon-wrap flex-shrink-0 justify-center h-full  items-center w-3xl ">
                       <i class=" fas fa-chevron-right text-red-500 text-lg"></i>
                     </div>

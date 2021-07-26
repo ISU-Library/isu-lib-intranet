@@ -1,0 +1,4 @@
+table td,
+table th {
+  @apply py-sm px-lg align-top border-t-[1px] border-warm-grey-50;
+}

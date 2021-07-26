@@ -1,369 +1,369 @@
-$card-width: rem(375);
-$card-width-mobile: 100%;
-
-// defualt card is red
-$basic-card-box-shadow: $vert-light-2;
-$basic-card-dark-shadow-hover: $vert-dark-4;
-$basic-card-light-shadow-hover: $vert-light-4;
-$basic-card-border-color: $red-400;
-$basic-card-border-color-hover: $red-700;
-$basic-card-background-hover: $red-500;
-$basic-card-light-tri: $red-400;
-$basic-card-light-tri-hover: $red-600;
-$basic-card-dark-tri: $red-500;
-$basic-card-dark-tri-hover: $red-700;
-$basic-card-text-color-hover: $white;
-$basic-card-text-red: $link-color;
-
-// decided to go with colors vs 'secondary' so colors could be endless
-// yellow card
-$yellow-basic-card-border-color: $yellow-500;
-$yellow-basic-card-border-color-hover: $yellow-600;
-$yellow-basic-card-background-hover: $yellow-400;
-$yellow-basic-card-light-tri: $yellow-500;
-$yellow-basic-card-light-tri-hover: $yellow-500;
-$yellow-basic-card-dark-tri: $yellow-600;
-$yellow-basic-card-dark-tri-hover: $yellow-600;
-$yellow-basic-card-text-color-hover: $text-color;
-$yellow-basic-card-text-yellow: $yellow-800;
-
-// blue card
-$blue-basic-card-border-color: $blue-600;
-$blue-basic-card-border-color-hover: $blue-700;
-$blue-basic-card-background-hover: $blue-500;
-$blue-basic-card-light-tri: $blue-500;
-$blue-basic-card-light-tri-hover: $blue-600;
-$blue-basic-card-dark-tri: $blue-600;
-$blue-basic-card-dark-tri-hover: $blue-700;
-$blue-basic-card-text-color-hover: $white;
-$blue-basic-card-text-blue: $blue-700;
-
-.basic-card--wrap {
-  // display: grid;
-  // gap: $space-lg;
-  // grid-template-columns: repeat(auto-fill, minmax(rem(200), 1fr));
-  // width: $card-width-mobile;
-
-  @include bp(md) {
-    // grid-template-columns: repeat(auto-fill, minmax(rem(336), 1fr));
-  }
-
-  // makes basic-card-image wider
-  &.basic-card-image--wrap {
-    // grid-template-columns: repeat(auto-fit, minmax(rem(250), 1fr));
-
-    @include bp(md) {
-      // grid-template-columns: repeat(auto-fit, minmax(rem(300), 1fr));
-    }
-  }
-
-  [class*='icon-'] {
-    // color: $basic-card-text-red;
-    // transition: color 0.3s ease-in;
-  }
-}
-
-.basic-card,
-.lib-basic-card {
-  // position: relative;
-  // height: 100%;
-  // border-left: $space-2xs solid $basic-card-border-color;
-  // text-decoration: none;
-  // box-shadow: $basic-card-box-shadow;
-  // overflow: hidden;
-  // transition: background-color 0.3s ease-in, border-color 0.3s ease-in,
-  //   box-shadow 0.3s ease-in;
-  // z-index: 1;
-
-  &::before,
-  &::after {
-    content: '';
-    width: rem(88);
-    height: rem(50);
-    position: absolute;
-    transform: rotate(45deg);
-    transition: background-color 0.3s ease-in;
-  }
-
-  &::before {
-    top: $card-width * -0.03;
-    right: $card-width * -0.08;
-    background-color: $basic-card-light-tri;
-  }
-
-  &::after {
-    top: $card-width * -0.07;
-    right: $card-width * -0.11;
-    background-color: $basic-card-dark-tri;
-  }
-
-  // Hover triggers
-  &:hover,
-  &:focus {
-    // background-color: $basic-card-background-hover;
-    // border-color: $basic-card-border-color-hover;
-    // box-shadow: $basic-card-dark-shadow-hover;
-
-    &::before {
-      background-color: $basic-card-light-tri-hover;
-    }
-
-    &::after {
-      background-color: $basic-card-dark-tri-hover;
-    }
-
-    [class*='icon-'] {
-      // color: $basic-card-text-color-hover;
-    }
-
-    .basic-card--image-wrap img {
-      // transform: translate(-50%, -50%) scale(1.05);
-    }
-
-    .basic-card--category {
-      // color: $basic-card-text-color-hover;
-    }
-
-    .basic-card--title {
-      // color: $basic-card-text-color-hover;
-    }
-
-    .basic-card--desc {
-      // color: $basic-card-text-color-hover;
-    }
-
-    .cta {
-      // color: $basic-card-text-color-hover;
-
-      &::after {
-        right: 0.6em;
-      }
-    }
-  }
-}
-
-.basic-card--text-wrap {
-  // height: 100%;
-  // transition: border-color 0.3s ease-in;
-}
-
-.basic-card--category {
-  // display: block;
-  // line-height: 1.5;
-  // font-weight: 400;
-  // color: $basic-card-text-red;
-  // transition: color 0.3s ease-in;
-}
-
-.basic-card--title {
-  // @include line-clamp(3);
-  // transition: color 0.3s ease-in;
-}
-
-.basic-card--desc {
-  // @include line-clamp(5);
-  // flex-grow: 1;
-  // font-weight: 400;
-  // transition: color 0.3s ease-in;
-}
-
-// Yellow card
-.basic-card--yellow,
-.lib-basic-card--yellow {
-  // box-shadow: $basic-card-box-shadow;
-  // border-color: $yellow-basic-card-border-color;
-
-  &::before {
-    background-color: $yellow-basic-card-light-tri;
-  }
-
-  &::after {
-    background-color: $yellow-basic-card-dark-tri;
-  }
-
-  // Hover triggers
-  &:hover,
-  &:focus {
-    // background-color: $yellow-basic-card-background-hover;
-    // border-color: $yellow-basic-card-border-color-hover;
-    // box-shadow: $basic-card-light-shadow-hover;
-
-    &::before {
-      background-color: $yellow-basic-card-light-tri-hover;
-    }
-
-    &::after {
-      background-color: $yellow-basic-card-dark-tri-hover;
-    }
-
-    [class*='icon-'] {
-      // color: $yellow-basic-card-text-color-hover;
-    }
-
-    .basic-card--category {
-      // color: $yellow-basic-card-text-color-hover;
-    }
-
-    .basic-card--title {
-      // color: $yellow-basic-card-text-color-hover;
-    }
-
-    .basic-card--desc {
-      // color: $yellow-basic-card-text-color-hover;
-    }
-
-    .cta {
-      // color: $yellow-basic-card-text-color-hover;
-    }
-  }
-
-  [class*='icon-'] {
-    // color: $yellow-basic-card-text-yellow;
-    // transition: color 0.3s ease-in;
-  }
-
-  .basic-card--category {
-    // color: $yellow-basic-card-text-yellow;
-  }
-
-  .cta {
-    // color: $yellow-basic-card-text-yellow;
-  }
-}
-
-// blue card
-.basic-card--blue,
-.lib-basic-card--blue {
-  // box-shadow: $basic-card-box-shadow;
-  // border-left: 4px solid $blue-basic-card-border-color;
-
-  &::before {
-    background-color: $blue-basic-card-light-tri;
-  }
-
-  &::after {
-    background-color: $blue-basic-card-dark-tri;
-  }
-
-  // Hover triggers
-  &:hover,
-  &:focus {
-    // background-color: $blue-basic-card-background-hover;
-    // border-color: $blue-basic-card-border-color-hover;
-    // box-shadow: $basic-card-light-shadow-hover;
-
-    &::before {
-      background-color: $blue-basic-card-light-tri-hover;
-    }
-
-    &::after {
-      background-color: $blue-basic-card-dark-tri-hover;
-    }
-
-    [class*='icon-'] {
-      // color: $blue-basic-card-text-color-hover;
-    }
-
-    .basic-card--category {
-      // color: $blue-basic-card-text-color-hover;
-    }
-
-    .basic-card--title {
-      // color: $blue-basic-card-text-color-hover;
-    }
-
-    .basic-card--desc {
-      // color: $blue-basic-card-text-color-hover;
-    }
-
-    .cta {
-      // color: $blue-basic-card-text-color-hover;
-    }
-  }
-
-  [class*='icon-'] {
-    // color: $blue-basic-card-text-blue;
-    // transition: color 0.3s ease-in;
-  }
-
-  .basic-card--category {
-    // color: $blue-basic-card-text-blue;
-  }
-
-  .cta {
-    // color: $blue-basic-card-text-blue;
-  }
-}
-
-//
-
-.basic-card--image {
-  &.basic-card {
-    &::before,
-    &::after {
-      z-index: 4;
-      opacity: 0.5;
-    }
-  }
-
-  .basic-card--image-wrap {
-    // position: relative;
-
-    .basic-card--text-wrap {
-      // position: absolute;
-      // bottom: 0;
-      // left: 0;
-      // height: auto;
-      // border: none;
-    }
-  }
-
-  figure {
-    // position: relative;
-    padding-top: percentage(473/662);
-    // overflow: hidden;
-    // margin: 0;
-
-    img {
-      // @include absolute-center;
-      // max-width: 100%;
-      // width: 100%;
-      // height: auto;
-      // transition: transform 0.5s ease;
-    }
-  }
-
-  .basic-card--text-wrap {
-    // position: relative;
-    // padding-top: $space-md;
-  }
-
-  .basic-card--category,
-  .basic-card--title {
-    // color: $white;
-  }
-}
-
-.basic-card--yellow.basic-card--image {
-  .basic-card--category,
-  .basic-card--title {
-    // color: $white;
-
-    &:hover,
-    &:focus {
-      // color: $white;
-    }
-  }
-}
-
-.basic-card--blue.basic-card--image {
-  .basic-card--category,
-  .basic-card--title {
-    // color: $white;
-
-    &:hover,
-    &:focus {
-      // color: $white;
-    }
-  }
-}
+// $card-width: rem(375);
+// $card-width-mobile: 100%;
+
+// // defualt card is red
+// $basic-card-box-shadow: $vert-light-2;
+// $basic-card-dark-shadow-hover: $vert-dark-4;
+// $basic-card-light-shadow-hover: $vert-light-4;
+// $basic-card-border-color: $red-400;
+// $basic-card-border-color-hover: $red-700;
+// $basic-card-background-hover: $red-500;
+// $basic-card-light-tri: $red-400;
+// $basic-card-light-tri-hover: $red-600;
+// $basic-card-dark-tri: $red-500;
+// $basic-card-dark-tri-hover: $red-700;
+// $basic-card-text-color-hover: $white;
+// $basic-card-text-red: $link-color;
+
+// // decided to go with colors vs 'secondary' so colors could be endless
+// // yellow card
+// $yellow-basic-card-border-color: $yellow-500;
+// $yellow-basic-card-border-color-hover: $yellow-600;
+// $yellow-basic-card-background-hover: $yellow-400;
+// $yellow-basic-card-light-tri: $yellow-500;
+// $yellow-basic-card-light-tri-hover: $yellow-500;
+// $yellow-basic-card-dark-tri: $yellow-600;
+// $yellow-basic-card-dark-tri-hover: $yellow-600;
+// $yellow-basic-card-text-color-hover: $text-color;
+// $yellow-basic-card-text-yellow: $yellow-800;
+
+// // blue card
+// $blue-basic-card-border-color: $blue-600;
+// $blue-basic-card-border-color-hover: $blue-700;
+// $blue-basic-card-background-hover: $blue-500;
+// $blue-basic-card-light-tri: $blue-500;
+// $blue-basic-card-light-tri-hover: $blue-600;
+// $blue-basic-card-dark-tri: $blue-600;
+// $blue-basic-card-dark-tri-hover: $blue-700;
+// $blue-basic-card-text-color-hover: $white;
+// $blue-basic-card-text-blue: $blue-700;
+
+// .basic-card--wrap {
+//   // display: grid;
+//   // gap: $space-lg;
+//   // grid-template-columns: repeat(auto-fill, minmax(rem(200), 1fr));
+//   // width: $card-width-mobile;
+
+//   @include bp(md) {
+//     // grid-template-columns: repeat(auto-fill, minmax(rem(336), 1fr));
+//   }
+
+//   // makes basic-card-image wider
+//   &.basic-card-image--wrap {
+//     // grid-template-columns: repeat(auto-fit, minmax(rem(250), 1fr));
+
+//     @include bp(md) {
+//       // grid-template-columns: repeat(auto-fit, minmax(rem(300), 1fr));
+//     }
+//   }
+
+//   [class*='icon-'] {
+//     // color: $basic-card-text-red;
+//     // transition: color 0.3s ease-in;
+//   }
+// }
+
+// .basic-card,
+// .lib-basic-card {
+//   // position: relative;
+//   // height: 100%;
+//   // border-left: $space-2xs solid $basic-card-border-color;
+//   // text-decoration: none;
+//   // box-shadow: $basic-card-box-shadow;
+//   // overflow: hidden;
+//   // transition: background-color 0.3s ease-in, border-color 0.3s ease-in,
+//   //   box-shadow 0.3s ease-in;
+//   // z-index: 1;
+
+//   &::before,
+//   &::after {
+//     content: '';
+//     width: rem(88);
+//     height: rem(50);
+//     position: absolute;
+//     transform: rotate(45deg);
+//     transition: background-color 0.3s ease-in;
+//   }
+
+//   &::before {
+//     top: $card-width * -0.03;
+//     right: $card-width * -0.08;
+//     background-color: $basic-card-light-tri;
+//   }
+
+//   &::after {
+//     top: $card-width * -0.07;
+//     right: $card-width * -0.11;
+//     background-color: $basic-card-dark-tri;
+//   }
+
+//   // Hover triggers
+//   &:hover,
+//   &:focus {
+//     // background-color: $basic-card-background-hover;
+//     // border-color: $basic-card-border-color-hover;
+//     // box-shadow: $basic-card-dark-shadow-hover;
+
+//     &::before {
+//       background-color: $basic-card-light-tri-hover;
+//     }
+
+//     &::after {
+//       background-color: $basic-card-dark-tri-hover;
+//     }
+
+//     [class*='icon-'] {
+//       // color: $basic-card-text-color-hover;
+//     }
+
+//     .basic-card--image-wrap img {
+//       // transform: translate(-50%, -50%) scale(1.05);
+//     }
+
+//     .basic-card--category {
+//       // color: $basic-card-text-color-hover;
+//     }
+
+//     .basic-card--title {
+//       // color: $basic-card-text-color-hover;
+//     }
+
+//     .basic-card--desc {
+//       // color: $basic-card-text-color-hover;
+//     }
+
+//     .cta {
+//       // color: $basic-card-text-color-hover;
+
+//       &::after {
+//         right: 0.6em;
+//       }
+//     }
+//   }
+// }
+
+// .basic-card--text-wrap {
+//   // height: 100%;
+//   // transition: border-color 0.3s ease-in;
+// }
+
+// .basic-card--category {
+//   // display: block;
+//   // line-height: 1.5;
+//   // font-weight: 400;
+//   // color: $basic-card-text-red;
+//   // transition: color 0.3s ease-in;
+// }
+
+// .basic-card--title {
+//   // @include line-clamp(3);
+//   // transition: color 0.3s ease-in;
+// }
+
+// .basic-card--desc {
+//   // @include line-clamp(5);
+//   // flex-grow: 1;
+//   // font-weight: 400;
+//   // transition: color 0.3s ease-in;
+// }
+
+// // Yellow card
+// .basic-card--yellow,
+// .lib-basic-card--yellow {
+//   // box-shadow: $basic-card-box-shadow;
+//   // border-color: $yellow-basic-card-border-color;
+
+//   &::before {
+//     background-color: $yellow-basic-card-light-tri;
+//   }
+
+//   &::after {
+//     background-color: $yellow-basic-card-dark-tri;
+//   }
+
+//   // Hover triggers
+//   &:hover,
+//   &:focus {
+//     // background-color: $yellow-basic-card-background-hover;
+//     // border-color: $yellow-basic-card-border-color-hover;
+//     // box-shadow: $basic-card-light-shadow-hover;
+
+//     &::before {
+//       background-color: $yellow-basic-card-light-tri-hover;
+//     }
+
+//     &::after {
+//       background-color: $yellow-basic-card-dark-tri-hover;
+//     }
+
+//     [class*='icon-'] {
+//       // color: $yellow-basic-card-text-color-hover;
+//     }
+
+//     .basic-card--category {
+//       // color: $yellow-basic-card-text-color-hover;
+//     }
+
+//     .basic-card--title {
+//       // color: $yellow-basic-card-text-color-hover;
+//     }
+
+//     .basic-card--desc {
+//       // color: $yellow-basic-card-text-color-hover;
+//     }
+
+//     .cta {
+//       // color: $yellow-basic-card-text-color-hover;
+//     }
+//   }
+
+//   [class*='icon-'] {
+//     // color: $yellow-basic-card-text-yellow;
+//     // transition: color 0.3s ease-in;
+//   }
+
+//   .basic-card--category {
+//     // color: $yellow-basic-card-text-yellow;
+//   }
+
+//   .cta {
+//     // color: $yellow-basic-card-text-yellow;
+//   }
+// }
+
+// // blue card
+// .basic-card--blue,
+// .lib-basic-card--blue {
+//   // box-shadow: $basic-card-box-shadow;
+//   // border-left: 4px solid $blue-basic-card-border-color;
+
+//   &::before {
+//     background-color: $blue-basic-card-light-tri;
+//   }
+
+//   &::after {
+//     background-color: $blue-basic-card-dark-tri;
+//   }
+
+//   // Hover triggers
+//   &:hover,
+//   &:focus {
+//     // background-color: $blue-basic-card-background-hover;
+//     // border-color: $blue-basic-card-border-color-hover;
+//     // box-shadow: $basic-card-light-shadow-hover;
+
+//     &::before {
+//       background-color: $blue-basic-card-light-tri-hover;
+//     }
+
+//     &::after {
+//       background-color: $blue-basic-card-dark-tri-hover;
+//     }
+
+//     [class*='icon-'] {
+//       // color: $blue-basic-card-text-color-hover;
+//     }
+
+//     .basic-card--category {
+//       // color: $blue-basic-card-text-color-hover;
+//     }
+
+//     .basic-card--title {
+//       // color: $blue-basic-card-text-color-hover;
+//     }
+
+//     .basic-card--desc {
+//       // color: $blue-basic-card-text-color-hover;
+//     }
+
+//     .cta {
+//       // color: $blue-basic-card-text-color-hover;
+//     }
+//   }
+
+//   [class*='icon-'] {
+//     // color: $blue-basic-card-text-blue;
+//     // transition: color 0.3s ease-in;
+//   }
+
+//   .basic-card--category {
+//     // color: $blue-basic-card-text-blue;
+//   }
+
+//   .cta {
+//     // color: $blue-basic-card-text-blue;
+//   }
+// }
+
+// //
+
+// .basic-card--image {
+//   &.basic-card {
+//     &::before,
+//     &::after {
+//       z-index: 4;
+//       opacity: 0.5;
+//     }
+//   }
+
+//   .basic-card--image-wrap {
+//     // position: relative;
+
+//     .basic-card--text-wrap {
+//       // position: absolute;
+//       // bottom: 0;
+//       // left: 0;
+//       // height: auto;
+//       // border: none;
+//     }
+//   }
+
+//   figure {
+//     // position: relative;
+//     padding-top: percentage(473/662);
+//     // overflow: hidden;
+//     // margin: 0;
+
+//     img {
+//       // @include absolute-center;
+//       // max-width: 100%;
+//       // width: 100%;
+//       // height: auto;
+//       // transition: transform 0.5s ease;
+//     }
+//   }
+
+//   .basic-card--text-wrap {
+//     // position: relative;
+//     // padding-top: $space-md;
+//   }
+
+//   .basic-card--category,
+//   .basic-card--title {
+//     // color: $white;
+//   }
+// }
+
+// .basic-card--yellow.basic-card--image {
+//   .basic-card--category,
+//   .basic-card--title {
+//     // color: $white;
+
+//     &:hover,
+//     &:focus {
+//       // color: $white;
+//     }
+//   }
+// }
+
+// .basic-card--blue.basic-card--image {
+//   .basic-card--category,
+//   .basic-card--title {
+//     // color: $white;
+
+//     &:hover,
+//     &:focus {
+//       // color: $white;
+//     }
+//   }
+// }

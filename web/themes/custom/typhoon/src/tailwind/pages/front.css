@@ -1,0 +1,13 @@
+/****** Flair Images ******/
+.flair-img {
+  @apply absolute overflow-hidden;
+}
+
+.flair-img img {
+  @apply relative w-full z-[-1];
+}
+
+/****** CTA Section ******/
+.cta-card figcaption {
+  background: linear-gradient(135deg, #0d87c9 86%, transparent 0) 100%;
+}

@@ -1,0 +1,59 @@
+/****** News Card ******/
+.news-card--category a {
+  @apply font-normal;
+}
+
+/****** Basic Card ******/
+.basic-card--wrap {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/****** Mosaic ******/
+
+.mosaic-grid {
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-auto-rows: 32px;
+}
+
+@media (min-width: 550px) {
+  .mosaic-grid {
+    grid-template-columns: repeat(auto-fill, minmax(245px, 1fr));
+    grid-auto-rows: 32px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .mosaic-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+.mosaic-image--small {
+  grid-row: span 4;
+}
+
+@media (min-width: 640px) {
+  .mosaic-image--small {
+    grid-row: span 5;
+  }
+}
+
+.mosaic-image--medium {
+  grid-row: span 5;
+}
+
+@media (min-width: 640px) {
+  .mosaic-image--medium {
+    grid-row: span 8;
+  }
+}
+
+.mosaic-image--large {
+  grid-row: span 6;
+}
+
+@media (min-width: 640px) {
+  .mosaic-image--large {
+    grid-row: span 10;
+  }
+}

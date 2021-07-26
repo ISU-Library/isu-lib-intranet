@@ -1,0 +1,3 @@
+.sidebar-nav--grid {
+  grid-template-columns: 259px 1fr;
+}

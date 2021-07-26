@@ -1,0 +1,95 @@
+.alert--wrap {
+  @appli flex-wrap
+  /* flex-wrap: wrap; */;
+}
+
+.alert {
+  @apply flex relative overflow-hidden rounded shadow-light-2;
+  /* position: relative; */
+  /* // min-width: 300px; */
+  /* // max-width: 450px; */
+  /* overflow: hidden; */
+  /* border-radius: $br4; */
+  /* box-shadow: $vert-light-2; */
+  /* display: flex; */
+}
+.alert .alert--icon-block {
+  @apply w-4xl;
+  /* width: $space-4xl; */
+}
+
+.alert i {
+  @apply absolute top-2/4 -translate-x-1/2 -left-xl text-[82px];
+  /* @include vert_center; */
+  /* left: -$space-xl; */
+  /* font-size: 82px; */
+}
+
+.alert--text span {
+  @apply block;
+  /* display: block; */
+}
+
+.alert--text.alert-text--main {
+  line-height: 1;
+}
+
+.alert--red .alert--icon-block {
+  @apply bg-red-600;
+  /* background-color: $red-600; */
+}
+
+.alert--red i {
+  @apply text-red-400;
+  /* color: $red-400; */
+}
+
+.alert--red .alert-text--main {
+  @apply text-red-600;
+  /* color: $red-600; */
+}
+
+.alert--yellow .alert--icon-block {
+  @apply bg-yellow-600;
+  /* background-color: $yellow-600; */
+}
+
+.alert--yellow i {
+  @apply text-yellow-400;
+  /* color: $yellow-400; */
+}
+
+.alert--yellow .alert-text--main {
+  @apply text-yellow-600;
+  /* color: $yellow-600; */
+}
+
+.alert--green .alert--icon-block {
+  @apply bg-green-600;
+  /* background-color: $green-600; */
+}
+
+.alert--green i {
+  @apply text-green-400;
+  /* color: $green-400; */
+}
+
+.alert--green .alert-text--main {
+  @apply text-green-600;
+  /* color: $green-600; */
+}
+
+.alert--blue .alert--icon-block {
+  @apply bg-blue-600;
+  /* background-color: $blue-600; */
+}
+
+.alert--blue i {
+  @apply text-blue-400;
+  /* color: $blue-400; */
+}
+
+.alert-text--main {
+  @apply text-blue-500;
+  /* color: $blue-600; */
+}

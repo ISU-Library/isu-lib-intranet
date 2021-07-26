@@ -172,6 +172,7 @@ module.exports = {
       }),
       lineHeight: {
         0: '0',
+        1: '1',
       },
       lineClamp: {
         7: '7',

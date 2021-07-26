@@ -4,202 +4,60 @@
 @import 'tailwindcss/utilities';
 
 /************** custom CSS *********************/
-@import url('//cdn.theme.iastate.edu/nimbus-sans/css/nimbus-sans.css');
 
-/****** Foundations ******/
-@import './fonts.css';
+/****** 01 Foundations ******/
+@import './01-foundations/site-defaults.css';
+@import './01-foundations/fonts.css';
+@import './01-foundations/utilities.css';
+
+/**** elements ****/
+@import './elements/buttons.css';
+@import './elements/cta.css';
+@import './elements/table.css';
 
 /**** components ****/
-@import './header.css';
-@import './breadcrumbs.css';
-@import './headlines.css';
-@import './scrollSpyNav.css';
-@import './gen-con.css';
-@import './forms.css';
-@import './footer.css';
+@import './components/alert.css';
+@import './components/header.css';
+@import './components/breadcrumbs.css';
+@import './components/headlines.css';
+@import './components/scrollSpyNav.css';
+@import './components/side-nav.css';
+@import './components/basic-cards.css';
+@import './components/news-cards.css';
+@import './components/gen-con.css';
+@import './components/spec-con.css';
+@import './components/toc.css';
+@import './components/views.css';
+@import './components/forms.css';
+@import './components/footer.css';
 
-@import 'modules/sitemap.css';
+/**** modules ****/
+@import './modules/sitemap.css';
+@import './modules/staff-directory.css';
 
-:root {
-  --header-height: '';
+/**** pages ****/
+@import './pages/front.css';
+
+/**** admin ****/
+
+@import './admin/admin-pages.css';
+@import './admin/page-preview.css';
+
+/* * Should be in accordion */
+.show--item:not(last-of-type) {
+  @apply mb-md;
 }
 
-html {
-  scroll-behavior: smooth;
-  margin-right: calc(-1 * (100vw - 100%));
-  /* * ^ this snippet prevents layout shift with mobile nav*/
+.show--item:hover {
+  @apply shadow-light-3;
 }
 
-body {
-  font-family: 'Nimbus Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+.show--title .icon::before {
+  @apply absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2;
+  font-family: 'FontAwesome';
+  content: '\f078';
 }
 
-@layer utilities {
-  .text-shadow-1 {
-    text-shadow: 0 2px 4px #000000;
-  }
-}
-
-a {
-  @apply text-red-500;
-}
-
-p {
-  @apply mt-md;
-}
-
-@layer utilities {
-  @variants responsive {
-    .absolute-center {
-      @apply absolute transform -translate-y-1/2 -translate-x-1/2 top-1/2 left-1/2;
-    }
-
-    .center-x {
-      @apply absolute transform -translate-x-1/2 left-1/2;
-    }
-
-    .center-y {
-      @apply absolute transform -translate-y-1/2 top-1/2;
-    }
-  }
-}
-
-.grid-staff-directory {
-  grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
-}
-
-@media (min-width: 768px) {
-  .grid-staff-directory {
-    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
-  }
-}
-
-.grid-department-staff {
-  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-}
-
-.heading-underline {
-  position: relative;
-  @apply pb-xs;
-}
-
-.basic-card--staff .heading-underline {
-  z-index: 1;
-}
-
-.heading-underline::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 60px;
-  height: 4px;
-  @apply bg-yellow-600;
-}
-
-.basic-card--staff .heading-underline::before {
-  z-index: -1;
-  @apply w-full bg-yellow-600 bottom-xs;
-}
-
-.staff-news--article-list {
-  @apply grid grid-cols-1 md:grid-cols-2 gap-y-3xl gap-x-2xl mt-2xl text-left;
-}
-
-.staff-updates--article-list {
-  @apply grid grid-cols-1 gap-y-3xl gap-x-2xl mt-2xl text-left;
-}
-
-@media (min-width: 640px) {
-  .staff-updates--article-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-.news-card--category a {
-  @apply font-normal;
-}
-
-.basic-card--wrap {
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-.sidebar-nav--grid {
-  grid-template-columns: 259px 1fr;
-}
-
-.mosaic-grid {
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  grid-auto-rows: 32px;
-}
-
-@media (min-width: 550px) {
-  .mosaic-grid {
-    grid-template-columns: repeat(auto-fill, minmax(245px, 1fr));
-    grid-auto-rows: 32px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .mosaic-grid {
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  }
-}
-
-.mosaic-image--small {
-  grid-row: span 4;
-}
-
-@media (min-width: 640px) {
-  .mosaic-image--small {
-    grid-row: span 5;
-  }
-}
-
-.mosaic-image--medium {
-  grid-row: span 5;
-}
-
-@media (min-width: 640px) {
-  .mosaic-image--medium {
-    grid-row: span 8;
-  }
-}
-
-.mosaic-image--large {
-  grid-row: span 6;
-}
-
-@media (min-width: 640px) {
-  .mosaic-image--large {
-    grid-row: span 10;
-  }
-}
-
-.node-preview-container {
-  @apply px-3xl;
-}
-
-.node-preview-backlink {
-  @apply w-full mb-lg text-white hover:text-warm-grey-200 text-shadow-1;
-}
-
-.node-preview-container {
-  @apply bg-warm-grey-400 bg-opacity-80;
-}
-
-.node-preview-form-select {
-  @apply flex flex-wrap;
-}
-
-.node-preview-form-select .input--select::after {
-  @apply top-3/4 right-md;
-}
-
-.node-preview-form-select .input--label {
-  @apply text-lg text-white text-shadow-1;
-}
-
-.node-preview-form-select input[type='submit'].button-accent {
-  @apply ml-xl px-xs py-sm;
+.js-open .show--title .icon {
+  transform: rotateZ(180deg);
 }

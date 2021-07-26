@@ -25,10 +25,10 @@ $news-card-lead-height: rem(300);
   // position: relative;
   // box-shadow: $vert-dark-2;
   // transition: transform 0.5s ease;
-  min-height: rem(250);
+  // min-height: rem(250);
 
   @include bp(md) {
-    min-height: $news-card-lead-height;
+    // min-height: $news-card-lead-height;
   }
 
   .news-card--link {
@@ -100,17 +100,17 @@ $news-card-lead-height: rem(300);
     }
   }
 
-  .image-overlay {
-    background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.1) 0%,
-      rgba(0, 0, 0, 0.75) 100%,
-      rgba(0, 0, 0, 0.75) 150%
-    );
-    background-size: auto 150%;
-    background-position: 0 50%;
-    transition: background-position 0.5s ease;
-  }
+  // .image-overlay {
+  //   background: linear-gradient(
+  //     180deg,
+  //     rgba(0, 0, 0, 0.1) 0%,
+  //     rgba(0, 0, 0, 0.75) 100%,
+  //     rgba(0, 0, 0, 0.75) 150%
+  //   );
+  //   background-size: auto 150%;
+  //   background-position: 0 50%;
+  //   transition: background-position 0.5s ease;
+  // }
 }
 
 // Basic news card
@@ -134,7 +134,7 @@ $news-card-lead-height: rem(300);
     }
 
     &::after {
-      height: 0;
+      // height: 0;
     }
   }
 
@@ -152,7 +152,7 @@ $news-card-lead-height: rem(300);
       // box-shadow: $vert-dark-2;
       // position: relative;
       // overflow: hidden;
-      padding-top: percentage(104/152);
+      // padding-top: percentage(104/152);
       // margin: 0;
       // transition: box-shadow 0.3s ease, transform 0.3s ease;
 

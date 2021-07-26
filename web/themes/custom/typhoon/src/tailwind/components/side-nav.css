@@ -1,0 +1,42 @@
+.side-nav--item .side-nav--link::before,
+.side-nav--item .side-nav--link::after {
+  @apply bg-transparent transition-none;
+  content: '';
+}
+
+.side-nav--item .side-nav--link:hover,
+.side-nav--item .side-nav--link:focus,
+.side-nav--item .side-nav--link.is-active {
+  @apply text-white bg-red-500 border-r-4 border-yellow-500 z-[1];
+}
+
+.side-nav--item_active-trail .side-nav--sub-list {
+  @apply block;
+}
+
+/* * nested <li> in side-nav structure */
+.sub-list--item .side-nav--link {
+  @apply overflow-hidden text-black text-md font-normal transition-all duration-300;
+}
+
+.sub-list--item .side-nav--link:hover,
+.sub-list--item .side-nav--link:focus,
+.sub-list--item .side-nav--link.is-active {
+  @apply bg-transparent transition-all duration-300 shadow-none text-red-500;
+}
+
+.sub-list--item .side-nav--link::before {
+  @apply hidden;
+}
+
+.sub-list--item .side-nav--link::after {
+  @apply left-sm;
+}
+
+.sub-list--item .side-nav--link .is-active {
+  @apply text-red-500;
+}
+
+.sub-list--item .side-nav--link::after {
+  @apply left-0;
+}

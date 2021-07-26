@@ -1,0 +1,27 @@
+.grid-staff-directory {
+  grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+}
+
+@media (min-width: 768px) {
+  .grid-staff-directory {
+    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+  }
+}
+
+.grid-department-staff {
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+}
+
+.heading-underline {
+  position: relative;
+  @apply pb-xs;
+}
+
+.basic-card--staff .heading-underline {
+  z-index: 1;
+}
+
+.basic-card--staff .heading-underline::before {
+  z-index: -1;
+  @apply w-full bg-yellow-600 bottom-xs;
+}

@@ -1,254 +1,254 @@
-$filled-color: $warm-grey-700;
-$place-holder-color: $warm-grey-500;
-$focus-text-color: $warm-grey-900;
-$focus-background-color: $warm-grey-50;
-$input-box-shadow: true;
-$input-box-shadow-value: $vert-light-3;
-$border-color: trasnparent;
-$form-spacing: $space-2xl;
-$fieldset-spacing: $space-lg;
-$radio-button-checked: $green-600;
+// $filled-color: $warm-grey-700;
+// $place-holder-color: $warm-grey-500;
+// $focus-text-color: $warm-grey-900;
+// $focus-background-color: $warm-grey-50;
+// $input-box-shadow: true;
+// $input-box-shadow-value: $vert-light-3;
+// $border-color: trasnparent;
+// $form-spacing: $space-2xl;
+// $fieldset-spacing: $space-lg;
+// $radio-button-checked: $green-600;
 
-.form {
-  margin-top: $form-spacing;
-}
+// // .form {
+// //   margin-top: $form-spacing;
+// // }
 
-.form--fieldset {
-  @include clearfix;
-  padding: 0;
+// // .form--fieldset {
+// //   @include clearfix;
+// //   padding: 0;
 
-  legend {
-    margin: 0 0 0 1em;
-  }
-}
+// //   legend {
+// //     margin: 0 0 0 1em;
+// //   }
+// // }
 
-table {
-  margin: $space-4xl 0 $space-md;
-}
+// // table {
+// //   margin: $space-4xl 0 $space-md;
+// // }
 
-.input {
-  position: relative;
+// // .input {
+// //   position: relative;
 
-  textarea + .input--label {
-    top: $space-md;
-    transform: translateY(0);
-  }
-}
+// //   textarea + .input--label {
+// //     top: $space-md;
+// //     transform: translateY(0);
+// //   }
+// // }
 
-.input--label {
-  // @include vert_center;
-  display: block;
-  // padding-left: $space-lg;
-  font-size: $fs-md;
-  color: $warm-grey-700;
-  transition: 0.3s ease-in-out;
-}
+// // .input--label {
+// //   // @include vert_center;
+// //   display: block;
+// //   // padding-left: $space-lg;
+// //   font-size: $fs-md;
+// //   color: $warm-grey-700;
+// //   transition: 0.3s ease-in-out;
+// // }
 
-// this is a quick fix for the page editor. It overrides styles below.
-// TODO I need to look at refactoring for a better way.
-.input--textarea,
-.input--vertical-tabs {
-  .input--label {
-    position: relative;
-    top: 0;
-    left: 0;
-    padding-left: 0;
-    transform: translateY(0);
-  }
-}
-
-input[type='text'],
-input[type='password'],
-input[type='email'],
-input[type='tel'],
-input[type='number'],
-input[type='search'],
-textarea,
-select {
-  @include appearance(none);
-  box-sizing: border-box;
-  position: relative;
-  margin: $space-md 0;
-  padding: $space-xs $space-lg;
-  width: 100%;
-  background-color: $warm-grey-50;
-  border: none;
-  border-bottom: 2px solid $black;
-  font-size: $fs-md;
-  color: $filled-color;
-  line-height: 1.8;
-  outline: none;
-  box-shadow: $vert-light-1;
-  transition: box-shadow 0.3s ease;
-
-  &:focus {
-    border-color: $green-600;
-    color: $focus-text-color;
-    background-color: $focus-background-color;
-
-    @if $input-box-shadow {
-      box-shadow: $input-box-shadow-value;
-    }
-  }
-
-  + label {
-    top: -$space-md;
-    font-size: $fs-md;
-    color: $black;
-    // padding-left: $space-lg;
-    transform: translateY(0);
-  }
-
-  // &:not(:placeholder-shown) {
-
-  // *This exction is for the FA icons and colors
-  // &:valid,
-  // &:invalid {
-  //   +label {
-  //     top: -$space-md;
-  //     font-size: $fs-sm;
-  //     // padding-left: $space-lg;
-  //     transform: translateY(0);
-
-  //     &::after {
-  //       @include vert_center;
-  //       left: $space-2xs;
-  //       font-family: "FontAwesome";
-  //       font-size: $fs-md;
-  //     }
-  //   }
-  // }
-
-  &:valid {
-    border-color: $green-600;
-
-    // +label {
-    //   color: $green-600;
-
-    // &::after {
-    //   content: "\f058";
-    // }
-    // }
-  }
-
-  &:invalid {
-    border-color: $red-400;
-
-    // +label {
-    //   color: $red-500;
-
-    // &::after {
-    //   content: "\f057";
-    // }
-    // }
-  }
-
-  // }
-}
-
-.input--select {
-  &::after {
-    @include vert_center;
-    content: '\f078';
-    right: $space-xl;
-    font-size: $fs-md;
-    font-family: 'FontAwesome';
-  }
-
-  select {
-    position: relative;
-
-    &:not(:placeholder-shown) {
-      &:valid,
-      &:invalid {
-        + label {
-          position: absolute;
-          top: -$space-md;
-          left: 0;
-          font-size: $fs-sm;
-          // padding-left: $space-lg;
-          transform: translateY(0);
-
-          &::after {
-            @include vert_center;
-            left: $space-2xs;
-            font-family: 'FontAwesome';
-            font-size: $fs-md;
-          }
-        }
-      }
-    }
-  }
-}
-
-// * Custom styling for radio boxes
-// .input--radio,
-// .input--checkbox {
-//   margin: $space-sm $space-2xs;
-//   opacity: 0;
-//   position: absolute;
-//   transform: translateY(0);
-
-//   +label {
+// // this is a quick fix for the page editor. It overrides styles below.
+// // TODO I need to look at refactoring for a better way.
+// .input--textarea,
+// .input--vertical-tabs {
+//   .input--label {
 //     position: relative;
-//     margin: $space-sm $space-2xs 0;
-//     padding: 0;
-//     color: $focus-text-color;
-//     display: inline-block;
-//     font-size: $fs-md;
-
-//     &:before {
-//       cursor: pointer;
-//       content: "";
-//       display: inline-block;
-//       position: relative;
-//       vertical-align: top;
-//       top: 0.2rem;
-//       width: $space-md;
-//       height: $space-md;
-//       background: $focus-background-color;
-//       border-radius: 100%;
-//       border: 1px solid darken($focus-background-color, 25%);
-//       margin-right: $space-xs;
-//       text-align: center;
-//       transition: background-color 250ms ease;
-//     }
+//     top: 0;
+//     left: 0;
+//     padding-left: 0;
+//     transform: translateY(0);
 //   }
+// }
 
-//   &:checked {
-//     +label {
-//       &:before {
-//         background-color: $radio-button-checked;
-//         box-shadow: inset 0 0 0 4px $focus-background-color;
-//       }
-//     }
-//   }
+// input[type='text'],
+// input[type='password'],
+// input[type='email'],
+// input[type='tel'],
+// input[type='number'],
+// input[type='search'],
+// textarea,
+// select {
+//   @include appearance(none);
+//   box-sizing: border-box;
+//   position: relative;
+//   margin: $space-md 0;
+//   padding: $space-xs $space-lg;
+//   width: 100%;
+//   background-color: $warm-grey-50;
+//   border: none;
+//   border-bottom: 2px solid $black;
+//   font-size: $fs-md;
+//   color: $filled-color;
+//   line-height: 1.8;
+//   outline: none;
+//   box-shadow: $vert-light-1;
+//   transition: box-shadow 0.3s ease;
 
 //   &:focus {
-//     +label {
-//       &:before {
-//         outline: none;
-//         border-color: $radio-button-checked;
-//       }
+//     border-color: $green-600;
+//     color: $focus-text-color;
+//     background-color: $focus-background-color;
+
+//     @if $input-box-shadow {
+//       box-shadow: $input-box-shadow-value;
 //     }
 //   }
 
-//   &:disabled {
-//     +label {
-//       &:before {
-//         box-shadow: inset 0 0 0 4px $focus-background-color;
-//         border-color: darken($focus-background-color, 25%);
-//         background: darken($focus-background-color, 25%);
-//       }
-//     }
+//   + label {
+//     top: -$space-md;
+//     font-size: $fs-md;
+//     color: $black;
+//     // padding-left: $space-lg;
+//     transform: translateY(0);
 //   }
 
-//   +label {
-//     &:empty {
-//       &:before {
-//         margin-right: 0;
+//   // &:not(:placeholder-shown) {
+
+//   // *This exction is for the FA icons and colors
+//   // &:valid,
+//   // &:invalid {
+//   //   +label {
+//   //     top: -$space-md;
+//   //     font-size: $fs-sm;
+//   //     // padding-left: $space-lg;
+//   //     transform: translateY(0);
+
+//   //     &::after {
+//   //       @include vert_center;
+//   //       left: $space-2xs;
+//   //       font-family: "FontAwesome";
+//   //       font-size: $fs-md;
+//   //     }
+//   //   }
+//   // }
+
+//   &:valid {
+//     border-color: $green-600;
+
+//     // +label {
+//     //   color: $green-600;
+
+//     // &::after {
+//     //   content: "\f058";
+//     // }
+//     // }
+//   }
+
+//   &:invalid {
+//     border-color: $red-400;
+
+//     // +label {
+//     //   color: $red-500;
+
+//     // &::after {
+//     //   content: "\f057";
+//     // }
+//     // }
+//   }
+
+//   // }
+// }
+
+// .input--select {
+//   &::after {
+//     @include vert_center;
+//     content: '\f078';
+//     right: $space-xl;
+//     font-size: $fs-md;
+//     font-family: 'FontAwesome';
+//   }
+
+//   select {
+//     position: relative;
+
+//     &:not(:placeholder-shown) {
+//       &:valid,
+//       &:invalid {
+//         + label {
+//           position: absolute;
+//           top: -$space-md;
+//           left: 0;
+//           font-size: $fs-sm;
+//           // padding-left: $space-lg;
+//           transform: translateY(0);
+
+//           &::after {
+//             @include vert_center;
+//             left: $space-2xs;
+//             font-family: 'FontAwesome';
+//             font-size: $fs-md;
+//           }
+//         }
 //       }
 //     }
 //   }
 // }
-// }
+
+// // * Custom styling for radio boxes
+// // .input--radio,
+// // .input--checkbox {
+// //   margin: $space-sm $space-2xs;
+// //   opacity: 0;
+// //   position: absolute;
+// //   transform: translateY(0);
+
+// //   +label {
+// //     position: relative;
+// //     margin: $space-sm $space-2xs 0;
+// //     padding: 0;
+// //     color: $focus-text-color;
+// //     display: inline-block;
+// //     font-size: $fs-md;
+
+// //     &:before {
+// //       cursor: pointer;
+// //       content: "";
+// //       display: inline-block;
+// //       position: relative;
+// //       vertical-align: top;
+// //       top: 0.2rem;
+// //       width: $space-md;
+// //       height: $space-md;
+// //       background: $focus-background-color;
+// //       border-radius: 100%;
+// //       border: 1px solid darken($focus-background-color, 25%);
+// //       margin-right: $space-xs;
+// //       text-align: center;
+// //       transition: background-color 250ms ease;
+// //     }
+// //   }
+
+// //   &:checked {
+// //     +label {
+// //       &:before {
+// //         background-color: $radio-button-checked;
+// //         box-shadow: inset 0 0 0 4px $focus-background-color;
+// //       }
+// //     }
+// //   }
+
+// //   &:focus {
+// //     +label {
+// //       &:before {
+// //         outline: none;
+// //         border-color: $radio-button-checked;
+// //       }
+// //     }
+// //   }
+
+// //   &:disabled {
+// //     +label {
+// //       &:before {
+// //         box-shadow: inset 0 0 0 4px $focus-background-color;
+// //         border-color: darken($focus-background-color, 25%);
+// //         background: darken($focus-background-color, 25%);
+// //       }
+// //     }
+// //   }
+
+// //   +label {
+// //     &:empty {
+// //       &:before {
+// //         margin-right: 0;
+// //       }
+// //     }
+// //   }
+// // }
+// // }

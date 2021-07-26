@@ -39,7 +39,7 @@
 }
 
 .cta-card--image {
-  padding-top: percentage(202/280);
+  // padding-top: percentage(202/280);
 
   img {
     // z-index: 1;
@@ -49,8 +49,8 @@
     // position: absolute;
     // left: 0;
     // bottom: $space-lg;
-    background: linear-gradient(135deg, $accent-color 86%, transparent 0) 100%;
-    font-family: $merriweather_stack;
+    // background: linear-gradient(135deg, $accent-color 86%, transparent 0) 100%;
+    // font-family: $merriweather_stack;
     // width: 80%;
     // line-height: 1.3;
     // z-index: 2;

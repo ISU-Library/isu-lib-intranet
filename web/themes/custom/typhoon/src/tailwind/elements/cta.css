@@ -1,0 +1,28 @@
+.cta {
+  @apply inline-block relative no-underline m-0 pr-xl pb-[0.1rem] text-red-500 transition-colors duration-300;
+}
+
+.cta::before,
+.cta::after {
+  @apply absolute top-1/2 -translate-y-1/2 text-xs transition-all duration-300 bg-transparent;
+  content: '\f054';
+  font-family: 'Fontawesome';
+  width: unset;
+  height: unset;
+  bottom: unset;
+  left: unset;
+}
+
+.cta::before {
+  @apply right-xs;
+}
+
+.cta::after {
+  @apply right-md;
+}
+
+.cta:hover::after,
+.cta:focus::after {
+  @apply right-xs;
+  width: unset;
+}

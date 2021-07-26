@@ -1,0 +1,266 @@
+.gen-con--block h3 {
+  @apply inline-block py-xs;
+}
+
+.gen-con--block p + h2 {
+  @apply mt-lg;
+}
+
+.gen-con--block p + h3,
+.gen-con--block p + h4,
+.gen-con--block p + h5,
+.gen-con--block p + h6 {
+  @apply mt-md;
+}
+
+.gen-con--block p + p {
+  @apply mt-md;
+}
+
+.gen-con--block > *:first-child {
+  @apply mt-0;
+}
+
+.gen-con--block ul {
+  @apply list-disc pl-2xl;
+}
+
+.gen-con--block .link-list--abstract,
+.gen-con--block .link-list {
+  @apply pl-0;
+}
+
+.gen-con--block ol {
+  @apply list-decimal pl-2xl;
+}
+
+.gen-con--block ol ol {
+  list-style: lower-alpha;
+}
+
+.gen-con--block ol ol ol {
+  list-style: lower-roman;
+}
+
+.gen-con--block p + * {
+  @apply mt-md;
+}
+
+.gen-con--block.img-block p {
+  @apply mt-0;
+}
+
+.gen-con--img-wrap.large {
+  @apply max-w-[400px];
+}
+
+.gen-con--img-wrap.medium {
+  @apply max-w-[300px];
+}
+
+.gen-con--img-wrap.small {
+  @apply max-w-[200px];
+}
+
+.gen-con--block.img-block p + p {
+  @apply mt-md;
+}
+
+.block--lg-img .gen-con--img-wrap {
+  @apply max-w-[850px];
+}
+
+.block--two-img .gen-con--img-wrap {
+  @apply md:max-w-[45%] lg:max-w-[400px];
+}
+
+.block--three-img .gen-con--img-wrap {
+  @apply max-w-[100%] md:max-w-[32%];
+}
+
+.lead-block p:first-of-type {
+  @apply text-black text-lg;
+}
+
+.abstract-item a::before {
+  @apply absolute top-1/2 left-0 transform -translate-y-1/2 text-lg font-normal text-red-500;
+  font-family: 'FontAwesome';
+  content: '\f35d';
+}
+
+.abstract-item a::after {
+  @apply h-0;
+}
+
+.abstract-item a:hover,
+.abstract-item a:focus,
+.abstract-item a:hover::before,
+.abstract-item a:focus::before {
+  @apply text-red-700;
+}
+
+.abstract-item p {
+  @apply pl-2xl;
+}
+
+.abstract-item > ul {
+  @apply pl-4xl;
+}
+
+.abstract-item a[href*='.com']::before,
+.abstract-item a[href*='.net']::before,
+.abstract-item a[href*='.edu']::before,
+.abstract-item a[href*='.org']::before {
+  content: '\f35d';
+}
+
+.abstract-item a[href*='.docx']::before {
+  content: '\f1c2';
+}
+
+.abstract-item a[href*='.pdf']::before {
+  content: '\f1c1';
+}
+
+.abstract-item a[href*='.xlsx']::before {
+  content: '\f1c3';
+}
+
+.abstract-item a[href*='.jpg']::before,
+.abstract-item a[href*='.tiff']::before,
+.abstract-item a[href*='.img']::before,
+.abstract-item a[href*='.png']::before {
+  content: '\f1c5';
+}
+
+.link-list--item a {
+  @apply font-merriweather;
+}
+
+.link-list--item a::before {
+  @apply absolute top-0 text-lg left-0;
+  font-family: 'FontAwesome';
+  content: '\f15c';
+  color: inherit;
+}
+
+.link-list--item a::after {
+  @apply top-0;
+}
+
+.link-list--item a:hover::after,
+.link-list--item a:focus::after {
+  @apply top-0;
+}
+
+.link-list--item a[href*='.com']::before,
+.link-list--item a[href*='.net']::before,
+.link-list--item a[href*='.edu']::before,
+.link-list--item a[href*='.org']::before {
+  content: '\f35d';
+}
+
+.link-list--item a[href*='.docx']::before {
+  content: '\f1c2';
+}
+
+.link-list--item a[href*='.pdf']::before {
+  content: '\f1c1';
+}
+
+.link-list--item a[href*='.xlsx']::before {
+  content: '\f1c3';
+}
+
+.link-list--item a[href*='.jpg']::before,
+.link-list--item a[href*='.tiff']::before,
+.link-list--item a[href*='.img']::before,
+.link-list--item a[href*='.png']::before {
+  content: '\f1c5';
+}
+
+.show--content {
+  @apply overflow-hidden text-left transition-all duration-300;
+}
+
+.show--content > *:first-of-type {
+  @apply mt-md;
+}
+
+.show--content ul {
+  @apply pl-lg;
+}
+
+.quote {
+  @apply tracking-wide;
+}
+
+.quote p {
+  font-size: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+}
+
+.quote cite::before,
+.quote cite::after {
+  @apply text-yellow-600 py-0 px-sm;
+  content: '\2014';
+}
+
+.quote cite::before {
+  @apply left-[-10%];
+}
+
+.quote cite::after {
+  @apply right-[10%];
+}
+
+.block--quote-ribbon {
+  quotes: '“' '”';
+}
+
+.block--quote-ribbon::before,
+.block--quote-ribbon::after {
+  @apply absolute top-[12%] font-merriweather text-4xl sm:text-6xl text-yellow-500;
+}
+
+.block--quote-ribbon::before {
+  @apply left-[2%];
+  content: open-quote;
+}
+
+.block--quote-ribbon::after {
+  @apply left-[2%];
+  content: close-quote;
+}
+
+.block--quote-banner .quote cite::before,
+.block--quote-banner .quote cite::after {
+  @apply text-red-50;
+}
+
+.accordion .show--content div:first-child {
+  @apply mt-md;
+}
+
+.accordion::before,
+.accordion::after {
+  content: '';
+  width: 88px;
+  height: 50px;
+  position: absolute;
+  transform: rotate(45deg);
+  transition: background-color 0.3s ease-in;
+}
+
+.accordion::before {
+  top: calc(375px * -0.07);
+  right: calc(375px * -0.08);
+  @apply bg-yellow-500;
+}
+
+.accordion::after {
+  top: calc(375px * -0.1);
+  right: calc(375px * -0.11);
+  @apply bg-yellow-600;
+}

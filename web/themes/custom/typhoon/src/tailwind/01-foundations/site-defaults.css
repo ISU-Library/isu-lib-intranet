@@ -1,0 +1,53 @@
+:root {
+  --header-height: '';
+}
+
+html {
+  scroll-behavior: smooth;
+  margin-right: calc(-1 * (100vw - 100%));
+  /* * ^ this snippet prevents layout shift with mobile nav*/
+}
+
+body {
+  font-family: 'Nimbus Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+@layer utilities {
+  .text-shadow-1 {
+    text-shadow: 0 2px 4px #000000;
+  }
+}
+
+a {
+  @apply text-red-500;
+}
+
+p {
+  @apply mt-md;
+}
+
+@layer utilities {
+  @variants responsive {
+    .absolute-center {
+      @apply absolute transform -translate-y-1/2 -translate-x-1/2 top-1/2 left-1/2;
+    }
+
+    .center-x {
+      @apply absolute transform -translate-x-1/2 left-1/2;
+    }
+
+    .center-y {
+      @apply absolute transform -translate-y-1/2 top-1/2;
+    }
+  }
+}
+
+.heading-underline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px;
+  height: 4px;
+  @apply bg-yellow-600;
+}

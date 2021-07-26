@@ -1,0 +1,27 @@
+.node-preview-container {
+  @apply px-3xl;
+}
+
+.node-preview-backlink {
+  @apply w-full mb-lg text-white hover:text-warm-grey-200 text-shadow-1;
+}
+
+.node-preview-container {
+  @apply bg-warm-grey-400 bg-opacity-80;
+}
+
+.node-preview-form-select {
+  @apply flex flex-wrap;
+}
+
+.node-preview-form-select .input--select::after {
+  @apply top-3/4 right-md;
+}
+
+.node-preview-form-select .input--label {
+  @apply text-lg text-white text-shadow-1;
+}
+
+.node-preview-form-select input[type='submit'].button-accent {
+  @apply ml-xl px-xs py-sm;
+}
