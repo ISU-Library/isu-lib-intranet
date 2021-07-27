@@ -25,6 +25,7 @@
     "laravel-mix": "^6.0.13",
     "laravel-mix-purgecss": "^6.0.0",
     "postcss": "^8.2.7",
+    "postcss-nesting": "^8.0.1",
     "prettier": "^2.2.1",
     "prettier-plugin-twig-enhancements": "^1.0.1",
     "prettier-plugin-twig-melody": "^0.4.6",

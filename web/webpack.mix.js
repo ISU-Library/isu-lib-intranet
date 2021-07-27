@@ -55,6 +55,7 @@ mix.options({
   autoprefixer: { remove: false },
   postCss: [
     require('postcss-import'),
+    require('postcss-nesting'),
     tailwindcss(`${tailwindDir}/tailwind.config.js`),
     require('autoprefixer'),
   ],
