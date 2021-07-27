@@ -11,15 +11,18 @@
 @import './01-foundations/utilities.css';
 
 /**** elements ****/
+@import './elements/headlines.css';
+@import './elements/body.css';
 @import './elements/buttons.css';
 @import './elements/cta.css';
 @import './elements/table.css';
+@import './elements/icons.css';
 
 /**** components ****/
 @import './components/alert.css';
 @import './components/header.css';
 @import './components/breadcrumbs.css';
-@import './components/headlines.css';
+@import './components/header.css';
 @import './components/scrollSpyNav.css';
 @import './components/side-nav.css';
 @import './components/basic-cards.css';
@@ -43,6 +46,15 @@
 @import './admin/admin-pages.css';
 @import './admin/page-preview.css';
 
+body {
+  @apply text-md font-nimbusSans bg-white text-warm-grey-900 min-h-[100vh] m-0 overflow-x-hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body.flex {
+  @apply flex h-full;
+}
+
 /* * Should be in accordion */
 .show--item:not(last-of-type) {
   @apply mb-md;
@@ -52,10 +64,12 @@
   @apply shadow-light-3;
 }
 
-.show--title .icon::before {
-  @apply absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2;
-  font-family: 'FontAwesome';
-  content: '\f078';
+.show--title {
+  & .icon::before {
+    @apply absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2;
+    font-family: 'FontAwesome';
+    content: '\f078';
+  }
 }
 
 .js-open .show--title .icon {

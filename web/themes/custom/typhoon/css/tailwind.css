@@ -1779,7 +1779,376 @@ p {
   background-color: rgba(238, 166, 11, var(--tw-bg-opacity));
 }
 /**** elements ****/
-.button {
+h1, .h1 {
+	margin: 0;
+	margin-bottom: 2.5rem;
+	margin-bottom: 3rem;
+	font-family: Merriweather, Georgia, serif;
+	font-size: 2.5rem;
+	line-height: 1;
+	letter-spacing: -0.025em;
+	--tw-text-opacity: 1;
+	color: rgba(38, 36, 28, var(--tw-text-opacity));
+}
+@media (min-width: 768px) {
+	h1, .h1 {
+		font-size: 3rem;
+	}
+}
+h1 + h2 {
+	margin-bottom: 3rem;
+}
+h2,
+.h2 {
+  light-height: 1.1;
+}
+h2, .h2 {
+	margin: 0;
+	margin-bottom: 1rem;
+	margin-bottom: 1rem;
+	font-family: Merriweather, Georgia, serif;
+	font-size: 2rem;
+	--tw-text-opacity: 1;
+	color: rgba(38, 36, 28, var(--tw-text-opacity));
+}
+@media (min-width: 1280px) {
+	h2, .h2 {
+		font-size: 2.5rem;
+	}
+}
+h3,
+.h3 {
+  light-height: 1.35;
+  letter-spacing: 0.532;
+}
+h3, .h3 {
+	margin: 0;
+	margin-bottom: 0.5rem;
+	font-family: Merriweather, Georgia, serif;
+	font-size: 1.5rem;
+	--tw-text-opacity: 1;
+	color: rgba(38, 36, 28, var(--tw-text-opacity));
+}
+@media (min-width: 768px) {}
+h4, .h4 {
+	margin: 0;
+	margin-bottom: 0.5rem;
+	margin-bottom: 0.5rem;
+	font-family: Merriweather, Georgia, serif;
+	font-size: 1.125rem;
+	line-height: 1.25rem;
+	--tw-text-opacity: 1;
+	color: rgba(38, 36, 28, var(--tw-text-opacity));
+}
+h5, .h5 {
+	margin: 0;
+	margin-bottom: 0.5rem;
+	margin-bottom: 0.5rem;
+	font-family: Merriweather, Georgia, serif;
+	font-size: 1rem;
+	line-height: 1.5;
+	--tw-text-opacity: 1;
+	color: rgba(38, 36, 28, var(--tw-text-opacity));
+}
+h6, .h6 {
+	margin: 0;
+	margin-bottom: 0.5rem;
+	margin-bottom: 0.5rem;
+	font-family: Merriweather, Georgia, serif;
+	font-size: 0.875rem;
+	line-height: 1.5;
+	--tw-text-opacity: 1;
+	color: rgba(38, 36, 28, var(--tw-text-opacity));
+}
+h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
+	margin-top: 0;
+}
+p {
+	font-size: 1rem;
+	line-height: 1.5;
+	--tw-text-opacity: 1;
+	color: rgba(38, 36, 28, var(--tw-text-opacity));
+}
+a {
+	position: relative;
+	font-weight: 600;
+	--tw-text-opacity: 1;
+	color: rgba(198, 16, 46, var(--tw-text-opacity));
+	text-decoration: none;
+	-webkit-transition-property: background-color, border-color, color, fill, stroke, opacity, -webkit-box-shadow, -webkit-transform;
+	transition-property: background-color, border-color, color, fill, stroke, opacity, -webkit-box-shadow, -webkit-transform;
+	transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+	transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, -webkit-box-shadow, -webkit-transform;
+	-webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	-webkit-transition-duration: 150ms;
+	        transition-duration: 150ms;
+	-webkit-transition-duration: 300ms;
+	        transition-duration: 300ms;
+}
+a:hover, a:focus {
+	--tw-text-opacity: 1;
+	color: rgba(146, 17, 38, var(--tw-text-opacity));
+}
+hr,
+.hr {
+  border: 1px solid;
+  margin: -1px 0;
+}
+a,
+b,
+i,
+strong,
+em,
+small,
+code {
+  line-height: 1.5;
+}
+sub,
+sup {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+a.button, button.button, input[type='reset'].button, input[type='submit'].button, input[type='button'].button {
+	display: inline-block;
+	cursor: pointer;
+	border-radius: 0.125rem;
+	border-width: 1px;
+	border-color: transparent;
+	--tw-bg-opacity: 1;
+	background-color: rgba(198, 16, 46, var(--tw-bg-opacity));
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	text-align: center;
+	font-family: Merriweather, Georgia, serif;
+	font-size: 1rem;
+	line-height: 1;
+	--tw-text-opacity: 1;
+	color: rgba(255, 255, 255, var(--tw-text-opacity));
+	text-decoration: none;
+	-webkit-transition-property: background-color, border-color, color, fill, stroke, opacity, -webkit-box-shadow, -webkit-transform;
+	transition-property: background-color, border-color, color, fill, stroke, opacity, -webkit-box-shadow, -webkit-transform;
+	transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+	transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, -webkit-box-shadow, -webkit-transform;
+	-webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	-webkit-transition-duration: 150ms;
+	        transition-duration: 150ms;
+	-webkit-transition-duration: 300ms;
+	        transition-duration: 300ms;
+}
+a.button:focus, a.button:hover, button.button:focus, button.button:hover, input[type='reset'].button:focus, input[type='reset'].button:hover, input[type='submit'].button:focus, input[type='submit'].button:hover, input[type='button'].button:focus, input[type='button'].button:hover {
+	--tw-bg-opacity: 1;
+	background-color: rgba(225, 59, 68, var(--tw-bg-opacity));
+	--tw-text-opacity: 1;
+	color: rgba(255, 255, 255, var(--tw-text-opacity));
+	text-decoration: none;
+	--tw-shadow: 0 1px 2px rgba(0, 0, 0, 0.34), 0 1px 3px rgba(0, 0, 0, 0.22);
+	-webkit-box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+	        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+a.button::after, button.button::after, input[type='reset'].button::after, input[type='submit'].button::after, input[type='button'].button::after {
+	background-color: transparent;
+}
+a.button:active, button.button:active, input[type='reset'].button:active, input[type='submit'].button:active, input[type='button'].button:active {
+	--tw-bg-opacity: 1;
+	background-color: rgba(146, 17, 38, var(--tw-bg-opacity));
+	--tw-shadow: 0 1px 2px rgba(0, 0, 0, 0.34), 0 1px 3px rgba(0, 0, 0, 0.22);
+	-webkit-box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+	        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+a.button.button-icon, button.button.button-icon, input[type='reset'].button.button-icon, input[type='submit'].button.button-icon, input[type='button'].button.button-icon {
+	position: relative;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	padding-left: 1rem;
+	padding-right: 2rem;
+}
+a.button.button-icon::before,
+  a.button.button-icon::after,
+  button.button.button-icon::before,
+  button.button.button-icon::after,
+  input[type='reset'].button.button-icon::before,
+  input[type='reset'].button.button-icon::after,
+  input[type='submit'].button.button-icon::before,
+  input[type='submit'].button.button-icon::after,
+  input[type='button'].button.button-icon::before,
+  input[type='button'].button.button-icon::after {
+    font-family: 'Fontawesome';
+    content: '\f054';
+  }
+a.button.button-icon::before, a.button.button-icon::after, button.button.button-icon::before, button.button.button-icon::after, input[type='reset'].button.button-icon::before, input[type='reset'].button.button-icon::after, input[type='submit'].button.button-icon::before, input[type='submit'].button.button-icon::after, input[type='button'].button.button-icon::before, input[type='button'].button.button-icon::after {
+	position: absolute;
+	top: 50%;
+	--tw-translate-x: 0;
+	--tw-translate-y: 0;
+	--tw-rotate: 0;
+	--tw-skew-x: 0;
+	--tw-skew-y: 0;
+	--tw-scale-x: 1;
+	--tw-scale-y: 1;
+	-webkit-transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+	        transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+	        --tw-translate-y: -50%;
+	        font-size: 0.75rem;
+	        -webkit-transition-property: background-color, border-color, color, fill, stroke, opacity, -webkit-box-shadow, -webkit-transform;
+	        transition-property: background-color, border-color, color, fill, stroke, opacity, -webkit-box-shadow, -webkit-transform;
+	        transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+	        transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, -webkit-box-shadow, -webkit-transform;
+	-webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	-webkit-transition-duration: 150ms;
+	        transition-duration: 150ms;
+	-webkit-transition-duration: 300ms;
+	        transition-duration: 300ms;
+}
+a.button.button-icon::before, button.button.button-icon::before, input[type='reset'].button.button-icon::before, input[type='submit'].button.button-icon::before, input[type='button'].button.button-icon::before {
+	right: 0.5rem;
+}
+a.button.button-icon::after, button.button.button-icon::after, input[type='reset'].button.button-icon::after, input[type='submit'].button.button-icon::after, input[type='button'].button.button-icon::after {
+    left: unset;
+    bottom: unset;
+    height: unset;
+    width: unset;
+    right: 1rem;
+  }
+a.button.button-icon:hover::after, a.button.button-icon:focus::after, button.button.button-icon:hover::after, button.button.button-icon:focus::after, input[type='reset'].button.button-icon:hover::after, input[type='reset'].button.button-icon:focus::after, input[type='submit'].button.button-icon:hover::after, input[type='submit'].button.button-icon:focus::after, input[type='button'].button.button-icon:hover::after, input[type='button'].button.button-icon:focus::after {
+	right: 0.6em;
+}
+a.button.button-icon--back, button.button.button-icon--back, input[type='reset'].button.button-icon--back, input[type='submit'].button.button-icon--back, input[type='button'].button.button-icon--back {
+	position: relative;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	padding-left: 3rem;
+	padding-right: 2rem;
+}
+a.button.button-icon--back::before,
+  a.button.button-icon--back::after,
+  button.button.button-icon--back::before,
+  button.button.button-icon--back::after,
+  input[type='reset'].button.button-icon--back::before,
+  input[type='reset'].button.button-icon--back::after,
+  input[type='submit'].button.button-icon--back::before,
+  input[type='submit'].button.button-icon--back::after,
+  input[type='button'].button.button-icon--back::before,
+  input[type='button'].button.button-icon--back::after {
+    font-family: 'Fontawesome';
+    content: '\f053';
+  }
+a.button.button-icon--back::before, a.button.button-icon--back::after, button.button.button-icon--back::before, button.button.button-icon--back::after, input[type='reset'].button.button-icon--back::before, input[type='reset'].button.button-icon--back::after, input[type='submit'].button.button-icon--back::before, input[type='submit'].button.button-icon--back::after, input[type='button'].button.button-icon--back::before, input[type='button'].button.button-icon--back::after {
+	position: absolute;
+	top: 50%;
+	--tw-translate-x: 0;
+	--tw-translate-y: 0;
+	--tw-rotate: 0;
+	--tw-skew-x: 0;
+	--tw-skew-y: 0;
+	--tw-scale-x: 1;
+	--tw-scale-y: 1;
+	-webkit-transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+	        transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+	        --tw-translate-y: -50%;
+	        font-size: 0.75rem;
+	        -webkit-transition-property: background-color, border-color, color, fill, stroke, opacity, -webkit-box-shadow, -webkit-transform;
+	        transition-property: background-color, border-color, color, fill, stroke, opacity, -webkit-box-shadow, -webkit-transform;
+	        transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+	        transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, -webkit-box-shadow, -webkit-transform;
+	-webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	-webkit-transition-duration: 150ms;
+	        transition-duration: 150ms;
+	-webkit-transition-duration: 300ms;
+	        transition-duration: 300ms;
+}
+a.button.button-icon--back::before, button.button.button-icon--back::before, input[type='reset'].button.button-icon--back::before, input[type='submit'].button.button-icon--back::before, input[type='button'].button.button-icon--back::before {
+	left: 1.5rem;
+}
+a.button.button-icon--back::after, button.button.button-icon--back::after, input[type='reset'].button.button-icon--back::after, input[type='submit'].button.button-icon--back::after, input[type='button'].button.button-icon--back::after {
+    right: unset;
+    bottom: unset;
+    height: unset;
+    width: unset;
+    left: 2rem;
+  }
+a.button.button-icon--back:hover::after, a.button.button-icon--back:focus::after, button.button.button-icon--back:hover::after, button.button.button-icon--back:focus::after, input[type='reset'].button.button-icon--back:hover::after, input[type='reset'].button.button-icon--back:focus::after, input[type='submit'].button.button-icon--back:hover::after, input[type='submit'].button.button-icon--back:focus::after, input[type='button'].button.button-icon--back:hover::after, input[type='button'].button.button-icon--back:focus::after {
+	left: 2rem;
+}
+.button-full {
+	width: 100%;
+}
+.button-large {
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	padding-top: 1.2em;
+	padding-bottom: 1.2em;
+}
+.button-small {
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-top: 0.3em;
+	padding-bottom: 0.3em;
+}
+.button.button-ghost {
+	--tw-border-opacity: 1;
+	border-color: rgba(176, 17, 43, var(--tw-border-opacity));
+	background-color: transparent;
+	--tw-text-opacity: 1;
+	color: rgba(176, 17, 43, var(--tw-text-opacity));
+}
+a.button.button-secondary, button.button.button-secondary, input[type='reset'].button-secondary, input[type='submit'].button-secondary, input[type='button'].button-secondary {
+	border-color: transparent;
+	--tw-bg-opacity: 1;
+	background-color: rgba(241, 189, 70, var(--tw-bg-opacity));
+	--tw-text-opacity: 1;
+	color: rgba(38, 36, 28, var(--tw-text-opacity));
+}
+a.button.button-secondary:hover, a.button.button-secondary:focus, button.button.button-secondary:hover, button.button.button-secondary:focus, input[type='reset'].button-secondary:hover, input[type='reset'].button-secondary:focus, input[type='submit'].button-secondary:hover, input[type='submit'].button-secondary:focus, input[type='button'].button-secondary:hover, input[type='button'].button-secondary:focus {
+	--tw-bg-opacity: 1;
+	background-color: rgba(252, 232, 130, var(--tw-bg-opacity));
+	--tw-text-opacity: 1;
+	color: rgba(38, 36, 28, var(--tw-text-opacity));
+	--tw-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.15);;
+	-webkit-box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+	        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+a.button.button-secondary:active, button.button.button-secondary:active, input[type='reset'].button-secondary:active, input[type='submit'].button-secondary:active, input[type='button'].button-secondary:active {
+	--tw-bg-opacity: 1;
+	background-color: rgba(238, 166, 11, var(--tw-bg-opacity));
+	--tw-shadow: 0 1px 2px rgba(0, 0, 0, 0.24), 0 1px 3px rgba(0, 0, 0, 0.12);;
+	-webkit-box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+	        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+a.button.button-accent, button.button.button-accent, input[type='reset'].button-accent, input[type='submit'].button-accent, input[type='button'].button-accent {
+	border-color: transparent;
+	--tw-bg-opacity: 1;
+	background-color: rgba(12, 135, 201, var(--tw-bg-opacity));
+	--tw-text-opacity: 1;
+	color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
+a.button.button-accent:hover, a.button.button-accent:focus, button.button.button-accent:hover, button.button.button-accent:focus, input[type='reset'].button-accent:hover, input[type='reset'].button-accent:focus, input[type='submit'].button-accent:hover, input[type='submit'].button-accent:focus, input[type='button'].button-accent:hover, input[type='button'].button-accent:focus {
+	--tw-bg-opacity: 1;
+	background-color: rgba(23, 176, 246, var(--tw-bg-opacity));
+	--tw-text-opacity: 1;
+	color: rgba(255, 255, 255, var(--tw-text-opacity));
+	--tw-shadow: 0 2px 4px rgba(0, 0, 0, 0.22), 0 3px 6px rgba(0, 0, 0, 0.25);
+	-webkit-box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+	        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+a.button.button-accent:active, button.button.button-accent:active, input[type='reset'].button-accent:active, input[type='submit'].button-accent:active, input[type='button'].button-accent:active {
+	--tw-bg-opacity: 1;
+	background-color: rgba(0, 109, 168, var(--tw-bg-opacity));
+	--tw-shadow: 0 2px 4px rgba(0, 0, 0, 0.22), 0 3px 6px rgba(0, 0, 0, 0.25);
+	-webkit-box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+	        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 .cta {
 	position: relative;
@@ -1787,8 +2156,6 @@ p {
 	display: inline-block;
 	padding-bottom: 0.1rem;
 	padding-right: 2rem;
-	--tw-text-opacity: 1;
-	color: rgba(198, 16, 46, var(--tw-text-opacity));
 	text-decoration: none;
 	-webkit-transition-property: background-color, border-color, color, fill, stroke;
 	transition-property: background-color, border-color, color, fill, stroke;
@@ -1811,11 +2178,20 @@ p {
 .cta::before, .cta::after {
 	position: absolute;
 	top: 50%;
-	--tw-translate-y: -50%;
-	background-color: transparent;
-	font-size: 0.75rem;
-	-webkit-transition-property: all;
-	transition-property: all;
+	--tw-translate-x: 0;
+	--tw-translate-y: 0;
+	--tw-rotate: 0;
+	--tw-skew-x: 0;
+	--tw-skew-y: 0;
+	--tw-scale-x: 1;
+	--tw-scale-y: 1;
+	-webkit-transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+	        transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+	        --tw-translate-y: -50%;
+	        background-color: transparent;
+	        font-size: 0.75rem;
+	        -webkit-transition-property: all;
+	        transition-property: all;
 	-webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	-webkit-transition-duration: 150ms;
@@ -1845,6 +2221,180 @@ table td, table th {
 	padding-top: 0.75rem;
 	padding-bottom: 0.75rem;
 	vertical-align: top;
+}
+@font-face {
+  font-family: 'library-icons';
+  src: url('/themes/custom/typhoon/fonts/library-icons/library-icons.eot');
+  src: url('/themes/custom/typhoon/fonts/library-icons/library-icons.ttf?5458qa')
+      format('truetype'),
+    url('/themes/custom/typhoon/fonts/library-icons/library-icons.woff?5458qa')
+      format('woff'),
+    url('/themes/custom/typhoon/fonts/library-icons/library-icons.svg?5458qa#library-icons')
+      format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+[class^='icon-'],
+[class*=' icon-'] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'library-icons';
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  font-size: 24px;
+  color: hsl(48, 15%, 13%);
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-calendar::before {
+  content: '\e900';
+}
+.icon-letter::before {
+  content: '\e901';
+}
+.icon-documents::before {
+  content: '\e902';
+}
+.icon-book::before {
+  content: '\e904';
+}
+.icon-business-and-economic::before {
+  content: '\e905';
+}
+.icon-carnival-masks::before {
+  content: '\e906';
+}
+.icon-diploma::before {
+  content: '\e907';
+}
+.icon-fraternity::before {
+  content: '\e908';
+}
+.icon-sorority::before {
+  content: '\e909';
+}
+.icon-computer-lab::before {
+  content: '\e90a';
+}
+.icon-computing-science::before {
+  content: '\e90b';
+}
+.icon-online-courses::before {
+  content: '\e90c';
+}
+.icon-earning-a-degree::before {
+  content: '\e90d';
+}
+.icon-educational-programs::before {
+  content: '\e90e';
+}
+.icon-engineering::before {
+  content: '\e90f';
+}
+.icon-faculty-shield::before {
+  content: '\e910';
+}
+.icon-female-student::before {
+  content: '\e911';
+}
+.icon-freshman::before {
+  content: '\e912';
+}
+.icon-graduate-student::before {
+  content: '\e913';
+}
+.icon-graduation-ceremony::before {
+  content: '\e914';
+}
+.icon-group-of-students::before {
+  content: '\e915';
+}
+.icon-international-university::before {
+  content: '\e916';
+}
+.icon-law::before {
+  content: '\e917';
+}
+.icon-library::before {
+  content: '\e918';
+}
+.icon-male-student::before {
+  content: '\e919';
+}
+.icon-medicine::before {
+  content: '\e91a';
+}
+.icon-military::before {
+  content: '\e91b';
+}
+.icon-professor-consultation::before {
+  content: '\e91c';
+}
+.icon-science-lab::before {
+  content: '\e91d';
+}
+.icon-science-symbol::before {
+  content: '\e91e';
+}
+.icon-social-sciences::before {
+  content: '\e91f';
+}
+.icon-sport-centre::before {
+  content: '\e920';
+}
+.icon-sport-faculty::before {
+  content: '\e921';
+}
+.icon-cafe::before {
+  content: '\e922';
+}
+.icon-hostel::before {
+  content: '\e923';
+}
+.icon-id::before {
+  content: '\e924';
+}
+.icon-organization::before {
+  content: '\e925';
+}
+.icon-students-on-lecture::before {
+  content: '\e926';
+}
+.icon-study-process::before {
+  content: '\e927';
+}
+.icon-study-tools::before {
+  content: '\e928';
+}
+.icon-teaching::before {
+  content: '\e929';
+}
+.icon-university-app::before {
+  content: '\e92a';
+}
+.icon-building::before {
+  content: '\e92b';
+}
+.icon-campus::before {
+  content: '\e92c';
+}
+.icon-hospital::before {
+  content: '\e92d';
+}
+.icon-lecture::before {
+  content: '\e92e';
+}
+.icon-museum::before {
+  content: '\e92f';
+}
+.icon-professor::before {
+  content: '\e930';
 }
 /**** components ****/
 .alert--wrap {
@@ -2222,8 +2772,7 @@ header {
 	-webkit-transition-duration: 300ms;
 	        transition-duration: 300ms;
 }
-@media (min-width: 768px) {
-}
+@media (min-width: 768px) {}
 .main-nav--dropdown > .dropdown--item:hover > a::after, .main-nav--dropdown > .dropdown--item:focus-within > a::after, .main-nav--dropdown > .dropdown--item > .is-active::after {
 	left: 0;
 }
@@ -2280,45 +2829,6 @@ header {
 	-webkit-transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 	        transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 	        --tw-translate-y: -50%;
-}
-h1 {
-	margin-bottom: 3rem;
-	font-size: 2.5rem;
-}
-@media (min-width: 768px) {
-	h1 {
-		font-size: 3rem;
-	}
-}
-h1 + h2 {
-	margin-bottom: 3rem;
-}
-h2 {
-	margin-bottom: 1rem;
-	font-size: 2rem;
-}
-@media (min-width: 1280px) {
-	h2 {
-		font-size: 2.5rem;
-	}
-}
-h3 {
-	margin-bottom: 0.5rem;
-	font-size: 1.5rem;
-}
-@media (min-width: 768px) {
-}
-h4 {
-	margin-bottom: 0.5rem;
-	font-size: 1.125rem;
-}
-h5 {
-	margin-bottom: 0.5rem;
-	font-size: 1rem;
-}
-h6 {
-	margin-bottom: 0.5rem;
-	font-size: 0.875rem;
 }
 .js-scrollSpyNav {
   top: var(--header-height);
@@ -3318,11 +3828,11 @@ input[type='text']:invalid, input[type='password']:invalid, input[type='email']:
 	-webkit-box-align: center;
 	    -ms-flex-align: center;
 	        align-items: center;
-	        gap: 0.75rem;
+	        gap: 0.75rem
 }
 .views-exposed-form .button {
-  width: 100%;
-}
+    width: 100%;
+  }
 .node-preview-container {
 	padding-left: 3rem;
 	padding-right: 3rem;
@@ -3367,6 +3877,25 @@ input[type='text']:invalid, input[type='password']:invalid, input[type='email']:
 	padding-left: 0.5rem;
 	padding-right: 0.5rem;
 }
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  font-family: Nimbus Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(38, 36, 28, var(--tw-text-opacity));
+}
+body.flex {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	height: 100%;
+}
 /* * Should be in accordion */
 .show--item:not(last-of-type) {
 	margin-bottom: 1rem;
@@ -3377,23 +3906,23 @@ input[type='text']:invalid, input[type='password']:invalid, input[type='email']:
 	        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 .show--title .icon::before {
-  font-family: 'FontAwesome';
-  content: '\f078';
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  --tw-translate-x: 0;
-  --tw-translate-y: 0;
-  --tw-rotate: 0;
-  --tw-skew-x: 0;
-  --tw-skew-y: 0;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
+    font-family: 'FontAwesome';
+    content: '\f078';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-rotate: 0;
+    --tw-skew-x: 0;
+    --tw-skew-y: 0;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
 	-webkit-transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 	        transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 	        --tw-translate-x: -50%;
 	        --tw-translate-y: -50%;
-}
+  }
 .js-open .show--title .icon {
   -webkit-transform: rotateZ(180deg);
           transform: rotateZ(180deg);

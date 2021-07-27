@@ -1,0 +1,52 @@
+h1 + p,
+h2 + p,
+h3 + p,
+h4 + p,
+h5 + p,
+h6 + p {
+  @apply mt-0;
+}
+
+p {
+  @apply text-warm-grey-900 text-md leading-normal;
+}
+
+a {
+  @apply relative text-red-500 no-underline font-semibold transition duration-300;
+
+  &:hover,
+  &:focus {
+    @apply text-red-700;
+  }
+}
+
+hr,
+.hr {
+  border: 1px solid;
+  margin: -1px 0;
+}
+
+a,
+b,
+i,
+strong,
+em,
+small,
+code {
+  line-height: 1.5;
+}
+
+sub,
+sup {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}

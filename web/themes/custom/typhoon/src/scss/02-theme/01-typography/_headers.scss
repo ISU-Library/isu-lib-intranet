@@ -29,17 +29,17 @@ $lead-lh: 1.5;
 
 h1,
 .h1 {
-  font-family: $heading-font;
-  color: $h1-color;
-  line-height: $h1-lh;
-  letter-spacing: $h1-ls;
-  margin: 0;
-  margin-bottom: $space-2xl;
-  font-size: $fs-3xl;
+  // font-family: $heading-font;
+  // color: $h1-color;
+  // line-height: $h1-lh;
+  // letter-spacing: $h1-ls;
+  // margin: 0;
+  // margin-bottom: $space-2xl;
+  // font-size: $fs-3xl;
 
-  @include bp(md) {
-    font-size: $h1-fs;
-  }
+  // @include bp(md) {
+  //   font-size: $h1-fs;
+  // }
 }
 
 h1 + h2 {
@@ -48,49 +48,49 @@ h1 + h2 {
 
 h2,
 .h2 {
-  font-family: $heading-font;
-  color: $h2-color;
-  font-size: $h2-fs;
-  line-height: $h2-lh;
-  margin: 0;
-  margin-bottom: $space-md;
+  // font-family: $heading-font;
+  // color: $h2-color;
+  // font-size: $h2-fs;
+  // line-height: $h2-lh;
+  // margin: 0;
+  // margin-bottom: $space-md;
 
-  @include bp(xl) {
-    font-size: $fs-4xl;
-  }
+  // @include bp(xl) {
+  //   font-size: $fs-4xl;
+  // }
 }
 
 h3,
 .h3 {
-  font-family: $heading-font;
-  color: $h3-color;
-  line-height: $h3-lh;
-  margin: 0;
+  // font-family: $heading-font;
+  // color: $h3-color;
+  // line-height: $h3-lh;
+  // margin: 0;
   // margin-bottom: $space-md;
-  letter-spacing: 0.532;
-  font-size: $fs-lg;
+  // letter-spacing: 0.532;
+  // font-size: $fs-lg;
 
-  @include bp(md) {
-    font-size: $h3-fs;
-  }
+  // @include bp(md) {
+  //   font-size: $h3-fs;
+  // }
 }
 
 h4,
 .h4 {
-  font-family: $heading-font;
-  color: $h4-color;
-  font-size: $h4-fs;
-  line-height: $h4-lh;
-  margin: 0em;
-  margin-bottom: $space-xs;
+  // font-family: $heading-font;
+  // color: $h4-color;
+  // font-size: $h4-fs;
+  // line-height: $h4-lh;
+  // margin: 0em;
+  // margin-bottom: $space-xs;
 }
 
 h5,
 .h5 {
-  font-family: $heading-font;
-  color: $h5-color;
-  font-size: $h5-fs;
-  line-height: $h5-lh;
+  // font-family: $heading-font;
+  // color: $h5-color;
+  // font-size: $h5-fs;
+  // line-height: $h5-lh;
   margin: 0em;
   margin-bottom: $space-xs;
 }

@@ -1,0 +1,36 @@
+h1,
+.h1 {
+  @apply text-3xl md:text-4xl mb-3xl font-merriweather text-warm-grey-900 leading-1 tracking-tight m-0 mb-2xl;
+}
+
+h1 + h2 {
+  @apply mb-3xl;
+}
+
+h2,
+.h2 {
+  @apply xl:text-3xl text-2xl mb-md font-merriweather text-warm-grey-900 m-0 mb-md;
+  light-height: 1.1;
+}
+
+h3,
+.h3 {
+  @apply md:text-xl text-xl mb-xs font-merriweather text-warm-grey-900 m-0;
+  light-height: 1.35;
+  letter-spacing: 0.532;
+}
+
+h4,
+.h4 {
+  @apply text-lg mb-xs font-merriweather text-warm-grey-900 leading-5 m-0 mb-xs;
+}
+
+h5,
+.h5 {
+  @apply text-md mb-xs font-merriweather text-warm-grey-900 leading-normal m-0 mb-xs;
+}
+
+h6,
+.h6 {
+  @apply text-sm mb-xs font-merriweather text-warm-grey-900 leading-normal m-0 mb-xs;
+}

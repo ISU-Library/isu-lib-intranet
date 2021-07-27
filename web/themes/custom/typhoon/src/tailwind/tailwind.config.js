@@ -120,6 +120,13 @@ module.exports = {
         '"sans-serif"',
       ],
       merriweather: ['Merriweather', 'Georgia', 'serif'],
+      nimbusSans: [
+        'Nimbus Sans',
+        'Helvetica Neue',
+        'Helvetica',
+        'Arial',
+        'sans-serif',
+      ],
     },
     boxShadow: {
       'light-1':

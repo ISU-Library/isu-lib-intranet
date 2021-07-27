@@ -1,10 +1,10 @@
 .cta {
-  @apply inline-block relative no-underline m-0 pr-xl pb-[0.1rem] text-red-500 transition-colors duration-300;
+  @apply inline-block relative no-underline m-0 pr-xl pb-[0.1rem] transition-colors duration-300;
 }
 
 .cta::before,
 .cta::after {
-  @apply absolute top-1/2 -translate-y-1/2 text-xs transition-all duration-300 bg-transparent;
+  @apply absolute top-1/2 -translate-y-1/2 transform text-xs transition-all duration-300 bg-transparent;
   content: '\f054';
   font-family: 'Fontawesome';
   width: unset;

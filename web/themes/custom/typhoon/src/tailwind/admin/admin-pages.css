@@ -1,20 +1,20 @@
-.admin-page form {
-  @apply pt-md pb-lg;
-}
-
-.admin-page table thead {
-  @apply bg-red-100;
-}
-
-.admin-page table th {
-  @apply border-t-0;
+.admin-page {
+  & form {
+    @apply pt-md pb-lg;
+  }
+  & table thead {
+    @apply bg-red-100;
+  }
+  & table th {
+    @apply border-t-0;
+  }
 }
 
 .views-exposed-form {
   @apply grid gap-sm items-center;
   grid-template-columns: repeat(auto-fit, minmax(rem(250), 1fr));
-}
 
-.views-exposed-form .button {
-  width: 100%;
+  & .button {
+    width: 100%;
+  }
 }

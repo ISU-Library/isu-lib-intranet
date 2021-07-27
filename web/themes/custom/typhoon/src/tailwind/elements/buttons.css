@@ -3,36 +3,19 @@ button.button,
 input[type='reset'].button,
 input[type='submit'].button,
 input[type='button'].button {
-  background-color: $button-primary-background-color;
-  border: 1px solid $button-primary-border-color;
-  border-radius: $button-primary_border-radius;
-  box-shadow: $button-primary-box-shadow;
-  color: $button-primary-text;
-  cursor: pointer;
-  display: inline-block;
-  font-family: $button-font;
-  font-size: $fs-md;
-  line-height: 1rem;
-  padding: 1em 1.5em;
-  text-align: center;
-  text-decoration: none;
-  transition: 0.3s ease;
+  @apply inline-block bg-red-500 border-transparent border-[1px] rounded-sm text-white cursor-pointer font-merriweather text-md leading-1 py-md px-lg text-center no-underline transition duration-300;
 
   &:focus,
   &:hover {
-    color: $white;
-    background-color: $button-primary_hover-background-color;
-    box-shadow: $button-primary_hover-box-shadow;
-    text-decoration: none;
+    @apply text-white bg-red-400 no-underline shadow-dark-1;
   }
 
   &::after {
-    background: transparent;
+    @apply bg-transparent;
   }
 
   &:active {
-    background-color: $red-700;
-    box-shadow: $button-primary-box-shadow;
+    @apply bg-red-700 shadow-dark-1;
   }
 }
 
@@ -41,24 +24,21 @@ button.button.button-icon,
 input[type='reset'].button.button-icon,
 input[type='submit'].button.button-icon,
 input[type='button'].button.button-icon {
-  padding: 1em 2em 1em 1em;
-  position: relative;
+  @apply relative py-md pr-xl pl-md;
 
   &::before,
   &::after {
-    @include vert_center;
+    @apply absolute top-1/2 -translate-y-1/2 transform text-xs transition duration-300;
     font-family: 'Fontawesome';
-    font-size: $fs-xs;
     content: '\f054';
-    transition: right 0.3s;
   }
 
   &::before {
-    right: 0.5rem;
+    @apply right-xs;
   }
 
   &::after {
-    right: 1rem;
+    @apply right-md;
     left: unset;
     bottom: unset;
     height: unset;
@@ -68,7 +48,7 @@ input[type='button'].button.button-icon {
   &:hover,
   &:focus {
     &::after {
-      right: 0.6em;
+      @apply right-[0.6em];
     }
   }
 }
@@ -78,24 +58,21 @@ button.button.button-icon--back,
 input[type='reset'].button.button-icon--back,
 input[type='submit'].button.button-icon--back,
 input[type='button'].button.button-icon--back {
-  padding: 1em 2em 1em 3em;
-  position: relative;
+  @apply relative py-md pr-xl pl-3xl;
 
   &::before,
   &::after {
-    @include vert_center;
+    @apply absolute top-1/2 -translate-y-1/2 transform text-xs transition duration-300;
     font-family: 'Fontawesome';
-    font-size: $fs-xs;
     content: '\f053';
-    transition: left 0.3s;
   }
 
   &::before {
-    left: 1.5rem;
+    @apply left-lg;
   }
 
   &::after {
-    left: 2rem;
+    @apply left-xl;
     right: unset;
     bottom: unset;
     height: unset;
@@ -105,30 +82,25 @@ input[type='button'].button.button-icon--back {
   &:hover,
   &:focus {
     &::after {
-      left: 2em;
+      @apply left-xl;
     }
   }
 }
 
 .button-full {
-  width: 100%;
+  @apply w-full;
 }
 
 .button-large {
-  padding: 1.2em 1.5em;
+  @apply py-[1.2em] px-lg;
 }
 
 .button-small {
-  padding: 0.8em 1em;
+  @apply py-[0.3em] px-md;
 }
 
 .button.button-ghost {
-  background-color: transparent;
-  border-color: $red-600;
-  color: $red-600;
-
-  &:hover {
-  }
+  @apply bg-transparent border-red-600 text-red-600;
 }
 
 a.button.button-secondary,
@@ -136,20 +108,15 @@ button.button.button-secondary,
 input[type='reset'].button-secondary,
 input[type='submit'].button-secondary,
 input[type='button'].button-secondary {
-  background-color: $button-secondary-background-color;
-  border-color: $button-secondary-border-color;
-  color: $button-secondary-text;
+  @apply bg-yellow-500 border-transparent text-warm-grey-900;
 
   &:hover,
   &:focus {
-    color: $button-secondary-text;
-    background-color: $button-secondary_hover-background-color;
-    box-shadow: $button-secondary_hover-box-shadow;
+    @apply text-warm-grey-900 bg-yellow-300 shadow-light-2;
   }
 
   &:active {
-    background-color: $yellow-600;
-    box-shadow: $button-secondary-box-shadow;
+    @apply bg-yellow-600 shadow-light-1;
   }
 }
 
@@ -158,19 +125,14 @@ button.button.button-accent,
 input[type='reset'].button-accent,
 input[type='submit'].button-accent,
 input[type='button'].button-accent {
-  background-color: $button-accent-background-color;
-  border-color: $button-accent-border-color;
-  color: $button-accent-text;
+  @apply bg-blue-600 border-transparent text-white;
 
   &:hover,
   &:focus {
-    color: $button-accent-text;
-    background-color: $button-accent_hover-background-color;
-    box-shadow: $button-accent_hover-box-shadow;
+    @apply bg-blue-400 shadow-dark-2 text-white;
   }
 
   &:active {
-    background-color: $blue-700;
-    box-shadow: $button-primary-box-shadow;
+    @apply bg-blue-700 shadow-dark-2;
   }
 }
