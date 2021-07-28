@@ -4,24 +4,26 @@ textarea {
 
 .form-required {
   @apply relative;
-}
 
-.form-required::after {
-  content: '*';
-  @apply ml-2xs text-red-400;
+  &::after {
+    content: '*';
+    @apply ml-2xs text-red-400;
+  }
 }
 
 /* * underscores come from drupal admin */
-.it-form__service-category legend {
-  @apply mb-md;
-}
+.it-form__service-category {
+  & legend {
+    @apply mb-md;
+  }
 
-.it-form__service-category .input--checkbox {
-  @apply flex pb-md;
-}
+  & .input--checkbox {
+    @apply flex pb-md;
+  }
 
-.it-form__service-category .input--checkbox > label {
-  @apply pl-sm;
+  & .input--checkbox > label {
+    @apply pl-sm;
+  }
 }
 
 .form {
@@ -30,10 +32,10 @@ textarea {
 
 .form--fieldset {
   @apply clear-both p-0;
-}
 
-.form--fieldset legend {
-  @apply my-0 mr-0 ml-md;
+  & legend {
+    @apply my-0 mr-0 ml-md;
+  }
 }
 
 table {
@@ -42,10 +44,10 @@ table {
 
 .input {
   @apply relative;
-}
 
-.input textarea + .input--label {
-  @apply top-md transform translate-y-0;
+  & textarea + .input--label {
+    @apply top-md transform translate-y-0;
+  }
 }
 
 .input--label {
@@ -71,69 +73,43 @@ select {
   @apply relative w-full my-md mx-0 py-xs px-lg  bg-warm-grey-50 border-b-2 border-black text-md text-warm-grey-700 outline-none shadow-light-2 transition-shadow duration-300;
   appearance: none;
   line-height: 1.8;
+
+  &:focus {
+    @apply border-green-600 text-warm-grey-900 bg-warm-grey-50 shadow-light-3;
+  }
+
+  & + label {
+    @apply -top-md text-md text-black transform translate-y-0;
+  }
+
+  &:valid {
+    @apply border-green-600;
+  }
+
+  &:invalid {
+    @apply border-red-400;
+  }
 }
 
-input[type='text']:focus,
-input[type='password']:focus,
-input[type='email']:focus,
-input[type='tel']:focus,
-input[type='number']:focus,
-input[type='search']:focus,
-textarea:focus,
-select:focus {
-  @apply border-green-600 text-warm-grey-900 bg-warm-grey-50 shadow-light-3;
-}
+.input--select {
+  &::after {
+    @apply absolute top-1/2 transform -translate-y-1/2 right-xl text-md;
+    content: '\f078';
+    font-family: 'FontAwesome';
+  }
 
-input[type='text'] + label,
-input[type='password'] + label,
-input[type='email'] + label,
-input[type='tel'] + label,
-input[type='number'] + label,
-input[type='search'] + label,
-textarea + label,
-select + label {
-  @apply -top-md text-md text-black transform translate-y-0;
-}
+  & select {
+    @apply relative;
 
-input[type='text']:valid,
-input[type='password']:valid,
-input[type='email']:valid,
-input[type='tel']:valid,
-input[type='number']:valid,
-input[type='search']:valid,
-textarea:valid,
-select:valid {
-  @apply border-green-600;
-}
+    &:not(:placeholder-shown):valid + label,
+    &:not(:placeholder-shown):invalid + label {
+      @apply absolute -top-md text-sm left-0 transform translate-y-0;
+    }
 
-input[type='text']:invalid,
-input[type='password']:invalid,
-input[type='email']:invalid,
-input[type='tel']:invalid,
-input[type='number']:invalid,
-input[type='search']:invalid,
-textarea:invalid,
-select:invalid {
-  @apply border-red-400;
-}
-
-.input--select::after {
-  @apply absolute top-1/2 transform -translate-y-1/2 right-xl text-md;
-  content: '\f078';
-  font-family: 'FontAwesome';
-}
-
-.input--select select {
-  @apply relative;
-}
-
-.input--select select:not(:placeholder-shown):valid + label,
-.input--select select:not(:placeholder-shown):invalid + label {
-  @apply absolute -top-md text-sm left-0 transform translate-y-0;
-}
-
-.input--select select:not(:placeholder-shown):valid + label::after,
-.input--select select:not(:placeholder-shown):invalid + label::after {
-  @apply absolute top-1/2 transform -translate-y-1/2 left-2xs text-md;
-  font-family: 'FontAwesome';
+    &:not(:placeholder-shown):valid + label::after,
+    &:not(:placeholder-shown):invalid + label::after {
+      @apply absolute top-1/2 transform -translate-y-1/2 left-2xs text-md;
+      font-family: 'FontAwesome';
+    }
+  }
 }
