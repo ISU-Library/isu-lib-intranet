@@ -27,11 +27,11 @@ mix.setPublicPath(`${destinationDir}`);
 // source ==> production
 mix.js(`${sourceDir}/js/global.js`, `${destinationDir}/js/global.js`);
 
-mix.sass(`${sourceDir}/scss/global.scss`, `${destinationDir}/css/global.css`, {
-  sassOptions: {
-    outputStyle: 'compressed',
-  },
-});
+// mix.sass(`${sourceDir}/scss/global.scss`, `${destinationDir}/css/global.css`, {
+//   sassOptions: {
+//     outputStyle: 'compressed',
+//   },
+// });
 
 // Only cache bust if production
 if (mix.inProduction()) {

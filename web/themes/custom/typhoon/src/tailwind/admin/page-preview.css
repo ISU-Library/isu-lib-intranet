@@ -12,16 +12,16 @@
 
 .node-preview-form-select {
   @apply flex flex-wrap;
-}
 
-.node-preview-form-select .input--select::after {
-  @apply top-3/4 right-md;
-}
+  & .input--select::after {
+    @apply top-3/4 right-md;
+  }
 
-.node-preview-form-select .input--label {
-  @apply text-lg text-white text-shadow-1;
-}
+  & .input--label {
+    @apply text-lg text-white text-shadow-1;
+  }
 
-.node-preview-form-select input[type='submit'].button-accent {
-  @apply ml-xl px-xs py-sm;
+  & input[type='submit'].button-accent {
+    @apply ml-xl px-xs py-sm;
+  }
 }

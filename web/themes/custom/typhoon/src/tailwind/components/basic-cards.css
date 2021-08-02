@@ -1,88 +1,76 @@
 /**** Basic Cards ****/
-.basic-card::before,
-.lib-basic-card::before,
-.basic-card::after,
-.lib-basic-card:after {
-  @apply absolute w-[5.5rem] h-[3.125rem] transform rotate-45 transition-colors duration-300;
-  content: '';
+.basic-card,
+.lib-basic-card {
+  &::before,
+  &::after {
+    @apply absolute w-[5.5rem] h-[3.125rem] transform rotate-45 transition-colors duration-300;
+    content: '';
+  }
+
+  &::before {
+    @apply bg-red-400 top-[-11.25px] right-[-30px];
+  }
+
+  &::after {
+    @apply bg-red-500 top-[-26.25px] right-[-41.25px];
+  }
+
+  &:hover .cta::after,
+  &:focus .cta::after {
+    @apply right-[9.6px];
+  }
+
+  &:hover::before,
+  &:focus::before {
+    @apply bg-red-600;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    @apply bg-red-700;
+  }
 }
 
-.basic-card::before,
-.lib-basic-card::before {
-  @apply bg-red-400 top-[-11.25px] right-[-30px];
+.basic-card--yellow,
+.lib-basic-card--yellow {
+  &::before {
+    @apply bg-yellow-500;
+  }
+
+  &::after {
+    @apply bg-yellow-600;
+  }
+
+  &:hover::before,
+  &:focus::before {
+    @apply bg-yellow-500;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    @apply bg-yellow-600;
+  }
 }
 
-.basic-card::after,
-.lib-basic-card::after {
-  @apply bg-red-500 top-[-26.25px] right-[-41.25px];
-}
-.basic-card:hover .cta::after,
-.lib-basic-card:hover .cta::after,
-.basic-card:focus .cta::after,
-.lib-basic-card:focus .cta::after {
-  @apply right-[9.6px];
-}
+.basic-card--blue,
+.lib-basic-card--blue {
+  &::before {
+    @apply bg-blue-500;
+  }
 
-.basic-card:hover::before,
-.lib-basic-card:hover::before,
-.basic-card:focus::before,
-.lib-basic-card:focus::before {
-  @apply bg-red-600;
-}
+  &::after {
+    @apply bg-blue-600;
+  }
 
-.basic-card:hover::after,
-.lib-basic-card:hover::after,
-.basic-card:focus::after,
-.lib-basic-card:focus::after {
-  @apply bg-red-700;
-}
+  &:hover::before,
+  &:focus::before {
+    @apply bg-blue-600;
+  }
 
-.basic-card--yellow::before,
-.lib-basic-card--yellow::before {
-  @apply bg-yellow-500;
-}
-
-.basic-card--yellow::after,
-.lib-basic-card--yellow::after {
-  @apply bg-yellow-600;
-}
-
-.basic-card--yellow:hover::before,
-.lib-basic-card--yellow:hover::before,
-.basic-card--yellow:focus::before,
-.lib-basic-card--yellow:focus::before {
-  @apply bg-yellow-500;
-}
-
-.basic-card--yellow:hover::after,
-.lib-basic-card--yellow:hover::after,
-.basic-card--yellow:focus::after,
-.lib-basic-card--yellow:focus::after {
-  @apply bg-yellow-600;
-}
-
-.basic-card--blue::before,
-.lib-basic-card--blue::before {
-  @apply bg-blue-500;
-}
-
-.basic-card--blue::after,
-.lib-basic-card--blue::after {
-  @apply bg-blue-600;
-}
-
-.basic-card--blue:hover::before,
-.lib-basic-card--blue:hover::before,
-.basic-card--blue:focus::before,
-.lib-basic-card--blue:focus::before {
-  @apply bg-blue-600;
-}
-
-.basic-card--blue:hover::after,
-.lib-basic-card--blue:hover::after,
-.basic-card--blue:focus::after,
-.lib-basic-card--blue:focus::after {
-  @apply bg-blue-700;
+  &:hover::after,
+  &:focus::after {
+    @apply bg-blue-700;
+  }
 }
 
 .basic-card--image.basic-card::before,

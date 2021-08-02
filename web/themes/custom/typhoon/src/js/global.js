@@ -6,6 +6,7 @@ import * as sideNav from './sideNav.js';
 
 import { accordion } from './accordion.js';
 import scrollSpy from './scrollSpy.js';
+import Slider from './slider.js';
 import * as imgModal from './imgModal.js';
 
 // Todo: split into new file
@@ -44,5 +45,7 @@ accordion;
 // imagModal
 imgModal;
 
+// slider
+Slider(document.querySelector('.js-slider'));
 // capacity
 // capacity;

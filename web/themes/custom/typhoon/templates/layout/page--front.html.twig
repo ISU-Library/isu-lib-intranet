@@ -79,10 +79,10 @@
           </div>
         </article>
         <article class="staff-news-feed relative pt-4xl md:pt-6xl pb-5xl md:pb-7xl xl:px-xl">
-          <div aria-hidden="true" class="flair-img top-0 right-0">
+          <div aria-hidden="true" class="flair-img top-0 right-0 z-[-1]">
             <img src="/themes/custom/typhoon/images/dot-pattern-red-bars-lg.png" alt="Dots and red strips used for design" loading="lazy">
           </div>
-          <div aria-hidden="true" class="flair-img left-0 bottom-0">
+          <div aria-hidden="true" class="flair-img left-0 bottom-0 z-[-1]">
             <img src="/themes/custom/typhoon/images/dot-pattern-yellow-triangles.png" alt="Dots and yellow triangles used for design" loading="lazy">
           </div>
           <div class="xl:max-w-[87.5rem] mx-xl md:mx-4xl xl:mx-auto">
@@ -90,14 +90,12 @@
               Staff News
             </h2>
             <div
-              class="Parent text-right">
+              class="js-slider text-right">
               <!-- if staff news content found -->
               {% if staff_news_custom %}
-                <ul class="news-card--wrap grid grid-cols-2 gap-y-3xl gap-x-2xl lg:gap-x-3xl text-left">
+                <ul class="js-slides relative news-card--wrap min-h-[19.625rem] md:min-h-[21.75rem] xl:min-h-[27.875rem] text-left" >
                   {% for item in staff_news_custom %}
-                    {% if loop.index < 3 %}
-                      <!--a href="/node/{{item['id']}}" class="news-card--link br4" style="background-image: url('{{item['image_uri']}}'); z -index: 2;  "-->
-                      <li class="col-span-full md:col-span-1">
+                      <li class="col-span-full md:col-span-1 js-slide w-full md:w-1/2">
                         {{newsCard.lead({
                           front: TRUE,
                           imgSrc: item['image_uri'],
@@ -110,25 +108,15 @@
                         })}}
                         <!-- {{item['image_uri']}} -->
                       </li>
-                      <!-- smaller subset items?  -->
-                    {% else %}
-                      <li class="col-span-full md:col-span-1">
-                        {{newsCard.basic({
-                            imgSrc: item['image_uri'],
-                            imgAlt: item['title'],
-                            link: item['item_url_stub'],
-                            category: item['taxonomy_terms'],
-                            title: item['title'],
-                            text: item['body_summary'],
-                            linkText: 'Read this story',
-                        })}}
-                      </li>
-                    {% endif %}
                   {% endfor %}
                 </ul>
               {% endif %}
+                  <div class="controls flex justify-center">
+                    <button class="js-goToPrev button button-accent button-icon--back mr-xs md:mr-sm">Prev</button>
+                    <button class="js-goToNext button button-accent button-icon">Next</button>
+                  </div>
               <!-- end if staff news content found -->
-              <a class="cta mt-3xl" href="/staff/staff-news">
+              <a class="button button-icon button-ghost w-full sm:w-auto mt-3xl" href="/staff/staff-news">
                 More news stories
               </a>
             </div>
