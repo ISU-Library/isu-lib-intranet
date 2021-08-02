@@ -150,13 +150,16 @@
       }} shadow-light-2 transition-all duration-300 group"
     >
       <div class="basic-card--image-wrap relative">
-        <figure class="relative overflow-hidden m-0 pt-[71.45%]">
-          <img
+        <figure
+          class="relative overflow-hidden m-0 pt-[71.45%] bg-cover bg-no-repeat bg-center"
+          style="background-image:url('{{ data.imgSrc }}');"
+        >
+          {# <img
             class="absolute-center max-w-full w-full h-auto"
             src="{{ data.imgSrc }}"
             alt="{{ data.imgAlt }}"
             loading="lazy"
-          />
+          /> #}
           <div class="image-overlay"></div>
         </figure>
         <div
