@@ -1,0 +1,23 @@
+.js-slide {
+  @apply grid absolute md:p-md transform translate-x-[-150%] scale-75 md:hover:scale-[0.85] transition-all duration-300 opacity-0;
+}
+
+.js-slide.js-next + .js-slide {
+  @apply transform translate-x-[250%] scale-75 md:hover:scale-[0.85];
+}
+
+.js-slide.js-next1 {
+  @apply transform translate-x-[250%] scale-75 md:hover:scale-[0.85];
+}
+
+.js-slide.js-prev {
+  @apply block transform translate-x-[-90%] md:-translate-x-1/2 scale-[0.85] md:hover:scale-[0.95] z-10 opacity-100;
+}
+
+.js-slide.js-current {
+  @apply block transform translate-x-0 md:translate-x-1/2 scale-100 md:hover:scale-105 opacity-100 z-20;
+}
+
+.js-slide.js-next {
+  @apply block transform translate-x-[90%] md:translate-x-[150%] scale-[0.85] md:hover:scale-[0.95] md:hover:scale-105 opacity-100 z-10;
+}

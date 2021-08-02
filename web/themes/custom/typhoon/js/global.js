@@ -51,9 +51,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _sideNav_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./sideNav.js */ "./themes/custom/typhoon/src/js/sideNav.js");
 /* harmony import */ var _accordion_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./accordion.js */ "./themes/custom/typhoon/src/js/accordion.js");
 /* harmony import */ var _scrollSpy_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./scrollSpy.js */ "./themes/custom/typhoon/src/js/scrollSpy.js");
-/* harmony import */ var _imgModal_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./imgModal.js */ "./themes/custom/typhoon/src/js/imgModal.js");
-/* harmony import */ var _imgModal_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_imgModal_js__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _slider_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./slider.js */ "./themes/custom/typhoon/src/js/slider.js");
+/* harmony import */ var _imgModal_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./imgModal.js */ "./themes/custom/typhoon/src/js/imgModal.js");
+/* harmony import */ var _imgModal_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_imgModal_js__WEBPACK_IMPORTED_MODULE_7__);
 // elements animation
+
 
 
 
@@ -87,7 +89,9 @@ _sideNav_js__WEBPACK_IMPORTED_MODULE_3__; // * scrollSpy;
 
 _accordion_js__WEBPACK_IMPORTED_MODULE_4__.accordion; // imagModal
 
-_imgModal_js__WEBPACK_IMPORTED_MODULE_6__; // capacity
+_imgModal_js__WEBPACK_IMPORTED_MODULE_7__; // slider
+
+(0,_slider_js__WEBPACK_IMPORTED_MODULE_6__.default)(document.querySelector('.js-slider')); // capacity
 // capacity;
 
 /***/ }),
@@ -477,6 +481,94 @@ var slideToggle = function slideToggle(element) {
 };
 
 
+
+/***/ }),
+
+/***/ "./themes/custom/typhoon/src/js/slider.js":
+/*!************************************************!*\
+  !*** ./themes/custom/typhoon/src/js/slider.js ***!
+  \************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ Slider; }
+/* harmony export */ });
+function Slider(slider) {
+  if (!(slider instanceof Element)) {
+    throw new Error('No Slider passed in');
+  } // Create some variables for working with the slider
+
+
+  var prev;
+  var current;
+  var next;
+  var next1; // select elements needed for slider
+
+  var slides = slider.querySelector('.js-slides');
+  var prevButton = slider.querySelector('.js-goToPrev');
+  var nextButton = slider.querySelector('.js-goToNext'); // When this slider is created, run the slider function
+
+  function startSlider() {
+    current = slider.querySelector('.js-current') || slides.firstElementChild;
+    prev = current.previousElementSibling || slides.lastElementChild;
+    next = current.nextElementSibling || slides.firstElementChild;
+    next1 = next.nextElementSibling || slides.firstElementChild;
+  }
+
+  function applyClass() {
+    current.classList.add('js-current');
+    prev.classList.add('js-prev');
+    next.classList.add('js-next');
+    next1.classList.add('js-next1');
+  } // strip all the classes off the current slide
+
+
+  function move(direction) {
+    var _prev$classList, _current$classList, _next$classList, _next1$classList;
+
+    var classesToRemove = ['js-prev', 'js-current', 'js-next', 'js-next1'];
+
+    (_prev$classList = prev.classList).remove.apply(_prev$classList, classesToRemove);
+
+    (_current$classList = current.classList).remove.apply(_current$classList, classesToRemove);
+
+    (_next$classList = next.classList).remove.apply(_next$classList, classesToRemove);
+
+    (_next1$classList = next1.classList).remove.apply(_next1$classList, classesToRemove);
+
+    if (direction === 'back') {
+      // make a new array of the new values, and destructure them over and into the control variables
+      var _ref = [// get the prev slide, if there is none, get the last slide from the entire slider for wrapping
+      prev.previousElementSibling || slides.lastElementChild, prev, current, next];
+      prev = _ref[0];
+      current = _ref[1];
+      next = _ref[2];
+      next1 = _ref[3];
+      console.log('click');
+    } else {
+      var _ref2 = [current, next, // get the next slide, or if it's at the end, loop around and grab the first slide
+      next.nextElementSibling || slides.firstElementChild, next1.nextElementSibling || slides.firstElementChild];
+      prev = _ref2[0];
+      current = _ref2[1];
+      next = _ref2[2];
+      next1 = _ref2[3];
+    }
+
+    applyClass();
+  }
+
+  startSlider();
+  applyClass(); // event listeners
+
+  prevButton.addEventListener('click', function () {
+    return move('back');
+  });
+  nextButton.addEventListener('click', function () {
+    return move('forward');
+  });
+}
 
 /***/ }),
 

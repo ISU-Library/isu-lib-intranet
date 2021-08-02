@@ -24,21 +24,21 @@ button.button.button-icon,
 input[type='reset'].button.button-icon,
 input[type='submit'].button.button-icon,
 input[type='button'].button.button-icon {
-  @apply relative py-md pr-xl pl-md;
+  @apply relative py-md pr-3xl pl-xl;
 
   &::before,
   &::after {
-    @apply absolute top-1/2 -translate-y-1/2 transform text-xs transition duration-300;
+    @apply absolute top-1/2 -translate-y-1/2 transform text-xs transition-all duration-300;
     font-family: 'Fontawesome';
     content: '\f054';
   }
 
   &::before {
-    @apply right-xs;
+    @apply right-xl;
   }
 
   &::after {
-    @apply right-md;
+    @apply right-lg;
     left: unset;
     bottom: unset;
     height: unset;
@@ -47,8 +47,8 @@ input[type='button'].button.button-icon {
 
   &:hover,
   &:focus {
-    &::after {
-      @apply right-[0.6em];
+    &::before {
+      @apply right-lg;
     }
   }
 }
@@ -62,7 +62,7 @@ input[type='button'].button.button-icon--back {
 
   &::before,
   &::after {
-    @apply absolute top-1/2 -translate-y-1/2 transform text-xs transition duration-300;
+    @apply absolute top-1/2 -translate-y-1/2 transform text-xs transition-all duration-300;
     font-family: 'Fontawesome';
     content: '\f053';
   }
@@ -82,7 +82,7 @@ input[type='button'].button.button-icon--back {
   &:hover,
   &:focus {
     &::after {
-      @apply left-xl;
+      @apply left-lg;
     }
   }
 }

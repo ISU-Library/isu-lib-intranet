@@ -13,20 +13,23 @@
   } %}
 
   {% set data = data ? defaultData|merge(data) : defaultData %}
-
   <div
-    class="news-card--lead grid realtive min-h-[15.625rem] md:min-h-[21.75rem] xl:min-h-[22.875rem] mb-lg shadow-dark-2 transform transition-transform duration-500 br4"
+    class="news-card--lead grid realtive {{
+    data.front
+      ? 'min-h-[18.625rem]'
+      : 'min-h-[15.625rem] md:min-h-[18.75rem]'
+    }}   xl:min-h-[22.875rem] mb-lg shadow-dark-2 transform transition-transform duration-500"
     title="{{ data.title }}"
   >
     <a
       href="{{ data.link }}"
-      class="news-card--link relative no-underline bg-center bg-no-repeat bg-cover overflow-hidden shadow-dark-2 transition-shadow duration-500 z-20 hover:shadow-dark-3 focus:shadow-dark-3 br4 group"
+      class="news-card--link relative no-underline bg-center bg-no-repeat bg-cover overflow-hidden shadow-dark-2 transition-shadow duration-500 z-20 hover:shadow-dark-3 focus:shadow-dark-3 rounded group"
       style="background-image: url('{{ data.imgSrc }}');"
       aria-label="Read more about {{ data.title }}"
       rel="noreferrer noopener"
     >
       <div
-        class="news-card--text-wrap relative flex flex-col justify-end h-full pr-xl pl-lg pt-2xl pb-lg text-white z-20 transition-all duration-500 group"
+        class="news-card--text-wrap relative flex flex-col justify-end h-full pr-xl pl-lg pt-xl md:pt-2xl pb-lg text-white z-20 transition-all duration-500 group"
       >
         {% if data.category %}
           <span

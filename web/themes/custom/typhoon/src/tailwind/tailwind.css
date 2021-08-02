@@ -33,6 +33,7 @@
 @import './components/views.css';
 @import './components/forms.css';
 @import './components/footer.css';
+@import './components/slider.css';
 
 /**** modules ****/
 @import './modules/sitemap.css';
