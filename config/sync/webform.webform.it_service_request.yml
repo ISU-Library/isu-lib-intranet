@@ -57,7 +57,7 @@ elements: |-
     '#test': 'Please ignore this email.'
   optional_attachement:
     '#type': webform_attachment_token
-    '#title': 'Optional attachement'
+    '#title': 'Optional attachement (Required for email)'
     '#access_create_roles':
       - authenticated
     '#access_update_roles':
@@ -65,10 +65,17 @@ elements: |-
     '#access_view_roles':
       - authenticated
     '#sanitize': true
-  testfile:
-    '#type': webform_attachment_twig
-    '#title': 'Test Email Attachement'
-    '#display_on': form
+    '#template': '<b>test</b>'
+  optional_attachment_image:
+    '#type': webform_image_file
+    '#title': 'Optional attachment file upload image'
+    '#access_create_roles':
+      - authenticated
+    '#access_update_roles':
+      - authenticated
+    '#access_view_roles':
+      - authenticated
+    '#sanitize': true
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'
@@ -177,7 +184,7 @@ settings:
   draft_pending_multiple_message: ''
   confirmation_type: url_message
   confirmation_title: ''
-  confirmation_message: 'Your message has been sent.'
+  confirmation_message: "Form submission complete.<br />\r\n<br />\r\nYou will receive a ServiceNow ticket submission notification from the ISU Service Desk shortly. If you need to provide additional information about your request, click the &quot;View your requested item&quot; link within the notification email. Your ticket has been assigned to Library IT (<a href=\"mailto:lib-support@iastate.edu\">lib-support@iastate.edu</a>)."
   confirmation_url: /resources/it-service-request/success
   confirmation_attributes: {  }
   confirmation_back: true
@@ -210,6 +217,7 @@ settings:
 access:
   create:
     roles:
+      - anonymous
       - authenticated
     users: {  }
     permissions: {  }
@@ -259,7 +267,7 @@ handlers:
     label: 'Email confirmation'
     notes: ''
     handler_id: email_confirmation
-    status: true
+    status: false
     conditions: {  }
     weight: 1
     settings:
@@ -278,11 +286,11 @@ handlers:
       body: "<p>Your form was submitted on {{ webform_token('[webform_submission:created]', webform_submission, [], options) }}</p>\r\n<p>Submitted by: {{ webform_token('[webform_submission:user]', webform_submission, [], options) }}</p>\r\n<p>Submitted values are:</p>\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n"
       excluded_elements: {  }
       ignore_access: false
-      exclude_empty: true
+      exclude_empty: false
       exclude_empty_checkbox: false
       exclude_attachments: false
       html: true
-      attachments: false
+      attachments: true
       twig: true
       theme_name: ''
       parameters: {  }
@@ -302,7 +310,7 @@ handlers:
     settings:
       states:
         - completed
-      to_mail: _default
+      to_mail: lib-support@iastate.edu
       to_options: {  }
       cc_mail: ''
       cc_options: {  }
@@ -315,7 +323,7 @@ handlers:
       body: "<p>Submitted on {{ webform_token('[webform_submission:created]', webform_submission, [], options) }}</p>\r\n<p>Submitted by: {{ webform_token('[webform_submission:user]', webform_submission, [], options) }}</p>\r\n<p>Submitted values are:</p>\r\n{{ webform_token('[webform_submission:values]', webform_submission, [], options) }}\r\n"
       excluded_elements: {  }
       ignore_access: false
-      exclude_empty: true
+      exclude_empty: false
       exclude_empty_checkbox: false
       exclude_attachments: false
       html: true

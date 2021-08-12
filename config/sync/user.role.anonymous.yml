@@ -12,6 +12,7 @@ permissions:
   - 'access comments'
   - 'access content'
   - 'access site-wide contact form'
+  - 'access sitemap'
   - 'search Google CSE'
   - 'search content'
   - 'use advanced search'
