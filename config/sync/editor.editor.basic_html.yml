@@ -19,6 +19,13 @@ settings:
           items:
             - Bold
             - Italic
+            - Underline
+            - Strike
+            - Superscript
+            - Subscript
+            - JustifyLeft
+            - JustifyRight
+            - JustifyBlock
         -
           name: Linking
           items:
@@ -29,6 +36,8 @@ settings:
           items:
             - BulletedList
             - NumberedList
+            - Indent
+            - Outdent
         -
           name: Media
           items:
@@ -42,7 +51,12 @@ settings:
           name: Tools
           items:
             - Source
+            - Table
+            - Undo
+            - Redo
   plugins:
+    language:
+      language_list: un
     stylescombo:
       styles: ''
 image_upload:
@@ -51,5 +65,5 @@ image_upload:
   directory: inline-images
   max_size: ''
   max_dimensions:
-    width: 0
-    height: 0
+    width: null
+    height: null

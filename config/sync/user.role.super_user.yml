@@ -285,6 +285,7 @@ permissions:
   - 'use advanced search'
   - 'use testgraphql graphql explorer'
   - 'use testgraphql graphql voyager'
+  - 'use text format basic_html'
   - 'use text format full_html'
   - 'use text format restricted_html'
   - 'view all media revisions'

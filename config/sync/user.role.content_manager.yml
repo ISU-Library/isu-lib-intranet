@@ -165,6 +165,7 @@ permissions:
   - 'update paragraph content sc_mosaic_image'
   - 'update paragraph content sc_news_basic_card_block'
   - 'update paragraph content sc_news_lead_card_block'
+  - 'use text format basic_html'
   - 'use text format full_html'
   - 'use text format restricted_html'
   - 'view all media revisions'
