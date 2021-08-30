@@ -38,19 +38,19 @@
  * @ingroup themeable
  */
 #}
+
+{% set sectionID = content.field_content_section_title[0] %}
+{% set sectionTitle = content.field_content_section_title %}
 {% set classes = [
   'paragraph',
   'paragraph--type--' ~ (paragraph.bundle|clean_class),
   view_mode ? 'paragraph--view-mode--' ~ (view_mode|clean_class),
   not paragraph.isPublished() ? 'paragraph--unpublished',
-  'js-scrollTarget',
+  sectionID ? 'js-scrollTarget' : '',
   'mb-md',
   'md:mb-2xl',
   'lg:pt-md'
 ] %}
-
-{% set sectionID = content.field_content_section_title[0] %}
-{% set sectionTitle = content.field_content_section_title %}
 
 {% block paragraph %}
   <section id="{{ sectionID }}" {{ attributes.addClass(classes) }}>

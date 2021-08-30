@@ -20,13 +20,6 @@ settings:
   provider: staffdir
   label_display: visible
 visibility:
-  node_type:
-    id: node_type
-    bundles:
-      department_page: department_page
-    negate: false
-    context_mapping:
-      node: '@node.node_route_context:node'
   'entity_bundle:node':
     id: 'entity_bundle:node'
     bundles:

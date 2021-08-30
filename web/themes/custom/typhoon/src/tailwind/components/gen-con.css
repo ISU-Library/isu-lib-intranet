@@ -164,7 +164,7 @@
   &[href*='.net']::before,
   &[href*='.edu']::before,
   &[href*='.org']::before {
-    content: '\f35d';
+    content: '\f0c1';
   }
 
   &[href*='.docx']::before {

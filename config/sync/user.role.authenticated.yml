@@ -1,7 +1,16 @@
 uuid: 366ae91d-0180-4e1b-9670-5fdf8a3ab661
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - comment
+    - contact
+    - google_cse
+    - media
+    - paragraphs_type_permissions
+    - search
+    - sitemap
+    - system
 _core:
   default_config_hash: btW6TFHajhy7Eo6YUvdFiPh4TcPggo8GBXYctjV6zag
 id: authenticated

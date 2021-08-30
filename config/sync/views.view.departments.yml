@@ -157,6 +157,7 @@ display:
           exposed: false
           expose:
             label: ''
+            field_identifier: title
       title: Departments
       header: {  }
       footer: {  }

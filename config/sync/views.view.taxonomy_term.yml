@@ -80,6 +80,7 @@ display:
           exposed: false
           expose:
             label: ''
+            field_identifier: sticky
         created:
           id: created
           table: taxonomy_index
@@ -92,6 +93,7 @@ display:
           exposed: false
           expose:
             label: ''
+            field_identifier: created
           granularity: second
       arguments:
         tid:

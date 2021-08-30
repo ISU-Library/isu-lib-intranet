@@ -1,7 +1,9 @@
 uuid: eea79c67-9ffd-4df0-ba21-72a732664148
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - comment
 id: requester
 label: Requester
 weight: 4

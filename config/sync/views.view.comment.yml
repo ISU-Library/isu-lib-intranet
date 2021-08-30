@@ -809,6 +809,7 @@ display:
           exposed: false
           expose:
             label: ''
+            field_identifier: changed
           granularity: second
           entity_type: comment
           entity_field: changed
