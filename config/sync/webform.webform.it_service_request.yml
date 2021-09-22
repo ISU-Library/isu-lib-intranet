@@ -184,7 +184,7 @@ settings:
   draft_pending_multiple_message: ''
   confirmation_type: url_message
   confirmation_title: ''
-  confirmation_message: "Form submission complete.<br />\r\n<br />\r\nYou will receive a ServiceNow ticket submission notification from the ISU Service Desk shortly. If you need to provide additional information about your request, click the &quot;View your requested item&quot; link within the notification email. Your ticket has been assigned to Library IT (<a href=\"mailto:lib-support@iastate.edu\">lib-support@iastate.edu</a>)."
+  confirmation_message: ''
   confirmation_url: /resources/it-service-request/success
   confirmation_attributes: {  }
   confirmation_back: true

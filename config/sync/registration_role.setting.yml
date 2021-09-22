@@ -1,0 +1,8 @@
+role_to_select:
+  requester: requester
+  administrator: '0'
+  super_user: '0'
+  content_manager: '0'
+registration_mode: user
+_core:
+  default_config_hash: o1wWkhSOJotsHFgvzESaUOiTWhLak62cKBDyEtewAIM

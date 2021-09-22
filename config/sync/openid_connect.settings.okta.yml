@@ -1,0 +1,8 @@
+enabled: true
+settings:
+  redirect_url: ''
+  client_id: 0oa1ybp0t94m3c7Cm5d7
+  client_secret: 47VIgQCdwva76K5OfULQQpR7EiDmCI_iBFEMF7eW
+  okta_domain: dev-81498303.okta.com
+_core:
+  default_config_hash: 7F1ngE9fiONEo0Nk1cfez_GTGzhHBLuPaHlrDqYI_hg
