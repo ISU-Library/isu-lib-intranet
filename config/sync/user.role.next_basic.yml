@@ -1,9 +1,0 @@
-uuid: f79c6f6a-13b7-45f7-989d-0a11afbb9800
-langcode: en
-status: true
-dependencies: {  }
-id: next_basic
-label: 'Next Basic'
-weight: 7
-is_admin: null
-permissions: {  }

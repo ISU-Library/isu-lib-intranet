@@ -1,8 +1,8 @@
 enabled: true
 settings:
   redirect_url: ''
-  client_id: 0oa1ybp0t94m3c7Cm5d7
-  client_secret: 47VIgQCdwva76K5OfULQQpR7EiDmCI_iBFEMF7eW
-  okta_domain: dev-81498303.okta.com
+  client_id: 0oad1r7bxbxGNGS8m2p7
+  client_secret: MeExCEgk2rHX368OopOKFerSlZ9DX_biECl1Cd8E
+  okta_domain: iastate.okta.com
 _core:
   default_config_hash: 7F1ngE9fiONEo0Nk1cfez_GTGzhHBLuPaHlrDqYI_hg
