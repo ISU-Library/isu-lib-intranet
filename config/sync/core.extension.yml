@@ -13,6 +13,7 @@ module:
   config: 0
   config_filter: 0
   config_split: 0
+  consumers: 0
   contact: 0
   contextual: 0
   ctools: 0
@@ -20,6 +21,7 @@ module:
   current_page_crumb: 0
   datetime: 0
   dblog: 0
+  decoupled_router: 0
   devel: 0
   devel_generate: 0
   dynamic_page_cache: 0
@@ -42,6 +44,8 @@ module:
   menu_block: 0
   menu_link_content: 0
   menu_ui: 0
+  next: 0
+  next_jsonapi: 0
   node: 0
   oauth_login_oauth2: 0
   openid_connect: 0
@@ -59,9 +63,11 @@ module:
   security_review: 0
   serialization: 0
   shortcut: 0
+  simple_oauth: 0
   sitemap: 0
   smtp: 0
   staffdir: 0
+  subrequests: 0
   system: 0
   taxonomy: 0
   telephone: 0

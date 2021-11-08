@@ -1,0 +1,9 @@
+uuid: 5c567ad6-53a4-4851-a7a8-a760c818a545
+langcode: en
+status: true
+dependencies: {  }
+id: node.page
+site_resolver: site_selector
+configuration:
+  sites:
+    intranet: intranet
