@@ -5,8 +5,6 @@ dependencies:
   enforced:
     module:
       - webform_options_custom
-_core:
-  default_config_hash: Yq5gPKCUuIY3Re5SNmD_cWUwdJBVMYpWkUO-jdPximg
 open: null
 close: null
 weight: 0
@@ -71,6 +69,9 @@ settings:
   form_access_denied_message: ''
   form_access_denied_attributes: {  }
   form_file_limit: ''
+  form_method: ''
+  form_action: ''
+  form_attributes: {  }
   share: false
   share_node: false
   share_theme_name: ''
@@ -210,3 +211,5 @@ access:
     permissions: {  }
 handlers: {  }
 variants: {  }
+_core:
+  default_config_hash: Yq5gPKCUuIY3Re5SNmD_cWUwdJBVMYpWkUO-jdPximg
