@@ -1,0 +1,14 @@
+uuid: fd3d9662-a447-4dde-9c59-6a0670f91ae9
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.next_basic
+  module:
+    - user
+id: user_remove_role_action.next_basic
+label: 'Remove the Next Basic role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: next_basic

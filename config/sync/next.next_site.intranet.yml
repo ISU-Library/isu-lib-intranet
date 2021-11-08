@@ -1,0 +1,9 @@
+uuid: 396f23c4-64aa-4cfd-9ee9-a228b129b06f
+langcode: en
+status: true
+dependencies: {  }
+id: intranet
+label: intranet
+base_url: 'http://localhost:3000'
+preview_url: 'http://localhost:3000/api/preview'
+preview_secret: preview-secret-here

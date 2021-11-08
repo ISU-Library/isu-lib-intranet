@@ -1,0 +1,14 @@
+uuid: 17de95b9-e928-467d-a445-a182b0999c6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.next_basic
+  module:
+    - user
+id: user_add_role_action.next_basic
+label: 'Add the Next Basic role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: next_basic
