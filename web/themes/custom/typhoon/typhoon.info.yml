@@ -5,7 +5,6 @@ core_version_requirement: 9.x
 base theme: stable
 
 libraries:
-  - typhoon/global
   - typhoon/tailwind
 libraries-extend:
   -
