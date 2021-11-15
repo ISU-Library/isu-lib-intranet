@@ -21,11 +21,12 @@
 
 <div {{ attributes.addClass('webform-confirmation') }}>
   {% if message %}
-    {# <div class="webform-confirmation__message">{{ message }}</div> #}
+    <div class="webform-confirmation__message">{{ message }}</div>
   {% endif %}
 
   {% if back %}
     <div class="webform-confirmation__back">
+      <p>A service now ticket should be created shortly.</p>
       <a href="{{ back_url }}" rel="prev" {{ back_attributes }}>
         {{ back_label }}
       </a>
