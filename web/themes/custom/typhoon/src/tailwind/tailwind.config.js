@@ -4,6 +4,7 @@ const sourceDir = './themes/custom/typhoon/src';
 const destinationDir = './themes/custom/typhoon';
 
 module.exports = {
+  mode: 'jit',
   purge: {
     enabled: true,
     content: [

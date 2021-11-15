@@ -3,7 +3,7 @@ const tailwindDir = `${sourceDir}/tailwind`;
 const destinationDir = './themes/custom/typhoon';
 
 const mix = require('laravel-mix');
-const tailwindcss = require('@tailwindcss/jit');
+const tailwindcss = require('tailwindcss');
 
 // require("laravel-mix-purgecss");
 
