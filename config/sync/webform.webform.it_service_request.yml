@@ -5,6 +5,8 @@ dependencies:
   enforced:
     module:
       - webform
+_core:
+  default_config_hash: Q4QShRpLvlheaOjtXj4lKYXCOGMiuBopVI6GYCCWRK8
 open: null
 close: null
 weight: 0
@@ -61,16 +63,6 @@ elements: |-
       - authenticated
     '#sanitize': true
     '#template': '<b>test</b>'
-  optional_attachment_image:
-    '#type': webform_image_file
-    '#title': 'Optional attachment file upload image'
-    '#access_create_roles':
-      - authenticated
-    '#access_update_roles':
-      - authenticated
-    '#access_view_roles':
-      - authenticated
-    '#sanitize': true
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'
@@ -337,5 +329,3 @@ handlers:
       theme_name: ''
       parameters: {  }
 variants: {  }
-_core:
-  default_config_hash: Q4QShRpLvlheaOjtXj4lKYXCOGMiuBopVI6GYCCWRK8
