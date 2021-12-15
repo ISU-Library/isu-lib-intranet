@@ -38,6 +38,12 @@
  * @ingroup themeable
  */
 #}
+
+{% set ImgSrc = paragraph.field_mosaic_image_medium.entity.uri.value
+  ? file_url(paragraph.field_mosaic_image_medium.entity.uri.value)
+  : ''
+%}
+
 {% set classes = [
   'mosaic-image gen-con--img-wrap overflow-hidden h-full mosaic-image--small',
   'paragraph',
@@ -53,7 +59,7 @@
     {# <div {{ attributes.addClass(classes) }}> #}
     {{
       mosaic.imgMedium({
-        imgSrc: file_url(paragraph.field_mosaic_image_medium.entity.uri.value),
+        imgSrc: ImgSrc,
         imgAlt: paragraph.field_mosaic_image_medium.alt
       })
     }}

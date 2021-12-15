@@ -75,7 +75,10 @@
 
 {% import '@typhoon/components/_news-cards.html.twig' as newsCard %}
 
-{% set ImgSrc = file_url(node.field_staff_updates_main_image.entity.fileuri) %}
+{% set ImgSrc = node.field_staff_updates_main_image.entity.fileuri
+  ? file_url(node.field_staff_updates_main_image.entity.fileuri)
+  : ''
+%}
 {% set ImgAlt = node.field_staff_updates_main_image.alt %}
 
 <article {{ attributes }}>

@@ -38,6 +38,12 @@
  * @ingroup themeable
  */
 #}
+
+{% set ImgSrc = paragraph.field_news_card_basic_image.entity.uri.value
+  ? file_url(paragraph.field_news_card_basic_image.entity.uri.value)
+  : ''
+%}
+
 {% set classes = [
   'paragraph',
   'paragraph--type--' ~ (paragraph.bundle|clean_class),
@@ -57,9 +63,7 @@
           text: content.field_news_card_basic_text|field_value,
           linkText: content.field_news_card_basic_link[0]['#title'],
           link: content.field_news_card_basic_link[0]['#url'],
-          imgSrc: file_url(
-            paragraph.field_news_card_basic_image.entity.uri.value
-          ),
+          imgSrc: ImgSrc,
           imgAlt: content.field_news_card_basic_image.alt
         })
       }}

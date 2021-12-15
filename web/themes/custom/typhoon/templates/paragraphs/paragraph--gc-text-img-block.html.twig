@@ -41,6 +41,11 @@
 
 {% import '@typhoon/components/_general-content.html.twig' as gcBlock %}
 
+{% set ImgSrc = paragraph.field_gc_text_img_img.entity.uri.value
+  ? file_url(paragraph.field_gc_text_img_img.entity.uri.value)
+  : ''
+%}
+
 {% set classes = [
   'paragraph',
   'paragraph--type--' ~ (paragraph.bundle|clean_class),
@@ -55,7 +60,7 @@
         gcBlock.textImg({
           imgSide: paragraph.field_gc_text_img_side.value,
           imgSize: paragraph.field_gc_text_img_size.value,
-          imgSrc: file_url(paragraph.field_gc_text_img_img.entity.uri.value),
+          imgSrc: ImgSrc,
           imgAlt: paragraph.field_gc_text_img_img.alt,
           text: content.field_gc_text_img_text
         })

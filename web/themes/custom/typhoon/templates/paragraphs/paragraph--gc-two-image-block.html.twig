@@ -48,12 +48,14 @@
   not paragraph.isPublished() ? 'paragraph--unpublished'
 ] %}
 
-{% set leftImgSrc =
-  file_url(paragraph.field_gc_two_img_img_left.entity.uri.value)
+{% set LeftImgSrc = paragraph.field_gc_two_img_img_left.entity.uri.value
+  ? file_url(paragraph.field_gc_two_img_img_left.entity.uri.value)
+  : ''
 %}
 {% set leftImgAlt = paragraph.field_gc_two_img_img_left.alt %}
-{% set rightImgSrc =
-  file_url(paragraph.field_gc_two_img_img_right.entity.uri.value)
+{% set RightImgSrc = paragraph.field_gc_two_img_img_right.entity.uri.value
+  ? file_url(paragraph.field_gc_two_img_img_right.entity.uri.value)
+  : ''
 %}
 {% set rightImgAlt = paragraph.field_gc_two_img_img_right.alt %}
 
@@ -62,13 +64,9 @@
     <div {{ attributes.addClass(classes) }}>
       {{
         blocks.twoImg({
-          leftImgSrc: file_url(
-            paragraph.field_gc_two_img_img_left.entity.uri.value
-          ),
+          leftImgSrc: LeftImgSrc,
           leftImgAlt: paragraph.field_gc_two_img_img_left.alt,
-          rightImgSrc: file_url(
-            paragraph.field_gc_two_img_img_right.entity.uri.value
-          ),
+          rightImgSrc: RightImgSrc,
           rightImgAlt: paragraph.field_gc_two_img_img_right.alt
         })
       }}

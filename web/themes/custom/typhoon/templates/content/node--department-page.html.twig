@@ -71,7 +71,10 @@
  */
 #}
 
-{% set ImgSrc = file_url(node.field_department_image.entity.fileuri) %}
+{% set ImgSrc = node.field_staff_news_main_image.entity.fileuri
+  ? file_url(node.field_department_image.entity.fileuri)
+  : ''
+%}
 
 {% set summary = value %}
 <article {{ attributes }}>

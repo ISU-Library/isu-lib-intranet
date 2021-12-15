@@ -40,6 +40,12 @@
 #}
 
 {% import '@typhoon/components/_general-content.html.twig' as blocks %}
+
+{% set ImgSrc = paragraph.field_gc_large_image_image.entity.uri.value
+  ? file_url(paragraph.field_gc_large_image_image.entity.uri.value)
+  : ''
+%}
+
 {% set classes = [
   'paragraph',
   'paragraph--type--' ~ (paragraph.bundle|clean_class),
@@ -52,9 +58,7 @@
     {% block content %}
       {{
         blocks.largeImg({
-          imgSrc: file_url(
-            paragraph.field_gc_large_image_image.entity.uri.value
-          ),
+          imgSrc: ImgSrc,
           imgAlt: paragraph.field_gc_large_image_image.alt
         })
       }}

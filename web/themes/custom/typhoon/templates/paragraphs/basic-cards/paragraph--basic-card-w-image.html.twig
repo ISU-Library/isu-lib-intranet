@@ -39,6 +39,11 @@
  */
 #}
 
+{% set ImgSrc = paragraph.field_basic_card_image_image.entity.uri.value
+  ? file_url(paragraph.field_basic_card_image_image.entity.uri.value)
+  : ''
+%}
+
 {% set classes = [
   'paragraph',
   'paragraph--type--' ~ (paragraph.bundle|clean_class),
@@ -54,9 +59,7 @@
       {{
         card.basicImg({
           color: paragraph.field_basic_card_image_color.value,
-          imgSrc: file_url(
-            paragraph.field_basic_card_image_image.entity.uri.value
-          ),
+          imgSrc: ImgSrc,
           imgAlt: content.field_basic_card_image_image.alt,
           link: content.field_basic_card_image_link[0]['#url'],
           title: content.field_basic_card_image_title|field_value,

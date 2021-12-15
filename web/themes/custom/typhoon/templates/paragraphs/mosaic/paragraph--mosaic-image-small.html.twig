@@ -38,6 +38,12 @@
  * @ingroup themeable
  */
 #}
+
+{% set ImgSrc = paragraph.field_mosaic_image_small.entity.uri.value
+  ? file_url(paragraph.field_mosaic_image_small.entity.uri.value)
+  : ''
+%}
+
 {% set classes = [
   'paragraph',
   'paragraph--type--' ~ (paragraph.bundle|clean_class),
@@ -52,7 +58,7 @@
     {# <div {{ attributes.addClass(classes) }}> #}
     {{
       mosaic.imgSmall({
-        imgSrc: file_url(paragraph.field_mosaic_image_small.entity.uri.value),
+        imgSrc: ImgSrc,
         imgAlt: paragraph.field_mosaic_image_small.alt
       })
     }}

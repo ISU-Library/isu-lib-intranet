@@ -73,7 +73,10 @@
 
 {# ! This styles the staff news articles page #}
 
-{% set ImgSrc = file_url(node.field_staff_updates_main_image.entity.fileuri) %}
+{% set ImgSrc = node.field_staff_updates_main_image.entity.fileuri
+  ? file_url(node.field_staff_updates_main_image.entity.fileuri)
+  : ''
+%}
 {% set ImgAlt = node.field_staff_updates_main_image.alt %}
 
 {% set categories = content.field_staff_update_category|field_value %}
