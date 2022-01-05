@@ -21,16 +21,16 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       basic_card_w_image: basic_card_w_image
+    negate: 0
     target_bundles_drag_drop:
       accordion_group:
         weight: -34
         enabled: false
       basic_card_w_image:
-        enabled: true
         weight: -33
+        enabled: true
       from_library:
         weight: -31
         enabled: false

@@ -15,7 +15,7 @@ bundle: link_abstract_link_list
 mode: default
 content:
   field_link_abstract_link:
-    weight: 0
+    type: link
     label: hidden
     settings:
       trim_length: 80
@@ -24,13 +24,13 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 0
     region: content
   field_link_abstract_text:
-    weight: 1
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 1
     region: content
 hidden: {  }

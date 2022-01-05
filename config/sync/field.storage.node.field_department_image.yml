@@ -11,6 +11,9 @@ field_name: field_department_image
 entity_type: node
 type: image
 settings:
+  target_type: file
+  display_field: false
+  display_default: false
   uri_scheme: public
   default_image:
     uuid: ef576811-5108-4c74-ab1c-11f335e556af
@@ -18,9 +21,6 @@ settings:
     title: ''
     width: 1140
     height: 379
-  target_type: file
-  display_field: false
-  display_default: false
 module: image
 locked: false
 cardinality: 1

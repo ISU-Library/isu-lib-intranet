@@ -13,12 +13,12 @@ bundle: mosaic_image_medium
 mode: default
 content:
   field_mosaic_image_medium:
-    weight: 0
+    type: image
     label: hidden
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
     third_party_settings: {  }
-    type: image
+    weight: 0
     region: content
 hidden: {  }

@@ -16,10 +16,10 @@ plugin: staff_committee_block
 settings:
   id: staff_committee_block
   label: Membership
-  provider: staffdir
   label_display: visible
+  provider: staffdir
 visibility:
   request_path:
     id: request_path
-    pages: '/about/committees/*'
     negate: false
+    pages: '/about/committees/*'

@@ -17,17 +17,17 @@ plugin: page_title_block
 settings:
   id: page_title_block
   label: 'Page title'
-  provider: core
   label_display: '0'
+  provider: core
 visibility:
   'entity_bundle:node':
     id: 'entity_bundle:node'
+    negate: true
+    context_mapping:
+      node: '@node.node_route_context:node'
     bundles:
       department_page: department_page
       staff_news: staff_news
       staff_updates: staff_updates
       table_of_contents: table_of_contents
       webform: webform
-    negate: true
-    context_mapping:
-      node: '@node.node_route_context:node'

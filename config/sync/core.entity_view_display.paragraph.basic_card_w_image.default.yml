@@ -20,31 +20,31 @@ bundle: basic_card_w_image
 mode: default
 content:
   field_basic_card_image_category:
-    weight: 1
+    type: entity_reference_label
     label: hidden
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 1
     region: content
   field_basic_card_image_color:
-    weight: 0
+    type: list_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: list_default
+    weight: 0
     region: content
   field_basic_card_image_image:
-    weight: 4
+    type: image
     label: hidden
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
     third_party_settings: {  }
-    type: image
+    weight: 4
     region: content
   field_basic_card_image_link:
-    weight: 5
+    type: link
     label: hidden
     settings:
       trim_length: 80
@@ -53,21 +53,21 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 5
     region: content
   field_basic_card_image_text:
-    weight: 3
+    type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    weight: 3
     region: content
   field_basic_card_image_title:
-    weight: 2
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 2
     region: content
 hidden: {  }

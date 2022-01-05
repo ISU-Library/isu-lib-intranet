@@ -21,9 +21,9 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       link_abstract_link_list: link_abstract_link_list
+    negate: 0
     target_bundles_drag_drop:
       from_library:
         weight: 11
@@ -50,8 +50,8 @@ settings:
         weight: 18
         enabled: false
       link_abstract_link_list:
-        enabled: true
         weight: 19
+        enabled: true
       link_list_link:
         weight: 20
         enabled: false

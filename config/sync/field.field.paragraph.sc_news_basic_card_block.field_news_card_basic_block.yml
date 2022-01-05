@@ -21,9 +21,9 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       news_card_basic: news_card_basic
+    negate: 0
     target_bundles_drag_drop:
       accordion_group:
         weight: 22
@@ -68,8 +68,8 @@ settings:
         weight: 35
         enabled: false
       news_card_basic:
-        enabled: true
         weight: 36
+        enabled: true
       news_card_lead:
         weight: 37
         enabled: false

@@ -34,7 +34,6 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       sc_mosaic_image: sc_mosaic_image
       gc_accordion_block: gc_accordion_block
@@ -50,6 +49,7 @@ settings:
       sc_basic_cards_image_block: sc_basic_cards_image_block
       sc_news_basic_card_block: sc_news_basic_card_block
       sc_news_lead_card_block: sc_news_lead_card_block
+    negate: 0
     target_bundles_drag_drop:
       accordion_group:
         weight: 23
@@ -64,32 +64,32 @@ settings:
         weight: 26
         enabled: false
       gc_accordion_block:
-        enabled: true
         weight: 27
+        enabled: true
       gc_large_img_block:
-        enabled: true
         weight: 28
+        enabled: true
       gc_link_abstract_list_block:
-        enabled: true
         weight: 29
+        enabled: true
       gc_link_list_block:
-        enabled: true
         weight: 30
+        enabled: true
       gc_quote_block:
-        enabled: true
         weight: 31
+        enabled: true
       gc_text_block:
-        enabled: true
         weight: 32
+        enabled: true
       gc_text_img_block:
-        enabled: true
         weight: 33
+        enabled: true
       gc_three_image_block:
-        enabled: true
         weight: 34
-      gc_two_image_block:
         enabled: true
+      gc_two_image_block:
         weight: 35
+        enabled: true
       link_abstract_link_list:
         weight: 36
         enabled: false
@@ -115,18 +115,18 @@ settings:
         weight: 40
         enabled: false
       sc_basic_cards_block:
-        enabled: true
         weight: 41
+        enabled: true
       sc_basic_cards_image_block:
-        enabled: true
         weight: 42
+        enabled: true
       sc_mosaic_image:
-        enabled: true
         weight: 25
+        enabled: true
       sc_news_basic_card_block:
-        enabled: true
         weight: 43
-      sc_news_lead_card_block:
         enabled: true
+      sc_news_lead_card_block:
         weight: 44
+        enabled: true
 field_type: entity_reference_revisions

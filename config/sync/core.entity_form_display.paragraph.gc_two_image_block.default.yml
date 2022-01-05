@@ -15,21 +15,21 @@ bundle: gc_two_image_block
 mode: default
 content:
   field_gc_two_img_img_left:
+    type: image_image
     weight: 2
+    region: content
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
-    type: image_image
-    region: content
   field_gc_two_img_img_right:
+    type: image_image
     weight: 3
+    region: content
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
-    type: image_image
-    region: content
 hidden:
   created: true
   status: true

@@ -14,13 +14,13 @@ bundle: mosaic_image_small
 mode: default
 content:
   field_mosaic_image_small:
+    type: image_image
     weight: 0
+    region: content
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
-    type: image_image
-    region: content
 hidden:
   created: true
   status: true

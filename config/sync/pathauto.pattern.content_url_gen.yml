@@ -11,16 +11,16 @@ pattern: '[node:menu-link:parents:join-path]/[node:title]'
 selection_criteria:
   ab2852be-908d-4410-a464-a72ad2bf1ebf:
     id: node_type
+    negate: false
+    uuid: ab2852be-908d-4410-a464-a72ad2bf1ebf
+    context_mapping:
+      node: node
     bundles:
       department_page: department_page
       employee: employee
       page: page
       specialty_page: specialty_page
       table_of_contents: table_of_contents
-    negate: false
-    context_mapping:
-      node: node
-    uuid: ab2852be-908d-4410-a464-a72ad2bf1ebf
 selection_logic: and
 weight: -5
 relationships: {  }

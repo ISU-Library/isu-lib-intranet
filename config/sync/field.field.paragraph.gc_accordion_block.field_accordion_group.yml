@@ -21,13 +21,13 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       accordion_group: accordion_group
+    negate: 0
     target_bundles_drag_drop:
       accordion_group:
-        enabled: true
         weight: 14
+        enabled: true
       from_library:
         weight: 15
         enabled: false

@@ -16,10 +16,10 @@ plugin: staff_profile_block
 settings:
   id: staff_profile_block
   label: 'Staff Profile Block'
-  provider: staffdir
   label_display: '0'
+  provider: staffdir
 visibility:
   request_path:
     id: request_path
-    pages: /staff-profile
     negate: false
+    pages: /staff-profile

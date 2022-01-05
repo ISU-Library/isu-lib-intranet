@@ -6,9 +6,9 @@ _core:
   default_config_hash: TABA4k7qc_23n1AToUmJbQSNlXry5Me_aUE855mV2pw
 id: buttons
 label: Buttons
+category: Buttons
 description: 'An example of custom buttons.'
 help: ''
-category: Buttons
 type: template
 template: |
   <div class="webform-custom-options-buttons">
@@ -83,9 +83,9 @@ css: |
     }
   }
 javascript: ''
-options: '{  }'
 value_attributes: ''
 text_attributes: ''
+options: '{  }'
 fill: false
 zoom: false
 tooltip: false

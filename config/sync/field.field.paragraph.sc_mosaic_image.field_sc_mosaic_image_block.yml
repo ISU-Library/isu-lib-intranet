@@ -23,11 +23,11 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       mosaic_image_small: mosaic_image_small
       mosaic_image_medium: mosaic_image_medium
       mosaic_image_large: mosaic_image_large
+    negate: 0
     target_bundles_drag_drop:
       accordion_group:
         weight: -51
@@ -78,14 +78,14 @@ settings:
         weight: -55
         enabled: false
       mosaic_image_large:
-        enabled: true
         weight: -52
+        enabled: true
       mosaic_image_medium:
-        enabled: true
         weight: -53
-      mosaic_image_small:
         enabled: true
+      mosaic_image_small:
         weight: -54
+        enabled: true
       news_card_basic:
         weight: -47
         enabled: false

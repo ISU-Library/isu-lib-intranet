@@ -14,21 +14,21 @@ bundle: gc_two_image_block
 mode: default
 content:
   field_gc_two_img_img_left:
-    weight: 2
+    type: image
     label: hidden
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
     third_party_settings: {  }
-    type: image
+    weight: 2
     region: content
   field_gc_two_img_img_right:
-    weight: 3
+    type: image
     label: hidden
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
     third_party_settings: {  }
-    type: image
+    weight: 3
     region: content
 hidden: {  }

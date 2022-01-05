@@ -11,13 +11,13 @@ pattern: 'staff/[node:content-type]/[node:title]'
 selection_criteria:
   a558236f-3a33-49cc-885a-8cb199379380:
     id: node_type
+    negate: false
+    uuid: a558236f-3a33-49cc-885a-8cb199379380
+    context_mapping:
+      node: node
     bundles:
       staff_news: staff_news
       staff_updates: staff_updates
-    negate: false
-    context_mapping:
-      node: node
-    uuid: a558236f-3a33-49cc-885a-8cb199379380
 selection_logic: and
 weight: -5
 relationships: {  }

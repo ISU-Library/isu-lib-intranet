@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   module:
-    - ctools
     - node
     - staffdir
   theme:
@@ -17,13 +16,13 @@ plugin: staff_dept_block
 settings:
   id: staff_dept_block
   label: 'Department Staff'
-  provider: staffdir
   label_display: visible
+  provider: staffdir
 visibility:
   'entity_bundle:node':
     id: 'entity_bundle:node'
-    bundles:
-      department_page: department_page
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
+    bundles:
+      department_page: department_page

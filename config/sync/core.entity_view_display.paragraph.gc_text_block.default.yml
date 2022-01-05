@@ -14,20 +14,20 @@ bundle: gc_text_block
 mode: default
 content:
   field_gc_text_lead:
-    weight: 4
+    type: boolean
     label: hidden
     settings:
       format: default
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    type: boolean
+    weight: 4
     region: content
   field_gc_text_text:
-    weight: 5
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 5
     region: content
 hidden: {  }
