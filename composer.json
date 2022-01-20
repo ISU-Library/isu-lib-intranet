@@ -36,6 +36,7 @@
     "drupal/paragraphs": "^1.12",
     "drupal/pathauto": "^1.8",
     "drupal/registration_role": "^1.1",
+    "drupal/security_review": "^1.0@alpha",
     "drupal/smtp": "^1.0",
     "drupal/token": "^1.7",
     "drupal/twig_field_value": "^2.0",

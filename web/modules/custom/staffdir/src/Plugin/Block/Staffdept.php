@@ -14,7 +14,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   admin_label = @Translation("Staff Department Block")
  * )
  */
-class Staffdept extends BlockBase implements ContainerFactoryPluginInterface {
+class Staffdept extends BlockBase implements ContainerFactoryPluginInterface
+{
 
   /**
    * @var \Drupal\cat_facts\CatFactsClient
@@ -29,7 +30,8 @@ class Staffdept extends BlockBase implements ContainerFactoryPluginInterface {
    * @param $plugin_definition
    * @param $cat_facts_client \Drupal\cat_facts\CatFactsClient
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, $staffdir_client) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, $staffdir_client)
+  {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->staffdirClient = $staffdir_client;
   }
@@ -37,7 +39,8 @@ class Staffdept extends BlockBase implements ContainerFactoryPluginInterface {
   /**
    * {@inheritdoc}
    */
-  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition)
+  {
     return new static(
       $configuration,
       $plugin_id,
@@ -50,55 +53,54 @@ class Staffdept extends BlockBase implements ContainerFactoryPluginInterface {
    * make sure block is never cached, since it includes a [different]
    *   dynamically-assigned deptname each time it is called
    */
-  public function getCacheMaxAge() {
-	return 0;
+  public function getCacheMaxAge()
+  {
+    return 0;
   }
 
   /**
    * {@inheritdoc}
    */
-  public function build() {
+  public function build()
+  {
 
-  /**
-   * Returns a render-able array for a test page.
-   * need to read in uri/path of existing page [alias version] for
-   *   deptname, e.g.
-   *     /divisions/research-and-instruction-services/research-services   
-   *   and store path pieces in array; then use last path piece
-   *   (i.e. $path_args[3]) to extract deptname; convert hyphen
-   *   in path piece to "%20" space
-   */
-	$current_path = \Drupal::service('path.current')->getPath();
-	$path = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
-	$path_args = explode("/", $path);
-	$deptname_orig = $path_args[3];
-	$deptname = str_replace("-", " ", $deptname_orig);
+    /**
+     * Returns a render-able array for a test page.
+     * need to read in uri/path of existing page [alias version] for
+     *   deptname, e.g.
+     *     /divisions/research-and-instruction-services/research-services   
+     *   and store path pieces in array; then use last path piece
+     *   (i.e. $path_args[3]) to extract deptname; convert hyphen
+     *   in path piece to "%20" space
+     */
+    $current_path = \Drupal::service('path.current')->getPath();
+    $path = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+    $path_args = explode("/", $path);
+    $deptname_orig = $path_args[3];
+    $deptname = str_replace("-", " ", $deptname_orig);
 
-        $deptpersons = $this->staffdirClient->dept($deptname);
-        $items = [];
+    $deptpersons = $this->staffdirClient->dept($deptname);
+    $items = [];
 
-        foreach($deptpersons as $deptperson) {
-          $r_netid = $deptperson['NETID'];
-          $r_surname = $deptperson['SURNAME'];
-          $r_firstname = $deptperson['FIRSTNAME'];
-          $r_jobdescr = $deptperson['JOBDESCR'];
-          $r_uri = $deptperson['URI'];
-          $thisRow = array
-          (
-          "netid" => "$r_netid",
-          "surname" => "$r_surname",
-          "firstname" => "$r_firstname",
-          "jobdescr" => "$r_jobdescr",
-          "uri" => "$r_uri"
-          );
-          $items[] = $thisRow;
-        }
+    foreach ($deptpersons as $deptperson) {
+      $r_netid = $deptperson['NETID'];
+      $r_surname = $deptperson['SURNAME'];
+      $r_firstname = $deptperson['FIRSTNAME'];
+      $r_jobdescr = $deptperson['JOBDESCR'];
+      $r_uri = $deptperson['URI'];
+      $thisRow = array(
+        "netid" => "$r_netid",
+        "surname" => "$r_surname",
+        "firstname" => "$r_firstname",
+        "jobdescr" => "$r_jobdescr",
+        "uri" => "$r_uri"
+      );
+      $items[] = $thisRow;
+    }
 
-        return [
-          '#theme' => 'staff_dept',
-          '#deptpersons' => $items,
-        ];
-
+    return [
+      '#theme' => 'staff_dept',
+      '#deptpersons' => $items,
+    ];
   }
-
 }
