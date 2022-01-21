@@ -1,7 +1,7 @@
 // const colors = require('tailwindcss/colors')
 
-const sourceDir = './themes/custom/typhoon/src';
-const destinationDir = './themes/custom/typhoon';
+const sourceDir = './src';
+const destinationDir = '../typhoon';
 
 module.exports = {
   mode: 'jit',
