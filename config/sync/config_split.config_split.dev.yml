@@ -10,8 +10,7 @@ folder: ../config/dev/
 module:
   standard: 1000
 theme: {  }
-blacklist:
-  - core.extension
+blacklist: {  }
 graylist: {  }
 graylist_dependents: true
 graylist_skip_equal: true
