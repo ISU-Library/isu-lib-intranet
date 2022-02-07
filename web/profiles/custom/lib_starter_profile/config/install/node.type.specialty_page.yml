@@ -1,0 +1,18 @@
+uuid: f49c9d94-83cb-4e4d-93ee-2f619a47ab4c
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Specialty Page'
+type: specialty_page
+description: 'Hos more blocks available than Basic Page. Should be used for Main Nav landing pages.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

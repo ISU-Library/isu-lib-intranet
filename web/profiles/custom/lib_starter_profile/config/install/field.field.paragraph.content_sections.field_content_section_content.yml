@@ -1,0 +1,132 @@
+uuid: 0e0994aa-b22d-492e-bc71-7fa7ad2f9460
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_content_section_content
+    - paragraphs.paragraphs_type.content_sections
+    - paragraphs.paragraphs_type.gc_accordion_block
+    - paragraphs.paragraphs_type.gc_large_img_block
+    - paragraphs.paragraphs_type.gc_link_abstract_list_block
+    - paragraphs.paragraphs_type.gc_link_list_block
+    - paragraphs.paragraphs_type.gc_quote_block
+    - paragraphs.paragraphs_type.gc_text_block
+    - paragraphs.paragraphs_type.gc_text_img_block
+    - paragraphs.paragraphs_type.gc_three_image_block
+    - paragraphs.paragraphs_type.gc_two_image_block
+    - paragraphs.paragraphs_type.sc_basic_cards_block
+    - paragraphs.paragraphs_type.sc_basic_cards_image_block
+    - paragraphs.paragraphs_type.sc_mosaic_image
+    - paragraphs.paragraphs_type.sc_news_basic_card_block
+    - paragraphs.paragraphs_type.sc_news_lead_card_block
+  module:
+    - entity_reference_revisions
+id: paragraph.content_sections.field_content_section_content
+field_name: field_content_section_content
+entity_type: paragraph
+bundle: content_sections
+label: 'Section Content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      sc_mosaic_image: sc_mosaic_image
+      gc_accordion_block: gc_accordion_block
+      gc_large_img_block: gc_large_img_block
+      gc_link_abstract_list_block: gc_link_abstract_list_block
+      gc_link_list_block: gc_link_list_block
+      gc_quote_block: gc_quote_block
+      gc_text_block: gc_text_block
+      gc_text_img_block: gc_text_img_block
+      gc_three_image_block: gc_three_image_block
+      gc_two_image_block: gc_two_image_block
+      sc_basic_cards_block: sc_basic_cards_block
+      sc_basic_cards_image_block: sc_basic_cards_image_block
+      sc_news_basic_card_block: sc_news_basic_card_block
+      sc_news_lead_card_block: sc_news_lead_card_block
+    negate: 0
+    target_bundles_drag_drop:
+      accordion_group:
+        weight: 23
+        enabled: false
+      basic_card_w_image:
+        weight: 24
+        enabled: false
+      content_sections:
+        weight: 25
+        enabled: false
+      from_library:
+        weight: 26
+        enabled: false
+      gc_accordion_block:
+        weight: 27
+        enabled: true
+      gc_large_img_block:
+        weight: 28
+        enabled: true
+      gc_link_abstract_list_block:
+        weight: 29
+        enabled: true
+      gc_link_list_block:
+        weight: 30
+        enabled: true
+      gc_quote_block:
+        weight: 31
+        enabled: true
+      gc_text_block:
+        weight: 32
+        enabled: true
+      gc_text_img_block:
+        weight: 33
+        enabled: true
+      gc_three_image_block:
+        weight: 34
+        enabled: true
+      gc_two_image_block:
+        weight: 35
+        enabled: true
+      link_abstract_link_list:
+        weight: 36
+        enabled: false
+      link_list_link:
+        weight: 37
+        enabled: false
+      mosaic_image_large:
+        weight: 42
+        enabled: false
+      mosaic_image_medium:
+        weight: 43
+        enabled: false
+      mosaic_image_small:
+        weight: 44
+        enabled: false
+      news_card_basic:
+        weight: 38
+        enabled: false
+      news_card_lead:
+        weight: 39
+        enabled: false
+      sc_basic_card:
+        weight: 40
+        enabled: false
+      sc_basic_cards_block:
+        weight: 41
+        enabled: true
+      sc_basic_cards_image_block:
+        weight: 42
+        enabled: true
+      sc_mosaic_image:
+        weight: 25
+        enabled: true
+      sc_news_basic_card_block:
+        weight: 43
+        enabled: true
+      sc_news_lead_card_block:
+        weight: 44
+        enabled: true
+field_type: entity_reference_revisions

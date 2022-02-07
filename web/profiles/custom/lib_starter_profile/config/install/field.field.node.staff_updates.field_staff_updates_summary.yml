@@ -1,0 +1,21 @@
+uuid: 1d4e29ff-8649-4703-8cef-ddc0667f8216
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_staff_updates_summary
+    - node.type.staff_updates
+  module:
+    - text
+id: node.staff_updates.field_staff_updates_summary
+field_name: field_staff_updates_summary
+entity_type: node
+bundle: staff_updates
+label: 'Staff Updates Summary'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

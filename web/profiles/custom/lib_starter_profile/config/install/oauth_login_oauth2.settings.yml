@@ -1,0 +1,81 @@
+miniorange_oauth_client_license_key: null
+miniorange_oauth_client_customer_id: ''
+miniorange_oauth_client_customer_admin_token: ''
+miniorange_oauth_client_customer_api_key: ''
+miniorange_oauth_client_force_auth: false
+miniorange_oauth_client_enable_backdoor: false
+miniorange_oauth_client_default_relaystate: ''
+miniorange_oauth_client_response_signed: false
+miniorange_oauth_client_assertion_signed: false
+miniorange_oauth_client_enable_login: false
+miniorange_oauth_client_username_attribute: NameID
+miniorange_oauth_client_email_attribute: NameID
+miniorange_oauth_client_attr1_name: ''
+miniorange_oauth_client_attr5_name: ''
+miniorange_oauth_client_attr2_name: ''
+miniorange_oauth_client_attr3_name: ''
+miniorange_oauth_client_attr4_name: ''
+miniorange_oauth_client_disable_autocreate_users: false
+miniorange_oauth_client_default_role: ''
+miniorange_oauth_client_role1_name: ''
+miniorange_oauth_client_role2_name: ''
+miniorange_oauth_client_role3_name: ''
+miniorange_oauth_client_role4_name: ''
+miniorange_oauth_client_status: ''
+miniorange_oauth_client_customer_admin_phone: null
+miniorange_oauth_client_tx_id: null
+miniorange_oauth_client_customer_admin_password: ''
+miniorange_oauth_client_auto_redirect_to_idp: false
+miniorange_oauth_client_sp_issuer: ''
+miniorange_oauth_client_login_by: false
+miniorange_oauth_client_base_url: 'https://dev-intra.test/isulogin'
+miniorange_oauth_enable_login_with_oauth: false
+miniorange_oauth_send_with_header_oauth: true
+miniorange_oauth_send_with_body_oauth: false
+miniorange_auth_client_display_name: 'Login using ##app_name##'
+miniorange_oauth_client_idp_customer_admin_email: null
+miniorange_oauth_client_idp_name: ''
+miniorange_oauth_client_idp_issuer: ''
+miniorange_oauth_client_idp_login_url: ''
+miniorange_oauth_client_idp_logout_url: ''
+miniorange_oauth_client_idp_x509_certificate: ''
+miniorange_oauth_client_idp_attr1_name: ''
+miniorange_oauth_client_idp_attr5_name: ''
+miniorange_oauth_client_idp_attr2_name: ''
+miniorange_oauth_client_idp_attr3_name: ''
+miniorange_oauth_client_idp_attr4_name: ''
+miniorange_oauth_client_idp_role1_name: ''
+miniorange_oauth_client_idp_role2_name: ''
+miniorange_oauth_client_idp_role3_name: ''
+miniorange_oauth_client_idp_role4_name: ''
+miniorange_oauth_client_idp_entity_id: ''
+miniorange_oauth_client_idp_acs_url: ''
+miniorange_oauth_client_idp_nameid_attr_map: ''
+_core:
+  default_config_hash: hQJ9ofbaznMDCcVe6jwiUZUi0IOXGweAsmlzXZQPw64
+miniorange_oauth_client_free_users: '0'
+miniorange_oauth_client_feedback: '1'
+miniorange_auth_client_callback_uri: 'https://dev-intra.test/isulogin/mo_login'
+miniorange_oauth_client_disabled: false
+mo_saml_tourTaken_config_clc: true
+miniorange_oauth_client_app: Okta
+miniorange_oauth_client_appval:
+  client_id: 0oa1y7eb71ahDRNCJ5d7
+  client_secret: d8SLOflV3UIPpjxOoHDSB3erF0P--TFVSrrQOJyX
+  app_name: OktaLogin
+  display_name: 'Login using ##app_name##'
+  scope: 'openid email profile'
+  authorize_endpoint: 'https://dev-81498303.okta.com.com/oauth2/default/v1/authorize'
+  access_token_ep: 'https://dev-81498303.okta.com.com/oauth2/default/v1/token'
+  user_info_ep: 'https://dev-81498303.okta.com.com/oauth2/default/v1/userinfo'
+  callback_uri: 'https://dev-intra.test/isulogin/mo_login'
+  client_app: Okta
+miniorange_auth_client_app_name: OktaLogin
+miniorange_auth_client_client_id: 0oa1y7eb71ahDRNCJ5d7
+miniorange_auth_client_client_secret: d8SLOflV3UIPpjxOoHDSB3erF0P--TFVSrrQOJyX
+miniorange_auth_client_scope: 'openid email profile'
+miniorange_auth_client_authorize_endpoint: 'https://dev-81498303.okta.com.com/oauth2/default/v1/authorize'
+miniorange_auth_client_access_token_ep: 'https://dev-81498303.okta.com.com/oauth2/default/v1/token'
+miniorange_auth_client_user_info_ep: 'https://dev-81498303.okta.com.com/oauth2/default/v1/userinfo'
+miniorange_auth_client_stat: 'Review Config'
+mo_saml_tourTaken_licensing: true

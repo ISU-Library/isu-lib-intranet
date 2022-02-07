@@ -1,0 +1,21 @@
+uuid: d0b2a817-964b-45df-bd81-567f4fdaed4a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_staff_news_article_summary
+    - node.type.staff_news
+  module:
+    - text
+id: node.staff_news.field_staff_news_article_summary
+field_name: field_staff_news_article_summary
+entity_type: node
+bundle: staff_news
+label: 'Staff News Article Summary'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

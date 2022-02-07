@@ -1,0 +1,30 @@
+uuid: a12ae0ab-6aac-42cc-b557-b8292109f2c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.table_of_contents.field_toc_content
+    - node.type.table_of_contents
+  module:
+    - entity_reference_revisions
+    - user
+id: node.table_of_contents.default
+targetEntityType: node
+bundle: table_of_contents
+mode: default
+content:
+  field_toc_content:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

@@ -1,0 +1,24 @@
+uuid: aedc28ff-0a19-4831-9c48-8cec5fa44473
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.mosaic_image_medium.field_mosaic_image_medium
+    - paragraphs.paragraphs_type.mosaic_image_medium
+  module:
+    - image
+id: paragraph.mosaic_image_medium.default
+targetEntityType: paragraph
+bundle: mosaic_image_medium
+mode: default
+content:
+  field_mosaic_image_medium:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

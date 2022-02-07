@@ -1,0 +1,28 @@
+uuid: cb645757-859e-4c39-a41a-7f40d1c11d7e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.staff_updates.field_staff_update_category
+    - field.field.node.staff_updates.field_staff_updates_content
+    - field.field.node.staff_updates.field_staff_updates_main_image
+    - field.field.node.staff_updates.field_staff_updates_summary
+    - node.type.staff_updates
+  module:
+    - user
+id: node.staff_updates.teaser
+targetEntityType: node
+bundle: staff_updates
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_staff_update_category: true
+  field_staff_updates_content: true
+  field_staff_updates_main_image: true
+  field_staff_updates_summary: true

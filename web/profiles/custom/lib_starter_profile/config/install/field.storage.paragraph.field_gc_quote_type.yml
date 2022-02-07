@@ -1,0 +1,30 @@
+uuid: a035a70f-7d46-43a1-8009-76865d968332
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_gc_quote_type
+field_name: field_gc_quote_type
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: block--quote
+      label: Default
+    -
+      value: block--quote-banner
+      label: Banner
+    -
+      value: block--quote-ribbon
+      label: Ribbon
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

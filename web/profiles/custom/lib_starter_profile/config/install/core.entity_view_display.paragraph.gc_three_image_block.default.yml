@@ -1,0 +1,44 @@
+uuid: 6d8f0e43-f0d8-4af4-b63e-69eb5dcc973f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.gc_three_image_block.field_gc_three_img_img_center
+    - field.field.paragraph.gc_three_image_block.field_gc_three_img_img_left
+    - field.field.paragraph.gc_three_image_block.field_gc_three_img_img_right
+    - paragraphs.paragraphs_type.gc_three_image_block
+  module:
+    - image
+id: paragraph.gc_three_image_block.default
+targetEntityType: paragraph
+bundle: gc_three_image_block
+mode: default
+content:
+  field_gc_three_img_img_center:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_gc_three_img_img_left:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_gc_three_img_img_right:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden: {  }

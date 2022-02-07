@@ -1,0 +1,49 @@
+uuid: e58672f3-5c3c-44fe-9d2e-0c9d3e4a23a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.department_page.field_department_image
+    - field.field.node.department_page.field_department_page_content
+    - field.field.node.department_page.field_department_summary
+    - node.type.department_page
+  module:
+    - entity_reference_revisions
+    - image
+    - user
+id: node.department_page.default
+targetEntityType: node
+bundle: department_page
+mode: default
+content:
+  field_department_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_department_page_content:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_department_summary:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

@@ -1,0 +1,132 @@
+name: Lib Starter Profile
+type: profile
+description: 'Description of your profile.'
+core_version_requirement: '^9'
+
+# Optional: Declare your installation profile as a distribution
+# This will make the installer auto-select this installation profile.
+# The distribution_name property is used in the installer and other places as
+# a label for the software being installed.
+distribution:
+  name: Lib Starter Profile
+  # If you want your distribution to pre-select a language you can specify
+  # the language code, as well. This will prevent the user from selecting
+  # a language code in the user interface. While not recommended for generic
+  # community distributions, this can be very useful for distributions that
+  # are tailored to a language-specific audience (for example government
+  # institutions in a certain country) but also site-specific installation
+  # profiles. Note that this language code will also be used when installing
+  # the site via Drush.
+  #
+  # To set your theme as the theme for the distribution installation uncomment the following:
+  #
+  # install:
+  #   theme: my_theme
+  #   # To redirect to specific URL after profile installation set your finish_url:
+  #   finish_url: ?welcome=1
+
+# Required modules
+# Note that any dependencies of the modules listed here will be installed automatically.
+dependencies:
+  - webform_clientside_validation
+  - automated_cron
+  - big_pipe
+  - block
+  - block_content
+  - breakpoint
+  - ckeditor
+  - clientside_validation
+  - clientside_validation_jquery
+  - color
+  - comment
+  - config
+  - config_filter
+  - config_split
+  - contact
+  - contextual
+  - ctools
+  - ctools_entity_mask
+  - current_page_crumb
+  - datetime
+  - dblog
+  - devel
+  - devel_generate
+  - dynamic_page_cache
+  - editor
+  - entity_reference_revisions
+  - entity_usage
+  - field
+  - field_ui
+  - file
+  - filter
+  - google_cse
+  - graphql
+  - help
+  - history
+  - image
+  - inline_form_errors
+  - jsonapi
+  - link
+  - media
+  - menu_block
+  - menu_link_content
+  - menu_ui
+  - node
+  - oauth_login_oauth2
+  - openid_connect
+  - options
+  - page_cache
+  - paragraphs_library
+  - paragraphs_type_permissions
+  - path
+  - path_alias
+  - quickedit
+  - rdf
+  - registration_role
+  - responsive_image
+  - search
+  - security_review
+  - serialization
+  - shortcut
+  - sitemap
+  - staffdir
+  - system
+  - taxonomy
+  - telephone
+  - text
+  - token
+  - toolbar
+  - tour
+  - twig_field_value
+  - typed_data
+  - update
+  - user
+  - views_ui
+  - webform
+  - webform_access
+  - webform_attachment
+  - webform_cards
+  - webform_devel
+  - webform_image_select
+  - webform_node
+  - webform_options_custom
+  - webform_options_limit
+  - webform_scheduled_email
+  - webform_share
+  - webform_shortcuts
+  - webform_submission_export_import
+  - webform_submission_log
+  - webform_templates
+  - webform_ui
+  - pathauto
+  - webform_bootstrap
+  - views
+  - paragraphs
+
+# List any themes that should be installed as part of the profile installation.
+# Note that this will not set any theme as the default theme.
+themes:
+  - bartik
+  - seven
+  - typhoon
+  - stable

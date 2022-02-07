@@ -1,0 +1,24 @@
+features:
+  node_user_picture: 1
+  comment_user_picture: 1
+  comment_user_verification: 1
+  favicon: 1
+logo:
+  use_default: 0
+  path: themes/custom/typhoon/logo.png
+favicon:
+  use_default: 1
+lib_util_nav1_text: 'Staff Directory'
+lib_util_nav1_url: 'http://dev-intra.lib.iastate.edu/staff-directory'
+lib_util_nav2_text: Forms
+lib_util_nav2_url: 'http://dev-intra.lib.iastate.edu/forms'
+lib_util_nav3_text: Signons
+lib_util_nav3_url: 'https://web.iastate.edu/signons/'
+lib_util_nav4_text: 'IT Service Request'
+lib_util_nav4_url: 'https://dev-intra.lib.iastate.edu/resources/it-service-request'
+lib_util_nav5_text: ''
+lib_util_nav5_url: ''
+lib_homepage_header_header: 'Welcome! '
+lib_homepage_header_tagline: 'Here is the new ISU Library Intranet!'
+footer_social_media1_url: 'https://twitter.com/ISU_Library'
+footer_social_media1_icon: 'fab fa-twitter'

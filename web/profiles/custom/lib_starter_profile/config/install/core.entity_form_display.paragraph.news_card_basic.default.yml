@@ -1,0 +1,65 @@
+uuid: 2fbe407e-2a16-4c57-a31c-e0e9bd0c4455
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.news_card_basic.field_news_card_basic_category
+    - field.field.paragraph.news_card_basic.field_news_card_basic_image
+    - field.field.paragraph.news_card_basic.field_news_card_basic_link
+    - field.field.paragraph.news_card_basic.field_news_card_basic_text
+    - field.field.paragraph.news_card_basic.field_news_card_basic_title
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.news_card_basic
+  module:
+    - image
+    - link
+id: paragraph.news_card_basic.default
+targetEntityType: paragraph
+bundle: news_card_basic
+mode: default
+content:
+  field_news_card_basic_category:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_news_card_basic_image:
+    type: image_image
+    weight: 4
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_news_card_basic_link:
+    type: link_default
+    weight: 3
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_news_card_basic_text:
+    type: string_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_news_card_basic_title:
+    type: string_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

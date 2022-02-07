@@ -1,0 +1,70 @@
+uuid: c7136c6e-0649-4573-bbdf-c75bc7bddc23
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sc_basic_card.field_basic_card_category
+    - field.field.paragraph.sc_basic_card.field_basic_card_color
+    - field.field.paragraph.sc_basic_card.field_basic_card_icon
+    - field.field.paragraph.sc_basic_card.field_basic_card_link
+    - field.field.paragraph.sc_basic_card.field_basic_card_text
+    - field.field.paragraph.sc_basic_card.field_basic_card_title
+    - paragraphs.paragraphs_type.sc_basic_card
+  module:
+    - link
+    - options
+id: paragraph.sc_basic_card.default
+targetEntityType: paragraph
+bundle: sc_basic_card
+mode: default
+content:
+  field_basic_card_category:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_basic_card_color:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_basic_card_icon:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_basic_card_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_basic_card_text:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_basic_card_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

@@ -1,0 +1,63 @@
+uuid: 85ae18b0-4f88-401f-b699-9d14a2648a4e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.news_card_lead.field_news_card_lead_category
+    - field.field.paragraph.news_card_lead.field_news_card_lead_image
+    - field.field.paragraph.news_card_lead.field_news_card_lead_link
+    - field.field.paragraph.news_card_lead.field_news_card_lead_text
+    - field.field.paragraph.news_card_lead.field_news_card_lead_title
+    - paragraphs.paragraphs_type.news_card_lead
+  module:
+    - image
+    - link
+id: paragraph.news_card_lead.default
+targetEntityType: paragraph
+bundle: news_card_lead
+mode: default
+content:
+  field_news_card_lead_category:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_news_card_lead_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_news_card_lead_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_news_card_lead_text:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_news_card_lead_title:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

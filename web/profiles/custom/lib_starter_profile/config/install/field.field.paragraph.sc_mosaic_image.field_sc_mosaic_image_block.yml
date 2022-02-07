@@ -1,0 +1,113 @@
+uuid: 38e12fd7-773d-4201-b665-38cef4af096e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_sc_mosaic_image_block
+    - paragraphs.paragraphs_type.mosaic_image_large
+    - paragraphs.paragraphs_type.mosaic_image_medium
+    - paragraphs.paragraphs_type.mosaic_image_small
+    - paragraphs.paragraphs_type.sc_mosaic_image
+  module:
+    - entity_reference_revisions
+id: paragraph.sc_mosaic_image.field_sc_mosaic_image_block
+field_name: field_sc_mosaic_image_block
+entity_type: paragraph
+bundle: sc_mosaic_image
+label: 'Mosaic Image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      mosaic_image_small: mosaic_image_small
+      mosaic_image_medium: mosaic_image_medium
+      mosaic_image_large: mosaic_image_large
+    negate: 0
+    target_bundles_drag_drop:
+      accordion_group:
+        weight: -51
+        enabled: false
+      basic_card_w_image:
+        weight: -49
+        enabled: false
+      content_sections:
+        weight: -46
+        enabled: false
+      from_library:
+        weight: -45
+        enabled: false
+      gc_accordion_block:
+        weight: -42
+        enabled: false
+      gc_large_img_block:
+        weight: -41
+        enabled: false
+      gc_link_abstract_list_block:
+        weight: -40
+        enabled: false
+      gc_link_list_block:
+        weight: -39
+        enabled: false
+      gc_quote_block:
+        weight: -38
+        enabled: false
+      gc_text_block:
+        weight: -37
+        enabled: false
+      gc_text_img_block:
+        weight: -36
+        enabled: false
+      gc_three_image_block:
+        weight: -35
+        enabled: false
+      gc_two_image_block:
+        weight: -34
+        enabled: false
+      link_abstract_link_list:
+        weight: -44
+        enabled: false
+      link_list_link:
+        weight: -43
+        enabled: false
+      mosaic_image:
+        weight: -55
+        enabled: false
+      mosaic_image_large:
+        weight: -52
+        enabled: true
+      mosaic_image_medium:
+        weight: -53
+        enabled: true
+      mosaic_image_small:
+        weight: -54
+        enabled: true
+      news_card_basic:
+        weight: -47
+        enabled: false
+      news_card_lead:
+        weight: -48
+        enabled: false
+      sc_basic_card:
+        weight: -50
+        enabled: false
+      sc_basic_cards_block:
+        weight: -33
+        enabled: false
+      sc_basic_cards_image_block:
+        weight: -32
+        enabled: false
+      sc_mosaic_image:
+        weight: -31
+        enabled: false
+      sc_news_basic_card_block:
+        weight: -30
+        enabled: false
+      sc_news_lead_card_block:
+        weight: -29
+        enabled: false
+field_type: entity_reference_revisions

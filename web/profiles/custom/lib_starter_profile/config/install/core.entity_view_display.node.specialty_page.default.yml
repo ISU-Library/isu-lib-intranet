@@ -1,0 +1,30 @@
+uuid: 3d4f1ac1-a3a7-4444-8c2a-789df8b8e0d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.specialty_page.field_spec_page_content_block
+    - node.type.specialty_page
+  module:
+    - entity_reference_revisions
+    - user
+id: node.specialty_page.default
+targetEntityType: node
+bundle: specialty_page
+mode: default
+content:
+  field_spec_page_content_block:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

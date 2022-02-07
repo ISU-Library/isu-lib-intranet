@@ -1,0 +1,26 @@
+uuid: 12f33abd-8df8-401d-aa3a-f87dbba01485
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: content_url_gen
+label: 'content URL Gen'
+type: 'canonical_entities:node'
+pattern: '[node:menu-link:parents:join-path]/[node:title]'
+selection_criteria:
+  ab2852be-908d-4410-a464-a72ad2bf1ebf:
+    id: node_type
+    negate: false
+    uuid: ab2852be-908d-4410-a464-a72ad2bf1ebf
+    context_mapping:
+      node: node
+    bundles:
+      department_page: department_page
+      employee: employee
+      page: page
+      specialty_page: specialty_page
+      table_of_contents: table_of_contents
+selection_logic: and
+weight: -5
+relationships: {  }

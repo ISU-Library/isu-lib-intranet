@@ -1,0 +1,16 @@
+uuid: f551e276-81e4-4060-8550-02835e2a7849
+langcode: en
+status: true
+dependencies: {  }
+id: local
+label: local-config-split
+description: ''
+weight: 0
+folder: ../config/local/
+module: {  }
+theme: {  }
+blacklist:
+  - pathauto.pattern.staff_update_taxonomy
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true
