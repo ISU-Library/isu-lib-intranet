@@ -7,8 +7,7 @@ label: 'Dev config Split'
 description: ''
 weight: 0
 folder: ../config/dev/
-module:
-  standard: 1000
+module: {  }
 theme: {  }
 blacklist: {  }
 graylist: {  }
