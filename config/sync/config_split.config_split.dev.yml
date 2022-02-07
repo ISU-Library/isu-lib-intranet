@@ -7,9 +7,11 @@ label: 'Dev config Split'
 description: ''
 weight: 0
 folder: ../config/dev/
-module: {  }
+module:
+  standard: 1000
 theme: {  }
-blacklist: {  }
+blacklist:
+  - core.extension
 graylist: {  }
 graylist_dependents: true
 graylist_skip_equal: true
