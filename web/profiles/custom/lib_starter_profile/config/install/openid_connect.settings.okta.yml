@@ -1,8 +1,0 @@
-_core:
-  default_config_hash: 7F1ngE9fiONEo0Nk1cfez_GTGzhHBLuPaHlrDqYI_hg
-enabled: true
-settings:
-  client_id: 0oad1r7bxbxGNGS8m2p7
-  client_secret: MeExCEgk2rHX368OopOKFerSlZ9DX_biECl1Cd8E
-  okta_domain: iastate.okta.com
-  redirect_url: ''
