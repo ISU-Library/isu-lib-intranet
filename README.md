@@ -3,7 +3,7 @@
 
 <ol>
   <li>cd to desired site location</li>
-  <li>run the following command `$ git clone git@github.com:Msteimel/-isu-lib-intranet.git`</li>
+  <li>run the following command `$ git clone git@github.com:ISU-Library/isu-lib-intranet.git` or `$https://github.com/ISU-Library/isu-lib-intranet.git` </li>
   <li>answer any needed questions.</li>
   <li>run `$ composer install` - this uses composer file to generate files not included in Repo
     <ol><li>- might have to install composer if not on computer</li></ol>
